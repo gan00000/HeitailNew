@@ -1,6 +1,0 @@
-framework module Pods_HeiteBasketball {
-  umbrella header "Pods-HeiteBasketball-umbrella.h"
-
-  export *
-  module * { export * }
-}

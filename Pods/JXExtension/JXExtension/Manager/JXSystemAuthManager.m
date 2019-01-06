@@ -1,20 +1,10 @@
-//
-//  JXSystemAuthManager.m
-//  JXExtension
-//
-//  Created by Jeason on 2017/9/5.
-//  Copyright © 2017年 Jeason.Lee. All rights reserved.
-//
-
 #import "JXSystemAuthManager.h"
 #import <AddressBook/AddressBook.h>
 #import <AVFoundation/AVFoundation.h>
 #import <Photos/Photos.h>
 #import <CoreLocation/CLLocationManager.h>
 #import <EventKit/EventKit.h>
-
 @implementation JXSystemAuthManager
-
 + (void)jx_judgeAddressBookAuthStatusWithSuccess:(void(^)(void))success
                                          failure:(void(^)(void))failure {
     if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
@@ -33,7 +23,6 @@
         CFRelease(addressBookRef);
     }
 }
-
 + (void)jx_judgeCameraAuthStatusWithSuccess:(void(^)(void))success
                                     failure:(void(^)(void))failure {
     AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
@@ -51,7 +40,6 @@
         }];
     }
 }
-
 + (void)jx_judgeAlbumAuthStatusWithSuccess:(void(^)(void))success
                                    failure:(void(^)(void))failure {
     PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
@@ -69,7 +57,6 @@
         }];
     }
 }
-
 + (void)jx_judgeMicrophoneAuthStatusWithSuccess:(void(^)(void))success
                                         failure:(void(^)(void))failure {
     AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];
@@ -87,7 +74,6 @@
         }];
     }
 }
-
 + (void)jx_judgeLocationAuthStatusWithSuccess:(void(^)(void))success
                                       failure:(void(^)(void))failure {
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
@@ -99,24 +85,19 @@
         failure ? failure() : nil;
     }
 }
-
 + (void)jx_judgeReminderAuthStatusWithSuccess:(void(^)(void))success
                                       failure:(void(^)(void))failure {
     [JXSystemAuthManager jx_judgeEvnetAuthStatusWithEntityType:EKEntityTypeReminder success:success failure:failure];
 }
-
 + (void)jx_judgeCalendarAuthStatusWithSuccess:(void(^)(void))success
                                       failure:(void(^)(void))failure {
     [JXSystemAuthManager jx_judgeEvnetAuthStatusWithEntityType:EKEntityTypeEvent success:success failure:failure];
 }
-
 + (void)jx_openApplicationSetting {
     NSURL *settringUrl = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
     [[UIApplication sharedApplication] openURL:settringUrl];
 }
-
 #pragma mark - Private Method
-
 + (void)jx_judgeEvnetAuthStatusWithEntityType:(EKEntityType)entityType
                                       success:(void(^)(void))success
                                       failure:(void(^)(void))failure {
@@ -136,5 +117,4 @@
         }];
     }
 }
-
 @end

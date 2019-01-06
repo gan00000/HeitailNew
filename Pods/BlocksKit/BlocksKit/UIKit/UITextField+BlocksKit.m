@@ -1,20 +1,10 @@
-//
-//  UITextField+BlocksKit.m
-//  BlocksKit
-//
-
 #import "UITextField+BlocksKit.h"
 #import "A2DynamicDelegate.h"
 #import "NSObject+A2BlockDelegate.h"
-
 #pragma mark Delegate
-
 @interface A2DynamicUITextFieldDelegate : A2DynamicDelegate
-
 @end
-
 @implementation A2DynamicUITextFieldDelegate
-
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
 	BOOL ret = YES;
@@ -26,7 +16,6 @@
 		ret &= block(textField);
 	return ret;
 }
-
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
 	id realDelegate = self.realDelegate;
@@ -36,7 +25,6 @@
 	if (block)
 		block(textField);
 }
-
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
 	BOOL ret = YES;
@@ -48,7 +36,6 @@
 		ret &= block(textField);
 	return ret;
 }
-
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
 	id realDelegate = self.realDelegate;
@@ -58,7 +45,6 @@
 	if (block)
 		block(textField);
 }
-
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
 	BOOL ret = YES;
@@ -70,7 +56,6 @@
 		ret &= block(textField, range, string);
 	return ret;
 }
-
 - (BOOL)textFieldShouldClear:(UITextField *)textField
 {
 	BOOL ret = YES;
@@ -82,7 +67,6 @@
 		ret &= block(textField);
 	return ret;
 }
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
 	BOOL ret = YES;
@@ -94,15 +78,10 @@
 		ret &= block(textField);
 	return ret;
 }
-
 @end
-
 #pragma mark - Category
-
 @implementation UITextField (BlocksKit)
-
 @dynamic bk_shouldBeginEditingBlock, bk_didBeginEditingBlock, bk_shouldEndEditingBlock, bk_didEndEditingBlock, bk_shouldChangeCharactersInRangeWithReplacementStringBlock, bk_shouldClearBlock, bk_shouldReturnBlock;
-
 + (void)load {
     [self bk_registerDynamicDelegate];
     [self bk_linkDelegateMethods: @{
@@ -115,5 +94,4 @@
         @"bk_shouldReturnBlock" : @"textFieldShouldReturn:",
     }];
 }
-
 @end

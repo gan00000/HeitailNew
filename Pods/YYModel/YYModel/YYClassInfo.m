@@ -1,23 +1,10 @@
-//
-//  YYClassInfo.m
-//  YYModel <https://github.com/ibireme/YYModel>
-//
-//  Created by ibireme on 15/5/9.
-//  Copyright (c) 2015 ibireme.
-//
-//  This source code is licensed under the MIT-style license found in the
-//  LICENSE file in the root directory of this source tree.
-//
-
 #import "YYClassInfo.h"
 #import <objc/runtime.h>
-
 YYEncodingType YYEncodingGetType(const char *typeEncoding) {
     char *type = (char *)typeEncoding;
     if (!type) return YYEncodingTypeUnknown;
     size_t len = strlen(type);
     if (len == 0) return YYEncodingTypeUnknown;
-    
     YYEncodingType qualifier = 0;
     bool prefix = true;
     while (prefix) {
@@ -53,10 +40,8 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding) {
             default: { prefix = false; } break;
         }
     }
-
     len = strlen(type);
     if (len == 0) return YYEncodingTypeUnknown | qualifier;
-
     switch (*type) {
         case 'v': return YYEncodingTypeVoid | qualifier;
         case 'B': return YYEncodingTypeBool | qualifier;
@@ -89,9 +74,7 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding) {
         default: return YYEncodingTypeUnknown | qualifier;
     }
 }
-
 @implementation YYClassIvarInfo
-
 - (instancetype)initWithIvar:(Ivar)ivar {
     if (!ivar) return nil;
     self = [super init];
@@ -108,11 +91,8 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding) {
     }
     return self;
 }
-
 @end
-
 @implementation YYClassMethodInfo
-
 - (instancetype)initWithMethod:(Method)method {
     if (!method) return nil;
     self = [super init];
@@ -145,11 +125,8 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding) {
     }
     return self;
 }
-
 @end
-
 @implementation YYClassPropertyInfo
-
 - (instancetype)initWithProperty:(objc_property_t)property {
     if (!property) return nil;
     self = [super init];
@@ -158,26 +135,22 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding) {
     if (name) {
         _name = [NSString stringWithUTF8String:name];
     }
-    
     YYEncodingType type = 0;
     unsigned int attrCount;
     objc_property_attribute_t *attrs = property_copyAttributeList(property, &attrCount);
     for (unsigned int i = 0; i < attrCount; i++) {
         switch (attrs[i].name[0]) {
-            case 'T': { // Type encoding
+            case 'T': { 
                 if (attrs[i].value) {
                     _typeEncoding = [NSString stringWithUTF8String:attrs[i].value];
                     type = YYEncodingGetType(attrs[i].value);
-                    
                     if ((type & YYEncodingTypeMask) == YYEncodingTypeObject && _typeEncoding.length) {
                         NSScanner *scanner = [NSScanner scannerWithString:_typeEncoding];
                         if (![scanner scanString:@"@\"" intoString:NULL]) continue;
-                        
                         NSString *clsName = nil;
                         if ([scanner scanUpToCharactersFromSet: [NSCharacterSet characterSetWithCharactersInString:@"\"<"] intoString:&clsName]) {
                             if (clsName.length) _cls = objc_getClass(clsName.UTF8String);
                         }
-                        
                         NSMutableArray *protocols = nil;
                         while ([scanner scanString:@"<" intoString:NULL]) {
                             NSString* protocol = nil;
@@ -193,7 +166,7 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding) {
                     }
                 }
             } break;
-            case 'V': { // Instance variable
+            case 'V': { 
                 if (attrs[i].value) {
                     _ivarName = [NSString stringWithUTF8String:attrs[i].value];
                 }
@@ -227,7 +200,7 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding) {
                 if (attrs[i].value) {
                     _setter = NSSelectorFromString([NSString stringWithUTF8String:attrs[i].value]);
                 }
-            } // break; commented for code coverage in next line
+            } 
             default: break;
         }
     }
@@ -235,7 +208,6 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding) {
         free(attrs);
         attrs = NULL;
     }
-    
     _type = type;
     if (_name.length) {
         if (!_getter) {
@@ -247,13 +219,10 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding) {
     }
     return self;
 }
-
 @end
-
 @implementation YYClassInfo {
     BOOL _needUpdate;
 }
-
 - (instancetype)initWithClass:(Class)cls {
     if (!cls) return nil;
     self = [super init];
@@ -265,16 +234,13 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding) {
     }
     _name = NSStringFromClass(cls);
     [self _update];
-
     _superClassInfo = [self.class classInfoWithClass:_superCls];
     return self;
 }
-
 - (void)_update {
     _ivarInfos = nil;
     _methodInfos = nil;
     _propertyInfos = nil;
-    
     Class cls = self.cls;
     unsigned int methodCount = 0;
     Method *methods = class_copyMethodList(cls, &methodCount);
@@ -298,7 +264,6 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding) {
         }
         free(properties);
     }
-    
     unsigned int ivarCount = 0;
     Ivar *ivars = class_copyIvarList(cls, &ivarCount);
     if (ivars) {
@@ -310,22 +275,17 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding) {
         }
         free(ivars);
     }
-    
     if (!_ivarInfos) _ivarInfos = @{};
     if (!_methodInfos) _methodInfos = @{};
     if (!_propertyInfos) _propertyInfos = @{};
-    
     _needUpdate = NO;
 }
-
 - (void)setNeedUpdate {
     _needUpdate = YES;
 }
-
 - (BOOL)needUpdate {
     return _needUpdate;
 }
-
 + (instancetype)classInfoWithClass:(Class)cls {
     if (!cls) return nil;
     static CFMutableDictionaryRef classCache;
@@ -353,10 +313,8 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding) {
     }
     return info;
 }
-
 + (instancetype)classInfoWithClassName:(NSString *)className {
     Class cls = NSClassFromString(className);
     return [self classInfoWithClass:cls];
 }
-
 @end

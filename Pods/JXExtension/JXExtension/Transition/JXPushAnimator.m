@@ -1,38 +1,19 @@
-//
-//  JXPushAnimator.m
-//  JXExtension
-//
-//  Created by Jeason on 2017/9/2.
-//  Copyright © 2017年 Jeason.Lee. All rights reserved.
-//
-
 #import "JXPushAnimator.h"
 #import "JXInteractiveTransition.h"
-
 @interface JXPushAnimator ()
-
 @property (nonatomic, weak) id <UIViewControllerContextTransitioning> transitionContext;
 @property (nonatomic, strong) UIView *containerView;
-
 @end
-
 @implementation JXPushAnimator
-
 - (instancetype)init {
     self = [super init];
     if (self) {
-        
     }
     return self;
 }
-
-/**
- 类似push动画效果
- */
 - (void)jx_setToAnimation:(id<UIViewControllerContextTransitioning>)transitionContext {
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    //转场的容器图，动画完成之后会消失
     UIView *containerView = transitionContext.containerView;
     self.containerView = containerView;
     UIView *fromView;
@@ -44,7 +25,6 @@
         fromView = fromViewController.view;
         toView = toViewController.view;
     }
-    //对应关系
     BOOL isPresent = (toViewController.presentingViewController == fromViewController);
     CGRect fromFrame = [transitionContext initialFrameForViewController:fromViewController];
     CGRect toFrame = [transitionContext finalFrameForViewController:toViewController];
@@ -85,14 +65,9 @@
         [transitionContext completeTransition:!wasCancelled];
     }];
 }
-
-/**
- 类似pop动画效果
- */
 - (void)jx_setBackAnimation:(id<UIViewControllerContextTransitioning>)transitionContext {
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    //转场的容器图，动画完成之后会消失
     UIView *containerView = transitionContext.containerView;
     self.containerView = containerView;
     UIView *fromView;
@@ -104,7 +79,6 @@
         fromView = fromViewController.view;
         toView = toViewController.view;
     }
-    //对应关系
     BOOL isDismiss = (fromViewController.presentingViewController == toViewController);
     CGRect fromFrame = [transitionContext initialFrameForViewController:fromViewController];
     CGRect toFrame = [transitionContext finalFrameForViewController:toViewController];
@@ -147,15 +121,11 @@
         [transitionContext completeTransition:!wasCancel];
     }];
 }
-
 #pragma mark - JXInteractiveTransitionDelegate
-
 - (void)jx_interactiveTransitionWillBegin:(JXInteractiveTransition *)interactiveTransition {
     self.containerView.userInteractionEnabled = NO;
 }
-
 - (void)jx_interactiveTransition:(JXInteractiveTransition *)interactiveTransition willEndWithSuccessFlag:(BOOL)flag percent:(CGFloat)percent {
     self.containerView.userInteractionEnabled = YES;
 }
-
 @end

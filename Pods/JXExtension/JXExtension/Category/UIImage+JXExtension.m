@@ -1,15 +1,5 @@
-//
-//  UIImage+JXExtension.m
-//  JXExtension
-//
-//  Created by Jeason on 2017/8/11.
-//  Copyright © 2017年 Jeason.Lee. All rights reserved.
-//
-
 #import "UIImage+JXExtension.h"
-
 @implementation UIImage (JXExtension)
-
 + (UIImage *)jx_launchImage {
     NSString *launchImage;
     CGSize viewSize = [UIScreen mainScreen].bounds.size;
@@ -22,7 +12,6 @@
     }
     return [UIImage imageNamed:launchImage];
 }
-
 + (UIImage *)jx_imageWithView:(UIView *)view {
     if (!view) {
         return [[UIImage alloc] init];
@@ -34,11 +23,9 @@
     UIGraphicsEndImageContext();
     return image;
 }
-
 + (UIImage *)jx_imageWithColor:(UIColor *)color {
     return [self jx_imageWithColor:color size:CGSizeMake(1.0, 1.0)];
 }
-
 + (UIImage *)jx_imageWithColor:(UIColor *)color size:(CGSize)size {
     if (!color) {
         return [[UIImage alloc] init];
@@ -52,15 +39,10 @@
     UIGraphicsEndImageContext();
     return image;
 }
-
 - (UIColor *)jx_colorAtPixel:(CGPoint)point {
-    // Cancel if point is outside image coordinates
     if (!CGRectContainsPoint(CGRectMake(0.0, 0.0, self.size.width, self.size.height), point)) {
         return nil;
     }
-    
-    // Create a 1x1 pixel byte array and bitmap context to draw the pixel into.
-    // Reference: http://stackoverflow.com/questions/1042830/retrieving-a-pixel-alpha-value-for-a-uiimage
     NSInteger pointX = trunc(point.x);
     NSInteger pointY = trunc(point.y);
     CGImageRef cgImage = self.CGImage;
@@ -80,20 +62,15 @@
                                                  kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
     CGColorSpaceRelease(colorSpace);
     CGContextSetBlendMode(context, kCGBlendModeCopy);
-    
-    // Draw the pixel we are interested in onto the bitmap context
     CGContextTranslateCTM(context, -pointX, pointY - (CGFloat)height);
     CGContextDrawImage(context, CGRectMake(0.0, 0.0, (CGFloat)width, (CGFloat)height), cgImage);
     CGContextRelease(context);
-    
-    // Convert color values [0..255] to floats [0.0..1.0]
     CGFloat red = (CGFloat)pixelData[0] / 255.0;
     CGFloat green = (CGFloat)pixelData[1] / 255.0;
     CGFloat blue = (CGFloat)pixelData[2] / 255.0;
     CGFloat alpha = (CGFloat)pixelData[3] / 255.0;
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
-
 - (BOOL)jx_hasAlphaChannel {
     CGImageAlphaInfo alpha = CGImageGetAlphaInfo(self.CGImage);
     return (alpha == kCGImageAlphaFirst ||
@@ -101,5 +78,4 @@
             alpha == kCGImageAlphaPremultipliedFirst ||
             alpha == kCGImageAlphaPremultipliedLast);
 }
-
 @end

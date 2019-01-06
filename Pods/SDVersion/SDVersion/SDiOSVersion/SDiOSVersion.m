@@ -1,17 +1,8 @@
-//
-//  SDiOSVersion.m
-//  SDVersion
-//
-//  Copyright (c) 2016 Sebastian Dobrincu. All rights reserved.
-//
-
 #import "SDiOSVersion.h"
 #import <CoreGraphics/CoreGraphics.h>
 #import <UIKit/UIKit.h>
 #import <sys/utsname.h>
-
 @implementation SDiOSVersion
-
 + (NSDictionary*)deviceNamesByCode
 {
     static NSDictionary *deviceNamesByCode = nil;
@@ -20,7 +11,6 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
         deviceNamesByCode = @{
-                              //iPhones
                               @"iPhone3,1"  : @(iPhone4),
                               @"iPhone3,2"  : @(iPhone4),
                               @"iPhone3,3"  : @(iPhone4),
@@ -50,8 +40,6 @@
                               @"iPhone10,6" : @(iPhoneX),
                               @"i386"       : @(Simulator),
                               @"x86_64"     : @(Simulator),
-                              
-                              //iPads
                               @"iPad1,1"  : @(iPad1),
                               @"iPad2,1"  : @(iPad2),
                               @"iPad2,2"  : @(iPad2),
@@ -89,8 +77,6 @@
                               @"iPad7,2"  : @(iPadPro12Dot9Inch2Gen),
                               @"iPad7,3"  : @(iPadPro10Dot5Inch),
                               @"iPad7,4"  : @(iPadPro10Dot5Inch),
-
-                              //iPods
                               @"iPod1,1" : @(iPodTouch1Gen),
                               @"iPod2,1" : @(iPodTouch2Gen),
                               @"iPod3,1" : @(iPodTouch3Gen),
@@ -99,31 +85,24 @@
                               @"iPod7,1" : @(iPodTouch6Gen)};
 #pragma clang diagnostic pop
     });
-    
     return deviceNamesByCode;
 }
-
 + (DeviceVersion)deviceVersion
 {
     struct utsname systemInfo;
     uname(&systemInfo);
     NSString *code = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
-    
     DeviceVersion version = (DeviceVersion)[[self.deviceNamesByCode objectForKey:code] integerValue];
-    
     return version;
 }
-
 + (DeviceSize)resolutionSize
 {
     CGFloat screenHeight = 0;
-    
     if ([SDiOSVersion versionGreaterThanOrEqualTo:@"8"]) {
         screenHeight = MAX([[UIScreen mainScreen] bounds].size.height, [[UIScreen mainScreen] bounds].size.width);
     } else {
         screenHeight = [[UIScreen mainScreen] bounds].size.height;
     }
-    
     if (screenHeight == 480) {
         return Screen3Dot5inch;
     } else if(screenHeight == 568) {
@@ -137,7 +116,6 @@
     } else
         return UnknownSize;
 }
-
 + (DeviceSize)deviceSize
 {
     DeviceSize deviceSize = [self resolutionSize];
@@ -150,7 +128,6 @@
     }
     return deviceSize;
 }
-
 + (NSString *)deviceSizeName:(DeviceSize)deviceSize
 {
     return @{
@@ -162,12 +139,10 @@
              @(Screen5Dot8inch) : @"5.8 inch",
              }[@(deviceSize)];
 }
-
 + (NSString *)deviceNameString
 {
     return [SDiOSVersion deviceNameForVersion:[SDiOSVersion deviceVersion]];
 }
-
 + (NSString *)deviceNameForVersion:(DeviceVersion)deviceVersion
 {
     return @{
@@ -186,7 +161,6 @@
              @(iPhone8Plus)          : @"iPhone 8 Plus",
              @(iPhoneX)              : @"iPhone X",
              @(iPhoneSE)             : @"iPhone SE",
-             
              @(iPad1)                : @"iPad 1",
              @(iPad2)                : @"iPad 2",
              @(iPadMini)             : @"iPad Mini",
@@ -202,19 +176,16 @@
              @(iPad5)                : @"iPad 5",
              @(iPadPro10Dot5Inch)    : @"iPad Pro 10.5 inch",
              @(iPadPro12Dot9Inch2Gen): @"iPad Pro 12.9 inch",
-             
              @(iPodTouch1Gen)        : @"iPod Touch 1st Gen",
              @(iPodTouch2Gen)        : @"iPod Touch 2nd Gen",
              @(iPodTouch3Gen)        : @"iPod Touch 3rd Gen",
              @(iPodTouch4Gen)        : @"iPod Touch 4th Gen",
              @(iPodTouch5Gen)        : @"iPod Touch 5th Gen",
              @(iPodTouch6Gen)        : @"iPod Touch 6th Gen",
-             
              @(Simulator)            : @"Simulator",
              @(UnknownDevice)        : @"Unknown Device"
              }[@(deviceVersion)];
 }
-
 + (BOOL)isZoomed
 {
     if ([self resolutionSize] == Screen4inch && [UIScreen mainScreen].nativeScale > 2) {
@@ -222,33 +193,26 @@
     }else if ([self resolutionSize] == Screen4Dot7inch && [UIScreen mainScreen].scale == 3){
         return YES;
     }
-    
     return NO;
 }
-
 + (BOOL)versionEqualTo:(NSString *)version
 {
     return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] == NSOrderedSame);
 }
-
 + (BOOL)versionGreaterThan:(NSString *)version
 {
     return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] == NSOrderedDescending);
 }
-
 + (BOOL)versionGreaterThanOrEqualTo:(NSString *)version
 {
     return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] != NSOrderedAscending);
 }
-
 + (BOOL)versionLessThan:(NSString *)version
 {
     return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] == NSOrderedAscending);
 }
-
 + (BOOL)versionLessThanOrEqualTo:(NSString *)version
 {
     return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] != NSOrderedDescending);
 }
-
 @end

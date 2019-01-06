@@ -2,7 +2,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 platform :ios, '9.0'
 
-target 'HeiteBasketball' do
+target 'HaterBall' do
 
 pod 'AFNetworking'
 pod 'SDWebImage'

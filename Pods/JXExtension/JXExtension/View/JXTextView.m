@@ -1,44 +1,25 @@
-//
-//  JXTextView.m
-//  JXExtension
-//
-//  Created by Jeason on 2017/6/15.
-//  Copyright © 2017年 JeasonLee. All rights reserved.
-//
-
 #import "JXTextView.h"
-
 @interface JXTextView()
-
 @property (nonatomic, strong) UILabel *placeHolderLabel;
-
 @end
-
 @implementation JXTextView
-
 @synthesize placeholder = _placeholder;
 @synthesize placeholderColor = _placeholderColor;
-
 #pragma mark - LifeCycle
-
 - (void)awakeFromNib {
     [super awakeFromNib];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChanged:) name:UITextViewTextDidChangeNotification object:nil];
 }
-
 - (void)layoutSubviews {
     [super layoutSubviews];
     if (self.text.length == 0 && self.placeholder.length > 0) {
         [self.placeHolderLabel setAlpha:1];
     }
 }
-
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-
 #pragma mark - Event Response
-
 - (void)textChanged:(NSNotification *)notification {
     if (self.placeholder.length == 0) {
         return;
@@ -49,43 +30,34 @@
         [self.placeHolderLabel setAlpha:0];
     }
 }
-
 - (void)setText:(NSString *)text {
     [super setText:text];
     [self textChanged:nil];
 }
-
 #pragma mark - Property method
-
 - (void)setMasksToBounds:(BOOL)masksToBounds {
     self.layer.masksToBounds = masksToBounds;
 }
-
 - (void)setCornerRadius:(CGFloat)cornerRadius {
     self.layer.cornerRadius = cornerRadius;
 }
-
 - (NSString *)placeholder {
     return _placeholder;
 }
-
 - (void)setPlaceholder:(NSString *)placeholder {
     _placeholder = placeholder.copy;
     self.placeHolderLabel.text = placeholder;
 }
-
 - (UIColor *)placeholderColor {
     if (_placeholderColor == nil) {
         _placeholderColor = [UIColor lightGrayColor];
     }
     return _placeholderColor;
 }
-
 - (void)setPlaceholderColor:(UIColor *)placeholderColor {
     _placeholderColor = placeholderColor;
     self.placeHolderLabel.textColor = placeholderColor;
 }
-
 - (UILabel *)placeHolderLabel {
     UIEdgeInsets insets = self.textContainerInset;
     if (_placeHolderLabel == nil && self.placeholder.length > 0) {
@@ -108,5 +80,4 @@
     }
     return _placeHolderLabel;
 }
-
 @end

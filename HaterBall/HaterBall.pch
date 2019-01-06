@@ -1,0 +1,85 @@
+//
+//  HeiteBasketball.pch
+//  HeiteBasketball
+//
+//  Created by 冯生伟 on 2018/9/8.
+//  Copyright © 2018年 Dean_F. All rights reserved.
+//
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <Masonry/Masonry.h>
+#import <YYModel/YYModel.h>
+#import <HexColors/HexColors.h>
+#import <RegExCategories/RegExCategories.h>
+#import <HMSegmentedControl/HMSegmentedControl.h>
+#import <JXExtension/JXExtension.h>
+
+#import "HBMJRefreshGenerator.h"
+#import "UIView+Toast.h"
+#import "UIView+Loading.h"
+#import "UIView+EmptyView.h"
+#import "HBBJLoadingHud.h"
+#import "NSDate+Core.h"
+#import "NSDateFormatter+DRExtension.h"
+
+#endif
+
+#ifndef HeiteBasketball_pch
+#define HeiteBasketball_pch
+
+//**********重要***********//
+// 是否向外发布版本(1: 是, 0: 否)
+// 外发版的时候需要改为1
+#define OFFICIAL_RELEASE 0
+
+// 未发布到App Store的版本
+#define BJ_DEBUG (!OFFICIAL_RELEASE)
+
+// 当前引导页版本
+#define BJ_GUIDE_PAGE_VERSION 1
+//************************//
+
+#define ENABLE_REQUEST_LOG 0
+
+// color
+#define RGBA_COLOR(r, g, b ,al) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:al]
+#define RGBA_COLOR_HEX(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+//默认图片
+#define HT_DEFAULT_IMAGE [UIImage imageNamed:@"image_default"]
+#define HT_DEFAULT_TEAM_LOGO [UIImage imageNamed:@"img_default_team"]
+
+#define kWeakSelf __weak typeof(self) weakSelf = self;
+
+#ifndef    weakify
+#if __has_feature(objc_arc)
+#define weakify( x )    autoreleasepool{} __weak __typeof__(x) __weak_##x##__ = x;
+#else    // #if __has_feature(objc_arc)
+#define weakify( x )    autoreleasepool{} __block __typeof__(x) __block_##x##__ = x;
+#endif    // #if __has_feature(objc_arc)
+#endif    // #ifndef    weakify
+
+//Log
+#if BJ_DEBUG
+#define BJLog(format, ...) NSLog((@"\n>>>>>>>>>>>>> BJLog: %s [Line %d]\n>>>>>>>>>>>>> " format), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+#define BJLog(format, ...)
+#endif
+
+// screen info
+#define SCREEN_BOUNDS    [[UIScreen mainScreen] bounds]
+#define SCREEN_WIDTH     [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_HEIGHT    [[UIScreen mainScreen] bounds].size.height
+#define SCREEN_SCALE     [UIScreen mainScreen].scale
+#define kWindow [UIApplication sharedApplication].keyWindow
+
+// load storyboard
+#define kLoadStoryboardWithName(name) [UIStoryboard storyboardWithName:name bundle:nil].instantiateInitialViewController;
+#define kLoadXibWithName(name) [[[NSBundle mainBundle] loadNibNamed:name owner:self options:nil] lastObject];
+
+#endif
