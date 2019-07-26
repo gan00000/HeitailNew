@@ -1,0 +1,98 @@
+//
+//  HeiteBasketball.pch
+//  HeiteBasketball
+//
+//  Created by 冯生伟 on 2018/9/8.
+//  Copyright © 2018年 Dean_F. All rights reserved.
+//
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <Masonry/Masonry.h>
+#import <YYModel/YYModel.h>
+#import <HexColors/HexColors.h>
+#import <RegExCategories/RegExCategories.h>
+#import <HMSegmentedControl/HMSegmentedControl.h>
+#import <JXExtension/JXExtension.h>
+#import <LTNavigationBar/UINavigationBar+Awesome.h>
+
+#import "XRRFATKMJRefreshGenerator.h"
+#import "UIView+XRRFATKToast.h"
+#import "UIView+XRRFATKLoading.h"
+#import "UIView+XRRFATKEmptyView.h"
+#import "XRRFATKBJLoadingHud.h"
+#import "NSDate+XRRFATKCore.h"
+#import "NSDateFormatter+XRRFATKDRExtension.h"
+
+#import "XRRFATKHTUserManager.h"
+#import "UITabBar+XRRFATKDRExtension.h"
+#import "UIView+XRRFATKQuickFrame.h"
+#import "XRRFATKPPXXBJViewControllerCenter.h"
+
+//添加混淆作用的头文件（这个文件名是脚本confuse.sh中定义的）
+#import "codeObfuscation.h"
+
+#endif
+
+#ifndef SkyBallPlay_pch
+#define SkyBallPlay_pch
+
+//**********重要***********//
+// 是否向外发布版本(1: 是, 0: 否)
+// 外发版的时候需要改为1
+#define OFFICIAL_RELEASE 0
+
+// 未发布到App Store的版本
+#define BJ_DEBUG (!OFFICIAL_RELEASE)
+
+// 当前引导页版本
+#define BJ_GUIDE_PAGE_VERSION 1
+//************************//
+
+#define ENABLE_REQUEST_LOG 1
+
+// color
+#define RGBA_COLOR(r, g, b ,al) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:al]
+#define RGBA_COLOR_HEX(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+//默认图片
+#define HT_DEFAULT_IMAGE [UIImage imageNamed:@"image_default"]
+#define HT_DEFAULT_TEAM_LOGO [UIImage imageNamed:@"img_default_team"]
+
+#define kWeakSelf __weak typeof(self) weakSelf = self;
+
+#ifndef    weakify
+#if __has_feature(objc_arc)
+#define weakify( x )    autoreleasepool{} __weak __typeof__(x) __weak_##x##__ = x;
+#else    // #if __has_feature(objc_arc)
+#define weakify( x )    autoreleasepool{} __block __typeof__(x) __block_##x##__ = x;
+#endif    // #if __has_feature(objc_arc)
+#endif    // #ifndef    weakify
+
+#ifdef DEBUG // 开发
+#define BJLog(format, ...) NSLog((@"\n[文件名:%s]\n" "[函数名:%s]\n" "[行号:%d]\n" @"[输出:" format@"]"@"\n\n"), __FILE__, __FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else // 发布
+#define BJLog(...);
+#endif
+
+// screen info
+#define SCREEN_BOUNDS    [[UIScreen mainScreen] bounds]
+#define SCREEN_WIDTH     [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_HEIGHT    [[UIScreen mainScreen] bounds].size.height
+#define SCREEN_SCALE     [UIScreen mainScreen].scale
+#define kWindow [UIApplication sharedApplication].keyWindow
+
+// load storyboard
+#define kLoadStoryboardWithName(name) [UIStoryboard storyboardWithName:name bundle:nil].instantiateInitialViewController;
+#define kLoadXibWithName(name) [[[NSBundle mainBundle] loadNibNamed:name owner:self options:nil] lastObject];
+#define kDefaultImage(imageName) [UIImage imageNamed:(imageName)]
+
+#define kDRWindow [UIApplication sharedApplication].keyWindow
+
+static const CGFloat DRGlobalAnimationDuration = 0.25;
+
+#endif

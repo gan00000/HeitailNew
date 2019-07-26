@@ -3,7 +3,7 @@
 TABLENAME=symbols
 SYMBOL_DB_FILE="symbolsdbfile"
 STRING_SYMBOL_FILE="func.list"
-CONFUSE_FILE="$SRCROOT/SkyBetufi/SourceCode"
+CONFUSE_FILE="$SRCROOT/SkyBetufi/SourceCode/SkySrc"
 HEAD_FILE="${SRCROOT}/SkyBetufi/codeObfuscation.h"
 export LC_CTYPE=C
 
