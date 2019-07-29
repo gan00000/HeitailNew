@@ -1,5 +1,5 @@
 //
-//  XRRFATKTZPhotoPickerController+XRRFATKDRExtention.m
+//  XRRFATKTZPhotoPickerController+DRExtention.m
 //  Records
 //
 //  Created by 冯生伟 on 2018/9/7.
@@ -16,7 +16,7 @@
     if (status == AVAuthorizationStatusAuthorized) {
         [self openCamera];
     } else if (status == AVAuthorizationStatusDenied) {
-        [XRRFATKHTUserManager cameraDenied];
+        [XRRFATKHTUserManager skargcameraDenied];
     } else {
         kWeakSelf
         [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {

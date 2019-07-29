@@ -28,7 +28,7 @@
 
 @implementation XRRFATKHTNewsHomeViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"XRRFATKNewsHome");
 }
 
@@ -63,9 +63,9 @@
     if (indexPath.section == 0) {
         kWeakSelf
         XRRFATKHTNewsHomeBannerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XRRFATKHTNewsHomeBannerCell"];
-        [cell setupWithNewsModels:self.bannerList];
+        [cell skargsetupWithNewsModels:self.bannerList];
         cell.onBannerTappedBlock = ^(XRRFATKHTNewsModel *newsModel) {
-            XRRFATKHTNewsDetailViewController *detailVc = [XRRFATKHTNewsDetailViewController viewController];
+            XRRFATKHTNewsDetailViewController *detailVc = [XRRFATKHTNewsDetailViewController skargviewController];
             detailVc.post_id = newsModel.news_id;
             [weakSelf.navigationController pushViewController:detailVc animated:YES];
         };
@@ -73,7 +73,7 @@
     }
     
     XRRFATKHTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XRRFATKHTNewsHomeCell"];
-    [cell setupWithNewsModel:self.newsList[indexPath.row]];
+    [cell skargsetupWithNewsModel:self.newsList[indexPath.row]];
     return cell;
 }
 
@@ -92,7 +92,7 @@
     
     XRRFATKHTNewsModel *newsModel = self.newsList[indexPath.row];
     
-    XRRFATKHTNewsDetailViewController *detailVc = [XRRFATKHTNewsDetailViewController viewController];
+    XRRFATKHTNewsDetailViewController *detailVc = [XRRFATKHTNewsDetailViewController skargviewController];
     detailVc.post_id = newsModel.news_id;
     [self.navigationController pushViewController:detailVc animated:YES];
 }
@@ -173,7 +173,7 @@
     self.newsRequestDone = NO;
     
     kWeakSelf
-    [self.request requestWithSuccessBlock:^(NSArray<XRRFATKHTNewsModel *> *newsList) {
+    [self.request skargrequestWithSuccessBlock:^(NSArray<XRRFATKHTNewsModel *> *newsList) {
         weakSelf.newsList = newsList;
         weakSelf.newsRequestDone = YES;
         [weakSelf refreshUI];
@@ -183,7 +183,7 @@
         [weakSelf refreshUI];
     }];
     
-    [XRRFATKHTNewsBannerRequest requestWithSuccessBlock:^(NSArray<XRRFATKHTNewsModel *> *bannerList) {
+    [XRRFATKHTNewsBannerRequest skargrequestWithSuccessBlock:^(NSArray<XRRFATKHTNewsModel *> *bannerList) {
         weakSelf.bannerList = bannerList;
         weakSelf.bannerRequestDone = YES;
         [weakSelf refreshUI];
@@ -198,7 +198,7 @@
     self.newsRequestDone = NO;
     
     kWeakSelf
-    [self.request loadNextPageWithSuccessBlock:^(NSArray<XRRFATKHTNewsModel *> *newsList) {
+    [self.request skargloadNextPageWithSuccessBlock:^(NSArray<XRRFATKHTNewsModel *> *newsList) {
         weakSelf.newsList = newsList;
         weakSelf.newsRequestDone = YES;
         [weakSelf refreshUI];

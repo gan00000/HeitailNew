@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XRRFATKHTMyMessaageCell : UITableViewCell
 
-- (void)refreshWithMyMessageModel:(XRRFATKHTMyMessageModel *)model;
+- (void)skargrefreshWithMyMessageModel:(XRRFATKHTMyMessageModel *)model;
 
 @end
 

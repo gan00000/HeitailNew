@@ -23,7 +23,7 @@
 
 @implementation XRRFATKHTFilmHomeViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"XRRFATKFilmHome");
 }
 
@@ -49,12 +49,12 @@
     XRRFATKHTNewsModel *model = self.filmList[indexPath.row];
     if ([model.news_type isEqualToString:@"新聞"]) {
         XRRFATKHTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XRRFATKHTNewsHomeCell"];
-        [cell setupWithNewsModel:model];
+        [cell skargsetupWithNewsModel:model];
         return cell;
     }
     
     XRRFATKHTFilmHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XRRFATKHTFilmHomeCell"];
-    [cell setupWithNewsModel:self.filmList[indexPath.row]];
+    [cell skargsetupWithNewsModel:self.filmList[indexPath.row]];
     return cell;
 }
 
@@ -70,7 +70,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     XRRFATKHTNewsModel *newsModel = self.filmList[indexPath.row];
     
-    XRRFATKHTNewsDetailViewController *detailVc = [XRRFATKHTNewsDetailViewController viewController];
+    XRRFATKHTNewsDetailViewController *detailVc = [XRRFATKHTNewsDetailViewController skargviewController];
     detailVc.post_id = newsModel.news_id;
     [self.navigationController pushViewController:detailVc animated:YES];
 }
@@ -139,7 +139,7 @@
 
 - (void)loadData {
     kWeakSelf
-    [self.request requestWithSuccessBlock:^(NSArray<XRRFATKHTNewsModel *> *newsList) {
+    [self.request skargrequestWithSuccessBlock:^(NSArray<XRRFATKHTNewsModel *> *newsList) {
         weakSelf.filmList = newsList;
         [weakSelf refreshUI];
     } errorBlock:^(XRRFATKBJError *error) {

@@ -12,6 +12,6 @@
 @interface XRRFATKHTDataCellTeamView : UIView
 
 + (instancetype)dataCellViewWithFrame:(CGRect)frame addToView:(UIView *)view;
-- (void)setupWithDataModel:(XRRFATKHTDataHomeModel *)dataModel;
+- (void)skargsetupWithDataModel:(XRRFATKHTDataHomeModel *)dataModel;
 
 @end

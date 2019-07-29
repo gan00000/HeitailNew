@@ -31,7 +31,7 @@
     // Configure the view for the selected state
 }
 
-- (void)setupWithNewsModel:(XRRFATKHTNewsModel *)newsModel {
+- (void)skargsetupWithNewsModel:(XRRFATKHTNewsModel *)newsModel {
     self.titleLabel.text = newsModel.title;
     self.timeLabel.text = newsModel.time;
     self.viewCountLabel.text = newsModel.view_count;

@@ -11,7 +11,7 @@
 
 @interface XRRFATKHTDataPlayerLeftCell : UITableViewCell
 
-- (void)refreshWithPlayerModel:(XRRFATKHTDataPlayerRankModel *)playerModel row:(NSInteger)row;
+- (void)skargrefreshWithPlayerModel:(XRRFATKHTDataPlayerRankModel *)playerModel row:(NSInteger)row;
 
 @end
 

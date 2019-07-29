@@ -13,7 +13,7 @@
 
 @interface XRRFATKHTMatchSummaryRequest : NSObject
 
-+ (void)requestSummaryWithGameId:(NSString *)game_id
++ (void)skargrequestSummaryWithGameId:(NSString *)game_id
                     successBlock:(void(^)(XRRFATKHTMatchSummaryModel *summaryModel, XRRFATKHTMatchCompareModel *compareModel))successBlock
                       errorBlock:(BJServiceErrorBlock)errorBlock;
 

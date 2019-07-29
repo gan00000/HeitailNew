@@ -15,7 +15,7 @@
  
  @param block 获取结果回调
  */
-+ (void)getDiskSpaceInfoWithBlock:(void(^)(NSError *error, unsigned long long freeSpace, unsigned long long totalSpace))block {
++ (void)skarggetDiskSpaceInfoWithBlock:(void(^)(NSError *error, unsigned long long freeSpace, unsigned long long totalSpace))block {
     
     NSError *error = nil;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -38,7 +38,7 @@
  @param filePath 文件或文件夹绝对路径
  @param block 获取结果回调
  */
-+ (void)getFileSizeWithPath:(NSString*)filePath
++ (void)skarggetFileSizeWithPath:(NSString*)filePath
                   doneBlock:(void(^)(NSError *error, unsigned long long fileSize))block {
     
     if (!filePath) {
@@ -72,7 +72,7 @@
 /**
  * 获取document目录路径
  */
-+ (NSString *)getDocumentPath {
++ (NSString *)skarggetDocumentPath {
     NSArray *Paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     return [Paths objectAtIndex:0];
 }
@@ -83,7 +83,7 @@
  @param dirName 文件夹名，可以是纯文件夹名称，如User，也可以是相对路径，如User/Audio，也可以是包含Document的绝对路径
  @param block 获取结果回调
  */
-+ (void)getDirectoryInDocumentWithName:(NSString *)dirName
++ (void)skarggetDirectoryInDocumentWithName:(NSString *)dirName
                              doneBlock:(void(^)(BOOL success, NSError *error, NSString *dirPath))block {
     
     if (!dirName) {
@@ -94,7 +94,7 @@
         return;
     }
     
-    NSString *document = [self getDocumentPath];
+    NSString *document = [self skarggetDocumentPath];
     NSString *dirPath = dirName;
     NSError *error = nil;
     
@@ -123,11 +123,11 @@
  为空则表示fileName是在document下
  @param block 获取结果回调
  */
-+ (void)getFilePathWithName:(NSString *)fileName
++ (void)skarggetFilePathWithName:(NSString *)fileName
                       inDir:(NSString *)dirName
                   doneBlock:(void(^)(NSError *error, NSString *filePath))block {
     
-    [self getDirectoryInDocumentWithName:dirName doneBlock:^(BOOL success, NSError *error, NSString *dirPath) {
+    [self skarggetDirectoryInDocumentWithName:dirName doneBlock:^(BOOL success, NSError *error, NSString *dirPath) {
         if (!success) {
             block(error, nil);
         } else {
@@ -142,7 +142,7 @@
  @param dirPath 文件夹绝对路径
  @return 子目录列表
  */
-+ (NSArray *)getSubpathsAtPath:(NSString *)dirPath {
++ (NSArray *)skarggetSubpathsAtPath:(NSString *)dirPath {
     return [[NSFileManager defaultManager] subpathsAtPath:dirPath];
 }
 
@@ -153,7 +153,7 @@
  @param targetPath 文件目标绝对路径
  @param block 移动完成回调
  */
-+ (void)moveFileAtPath:(NSString *)path
++ (void)skargmoveFileAtPath:(NSString *)path
                 toPath:(NSString *)targetPath
              doneBlock:(void(^)(BOOL success, NSError *error))block {
     
@@ -172,7 +172,7 @@
  @param filePath 文件绝对路径
  @return 检查结果
  */
-+ (BOOL)isExistsFileAtPath:(NSString *)filePath {
++ (BOOL)skargisExistsFileAtPath:(NSString *)filePath {
     BOOL isDir;
     BOOL isExists = [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDir];
     return isExists && !isDir;
@@ -184,7 +184,7 @@
  @param folderPath 文件夹绝对路径
  @return 检查结果
  */
-+ (BOOL)isExistsFolderAtPath:(NSString *)folderPath {
++ (BOOL)skargisExistsFolderAtPath:(NSString *)folderPath {
     BOOL isDir;
     BOOL isExists = [[NSFileManager defaultManager] fileExistsAtPath:folderPath isDirectory:&isDir];
     return isExists && isDir;
@@ -196,7 +196,7 @@
  @param filePath 文件或者文件夹绝对路径
  @param block 删除结果回调
  */
-+ (void)deleteFileAtPath:(NSString *)filePath doneBlock:(void(^)(NSString *filePath, BOOL success, NSError *error))block {
++ (void)skargdeleteFileAtPath:(NSString *)filePath doneBlock:(void(^)(NSString *filePath, BOOL success, NSError *error))block {
     
     NSFileManager *manager = [NSFileManager defaultManager];
     if([manager fileExistsAtPath:filePath]) {
@@ -218,7 +218,7 @@
  @param path 文件路径
  @return 文件内容
  */
-+ (NSData *)getDataForPath:(NSString *)path {
++ (NSData *)skarggetDataForPath:(NSString *)path {
     return [[NSFileManager defaultManager] contentsAtPath:path];
 }
 
@@ -230,7 +230,7 @@
  @param image 指定要保存的图片
  @param saveDoneBlock 保存完成回调
  */
-+ (void)saveToDiskWithImage:(UIImage *)image
++ (void)skargsaveToDiskWithImage:(UIImage *)image
               saveDoneBlock:(void(^)(BOOL success, NSError *error))saveDoneBlock {
     // 1. 获取相片库对象
     PHPhotoLibrary *lib = [PHPhotoLibrary sharedPhotoLibrary];

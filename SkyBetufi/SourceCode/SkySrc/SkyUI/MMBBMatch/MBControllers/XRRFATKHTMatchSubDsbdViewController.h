@@ -11,6 +11,6 @@
 
 @interface XRRFATKHTMatchSubDsbdViewController : XRRFATKPPXXBJBaseViewController
 
-- (void)refreshWithDetailList:(NSArray<XRRFATKHTMatchDetailsModel *> *)detailList;
+- (void)skargrefreshWithDetailList:(NSArray<XRRFATKHTMatchDetailsModel *> *)detailList;
 
 @end

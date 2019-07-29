@@ -11,6 +11,6 @@
 
 @interface XRRFATKHTMatchBestPlayerCell : UITableViewCell
 
-- (void)setupWithMatchSummaryModel:(XRRFATKHTMatchSummaryModel *)summaryModel;
+- (void)skargsetupWithMatchSummaryModel:(XRRFATKHTMatchSummaryModel *)summaryModel;
 
 @end

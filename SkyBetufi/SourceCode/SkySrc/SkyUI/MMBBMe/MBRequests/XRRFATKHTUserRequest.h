@@ -17,73 +17,73 @@ typedef void (^HTMyCommentBlock) (NSArray <XRRFATKHTNewsModel *> *newsList, NSIn
 
 @interface XRRFATKHTUserRequest : NSObject
 
-+ (void)doLoginRequestWithAccessToken:(NSString *)accessToken
++ (void)skargdoLoginRequestWithAccessToken:(NSString *)accessToken
                                   sns:(NSInteger)sns
                          successBlock:(void(^)(NSString *userToken))successBlock
                             failBlock:(BJServiceErrorBlock)failBlock;
 
-+ (void)requestUserInfoWithSuccessBlock:(void(^)(NSDictionary *userInfo))successBlock
++ (void)skargrequestUserInfoWithSuccessBlock:(void(^)(NSDictionary *userInfo))successBlock
                               failBlock:(BJServiceErrorBlock)failBlock;
 
-+ (void)updateUserInfoWithEmail:(NSString *)email
++ (void)skargupdateUserInfoWithEmail:(NSString *)email
                     displayName:(NSString *)displayName
                            file:(NSString *)file
                    successBlock:(void(^)(NSDictionary *userInfo))successBlock
                       failBlock:(BJServiceErrorBlock)failBlock;
 
 // 獲取我的收藏
-+ (void)requestCollectionListWithOffset:(NSInteger)offset
++ (void)skargrequestCollectionListWithOffset:(NSInteger)offset
                            successBlock:(HTMyCommentBlock)successBlock
                               failBlock:(BJServiceErrorBlock)failBlock;
 
 // 添加收藏
-+ (void)addCollectionWithNewsId:(NSString *)news_id
++ (void)skargaddCollectionWithNewsId:(NSString *)news_id
                    successBlock:(dispatch_block_t)successBlock
                       failBlock:(BJServiceErrorBlock)failBlock;
 
 // 取消收藏
-+ (void)deleteCollectionWithNewsId:(NSString *)news_id
++ (void)skargdeleteCollectionWithNewsId:(NSString *)news_id
                       successBlock:(dispatch_block_t)successBlock
                          failBlock:(BJServiceErrorBlock)failBlock;
 
 // 獲取瀏覽歷史
-+ (void)requestHistoryWithOffset:(NSInteger)offset
++ (void)skargrequestHistoryWithOffset:(NSInteger)offset
                     successBlock:(HTMyCommentBlock)successBlock
                        failBlock:(BJServiceErrorBlock)failBlock;
 
 // 添加瀏覽歷史
-+ (void)addHistoryWithNewsId:(NSString *)news_id
++ (void)skargaddHistoryWithNewsId:(NSString *)news_id
                 successBlock:(dispatch_block_t)successBlock
                    failBlock:(BJServiceErrorBlock)failBlock;
 
 // 獲取我的留言
-+ (void)requestMyCommentWithOffset:(NSInteger)offset
++ (void)skargrequestMyCommentWithOffset:(NSInteger)offset
                       successBlock:(HTMyCommentBlock)successBlock
                          failBlock:(BJServiceErrorBlock)failBlock;
 
 // 獲取我的點讚
-+ (void)requestMyLikeWithOffset:(NSInteger)offset
++ (void)skargrequestMyLikeWithOffset:(NSInteger)offset
                    successBlock:(HTMyCommentBlock)successBlock
                       failBlock:(BJServiceErrorBlock)failBlock;
 
 // 獲取未讀消息數
-+ (void)requestUnReadMessageCountWithSuccessBlock:(void(^)(NSInteger count))successBlock
++ (void)skargrequestUnReadMessageCountWithSuccessBlock:(void(^)(NSInteger count))successBlock
                                         failBlock:(BJServiceErrorBlock)failBlock;
 
 // 獲取消息通知列表
-+ (void)requestMyMessageWithOffset:(NSInteger)offset
++ (void)skargrequestMyMessageWithOffset:(NSInteger)offset
                       successBlock:(void(^)(NSArray <XRRFATKHTMyMessageModel *> *messageList, NSInteger pages))successBlock
                          failBlock:(BJServiceErrorBlock)failBlock;
 
 // 點讚/取消點讚
-+ (void)likePostWithPostId:(NSString *)post_id
++ (void)skarglikePostWithPostId:(NSString *)post_id
                 comment_id:(NSString *)comment_id
                       like:(BOOL)like
               successBlock:(dispatch_block_t)successBlock
                  failBlock:(BJServiceErrorBlock)failBlock;
 
 // 發表評論
-+ (void)postCommentWithComment_txt:(NSString *)comment_txt
++ (void)skargpostCommentWithComment_txt:(NSString *)comment_txt
                            post_id:(NSString *)post_id
                   reply_comment_id:(NSString *)reply_comment_id
                       successBlock:(dispatch_block_t)successBlock

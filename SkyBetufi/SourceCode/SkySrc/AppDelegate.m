@@ -215,7 +215,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
                                  stringByReplacingOccurrencesOfString:@" " withString:@""];
     if (pushDeviceToken.length) {
         BJLog(@"deviceToken: %@", pushDeviceToken);
-        [XRRFATKHTUserManager saveDeviceToken:pushDeviceToken];
+        [XRRFATKHTUserManager skarg_saveDeviceToken:pushDeviceToken];
     }
 }
 
@@ -228,7 +228,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
         vc = [XRRFATKPPXXBJViewControllerCenter currentViewController];
     }
     
-    XRRFATKHTNewsDetailViewController *detailVc = [XRRFATKHTNewsDetailViewController viewController];
+    XRRFATKHTNewsDetailViewController *detailVc = [XRRFATKHTNewsDetailViewController skargviewController];
     detailVc.post_id = pushInfo[@"postId"];
     
     if (vc.navigationController) {

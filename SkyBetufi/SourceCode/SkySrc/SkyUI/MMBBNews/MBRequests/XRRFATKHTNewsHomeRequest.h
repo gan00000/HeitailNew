@@ -14,10 +14,10 @@
 
 @property (nonatomic, assign) BOOL hasMore;
 
-- (void)requestWithSuccessBlock:(void(^)(NSArray<XRRFATKHTNewsModel *> *newsList))successBlock
+- (void)skargrequestWithSuccessBlock:(void(^)(NSArray<XRRFATKHTNewsModel *> *newsList))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock;
 
-- (void)loadNextPageWithSuccessBlock:(void(^)(NSArray<XRRFATKHTNewsModel *> *newsList))successBlock
+- (void)skargloadNextPageWithSuccessBlock:(void(^)(NSArray<XRRFATKHTNewsModel *> *newsList))successBlock
                           errorBlock:(BJServiceErrorBlock)errorBlock;
 
 @end

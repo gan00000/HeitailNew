@@ -22,7 +22,7 @@
 
 @implementation XRRFATKHTRankEastWestViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"XRRFATKRankEastWest");
 }
 
@@ -45,11 +45,11 @@
     XRRFATKHTRankHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XRRFATKHTRankHomeCell class])];
     switch (indexPath.row) {
         case 0:
-            [cell setupWithTitle:@"東部" rankList:self.eastWestModel.Eastern];
+            [cell skargsetupWithTitle:@"東部" rankList:self.eastWestModel.Eastern];
             break;
             
         case 1:
-            [cell setupWithTitle:@"西部" rankList:self.eastWestModel.Western];
+            [cell skargsetupWithTitle:@"西部" rankList:self.eastWestModel.Western];
             break;
             
         default:
@@ -74,7 +74,7 @@
 
 #pragma mark - private
 - (void)loadData {
-    [XRRFATKHTRankEastWestRequest requestWithSuccessBlock:^(XRRFATKHTRankEastWestModel *eastWestModel) {
+    [XRRFATKHTRankEastWestRequest skargrequestWithSuccessBlock:^(XRRFATKHTRankEastWestModel *eastWestModel) {
         self.eastWestModel = eastWestModel;
         [self refreshUI];
         if (eastWestModel.Eastern.count == 0) {

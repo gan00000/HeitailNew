@@ -46,7 +46,7 @@
     self.rightTableView.frame = CGRectMake(0, 0, 560, self.leftTableView.jx_height);
 }
 
-- (void)setupWithTitle:(NSString *)title rankList:(NSArray<XRRFATKHTRankModel *> *)rankList {
+- (void)skargsetupWithTitle:(NSString *)title rankList:(NSArray<XRRFATKHTRankModel *> *)rankList {
     self.titleLabel.text = title;
     
     self.rankList = rankList;
@@ -112,11 +112,11 @@
     XRRFATKHTRankModel *model = self.rankList[indexPath.row];
     if (tableView == self.leftTableView) {
         XRRFATKHTRankLeftCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XRRFATKHTRankLeftCell class])];
-        [cell refreshWithRankModel:model row:indexPath.row];
+        [cell skargrefreshWithRankModel:model row:indexPath.row];
         return cell;
     }
     XRRFATKHTRankRightCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XRRFATKHTRankRightCell class])];
-    [cell refreshWithRankModel:model row:indexPath.row];
+    [cell skargrefreshWithRankModel:model row:indexPath.row];
     return cell;
 }
 

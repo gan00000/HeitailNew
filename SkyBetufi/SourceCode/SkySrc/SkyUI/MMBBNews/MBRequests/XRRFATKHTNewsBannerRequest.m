@@ -10,7 +10,7 @@
 
 @implementation XRRFATKHTNewsBannerRequest
 
-+ (void)requestWithSuccessBlock:(void(^)(NSArray<XRRFATKHTNewsModel*> *bannerList))successBlock
++ (void)skargrequestWithSuccessBlock:(void(^)(NSArray<XRRFATKHTNewsModel*> *bannerList))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock {
     
     [XRRFATKBJHTTPServiceEngine getRequestWithFunctionPath:API_NEWS_BANNER params:nil successBlock:^(id responseData) {

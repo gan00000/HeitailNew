@@ -45,7 +45,7 @@
     // Configure the view for the selected state
 }
 
-- (void)setupWithMatchSummaryModel:(XRRFATKHTMatchSummaryModel *)summaryModel {
+- (void)skargsetupWithMatchSummaryModel:(XRRFATKHTMatchSummaryModel *)summaryModel {
     self.homePtsLabel.text = summaryModel.home_pts;
     self.homeRebLabel.text = summaryModel.home_team_reb;
     self.homeAstLabel.text = summaryModel.home_team_ast;

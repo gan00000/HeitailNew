@@ -28,7 +28,7 @@
     
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    if ([XRRFATKHTNewsModel canShare]) {
+    if ([XRRFATKHTNewsModel skargcanShare]) {
         self.shareButtonContentView.hidden = NO;
     }
 }
@@ -39,7 +39,7 @@
     // Configure the view for the selected state
 }
 
-- (void)setupWithNewsModel:(XRRFATKHTNewsModel *)newsModel {
+- (void)skargsetupWithNewsModel:(XRRFATKHTNewsModel *)newsModel {
     self.newsModel = newsModel;
     [self.thumbImageView sd_setImageWithURL:[NSURL URLWithString:newsModel.img_url] placeholderImage:HT_DEFAULT_IMAGE];
     self.titleLabel.text = newsModel.title;
@@ -51,7 +51,7 @@
 }
 
 - (IBAction)onShareButtonTapped:(id)sender {
-    [self.newsModel share];
+    [self.newsModel skargshare];
 }
 
 @end

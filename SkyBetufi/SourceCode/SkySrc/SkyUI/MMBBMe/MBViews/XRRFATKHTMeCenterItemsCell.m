@@ -23,8 +23,8 @@
 }
 
 - (IBAction)onItemAction:(UIButton *)sender {
-    if (![XRRFATKHTUserManager isUserLogin]) {
-        [XRRFATKHTUserManager doUserLogin];
+    if (![XRRFATKHTUserManager skarg_isUserLogin]) {
+        [XRRFATKHTUserManager skarg_doUserLogin];
         return;
     }
     if (self.onItemTappedBlock) {

@@ -32,12 +32,12 @@
     // Configure the view for the selected state
 }
 
-- (void)refreshUI {
-    if ([XRRFATKHTUserManager isUserLogin]) {
+- (void)skarg_refreshUI {
+    if ([XRRFATKHTUserManager skarg_isUserLogin]) {
         self.userInfoContentView.hidden = NO;
         self.loginButton.hidden = YES;
-        self.avatarImageView.image = [XRRFATKHTUserManager userInfo].avatar;
-        self.userNameLabel.text = [XRRFATKHTUserManager userInfo].display_name;
+        self.avatarImageView.image = [XRRFATKHTUserManager skarg_userInfo].avatar;
+        self.userNameLabel.text = [XRRFATKHTUserManager skarg_userInfo].display_name;
     } else {
         self.userInfoContentView.hidden = YES;
         self.loginButton.hidden = NO;
@@ -45,7 +45,7 @@
 }
 
 - (IBAction)loginAction:(id)sender {
-    [XRRFATKHTUserManager doUserLogin];
+    [XRRFATKHTUserManager skarg_doUserLogin];
 }
 
 

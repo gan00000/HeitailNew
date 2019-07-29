@@ -10,7 +10,7 @@
 
 @implementation XRRFATKHTMatchHomeRequest
 
-+ (void)requestWithStartDate:(NSString *)startDate
++ (void)skargrequestWithStartDate:(NSString *)startDate
                      endDate:(NSString *)endDate
                 successBlock:(void(^)(NSArray<XRRFATKHTMatchHomeGroupModel *> *matchList))successBlock
                   errorBlock:(BJServiceErrorBlock)errorBlock {
@@ -45,7 +45,7 @@
     } errorBlock:errorBlock];
 }
 
-+ (void)requestMatchProgressWithGameId:(NSString *)game_id
++ (void)skargrequestMatchProgressWithGameId:(NSString *)game_id
                           successBlock:(void(^)(NSString *game_id, NSString *quarter, NSString *time))successBlock
                             errorBlock:(BJServiceErrorBlock)errorBlock {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];

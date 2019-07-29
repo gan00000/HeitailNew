@@ -61,6 +61,6 @@
 @property (nonatomic, assign) CGFloat score;
 @property (nonatomic, assign) CGFloat pts;
 
-- (void)imageUrlFixWithWidth:(NSInteger)width;
+- (void)skargimageUrlFixWithWidth:(NSInteger)width;
 
 @end

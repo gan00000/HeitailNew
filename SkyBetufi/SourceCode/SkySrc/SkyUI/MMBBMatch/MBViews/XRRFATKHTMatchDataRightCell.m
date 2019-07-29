@@ -43,7 +43,7 @@
     // Configure the view for the selected state
 }
 
-- (void)refreshWithModel:(XRRFATKHTMatchDetailsModel *)model row:(NSInteger)row {
+- (void)skargrefreshWithModel:(XRRFATKHTMatchDetailsModel *)model row:(NSInteger)row {
     self.positionLabel.text = model.position;
     self.timeLabel.text = model.time;
     self.ptsLabel.text = model.pts;

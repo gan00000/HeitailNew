@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XRRFATKHTMyCommentCell : UITableViewCell
 
-- (void)setupWithNewsModel:(XRRFATKHTNewsModel *)newsModel;
+- (void)skargsetupWithNewsModel:(XRRFATKHTNewsModel *)newsModel;
 
 @end
 

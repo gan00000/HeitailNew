@@ -36,7 +36,7 @@
 
 @implementation XRRFATKHTMatchHomeViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"XRRFATKMatchHome");
 }
 
@@ -75,7 +75,7 @@
 
 - (IBAction)onSelectDateButtonTapped:(id)sender {
     kWeakSelf
-    [XRRFATKHTDatePickerView showWithWithDate:self.startDate didTapEnterBlock:^BOOL(NSDate *date) {
+    [XRRFATKHTDatePickerView skargshowWithWithDate:self.startDate didTapEnterBlock:^BOOL(NSDate *date) {
         weakSelf.startDate = date;
         [XRRFATKBJLoadingHud showHUDInView:weakSelf.view];
         return YES;
@@ -95,7 +95,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     XRRFATKHTMatchHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XRRFATKHTMatchHomeCell"];
     XRRFATKHTMatchHomeGroupModel *groupModel = self.matchList[indexPath.section];
-    [cell setupWithMatchModel:groupModel.matchList[indexPath.row]];
+    [cell skargsetupWithMatchModel:groupModel.matchList[indexPath.row]];
     return cell;
 }
 
@@ -103,7 +103,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     XRRFATKHTMatchHomeGroupModel *groupModel = self.matchList[indexPath.section];
     
-    XRRFATKHTMatchDetailViewController *detailVc = [XRRFATKHTMatchDetailViewController viewController];
+    XRRFATKHTMatchDetailViewController *detailVc = [XRRFATKHTMatchDetailViewController skargviewController];
     detailVc.matchModel = groupModel.matchList[indexPath.row];
     [self.navigationController pushViewController:detailVc animated:YES];
 }
@@ -236,7 +236,7 @@
     }
     
     self.requesting = YES;
-    [XRRFATKHTMatchHomeRequest requestWithStartDate:[self ymdWithDate:self.startDate]
+    [XRRFATKHTMatchHomeRequest skargrequestWithStartDate:[self ymdWithDate:self.startDate]
                                      endDate:[self ymdWithDate:self.endDate]
                                 successBlock:^(NSArray<XRRFATKHTMatchHomeGroupModel *> *matchList) {
                                     self.matchList = matchList;
@@ -257,7 +257,7 @@
                                             [self refreshUI];
                                         } else {
                                             for (XRRFATKHTMatchHomeModel *model in self.inProgressMatchs.allValues) {
-                                                [XRRFATKHTMatchHomeRequest requestMatchProgressWithGameId:model.game_id successBlock:^(NSString *game_id, NSString *quarter, NSString *time) {
+                                                [XRRFATKHTMatchHomeRequest skargrequestMatchProgressWithGameId:model.game_id successBlock:^(NSString *game_id, NSString *quarter, NSString *time) {
                                                     XRRFATKHTMatchHomeModel *matchModel = [self.inProgressMatchs objectForKey:game_id];
                                                     matchModel.quarter = [NSString stringWithFormat:@"第%@節", quarter];
                                                     matchModel.quarter_time = time;

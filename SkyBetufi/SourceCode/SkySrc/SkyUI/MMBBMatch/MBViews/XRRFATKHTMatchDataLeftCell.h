@@ -10,6 +10,6 @@
 
 @interface XRRFATKHTMatchDataLeftCell : UITableViewCell
 
-- (void)refreshWithName:(NSString *)name row:(NSInteger)row;
+- (void)skargrefreshWithName:(NSString *)name row:(NSInteger)row;
 
 @end

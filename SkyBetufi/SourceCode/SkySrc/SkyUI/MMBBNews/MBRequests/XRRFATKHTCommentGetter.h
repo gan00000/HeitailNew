@@ -19,8 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithPostId:(NSString *)post_id;
 
-- (void)doRequestWithCompleteBlock:(dispatch_block_t)commentBlock;
-- (void)reset;
+- (void)skargdoRequestWithCompleteBlock:(dispatch_block_t)commentBlock;
+- (void)skargreset;
 
 @end
 

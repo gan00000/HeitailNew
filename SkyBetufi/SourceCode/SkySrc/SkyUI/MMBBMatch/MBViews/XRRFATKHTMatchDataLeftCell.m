@@ -29,7 +29,7 @@
     // Configure the view for the selected state
 }
 
-- (void)refreshWithName:(NSString *)name row:(NSInteger)row {
+- (void)skargrefreshWithName:(NSString *)name row:(NSInteger)row {
     self.nameLabel.text = name;
     
     self.contentView.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"FFFFFF"];

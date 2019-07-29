@@ -18,7 +18,7 @@
 
 @implementation XRRFATKHTMatchWordLiveViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"XRRFATKMatchWordLive");
 }
 
@@ -37,7 +37,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)refreshWithLiveFeedList:(NSArray<XRRFATKHTMatchLiveFeedModel *> *)liveFeedList {
+- (void)skargrefreshWithLiveFeedList:(NSArray<XRRFATKHTMatchLiveFeedModel *> *)liveFeedList {
     [self.tableView.mj_header endRefreshing];
     self.liveFeedList = liveFeedList;
     [self.tableView reloadData];
@@ -73,7 +73,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     XRRFATKHTMatchLiveFeedCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XRRFATKHTMatchLiveFeedCell class])];
-    [cell setupWithMatchLiveFeedModel:self.liveFeedList[indexPath.row]];
+    [cell skargsetupWithMatchLiveFeedModel:self.liveFeedList[indexPath.row]];
     return cell;
 }
 

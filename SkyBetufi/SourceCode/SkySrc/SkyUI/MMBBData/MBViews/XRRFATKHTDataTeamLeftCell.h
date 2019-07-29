@@ -11,6 +11,6 @@
 
 @interface XRRFATKHTDataTeamLeftCell : UITableViewCell
 
-- (void)refreshWithTeamModel:(XRRFATKHTDataTeamRankModel *)teamModel row:(NSInteger)row;
+- (void)skargrefreshWithTeamModel:(XRRFATKHTDataTeamRankModel *)teamModel row:(NSInteger)row;
 
 @end

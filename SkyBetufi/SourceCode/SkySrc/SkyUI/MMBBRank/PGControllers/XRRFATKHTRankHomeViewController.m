@@ -25,7 +25,7 @@
 
 @implementation XRRFATKHTRankHomeViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"XRRFATKRankHome");
 }
 
@@ -90,10 +90,10 @@
     
     UIViewController *vc;
     if (index == 0) {
-        XRRFATKHTRankEastWestViewController *ewVc = [XRRFATKHTRankEastWestViewController viewController];
+        XRRFATKHTRankEastWestViewController *ewVc = [XRRFATKHTRankEastWestViewController skargviewController];
         vc = ewVc;
     } else if (index == 1) {
-        XRRFATKHTRankZoneViewController *zoneVc = [XRRFATKHTRankZoneViewController viewController];
+        XRRFATKHTRankZoneViewController *zoneVc = [XRRFATKHTRankZoneViewController skargviewController];
         vc = zoneVc;
     }
     [self addChildViewController:vc];

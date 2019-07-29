@@ -22,7 +22,7 @@
 
 @implementation XRRFATKHTLikeViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return [[XRRFATKHTLikeViewController alloc] init];
 }
 
@@ -38,9 +38,9 @@
 }
 
 - (void)loadData {
-    [XRRFATKHTUserRequest requestMyLikeWithOffset:self.offset successBlock:^(NSArray<XRRFATKHTNewsModel *> * _Nonnull newsList, NSInteger pages) {
+    [XRRFATKHTUserRequest skargrequestMyLikeWithOffset:self.offset successBlock:^(NSArray<XRRFATKHTNewsModel *> * _Nonnull newsList, NSInteger pages) {
         for (XRRFATKHTNewsModel *model in newsList) {
-            [model countCommentHeight];
+            [model skargcountCommentHeight];
         }
         [self.dataSource addObjectsFromArray:newsList];
         [self.tableView reloadData];
@@ -113,14 +113,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     XRRFATKHTMyCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XRRFATKHTMyCommentCell"];
-    [cell setupWithNewsModel:self.dataSource[indexPath.row]];
+    [cell skargsetupWithNewsModel:self.dataSource[indexPath.row]];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     XRRFATKHTNewsModel *newsModel = self.dataSource[indexPath.row];
     
-    XRRFATKHTNewsDetailViewController *detailVc = [XRRFATKHTNewsDetailViewController viewController];
+    XRRFATKHTNewsDetailViewController *detailVc = [XRRFATKHTNewsDetailViewController skargviewController];
     detailVc.post_id = newsModel.news_id;
     [self.navigationController pushViewController:detailVc animated:YES];
 }

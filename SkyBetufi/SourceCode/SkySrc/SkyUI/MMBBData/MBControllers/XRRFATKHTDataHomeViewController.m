@@ -23,7 +23,7 @@
 
 @implementation XRRFATKHTDataHomeViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"XRRFATKDataHome");
 }
 
@@ -81,7 +81,7 @@
         return;
     }
     
-    XRRFATKHTDataHomeSubViewController *vc = [XRRFATKHTDataHomeSubViewController viewController];
+    XRRFATKHTDataHomeSubViewController *vc = [XRRFATKHTDataHomeSubViewController skargviewController];
     vc.type = index + 1;
     [self addChildViewController:vc];
     [self.containerView addSubview:vc.view];

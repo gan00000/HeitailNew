@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XRRFATKHTMeCenterHeaderCell : UITableViewCell
 
-- (void)refreshUI;
+- (void)skarg_refreshUI;
 
 @end
 

@@ -13,7 +13,7 @@
 
 @interface XRRFATKHTDataAllRankRequest : NSObject
 
-+ (void)requestAllTeamRankDataWithType:(NSString *)type
++ (void)skargrequestAllTeamRankDataWithType:(NSString *)type
                           successBlock:(void(^)(NSArray<XRRFATKHTDataTeamRankModel *> *allTeamRankList))successBlock
                             errorBlock:(BJServiceErrorBlock)errorBlock;
 

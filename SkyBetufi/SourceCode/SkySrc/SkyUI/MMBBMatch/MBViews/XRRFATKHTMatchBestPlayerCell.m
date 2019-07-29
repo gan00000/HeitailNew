@@ -48,7 +48,7 @@
     // Configure the view for the selected state
 }
 
-- (void)setupWithMatchSummaryModel:(XRRFATKHTMatchSummaryModel *)summaryModel {
+- (void)skargsetupWithMatchSummaryModel:(XRRFATKHTMatchSummaryModel *)summaryModel {
     self.homePtsLabel.text = summaryModel.home_team_pts_most.pts.length > 0 ? summaryModel.home_team_pts_most.pts : @"0";
     self.homePtsPlayerLabel.text = summaryModel.home_team_pts_most.name.length > 0 ? summaryModel.home_team_pts_most.name : @"";
     self.homePtsPlaceLabel.text = [NSString stringWithFormat:@"位置：%@", summaryModel.home_team_pts_most.position.length > 0?summaryModel.home_team_pts_most.position : @""];

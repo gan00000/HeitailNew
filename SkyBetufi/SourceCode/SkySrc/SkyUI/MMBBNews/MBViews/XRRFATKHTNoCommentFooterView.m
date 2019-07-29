@@ -10,7 +10,7 @@
 
 @implementation XRRFATKHTNoCommentFooterView
 
-+ (instancetype)footerViewWithFrame:(CGRect)frame {
++ (instancetype)skargfooterViewWithFrame:(CGRect)frame {
     XRRFATKHTNoCommentFooterView *footerView = kLoadXibWithName(NSStringFromClass([XRRFATKHTNoCommentFooterView class]));
     footerView.frame = frame;
     return footerView;

@@ -17,9 +17,9 @@ typedef NS_ENUM(NSInteger, HTLoginPlatform) {
 
 @interface XRRFATKHTLoginAlertView : UIView
     
-+ (void)showLoginAlertViewWithSelectBlock:(void(^)(HTLoginPlatform platform))block;
++ (void)skargshowLoginAlertViewWithSelectBlock:(void(^)(HTLoginPlatform platform))block;
 
-+ (void)showShareAlertViewWithSelectBlock:(void(^)(HTLoginPlatform platform))block;
++ (void)skargshowShareAlertViewWithSelectBlock:(void(^)(HTLoginPlatform platform))block;
 
 @end
 

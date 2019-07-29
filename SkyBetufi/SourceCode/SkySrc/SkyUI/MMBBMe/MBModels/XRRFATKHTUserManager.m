@@ -20,7 +20,7 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 @interface XRRFATKHTUserManager () <LineSDKLoginDelegate>
 
 @property (nonatomic, strong) XRRFATKHTUserInfoModel *userInfoModel;
-@property (nonatomic, strong) FBSDKLoginManager *fbLoginManager;
+@property (nonatomic, strong) FBSDKLoginManager *skarg_fbLoginManager;
 
 @end
 
@@ -29,8 +29,8 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 - (instancetype)init {
     self = [super init];
     if (self) {
-        if ([XRRFATKHTUserManager isUserLogin]) {
-            NSData *data = [NSData dataWithContentsOfFile:[XRRFATKHTUserManager userInfoPath]];
+        if ([XRRFATKHTUserManager skarg_isUserLogin]) {
+            NSData *data = [NSData dataWithContentsOfFile:[XRRFATKHTUserManager skarguserInfoPath]];
             self.userInfoModel = [XRRFATKHTUserInfoModel yy_modelWithJSON:data];
         }
     }
@@ -46,11 +46,11 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
     return manager;
 }
 
-+ (BOOL)isUserLogin {
-    return [XRRFATKHTUserManager userToken].length > 0;
++ (BOOL)skarg_isUserLogin {
+    return [XRRFATKHTUserManager skarg_userToken].length > 0;
 }
 
-+ (XRRFATKHTUserInfoModel *)userInfo {
++ (XRRFATKHTUserInfoModel *)skarg_userInfo {
     return [XRRFATKHTUserManager manager].userInfoModel;
 }
 
@@ -58,12 +58,12 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
     XRRFATKHTUserManager *manager = [XRRFATKHTUserManager manager];
     manager.userInfoModel = [XRRFATKHTUserInfoModel yy_modelWithJSON:userInfo];
     NSData *data = [userInfo yy_modelToJSONData];
-    [data writeToFile:[XRRFATKHTUserManager userInfoPath] atomically:YES];
+    [data writeToFile:[XRRFATKHTUserManager skarguserInfoPath] atomically:YES];
     [[NSNotificationCenter defaultCenter] postNotificationName:kUserLogStatusChagneNotice object:nil];
 }
 
 // token
-+ (NSString *)userToken {
++ (NSString *)skarg_userToken {
     return [[NSUserDefaults standardUserDefaults] objectForKey:kUserTokenKey];
 }
 
@@ -73,18 +73,18 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 }
 
 // 推送deviceToken
-+ (NSString *)deviceToken {
++ (NSString *)skarg_deviceToken {
     return [[NSUserDefaults standardUserDefaults] objectForKey:kDeviceTokenKey];
 }
 
-+ (void)saveDeviceToken:(NSString *)deviceToken {
++ (void)skarg_saveDeviceToken:(NSString *)deviceToken {
     [[NSUserDefaults standardUserDefaults] setObject:deviceToken forKey:kDeviceTokenKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 // 执行用户登录
-+ (void)doUserLogin {
-    [XRRFATKHTLoginAlertView showLoginAlertViewWithSelectBlock:^(HTLoginPlatform platform) {
++ (void)skarg_doUserLogin {
+    [XRRFATKHTLoginAlertView skargshowLoginAlertViewWithSelectBlock:^(HTLoginPlatform platform) {
         XRRFATKHTUserManager *manager = [XRRFATKHTUserManager manager];
         if (platform == HTLoginPlatformFB) {
             [manager getAuthWithUserInfoFromFacebook];
@@ -94,19 +94,19 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
     }];
 }
 
-+ (void)doUserLogout {
++ (void)skarg_doUserLogout {
     [self saveUserToken:nil];
-    [XRRFATKDRSandBoxManager deleteFileAtPath:[self userInfoPath] doneBlock:^(NSString * _Nonnull filePath, BOOL success, NSError * _Nonnull error) {
+    [XRRFATKDRSandBoxManager skargdeleteFileAtPath:[self skarguserInfoPath] doneBlock:^(NSString * _Nonnull filePath, BOOL success, NSError * _Nonnull error) {
         BJLog(@"用戶信息刪除 %d", success);
     }];
     [[NSNotificationCenter defaultCenter] postNotificationName:kUserLogStatusChagneNotice object:nil];
-    [[XRRFATKHTUserManager manager].fbLoginManager logOut];
+    [[XRRFATKHTUserManager manager].skarg_fbLoginManager logOut];
 }
 
 #pragma mark - Facebook Authory
 - (void)getAuthWithUserInfoFromFacebook {
     kWeakSelf
-    [self.fbLoginManager logInWithReadPermissions: @[@"public_profile",@"email"] fromViewController:[XRRFATKPPXXBJViewControllerCenter currentViewController] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+    [self.skarg_fbLoginManager logInWithReadPermissions: @[@"public_profile",@"email"] fromViewController:[XRRFATKPPXXBJViewControllerCenter currentViewController] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
          if (error) {
              [kWindow showToast:@"登錄失敗"];
          } else if (result.isCancelled) {
@@ -132,16 +132,16 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 
 #pragma mark - request
 - (void)doLoginRequesWithAccessToken:(NSString *)accessToken sns:(NSInteger)sns {
-    [XRRFATKHTUserRequest doLoginRequestWithAccessToken:accessToken sns:sns successBlock:^(NSString * _Nonnull userToken) {
+    [XRRFATKHTUserRequest skargdoLoginRequestWithAccessToken:accessToken sns:sns successBlock:^(NSString * _Nonnull userToken) {
         [XRRFATKHTUserManager saveUserToken:userToken];
-        [XRRFATKHTUserManager refreshUserInfoWithSuccessBlock:nil];
+        [XRRFATKHTUserManager skarg_refreshUserInfoWithSuccessBlock:nil];
     } failBlock:^(XRRFATKBJError *error) {
         BJLog(@"登錄失敗");
     }];
 }
 
-+ (void)refreshUserInfoWithSuccessBlock:(dispatch_block_t)block {
-    [XRRFATKHTUserRequest requestUserInfoWithSuccessBlock:^(NSDictionary * _Nonnull userInfo) {
++ (void)skarg_refreshUserInfoWithSuccessBlock:(dispatch_block_t)block {
+    [XRRFATKHTUserRequest skargrequestUserInfoWithSuccessBlock:^(NSDictionary * _Nonnull userInfo) {
         [self saveUserInfo:userInfo];
         if (block) {
             block();
@@ -152,23 +152,23 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 }
 
 #pragma mark - util
-+ (NSString *)userInfoPath {
-    return [NSString stringWithFormat:@"%@/userInfo.json", [XRRFATKDRSandBoxManager getDocumentPath]];
++ (NSString *)skarguserInfoPath {
+    return [NSString stringWithFormat:@"%@/userInfo.json", [XRRFATKDRSandBoxManager skarggetDocumentPath]];
 }
 
-+ (void)cameraDenied {
-    [self showAlertWithTitle:@"相機權限未開啟" message:@"檢測到相機被禁用，無法拍照" cancelButton:@"取消" confirmButton:@"去開啟" confirmBlock:^{
-        [self goSystemSettingCenter];
++ (void)skargcameraDenied {
+    [self skarg_showAlertWithTitle:@"相機權限未開啟" message:@"檢測到相機被禁用，無法拍照" cancelButton:@"取消" confirmButton:@"去開啟" confirmBlock:^{
+        [self skarg_goSystemSettingCenter];
     }];
 }
 
-+ (void)photoAlbumDenied {
-    [self showAlertWithTitle:@"相冊權限未開啟" message:@"檢測到相冊被禁用，無法查看照片" cancelButton:@"取消" confirmButton:@"去開啟" confirmBlock:^{
-        [self goSystemSettingCenter];
++ (void)skargphotoAlbumDenied {
+    [self skarg_showAlertWithTitle:@"相冊權限未開啟" message:@"檢測到相冊被禁用，無法查看照片" cancelButton:@"取消" confirmButton:@"去開啟" confirmBlock:^{
+        [self skarg_goSystemSettingCenter];
     }];
 }
 
-+ (void)showAlertWithTitle:(NSString *)title message:(NSString *)message cancelButton:(NSString *)cancelButton confirmButton:(NSString *)confirmButton confirmBlock:(dispatch_block_t)confirmBlock {
++ (void)skarg_showAlertWithTitle:(NSString *)title message:(NSString *)message cancelButton:(NSString *)cancelButton confirmButton:(NSString *)confirmButton confirmBlock:(dispatch_block_t)confirmBlock {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelButton style:UIAlertActionStyleCancel handler:nil];
     [alert addAction:cancelAction];
@@ -184,16 +184,16 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
     [[XRRFATKPPXXBJViewControllerCenter currentViewController] presentViewController:alert animated:YES completion:nil];
 }
 
-+ (void)goSystemSettingCenter {
++ (void)skarg_goSystemSettingCenter {
     NSURL *appSettings = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
     [[UIApplication sharedApplication] openURL:appSettings];
 }
 
-- (FBSDKLoginManager *)fbLoginManager {
-    if (!_fbLoginManager) {
-        _fbLoginManager = [[FBSDKLoginManager alloc] init];
+- (FBSDKLoginManager *)skarg_fbLoginManager {
+    if (!_skarg_fbLoginManager) {
+        _skarg_fbLoginManager = [[FBSDKLoginManager alloc] init];
     }
-    return _fbLoginManager;
+    return _skarg_fbLoginManager;
 }
 
 @end

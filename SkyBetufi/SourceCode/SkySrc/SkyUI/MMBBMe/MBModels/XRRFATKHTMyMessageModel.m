@@ -10,7 +10,7 @@
 
 @implementation XRRFATKHTMyMessageModel
 
-- (void)countHeight {
+- (void)skarg_countHeight {
     if ([self.type isEqualToString:@"like"]) {
         _desc = [NSString stringWithFormat:@"%@點讚了你的評論：%@", self.display_name, self.comment_content];
         _cellHeight = 105;

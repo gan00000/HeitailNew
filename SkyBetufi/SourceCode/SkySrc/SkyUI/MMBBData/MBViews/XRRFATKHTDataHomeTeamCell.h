@@ -11,6 +11,6 @@
 
 @interface XRRFATKHTDataHomeTeamCell : UITableViewCell
 
-- (void)setupWithDatas:(NSArray<XRRFATKHTDataHomeModel *> *)datas;
+- (void)skargsetupWithDatas:(NSArray<XRRFATKHTDataHomeModel *> *)datas;
 
 @end

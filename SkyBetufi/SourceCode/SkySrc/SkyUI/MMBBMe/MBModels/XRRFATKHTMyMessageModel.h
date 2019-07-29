@@ -47,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *desc;
 @property (nonatomic, strong) NSDate *date;
 
-- (void)countHeight;
+- (void)skarg_countHeight;
 
 
 @end

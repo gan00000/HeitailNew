@@ -11,7 +11,7 @@
 
 @implementation XRRFATKHTDataHomeModel
 
-- (void)imageUrlFixWithWidth:(NSInteger)width {
+- (void)skargimageUrlFixWithWidth:(NSInteger)width {
     if (!_html_team_logo) {
         _html_team_logo = @"";
         if ([RX(@".svg$") isMatch:self.team_logo]) {

@@ -45,8 +45,8 @@
                       successBlock:(BJServiceSuccessBlock)successBlock
                         errorBlock:(BJServiceErrorBlock)errorBlock {
     NSMutableDictionary *allParams = [NSMutableDictionary dictionary];
-    if ([XRRFATKHTUserManager isUserLogin]) {
-        allParams[@"token"] = [XRRFATKHTUserManager userToken];
+    if ([XRRFATKHTUserManager skarg_isUserLogin]) {
+        allParams[@"token"] = [XRRFATKHTUserManager skarg_userToken];
     }
     if (params) {
         [allParams addEntriesFromDictionary:params];
@@ -89,8 +89,8 @@
                        successBlock:(BJServiceSuccessBlock)successBlock
                          errorBlock:(BJServiceErrorBlock)errorBlock {
     NSMutableDictionary *allParams = [NSMutableDictionary dictionary];
-    if ([XRRFATKHTUserManager isUserLogin]) {
-        allParams[@"token"] = [XRRFATKHTUserManager userToken];
+    if ([XRRFATKHTUserManager skarg_isUserLogin]) {
+        allParams[@"token"] = [XRRFATKHTUserManager skarg_userToken];
     }
     if (params) {
         [allParams addEntriesFromDictionary:params];

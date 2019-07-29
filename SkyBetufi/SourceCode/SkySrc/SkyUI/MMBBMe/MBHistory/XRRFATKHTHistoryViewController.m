@@ -22,7 +22,7 @@
 
 @implementation XRRFATKHTHistoryViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return [[XRRFATKHTHistoryViewController alloc] init];
 }
 
@@ -38,7 +38,7 @@
 }
 
 - (void)loadData {
-    [XRRFATKHTUserRequest requestHistoryWithOffset:self.offset successBlock:^(NSArray<XRRFATKHTNewsModel *> * _Nonnull newsList, NSInteger pages) {
+    [XRRFATKHTUserRequest skargrequestHistoryWithOffset:self.offset successBlock:^(NSArray<XRRFATKHTNewsModel *> * _Nonnull newsList, NSInteger pages) {
         [self.dataSource addObjectsFromArray:newsList];
         [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];
@@ -109,14 +109,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     XRRFATKHTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XRRFATKHTNewsHomeCell"];
-    [cell setupWithNewsModel:self.dataSource[indexPath.row]];
+    [cell skargsetupWithNewsModel:self.dataSource[indexPath.row]];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     XRRFATKHTNewsModel *newsModel = self.dataSource[indexPath.row];
     
-    XRRFATKHTNewsDetailViewController *detailVc = [XRRFATKHTNewsDetailViewController viewController];
+    XRRFATKHTNewsDetailViewController *detailVc = [XRRFATKHTNewsDetailViewController skargviewController];
     detailVc.post_id = newsModel.news_id;
     [self.navigationController pushViewController:detailVc animated:YES];
 }

@@ -17,10 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
         
-    NSArray<UIViewController *> *tabControllers = [self tabBarControllers];
-    NSArray<UIImage *> *icons = [self tabBarIcons];
-    NSArray<UIImage *> *selIcons = [self tabBarSelectedIcons];
-    NSArray<NSString *> *titles = [self tabBarTitles];
+    NSArray<UIViewController *> *tabControllers = [self skargtabBarControllers];
+    NSArray<UIImage *> *icons = [self skargtabBarIcons];
+    NSArray<UIImage *> *selIcons = [self skargtabBarSelectedIcons];
+    NSArray<NSString *> *titles = [self skargtabBarTitles];
     
     for (int i = 0; i < tabControllers.count; i++) {
         
@@ -65,19 +65,19 @@
 
 
 #pragma mark -
-- (NSArray<UIImage *> *)tabBarIcons {
+- (NSArray<UIImage *> *)skargtabBarIcons {
     return nil;
 }
 
-- (NSArray<UIImage *> *)tabBarSelectedIcons {
+- (NSArray<UIImage *> *)skargtabBarSelectedIcons {
     return nil;
 }
 
-- (NSArray<NSString *> *)tabBarTitles {
+- (NSArray<NSString *> *)skargtabBarTitles {
     return nil;
 }
 
-- (NSArray<UIViewController *> *)tabBarControllers {
+- (NSArray<UIViewController *> *)skargtabBarControllers {
     return nil;
 }
 

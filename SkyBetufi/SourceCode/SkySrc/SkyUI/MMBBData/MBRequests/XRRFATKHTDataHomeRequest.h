@@ -12,7 +12,7 @@
 
 @interface XRRFATKHTDataHomeRequest : NSObject
 
-+ (void)requestWithType:(NSInteger)type successBlock:(void(^)(XRRFATKHTDataHomeInfoModel *infoModel))successBlock errorBlock:(BJServiceErrorBlock)errorBlock;
++ (void)skargrequestWithType:(NSInteger)type successBlock:(void(^)(XRRFATKHTDataHomeInfoModel *infoModel))successBlock errorBlock:(BJServiceErrorBlock)errorBlock;
 
 
 

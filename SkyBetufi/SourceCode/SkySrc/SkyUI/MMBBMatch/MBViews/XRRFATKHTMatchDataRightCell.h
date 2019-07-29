@@ -11,6 +11,6 @@
 
 @interface XRRFATKHTMatchDataRightCell : UITableViewCell
 
-- (void)refreshWithModel:(XRRFATKHTMatchDetailsModel *)model row:(NSInteger)row;
+- (void)skargrefreshWithModel:(XRRFATKHTMatchDetailsModel *)model row:(NSInteger)row;
 
 @end

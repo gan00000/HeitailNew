@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL isReply;
 @property (nonatomic, assign) BOOL expend; // 展开
 
-- (void)countHeight:(BOOL)isReply;
+- (void)skargcountHeight:(BOOL)isReply;
 
 @end
 

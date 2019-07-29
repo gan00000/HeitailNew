@@ -12,7 +12,7 @@
 
 @interface XRRFATKHTRankEastWestRequest : NSObject
 
-+ (void)requestWithSuccessBlock:(void(^)(XRRFATKHTRankEastWestModel *eastWestModel))successBlock
++ (void)skargrequestWithSuccessBlock:(void(^)(XRRFATKHTRankEastWestModel *eastWestModel))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock;
 
 @end

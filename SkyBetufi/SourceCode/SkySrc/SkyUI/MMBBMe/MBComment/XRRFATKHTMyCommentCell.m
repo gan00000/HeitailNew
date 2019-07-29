@@ -33,9 +33,9 @@
     // Configure the view for the selected state
 }
 
-- (void)setupWithNewsModel:(XRRFATKHTNewsModel *)newsModel {
+- (void)skargsetupWithNewsModel:(XRRFATKHTNewsModel *)newsModel {
     self.avatarImageView.image = newsModel.userInfo.avatar;
-    self.userNameLabel.text = [XRRFATKHTUserManager userInfo].display_name;
+    self.userNameLabel.text = [XRRFATKHTUserManager skarg_userInfo].display_name;
     self.timeLabel.text = [XRRFATKBJDateFormatUtility dateToShowFromDate:newsModel.comt_date_obj];
     self.contentLabel.text = newsModel.comment_content;
     self.titleLabel.text = newsModel.title;

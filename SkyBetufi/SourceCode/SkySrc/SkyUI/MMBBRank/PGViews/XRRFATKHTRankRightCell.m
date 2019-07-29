@@ -35,7 +35,7 @@
     // Configure the view for the selected state
 }
 
-- (void)refreshWithRankModel:(XRRFATKHTRankModel *)rankModel row:(NSInteger)row {
+- (void)skargrefreshWithRankModel:(XRRFATKHTRankModel *)rankModel row:(NSInteger)row {
     
     self.winLabel.text = rankModel.win;
     self.loseLabel.text = rankModel.loss;

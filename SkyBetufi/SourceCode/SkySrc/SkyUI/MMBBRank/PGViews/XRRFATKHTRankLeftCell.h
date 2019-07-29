@@ -11,7 +11,7 @@
 
 @interface XRRFATKHTRankLeftCell : UITableViewCell
 
-- (void)refreshWithRankModel:(XRRFATKHTRankModel *)rankModel row:(NSInteger)row;
+- (void)skargrefreshWithRankModel:(XRRFATKHTRankModel *)rankModel row:(NSInteger)row;
 
 @end
 

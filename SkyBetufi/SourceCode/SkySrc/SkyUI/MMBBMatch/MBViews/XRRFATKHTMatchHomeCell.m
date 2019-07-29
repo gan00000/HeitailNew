@@ -58,7 +58,7 @@
     [super setSelected:selected animated:animated];
 }
 
-- (void)setupWithMatchModel:(XRRFATKHTMatchHomeModel *)matchModel {
+- (void)skargsetupWithMatchModel:(XRRFATKHTMatchHomeModel *)matchModel {
     self.homeTeamLogo.hidden = YES;
     self.homeTeamLogoWeb.hidden = YES;
     self.awayTeamLogo.hidden = YES;

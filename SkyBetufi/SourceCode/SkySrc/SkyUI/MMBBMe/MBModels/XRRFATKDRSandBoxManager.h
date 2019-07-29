@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param block 获取结果回调
  */
-+ (void)getDiskSpaceInfoWithBlock:(void(^)(NSError *error, unsigned long long freeSpace, unsigned long long totalSpace))block;
++ (void)skarggetDiskSpaceInfoWithBlock:(void(^)(NSError *error, unsigned long long freeSpace, unsigned long long totalSpace))block;
 
 /**
  获取指定路径文件或文件夹大小
@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param filePath 文件或文件夹绝对路径
  @param block 获取结果回调
  */
-+ (void)getFileSizeWithPath:(NSString*)filePath
++ (void)skarggetFileSizeWithPath:(NSString*)filePath
                   doneBlock:(void(^)(NSError *error, unsigned long long fileSize))block;
 
 
@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 获取document目录路径
  */
-+ (NSString *)getDocumentPath;
++ (NSString *)skarggetDocumentPath;
 
 /**
  返回Document下的指定文件夹，不存在则自动创建文件夹，dirName
@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param dirName 文件夹名，可以是纯文件夹名称，如User，也可以是相对路径，如User/Audio，也可以是包含Document的绝对路径
  @param block 获取结果回调
  */
-+ (void)getDirectoryInDocumentWithName:(NSString *)dirName
++ (void)skarggetDirectoryInDocumentWithName:(NSString *)dirName
                              doneBlock:(void(^)(BOOL success, NSError *error, NSString *dirPath))block;
 
 /**
@@ -53,7 +53,7 @@ NS_ASSUME_NONNULL_BEGIN
  为空则表示fileName是在document下
  @param block 获取结果回调
  */
-+ (void)getFilePathWithName:(NSString *)fileName
++ (void)skarggetFilePathWithName:(NSString *)fileName
                       inDir:(NSString *)dirName
                   doneBlock:(void(^)(NSError *error, NSString *filePath))block;
 
@@ -63,7 +63,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param dirPath 文件夹绝对路径
  @return 子目录列表
  */
-+ (NSArray *)getSubpathsAtPath:(NSString *)dirPath;
++ (NSArray *)skarggetSubpathsAtPath:(NSString *)dirPath;
 
 /**
  移动文件
@@ -72,7 +72,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param targetPath 文件目标绝对路径
  @param block 移动完成回调
  */
-+ (void)moveFileAtPath:(NSString *)path
++ (void)skargmoveFileAtPath:(NSString *)path
                 toPath:(NSString *)targetPath
              doneBlock:(void(^)(BOOL success, NSError *error))block;
 
@@ -82,7 +82,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param filePath 文件绝对路径
  @return 检查结果
  */
-+ (BOOL)isExistsFileAtPath:(NSString *)filePath;
++ (BOOL)skargisExistsFileAtPath:(NSString *)filePath;
 
 /**
  检查是否存在文件夹
@@ -90,7 +90,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param folderPath 文件夹绝对路径
  @return 检查结果
  */
-+ (BOOL)isExistsFolderAtPath:(NSString *)folderPath;
++ (BOOL)skargisExistsFolderAtPath:(NSString *)folderPath;
 
 /**
  删除指定文件或文件夹
@@ -98,7 +98,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param filePath 文件或者文件夹绝对路径
  @param block 删除结果回调
  */
-+ (void)deleteFileAtPath:(NSString *)filePath doneBlock:(void(^)(NSString *filePath, BOOL success, NSError *error))block;
++ (void)skargdeleteFileAtPath:(NSString *)filePath doneBlock:(void(^)(NSString *filePath, BOOL success, NSError *error))block;
 
 
 #pragma mark- 获取文件的数据
@@ -108,7 +108,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param path 文件路径
  @return 文件内容
  */
-+ (NSData *)getDataForPath:(NSString *)path;
++ (NSData *)skarggetDataForPath:(NSString *)path;
 
 
 #pragma mark - 保存图片到手机相册
@@ -118,7 +118,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param image 指定要保存的图片
  @param saveDoneBlock 保存完成回调
  */
-+ (void)saveToDiskWithImage:(UIImage *)image
++ (void)skargsaveToDiskWithImage:(UIImage *)image
               saveDoneBlock:(void(^)(BOOL success, NSError *error))saveDoneBlock;
 
 @end

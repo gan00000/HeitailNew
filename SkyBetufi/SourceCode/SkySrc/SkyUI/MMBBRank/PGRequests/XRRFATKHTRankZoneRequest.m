@@ -10,7 +10,7 @@
 
 @implementation XRRFATKHTRankZoneRequest
 
-+ (void)requestWithSuccessBlock:(void(^)(XRRFATKHTRankZoneModel *zoneModel))successBlock
++ (void)skargrequestWithSuccessBlock:(void(^)(XRRFATKHTRankZoneModel *zoneModel))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock {
     [XRRFATKBJHTTPServiceEngine getRequestWithFunctionPath:API_RANK_ZONE params:nil successBlock:^(id responseData) {
         if (successBlock) {

@@ -30,7 +30,7 @@
 
 @implementation XRRFATKHTDataMoreViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"XRRFATKDataMore");
 }
 
@@ -83,7 +83,7 @@
             [self refreshUI];
         }];
     } else {
-        [XRRFATKHTDataAllRankRequest requestAllTeamRankDataWithType:self.subType successBlock:^(NSArray<XRRFATKHTDataTeamRankModel *> *allTeamRankList) {
+        [XRRFATKHTDataAllRankRequest skargrequestAllTeamRankDataWithType:self.subType successBlock:^(NSArray<XRRFATKHTDataTeamRankModel *> *allTeamRankList) {
             self.teamList = allTeamRankList;
             [self refreshUI];
         } errorBlock:^(XRRFATKBJError *error) {
@@ -171,21 +171,21 @@
         XRRFATKHTDataPlayerRankModel *playerModel = self.playerList[indexPath.row];
         if (tableView == self.leftTableView) {
             XRRFATKHTDataPlayerLeftCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XRRFATKHTDataPlayerLeftCell class])];
-            [cell refreshWithPlayerModel:playerModel row:indexPath.row];
+            [cell skargrefreshWithPlayerModel:playerModel row:indexPath.row];
             return cell;
         }
         XRRFATKHTDataPlayerRightCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XRRFATKHTDataPlayerRightCell class])];
-        [cell refreshWithPlayerModel:playerModel row:indexPath.row];
+        [cell skargrefreshWithPlayerModel:playerModel row:indexPath.row];
         return cell;
     } else {
         XRRFATKHTDataTeamRankModel *teamModel = self.teamList[indexPath.row];
         if (tableView == self.leftTableView) {
             XRRFATKHTDataTeamLeftCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XRRFATKHTDataTeamLeftCell class])];
-            [cell refreshWithTeamModel:teamModel row:indexPath.row];
+            [cell skargrefreshWithTeamModel:teamModel row:indexPath.row];
             return cell;
         }
         XRRFATKHTDataTeamRightCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XRRFATKHTDataTeamRightCell class])];
-        [cell refreshWithTeamModel:teamModel row:indexPath.row];
+        [cell skargrefreshWithTeamModel:teamModel row:indexPath.row];
         return cell;
     }
 }

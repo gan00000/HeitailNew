@@ -41,11 +41,11 @@
 @property (nonatomic, strong) id share_thub;
 
 /// 新闻详情页使用
-- (void)getClearContentWithBlock:(void(^)(BOOL success, NSString *content))block;
+- (void)skarggetClearContentWithBlock:(void(^)(BOOL success, NSString *content))block;
 
-+ (BOOL)canShare;
-- (void)share;
++ (BOOL)skargcanShare;
+- (void)skargshare;
 
-- (void)countCommentHeight;
+- (void)skargcountCommentHeight;
 
 @end

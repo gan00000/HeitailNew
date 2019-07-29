@@ -22,7 +22,7 @@
 
 @implementation XRRFATKHTMessageViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return [[XRRFATKHTMessageViewController alloc] init];
 }
 
@@ -38,9 +38,9 @@
 }
 
 - (void)loadData {
-    [XRRFATKHTUserRequest requestMyMessageWithOffset:self.offset successBlock:^(NSArray<XRRFATKHTMyMessageModel *> * _Nonnull messageList, NSInteger pages) {
+    [XRRFATKHTUserRequest skargrequestMyMessageWithOffset:self.offset successBlock:^(NSArray<XRRFATKHTMyMessageModel *> * _Nonnull messageList, NSInteger pages) {
         for (XRRFATKHTMyMessageModel *model in messageList) {
-            [model countHeight];
+            [model skarg_countHeight];
         }
         [self.dataSource addObjectsFromArray:messageList];
         [self.tableView reloadData];
@@ -113,14 +113,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     XRRFATKHTMyMessaageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XRRFATKHTMyMessaageCell"];
-    [cell refreshWithMyMessageModel:self.dataSource[indexPath.row]];
+    [cell skargrefreshWithMyMessageModel:self.dataSource[indexPath.row]];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     XRRFATKHTMyMessageModel *mesageModel = self.dataSource[indexPath.row];
     
-    XRRFATKHTNewsDetailViewController *detailVc = [XRRFATKHTNewsDetailViewController viewController];
+    XRRFATKHTNewsDetailViewController *detailVc = [XRRFATKHTNewsDetailViewController skargviewController];
     detailVc.post_id = mesageModel.post_id;
     [self.navigationController pushViewController:detailVc animated:YES];
 }

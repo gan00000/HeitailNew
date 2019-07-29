@@ -10,7 +10,7 @@
 
 @implementation XRRFATKHTMatchLiveFeedRequest
 
-+ (void)requestLiveFeedWithGameId:(NSString *)game_id
++ (void)skargrequestLiveFeedWithGameId:(NSString *)game_id
                      successBlock:(void(^)(NSArray<XRRFATKHTMatchLiveFeedModel *> *feedList))successBlock
                        errorBlock:(BJServiceErrorBlock)errorBlock {
     [XRRFATKBJHTTPServiceEngine getRequestWithFunctionPath:API_MATCH_LIVE_FEED params:@{@"game_id":game_id} successBlock:^(id responseData) {

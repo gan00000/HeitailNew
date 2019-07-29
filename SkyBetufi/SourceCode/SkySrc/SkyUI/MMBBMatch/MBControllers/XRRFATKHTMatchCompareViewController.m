@@ -21,7 +21,7 @@
 
 @implementation XRRFATKHTMatchCompareViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"XRRFATKMatchCompare");
 }
 
@@ -40,7 +40,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)refreshWithMatchSummaryModel:(XRRFATKHTMatchSummaryModel *)summaryModel {
+- (void)skargrefreshWithMatchSummaryModel:(XRRFATKHTMatchSummaryModel *)summaryModel {
     [self.tableView.mj_header endRefreshing];
     self.summaryModel = summaryModel;
     [self.tableView reloadData];
@@ -85,16 +85,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         XRRFATKHTMatchQuarterCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XRRFATKHTMatchQuarterCell class])];
-        [cell setupWithMatchSummaryModel:self.summaryModel];
+        [cell skargsetupWithMatchSummaryModel:self.summaryModel];
         return cell;
     }
     if (indexPath.section == 1) {
         XRRFATKHTMatchPtsCompareCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XRRFATKHTMatchPtsCompareCell class])];
-        [cell setupWithMatchSummaryModel:self.summaryModel];
+        [cell skargsetupWithMatchSummaryModel:self.summaryModel];
         return cell;
     }
     XRRFATKHTMatchBestPlayerCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XRRFATKHTMatchBestPlayerCell class])];
-    [cell setupWithMatchSummaryModel:self.summaryModel];
+    [cell skargsetupWithMatchSummaryModel:self.summaryModel];
     return cell;
 }
 

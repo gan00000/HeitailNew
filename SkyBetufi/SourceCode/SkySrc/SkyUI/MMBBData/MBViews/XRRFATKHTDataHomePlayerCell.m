@@ -30,7 +30,7 @@
     // Configure the view for the selected state
 }
 
-- (void)setupWithDatas:(NSArray<XRRFATKHTDataHomeModel *> *)datas {
+- (void)skargsetupWithDatas:(NSArray<XRRFATKHTDataHomeModel *> *)datas {
     if (datas.count == 0) {
         return;
     }
@@ -45,7 +45,7 @@
     for (NSInteger i=0; i<datas.count; i++) {
         XRRFATKHTDataHomeModel *model = datas[i];
         XRRFATKHTDataCellPlayerView *cell = self.cells[i];
-        [cell setupWithDataModel:model];
+        [cell skargsetupWithDataModel:model];
     }
 }
 

@@ -25,7 +25,7 @@
              };
 }
 
-- (void)countHeight:(BOOL)isReply {
+- (void)skargcountHeight:(BOOL)isReply {
     self.isReply = isReply;
     
     if (!isReply) {
@@ -34,7 +34,7 @@
         
         for (NSInteger i=0; i<self.reply.count; i++) {
             XRRFATKHTCommentModel *model = self.reply[i];
-            [model countHeight:YES];
+            [model skargcountHeight:YES];
             
             if (i < 3) {
                 self.replyUnExpendHeight += model.cellHeight;

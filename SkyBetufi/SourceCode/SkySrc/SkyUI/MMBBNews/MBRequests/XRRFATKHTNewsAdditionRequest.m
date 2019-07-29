@@ -10,7 +10,7 @@
 
 @implementation XRRFATKHTNewsAdditionRequest
 
-+ (void)requestNormalCommentWithOffset:(NSInteger)offset newsId:(NSString *)newsId successBlock:(void(^)(NSArray <XRRFATKHTCommentModel *> *commentList, NSInteger pages))successBlock failBlock:(BJServiceErrorBlock)failBlock {
++ (void)skargrequestNormalCommentWithOffset:(NSInteger)offset newsId:(NSString *)newsId successBlock:(void(^)(NSArray <XRRFATKHTCommentModel *> *commentList, NSInteger pages))successBlock failBlock:(BJServiceErrorBlock)failBlock {
     [XRRFATKBJHTTPServiceEngine postRequestWithFunctionPath:API_NEWS_COMMENTS params:@{@"offset": @(offset), @"post_id": newsId} successBlock:^(id responseData) {
         if (successBlock) {
             NSArray *commentsData = responseData[@"result"][@"comments"];
@@ -21,7 +21,7 @@
     } errorBlock:failBlock];
 }
 
-+ (void)requestHotCommentWithOffset:(NSInteger)offset newsId:(NSString *)newsId successBlock:(void(^)(NSArray <XRRFATKHTCommentModel *> *commentList, NSInteger pages))successBlock failBlock:(BJServiceErrorBlock)failBlock {
++ (void)skargrequestHotCommentWithOffset:(NSInteger)offset newsId:(NSString *)newsId successBlock:(void(^)(NSArray <XRRFATKHTCommentModel *> *commentList, NSInteger pages))successBlock failBlock:(BJServiceErrorBlock)failBlock {
     [XRRFATKBJHTTPServiceEngine postRequestWithFunctionPath:API_NEWS_HOT_COMMENT params:@{@"offset": @(offset), @"post_id": newsId} successBlock:^(id responseData) {
         if (successBlock) {
             NSArray *commentsData = responseData[@"result"][@"comments"];
@@ -32,7 +32,7 @@
     } errorBlock:failBlock];
 }
 
-+ (void)requestAllCommentWithPostId:(NSString *)postId
++ (void)skargrequestAllCommentWithPostId:(NSString *)postId
                        successBlock:(void(^)(NSArray <XRRFATKHTCommentModel *> *commentList, NSArray<XRRFATKHTCommentModel *> *hotComments))successBlock
                           failBlock:(BJServiceErrorBlock)failBlock {
     [XRRFATKBJHTTPServiceEngine postRequestWithFunctionPath:API_NEWS_ALL_COMMENT params:@{@"post_id": postId} successBlock:^(id responseData) {
@@ -45,7 +45,7 @@
 }
 
 // 新闻详情
-+ (void)requestDetailWithPostId:(NSString *)post_id
++ (void)skargrequestDetailWithPostId:(NSString *)post_id
                    successBlock:(void(^)(XRRFATKHTNewsModel *newsModel))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock {
     [XRRFATKBJHTTPServiceEngine postRequestWithFunctionPath:API_NEWS_DETAIL params:@{@"post_id": post_id} successBlock:^(id responseData) {

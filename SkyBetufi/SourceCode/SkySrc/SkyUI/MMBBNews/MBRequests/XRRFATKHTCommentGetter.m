@@ -23,17 +23,19 @@
 @implementation XRRFATKHTCommentGetter
 
 - (instancetype)initWithPostId:(NSString *)post_id {
+
     self = [super init];
+    
     if (self) {
         self.post_id = post_id;
         self.hotComments = [NSMutableArray array];
         self.normalComments = [NSMutableArray array];
-        [self reset];
+        [self skargreset];
     }
     return self;
 }
 
-- (void)reset {
+- (void)skargreset {
     self.hotOffset = 0;
     self.normalOffset = 0;
     self.hasMoreHot = YES;
@@ -41,7 +43,7 @@
     self.hasMore = YES;
 }
 
-- (void)doRequestWithCompleteBlock:(dispatch_block_t)commentBlock {
+- (void)skargdoRequestWithCompleteBlock:(dispatch_block_t)commentBlock {
     if (self.hasMoreHot) {
         [self loadHotCommentsWithCompleteBlock:commentBlock];
     } else {
@@ -50,7 +52,7 @@
 }
 
 - (void)loadHotCommentsWithCompleteBlock:(dispatch_block_t)block {
-    [XRRFATKHTNewsAdditionRequest requestHotCommentWithOffset:self.hotOffset newsId:self.post_id successBlock:^(NSArray<XRRFATKHTCommentModel *> * _Nonnull commentList, NSInteger pages) {
+    [XRRFATKHTNewsAdditionRequest skargrequestHotCommentWithOffset:self.hotOffset newsId:self.post_id successBlock:^(NSArray<XRRFATKHTCommentModel *> * _Nonnull commentList, NSInteger pages) {
         if (self.hotOffset == 0) {
             [self.hotComments removeAllObjects];
         }
@@ -77,7 +79,7 @@
 }
 
 - (void)loadNormalCommentsWithCompleteBlock:(dispatch_block_t)block {
-    [XRRFATKHTNewsAdditionRequest requestNormalCommentWithOffset:self.normalOffset newsId:self.post_id successBlock:^(NSArray<XRRFATKHTCommentModel *> * _Nonnull commentList, NSInteger pages) {
+    [XRRFATKHTNewsAdditionRequest skargrequestNormalCommentWithOffset:self.normalOffset newsId:self.post_id successBlock:^(NSArray<XRRFATKHTCommentModel *> * _Nonnull commentList, NSInteger pages) {
         if (self.normalOffset == 0) {
             [self.normalComments removeAllObjects];
         }
@@ -116,7 +118,7 @@
 
 - (void)countHeightForComments:(NSArray<XRRFATKHTCommentModel *> *)comments {
     for (XRRFATKHTCommentModel *commentModel in comments) {
-        [commentModel countHeight:NO];
+        [commentModel skargcountHeight:NO];
     }
 }
 

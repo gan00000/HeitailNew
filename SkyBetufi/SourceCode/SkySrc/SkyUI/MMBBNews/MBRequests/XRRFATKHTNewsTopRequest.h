@@ -12,7 +12,7 @@
 
 @interface XRRFATKHTNewsTopRequest : NSObject
 
-+ (void)requestWithSuccessBlock:(void(^)(NSArray<XRRFATKHTNewsModel *> *newsList))successBlock
++ (void)skargrequestWithSuccessBlock:(void(^)(NSArray<XRRFATKHTNewsModel *> *newsList))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock;
 
 @end

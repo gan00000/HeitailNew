@@ -107,7 +107,7 @@
     _detailHeaderHeight = titleHeight + 70;
 }
 
-- (void)getClearContentWithBlock:(void(^)(BOOL success, NSString *content))block {
+- (void)skarggetClearContentWithBlock:(void(^)(BOOL success, NSString *content))block {
     if (!block) {
         return;
     }
@@ -191,13 +191,13 @@
     [task resume];
 }
 
-+ (BOOL)canShare {
++ (BOOL)skargcanShare {
     return YES;
 }
 
-- (void)share {
+- (void)skargshare {
     kWeakSelf
-    [XRRFATKHTLoginAlertView showShareAlertViewWithSelectBlock:^(HTLoginPlatform platform) {
+    [XRRFATKHTLoginAlertView skargshowShareAlertViewWithSelectBlock:^(HTLoginPlatform platform) {
         UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
         if (platform == HTLoginPlatformFB) {
             //创建网页内容对象
@@ -261,7 +261,7 @@
     return _comt_date_obj;
 }
 
-- (void)countCommentHeight {
+- (void)skargcountCommentHeight {
     CGFloat commetheight = [self.comment_content jx_sizeWithFont:[UIFont systemFontOfSize:15] constrainedToWidth:SCREEN_WIDTH-71].height;
     self.my_comment_cell_height = commetheight + 118;
 }

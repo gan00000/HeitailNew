@@ -20,7 +20,7 @@
 
 @implementation XRRFATKHTSettingViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"XRRFATKSetting");
 }
 
@@ -78,7 +78,7 @@
 }
 
 - (IBAction)logoutAction:(id)sender {
-    [XRRFATKHTUserManager doUserLogout];
+    [XRRFATKHTUserManager skarg_doUserLogout];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

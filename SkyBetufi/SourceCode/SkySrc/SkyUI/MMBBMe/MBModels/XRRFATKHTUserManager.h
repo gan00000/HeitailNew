@@ -14,25 +14,25 @@ extern const NSString * kUserLogStatusChagneNotice;
 @interface XRRFATKHTUserManager : NSObject
 
 // 判断用是否登录
-+ (BOOL)isUserLogin;
++ (BOOL)skarg_isUserLogin;
 // 獲取用戶信息
-+ (XRRFATKHTUserInfoModel *)userInfo;
++ (XRRFATKHTUserInfoModel *)skarg_userInfo;
 
 // token
-+ (NSString *)userToken;
++ (NSString *)skarg_userToken;
 // 推送deviceToken
-+ (NSString *)deviceToken;
-+ (void)saveDeviceToken:(NSString *)deviceToken;
++ (NSString *)skarg_deviceToken;
++ (void)skarg_saveDeviceToken:(NSString *)deviceToken;
 
 // 执行用户登录
-+ (void)doUserLogin;
-+ (void)doUserLogout;
-+ (void)refreshUserInfoWithSuccessBlock:(dispatch_block_t)block;
++ (void)skarg_doUserLogin;
++ (void)skarg_doUserLogout;
++ (void)skarg_refreshUserInfoWithSuccessBlock:(dispatch_block_t)block;
 
 // 媒體使用權限
-+ (void)cameraDenied;
-+ (void)photoAlbumDenied;
-+ (void)showAlertWithTitle:(NSString *)title
++ (void)skargcameraDenied;
++ (void)skargphotoAlbumDenied;
++ (void)skarg_showAlertWithTitle:(NSString *)title
                    message:(NSString *)message
               cancelButton:(NSString *)cancelButton
              confirmButton:(NSString *)confirmButton

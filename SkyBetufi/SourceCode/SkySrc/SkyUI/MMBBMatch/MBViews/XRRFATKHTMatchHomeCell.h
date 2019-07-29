@@ -11,6 +11,6 @@
 
 @interface XRRFATKHTMatchHomeCell : UITableViewCell
 
-- (void)setupWithMatchModel:(XRRFATKHTMatchHomeModel *)matchModel;
+- (void)skargsetupWithMatchModel:(XRRFATKHTMatchHomeModel *)matchModel;
 
 @end

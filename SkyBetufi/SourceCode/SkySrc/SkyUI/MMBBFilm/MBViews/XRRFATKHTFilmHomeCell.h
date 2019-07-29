@@ -11,6 +11,6 @@
 
 @interface XRRFATKHTFilmHomeCell : UITableViewCell
 
-- (void)setupWithNewsModel:(XRRFATKHTNewsModel *)newsModel;
+- (void)skargsetupWithNewsModel:(XRRFATKHTNewsModel *)newsModel;
 
 @end

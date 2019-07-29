@@ -12,8 +12,8 @@
 @interface XRRFATKPPXXBJBaseViewController : UIViewController <BJNavigationDelegate>
 
 /// 子类必须重写
-+ (instancetype)viewController;
++ (instancetype)skargviewController;
 
-+ (UIImage *)fixImageSize:(UIImage *)image toSize:(CGSize)toSize;
++ (UIImage *)skargfixImageSize:(UIImage *)image toSize:(CGSize)toSize;
 
 @end

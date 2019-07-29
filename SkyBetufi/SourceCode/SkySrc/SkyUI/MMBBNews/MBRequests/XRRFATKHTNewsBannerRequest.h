@@ -12,7 +12,7 @@
 
 @interface XRRFATKHTNewsBannerRequest : NSObject
 
-+ (void)requestWithSuccessBlock:(void(^)(NSArray<XRRFATKHTNewsModel*> *bannerList))successBlock
++ (void)skargrequestWithSuccessBlock:(void(^)(NSArray<XRRFATKHTNewsModel*> *bannerList))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock;
 
 @end

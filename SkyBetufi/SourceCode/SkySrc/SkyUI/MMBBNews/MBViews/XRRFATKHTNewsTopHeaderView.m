@@ -16,7 +16,7 @@
 
 @implementation XRRFATKHTNewsTopHeaderView
 
-- (void)refreshWithTitle:(NSString *)title {
+- (void)skargrefreshWithTitle:(NSString *)title {
     self.titleLabel.text = title;
 }
 

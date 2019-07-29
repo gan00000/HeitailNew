@@ -17,7 +17,7 @@
 
 @implementation XRRFATKHTFilmHomeRequest
 
-- (void)requestWithSuccessBlock:(void(^)(NSArray<XRRFATKHTNewsModel *> *newsList))successBlock
+- (void)skargrequestWithSuccessBlock:(void(^)(NSArray<XRRFATKHTNewsModel *> *newsList))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock {
     if (!self.newsList) {
         self.newsList = [NSMutableArray array];

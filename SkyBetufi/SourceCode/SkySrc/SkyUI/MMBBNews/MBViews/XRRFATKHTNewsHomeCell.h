@@ -11,6 +11,6 @@
 
 @interface XRRFATKHTNewsHomeCell : UITableViewCell
 
-- (void)setupWithNewsModel:(XRRFATKHTNewsModel *)newsModel;
+- (void)skargsetupWithNewsModel:(XRRFATKHTNewsModel *)newsModel;
 
 @end

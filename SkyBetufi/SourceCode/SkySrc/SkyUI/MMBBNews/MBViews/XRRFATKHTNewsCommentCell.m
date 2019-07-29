@@ -65,7 +65,7 @@
     // Configure the view for the selected state
 }
 
-- (void)refreshWithCommentModel:(XRRFATKHTCommentModel *)commentModel {
+- (void)skargrefreshWithCommentModel:(XRRFATKHTCommentModel *)commentModel {
     self.commentModel = commentModel;
     self.avatarImageView.image = commentModel.userModel.avatar;
     self.authorLabel.text = commentModel.comment_author;
@@ -128,8 +128,8 @@
 }
 
 - (IBAction)onReplyAction:(id)sender {
-    if (![XRRFATKHTUserManager isUserLogin]) {
-        [XRRFATKHTUserManager doUserLogin];
+    if (![XRRFATKHTUserManager skarg_isUserLogin]) {
+        [XRRFATKHTUserManager skarg_doUserLogin];
         return;
     }
     if (self.onReplyBlock) {
@@ -138,12 +138,12 @@
 }
 
 - (IBAction)onLikeAction:(UIButton *)sender {
-    if (![XRRFATKHTUserManager isUserLogin]) {
-        [XRRFATKHTUserManager doUserLogin];
+    if (![XRRFATKHTUserManager skarg_isUserLogin]) {
+        [XRRFATKHTUserManager skarg_doUserLogin];
         return;
     }
     UIView *view = [XRRFATKPPXXBJViewControllerCenter currentViewController].view;
-    [XRRFATKHTUserRequest likePostWithPostId:self.commentModel.post_id comment_id:self.commentModel.comment_id like:!sender.selected successBlock:^{
+    [XRRFATKHTUserRequest skarglikePostWithPostId:self.commentModel.post_id comment_id:self.commentModel.comment_id like:!sender.selected successBlock:^{
         if (self.commentModel.my_like) {
             self.commentModel.total_like --;
             [view showToast:@"已取消點讚"];
@@ -152,7 +152,7 @@
             [view showToast:@"已點讚"];
         }
         self.commentModel.my_like = !self.commentModel.my_like;
-        [self refreshWithCommentModel:self.commentModel];
+        [self skargrefreshWithCommentModel:self.commentModel];
     } failBlock:^(XRRFATKBJError *error) {
         if (sender.selected) {
             [view showToast:@"取消點讚失敗"];
@@ -180,14 +180,14 @@
                 self.onReplyBlock(commentModel);
             }
         };
-        [cell refreshWithCommentModel:self.commentModel.reply[indexPath.row]];
+        [cell skargrefreshWithCommentModel:self.commentModel.reply[indexPath.row]];
         return cell;
     }
     kWeakSelf
     XRRFATKHTCommentExpendCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XRRFATKHTCommentExpendCell class])];
     cell.onExpendChangeBlock = ^(BOOL expend) {
         weakSelf.commentModel.expend = expend;
-        [weakSelf refreshWithCommentModel:weakSelf.commentModel];
+        [weakSelf skargrefreshWithCommentModel:weakSelf.commentModel];
         if (weakSelf.onExpendBlock) {
             weakSelf.onExpendBlock();
             [weakSelf.replyTableView reloadData];

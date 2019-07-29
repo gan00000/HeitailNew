@@ -16,24 +16,24 @@ NS_ASSUME_NONNULL_BEGIN
 @interface XRRFATKHTNewsAdditionRequest : NSObject
 
 // 獲取普通評論
-+ (void)requestNormalCommentWithOffset:(NSInteger)offset
++ (void)skargrequestNormalCommentWithOffset:(NSInteger)offset
                                 newsId:(NSString *)newsId
                           successBlock:(void(^)(NSArray <XRRFATKHTCommentModel *> *commentList, NSInteger pages))successBlock
                              failBlock:(BJServiceErrorBlock)failBlock;
 
 // 獲取熱門評論
-+ (void)requestHotCommentWithOffset:(NSInteger)offset
++ (void)skargrequestHotCommentWithOffset:(NSInteger)offset
                              newsId:(NSString *)newsId
                        successBlock:(void(^)(NSArray <XRRFATKHTCommentModel *> *commentList, NSInteger pages))successBlock
                           failBlock:(BJServiceErrorBlock)failBlock;
 
 // 獲取全部評論
-+ (void)requestAllCommentWithPostId:(NSString *)postId
++ (void)skargrequestAllCommentWithPostId:(NSString *)postId
                        successBlock:(void(^)(NSArray <XRRFATKHTCommentModel *> *commentList, NSArray<XRRFATKHTCommentModel *> *hotComments))successBlock
                           failBlock:(BJServiceErrorBlock)failBlock;
 
 // 新闻详情
-+ (void)requestDetailWithPostId:(NSString *)post_id
++ (void)skargrequestDetailWithPostId:(NSString *)post_id
                    successBlock:(void(^)(XRRFATKHTNewsModel *newsModel))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock;
 

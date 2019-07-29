@@ -21,7 +21,7 @@
 
 @implementation XRRFATKHTRankZoneViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"XRRFATKRankZone");
 }
 
@@ -44,27 +44,27 @@
     XRRFATKHTRankHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XRRFATKHTRankHomeCell class])];
     switch (indexPath.row) {
         case 0:
-            [cell setupWithTitle:@"大西洋賽區 - 東部" rankList:self.zoneModel.EasternAtlantic];
+            [cell skargsetupWithTitle:@"大西洋賽區 - 東部" rankList:self.zoneModel.EasternAtlantic];
             break;
             
         case 1:
-            [cell setupWithTitle:@"中部賽區 - 東部" rankList:self.zoneModel.EasternCentral];
+            [cell skargsetupWithTitle:@"中部賽區 - 東部" rankList:self.zoneModel.EasternCentral];
             break;
             
         case 2:
-            [cell setupWithTitle:@"東南賽區 - 東部" rankList:self.zoneModel.EasternSoutheast];
+            [cell skargsetupWithTitle:@"東南賽區 - 東部" rankList:self.zoneModel.EasternSoutheast];
             break;
             
         case 3:
-            [cell setupWithTitle:@"西南賽區 - 西部" rankList:self.zoneModel.WesternSouthwest];
+            [cell skargsetupWithTitle:@"西南賽區 - 西部" rankList:self.zoneModel.WesternSouthwest];
             break;
             
         case 4:
-            [cell setupWithTitle:@"太平洋賽區 - 西部" rankList:self.zoneModel.WesternPacific];
+            [cell skargsetupWithTitle:@"太平洋賽區 - 西部" rankList:self.zoneModel.WesternPacific];
             break;
             
         case 5:
-            [cell setupWithTitle:@"西北賽區 - 西部" rankList:self.zoneModel.WesternNorthwest];
+            [cell skargsetupWithTitle:@"西北賽區 - 西部" rankList:self.zoneModel.WesternNorthwest];
             break;
             
         default:
@@ -102,7 +102,7 @@
 
 #pragma mark - private
 - (void)loadData {
-    [XRRFATKHTRankZoneRequest requestWithSuccessBlock:^(XRRFATKHTRankZoneModel *zoneModel) {
+    [XRRFATKHTRankZoneRequest skargrequestWithSuccessBlock:^(XRRFATKHTRankZoneModel *zoneModel) {
         self.zoneModel = zoneModel;
         [self refreshUI];
         if (zoneModel.EasternAtlantic.count == 0) {

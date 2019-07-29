@@ -12,7 +12,7 @@
 
 @interface XRRFATKHTRankZoneRequest : NSObject
 
-+ (void)requestWithSuccessBlock:(void(^)(XRRFATKHTRankZoneModel *zoneModel))successBlock
++ (void)skargrequestWithSuccessBlock:(void(^)(XRRFATKHTRankZoneModel *zoneModel))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock;
 
 @end

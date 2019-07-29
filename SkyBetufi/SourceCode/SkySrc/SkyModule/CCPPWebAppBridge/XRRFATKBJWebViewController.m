@@ -206,11 +206,11 @@ static void *kWebViewKVOContext;
 }
 
 #pragma mark - BJNavigationDelegate
-- (BOOL)bj_shouldHandlePopActionMySelf {
+- (BOOL)skarg_shouldHandlePopActionMySelf {
     return YES;
 }
 
-- (void)bj_handlePopActionMySelf {
+- (void)skarg_handlePopActionMySelf {
     if (self.webView.canGoBack && self.jsBridge.canGoBack) {
         [self.webView goBack];
     } else {
@@ -219,7 +219,7 @@ static void *kWebViewKVOContext;
     }
 }
 
-- (BOOL)bj_shouldForbidSlideBackAction {
+- (BOOL)skarg_shouldForbidSlideBackAction {
     return self.webView.canGoBack && self.jsBridge.canGoBack;
 }
 

@@ -50,7 +50,7 @@
 
 @implementation XRRFATKHTMatchDetailViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"XRRFATKMatchDetail");
 }
 
@@ -127,7 +127,7 @@
     self.summaryLoaded = NO;
     self.error = nil;
     
-    [XRRFATKHTMatchLiveFeedRequest requestLiveFeedWithGameId:self.matchModel.game_id successBlock:^(NSArray<XRRFATKHTMatchLiveFeedModel *> *feedList) {
+    [XRRFATKHTMatchLiveFeedRequest skargrequestLiveFeedWithGameId:self.matchModel.game_id successBlock:^(NSArray<XRRFATKHTMatchLiveFeedModel *> *feedList) {
         self.liveFeedList = feedList;
         self.feedLoaded = YES;
         [self refreshUI];
@@ -137,7 +137,7 @@
         [self refreshUI];
     }];
     
-    [XRRFATKHTMatchSummaryRequest requestSummaryWithGameId:self.matchModel.game_id successBlock:^(XRRFATKHTMatchSummaryModel *summaryModel, XRRFATKHTMatchCompareModel *compareModel) {
+    [XRRFATKHTMatchSummaryRequest skargrequestSummaryWithGameId:self.matchModel.game_id successBlock:^(XRRFATKHTMatchSummaryModel *summaryModel, XRRFATKHTMatchCompareModel *compareModel) {
         self.matchSummaryModel = summaryModel;
         self.matchCompareModel = compareModel;
         self.summaryLoaded = YES;
@@ -255,13 +255,13 @@
     if ([self.loadedFlagArray[index] boolValue]) {
         if (index == 0) {
             XRRFATKHTMatchWordLiveViewController *wordVc = self.loadedControllersArray[index];
-            [wordVc refreshWithLiveFeedList:self.liveFeedList];
+            [wordVc skargrefreshWithLiveFeedList:self.liveFeedList];
         } else if (index == 1) {
             XRRFATKHTMatchCompareViewController *compareVc = self.loadedControllersArray[index];
-            [compareVc refreshWithMatchSummaryModel:self.matchSummaryModel];
+            [compareVc skargrefreshWithMatchSummaryModel:self.matchSummaryModel];
         } else {
             XRRFATKHTMatchDashboardViewController *dashbdVc = self.loadedControllersArray[index];
-            [dashbdVc refreshWithMatchCompareModel:self.matchCompareModel];
+            [dashbdVc skargrefreshWithMatchCompareModel:self.matchCompareModel];
         }
         return;
     }
@@ -269,21 +269,21 @@
     kWeakSelf
     UIViewController *vc;
     if (index == 0) {
-        XRRFATKHTMatchWordLiveViewController *wordVc = [XRRFATKHTMatchWordLiveViewController viewController];
+        XRRFATKHTMatchWordLiveViewController *wordVc = [XRRFATKHTMatchWordLiveViewController skargviewController];
         wordVc.onTableHeaderRefreshBlock = ^{
             [weakSelf loadData];
         };
         vc = wordVc;
     } else if (index == 1) {
-        XRRFATKHTMatchCompareViewController *compareVc = [XRRFATKHTMatchCompareViewController viewController];
-        [compareVc refreshWithMatchSummaryModel:self.matchSummaryModel];
+        XRRFATKHTMatchCompareViewController *compareVc = [XRRFATKHTMatchCompareViewController skargviewController];
+        [compareVc skargrefreshWithMatchSummaryModel:self.matchSummaryModel];
         compareVc.onTableHeaderRefreshBlock = ^{
             [weakSelf loadData];
         };
         vc = compareVc;
     } else {
-        XRRFATKHTMatchDashboardViewController *dashboardVc = [XRRFATKHTMatchDashboardViewController viewController];
-        [dashboardVc refreshWithMatchCompareModel:self.matchCompareModel];
+        XRRFATKHTMatchDashboardViewController *dashboardVc = [XRRFATKHTMatchDashboardViewController skargviewController];
+        [dashboardVc skargrefreshWithMatchCompareModel:self.matchCompareModel];
         vc = dashboardVc;
     }
     [self addChildViewController:vc];

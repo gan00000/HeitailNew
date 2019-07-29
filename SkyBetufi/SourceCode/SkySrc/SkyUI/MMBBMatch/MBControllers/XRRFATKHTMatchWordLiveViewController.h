@@ -13,6 +13,6 @@
 
 @property (nonatomic, copy) void (^onTableHeaderRefreshBlock)(void);
 
-- (void)refreshWithLiveFeedList:(NSArray<XRRFATKHTMatchLiveFeedModel *> *)liveFeedList;
+- (void)skargrefreshWithLiveFeedList:(NSArray<XRRFATKHTMatchLiveFeedModel *> *)liveFeedList;
 
 @end

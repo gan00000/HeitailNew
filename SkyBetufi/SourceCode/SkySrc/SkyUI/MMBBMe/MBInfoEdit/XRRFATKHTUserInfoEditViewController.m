@@ -34,7 +34,7 @@
 
 @implementation XRRFATKHTUserInfoEditViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return [[XRRFATKHTUserInfoEditViewController alloc] init];
 }
 
@@ -44,7 +44,7 @@
     self.title = @"個人信息";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(saveUserInfo)];
     
-    XRRFATKHTUserInfoModel *userInfoModel = [XRRFATKHTUserManager userInfo];
+    XRRFATKHTUserInfoModel *userInfoModel = [XRRFATKHTUserManager skarg_userInfo];
     self.userNameLabel.text = userInfoModel.display_name;
     self.avatarImageView.image = userInfoModel.avatar;
     self.emailLabel.text = userInfoModel.user_email;
@@ -72,7 +72,7 @@
     if (status == PHAuthorizationStatusAuthorized) {
         [self showTZImagePickerController];
     } else if (status == PHAuthorizationStatusDenied) {
-        [XRRFATKHTUserManager photoAlbumDenied];
+        [XRRFATKHTUserManager skargphotoAlbumDenied];
     } else {
         kWeakSelf
         [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status){
@@ -102,8 +102,8 @@
     }
     
     kWeakSelf
-    [XRRFATKHTUserRequest updateUserInfoWithEmail:email displayName:userName file:base64Avatar successBlock:^(NSDictionary * _Nonnull userInfo) {
-        [XRRFATKHTUserManager refreshUserInfoWithSuccessBlock:^{
+    [XRRFATKHTUserRequest skargupdateUserInfoWithEmail:email displayName:userName file:base64Avatar successBlock:^(NSDictionary * _Nonnull userInfo) {
+        [XRRFATKHTUserManager skarg_refreshUserInfoWithSuccessBlock:^{
             [XRRFATKBJLoadingHud hideHUDInView:weakSelf.navigationController.view];
             [weakSelf.view showToast:@"保存成功"];
             [weakSelf.navigationController popViewControllerAnimated:YES];
@@ -122,7 +122,7 @@
     self.emailChange = YES;
 }
 
-- (BOOL)bj_shouldForbidSlideBackAction {
+- (BOOL)skarg_shouldForbidSlideBackAction {
     return self.avatarChange || self.userNameChange || self.emailChange;
 }
 

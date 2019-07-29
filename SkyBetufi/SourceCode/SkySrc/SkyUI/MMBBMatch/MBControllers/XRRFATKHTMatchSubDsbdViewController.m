@@ -24,7 +24,7 @@
 
 @implementation XRRFATKHTMatchSubDsbdViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"XRRFATKMatchSubDsbd");
 }
 
@@ -77,7 +77,7 @@
     [self.scrollContentView addSubview:self.rightTableView];
 }
 
-- (void)refreshWithDetailList:(NSArray<XRRFATKHTMatchDetailsModel *> *)detailList {
+- (void)skargrefreshWithDetailList:(NSArray<XRRFATKHTMatchDetailsModel *> *)detailList {
     self.dataList = detailList;
     
     [self countWithDataList:detailList];
@@ -162,11 +162,11 @@
     XRRFATKHTMatchDetailsModel *model = self.dataList[indexPath.row];
     if (tableView == self.leftTableView) {
         XRRFATKHTMatchDataLeftCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XRRFATKHTMatchDataLeftCell class])];
-        [cell refreshWithName:model.name row:indexPath.row];
+        [cell skargrefreshWithName:model.name row:indexPath.row];
         return cell;
     }
     XRRFATKHTMatchDataRightCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XRRFATKHTMatchDataRightCell class])];
-    [cell refreshWithModel:model row:indexPath.row];
+    [cell skargrefreshWithModel:model row:indexPath.row];
     return cell;
 }
 

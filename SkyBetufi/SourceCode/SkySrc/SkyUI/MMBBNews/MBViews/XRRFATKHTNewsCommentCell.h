@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void (^onReplyBlock)(XRRFATKHTCommentModel *commentModel);
 @property (nonatomic, copy) dispatch_block_t onExpendBlock;
 
-- (void)refreshWithCommentModel:(XRRFATKHTCommentModel *)commentModel;
+- (void)skargrefreshWithCommentModel:(XRRFATKHTCommentModel *)commentModel;
 
 @end
 

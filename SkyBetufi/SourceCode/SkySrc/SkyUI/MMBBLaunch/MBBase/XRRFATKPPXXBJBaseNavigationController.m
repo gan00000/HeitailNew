@@ -55,7 +55,7 @@
 //}
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    for(Class vcClass in [self viewControllersNotHideTabBar]) {
+    for(Class vcClass in [self skargviewControllersNotHideTabBar]) {
         if ([viewController isKindOfClass:vcClass]) {
             [super pushViewController:viewController animated:animated];
             return;
@@ -79,7 +79,7 @@
 }
 
 #pragma mark -
-- (NSArray<Class> *)viewControllersNotHideTabBar {
+- (NSArray<Class> *)skargviewControllersNotHideTabBar {
     return nil;
 }
 
@@ -87,10 +87,10 @@
 - (void)backAction:(UIButton *)button {
     UIViewController *viewController = self.topViewController;
     
-    if ([viewController respondsToSelector:@selector(bj_shouldHandlePopActionMySelf)]) {
-        if ([(id<BJNavigationDelegate>)viewController bj_shouldHandlePopActionMySelf]) {
-            if ([viewController respondsToSelector:@selector(bj_handlePopActionMySelf)]) {
-                [(id<BJNavigationDelegate>)viewController bj_handlePopActionMySelf];
+    if ([viewController respondsToSelector:@selector(skarg_shouldHandlePopActionMySelfskarg_shouldHandlePopActionMySelf)]) {
+        if ([(id<BJNavigationDelegate>)viewController skarg_shouldHandlePopActionMySelf]) {
+            if ([viewController respondsToSelector:@selector(skarg_handlePopActionMySelfskarg_handlePopActionMySelf)]) {
+                [(id<BJNavigationDelegate>)viewController skarg_handlePopActionMySelf];
             }
             return; //自定义返回按钮点击事件
         }
@@ -108,9 +108,9 @@
         return NO;
     }
     UIViewController *viewController = self.topViewController;
-    if ([viewController respondsToSelector:@selector(bj_shouldForbidSlideBackAction)]) {
-        BJLog(@"can slide back: %d", ![(id<BJNavigationDelegate>)viewController bj_shouldForbidSlideBackAction]);
-        return ![(id<BJNavigationDelegate>)viewController bj_shouldForbidSlideBackAction];
+    if ([viewController respondsToSelector:@selector(skarg_shouldForbidSlideBackActionskarg_shouldForbidSlideBackActionskarg_shouldForbidSlideBackAction)]) {
+        BJLog(@"can slide back: %d", ![(id<BJNavigationDelegate>)viewController skarg_shouldForbidSlideBackAction]);
+        return ![(id<BJNavigationDelegate>)viewController skarg_shouldForbidSlideBackAction];
     } else {
         return YES;
     }
@@ -119,8 +119,8 @@
 #pragma mark - UINavigationControllerDelegate
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     BOOL hidde = NO;
-    if ([viewController respondsToSelector:@selector(bj_shouldHideNavigationBar)]) {
-        hidde = [(id<BJNavigationDelegate>)viewController bj_shouldHideNavigationBar];
+    if ([viewController respondsToSelector:@selector(skarg_shouldHideNavigationBar)]) {
+        hidde = [(id<BJNavigationDelegate>)viewController skarg_shouldHideNavigationBar];
     }
     [self setNavigationBarHidden:hidde animated:YES];
 }

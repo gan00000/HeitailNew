@@ -32,7 +32,7 @@
     self.scrollView.delegate = self;
 }
 
-- (void)setupWithNewsModels:(NSArray *)bannerList {
+- (void)skargsetupWithNewsModels:(NSArray *)bannerList {
     self.bannerList = bannerList;
     if (!self.bannerList) {
         return;

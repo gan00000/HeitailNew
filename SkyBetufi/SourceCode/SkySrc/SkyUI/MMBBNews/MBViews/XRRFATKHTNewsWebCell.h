@@ -12,6 +12,6 @@
 
 @property (nonatomic, copy) void(^onContentHeightUpdateBlock)(CGFloat height);
 
-- (void)setupWithClearHtmlContent:(NSString *)htmlContent;
+- (void)skargsetupWithClearHtmlContent:(NSString *)htmlContent;
 
 @end

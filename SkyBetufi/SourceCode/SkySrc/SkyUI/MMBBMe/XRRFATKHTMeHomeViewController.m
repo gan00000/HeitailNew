@@ -30,7 +30,7 @@
 
 @implementation XRRFATKHTMeHomeViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return [[XRRFATKHTMeHomeViewController alloc] init];
 }
 
@@ -45,7 +45,7 @@
                                              selector:@selector(onUserLogStatusChagne)
                                                  name:kUserLogStatusChagneNotice
                                                object:nil];
-    [XRRFATKHTUserRequest requestUnReadMessageCountWithSuccessBlock:^(NSInteger count) {
+    [XRRFATKHTUserRequest skargrequestUnReadMessageCountWithSuccessBlock:^(NSInteger count) {
         self.messageCount = count;
         [self.tableView reloadData];
     } failBlock:nil];
@@ -91,7 +91,7 @@
     kWeakSelf
     if (indexPath.row == 0) {
         XRRFATKHTMeCenterHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XRRFATKHTMeCenterHeaderCell class])];
-        [cell refreshUI];
+        [cell skarg_refreshUI];
         return cell;
     }
     if (indexPath.row == 1) {
@@ -100,19 +100,19 @@
             UIViewController *viewController;
             switch (index) {
                 case 0: {
-                    viewController = [XRRFATKHTCollectionViewController viewController];
+                    viewController = [XRRFATKHTCollectionViewController skargviewController];
                 } break;
                     
                 case 1: {
-                    viewController = [XRRFATKHTCommentViewController viewController];
+                    viewController = [XRRFATKHTCommentViewController skargviewController];
                 } break;
                     
                 case 2: {
-                    viewController = [XRRFATKHTLikeViewController viewController];
+                    viewController = [XRRFATKHTLikeViewController skargviewController];
                 } break;
                     
                 case 3: {
-                    viewController = [XRRFATKHTHistoryViewController viewController];
+                    viewController = [XRRFATKHTHistoryViewController skargviewController];
                 } break;
                     
                 default:
@@ -135,20 +135,20 @@
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (![XRRFATKHTUserManager isUserLogin]) {
-        [XRRFATKHTUserManager doUserLogin];
+    if (![XRRFATKHTUserManager skarg_isUserLogin]) {
+        [XRRFATKHTUserManager skarg_doUserLogin];
         return;
     }
     
     UIViewController *viewController;
     if (indexPath.row == 0) {
-        viewController = [XRRFATKHTUserInfoEditViewController viewController];
+        viewController = [XRRFATKHTUserInfoEditViewController skargviewController];
     }
     if (indexPath.row == 2) {
-        viewController = [XRRFATKHTMessageViewController viewController];
+        viewController = [XRRFATKHTMessageViewController skargviewController];
     }
     if (indexPath.row == 3) {
-        viewController = [XRRFATKHTSettingViewController viewController];
+        viewController = [XRRFATKHTSettingViewController skargviewController];
     }
     [self.navigationController pushViewController:viewController animated:YES];
 }

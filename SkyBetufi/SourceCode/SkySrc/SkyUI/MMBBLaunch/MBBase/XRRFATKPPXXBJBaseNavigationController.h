@@ -16,25 +16,25 @@
 
  @return 如果想要自定义返回按钮点击事件，返回YES；否则返回NO让系统自动处理。
  */
-- (BOOL)bj_shouldHandlePopActionMySelf;
+- (BOOL)skarg_shouldHandlePopActionMySelf;
 
 
 /**
  自定义的返回事件。bj_shouldHandlePopActionMySelf返回YES时才执行。
  */
-- (void)bj_handlePopActionMySelf;
+- (void)skarg_handlePopActionMySelf;
 
 /*
  *  是否禁用滑动返回事件
  *
  *  @return YES 则不可滑动返回
  */
-- (BOOL)bj_shouldForbidSlideBackAction;
+- (BOOL)skarg_shouldForbidSlideBackAction;
 
 /*
  *  是否在当前页面隐藏导航栏
  */
-- (BOOL)bj_shouldHideNavigationBar;
+- (BOOL)skarg_shouldHideNavigationBar;
 
 
 @end
@@ -53,6 +53,6 @@
  
  @return ViewController的class数组
  */
-- (NSArray<Class> *)viewControllersNotHideTabBar;
+- (NSArray<Class> *)skargviewControllersNotHideTabBar;
 
 @end

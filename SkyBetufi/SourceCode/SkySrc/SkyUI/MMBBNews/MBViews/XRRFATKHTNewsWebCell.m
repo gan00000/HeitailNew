@@ -32,7 +32,7 @@
     BJLog(@"cell: %@ dealloc", NSStringFromClass([self class]));
 }
 
-- (void)setupWithClearHtmlContent:(NSString *)htmlContent {
+- (void)skargsetupWithClearHtmlContent:(NSString *)htmlContent {
     if (!htmlContent) {
         return;
     }

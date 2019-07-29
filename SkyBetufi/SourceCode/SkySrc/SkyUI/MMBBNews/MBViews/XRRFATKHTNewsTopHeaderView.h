@@ -10,6 +10,6 @@
 
 @interface XRRFATKHTNewsTopHeaderView : UITableViewHeaderFooterView
 
-- (void)refreshWithTitle:(NSString *)title;
+- (void)skargrefreshWithTitle:(NSString *)title;
 
 @end

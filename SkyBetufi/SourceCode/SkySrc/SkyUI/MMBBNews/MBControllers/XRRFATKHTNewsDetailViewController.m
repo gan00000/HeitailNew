@@ -51,7 +51,7 @@
 
 @implementation XRRFATKHTNewsDetailViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"XRRFATKNewsDetail");
 }
 
@@ -118,12 +118,12 @@
     kWeakSelf
     if (indexPath.section == 0) {
         XRRFATKHTNewsHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XRRFATKHTNewsHeaderCell"];
-        [cell setupWithNewsModel:self.newsModel];
+        [cell skargsetupWithNewsModel:self.newsModel];
         return cell;
     } else if (indexPath.section == 1) {
         XRRFATKHTNewsWebCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XRRFATKHTNewsWebCell"];
         if (self.newsContentHeight == 0) {
-            [cell setupWithClearHtmlContent:self.htmlContent];
+            [cell skargsetupWithClearHtmlContent:self.htmlContent];
             cell.onContentHeightUpdateBlock = ^(CGFloat height) {
                 if (fabs(height - weakSelf.newsContentHeight) < 1) {
                     return;
@@ -135,7 +135,7 @@
         return cell;
     } else if (indexPath.section == 2) {
         XRRFATKHTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XRRFATKHTNewsHomeCell"];
-        [cell setupWithNewsModel:self.topNewsList[indexPath.row]];
+        [cell skargsetupWithNewsModel:self.topNewsList[indexPath.row]];
         return cell;
     }
     XRRFATKHTNewsCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XRRFATKHTNewsCommentCell class])];
@@ -150,9 +150,9 @@
         [weakSelf.tableView endUpdates];
     };
     if (indexPath.section == 3 && self.commentGetter.hotComments.count > 0) {
-        [cell refreshWithCommentModel:self.commentGetter.hotComments[indexPath.row]];
+        [cell skargrefreshWithCommentModel:self.commentGetter.hotComments[indexPath.row]];
     } else {
-        [cell refreshWithCommentModel:self.commentGetter.normalComments[indexPath.row]];
+        [cell skargrefreshWithCommentModel:self.commentGetter.normalComments[indexPath.row]];
     }
     return cell;
 }
@@ -162,7 +162,7 @@
     if (indexPath.section == 2) {
         XRRFATKHTNewsModel *newsModel = self.topNewsList[indexPath.row];
         
-        XRRFATKHTNewsDetailViewController *detailVc = [XRRFATKHTNewsDetailViewController viewController];
+        XRRFATKHTNewsDetailViewController *detailVc = [XRRFATKHTNewsDetailViewController skargviewController];
         detailVc.post_id = newsModel.news_id;
         [self.navigationController pushViewController:detailVc animated:YES];
     }
@@ -198,18 +198,18 @@
     }
     XRRFATKHTNewsTopHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"XRRFATKHTNewsTopHeaderView"];
     if (section == 2) {
-        [headerView refreshWithTitle:@"推薦閱讀"];
+        [headerView skargrefreshWithTitle:@"推薦閱讀"];
     } else if (section == 3 && self.commentGetter.hotComments.count > 0) {
-        [headerView refreshWithTitle:@"熱門回復"];
+        [headerView skargrefreshWithTitle:@"熱門回復"];
     } else {
-        [headerView refreshWithTitle:@"全部回復"];
+        [headerView skargrefreshWithTitle:@"全部回復"];
     }
     return headerView;
 }
 
 #pragma mark - requests
 - (void)loadDetailWithCompleteBlock:(dispatch_block_t)block {
-    [XRRFATKHTNewsAdditionRequest requestDetailWithPostId:self.post_id successBlock:^(XRRFATKHTNewsModel * _Nonnull newsModel) {
+    [XRRFATKHTNewsAdditionRequest skargrequestDetailWithPostId:self.post_id successBlock:^(XRRFATKHTNewsModel * _Nonnull newsModel) {
         self.newsModel = newsModel;
         if (block) {
             block();
@@ -232,7 +232,7 @@
     self.topRequestDone = NO;
     self.htmlLoadDone = YES;
     
-    [XRRFATKHTNewsTopRequest requestWithSuccessBlock:^(NSArray<XRRFATKHTNewsModel *> *newsList) {
+    [XRRFATKHTNewsTopRequest skargrequestWithSuccessBlock:^(NSArray<XRRFATKHTNewsModel *> *newsList) {
         weakSelf.topNewsList = newsList;
         weakSelf.topRequestDone = YES;
         [weakSelf refreshUI];
@@ -244,7 +244,7 @@
     
     if (!weakSelf.htmlContent) {
         self.htmlLoadDone = NO;
-        [self.newsModel getClearContentWithBlock:^(BOOL success, NSString *content) {
+        [self.newsModel skarggetClearContentWithBlock:^(BOOL success, NSString *content) {
             weakSelf.htmlContent = content;
             weakSelf.htmlLoadDone = YES;
             [weakSelf refreshUI];
@@ -266,7 +266,7 @@
     self.tableView.mj_footer.hidden = NO;
     
     kWeakSelf
-    [self.commentGetter doRequestWithCompleteBlock:^{
+    [self.commentGetter skargdoRequestWithCompleteBlock:^{
         if (weakSelf.commentGetter.hasMore) {
             [weakSelf.tableView.mj_footer endRefreshing];
         } else {
@@ -280,13 +280,13 @@
 - (void)updateAfterComment {
     [self loadDetailWithCompleteBlock:^{
         [self refreshUI];
-        [self.commentGetter reset];
+        [self.commentGetter skargreset];
         [self loadComments];
     }];
 }
 
 - (void)addHistoryRecord {
-    [XRRFATKHTUserRequest addHistoryWithNewsId:self.post_id successBlock:^{
+    [XRRFATKHTUserRequest skargaddHistoryWithNewsId:self.post_id successBlock:^{
         BJLog(@"添加瀏覽歷史成功");
     } failBlock:^(XRRFATKBJError *error) {
         BJLog(@"添加瀏覽歷史失敗");
@@ -327,14 +327,14 @@
         [weakSelf loadComments];
     }];
     
-    if ([XRRFATKHTNewsModel canShare]) {
+    if ([XRRFATKHTNewsModel skargcanShare]) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav_icon_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonTapped:)];
     }
     
     UIImage *commentIcon = [[UIImage imageNamed:@"icon_add_comment"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.commentButton setImage:commentIcon forState:UIControlStateNormal];
     [self.commentButton setTintColor:[UIColor hx_colorWithHexRGBAString:@"999999"]];
-    UIImage *saveIcon = [[XRRFATKPPXXBJBaseViewController fixImageSize:[UIImage imageNamed:@"icon_add_collection"] toSize:CGSizeMake(20, 20)] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIImage *saveIcon = [[XRRFATKPPXXBJBaseViewController skargfixImageSize:[UIImage imageNamed:@"icon_add_collection"] toSize:CGSizeMake(20, 20)] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.saveButton setImage:saveIcon forState:UIControlStateNormal];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onInputBegin) name:UITextViewTextDidBeginEditingNotification object:self.commentInputView];
@@ -393,17 +393,17 @@
 
 #pragma mark - actions
 - (void)onShareButtonTapped:(id)sender {
-    [self.newsModel share];
+    [self.newsModel skargshare];
 }
 
 - (IBAction)onSaveAction:(UIButton *)sender {
-    if (![XRRFATKHTUserManager isUserLogin]) {
-        [XRRFATKHTUserManager doUserLogin];
+    if (![XRRFATKHTUserManager skarg_isUserLogin]) {
+        [XRRFATKHTUserManager skarg_doUserLogin];
         [self.view showToast:@"請登錄"];
         return;
     }
     if (sender.selected) {
-        [XRRFATKHTUserRequest deleteCollectionWithNewsId:self.newsModel.news_id successBlock:^{
+        [XRRFATKHTUserRequest skargdeleteCollectionWithNewsId:self.newsModel.news_id successBlock:^{
             [self.view showToast:@"已取消收藏"];
             self.newsModel.my_save = NO;
             [self setupSaveButton];
@@ -411,7 +411,7 @@
             [self.view showToast:@"取消收藏失敗"];
         }];
     } else {
-        [XRRFATKHTUserRequest addCollectionWithNewsId:self.newsModel.news_id successBlock:^{
+        [XRRFATKHTUserRequest skargaddCollectionWithNewsId:self.newsModel.news_id successBlock:^{
             [self.view showToast:@"已收藏"];
             self.newsModel.my_save = YES;
             [self setupSaveButton];
@@ -439,7 +439,7 @@
         return;
     }
     
-    [XRRFATKHTUserRequest postCommentWithComment_txt:self.commentInputView.text post_id:self.newsModel.news_id reply_comment_id:self.currentCommentModel.comment_id successBlock:^{
+    [XRRFATKHTUserRequest skargpostCommentWithComment_txt:self.commentInputView.text post_id:self.newsModel.news_id reply_comment_id:self.currentCommentModel.comment_id successBlock:^{
         self.commentInputView.text = nil;
         [self.view endEditing:YES];
         [kWindow showToast:@"評論成功"];
@@ -450,9 +450,9 @@
 }
 
 - (void)onInputBegin {
-    if (![XRRFATKHTUserManager isUserLogin]) {
+    if (![XRRFATKHTUserManager skarg_isUserLogin]) {
         [self.view endEditing:YES];
-        [XRRFATKHTUserManager doUserLogin];
+        [XRRFATKHTUserManager skarg_doUserLogin];
         [self.view showToast:@"請登錄"];
         return;
     }
@@ -485,7 +485,7 @@
 
 - (XRRFATKHTNoCommentFooterView *)noCommentsFooterView {
     if (!_noCommentsFooterView) {
-        _noCommentsFooterView = [XRRFATKHTNoCommentFooterView footerViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100)];
+        _noCommentsFooterView = [XRRFATKHTNoCommentFooterView skargfooterViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100)];
     }
     return _noCommentsFooterView;
 }

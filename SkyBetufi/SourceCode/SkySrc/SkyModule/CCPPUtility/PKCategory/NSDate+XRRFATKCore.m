@@ -853,8 +853,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
  *
  *  @return 获得的季度
  */
- // e.g. 2nd Tuesday of the month is 2
-- (NSInteger) nthWeekday
+- (NSInteger) nthWeekday // e.g. 2nd Tuesday of the month is 2
 {
     NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     return components.weekdayOrdinal;

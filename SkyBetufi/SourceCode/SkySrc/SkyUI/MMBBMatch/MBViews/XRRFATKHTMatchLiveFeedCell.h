@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XRRFATKHTMatchLiveFeedCell : UITableViewCell
 
-- (void)setupWithMatchLiveFeedModel:(XRRFATKHTMatchLiveFeedModel *)feedModel;
+- (void)skargsetupWithMatchLiveFeedModel:(XRRFATKHTMatchLiveFeedModel *)feedModel;
 
 @end
 

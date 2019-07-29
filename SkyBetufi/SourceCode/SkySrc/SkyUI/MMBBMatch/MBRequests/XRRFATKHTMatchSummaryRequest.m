@@ -10,7 +10,7 @@
 
 @implementation XRRFATKHTMatchSummaryRequest
 
-+ (void)requestSummaryWithGameId:(NSString *)game_id
++ (void)skargrequestSummaryWithGameId:(NSString *)game_id
                     successBlock:(void(^)(XRRFATKHTMatchSummaryModel *summaryModel, XRRFATKHTMatchCompareModel *compareModel))successBlock
                       errorBlock:(BJServiceErrorBlock)errorBlock {
     [XRRFATKBJHTTPServiceEngine getRequestWithFunctionPath:API_MATCH_SUMMARY params:@{@"game_id":game_id} successBlock:^(id responseData) {

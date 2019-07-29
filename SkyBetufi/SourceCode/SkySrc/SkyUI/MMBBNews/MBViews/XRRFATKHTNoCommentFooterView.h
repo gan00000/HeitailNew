@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XRRFATKHTNoCommentFooterView : UIView
 
-+ (instancetype)footerViewWithFrame:(CGRect)frame;
++ (instancetype)skargfooterViewWithFrame:(CGRect)frame;
 
 @end
 

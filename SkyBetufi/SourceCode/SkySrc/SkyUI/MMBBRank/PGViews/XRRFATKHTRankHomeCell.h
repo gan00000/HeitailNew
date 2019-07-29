@@ -11,6 +11,6 @@
 
 @interface XRRFATKHTRankHomeCell : UITableViewCell
 
-- (void)setupWithTitle:(NSString *)title rankList:(NSArray<XRRFATKHTRankModel *> *)rankList;
+- (void)skargsetupWithTitle:(NSString *)title rankList:(NSArray<XRRFATKHTRankModel *> *)rankList;
 
 @end

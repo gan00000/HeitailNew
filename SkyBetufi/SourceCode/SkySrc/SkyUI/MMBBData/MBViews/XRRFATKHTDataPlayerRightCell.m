@@ -46,7 +46,7 @@
     // Configure the view for the selected state
 }
 
-- (void)refreshWithPlayerModel:(XRRFATKHTDataPlayerRankModel *)playerModel row:(NSInteger)row {
+- (void)skargrefreshWithPlayerModel:(XRRFATKHTDataPlayerRankModel *)playerModel row:(NSInteger)row {
     self.teamLabel.text = playerModel.teamName;
     
     NSInteger matches = playerModel.matches.integerValue;

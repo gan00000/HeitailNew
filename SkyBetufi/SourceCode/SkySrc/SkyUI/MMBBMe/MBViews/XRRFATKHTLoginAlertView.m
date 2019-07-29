@@ -22,13 +22,13 @@
 
 @implementation XRRFATKHTLoginAlertView
 
-+ (void)showLoginAlertViewWithSelectBlock:(void(^)(HTLoginPlatform platform))block {
++ (void)skargshowLoginAlertViewWithSelectBlock:(void(^)(HTLoginPlatform platform))block {
     XRRFATKHTLoginAlertView *alertView = kLoadXibWithName(NSStringFromClass([self class]));
     alertView.onPlatformButtonTapped = block;
     [alertView show];
 }
 
-+ (void)showShareAlertViewWithSelectBlock:(void(^)(HTLoginPlatform platform))block {
++ (void)skargshowShareAlertViewWithSelectBlock:(void(^)(HTLoginPlatform platform))block {
     XRRFATKHTLoginAlertView *alertView = kLoadXibWithName(NSStringFromClass([self class]));
     alertView.titleLabel.text = @"分享至";
     alertView.onPlatformButtonTapped = block;

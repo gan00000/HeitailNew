@@ -11,6 +11,6 @@
 
 @interface XRRFATKHTMatchDashboardViewController : XRRFATKPPXXBJBaseViewController
 
-- (void)refreshWithMatchCompareModel:(XRRFATKHTMatchCompareModel *)compareModel;
+- (void)skargrefreshWithMatchCompareModel:(XRRFATKHTMatchCompareModel *)compareModel;
 
 @end

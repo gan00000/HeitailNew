@@ -29,7 +29,7 @@
     // Configure the view for the selected state
 }
 
-- (void)refreshWithRankModel:(XRRFATKHTRankModel *)rankModel row:(NSInteger)row {
+- (void)skargrefreshWithRankModel:(XRRFATKHTRankModel *)rankModel row:(NSInteger)row {
     
     self.rankLabel.text = [NSString stringWithFormat:@"%ld", row+1];
     self.teamNameLabel.text = rankModel.teamName;
