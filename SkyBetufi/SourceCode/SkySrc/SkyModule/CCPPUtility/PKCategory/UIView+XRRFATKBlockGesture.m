@@ -1,20 +1,10 @@
-//
-//  UIView+XRRFATKBlockGesture.m
-//  BenjiaPro
-//
-//  Created by 叮咚钱包富银 on 2018/7/10.
-//  Copyright © 2018年 冯生伟. All rights reserved.
-//
-
 #import "UIView+XRRFATKBlockGesture.h"
 #import <objc/runtime.h>
 static char kActionHandlerTapBlockKey;
 static char kActionHandlerTapGestureKey;
 static char kActionHandlerLongPressBlockKey;
 static char kActionHandlerLongPressGestureKey;
-
 @implementation UIView (XRRFATKBlockGesture)
-
 - (void)addTapActionWithBlock:(GestureActionBlock)block {
     UITapGestureRecognizer *gesture = objc_getAssociatedObject(self, &kActionHandlerTapGestureKey);
     if (!gesture)
@@ -25,7 +15,6 @@ static char kActionHandlerLongPressGestureKey;
     }
     objc_setAssociatedObject(self, &kActionHandlerTapBlockKey, block, OBJC_ASSOCIATION_COPY);
 }
-
 - (void)handleActionForTapGesture:(UITapGestureRecognizer*)gesture {
     if (gesture.state == UIGestureRecognizerStateRecognized)
     {
@@ -36,7 +25,6 @@ static char kActionHandlerLongPressGestureKey;
         }
     }
 }
-
 - (void)addLongPressActionWithBlock:(GestureActionBlock)block {
     UILongPressGestureRecognizer *gesture = objc_getAssociatedObject(self, &kActionHandlerLongPressGestureKey);
     if (!gesture)
@@ -47,7 +35,6 @@ static char kActionHandlerLongPressGestureKey;
     }
     objc_setAssociatedObject(self, &kActionHandlerLongPressBlockKey, block, OBJC_ASSOCIATION_COPY);
 }
-
 - (void)handleActionForLongPressGesture:(UITapGestureRecognizer*)gesture {
     if (gesture.state == UIGestureRecognizerStateRecognized)
     {

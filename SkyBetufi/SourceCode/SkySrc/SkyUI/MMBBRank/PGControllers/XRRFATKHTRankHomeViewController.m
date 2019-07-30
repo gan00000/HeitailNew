@@ -1,46 +1,26 @@
-//
-//  XRRFATKHTRankHomeViewController.m
-//  HeiteBasketball
-//
-//  Created by 冯生伟 on 2018/9/8.
-//  Copyright © 2018年 Dean_F. All rights reserved.
-//
-
 #import "XRRFATKHTRankHomeViewController.h"
 #import "XRRFATKHTRankEastWestViewController.h"
 #import "XRRFATKHTRankZoneViewController.h"
-
 #import <HMSegmentedControl/HMSegmentedControl.h>
-
 @interface XRRFATKHTRankHomeViewController () <UIScrollViewDelegate>
-
 @property (nonatomic, strong) HMSegmentedControl *segmentControl;
 @property (nonatomic, strong) UIScrollView *containerView;
-
 @property (nonatomic, strong) NSMutableArray *loadedControllersArray;
 @property (nonatomic, strong) NSMutableArray *loadedFlagArray;
 @property (nonatomic, assign) NSInteger currentIndex;
-
 @end
-
 @implementation XRRFATKHTRankHomeViewController
-
 + (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"XRRFATKRankHome");
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self initData];
     [self setupUI];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
 #pragma mark - private
 - (void)initData {
     self.currentIndex = 0;
@@ -51,22 +31,18 @@
 }
 - (void)setupUI {
     self.title = @"排行";
-    
     [self.view addSubview:self.segmentControl];
     [self.segmentControl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.mas_offset(0);
         make.height.mas_equalTo(40);
     }];
-    
     [self.view addSubview:self.containerView];
     [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.mas_offset(0);
         make.top.mas_equalTo(self.segmentControl.mas_bottom).mas_offset(1);
     }];
-    
     [self segmentedValueChangedHandle:0];
 }
-
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     CGPoint offset = scrollView.contentOffset;
@@ -75,19 +51,16 @@
     [self loadChildViewControllerByIndex:page];
     [self.segmentControl setSelectedSegmentIndex:page animated:YES];
 }
-
 #pragma mark -- HMSegmentedControl Action
 - (void)segmentedValueChangedHandle:(NSInteger)index {
     self.currentIndex = index;
     [self loadChildViewControllerByIndex:index];
     [self.containerView setContentOffset:CGPointMake(index * SCREEN_WIDTH, 0) animated:YES];
 }
-
 - (void)loadChildViewControllerByIndex:(NSInteger)index {
     if ([self.loadedFlagArray[index] boolValue]) {
         return;
     }
-    
     UIViewController *vc;
     if (index == 0) {
         XRRFATKHTRankEastWestViewController *ewVc = [XRRFATKHTRankEastWestViewController skargviewController];
@@ -102,7 +75,6 @@
     [self.loadedControllersArray replaceObjectAtIndex:index withObject:vc];
     [self setChildViewFrame:vc.view byIndex:index];
 }
-
 - (void)setChildViewFrame:(UIView *)childView byIndex:(NSInteger)index {
     [childView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.containerView);
@@ -111,7 +83,6 @@
         make.left.equalTo(self.containerView).offset(index * SCREEN_WIDTH);
     }];
 }
-
 #pragma mark -- lazy load
 - (NSMutableArray *)loadedFlagArray {
     if (!_loadedFlagArray) {
@@ -119,14 +90,12 @@
     }
     return _loadedFlagArray;
 }
-
 - (NSMutableArray *)loadedControllersArray {
     if (!_loadedControllersArray) {
         _loadedControllersArray = [NSMutableArray array];
     }
     return _loadedControllersArray;
 }
-
 - (HMSegmentedControl *)segmentControl {
     if (!_segmentControl) {
         _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"東西區排名", @"分賽區排名"]];
@@ -137,7 +106,6 @@
         _segmentControl.selectedTitleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:15 weight:UIFontWeightMedium],NSForegroundColorAttributeName:[UIColor hx_colorWithHexRGBAString:@"fc562e"]};
         _segmentControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
         _segmentControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
-        
         kWeakSelf
         _segmentControl.indexChangeBlock = ^(NSInteger index){
             [weakSelf segmentedValueChangedHandle:index];
@@ -145,7 +113,6 @@
     }
     return _segmentControl;
 }
-
 - (UIScrollView *)containerView {
     if (!_containerView) {
         _containerView = [[UIScrollView alloc] init];
@@ -159,5 +126,4 @@
     }
     return _containerView;
 }
-
 @end

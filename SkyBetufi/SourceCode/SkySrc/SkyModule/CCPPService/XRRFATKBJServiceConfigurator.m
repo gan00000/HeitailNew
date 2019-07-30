@@ -1,45 +1,27 @@
-//
-//  XRRFATKBJServiceConfigurator.m
-//  BenjiaPro
-//
-//  Created by Marco on 2017/6/1.
-//  Copyright © 2017年 Benjia. All rights reserved.
-//
-
 #import "XRRFATKBJServiceConfigurator.h"
-
 static NSString * const kServerProductURL = @"http://app.ballgametime.com/";
-static NSString * const kServerTestURL = @"http://app.ballgametime.com/"; //测试环境地址
-static NSString * const kServerDevURL = @"http://app.ballgametime.com/"; //开发环境地址
-
+static NSString * const kServerTestURL = @"http://app.ballgametime.com/"; 
+static NSString * const kServerDevURL = @"http://app.ballgametime.com/"; 
 static NSString * const kH5ProductURL = @"";
-static NSString * const kH5TestURL = @""; //测试环境地址
-static NSString * const kH5DevURL = @""; //开发环境地址
-
-static NSString * const kServiceUrlTypeKey = @"kServiceUrlTypeKey"; //正式环境0 测试环境为1,开发环境为2
-
+static NSString * const kH5TestURL = @""; 
+static NSString * const kH5DevURL = @""; 
+static NSString * const kServiceUrlTypeKey = @"kServiceUrlTypeKey"; 
 @implementation XRRFATKBJServiceConfigurator
-
 + (instancetype)sharedInstance {
     static XRRFATKBJServiceConfigurator *instance = nil;
     static dispatch_once_t token;
     dispatch_once(&token, ^{
         instance = [[XRRFATKBJServiceConfigurator alloc] init];
-        
         if (BJ_DEBUG) {
             [[NSUserDefaults standardUserDefaults] registerDefaults:@{kServiceUrlTypeKey:@1}];
         } else {
             [[NSUserDefaults standardUserDefaults] registerDefaults:@{kServiceUrlTypeKey:@0}];
         }
-        
     });
     return instance;
 }
-
 - (void)connectToServer {
-    
 }
-
 - (NSString *)serverBaseUrl {
     NSInteger serverType = [[NSUserDefaults standardUserDefaults] integerForKey:kServiceUrlTypeKey];
     if (serverType == 0) {
@@ -51,7 +33,6 @@ static NSString * const kServiceUrlTypeKey = @"kServiceUrlTypeKey"; //正式环�
     }
     return kServerProductURL;
 }
-
 - (NSString *)h5BaseUrl {
     NSInteger serverType = [[NSUserDefaults standardUserDefaults] integerForKey:kServiceUrlTypeKey];
     if (serverType == 0) {
@@ -63,25 +44,19 @@ static NSString * const kServiceUrlTypeKey = @"kServiceUrlTypeKey"; //正式环�
     }
     return kH5ProductURL;
 }
-
-//---
-- (void)switchToProductServer {
+- (void)skarg_switchToProductServer {
     [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:kServiceUrlTypeKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
-
-- (void)switchToTestServer {
+- (void)skarg_switchToTestServer {
     [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:kServiceUrlTypeKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
-
-- (void)switchToDevServer {
+- (void)skarg_switchToDevServer {
     [[NSUserDefaults standardUserDefaults] setInteger:2 forKey:kServiceUrlTypeKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
-
-- (NSInteger)currentServerType {
+- (NSInteger)skarg_currentServerType {
     return [[NSUserDefaults standardUserDefaults] integerForKey:kServiceUrlTypeKey];
 }
-
 @end

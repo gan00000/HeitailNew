@@ -1,15 +1,5 @@
-//
-//  XRRFATKHTMatchPtsCompareCell.m
-//  HeiteBasketball
-//
-//  Created by 冯生伟 on 2018/10/13.
-//  Copyright © 2018年 Dean_F. All rights reserved.
-//
-
 #import "XRRFATKHTMatchPtsCompareCell.h"
-
 @interface XRRFATKHTMatchPtsCompareCell ()
-
 @property (weak, nonatomic) IBOutlet UILabel *homePtsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *homeRebLabel;
 @property (weak, nonatomic) IBOutlet UILabel *homeAstLabel;
@@ -18,7 +8,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *homeFgmadeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *home3FgmadeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *homeFtmadeLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *awayPtsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *awayRebLabel;
 @property (weak, nonatomic) IBOutlet UILabel *awayAstLabel;
@@ -27,24 +16,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *awayFgmadeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *away3FgmadeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *awayFtmadeLabel;
-
-
 @end
-
 @implementation XRRFATKHTMatchPtsCompareCell
-
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
-
 - (void)skargsetupWithMatchSummaryModel:(XRRFATKHTMatchSummaryModel *)summaryModel {
     self.homePtsLabel.text = summaryModel.home_pts;
     self.homeRebLabel.text = summaryModel.home_team_reb;
@@ -54,7 +34,6 @@
     self.homeFgmadeLabel.text = summaryModel.home_team_fgmade;
     self.home3FgmadeLabel.text = summaryModel.home_team_fg3ptmade;
     self.homeFtmadeLabel.text = summaryModel.home_team_ftmade;
-    
     self.awayPtsLabel.text = summaryModel.away_pts;
     self.awayRebLabel.text = summaryModel.away_team_reb;
     self.awayAstLabel.text = summaryModel.away_team_ast;
@@ -64,5 +43,4 @@
     self.away3FgmadeLabel.text = summaryModel.away_team_fg3ptmade;
     self.awayFtmadeLabel.text = summaryModel.away_team_ftmade;
 }
-
 @end

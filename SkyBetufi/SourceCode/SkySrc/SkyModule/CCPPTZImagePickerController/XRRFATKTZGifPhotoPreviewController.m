@@ -1,34 +1,20 @@
-//
-//  XRRFATKTZGifPhotoPreviewController.m
-//  XRRFATKTZImagePickerController
-//
-//  Created by ttouch on 2016/12/13.
-//  Copyright © 2016年 谭真. All rights reserved.
-//
-
 #import "XRRFATKTZGifPhotoPreviewController.h"
 #import "XRRFATKTZImagePickerController.h"
 #import "XRRFATKTZAssetModel.h"
 #import "UIView+XRRFATKLayout.h"
 #import "XRRFATKTZPhotoPreviewCell.h"
 #import "XRRFATKTZImageManager.h"
-
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-
 @interface XRRFATKTZGifPhotoPreviewController () {
     UIView *_toolBar;
     UIButton *_doneButton;
     UIProgressView *_progress;
-    
     TZPhotoPreviewView *_previewView;
-    
     UIStatusBarStyle _originStatusBarStyle;
 }
 @end
-
 @implementation XRRFATKTZGifPhotoPreviewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
@@ -39,18 +25,15 @@
     [self configPreviewView];
     [self configBottomToolBar];
 }
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     _originStatusBarStyle = [UIApplication sharedApplication].statusBarStyle;
     [UIApplication sharedApplication].statusBarStyle = iOS7Later ? UIStatusBarStyleLightContent : UIStatusBarStyleBlackOpaque;
 }
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [UIApplication sharedApplication].statusBarStyle = _originStatusBarStyle;
 }
-
 - (void)configPreviewView {
     _previewView = [[TZPhotoPreviewView alloc] initWithFrame:CGRectZero];
     _previewView.model = self.model;
@@ -60,12 +43,10 @@
     }];
     [self.view addSubview:_previewView];
 }
-
 - (void)configBottomToolBar {
     _toolBar = [[UIView alloc] initWithFrame:CGRectZero];
     CGFloat rgb = 34 / 255.0;
     _toolBar.backgroundColor = [UIColor colorWithRed:rgb green:rgb blue:rgb alpha:0.7];
-    
     _doneButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _doneButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [_doneButton addTarget:self action:@selector(doneButtonClick) forControlEvents:UIControlEventTouchUpInside];
@@ -78,7 +59,6 @@
         [_doneButton setTitleColor:[UIColor colorWithRed:(83/255.0) green:(179/255.0) blue:(17/255.0) alpha:1.0] forState:UIControlStateNormal];
     }
     [_toolBar addSubview:_doneButton];
-    
     UILabel *byteLabel = [[UILabel alloc] init];
     byteLabel.textColor = [UIColor whiteColor];
     byteLabel.font = [UIFont systemFontOfSize:13];
@@ -87,32 +67,24 @@
         byteLabel.text = totalBytes;
     }];
     [_toolBar addSubview:byteLabel];
-    
     [self.view addSubview:_toolBar];
 }
-
 #pragma mark - Layout
-
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    
     _previewView.frame = self.view.bounds;
     _previewView.scrollView.frame = self.view.bounds;
     _doneButton.frame = CGRectMake(self.view.tz_width - 44 - 12, 0, 44, 44);
     _toolBar.frame = CGRectMake(0, self.view.tz_height - 44, self.view.tz_width, 44);
 }
-
 #pragma mark - Click Event
-
 - (void)signleTapAction {
     _toolBar.hidden = !_toolBar.isHidden;
     [self.navigationController setNavigationBarHidden:_toolBar.isHidden];
-    
     if (!TZ_isGlobalHideStatusBar) {
         if (iOS7Later) [UIApplication sharedApplication].statusBarHidden = _toolBar.isHidden;
     }
 }
-
 - (void)doneButtonClick {
     XRRFATKTZImagePickerController *imagePickerVc = (XRRFATKTZImagePickerController *)self.navigationController;
     if (self.navigationController) {
@@ -127,7 +99,6 @@
         }];
     }
 }
-
 - (void)callDelegateMethod {
     XRRFATKTZImagePickerController *imagePickerVc = (XRRFATKTZImagePickerController *)self.navigationController;
     UIImage *animatedImage = _previewView.imageView.image;
@@ -138,7 +109,5 @@
         imagePickerVc.didFinishPickingGifImageHandle(animatedImage,_model.asset);
     }
 }
-
 #pragma clang diagnostic pop
-
 @end

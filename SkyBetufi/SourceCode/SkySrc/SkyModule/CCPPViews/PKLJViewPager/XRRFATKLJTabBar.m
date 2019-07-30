@@ -1,52 +1,31 @@
-
-//  XRRFATKLJTabBar.m
-//  LJViewPagerDemo
-//
-//  Created by Marco on 5/16/15.
-//  Copyright (c) 2015 LJ. All rights reserved.
-//
-
 #import "XRRFATKLJTabBar.h"
 #import "XRRFATKLJViewPager.h"
-
 @interface XRRFATKLJTabBar ()
-
 @property (strong, nonatomic) UIScrollView *scrollView;
 @property (strong, nonatomic) UIView *tabContainerView;
-
 @property (assign, nonatomic) CGFloat tabItemWidth;
 @property (assign, nonatomic) CGFloat tabItemMinWidth;
-
 @end
-
 @implementation XRRFATKLJTabBar
-
 - (instancetype)init {
     if (self == [super init]) {
         [self setup];
-        
     }
     return self;
 }
-
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self == [super initWithFrame:frame]) {
         [self setup];
-        
     }
     return self;
 }
-
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self == [super initWithCoder:aDecoder]) {
         [self setup];
-        
     }
     return self;
 }
-
 - (void)setup {
-    
     self.scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
     self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     self.scrollView.contentSize = self.bounds.size;
@@ -54,11 +33,9 @@
     self.scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollView.showsVerticalScrollIndicator = NO;
     [self addSubview:self.scrollView];
-    
     self.tabContainerView = [[UIView alloc] initWithFrame:self.bounds];
     self.tabContainerView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [self.scrollView addSubview:self.tabContainerView];
-    
     self.backgroundColor = [UIColor whiteColor];
     self.textColor = [UIColor grayColor];
     self.selectedTextColor = [UIColor blackColor];
@@ -66,20 +43,15 @@
     self.textFont = [UIFont systemFontOfSize:14];
     self.indicatorColor = [UIColor blackColor];
     self.separatorColor = self.backgroundColor;
-    
-    // shadow of tab bar
     UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:self.bounds];
     self.layer.masksToBounds = NO;
     self.layer.shadowColor = [UIColor lightGrayColor].CGColor;
     self.layer.shadowOffset = CGSizeMake(0.0f, 3.0f);
     self.layer.shadowOpacity = 0.5f;
     self.layer.shadowPath = shadowPath.CGPath;
-    
     self.itemsPerPage = 4;
     self.tabItemMinWidth = self.frame.size.width / self.itemsPerPage;
-    
 }
-
 #pragma mark -
 - (void)addTabAtIndex:(NSUInteger)index {
     int tabCount = ({
@@ -93,24 +65,22 @@
     tabWidth = tabWidth < self.tabItemMinWidth ? self.tabItemMinWidth : tabWidth;
     float x = tabWidth * tabCount;
     float height = self.frame.size.height;
-    
     int tab = 0;
     int separator = 1;
     for (int i = 0; i < self.tabContainerView.subviews.count; i++) {
         UIView *subView = self.tabContainerView.subviews[i];
         CGRect frame = subView.frame;
-        if (subView.tag >= 0) { // tab button
+        if (subView.tag >= 0) { 
             frame.origin.x = tabWidth * tab;
             frame.size.width = tabWidth;
             tab++;
         }
-        if (subView.tag == -1) { // tab separator
+        if (subView.tag == -1) { 
             frame.origin.x = tabWidth * separator;
             separator++;
         }
         subView.frame = frame;
     }
-    
     if (self.tabContainerView.subviews.count > 0) {
         float separatorX = x;
         float separatorY = 10;
@@ -122,11 +92,9 @@
         separatorView.tag = -1;
         [self.tabContainerView addSubview:separatorView];
     }
-    
     CGRect frame = CGRectMake(x, 0, tabWidth, height);
     UIButton *tabButton = [[UIButton alloc] initWithFrame:frame];
     tabButton.tag = index;
-    
     UIImage *icon = self.iconImages.count >= index + 1 ? self.iconImages[index] : nil;
     if (icon) {
         NSAssert([icon isKindOfClass:[UIImage class]], @"icon image is not an UIImage object!");
@@ -144,7 +112,6 @@
     tabButton.titleLabel.font = self.textFont;
     [tabButton addTarget:self action:@selector(tabPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.tabContainerView addSubview:tabButton];
-    
     if (index >= self.itemsPerPage) {
         CGRect containerFrame = self.tabContainerView.frame;
         containerFrame.size.width = CGRectGetMaxX(tabButton.frame);
@@ -153,7 +120,6 @@
     }
     self.tabItemWidth = tabWidth;
 }
-
 - (void)addIndicatorView {
     float height = self.indicatorViewHeight > 0 ? self.indicatorViewHeight : 2;
     float y = self.frame.size.height - height;
@@ -162,7 +128,6 @@
     self.indicatorView.backgroundColor = self.indicatorColor;
     [self.tabContainerView addSubview:self.indicatorView];
 }
-
 - (void)selectedTabAtIndex:(NSInteger)index {
     int tab = ({
         int tab = 0;
@@ -179,7 +144,6 @@
     if (tab == 0) {
         return;
     }
-    
     CGPoint scrollContentOffset = self.scrollView.contentOffset;
     if (index >= self.itemsPerPage) {
         float outScreenWidth = (index - (self.itemsPerPage - 1)) * self.tabItemWidth;
@@ -197,12 +161,7 @@
             [self.scrollView setContentOffset:scrollContentOffset animated:YES];
         }
     }
-    
-    //CGRect indicatorViewFrame = self.indicatorView.frame;
-    //indicatorViewFrame.origin.x = self.tabItemWidth * index;
-    //self.indicatorView.frame = indicatorViewFrame;
 }
-
 - (void)resetTabs {
     for (UIView *view in self.tabContainerView.subviews) {
         [view removeFromSuperview];
@@ -213,7 +172,6 @@
     [self addIndicatorView];
     [self selectedTabAtIndex:0];
 }
-
 #pragma mark - action
 - (void)tabPressed:(UIButton *)sender {
     if (self.viewPager) {
@@ -224,53 +182,43 @@
         [self.delegate tabBar:self didSelectedItemAtIndex:sender.tag];
     }
 }
-
 #pragma mark - getter and setter
 - (void)setViewPager:(XRRFATKLJViewPager *)viewPager {
     _viewPager = viewPager;
     [self resetTabs];
 }
-
 - (void)setSelectedIndex:(NSUInteger)selectedIndex {
     _selectedIndex = selectedIndex;
     [self selectedTabAtIndex:selectedIndex];
 }
-
 - (void)setTitles:(NSArray *)titles {
     _titles = titles;
     [self resetTabs];
 }
-
 - (void)setTextFont:(UIFont *)textFont {
     _textFont = textFont;
     [self resetTabs];
 }
-
 - (void)setTextColor:(UIColor *)textColor {
     _textColor = textColor;
     [self resetTabs];
 }
-
 - (void)setSelectedTextColor:(UIColor *)selectedTextColor {
     _selectedTextColor = selectedTextColor;
     [self resetTabs];
 }
-
 - (void)setIndicatorColor:(UIColor *)indicatorColor {
     _indicatorColor = indicatorColor;
     [self resetTabs];
 }
-
 - (void)setSeparatorColor:(UIColor *)separatorColor {
     _separatorColor = separatorColor;
     [self resetTabs];
 }
-
 - (void)setShowShadow:(BOOL)showShadow {
     _showShadow = showShadow;
     self.layer.masksToBounds = !showShadow;
 }
-
 - (void)setShadowOffest:(CGSize)shadowOffest {
     _shadowOffest = shadowOffest;
     UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:self.bounds];
@@ -279,7 +227,6 @@
     self.layer.shadowOpacity = 0.5f;
     self.layer.shadowPath = shadowPath.CGPath;
 }
-
 - (void)setShadowColor:(UIColor *)shadowColor {
     _shadowColor = shadowColor;
     UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:self.bounds];
@@ -288,11 +235,9 @@
     self.layer.shadowOpacity = 0.5f;
     self.layer.shadowPath = shadowPath.CGPath;
 }
-
 - (void)setItemsPerPage:(NSInteger)itemsPerPage {
     _itemsPerPage = itemsPerPage;
     self.tabItemMinWidth = self.frame.size.width / self.itemsPerPage;
     [self resetTabs];
 }
-
 @end

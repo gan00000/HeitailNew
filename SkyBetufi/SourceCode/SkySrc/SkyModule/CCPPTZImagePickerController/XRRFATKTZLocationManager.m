@@ -1,26 +1,12 @@
-//
-//  XRRFATKTZLocationManager.m
-//  XRRFATKTZImagePickerController
-//
-//  Created by 谭真 on 2017/06/03.
-//  Copyright © 2017年 谭真. All rights reserved.
-//  定位管理类
-
 #import "XRRFATKTZLocationManager.h"
 #import "XRRFATKTZImagePickerController.h"
-
 @interface XRRFATKTZLocationManager ()<CLLocationManagerDelegate>
 @property (nonatomic, strong) CLLocationManager *locationManager;
-/// 定位成功的回调block
 @property (nonatomic, copy) void (^successBlock)(CLLocation *location,CLLocation *oldLocation);
-/// 编码成功的回调block
 @property (nonatomic, copy) void (^geocodeBlock)(NSArray *geocodeArray);
-/// 定位失败的回调block
 @property (nonatomic, copy) void (^failureBlock)(NSError *error);
 @end
-
 @implementation XRRFATKTZLocationManager
-
 + (instancetype)manager {
     static XRRFATKTZLocationManager *manager;
     static dispatch_once_t onceToken;
@@ -34,36 +20,27 @@
     });
     return manager;
 }
-
 - (void)startLocation {
     [self startLocationWithSuccessBlock:nil failureBlock:nil geocoderBlock:nil];
 }
-
 - (void)startLocationWithSuccessBlock:(void (^)(CLLocation *location,CLLocation *oldLocation))successBlock failureBlock:(void (^)(NSError *error))failureBlock {
     [self startLocationWithSuccessBlock:successBlock failureBlock:failureBlock geocoderBlock:nil];
 }
-
 - (void)startLocationWithGeocoderBlock:(void (^)(NSArray *geocoderArray))geocoderBlock {
     [self startLocationWithSuccessBlock:nil failureBlock:nil geocoderBlock:geocoderBlock];
 }
-
 - (void)startLocationWithSuccessBlock:(void (^)(CLLocation *location,CLLocation *oldLocation))successBlock failureBlock:(void (^)(NSError *error))failureBlock geocoderBlock:(void (^)(NSArray *geocoderArray))geocoderBlock {
     [self.locationManager startUpdatingLocation];
     _successBlock = successBlock;
     _geocodeBlock = geocoderBlock;
     _failureBlock = failureBlock;
 }
-
 #pragma mark - CLLocationManagerDelegate
-
-/// 地理位置发生改变时触发
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     [manager stopUpdatingLocation];
-    
     if (_successBlock) {
         _successBlock(newLocation,oldLocation);
     }
-    
     if (_geocodeBlock) {
         CLGeocoder *geocoder = [[CLGeocoder alloc] init];
         [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *array, NSError *error) {
@@ -71,13 +48,10 @@
         }];
     }
 }
-
-/// 定位失败回调方法
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"定位失败, 错误: %@",error);
     switch([error code]) {
-        case kCLErrorDenied: { // 用户禁止了定位权限
-            
+        case kCLErrorDenied: { 
         } break;
         default: break;
     }
@@ -85,5 +59,4 @@
         _failureBlock(error);
     }
 }
-
 @end

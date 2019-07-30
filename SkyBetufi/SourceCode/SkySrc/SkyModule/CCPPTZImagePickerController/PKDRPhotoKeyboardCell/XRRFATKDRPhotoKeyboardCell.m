@@ -1,31 +1,16 @@
-//
-//  DRPhotoKeyboardPhotoCell.m
-//  Records
-//
-//  Created by Jeason on 2017/11/6.
-//  Copyright © 2017年 DuoRong Technology Co., Ltd. All rights reserved.
-//
-
 #import "XRRFATKDRPhotoKeyboardCell.h"
-
 @interface XRRFATKDRPhotoKeyboardCell ()
-
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
 @property (weak, nonatomic) IBOutlet UIButton *delectButton;
-
 @end
-
 @implementation XRRFATKDRPhotoKeyboardCell
-
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.backgroundColor = [UIColor whiteColor];
 }
-
 + (CGSize)cellSize {
     return CGSizeMake(95.0, 95.0);
 }
-
 - (void)setImage:(UIImage *)image {
     _image = image;
     if (image == nil) {
@@ -36,11 +21,9 @@
         self.delectButton.hidden = NO;
     }
 }
-
 - (IBAction)deleteAction:(id)sender {
     self.deleteBlock ? self.deleteBlock() : nil;
 }
-
 - (UIView *)snapshotView {
     UIView *snapshotView = [[UIView alloc] init];
     UIView *cellSnapshotView = nil;
@@ -56,9 +39,7 @@
     }
     snapshotView.frame = CGRectMake(0, 0, cellSnapshotView.frame.size.width, cellSnapshotView.frame.size.height);
     cellSnapshotView.frame = CGRectMake(0, 0, cellSnapshotView.frame.size.width, cellSnapshotView.frame.size.height);
-    
     [snapshotView addSubview:cellSnapshotView];
     return snapshotView;
 }
-
 @end

@@ -1,15 +1,5 @@
-//
-//  XRRFATKHTMatchQuarterCell.m
-//  HeiteBasketball
-//
-//  Created by 冯生伟 on 2018/10/13.
-//  Copyright © 2018年 Dean_F. All rights reserved.
-//
-
 #import "XRRFATKHTMatchQuarterCell.h"
-
 @interface XRRFATKHTMatchQuarterCell ()
-
 @property (weak, nonatomic) IBOutlet UIView *quarterItemContentView;
 @property (weak, nonatomic) IBOutlet UIView *homeQuarterPtsContentView;
 @property (weak, nonatomic) IBOutlet UIView *awayQuarterPtsContentView;
@@ -17,31 +7,21 @@
 @property (weak, nonatomic) IBOutlet UILabel *awayTeamLabel;
 @property (weak, nonatomic) IBOutlet UILabel *homePtsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *awayPtsLabel;
-
 @property (nonatomic, strong) NSMutableArray *labels;
-
 @end
-
 @implementation XRRFATKHTMatchQuarterCell
-
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
-
 - (void)skargsetupWithMatchSummaryModel:(XRRFATKHTMatchSummaryModel *)summaryModel {
     self.homeTeamLabel.text = summaryModel.homeName;
     self.homePtsLabel.text = summaryModel.home_pts;
     self.awayTeamLabel.text = summaryModel.awayName;
     self.awayPtsLabel.text = summaryModel.away_pts;
-    
     for (UILabel *label in self.quarterItemContentView.subviews) {
         [label removeFromSuperview];
     }
@@ -51,12 +31,10 @@
     for (UILabel *label in self.awayQuarterPtsContentView.subviews) {
         [label removeFromSuperview];
     }
-    
     NSArray *h = [summaryModel.home_quarter_scores componentsSeparatedByString:@","];
     NSArray *a = [summaryModel.away_quarter_scores componentsSeparatedByString:@","];
     NSInteger index = 0;
     CGFloat width = (SCREEN_WIDTH - 130) / h.count;
-    
     for (; index <h.count; index++) {
         UILabel *label = [self getLabelAtIndex:index quarterCount:h.count labelWidth:width];
         if (index < 4) {
@@ -66,14 +44,12 @@
         }
         [self.quarterItemContentView addSubview:label];
     }
-    
     for (NSString *pts in h) {
         UILabel *label = [self getLabelAtIndex:index quarterCount:h.count labelWidth:width];
         label.text = pts;
         [self.homeQuarterPtsContentView addSubview:label];
         index++;
     }
-    
     for (NSString *pts in a) {
         UILabel *label = [self getLabelAtIndex:index quarterCount:h.count labelWidth:width];
         label.text = pts;
@@ -81,7 +57,6 @@
         index++;
     }
 }
-
 - (UILabel *)getLabelAtIndex:(NSInteger)index quarterCount:(NSInteger)count labelWidth:(CGFloat)width {
     UILabel *label;
     if (self.labels.count > index) {
@@ -93,16 +68,13 @@
         label.textAlignment = NSTextAlignmentCenter;
         [self.labels addObject:label];
     }
-    
     label.frame = CGRectMake(index % count * width, 0, width, 35);
     return label;
 }
-
 - (NSMutableArray *)labels {
     if (!_labels) {
         _labels = [NSMutableArray array];
     }
     return _labels;
 }
-
 @end

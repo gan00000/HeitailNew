@@ -1,15 +1,5 @@
-//
-//  XRRFATKHTDataPlayerRightCell.m
-//  HeiteBasketball
-//
-//  Created by 冯生伟 on 2018/10/19.
-//  Copyright © 2018年 Dean_F. All rights reserved.
-//
-
 #import "XRRFATKHTDataPlayerRightCell.h"
-
 @interface XRRFATKHTDataPlayerRightCell ()
-
 @property (weak, nonatomic) IBOutlet UILabel *teamLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ptsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fgattLabel;
@@ -28,27 +18,17 @@
 @property (weak, nonatomic) IBOutlet UILabel *foulsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *gameTimesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-
-
 @end
-
 @implementation XRRFATKHTDataPlayerRightCell
-
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
-
 - (void)skargrefreshWithPlayerModel:(XRRFATKHTDataPlayerRankModel *)playerModel row:(NSInteger)row {
     self.teamLabel.text = playerModel.teamName;
-    
     NSInteger matches = playerModel.matches.integerValue;
     if (matches > 0) {
         self.ptsLabel.text = [NSString stringWithFormat:@"%.1f", playerModel.pts / matches];
@@ -96,11 +76,9 @@
         self.gameTimesLabel.text = @"0.0";
         self.timeLabel.text = @"0.0";
     }
-    
     self.contentView.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"FFFFFF"];
     if (row % 2 == 1) {
         self.contentView.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"f4f7f0"];
     }
 }
-
 @end

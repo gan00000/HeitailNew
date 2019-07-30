@@ -1,21 +1,10 @@
-//
-//  XRRFATKHTRankModel.m
-//  HeiteBasketball
-//
-//  Created by 冯生伟 on 2018/10/14.
-//  Copyright © 2018年 Dean_F. All rights reserved.
-//
-
 #import "XRRFATKHTRankModel.h"
-
 @implementation XRRFATKHTRankModel
-
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{
              @"rank_id": @"id"
              };
 }
-
 - (NSString *)win {
     if (!_win) {
         _win = @"0";
@@ -25,7 +14,6 @@
     }
     return _win;
 }
-
 - (NSString *)loss {
     if (!_loss) {
         _loss = @"0";
@@ -37,7 +25,6 @@
     }
     return _loss;
 }
-
 - (NSString *)winRate {
     if (!_winRate) {
         _winRate = @"0.0%";
@@ -48,28 +35,24 @@
     }
     return _winRate;
 }
-
 - (NSString *)home_matches {
     if (!_home_matches) {
         _home_matches = [NSString stringWithFormat:@"%ld-%ld", self.homewin, self.homelose];
     }
     return _home_matches;
 }
-
 - (NSString *)away_matches {
     if (!_away_matches) {
         _away_matches = [NSString stringWithFormat:@"%ld-%ld", self.awaywin, self.awaylose];
     }
     return _away_matches;
 }
-
 - (NSString *)area_matches {
     if (!_area_matches) {
         _area_matches = [NSString stringWithFormat:@"%ld-%ld", self.homewin+self.awaywin, self.homelose+self.awaylose];
     }
     return _area_matches;
 }
-
 - (NSString *)avg_pts {
     if (!_avg_pts) {
         _avg_pts = @"0.0";
@@ -79,7 +62,6 @@
     }
     return _avg_pts;
 }
-
 - (NSString *)avg_against_pts {
     if (!_avg_against_pts) {
         _avg_against_pts = @"0.0";
@@ -89,19 +71,16 @@
     }
     return _avg_against_pts;
 }
-
 - (NSInteger)matches {
     if (self.gamesplayed > 0) {
         return self.gamesplayed;
     }
     return self.GamesPlayed;
 }
-
 - (CGFloat)against_pts {
     if (self.ptsagainst > 0) {
         return self.ptsagainst;
     }
     return self.PtsAgainst;
 }
-
 @end

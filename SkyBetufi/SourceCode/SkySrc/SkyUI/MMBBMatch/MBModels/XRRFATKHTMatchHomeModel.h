@@ -1,15 +1,5 @@
-//
-//  XRRFATKHTMatchHomeModel.h
-//  HeiteBasketball
-//
-//  Created by 冯生伟 on 2018/9/9.
-//  Copyright © 2018年 Dean_F. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
-
 @interface XRRFATKHTMatchHomeModel : NSObject
-
 @property (nonatomic, copy) NSString *game_id;
 @property (nonatomic, copy) NSString *scheduleStatus;
 @property (nonatomic, copy) NSString *originalDate;
@@ -32,11 +22,8 @@
 @property (nonatomic, copy) NSString *away_pts;
 @property (nonatomic, copy) NSString *home_pts;
 @property (nonatomic, copy) NSString *gamedate;
-
 @property (nonatomic, copy) NSString *img_home_logo;
 @property (nonatomic, copy) NSString *img_away_logo;
 @property (nonatomic, copy) NSString *quarter;
 @property (nonatomic, copy) NSString *quarter_time;
-
 @end
-

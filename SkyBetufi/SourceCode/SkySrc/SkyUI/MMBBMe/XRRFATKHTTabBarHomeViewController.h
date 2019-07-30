@@ -1,0 +1,5 @@
+#import "XRRFATKPPXXBJBaseViewController.h"
+NS_ASSUME_NONNULL_BEGIN
+@interface XRRFATKHTTabBarHomeViewController : XRRFATKPPXXBJBaseViewController
+@end
+NS_ASSUME_NONNULL_END

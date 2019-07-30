@@ -1,18 +1,8 @@
-//
-//  XRRFATKBJURINavHelper.m
-//  BenjiaPro
-//
-//  Created by Marco on 2017/7/3.
-//  Copyright © 2017年 Benjia. All rights reserved.
-//
-
 #import "XRRFATKBJURINavHelper.h"
 #import "XRRFATKBJWebViewController.h"
 #import "XRRFATKPPXXBJViewControllerCenter.h"
 #import "XRRFATKBJURINavigator.h"
-
 @implementation XRRFATKBJURINavHelper
-
 + (BOOL)canHandleURI:(NSString *)uri {
     if ([[XRRFATKBJURINavigator sharedInstance] canHandleURI:uri]) {
         return YES;
@@ -22,7 +12,6 @@
     }
     return NO;
 }
-
 + (void)handleURI:(NSString *)uri fromViewController:(UIViewController *)viewController {
     BOOL result = [[XRRFATKBJURINavigator sharedInstance] handleURI:uri];
     if (!result) {
@@ -38,5 +27,4 @@
         [navCon pushViewController:webVC animated:YES];
     }
 }
-
 @end

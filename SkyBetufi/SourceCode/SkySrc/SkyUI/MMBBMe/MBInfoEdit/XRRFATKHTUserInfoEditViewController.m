@@ -1,19 +1,9 @@
-//
-//  XRRFATKHTUserInfoEditViewController.m
-//  HeiteBasketball
-//
-//  Created by 冯生伟 on 2019/4/5.
-//  Copyright © 2019 Dean_F. All rights reserved.
-//
-
 #import "XRRFATKHTUserInfoEditViewController.h"
 #import <Photos/Photos.h>
 #import "XRRFATKTZImagePickerController.h"
 #import "XRRFATKHTUserRequest.h"
 #import "XRRFATKDRSandBoxManager.h"
-
 @interface XRRFATKHTUserInfoEditViewController ()
-
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet JXImageView *avatarImageView;
@@ -22,28 +12,20 @@
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *emailLeft;
 @property (weak, nonatomic) IBOutlet UILabel *emailRight;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *userNameContentHeight;
-
 @property (nonatomic, copy) NSString *selectedImageBase64;
 @property (nonatomic, assign) BOOL avatarChange;
 @property (nonatomic, assign) BOOL userNameChange;
 @property (nonatomic, assign) BOOL emailChange;
-
 @end
-
 @implementation XRRFATKHTUserInfoEditViewController
-
 + (instancetype)skargviewController {
     return [[XRRFATKHTUserInfoEditViewController alloc] init];
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.title = @"個人信息";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(saveUserInfo)];
-    
     XRRFATKHTUserInfoModel *userInfoModel = [XRRFATKHTUserManager skarg_userInfo];
     self.userNameLabel.text = userInfoModel.display_name;
     self.avatarImageView.image = userInfoModel.avatar;
@@ -55,17 +37,14 @@
         self.emailLeft.hidden = YES;
         self.emailRight.hidden = YES;
     }
-    
     if (userInfoModel.change_name) {
         self.tipView.hidden = YES;
         self.userNameTextField.hidden = YES;
         self.userNameContentHeight.constant = 55;
     }
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserNameChagne) name:UITextFieldTextDidChangeNotification object:self.userNameTextField];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onEmailChagne) name:UITextFieldTextDidChangeNotification object:self.emailTextField];
 }
-
 #pragma mark - Actions
 - (IBAction)avatarSelectAction:(UIButton *)sender {
     PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
@@ -84,13 +63,11 @@
         }];
     }
 }
-
 - (void)saveUserInfo {
     [XRRFATKBJLoadingHud showHUDWithText:@"正在保存" inView:self.navigationController.view];
     NSString *email;
     NSString *userName;
     NSString *base64Avatar;
-    
     if (self.emailChange) {
         email = self.emailTextField.text;
     }
@@ -100,7 +77,6 @@
     if (self.avatarChange) {
         base64Avatar = self.selectedImageBase64;
     }
-    
     kWeakSelf
     [XRRFATKHTUserRequest skargupdateUserInfoWithEmail:email displayName:userName file:base64Avatar successBlock:^(NSDictionary * _Nonnull userInfo) {
         [XRRFATKHTUserManager skarg_refreshUserInfoWithSuccessBlock:^{
@@ -113,19 +89,15 @@
         [weakSelf.view showToast:@"保存失敗"];
     }];
 }
-
 - (void)onUserNameChagne {
     self.userNameChange = YES;
 }
-
 - (void)onEmailChagne {
     self.emailChange = YES;
 }
-
 - (BOOL)skarg_shouldForbidSlideBackAction {
     return self.avatarChange || self.userNameChange || self.emailChange;
 }
-
 #pragma mark - private
 - (void)showTZImagePickerController {
     CGFloat cropHeight = SCREEN_WIDTH;
@@ -149,5 +121,4 @@
     imagePickerViewController.title = @"相冊";
     [self presentViewController:imagePickerViewController animated:YES completion:nil];
 }
-
 @end

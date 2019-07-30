@@ -1,37 +1,20 @@
-//
-//  XRRFATKHTNewsWebCell.m
-//  HeiteBasketball
-//
-//  Created by 冯生伟 on 2018/9/10.
-//  Copyright © 2018年 Dean_F. All rights reserved.
-//
-
 #import "XRRFATKHTNewsWebCell.h"
 #import <WebKit/WebKit.h>
-
 @interface XRRFATKHTNewsWebCell ()<WKNavigationDelegate, WKUIDelegate>
-
 @property (nonatomic, strong) UIScrollView *webContentView;
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, assign) BOOL hasLoad;
-
 @property (nonatomic, assign) BOOL haveGetHeight;
-
 @end
-
 @implementation XRRFATKHTNewsWebCell
-
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
     [self addSubview:self.webContentView];
 }
-
 - (void)dealloc {
     [self.webView.scrollView removeObserver:self forKeyPath:@"contentSize"];
     BJLog(@"cell: %@ dealloc", NSStringFromClass([self class]));
 }
-
 - (void)skargsetupWithClearHtmlContent:(NSString *)htmlContent {
     if (!htmlContent) {
         return;
@@ -42,7 +25,6 @@
     self.hasLoad = YES;
     [self.webView loadHTMLString:htmlContent baseURL:nil];
 }
-
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     __weak typeof(self) weakSelf = self;
@@ -56,7 +38,6 @@
                 weakSelf.webView.frame = CGRectMake(0, 0, SCREEN_WIDTH, height);
                 weakSelf.webContentView.frame = CGRectMake(0, 0, SCREEN_WIDTH, height);
                 weakSelf.webContentView.contentSize =CGSizeMake(SCREEN_WIDTH, height);
-                
                 if (weakSelf.onContentHeightUpdateBlock) {
                     weakSelf.onContentHeightUpdateBlock(height);
                 }
@@ -64,10 +45,8 @@
         }];
     }
 }
-
 #pragma mark - WKNavigationDelegate
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-    
     if ([navigationAction.request.URL.scheme isEqualToString:@"haters"]) {
         NSString *url = navigationAction.request.URL.absoluteString;
         if ([RX(@"://height=") isMatch:url]) {
@@ -84,8 +63,6 @@
     }
     decisionHandler(WKNavigationActionPolicyAllow);
 }
-
-
 #pragma mark - getters
 - (UIScrollView *)webContentView {
     if (!_webContentView) {
@@ -94,7 +71,6 @@
     }
     return _webContentView;
 }
-
 - (WKWebView *)webView {
     if (!_webView) {
         _webView = [[WKWebView alloc] init];
@@ -105,19 +81,4 @@
     }
     return _webView;
 }
-
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-

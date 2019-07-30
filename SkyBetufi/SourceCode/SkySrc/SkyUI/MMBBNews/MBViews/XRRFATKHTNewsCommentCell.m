@@ -1,19 +1,9 @@
-//
-//  XRRFATKHTNewsCommentCell.m
-//  HeiteBasketball
-//
-//  Created by 冯生伟 on 2019/4/14.
-//  Copyright © 2019 Dean_F. All rights reserved.
-//
-
 #import "XRRFATKHTNewsCommentCell.h"
 #import "XRRFATKBJDateFormatUtility.h"
 #import "XRRFATKHTUserRequest.h"
 #import "XRRFATKHTCommentExpendCell.h"
 #import <YYText/YYText.h>
-
 @interface XRRFATKHTNewsCommentCell () <UITableViewDelegate, UITableViewDataSource>
-
 @property (weak, nonatomic) IBOutlet JXImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
@@ -22,7 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UITableView *replyTableView;
 @property (weak, nonatomic) IBOutlet UIButton *replyButton;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *replyTableViewHeitht;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *replyTableViewTop;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarWidth;
@@ -31,18 +20,12 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarRight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *timeLabelTop;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *commentLabelRight;
-
 @property (nonatomic, weak) XRRFATKHTCommentModel *commentModel;
-
 @end
-
 @implementation XRRFATKHTNewsCommentCell
-
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    
     self.replyTableView.layer.cornerRadius = 4;
     self.replyTableView.layer.borderWidth = 0.5;
     self.replyTableView.layer.borderColor = [UIColor hx_colorWithHexRGBAString:@"dddddd"].CGColor;
@@ -52,19 +35,14 @@
     self.replyTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.replyTableView registerNib:[UINib nibWithNibName:NSStringFromClass([self class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([self class])];
     [self.replyTableView registerNib:[UINib nibWithNibName:NSStringFromClass([XRRFATKHTCommentExpendCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([XRRFATKHTCommentExpendCell class])];
-    
     UIImage *image = [[UIImage imageNamed:@"icon_add_like"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.likeButton setImage:image forState:UIControlStateNormal];
     [self.likeButton setTitleColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"] forState:UIControlStateSelected];
     [self.likeButton setTitleColor:[UIColor hx_colorWithHexRGBAString:@"999999"] forState:UIControlStateNormal];
 }
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
-
 - (void)skargrefreshWithCommentModel:(XRRFATKHTCommentModel *)commentModel {
     self.commentModel = commentModel;
     self.avatarImageView.image = commentModel.userModel.avatar;
@@ -79,14 +57,12 @@
         self.likeButton.selected = NO;
         [self.likeButton setTintColor:[UIColor hx_colorWithHexRGBAString:@"999999"]];
     }
-    
     if (commentModel.total_like > 0) {
         [self.likeButton setTitle:[NSString stringWithFormat:@"%ld", commentModel.total_like]
                          forState:UIControlStateNormal];
     } else {
         [self.likeButton setTitle:@"讃" forState:UIControlStateNormal];
     }
-    
     if (commentModel.isReply) {
         self.replyTableViewHeitht.constant = 0;
         self.replyTableViewTop.constant = 8;
@@ -102,7 +78,6 @@
         self.timelabel.font = [UIFont systemFontOfSize:11];
         self.replyButton.titleLabel.font = [UIFont systemFontOfSize:11];
         self.replyCountLabel.font = [UIFont systemFontOfSize:11];
-        
         NSString *at = [NSString stringWithFormat:@"@%@", commentModel.reply_to_display_name];
         NSRange range = [commentModel.comment_content rangeOfString:at];
         NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:commentModel.comment_content];
@@ -110,9 +85,7 @@
         attr.yy_color = [UIColor hx_colorWithHexRGBAString:@"222222"];
         [attr yy_setColor:[UIColor hx_colorWithHexRGBAString:@"4E8BFF"] range:range];
         self.commentLabel.attributedText = attr;
-        
         self.replyCountLabel.hidden = YES;
-        
     } else {
         if (commentModel.replyHeight == 0) {
             self.replyTableViewTop.constant = 10;
@@ -126,7 +99,6 @@
         [self.replyTableView reloadData];
     }
 }
-
 - (IBAction)onReplyAction:(id)sender {
     if (![XRRFATKHTUserManager skarg_isUserLogin]) {
         [XRRFATKHTUserManager skarg_doUserLogin];
@@ -136,7 +108,6 @@
         self.onReplyBlock(self.commentModel);
     }
 }
-
 - (IBAction)onLikeAction:(UIButton *)sender {
     if (![XRRFATKHTUserManager skarg_isUserLogin]) {
         [XRRFATKHTUserManager skarg_doUserLogin];
@@ -161,7 +132,6 @@
         }
     }];
 }
-
 #pragma mark - UITaleVeiwDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.commentModel.reply.count <= 3) {
@@ -169,7 +139,6 @@
     }
     return self.commentModel.reply.count + 1;;
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.commentModel.reply.count <= 3 ||
         (self.commentModel.expend && indexPath.row < self.commentModel.reply.count) ||
@@ -195,7 +164,6 @@
     };
     return cell;
 }
-
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.commentModel.reply.count <= 3 ||
@@ -206,5 +174,4 @@
     }
     return 40;
 }
-
 @end

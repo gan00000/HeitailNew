@@ -1,31 +1,16 @@
-//
-//  HTComentGetter.m
-//  HeiteBasketball
-//
-//  Created by 冯生伟 on 2019/4/13.
-//  Copyright © 2019 Dean_F. All rights reserved.
-//
-
 #import "XRRFATKHTCommentGetter.h"
 #import "XRRFATKHTNewsAdditionRequest.h"
-
 @interface XRRFATKHTCommentGetter ()
-
 @property (nonatomic, assign) NSInteger hotOffset;
 @property (nonatomic, assign) NSInteger normalOffset;
 @property (nonatomic, assign) BOOL hasMoreHot;
 @property (nonatomic, assign) BOOL hasMoreNormal;
 @property (nonatomic, copy) NSString *post_id;
-@property (nonatomic, strong) NSArray *incompletePage; // 用于避免残缺页重复添加
-
+@property (nonatomic, strong) NSArray *incompletePage; 
 @end
-
 @implementation XRRFATKHTCommentGetter
-
 - (instancetype)initWithPostId:(NSString *)post_id {
-
     self = [super init];
-    
     if (self) {
         self.post_id = post_id;
         self.hotComments = [NSMutableArray array];
@@ -34,7 +19,6 @@
     }
     return self;
 }
-
 - (void)skargreset {
     self.hotOffset = 0;
     self.normalOffset = 0;
@@ -42,7 +26,6 @@
     self.hasMoreNormal = YES;
     self.hasMore = YES;
 }
-
 - (void)skargdoRequestWithCompleteBlock:(dispatch_block_t)commentBlock {
     if (self.hasMoreHot) {
         [self loadHotCommentsWithCompleteBlock:commentBlock];
@@ -50,7 +33,6 @@
         [self loadNormalCommentsWithCompleteBlock:commentBlock];
     }
 }
-
 - (void)loadHotCommentsWithCompleteBlock:(dispatch_block_t)block {
     [XRRFATKHTNewsAdditionRequest skargrequestHotCommentWithOffset:self.hotOffset newsId:self.post_id successBlock:^(NSArray<XRRFATKHTCommentModel *> * _Nonnull commentList, NSInteger pages) {
         if (self.hotOffset == 0) {
@@ -77,7 +59,6 @@
         }
     }];
 }
-
 - (void)loadNormalCommentsWithCompleteBlock:(dispatch_block_t)block {
     [XRRFATKHTNewsAdditionRequest skargrequestNormalCommentWithOffset:self.normalOffset newsId:self.post_id successBlock:^(NSArray<XRRFATKHTCommentModel *> * _Nonnull commentList, NSInteger pages) {
         if (self.normalOffset == 0) {
@@ -93,13 +74,10 @@
         } else {
             self.hasMoreNormal = NO;
             self.hasMore = NO;
-            
-            // 防重复添加
             if (self.incompletePage) {
                 [self.normalComments removeObjectsInArray:self.incompletePage];
             }
             self.incompletePage = commentList;
-            
             if (commentList.count == 10) {
                 self.normalOffset ++;
                 self.incompletePage = nil;
@@ -115,11 +93,9 @@
         }
     }];
 }
-
 - (void)countHeightForComments:(NSArray<XRRFATKHTCommentModel *> *)comments {
     for (XRRFATKHTCommentModel *commentModel in comments) {
         [commentModel skargcountHeight:NO];
     }
 }
-
 @end

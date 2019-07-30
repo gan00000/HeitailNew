@@ -1,11 +1,3 @@
-//
-//  XRRFATKTZVideoPlayerController.m
-//  XRRFATKTZImagePickerController
-//
-//  Created by 谭真 on 16/1/5.
-//  Copyright © 2016年 谭真. All rights reserved.
-//
-
 #import "XRRFATKTZVideoPlayerController.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import "UIView+XRRFATKLayout.h"
@@ -14,39 +6,29 @@
 #import "XRRFATKTZImagePickerController.h"
 #import "XRRFATKTZPhotoPreviewController.h"
 #import "XRRFATKDRDeleteAlertView.h"
-
 @interface XRRFATKTZVideoPlayerController () {
     AVPlayer *_player;
     AVPlayerLayer *_playerLayer;
     UIButton *_playButton;
     UIImage *_cover;
-    
     UIView *_toolBar;
     UIButton *_doneButton;
     UIButton *_delectButton;
     UILabel *_previewTipLabel;
     UIProgressView *_progress;
-
-    
     UIImageView *_coverImageView;
-    
     UIStatusBarStyle _originStatusBarStyle;
 }
 @end
-
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-
 @implementation XRRFATKTZVideoPlayerController
-
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
-
 - (BOOL)navigationBarTranslucent {
     return YES;
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
@@ -57,20 +39,16 @@
     [self configMoviePlayer];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pausePlayerAndShowNaviBar) name:UIApplicationWillResignActiveNotification object:nil];
 }
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     _originStatusBarStyle = [UIApplication sharedApplication].statusBarStyle;
     [UIApplication sharedApplication].statusBarStyle = iOS7Later ? UIStatusBarStyleLightContent : UIStatusBarStyleBlackOpaque;
 }
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [UIApplication sharedApplication].statusBarStyle = _originStatusBarStyle;
 }
-
 - (void)configMoviePlayer {
-    
     if (self.coverImg) {
         _cover = self.coverImg;
     } else {
@@ -78,7 +56,6 @@
             _cover = photo;
         }];
     }
-    
     if (self.videoPath.length > 0) {
         _player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:self.videoPath]];
         _playerLayer = [AVPlayerLayer playerLayerWithPlayer:_player];
@@ -87,7 +64,6 @@
         _coverImageView.frame = self.view.bounds;
         [self.view.layer addSublayer:_playerLayer];
         [self.view addSubview:_coverImageView];
-        //            [weakSelf addProgressObserver];
         [self configPlayButton];
         [self configBottomToolBar];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pausePlayerAndShowNaviBar) name:AVPlayerItemDidPlayToEndTimeNotification object:_player.currentItem];
@@ -103,7 +79,6 @@
                 _coverImageView.contentMode = UIViewContentModeScaleAspectFill;
                 [weakSelf.view.layer addSublayer:_playerLayer];
                 [weakSelf.view addSubview:_coverImageView];
-                //            [weakSelf addProgressObserver];
                 [weakSelf configPlayButton];
                 [weakSelf configBottomToolBar];
                 [[NSNotificationCenter defaultCenter] addObserver:weakSelf selector:@selector(pausePlayerAndShowNaviBar) name:AVPlayerItemDidPlayToEndTimeNotification object:_player.currentItem];
@@ -111,7 +86,6 @@
         }];
     }
 }
-/// Show progress，do it next time / 给播放器添加进度更新,下次加上
 - (void)addProgressObserver{
     AVPlayerItem *playerItem = _player.currentItem;
     UIProgressView *progress = _progress;
@@ -123,7 +97,6 @@
         }
     }];
 }
-
 - (void)configPlayButton {
     _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_playButton setImage:[UIImage imageNamedFromMyBundle:@"MMVideoPreviewPlay"] forState:UIControlStateNormal];
@@ -131,7 +104,6 @@
     [_playButton addTarget:self action:@selector(playButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_playButton];
 }
-
 - (void)configBottomToolBar {
     _toolBar = [[UIView alloc] initWithFrame:CGRectZero];
     CGFloat rgb = 34 / 255.0;
@@ -153,10 +125,6 @@
         [_doneButton setTitle:tzImagePickerVc.doneBtnTitleStr forState:UIControlStateNormal];
         [_doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     } else {
-//        [_doneButton setTitle:[NSBundle tz_localizedStringForKey:@"Done"] forState:UIControlStateNormal];
-//        [_doneButton setTitle:@"关闭" forState:UIControlStateNormal];
-//        [_doneButton setTitleColor:[UIColor colorWithRed:(83/255.0) green:(179/255.0) blue:(17/255.0) alpha:1.0] forState:UIControlStateNormal];
-//        [_doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_doneButton setImage:kDefaultImage(@"preview_icon_close") forState:UIControlStateNormal];
         [_toolBar addSubview:_delectButton];
         [_toolBar addSubview:_previewTipLabel];
@@ -164,9 +132,7 @@
     [_toolBar addSubview:_doneButton];
     [self.view addSubview:_toolBar];
 }
-
 #pragma mark - Layout
-
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     _playerLayer.frame = self.view.bounds;
@@ -177,9 +143,7 @@
     _previewTipLabel.centerX = SCREEN_WIDTH *0.5;
     _toolBar.frame = CGRectMake(0, SCREEN_HEIGHT - [UITabBar tabBarHeight], SCREEN_WIDTH, [UITabBar tabBarHeight]);
 }
-
 #pragma mark - Click Event
-
 - (void)playButtonClick {
     _coverImageView.hidden = YES;
     CMTime currentTime = _player.currentItem.currentTime;
@@ -197,7 +161,6 @@
         [self pausePlayerAndShowNaviBar];
     }
 }
-
 - (void)doneButtonClick {
     XRRFATKTZImagePickerController *imagePickerVc = (XRRFATKTZImagePickerController *)self.navigationController;
     if (self.navigationController) {
@@ -214,7 +177,6 @@
         }];
     }
 }
-
 - (void)delectButtonClick {
     [XRRFATKDRDeleteAlertView showDeleteAlertViewWithComplete:^(BOOL isDelete) {
         if (isDelete) {
@@ -226,7 +188,6 @@
         }
     }];
 }
-
 - (void)callDelegateMethod {
     XRRFATKTZImagePickerController *imagePickerVc = (XRRFATKTZImagePickerController *)self.navigationController;
     if ([imagePickerVc.pickerDelegate respondsToSelector:@selector(imagePickerController:didFinishPickingVideo:sourceAssets:)]) {
@@ -236,24 +197,18 @@
         imagePickerVc.didFinishPickingVideoHandle(_cover,_model.asset);
     }
 }
-
 #pragma mark - Notification Method
-
 - (void)pausePlayerAndShowNaviBar {
     [_player pause];
     _toolBar.hidden = NO;
     [self.navigationController setNavigationBarHidden:NO];
     [_playButton setImage:[UIImage imageNamedFromMyBundle:@"MMVideoPreviewPlay"] forState:UIControlStateNormal];
-    
     if (!TZ_isGlobalHideStatusBar) {
         if (iOS7Later) [UIApplication sharedApplication].statusBarHidden = NO;
     }
 }
-
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-
 #pragma clang diagnostic pop
-
 @end

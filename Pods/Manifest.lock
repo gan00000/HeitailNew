@@ -29,6 +29,9 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - CocoaLumberjack (3.5.1):
+    - CocoaLumberjack/Core (= 3.5.1)
+  - CocoaLumberjack/Core (3.5.1)
   - FDStackView (1.0.1)
   - HexColors (4.0.0)
   - HMSegmentedControl (1.5.5)
@@ -63,6 +66,8 @@ PODS:
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
+  - SVGKit (2.1.0):
+    - CocoaLumberjack (~> 3.0)
   - UMCAnalytics (5.5.1):
     - UMCCommon
   - UMCCommon (1.5.2)
@@ -79,6 +84,7 @@ PODS:
     - UMCCommon
     - UMCShare/Core
   - WebViewJavascriptBridge (6.0.3)
+  - XCDYouTubeKit (2.7.3)
   - YYModel (1.0.4)
   - YYText (1.0.7)
   - ZFLineSDK (4.1.1)
@@ -99,6 +105,7 @@ DEPENDENCIES:
   - Reachability
   - RegExCategories
   - SDWebImage
+  - SVGKit
   - UMCAnalytics
   - UMCCommon
   - UMCCommonLog
@@ -107,6 +114,7 @@ DEPENDENCIES:
   - UMCShare/Social/Facebook
   - UMCShare/Social/Line
   - WebViewJavascriptBridge
+  - XCDYouTubeKit (~> 2.7)
   - YYModel
   - YYText
   - ZFLineSDK
@@ -115,6 +123,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - BlocksKit
+    - CocoaLumberjack
     - HexColors
     - HMSegmentedControl
     - IQKeyboardManager
@@ -127,6 +136,7 @@ SPEC REPOS:
     - RegExCategories
     - SDVersion
     - SDWebImage
+    - SVGKit
     - UMCAnalytics
     - UMCCommon
     - UMCCommonLog
@@ -134,6 +144,7 @@ SPEC REPOS:
     - UMCSecurityPlugins
     - UMCShare
     - WebViewJavascriptBridge
+    - XCDYouTubeKit
     - YYModel
     - YYText
     - ZFLineSDK
@@ -155,6 +166,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  CocoaLumberjack: 2101f8a5508197a305e737d16c5c2e9e2157628c
   FDStackView: fc0697e5be2022c8af36ce66e9e2061006058ba8
   HexColors: 5f95843ef89aff6a72e1fd3a8ebabf205cc43379
   HMSegmentedControl: f514c6dad47aa3065e0ed2e8046b73efc71221b9
@@ -169,6 +181,7 @@ SPEC CHECKSUMS:
   RegExCategories: e68befacacd5bda853c88f70ec745cb2d0cfb89c
   SDVersion: 18f32c835c1543611fcfae3c6accd9a04b90597e
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SVGKit: 8a2fc74258bdb2abb54d3b65f3dd68b0277a9c4d
   UMCAnalytics: 0aff87e39008e2a650e5917430db0da2de2f8495
   UMCCommon: 4392868ac47ff1b101663106bb114ba616fabbad
   UMCCommonLog: 05a2d5de21858e3d870551562cff405c1366d244
@@ -176,10 +189,11 @@ SPEC CHECKSUMS:
   UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
   UMCShare: 552b29753f1b4da87b51d96545ed19e6263df397
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
+  XCDYouTubeKit: 3f4fd3eb3ed494a46a8f007b91315eed6dd6df1f
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZFLineSDK: fc1485f687bd9d6af5cb7e39ab2a8266680797dd
 
-PODFILE CHECKSUM: 6a0559001b23a5e22c690139cc25ae3c19ef2ebe
+PODFILE CHECKSUM: ac2caaeab0b5db9cc21b37149d6315e0383d00a7
 
 COCOAPODS: 1.5.3

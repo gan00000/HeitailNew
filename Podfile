@@ -32,6 +32,8 @@ pod 'UMCCommonLog'
 pod 'UMCPush'
 pod 'ZFLineSDK'
 pod 'YYText'
+pod "XCDYouTubeKit", "~> 2.7"
+pod 'SVGKit'
 #pod 'FBSDKLoginKit'
 
 end

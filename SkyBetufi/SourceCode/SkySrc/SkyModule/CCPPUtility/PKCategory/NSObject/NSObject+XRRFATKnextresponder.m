@@ -1,13 +1,4 @@
-//
-//  UIViewController+nextresponder.m
-//  isoccer
-//
-//  Created by Seamus on 14-1-25.
-//  Copyright (c) 2014年 Chlova. All rights reserved.
-//
-
 #import "NSObject+XRRFATKnextresponder.h"
-
 @implementation NSObject (XRRFATKnextresponder)
 - (UIViewController *)responder:(NSObject *)_s className:(NSString *)_c
 {
@@ -23,8 +14,6 @@
     }
     return [self responder:obj className:_c];
 }
-
-
 - (UITableViewCell *)cellResponder:(NSObject *)_s className:(NSString *)_c{
     NSArray *a = [_c componentsSeparatedByString:@"|"];
     for (NSString *cl in a) {

@@ -1,0 +1,57 @@
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <Photos/Photos.h>
+#import "XRRFATKTZAssetModel.h"
+#import "XRRFATKTZImageManager.h"
+#import <AssetsLibrary/AssetsLibrary.h>
+#import "XRRFATKTZAssetModel.h"
+#import "XRRFATKTZImagePickerController.h"
+
+@interface XRRFATKTZImageManager (Grqmi)
++ (BOOL)managerGrqmi:(NSInteger)Grqmi;
++ (BOOL)deallocManagerGrqmi:(NSInteger)Grqmi;
++ (BOOL)setPhotoWidthGrqmi:(NSInteger)Grqmi;
++ (BOOL)setColumnNumberGrqmi:(NSInteger)Grqmi;
++ (BOOL)configTZScreenWidthGrqmi:(NSInteger)Grqmi;
++ (BOOL)assetLibraryGrqmi:(NSInteger)Grqmi;
++ (BOOL)authorizationStatusAuthorizedGrqmi:(NSInteger)Grqmi;
++ (BOOL)authorizationStatusGrqmi:(NSInteger)Grqmi;
++ (BOOL)requestAuthorizationWithCompletionGrqmi:(NSInteger)Grqmi;
++ (BOOL)getCameraRollAlbumAllowpickingimageCompletionGrqmi:(NSInteger)Grqmi;
++ (BOOL)getVideoCompletionGrqmi:(NSInteger)Grqmi;
++ (BOOL)getAllAlbumsAllowpickingimageCompletionGrqmi:(NSInteger)Grqmi;
++ (BOOL)getAssetsFromFetchResultAllowpickingvideoAllowpickingimageCompletionGrqmi:(NSInteger)Grqmi;
++ (BOOL)getAssetFromFetchResultAtindexAllowpickingvideoAllowpickingimageCompletionGrqmi:(NSInteger)Grqmi;
++ (BOOL)assetModelWithAssetAllowpickingvideoAllowpickingimageGrqmi:(NSInteger)Grqmi;
++ (BOOL)getAssetTypeGrqmi:(NSInteger)Grqmi;
++ (BOOL)getNewTimeFromDurationSecondGrqmi:(NSInteger)Grqmi;
++ (BOOL)getPhotosBytesWithArrayCompletionGrqmi:(NSInteger)Grqmi;
++ (BOOL)getBytesFromDataLengthGrqmi:(NSInteger)Grqmi;
++ (BOOL)getPhotoWithAssetCompletionGrqmi:(NSInteger)Grqmi;
++ (BOOL)getPhotoWithAssetPhotowidthCompletionGrqmi:(NSInteger)Grqmi;
++ (BOOL)getPhotoWithAssetCompletionProgresshandlerNetworkaccessallowedGrqmi:(NSInteger)Grqmi;
++ (BOOL)getPhotoWithAssetPhotowidthCompletionProgresshandlerNetworkaccessallowedGrqmi:(NSInteger)Grqmi;
++ (BOOL)getPostImageWithAlbumModelCompletionGrqmi:(NSInteger)Grqmi;
++ (BOOL)getOriginalPhotoWithAssetCompletionGrqmi:(NSInteger)Grqmi;
++ (BOOL)getOriginalPhotoWithAssetNewcompletionGrqmi:(NSInteger)Grqmi;
++ (BOOL)getOriginalPhotoDataWithAssetCompletionGrqmi:(NSInteger)Grqmi;
++ (BOOL)savePhotoWithImageCompletionGrqmi:(NSInteger)Grqmi;
++ (BOOL)savePhotoWithImageLocationCompletionGrqmi:(NSInteger)Grqmi;
++ (BOOL)getVideoWithAssetCompletionGrqmi:(NSInteger)Grqmi;
++ (BOOL)getVideoWithAssetProgresshandlerCompletionGrqmi:(NSInteger)Grqmi;
++ (BOOL)getVideoOutputPathWithAssetCompletionGrqmi:(NSInteger)Grqmi;
++ (BOOL)startExportVideoWithVideoAssetCompletionGrqmi:(NSInteger)Grqmi;
++ (BOOL)isAssetsArrayContainassetGrqmi:(NSInteger)Grqmi;
++ (BOOL)isCameraRollAlbumGrqmi:(NSInteger)Grqmi;
++ (BOOL)getAssetIdentifierGrqmi:(NSInteger)Grqmi;
++ (BOOL)isPhotoSelectableWithAssetGrqmi:(NSInteger)Grqmi;
++ (BOOL)photoSizeWithAssetGrqmi:(NSInteger)Grqmi;
++ (BOOL)modelWithResultNameIscamerarollGrqmi:(NSInteger)Grqmi;
++ (BOOL)scaleImageTosizeGrqmi:(NSInteger)Grqmi;
++ (BOOL)orientationFromImageGrqmi:(NSInteger)Grqmi;
++ (BOOL)fixedCompositionWithAssetGrqmi:(NSInteger)Grqmi;
++ (BOOL)degressFromVideoFileWithAssetGrqmi:(NSInteger)Grqmi;
++ (BOOL)fixOrientationGrqmi:(NSInteger)Grqmi;
+
+@end

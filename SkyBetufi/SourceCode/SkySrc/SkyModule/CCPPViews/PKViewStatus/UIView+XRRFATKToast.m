@@ -1,18 +1,8 @@
-//
-//  UIView+XRRFATKToast.m
-//  Exchange
-//
-//  Created by Marco on 2017/3/7.
-//  Copyright © 2017年 zhugelicai. All rights reserved.
-//
-
 #import "UIView+XRRFATKToast.h"
 #import "XRRFATKXJToastView.h"
 #import "XRRFATKXJToastImageView.h"
 #import "Masonry.h"
-
 @implementation UIView (XRRFATKToast)
-
 - (void)showToast:(NSString *)toast duration:(CGFloat)duration {
     __block XRRFATKXJToastView *toastView = [[NSBundle mainBundle] loadNibNamed:@"XRRFATKXJToastView" owner:nil options:nil].firstObject;
     toastView.toastLabel.text = toast;
@@ -33,15 +23,12 @@
         }];
     }];
 }
-
 - (void)showToast:(NSString *)toast {
     [self showToast:toast duration:1];
 }
-
 - (void)showToast:(NSString *)toast icon:(UIImage *)icon {
     [self showToast:toast icon:icon duration:1];
 }
-
 - (void)showToast:(NSString *)toast icon:(UIImage *)icon duration:(CGFloat)duration {
     __block XRRFATKXJToastImageView *toastView = [[NSBundle mainBundle] loadNibNamed:@"XRRFATKXJToastImageView" owner:nil options:nil].firstObject;
     toastView.toastLabel.text = toast;
@@ -62,5 +49,4 @@
         }];
     }];
 }
-
 @end

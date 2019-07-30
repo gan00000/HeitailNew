@@ -1,28 +1,13 @@
-//
-//  XRRFATKHTContactUsViewController.m
-//  HeiteBasketball
-//
-//  Created by 冯生伟 on 2018/11/13.
-//  Copyright © 2018 Dean_F. All rights reserved.
-//
-
 #import "XRRFATKHTContactUsViewController.h"
-
 @interface XRRFATKHTContactUsViewController ()
-
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fansLabel;
-
 @end
-
 @implementation XRRFATKHTContactUsViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.title = @"聯繫我們";
 }
-
 - (IBAction)emailTapped:(id)sender {
     kWeakSelf
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"你想要？" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
@@ -41,7 +26,6 @@
     [alert addAction:cancelAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
-
 - (IBAction)fansTapped:(id)sender {
     kWeakSelf
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"你想要？" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
@@ -60,5 +44,4 @@
     [alert addAction:cancelAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
-
 @end

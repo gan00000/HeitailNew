@@ -1,11 +1,3 @@
-//
-//  XRRFATKHTNewsModel.m
-//  HeiteBasketball
-//
-//  Created by 冯生伟 on 2018/9/9.
-//  Copyright © 2018年 Dean_F. All rights reserved.
-//
-
 #import "XRRFATKHTNewsModel.h"
 #import "XRRFATKBJDateFormatUtility.h"
 #import "XRRFATKBJHTTPServiceEngine.h"
@@ -14,25 +6,17 @@
 #import <SDWebImage/SDWebImageManager.h>
 #import "XRRFATKPPXXBJViewControllerCenter.h"
 #import "XRRFATKHTLoginAlertView.h"
-
 @interface XRRFATKHTNewsModel () <NSURLConnectionDelegate>
-
 @property (nonatomic, copy) NSString *clearContent;
-
 @end
-
-// TODO: 在set方法中xxxx...
 @implementation XRRFATKHTNewsModel
-
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{
              @"news_id": @"id"
              };
 }
-
 - (void)setContent:(NSString *)content {
     _content = content;
-    
     NSString *firstImg = [[RX(@"<img(.*?)src=\"(.*?)\"") matches:content] firstObject];
     if (firstImg) {
         _img_url = [[[firstImg componentsSeparatedByString:@"src=\""] lastObject] stringByReplacingOccurrencesOfString:@"\"" withString:@""];
@@ -41,57 +25,45 @@
             _share_thub = _img_url;
         }
     }
-    
     NSString *iframe = [[RX(@"<iframe(.*?)</iframe>") matches:content] firstObject];
     _news_type = @"新聞";
     if (iframe) {
         _news_type = @"影片";
-        
         NSInteger width = 0;
         NSString *widthStr = [[RX(@"width\\s*=\\s*\"(.*?)\"|width\\s*:\\s*\\d+") matches:iframe] firstObject];
         if (widthStr) {
             width = [[[RX(@"\\d+") matches:widthStr] firstObject] integerValue];
         }
-        
         NSInteger height = 0;
         NSString *heightStr = [[RX(@"height\\s*=\\s*\"(.*?)\"|height\\s*:\\s*\\d+") matches:iframe] firstObject];
         if (heightStr) {
             height = [[[RX(@"\\d+") matches:heightStr] firstObject] integerValue];
         }
-        
         if (height == 0 || width == 0) {
             height = 2;
             width = 3;
         }
-        
         CGFloat ifram_width = SCREEN_WIDTH - 30;
         _iframe_height = ifram_width * height / width;
         CGFloat titleHeiht = [self.title jx_sizeWithFont:[UIFont systemFontOfSize:14] constrainedToWidth:ifram_width].height;
         _filmCellHeight = _iframe_height + titleHeiht + 75;
-        
         NSString *newWidhtStr = [RX(@"\\d+") stringByReplacingMatchesInString:widthStr options:kNilOptions range:NSMakeRange(0, widthStr.length) withTemplate:[NSString stringWithFormat:@"%ld", (NSInteger)ifram_width]];
         NSString *newHeightStr = [RX(@"\\d+") stringByReplacingMatchesInString:heightStr options:kNilOptions range:NSMakeRange(0, heightStr.length) withTemplate:[NSString stringWithFormat:@"%ld", (NSInteger)_iframe_height]];
-        
         iframe = [iframe stringByReplacingOccurrencesOfString:widthStr
                                                    withString:newWidhtStr];
         iframe = [iframe stringByReplacingOccurrencesOfString:heightStr
                                                    withString:newHeightStr];
-        
         NSLog(@"iframe = %@", iframe);
         _iframe = [[XRRFATKHTHtmlLoadUtil sharedInstance] iframHtmlWithContent:iframe];
         NSLog(@"iframe = %@", _iframe);
     } 
 }
-
 - (void)setDate:(NSString *)date {
     _date = date;
-    
     _time = [XRRFATKBJDateFormatUtility dateToShowFromDateString:date];
 }
-
 - (void)setCustom_fields:(NSDictionary *)custom_fields {
     _custom_fields = custom_fields;
-    
     NSInteger sum = 1000;
     NSArray *views = custom_fields[@"views"];
     for (NSString *view in views) {
@@ -99,14 +71,11 @@
     }
     _view_count = [NSString stringWithFormat:@"%ld", sum];
 }
-
 - (void)setTitle:(NSString *)title {
     _title = title;
-    
     CGFloat titleHeight = [title jx_sizeWithFont:[UIFont systemFontOfSize:17 weight:UIFontWeightMedium] constrainedToWidth:SCREEN_WIDTH-30].height;
     _detailHeaderHeight = titleHeight + 70;
 }
-
 - (void)skarggetClearContentWithBlock:(void(^)(BOOL success, NSString *content))block {
     if (!block) {
         return;
@@ -190,40 +159,30 @@
     }];
     [task resume];
 }
-
 + (BOOL)skargcanShare {
     return YES;
 }
-
 - (void)skargshare {
     kWeakSelf
     [XRRFATKHTLoginAlertView skargshowShareAlertViewWithSelectBlock:^(HTLoginPlatform platform) {
         UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
         if (platform == HTLoginPlatformFB) {
-            //创建网页内容对象
             UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:weakSelf.title descr:nil thumImage:weakSelf.share_thub];
-            //设置网页地址
             shareObject.webpageUrl = weakSelf.url;
-            //分享消息对象设置分享内容对象
             messageObject.shareObject = shareObject;
-            
             [self doShareToPlatform:UMSocialPlatformType_Facebook withMessage:messageObject];
         } else if (platform == HTLoginPlatformLine) {
             if (![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Line]) {
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://line.me/R/"]];
                 return;
             }
-            //设置文本
             messageObject.text = [NSString stringWithFormat:@"%@\n链接：%@", weakSelf.title, weakSelf.url];
             if (weakSelf.img_url) {
                 [XRRFATKBJLoadingHud showHUDInView:[XRRFATKPPXXBJViewControllerCenter currentViewController].view];
                 [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:weakSelf.img_url] options:0 progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
                     if (image) {
-                        //创建图片内容对象
                         UMShareImageObject *shareObject = [[UMShareImageObject alloc] init];
-                        //如果有缩略图，则设置缩略图
                         [shareObject setShareImage:image];
-                        //分享消息对象设置分享内容对象
                         messageObject.shareObject = shareObject;
                         [weakSelf doShareToPlatform:UMSocialPlatformType_Line withMessage:messageObject];
                     } else {
@@ -237,13 +196,11 @@
         }
     }];
 }
-
 - (void)doShareToPlatform:(UMSocialPlatformType)platformType withMessage:(UMSocialMessageObject *)messageObject {
     [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:[XRRFATKPPXXBJViewControllerCenter currentViewController] completion:^(id result, NSError *error) {
         BJLog(@"result = %@", error);
     }];
 }
-
 - (XRRFATKHTUserInfoModel *)userInfo {
     if (!_userInfo) {
         _userInfo = [[XRRFATKHTUserInfoModel alloc] init];
@@ -251,7 +208,6 @@
     }
     return _userInfo;
 }
-
 - (NSDate *)comt_date_obj {
     if (!_comt_date_obj) {
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
@@ -260,10 +216,8 @@
     }
     return _comt_date_obj;
 }
-
 - (void)skargcountCommentHeight {
     CGFloat commetheight = [self.comment_content jx_sizeWithFont:[UIFont systemFontOfSize:15] constrainedToWidth:SCREEN_WIDTH-71].height;
     self.my_comment_cell_height = commetheight + 118;
 }
-
 @end
