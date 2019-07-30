@@ -365,6 +365,14 @@
 		326434D022F0307A00D2DA1E /* XRRFATKPPXXBJBaseTabBarController+Djerd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3264336A22F0307900D2DA1E /* XRRFATKPPXXBJBaseTabBarController+Djerd.m */; };
 		326434D122F0307A00D2DA1E /* XRRFATKMJRefreshGenerator+Nctii.m in Sources */ = {isa = PBXBuildFile; fileRef = 3264336B22F0307900D2DA1E /* XRRFATKMJRefreshGenerator+Nctii.m */; };
 		326434D222F0307A00D2DA1E /* NSString+XRRFATKMessageDigestDnqxp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3264336D22F0307900D2DA1E /* NSString+XRRFATKMessageDigestDnqxp.m */; };
+		326434D922F04F5E00D2DA1E /* GuideImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 326434D422F04F5E00D2DA1E /* GuideImage.bundle */; };
+		326434DA22F04F5E00D2DA1E /* DHGifImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 326434D522F04F5E00D2DA1E /* DHGifImageOperation.m */; };
+		326434DB22F04F5E00D2DA1E /* DHGuidePageHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 326434D822F04F5E00D2DA1E /* DHGuidePageHUD.m */; };
+		326434EC22F057E000D2DA1E /* guideImageapp3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 326434E722F057E000D2DA1E /* guideImageapp3.jpg */; };
+		326434ED22F057E000D2DA1E /* guideImageapp4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 326434E822F057E000D2DA1E /* guideImageapp4.jpg */; };
+		326434EE22F057E000D2DA1E /* guideImageapp5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 326434E922F057E000D2DA1E /* guideImageapp5.jpg */; };
+		326434EF22F057E000D2DA1E /* guideImageapp2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 326434EA22F057E000D2DA1E /* guideImageapp2.jpg */; };
+		326434F022F057E000D2DA1E /* guideImageapp1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 326434EB22F057E000D2DA1E /* guideImageapp1.jpg */; };
 		32ABE1CC22EDF4C2008505BA /* XRRFATKHTNewsHomeOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ABE1CA22EDF4C1008505BA /* XRRFATKHTNewsHomeOtherViewController.m */; };
 		32ABE1CE22EDF4D0008505BA /* XRRFATKNewsHomeOther.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32ABE1CD22EDF4D0008505BA /* XRRFATKNewsHomeOther.storyboard */; };
 		32ABE1D222EDF733008505BA /* XRRFATKHTTabBarHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ABE1CF22EDF732008505BA /* XRRFATKHTTabBarHomeViewController.m */; };
@@ -1346,6 +1354,16 @@
 		3264336C22F0307900D2DA1E /* UINavigationBar+XRRFATKDRExtensionTpgas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+XRRFATKDRExtensionTpgas.h"; sourceTree = "<group>"; };
 		3264336D22F0307900D2DA1E /* NSString+XRRFATKMessageDigestDnqxp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XRRFATKMessageDigestDnqxp.m"; sourceTree = "<group>"; };
 		3264336E22F0307900D2DA1E /* XRRFATKHTMatchLiveFeedCell+Pwnok.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XRRFATKHTMatchLiveFeedCell+Pwnok.h"; sourceTree = "<group>"; };
+		326434D422F04F5E00D2DA1E /* GuideImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GuideImage.bundle; sourceTree = "<group>"; };
+		326434D522F04F5E00D2DA1E /* DHGifImageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHGifImageOperation.m; sourceTree = "<group>"; };
+		326434D622F04F5E00D2DA1E /* DHGuidePageHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHGuidePageHUD.h; sourceTree = "<group>"; };
+		326434D722F04F5E00D2DA1E /* DHGifImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHGifImageOperation.h; sourceTree = "<group>"; };
+		326434D822F04F5E00D2DA1E /* DHGuidePageHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHGuidePageHUD.m; sourceTree = "<group>"; };
+		326434E722F057E000D2DA1E /* guideImageapp3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp3.jpg; sourceTree = "<group>"; };
+		326434E822F057E000D2DA1E /* guideImageapp4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp4.jpg; sourceTree = "<group>"; };
+		326434E922F057E000D2DA1E /* guideImageapp5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp5.jpg; sourceTree = "<group>"; };
+		326434EA22F057E000D2DA1E /* guideImageapp2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp2.jpg; sourceTree = "<group>"; };
+		326434EB22F057E000D2DA1E /* guideImageapp1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp1.jpg; sourceTree = "<group>"; };
 		32ABE1CA22EDF4C1008505BA /* XRRFATKHTNewsHomeOtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRRFATKHTNewsHomeOtherViewController.m; sourceTree = "<group>"; };
 		32ABE1CB22EDF4C2008505BA /* XRRFATKHTNewsHomeOtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRRFATKHTNewsHomeOtherViewController.h; sourceTree = "<group>"; };
 		32ABE1CD22EDF4D0008505BA /* XRRFATKNewsHomeOther.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = XRRFATKNewsHomeOther.storyboard; sourceTree = "<group>"; };
@@ -1802,6 +1820,7 @@
 		3256201222E17A9200973889 /* SkySrc */ = {
 			isa = PBXGroup;
 			children = (
+				326434DC22F0536E00D2DA1E /* Res */,
 				FEC112612143D058002DB617 /* MMBBAssets.xcassets */,
 				FEC114332143D4A0002DB617 /* AppDelegate.h */,
 				FEC1149C2143D4A0002DB617 /* AppDelegate.m */,
@@ -2541,6 +2560,30 @@
 			path = djhaga;
 			sourceTree = "<group>";
 		};
+		326434D322F04F5E00D2DA1E /* DHGuidePageHUD */ = {
+			isa = PBXGroup;
+			children = (
+				326434D422F04F5E00D2DA1E /* GuideImage.bundle */,
+				326434D522F04F5E00D2DA1E /* DHGifImageOperation.m */,
+				326434D622F04F5E00D2DA1E /* DHGuidePageHUD.h */,
+				326434D722F04F5E00D2DA1E /* DHGifImageOperation.h */,
+				326434D822F04F5E00D2DA1E /* DHGuidePageHUD.m */,
+			);
+			path = DHGuidePageHUD;
+			sourceTree = "<group>";
+		};
+		326434DC22F0536E00D2DA1E /* Res */ = {
+			isa = PBXGroup;
+			children = (
+				326434EB22F057E000D2DA1E /* guideImageapp1.jpg */,
+				326434EA22F057E000D2DA1E /* guideImageapp2.jpg */,
+				326434E722F057E000D2DA1E /* guideImageapp3.jpg */,
+				326434E822F057E000D2DA1E /* guideImageapp4.jpg */,
+				326434E922F057E000D2DA1E /* guideImageapp5.jpg */,
+			);
+			path = Res;
+			sourceTree = "<group>";
+		};
 		CB747A826453EE017B9DDDC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2808,6 +2851,7 @@
 		FEC114342143D4A0002DB617 /* SkyModule */ = {
 			isa = PBXGroup;
 			children = (
+				326434D322F04F5E00D2DA1E /* DHGuidePageHUD */,
 				FECCA54222598013009EF494 /* CCPPTZImagePickerController */,
 				FEC115322143D4A0002DB617 /* CCPPUtility */,
 				FEC1149D2143D4A0002DB617 /* CCPPService */,
@@ -3588,11 +3632,14 @@
 				FEC117262143DF33002DB617 /* XRRFATKRankHome.storyboard in Resources */,
 				FEC116092143D4A1002DB617 /* XRRFATKXJToastImageView.xib in Resources */,
 				FEDABE70217385F4008C8AFD /* XRRFATKMatchSubDsbd.storyboard in Resources */,
+				326434EE22F057E000D2DA1E /* guideImageapp5.jpg in Resources */,
 				FE6BD04B2144FA3C0090118A /* HUD.xcassets in Resources */,
+				326434ED22F057E000D2DA1E /* guideImageapp4.jpg in Resources */,
 				FEC1171B2143DEAD002DB617 /* XRRFATKDataHome.storyboard in Resources */,
 				FECCA57622598143009EF494 /* XRRFATKDRPhotoKeyboardCell.xib in Resources */,
 				FE81D1632149716D0047A4A2 /* XRRFATKHTDataHomePlayerCell.xib in Resources */,
 				FEDABE4E2171BCEE008C8AFD /* XRRFATKHTMatchPtsCompareCell.xib in Resources */,
+				326434D922F04F5E00D2DA1E /* GuideImage.bundle in Resources */,
 				FEC116072143D4A1002DB617 /* XRRFATKXJToastView.xib in Resources */,
 				FE6BD07F21457BBC0090118A /* XRRFATKNewsDetail.storyboard in Resources */,
 				FEC1172B2143E43A002DB617 /* MMBBLaunch.xcassets in Resources */,
@@ -3605,6 +3652,7 @@
 				FE6BD094214584DA0090118A /* XRRFATKHTNewsTopHeaderView.xib in Resources */,
 				FE82BB422179B77200C52C51 /* XRRFATKHTDataTeamLeftCell.xib in Resources */,
 				FEDAC97F214BBD37005E8B63 /* XRRFATKHTDatePickerView.xib in Resources */,
+				326434EC22F057E000D2DA1E /* guideImageapp3.jpg in Resources */,
 				FE9B32B8217895990055B611 /* XRRFATKHTRankLeftCell.xib in Resources */,
 				FECCA5212258C8D0009EF494 /* XRRFATKHTMeCenterNormalCell.xib in Resources */,
 				FE6BD04D2144FAF60090118A /* ViewStatus.xcassets in Resources */,
@@ -3612,9 +3660,11 @@
 				FECCA52F2258C8D0009EF494 /* XRRFATKHTCollectionViewController.xib in Resources */,
 				FE81D16E21497DDE0047A4A2 /* XRRFATKHTRankHomeCell.xib in Resources */,
 				FECCA56922598013009EF494 /* XRRFATKTZImagePickerController.bundle in Resources */,
+				326434EF22F057E000D2DA1E /* guideImageapp2.jpg in Resources */,
 				FECCA5312258C8D0009EF494 /* XRRFATKHTUserInfoEditViewController.xib in Resources */,
 				FEC116FF2143DCAF002DB617 /* XRRFATKFilmHome.storyboard in Resources */,
 				FEDAC970214B86C7005E8B63 /* XRRFATKHTDataCellPlayerView.xib in Resources */,
+				326434F022F057E000D2DA1E /* guideImageapp1.jpg in Resources */,
 				FE706F09215006430078DF30 /* XRRFATKHTDataHomeHeaderCell.xib in Resources */,
 				FE800F662263693A00E575D5 /* XRRFATKHTNoCommentFooterView.xib in Resources */,
 				FECCA5372258C8D0009EF494 /* XRRFATKHTLikeViewController.xib in Resources */,
@@ -3768,6 +3818,7 @@
 				FEDAC97D214BBD28005E8B63 /* XRRFATKHTDatePickerView.m in Sources */,
 				3264337822F0307900D2DA1E /* XRRFATKHTContactUsViewController+Qqmyp.m in Sources */,
 				3264349922F0307A00D2DA1E /* XRRFATKHTFilmHomeCell+Shdwm.m in Sources */,
+				326434DB22F04F5E00D2DA1E /* DHGuidePageHUD.m in Sources */,
 				FEC116B72143D4A1002DB617 /* XRRFATKPPXXBJBaseTabBarController.m in Sources */,
 				3264339022F0307900D2DA1E /* XRRFATKHTDataCellTeamView+Pprjr.m in Sources */,
 				3264348D22F0307A00D2DA1E /* UIView+XRRFATKQuickFrameLrnqb.m in Sources */,
@@ -4208,6 +4259,7 @@
 				326434B122F0307A00D2DA1E /* XRRFATKLxGridViewFlowLayout+Xraib.m in Sources */,
 				326433EA22F0307A00D2DA1E /* KwhwdXRRFATKBJBaseHTTPEnginel.m in Sources */,
 				3264349F22F0307A00D2DA1E /* XRRFATKPPXXBJViewControllerCenter+Aejlp.m in Sources */,
+				326434DA22F04F5E00D2DA1E /* DHGifImageOperation.m in Sources */,
 				326433B722F0307900D2DA1E /* IwrouXRRFATKBJUtilityo.m in Sources */,
 				326433A422F0307900D2DA1E /* XRRFATKPPXXBJBaseNavigationController+Dbkgc.m in Sources */,
 				FEC116C52143D4A1002DB617 /* UIView+XRRFATKBlockGesture.m in Sources */,

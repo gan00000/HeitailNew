@@ -15,8 +15,11 @@
 - (void)openViewController:(UIApplication * _Nonnull)application launchOptions:(NSDictionary * _Nullable)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
-    XRRFATKPPXXBJLaunchViewController *rootVc = [[XRRFATKPPXXBJLaunchViewController alloc] init];
-    self.window.rootViewController = rootVc;
+//    XRRFATKPPXXBJLaunchViewController *rootVc = [[XRRFATKPPXXBJLaunchViewController alloc] init];
+//    self.window.rootViewController = rootVc;
+    
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[XRRFATKPPXXBJLaunchViewController alloc] init]];
+    
     [self setupPushWithLaunchOptions:launchOptions];
     [IQKeyboardManager sharedManager].toolbarBarTintColor = [UIColor whiteColor];
     [[FBSDKApplicationDelegate sharedInstance] application:application
@@ -26,7 +29,7 @@
         [UMessage didReceiveRemoteNotification:self.pushInfo];
     }
 }
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (void)setUpUM {
     [UMConfigure initWithAppkey:UM_APP_KEY channel:@"App Store"];
     [UMConfigure setLogEnabled:YES];
     [[UMSocialManager defaultManager] openLog:YES];
@@ -39,10 +42,14 @@
     }
     if (![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Facebook]) {
         [[UMSocialManager defaultManager] removePlatformProviderWithPlatformType:UMSocialPlatformType_Facebook];
-    }    
+    }
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Line
                                           appKey:nil appSecret:nil
                                      redirectURL:@"http://www.ballgametime.com"];
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self setUpUM];
     [self sdk_setUpNetworkReachability];
     [self openViewController:application launchOptions:launchOptions];
     return YES;
