@@ -46,4 +46,27 @@ static NSString *_getMessageDigest(NSString *string, MessageDigestFuncPtr fp, NS
 {
     return _getMessageDigest(self, CC_SHA256, CC_SHA256_DIGEST_LENGTH);
 }
+
+- (NSString *)urlEncodeString
+{
+    NSString *result =
+    (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                                          (CFStringRef)self,
+                                                                          NULL,
+                                                                          (CFStringRef)@";/?:@&=$+{}<>,",
+                                                                          kCFStringEncodingUTF8));
+    return result;
+}
+
+-(NSString *)urlDecodeString
+{
+    NSString *result = (__bridge NSString *) CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL,
+                                                                                                     (__bridge CFStringRef) self,
+                                                                                                     CFSTR(""),
+                                                                                                     kCFStringEncodingUTF8);
+    return result;
+}
+
+
+
 @end

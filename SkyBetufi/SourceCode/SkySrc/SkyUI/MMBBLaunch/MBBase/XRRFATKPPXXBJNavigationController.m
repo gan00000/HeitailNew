@@ -6,6 +6,7 @@
 #import "XRRFATKHTRankHomeViewController.h"
 #import "XRRFATKHTTabBarHomeViewController.h"
 #import "XRRFATKHTNewsHomeOtherViewController.h"
+#import "XRRFATKPPXXBJLaunchViewController.h"
 @interface XRRFATKPPXXBJNavigationController ()
 @end
 @implementation XRRFATKPPXXBJNavigationController
@@ -35,6 +36,7 @@
              [XRRFATKHTDataHomeViewController class],
              [XRRFATKHTRankHomeViewController class],
              [XRRFATKHTNewsHomeOtherViewController class],
+             [XRRFATKPPXXBJLaunchViewController class],
              [XRRFATKHTTabBarHomeViewController class]];
 }
 @end

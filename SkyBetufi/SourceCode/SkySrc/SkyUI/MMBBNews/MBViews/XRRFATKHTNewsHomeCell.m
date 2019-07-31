@@ -1,4 +1,6 @@
 #import "XRRFATKHTNewsHomeCell.h"
+
+#import "NSString+XRRFATKMessageDigest.h"
 @interface XRRFATKHTNewsHomeCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *thumbImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -21,7 +23,8 @@
 }
 - (void)skargsetupWithNewsModel:(XRRFATKHTNewsModel *)newsModel {
     self.newsModel = newsModel;
-    [self.thumbImageView sd_setImageWithURL:[NSURL URLWithString:newsModel.img_url] placeholderImage:HT_DEFAULT_IMAGE];
+    NSString *tmpUrl = [newsModel.img_url stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+    [self.thumbImageView sd_setImageWithURL:[NSURL URLWithString:tmpUrl] placeholderImage:HT_DEFAULT_IMAGE];
     self.titleLabel.text = newsModel.title;
     self.timeLabel.text = newsModel.time;
     self.viewLabel.text = newsModel.view_count;

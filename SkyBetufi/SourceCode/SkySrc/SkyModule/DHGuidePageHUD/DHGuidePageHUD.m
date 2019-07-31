@@ -78,7 +78,14 @@
 //                [startButton setTitleColor:[UIColor colorWithRed:164/255.0 green:201/255.0 blue:67/255.0 alpha:1.0] forState:UIControlStateNormal];
                 [startButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
                 [startButton.titleLabel setFont:[UIFont systemFontOfSize:21]];
-                [startButton setBackgroundImage:[UIImage imageNamed:@"GuideImage.bundle/guideImage_button_backgound"] forState:UIControlStateNormal];
+//                [startButton setBackgroundImage:[UIImage imageNamed:@"GuideImage.bundle/guideImage_button_backgound"] forState:UIControlStateNormal];
+                [startButton.layer setBorderWidth:1.4];
+                startButton.layer.borderColor=[UIColor grayColor].CGColor;
+                startButton.layer.cornerRadius = 14;
+//                                [startButton setBackgroundImage:[UIImage jx_imageWithColor:[UIColor blueColor]] forState:UIControlStateNormal];
+                
+                [startButton setBackgroundColor:[UIColor whiteColor]];
+
                 [startButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
                 [imageView addSubview:startButton];
             }

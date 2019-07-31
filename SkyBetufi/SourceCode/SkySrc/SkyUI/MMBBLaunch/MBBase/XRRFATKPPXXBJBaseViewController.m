@@ -1,6 +1,7 @@
 #import "XRRFATKPPXXBJBaseViewController.h"
 #import "XRRFATKHTMeHomeViewController.h"
 #import "XRRFATKPPXXBJNavigationController.h"
+#import "XRRFATKHTUserManager.h"
 @interface XRRFATKPPXXBJBaseViewController ()
 @end
 @implementation XRRFATKPPXXBJBaseViewController
@@ -10,7 +11,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = RGBA_COLOR_HEX(0xf4f4f4);
-    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
+//    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
+    
+    if ([XRRFATKHTUserManager manager].appInView) {
+        [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor hx_colorWithHexRGBAString:@"286ffb"]];
+    }else{
+        [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
+        
+    }
+    
     if (self.navigationController.viewControllers.count == 1 && ![self isKindOfClass:[XRRFATKHTMeHomeViewController class]]) {
         UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_icon_title"]];
         self.navigationItem.titleView = titleView;

@@ -136,6 +136,9 @@
     [self.request skargrequestWithSuccessBlock:^(NSArray<XRRFATKHTNewsModel *> *newsList) {
         weakSelf.newsList = newsList;
         weakSelf.newsRequestDone = YES;
+        for (XRRFATKHTNewsModel *nXRRFATKHTNewsModel in newsList) {
+            NSLog(@"new imgurl: %@ newsId: %@",nXRRFATKHTNewsModel.img_url,nXRRFATKHTNewsModel.news_id);
+        }
         [weakSelf refreshUI];
     } errorBlock:^(XRRFATKBJError *error) {
         weakSelf.error = error;

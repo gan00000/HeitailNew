@@ -8,4 +8,11 @@
 - (NSString *)SHA256;
 - (NSString *)SHA384;
 - (NSString *)SHA512;
+
+
+- (NSString *)urlEncodeString;
+
+-(NSString *)urlDecodeString;
+
+
 @end

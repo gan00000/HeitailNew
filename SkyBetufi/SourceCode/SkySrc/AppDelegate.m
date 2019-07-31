@@ -9,17 +9,19 @@
 #import "XRRFATKPPXXBJLaunchViewController.h"
 #import "UIView+XRRFATKToast.h"
 #import "XRRFATKHTNewsDetailViewController.h"
+#import "XRRFATKPPXXBJNavigationController.h"
 #define UM_APP_KEY @"5bd67116f1f556f834000081"
 #define FB_APP_ID  @"479868032525276"
 @implementation AppDelegate
 - (void)openViewController:(UIApplication * _Nonnull)application launchOptions:(NSDictionary * _Nullable)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
-//    XRRFATKPPXXBJLaunchViewController *rootVc = [[XRRFATKPPXXBJLaunchViewController alloc] init];
+    XRRFATKPPXXBJLaunchViewController *rootVc = [[XRRFATKPPXXBJLaunchViewController alloc] init];
 //    self.window.rootViewController = rootVc;
     
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[XRRFATKPPXXBJLaunchViewController alloc] init]];
+//    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[XRRFATKPPXXBJLaunchViewController alloc] init]];
     
+    self.window.rootViewController = [[XRRFATKPPXXBJNavigationController alloc] initWithRootViewController:rootVc];
     [self setupPushWithLaunchOptions:launchOptions];
     [IQKeyboardManager sharedManager].toolbarBarTintColor = [UIColor whiteColor];
     [[FBSDKApplicationDelegate sharedInstance] application:application

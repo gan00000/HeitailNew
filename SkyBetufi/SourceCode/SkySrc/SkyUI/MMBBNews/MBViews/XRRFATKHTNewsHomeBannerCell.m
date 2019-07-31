@@ -34,7 +34,10 @@
             [imageView addGestureRecognizer:tap];
             imageView.userInteractionEnabled = YES;
             XRRFATKHTNewsModel *banner = self.bannerList[i];
-            [imageView sd_setImageWithURL:[NSURL URLWithString:banner.img_url]
+            
+             NSString *tmpUrl = [banner.img_url stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+            
+            [imageView sd_setImageWithURL:[NSURL URLWithString: tmpUrl]
                          placeholderImage:HT_DEFAULT_IMAGE];
         }
         if (self.bannerList.count > 1) {

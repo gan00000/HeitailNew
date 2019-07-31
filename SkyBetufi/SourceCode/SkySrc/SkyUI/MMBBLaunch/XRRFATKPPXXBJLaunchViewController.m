@@ -8,13 +8,14 @@
 @interface XRRFATKPPXXBJLaunchViewController () <CAAnimationDelegate>
 @property (nonatomic, strong) XRRFATKPPXXBJMainViewController *tabBarController;
 @property (nonatomic, assign) NSInteger tryTimes;
+@property (nonatomic, assign) BOOL needGuidePage;
 @end
 @implementation XRRFATKPPXXBJLaunchViewController
 - (void)skargGoIntoMainController {
     [[UIApplication sharedApplication].delegate.window insertSubview:self.tabBarController.view atIndex:0];
     CATransition *animation = [CATransition animation];
     animation.delegate = self;
-    animation.duration = 0.2f;
+    animation.duration = 0.1f;
     animation.timingFunction = [CAMediaTimingFunction functionWithName:@"easeInEaseOut"];
     animation.type = kCATransitionFade;
     [[UIApplication sharedApplication].delegate.window exchangeSubviewAtIndex:1 withSubviewAtIndex:0];
@@ -36,14 +37,11 @@
                 [XRRFATKHTUserManager manager].appInView = NO;
             }
         }
-//        [[UIApplication sharedApplication].delegate.window insertSubview:self.tabBarController.view atIndex:0];
-//        CATransition *animation = [CATransition animation];
-//        animation.delegate = self;
-//        animation.duration = 0.2f;
-//        animation.timingFunction = [CAMediaTimingFunction functionWithName:@"easeInEaseOut"];
-//        animation.type = kCATransitionFade;
-//        [[UIApplication sharedApplication].delegate.window exchangeSubviewAtIndex:1 withSubviewAtIndex:0];
-//        [[UIApplication sharedApplication].delegate.window.layer addAnimation:animation forKey:@"animation"];
+        
+        if (!self.needGuidePage) {
+            [self skargGoIntoMainController];
+        }
+        
     } errorBlock:^(XRRFATKBJError *error) {
         BJLog(@"ERROR:%@",error);
         if (self.tryTimes == 0) {
@@ -52,7 +50,11 @@
             return;
         }
         [XRRFATKHTUserManager manager].appInView = NO;
-//        [self goIntoMainController];
+        
+        if (!self.needGuidePage) {
+            [self skargGoIntoMainController];
+        }
+        
     }];
 }
 - (void)viewDidLoad {
@@ -62,10 +64,13 @@
 
     // 设置APP引导页
     if (![[NSUserDefaults standardUserDefaults] boolForKey:BOOLFORKEY]) {
+        self.needGuidePage = YES;
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:BOOLFORKEY];
         // 静态引导页
         [self skargsetStaticGuidePage];
         
+    }else{
+        self.needGuidePage = NO;
     }
     
     [self skargRequestConfig];
@@ -96,7 +101,7 @@
 
 #pragma mark - 设置APP静态图片引导页
 - (void)skargsetStaticGuidePage {
-    NSArray *imageNameArray = @[@"guideImageapp1.jpg",@"guideImageapp2.jpg",@"guideImageapp3.jpg",@"guideImageapp4.jpg",@"guideImageapp5.jpg"];
+    NSArray *imageNameArray = @[@"guideImageapp1.jpg",@"guideImageapp2.jpg",@"guideImageapp3.jpg", @"guideImageapp5.jpg"];
     DHGuidePageHUD *guidePage = [[DHGuidePageHUD alloc] dh_initWithFrame:self.view.frame imageNameArray:imageNameArray buttonIsHidden:NO];
     [guidePage setClickListener:^(NSInteger m) {
           [self skargGoIntoMainController];
