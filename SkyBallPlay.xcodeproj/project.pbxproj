@@ -2558,7 +2558,7 @@
 			path = djhaga;
 			sourceTree = "<group>";
 		};
-		326434D322F04F5E00D2DA1E /* DHGuidePageHUD */ = {
+		326434D322F04F5E00D2DA1E /* CCPPDHGuidePageHUD */ = {
 			isa = PBXGroup;
 			children = (
 				326434D422F04F5E00D2DA1E /* GuideImage.bundle */,
@@ -2567,7 +2567,7 @@
 				326434D722F04F5E00D2DA1E /* DHGifImageOperation.h */,
 				326434D822F04F5E00D2DA1E /* DHGuidePageHUD.m */,
 			);
-			path = DHGuidePageHUD;
+			path = CCPPDHGuidePageHUD;
 			sourceTree = "<group>";
 		};
 		326434DC22F0536E00D2DA1E /* Res */ = {
@@ -2848,7 +2848,7 @@
 		FEC114342143D4A0002DB617 /* SkyModule */ = {
 			isa = PBXGroup;
 			children = (
-				326434D322F04F5E00D2DA1E /* DHGuidePageHUD */,
+				326434D322F04F5E00D2DA1E /* CCPPDHGuidePageHUD */,
 				FECCA54222598013009EF494 /* CCPPTZImagePickerController */,
 				FEC115322143D4A0002DB617 /* CCPPUtility */,
 				FEC1149D2143D4A0002DB617 /* CCPPService */,
