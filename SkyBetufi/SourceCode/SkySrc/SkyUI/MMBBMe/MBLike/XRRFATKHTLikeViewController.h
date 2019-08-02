@@ -1,5 +1,0 @@
-#import "XRRFATKPPXXBJBaseViewController.h"
-NS_ASSUME_NONNULL_BEGIN
-@interface XRRFATKHTLikeViewController : XRRFATKPPXXBJBaseViewController
-@end
-NS_ASSUME_NONNULL_END

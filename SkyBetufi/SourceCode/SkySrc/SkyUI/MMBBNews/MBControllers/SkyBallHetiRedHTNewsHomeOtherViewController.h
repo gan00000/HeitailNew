@@ -1,0 +1,3 @@
+#import "SkyBallHetiRedPPXXBJBaseViewController.h"
+@interface SkyBallHetiRedHTNewsHomeOtherViewController : SkyBallHetiRedPPXXBJBaseViewController
+@end

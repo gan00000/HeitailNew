@@ -6,22 +6,22 @@
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "AFNetworkReachabilityManager.h"
-#import "XRRFATKPPXXBJLaunchViewController.h"
-#import "UIView+XRRFATKToast.h"
-#import "XRRFATKHTNewsDetailViewController.h"
-#import "XRRFATKPPXXBJNavigationController.h"
+#import "SkyBallHetiRedPPXXBJLaunchViewController.h"
+#import "UIView+SkyBallHetiRedToast.h"
+#import "SkyBallHetiRedHTNewsDetailViewController.h"
+#import "SkyBallHetiRedPPXXBJNavigationController.h"
 #define UM_APP_KEY @"5bd67116f1f556f834000081"
 #define FB_APP_ID  @"479868032525276"
 @implementation AppDelegate
 - (void)openViewController:(UIApplication * _Nonnull)application launchOptions:(NSDictionary * _Nullable)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
-    XRRFATKPPXXBJLaunchViewController *rootVc = [[XRRFATKPPXXBJLaunchViewController alloc] init];
+    SkyBallHetiRedPPXXBJLaunchViewController *rootVc = [[SkyBallHetiRedPPXXBJLaunchViewController alloc] init];
 //    self.window.rootViewController = rootVc;
     
-//    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[XRRFATKPPXXBJLaunchViewController alloc] init]];
+//    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[SkyBallHetiRedPPXXBJLaunchViewController alloc] init]];
     
-    self.window.rootViewController = [[XRRFATKPPXXBJNavigationController alloc] initWithRootViewController:rootVc];
+    self.window.rootViewController = [[SkyBallHetiRedPPXXBJNavigationController alloc] initWithRootViewController:rootVc];
     [self setupPushWithLaunchOptions:launchOptions];
     [IQKeyboardManager sharedManager].toolbarBarTintColor = [UIColor whiteColor];
     [[FBSDKApplicationDelegate sharedInstance] application:application
@@ -136,7 +136,7 @@
                                  stringByReplacingOccurrencesOfString:@" " withString:@""];
     if (pushDeviceToken.length) {
         BJLog(@"deviceToken: %@", pushDeviceToken);
-        [XRRFATKHTUserManager skarg_saveDeviceToken:pushDeviceToken];
+        [SkyBallHetiRedHTUserManager waterSky_saveDeviceToken:pushDeviceToken];
     }
 }
 - (void)responsePushInfo:(NSDictionary *)pushInfo fromViewController:(UIViewController *)vc {
@@ -144,9 +144,9 @@
         return;
     }
     if (!vc) {
-        vc = [XRRFATKPPXXBJViewControllerCenter currentViewController];
+        vc = [SkyBallHetiRedPPXXBJViewControllerCenter currentViewController];
     }
-    XRRFATKHTNewsDetailViewController *detailVc = [XRRFATKHTNewsDetailViewController skargviewController];
+    SkyBallHetiRedHTNewsDetailViewController *detailVc = [SkyBallHetiRedHTNewsDetailViewController waterSkyviewController];
     detailVc.post_id = pushInfo[@"postId"];
     if (vc.navigationController) {
         [vc.navigationController pushViewController:detailVc animated:YES];

@@ -1,3 +1,0 @@
-#import "XRRFATKPPXXBJBaseNavigationController.h"
-@interface XRRFATKPPXXBJNavigationController : XRRFATKPPXXBJBaseNavigationController
-@end

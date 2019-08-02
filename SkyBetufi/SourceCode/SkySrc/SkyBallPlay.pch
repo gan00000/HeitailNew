@@ -20,21 +20,18 @@
 #import <JXExtension/JXExtension.h>
 #import <LTNavigationBar/UINavigationBar+Awesome.h>
 
-#import "XRRFATKMJRefreshGenerator.h"
-#import "UIView+XRRFATKToast.h"
-#import "UIView+XRRFATKLoading.h"
-#import "UIView+XRRFATKEmptyView.h"
-#import "XRRFATKBJLoadingHud.h"
-#import "NSDate+XRRFATKCore.h"
-#import "NSDateFormatter+XRRFATKDRExtension.h"
+#import "SkyBallHetiRedMJRefreshGenerator.h"
+#import "UIView+SkyBallHetiRedToast.h"
+#import "UIView+SkyBallHetiRedLoading.h"
+#import "UIView+SkyBallHetiRedEmptyView.h"
+#import "SkyBallHetiRedBJLoadingHud.h"
+#import "NSDate+SkyBallHetiRedCore.h"
+#import "NSDateFormatter+SkyBallHetiRedDRExtension.h"
 
-#import "XRRFATKHTUserManager.h"
-#import "UITabBar+XRRFATKDRExtension.h"
-#import "UIView+XRRFATKQuickFrame.h"
-#import "XRRFATKPPXXBJViewControllerCenter.h"
-
-//添加混淆作用的头文件（这个文件名是脚本confuse.sh中定义的）
-#import "codeObfuscation.h"
+#import "SkyBallHetiRedHTUserManager.h"
+#import "UITabBar+SkyBallHetiRedDRExtension.h"
+#import "UIView+SkyBallHetiRedQuickFrame.h"
+#import "SkyBallHetiRedPPXXBJViewControllerCenter.h"
 
 #endif
 
@@ -42,8 +39,7 @@
 #define SkyBallPlay_pch
 
 //**********重要***********//
-// 是否向外发布版本(1: 是, 0: 否)
-// 外发版的时候需要改为1
+
 #define OFFICIAL_RELEASE 0
 
 // 未发布到App Store的版本
