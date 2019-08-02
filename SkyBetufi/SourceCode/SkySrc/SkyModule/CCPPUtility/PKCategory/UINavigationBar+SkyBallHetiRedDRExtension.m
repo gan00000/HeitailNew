@@ -1,4 +1,6 @@
 #import "UINavigationBar+SkyBallHetiRedDRExtension.h"
+
+#import "SkyBallHetiRedHTUserManager.h"
 @implementation UINavigationBar (SkyBallHetiRedDRExtension)
 + (CGFloat)navigationBarHeight {
     CGFloat statusBarHeight = CGRectGetHeight([[UIApplication sharedApplication] statusBarFrame]);
@@ -24,7 +26,12 @@
 - (void)setupBackground {
     CALayer *layer = [CALayer layer];
     layer.frame = self.bounds;
-    layer.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"].CGColor;
+    if ([SkyBallHetiRedHTUserManager manager].appInView) {
+        layer.backgroundColor = [UIColor blueColor].CGColor;
+    }else{
+        layer.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"].CGColor;
+    }
+    
     UIGraphicsBeginImageContextWithOptions(layer.bounds.size, NO, 0);
     [layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
