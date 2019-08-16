@@ -3,6 +3,9 @@
 extern const NSString * kUserLogStatusChagneNotice;
 @interface SkyBallHetiRedHTUserManager : NSObject
 @property (nonatomic, assign)BOOL appInView;
+
+@property (nonatomic, assign)BOOL showTextLive;
+
 + (instancetype)manager;
 + (BOOL)waterSky_isUserLogin;
 + (SkyBallHetiRedHTUserInfoModel *)waterSky_userInfo;

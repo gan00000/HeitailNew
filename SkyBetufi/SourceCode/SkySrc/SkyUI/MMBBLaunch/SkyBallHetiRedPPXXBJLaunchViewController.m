@@ -29,12 +29,22 @@
             NSString *version = configDictionary[@"version"];
             NSString *status = configDictionary[@"status"];
             NSString *examine = configDictionary[@"examine"];
+            NSString *showTextLive = configDictionary[@"showTextLive"];
+            
             if ([examine isEqualToString:@"1"]) {
                 [SkyBallHetiRedHTUserManager manager].appInView = YES;
                 BJLog(@"getRequestCommon in view");
             }else{
                 BJLog(@"getRequestCommon not in view");
                 [SkyBallHetiRedHTUserManager manager].appInView = NO;
+            }
+            
+            if ([showTextLive isEqualToString:@"1"]) {//是否显示文字直播
+                [SkyBallHetiRedHTUserManager manager].showTextLive = YES;
+              
+            }else{
+                
+                [SkyBallHetiRedHTUserManager manager].showTextLive = YES;
             }
         }
         
