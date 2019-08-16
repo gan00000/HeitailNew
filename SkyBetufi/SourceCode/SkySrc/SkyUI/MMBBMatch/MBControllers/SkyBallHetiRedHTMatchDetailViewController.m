@@ -7,6 +7,8 @@
 #import "SkyBallHetiRedHTMatchLiveFeedRequest.h"
 #import "SkyBallHetiRedHTMatchSummaryRequest.h"
 #import "UIImageView+SkyBallHetiRedSVG.h"
+#import "SkyBallHetiRedHTMatchVideoLiveViewController.h"
+
 @interface SkyBallHetiRedHTMatchDetailViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *homeTeamLogo;
 @property (weak, nonatomic) IBOutlet UIImageView *awayTeamLogo;
@@ -188,8 +190,14 @@
 - (void)loadChildViewControllerByIndex:(NSInteger)index {
     if ([self.loadedFlagArray[index] boolValue]) {
         if (index == 0) {
-            SkyBallHetiRedHTMatchWordLiveViewController *wordVc = self.loadedControllersArray[index];
-            [wordVc waterSkyrefreshWithLiveFeedList:self.liveFeedList];
+//            SkyBallHetiRedHTMatchWordLiveViewController *wordVc = self.loadedControllersArray[index];
+//            [wordVc waterSkyrefreshWithLiveFeedList:self.liveFeedList];
+            
+            
+            SkyBallHetiRedHTMatchVideoLiveViewController *detailVc = [SkyBallHetiRedHTMatchVideoLiveViewController waterSkyviewController];
+            detailVc.game_id = self.matchModel.game_id;
+           
+
         } else if (index == 1) {
             SkyBallHetiRedHTMatchCompareViewController *compareVc = self.loadedControllersArray[index];
             [compareVc waterSkyrefreshWithMatchSummaryModel:self.matchSummaryModel];
@@ -202,11 +210,19 @@
     kWeakSelf
     UIViewController *vc;
     if (index == 0) {
-        SkyBallHetiRedHTMatchWordLiveViewController *wordVc = [SkyBallHetiRedHTMatchWordLiveViewController waterSkyviewController];
-        wordVc.onTableHeaderRefreshBlock = ^{
-            [weakSelf loadData];
-        };
-        vc = wordVc;
+//        SkyBallHetiRedHTMatchWordLiveViewController *wordVc = [SkyBallHetiRedHTMatchWordLiveViewController waterSkyviewController];
+//        wordVc.onTableHeaderRefreshBlock = ^{
+//            [weakSelf loadData];
+//        };
+//        vc = wordVc;
+        
+        //视频直播
+        SkyBallHetiRedHTMatchVideoLiveViewController *detailVc = [SkyBallHetiRedHTMatchVideoLiveViewController waterSkyviewController];
+        detailVc.game_id = self.matchModel.game_id;
+        vc = detailVc;
+        
+
+        
     } else if (index == 1) {
         SkyBallHetiRedHTMatchCompareViewController *compareVc = [SkyBallHetiRedHTMatchCompareViewController waterSkyviewController];
         [compareVc waterSkyrefreshWithMatchSummaryModel:self.matchSummaryModel];
@@ -248,7 +264,9 @@
 }
 - (HMSegmentedControl *)segmentControl {
     if (!_segmentControl) {
-        _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"文字直播", @"對陣", @"數據統計"]];
+//        _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"文字直播", @"對陣", @"數據統計"]];
+        
+         _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"視頻直播", @"對陣", @"數據統計"]];
         _segmentControl.selectionIndicatorColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"];
         _segmentControl.selectionIndicatorHeight = 3.0f;
         _segmentControl.selectionIndicatorEdgeInsets = UIEdgeInsetsMake(0, -8, 0, -18);
