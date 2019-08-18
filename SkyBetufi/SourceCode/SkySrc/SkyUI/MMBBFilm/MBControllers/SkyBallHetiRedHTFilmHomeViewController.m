@@ -52,7 +52,7 @@
 }
 #pragma mark - private
 - (void)setupViews {
-    sself.title = @"影片";
+    self.title = @"影片";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [[UIView alloc] init];
