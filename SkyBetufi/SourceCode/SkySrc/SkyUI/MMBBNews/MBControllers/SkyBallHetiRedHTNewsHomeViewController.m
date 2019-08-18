@@ -72,6 +72,7 @@
 }
 #pragma mark - private
 - (void)setupViews {
+    self.title = @"新聞";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [[UIView alloc] init];

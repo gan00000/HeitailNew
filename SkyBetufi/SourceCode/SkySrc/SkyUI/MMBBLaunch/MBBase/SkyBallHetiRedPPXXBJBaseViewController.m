@@ -2,6 +2,14 @@
 #import "SkyBallHetiRedHTMeHomeViewController.h"
 #import "SkyBallHetiRedPPXXBJNavigationController.h"
 #import "SkyBallHetiRedHTUserManager.h"
+#import "SkyBallHetiRedHTMatchHomeViewController.h"
+#import "SkyBallHetiRedHTNewsHomeViewController.h"
+#import "SkyBallHetiRedHTFilmHomeViewController.h"
+#import "SkyBallHetiRedHTDataHomeViewController.h"
+#import "SkyBallHetiRedHTRankHomeViewController.h"
+#import "SkyBallHetiRedHTTabBarHomeViewController.h"
+@import Firebase;
+
 @interface SkyBallHetiRedPPXXBJBaseViewController ()
 @end
 @implementation SkyBallHetiRedPPXXBJBaseViewController
@@ -31,6 +39,94 @@
                                                    object:nil];
     }
 }
+
+
+//-(void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    NSLog(@"viewWillAppear");
+//}
+//
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSLog(@"viewDidAppear %@",NSStringFromClass([self class]));
+    
+    NSString *currentClassString = NSStringFromClass([self class]);
+    if ([currentClassString isEqualToString:NSStringFromClass([SkyBallHetiRedHTMatchHomeViewController class])]) {
+        
+        [FIRAnalytics logEventWithName:@"比賽"
+                            parameters:@{
+                                         kFIRParameterItemID:[NSString stringWithFormat:@"id-%@", self.title],
+                                         kFIRParameterItemName:self.title,
+                                         kFIRParameterContentType:@"button"
+                                         }];
+        
+    }else if ([currentClassString isEqualToString:NSStringFromClass([SkyBallHetiRedHTNewsHomeViewController class])]){
+        
+        [FIRAnalytics logEventWithName:@"新聞"
+                            parameters:@{
+                                         kFIRParameterItemID:[NSString stringWithFormat:@"id-%@", self.title],
+                                         kFIRParameterItemName:self.title,
+                                         kFIRParameterContentType:@"button"
+                                         }];
+        
+    }else if ([currentClassString isEqualToString:NSStringFromClass([SkyBallHetiRedHTFilmHomeViewController class])]){
+        
+        [FIRAnalytics logEventWithName:@"影片"
+                            parameters:@{
+                                         kFIRParameterItemID:[NSString stringWithFormat:@"id-%@", self.title],
+                                         kFIRParameterItemName:self.title,
+                                         kFIRParameterContentType:@"button"
+                                         }];
+        
+    }else if ([currentClassString isEqualToString:NSStringFromClass([SkyBallHetiRedHTDataHomeViewController class])]){
+        
+        [FIRAnalytics logEventWithName:@"數據"
+                            parameters:@{
+                                         kFIRParameterItemID:[NSString stringWithFormat:@"id-%@", self.title],
+                                         kFIRParameterItemName:self.title,
+                                         kFIRParameterContentType:@"button"
+                                         }];
+        
+    }else if ([currentClassString isEqualToString:NSStringFromClass([SkyBallHetiRedHTRankHomeViewController class])]){
+        
+        [FIRAnalytics logEventWithName:@"排行"
+                            parameters:@{
+                                         kFIRParameterItemID:[NSString stringWithFormat:@"id-%@", self.title],
+                                         kFIRParameterItemName:self.title,
+                                         kFIRParameterContentType:@"button"
+                                         }];
+        
+    }else if ([currentClassString isEqualToString:NSStringFromClass([SkyBallHetiRedHTTabBarHomeViewController class])]){
+        
+        [FIRAnalytics logEventWithName:@"個人中心"
+                            parameters:@{
+                                         kFIRParameterItemID:[NSString stringWithFormat:@"id-%@", self.title],
+                                         kFIRParameterItemName:self.title,
+                                         kFIRParameterContentType:@"button"
+                                         }];
+        
+    }else if ([currentClassString isEqualToString:NSStringFromClass([SkyBallHetiRedHTMeHomeViewController class])]){
+        
+        [FIRAnalytics logEventWithName:@"個人中心"
+                            parameters:@{
+                                         kFIRParameterItemID:[NSString stringWithFormat:@"id-%@", self.title],
+                                         kFIRParameterItemName:self.title,
+                                         kFIRParameterContentType:@"button"
+                                         }];
+    }
+}
+//
+//-(void)viewWillDisappear:(BOOL)animated{
+//    [super viewWillDisappear:animated];
+//     NSLog(@"viewWillDisappear");
+//}
+//
+//-(void)viewDidDisappear:(BOOL)animated{
+//    [super viewDidDisappear:animated];
+//
+//     NSLog(@"viewDidDisappear");
+//}
+
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }

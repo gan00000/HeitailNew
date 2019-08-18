@@ -106,5 +106,7 @@
 #pragma MARK -- UITabBarControllerDelegate
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     self.currentSelectedIndex = self.selectedIndex;
+//    FIRAnalytics logEventWithName
+    NSLog(@"tabBarController %ld",self.currentSelectedIndex);
 }
 @end

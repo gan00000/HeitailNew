@@ -97,6 +97,9 @@
 }
 #pragma mark - private
 - (void)setupViews {
+    
+    self.title = @"比賽";
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.rowHeight = 130;

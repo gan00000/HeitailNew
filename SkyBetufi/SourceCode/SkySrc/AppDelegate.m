@@ -10,6 +10,8 @@
 #import "UIView+SkyBallHetiRedToast.h"
 #import "SkyBallHetiRedHTNewsDetailViewController.h"
 #import "SkyBallHetiRedPPXXBJNavigationController.h"
+@import Firebase;
+
 #define UM_APP_KEY @"5bd67116f1f556f834000081"
 #define FB_APP_ID  @"479868032525276"
 @implementation AppDelegate
@@ -51,6 +53,7 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [FIRApp configure];//firebase
     [self setUpUM];
     [self sdk_setUpNetworkReachability];
     [self openViewController:application launchOptions:launchOptions];
