@@ -111,7 +111,15 @@
 
 #pragma mark - 设置APP静态图片引导页
 - (void)waterSkysetStaticGuidePage {
-    NSArray *imageNameArray = @[@"guideImageapp1.jpg",@"guideImageapp2.jpg",@"guideImageapp3.jpg", @"guideImageapp5.jpg"];
+    NSArray *imageNameArray;
+    if ([self waterSkyisIPhoneXSeries]) {
+        imageNameArray = @[@"guideImageapp11.jpg",@"guideImageapp12.jpg",@"guideImageapp13.jpg",@"guideImageapp14.jpg", @"guideImageapp15.jpg"];
+        
+    }else{
+        imageNameArray = @[@"guideImageapp1.jpg",@"guideImageapp2.jpg",@"guideImageapp3.jpg",@"guideImageapp4.jpg", @"guideImageapp5.jpg"];
+    }
+    
+    
     SkyBallHetiRedDHGuidePageHUD *guidePage = [[SkyBallHetiRedDHGuidePageHUD alloc] dh_initWithFrame:self.view.frame imageNameArray:imageNameArray buttonIsHidden:NO];
     [guidePage setClickListener:^(NSInteger m) {
           [self waterSkyGoIntoMainController];
@@ -134,6 +142,23 @@
     NSURL *videoURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"guideMovie1" ofType:@"mov"]];
     SkyBallHetiRedDHGuidePageHUD *guidePage = [[SkyBallHetiRedDHGuidePageHUD alloc] dh_initWithFrame:self.view.bounds videoURL:videoURL];
     [self.navigationController.view addSubview:guidePage];
+}
+
+-(BOOL)waterSkyisIPhoneXSeries
+{
+    BOOL iPhoneXSeries = NO;
+    if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPhone) {
+        return iPhoneXSeries;
+    }
+    
+    if (@available(iOS 11.0, *)) {
+        UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
+        if (mainWindow.safeAreaInsets.bottom > 0.0) {
+            iPhoneXSeries = YES;
+        }
+    }
+    
+    return iPhoneXSeries;
 }
 
 @end

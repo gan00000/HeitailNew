@@ -35,6 +35,12 @@
 		32CD878422F4173800063A14 /* VideoPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CD877622F4173800063A14 /* VideoPickerController.m */; };
 		32CD878522F4173800063A14 /* PlayerEventLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CD877922F4173800063A14 /* PlayerEventLogger.m */; };
 		32E7228123098085003E0A03 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32E7228023098085003E0A03 /* GoogleService-Info.plist */; };
+		32E722882309A3A6003E0A03 /* guideImageapp13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722822309A3A6003E0A03 /* guideImageapp13.jpg */; };
+		32E722892309A3A6003E0A03 /* guideImageapp11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722832309A3A6003E0A03 /* guideImageapp11.jpg */; };
+		32E7228A2309A3A6003E0A03 /* guideImageapp4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722842309A3A6003E0A03 /* guideImageapp4.jpg */; };
+		32E7228B2309A3A6003E0A03 /* guideImageapp12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722852309A3A6003E0A03 /* guideImageapp12.jpg */; };
+		32E7228C2309A3A6003E0A03 /* guideImageapp14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722862309A3A6003E0A03 /* guideImageapp14.jpg */; };
+		32E7228D2309A3A6003E0A03 /* guideImageapp15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722872309A3A6003E0A03 /* guideImageapp15.jpg */; };
 		E96EB72A062D72ACD051C26D /* Pods_SkyBallPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC337F0671EB4742D64BA54 /* Pods_SkyBallPlay.framework */; };
 		FE08C5C422504F0C000175CB /* MMBBMe.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE08C5C322504F0C000175CB /* MMBBMe.xcassets */; };
 		FE08C5C82250506A000175CB /* SkyBallHetiRedHTMeHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08C5C62250506A000175CB /* SkyBallHetiRedHTMeHomeViewController.m */; };
@@ -339,6 +345,12 @@
 		32CD877822F4173800063A14 /* SkyFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyFullScreenViewController.h; sourceTree = "<group>"; };
 		32CD877922F4173800063A14 /* PlayerEventLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerEventLogger.m; sourceTree = "<group>"; };
 		32E7228023098085003E0A03 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		32E722822309A3A6003E0A03 /* guideImageapp13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp13.jpg; sourceTree = "<group>"; };
+		32E722832309A3A6003E0A03 /* guideImageapp11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp11.jpg; sourceTree = "<group>"; };
+		32E722842309A3A6003E0A03 /* guideImageapp4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp4.jpg; sourceTree = "<group>"; };
+		32E722852309A3A6003E0A03 /* guideImageapp12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp12.jpg; sourceTree = "<group>"; };
+		32E722862309A3A6003E0A03 /* guideImageapp14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp14.jpg; sourceTree = "<group>"; };
+		32E722872309A3A6003E0A03 /* guideImageapp15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp15.jpg; sourceTree = "<group>"; };
 		608E0284ECCB1F2C8732AAA8 /* Pods-HeiteBasketball.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeiteBasketball.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball.debug.xcconfig"; sourceTree = "<group>"; };
 		6DC337F0671EB4742D64BA54 /* Pods_SkyBallPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyBallPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72321527951E473E782564AC /* Pods-HeiteBasketball.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeiteBasketball.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball.release.xcconfig"; sourceTree = "<group>"; };
@@ -815,6 +827,12 @@
 		326434DC22F0536E00D2DA1E /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				32E722842309A3A6003E0A03 /* guideImageapp4.jpg */,
+				32E722832309A3A6003E0A03 /* guideImageapp11.jpg */,
+				32E722852309A3A6003E0A03 /* guideImageapp12.jpg */,
+				32E722822309A3A6003E0A03 /* guideImageapp13.jpg */,
+				32E722862309A3A6003E0A03 /* guideImageapp14.jpg */,
+				32E722872309A3A6003E0A03 /* guideImageapp15.jpg */,
 				326434EB22F057E000D2DA1E /* guideImageapp1.jpg */,
 				326434EA22F057E000D2DA1E /* guideImageapp2.jpg */,
 				326434E722F057E000D2DA1E /* guideImageapp3.jpg */,
@@ -1906,8 +1924,10 @@
 				FE6BD0522144FC270090118A /* SkyBallHetiRedMatchDetail.storyboard in Resources */,
 				FEC1162A2143D4A1002DB617 /* SkyBallHetiRedBJHUDView.xib in Resources */,
 				FEDAC975214B9117005E8B63 /* SkyBallHetiRedHTDataHomeTeamCell.xib in Resources */,
+				32E7228D2309A3A6003E0A03 /* guideImageapp15.jpg in Resources */,
 				FE800F7022639DFD00E575D5 /* SkyBallHetiRedHTCommentExpendCell.xib in Resources */,
 				FE6BD0642144FF1F0090118A /* SkyBallHetiRedMatchDashboard.storyboard in Resources */,
+				32E7228A2309A3A6003E0A03 /* guideImageapp4.jpg in Resources */,
 				FEC116F82143DC57002DB617 /* SkyBallHetiRedNewsHome.storyboard in Resources */,
 				FEC117262143DF33002DB617 /* SkyBallHetiRedRankHome.storyboard in Resources */,
 				FEC116092143D4A1002DB617 /* SkyBallHetiRedXJToastImageView.xib in Resources */,
@@ -1922,6 +1942,7 @@
 				FEC116072143D4A1002DB617 /* SkyBallHetiRedXJToastView.xib in Resources */,
 				3265F1E02305A211006E3FE1 /* SkyBallHetiRedHTMatchVideoLive.storyboard in Resources */,
 				FE6BD07F21457BBC0090118A /* SkyBallHetiRedNewsDetail.storyboard in Resources */,
+				32E722882309A3A6003E0A03 /* guideImageapp13.jpg in Resources */,
 				FEC1172B2143E43A002DB617 /* MMBBLaunch.xcassets in Resources */,
 				FEC1161C2143D4A1002DB617 /* SkyBallHetiRedBJTabBarView.xib in Resources */,
 				FE08C5C422504F0C000175CB /* MMBBMe.xcassets in Resources */,
@@ -1929,6 +1950,7 @@
 				FEC116EF2143D8C9002DB617 /* SkyBallHetiRedMatchHome.storyboard in Resources */,
 				32ABE1CE22EDF4D0008505BA /* SkyBallHetiRedNewsHomeOther.storyboard in Resources */,
 				FECCA51D2258C8D0009EF494 /* SkyBallHetiRedHTMessageViewController.xib in Resources */,
+				32E722892309A3A6003E0A03 /* guideImageapp11.jpg in Resources */,
 				FECCA5242258C8D0009EF494 /* SkyBallHetiRedHTLoginAlertView.xib in Resources */,
 				FE6BD094214584DA0090118A /* SkyBallHetiRedHTNewsTopHeaderView.xib in Resources */,
 				FE82BB422179B77200C52C51 /* SkyBallHetiRedHTDataTeamLeftCell.xib in Resources */,
@@ -1968,6 +1990,8 @@
 				FE82BB472179B78700C52C51 /* SkyBallHetiRedHTDataTeamRightCell.xib in Resources */,
 				FECCA5202258C8D0009EF494 /* SkyBallHetiRedHTMeCenterHeaderCell.xib in Resources */,
 				FE6BD0622144FEF90090118A /* SkyBallHetiRedMatchCompare.storyboard in Resources */,
+				32E7228B2309A3A6003E0A03 /* guideImageapp12.jpg in Resources */,
+				32E7228C2309A3A6003E0A03 /* guideImageapp14.jpg in Resources */,
 				32CD878222F4173800063A14 /* PlatVideoStoryboard.storyboard in Resources */,
 				FEAC9F302199E28800159AE9 /* SkyBallHetiRedSetting.storyboard in Resources */,
 				FEEABBE72149F90800A585DA /* iframe_load.html in Resources */,
