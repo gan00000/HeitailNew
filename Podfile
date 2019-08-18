@@ -35,5 +35,7 @@ pod 'YYText'
 pod "XCDYouTubeKit", "~> 2.7"
 pod 'SVGKit'
 #pod 'FBSDKLoginKit'
+#pod 'XCDLumberjackNSLogger', '~> 1.0'
+pod 'Firebase/Analytics'
 
 end
