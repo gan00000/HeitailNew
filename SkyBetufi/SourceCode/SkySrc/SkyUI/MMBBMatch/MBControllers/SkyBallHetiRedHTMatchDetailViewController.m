@@ -351,10 +351,10 @@
         
         if ([SkyBallHetiRedHTUserManager manager].showTextLive) {
             
-                    _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"視頻直播", @"文字直播", @"對陣", @"數據統計"]];
+                    _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"影片直播", @"文字直播", @"對陣", @"數據統計"]];
             
         }else{
-               _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"視頻直播", @"對陣", @"數據統計"]];
+               _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"影片直播", @"對陣", @"數據統計"]];
         }
       
         _segmentControl.selectionIndicatorColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"];
