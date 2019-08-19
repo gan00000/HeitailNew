@@ -44,7 +44,7 @@
               
             }else{
                 
-                [SkyBallHetiRedHTUserManager manager].showTextLive = YES;
+                [SkyBallHetiRedHTUserManager manager].showTextLive = NO;//showTextLive 0 是不显示
             }
         }
         

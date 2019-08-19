@@ -97,14 +97,15 @@
     if ( !self.htmlLoadDone) {
         return 0;
     }
-    NSInteger num = 3;
-    if (self.commentGetter.hotComments.count > 0) {
-        num ++;
-    }
-    if (self.commentGetter.normalComments.count > 0) {
-        num ++;
-    }
-    return num;
+//    NSInteger num = 3;
+//    if (self.commentGetter.hotComments.count > 0) {
+//        num ++;
+//    }
+//    if (self.commentGetter.normalComments.count > 0) {
+//        num ++;
+//    }
+//    return num;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
