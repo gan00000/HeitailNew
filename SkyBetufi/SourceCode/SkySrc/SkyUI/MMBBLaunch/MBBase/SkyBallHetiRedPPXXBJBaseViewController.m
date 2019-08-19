@@ -53,7 +53,7 @@
     NSString *currentClassString = NSStringFromClass([self class]);
     if ([currentClassString isEqualToString:NSStringFromClass([SkyBallHetiRedHTMatchHomeViewController class])]) {
         
-        [FIRAnalytics logEventWithName:@"IOS-比賽"
+        [FIRAnalytics logEventWithName:@"IOS_Match"
                             parameters:@{
                                          kFIRParameterItemID:[NSString stringWithFormat:@"id-%@", self.title],
                                          kFIRParameterItemName:self.title,
@@ -62,7 +62,7 @@
         
     }else if ([currentClassString isEqualToString:NSStringFromClass([SkyBallHetiRedHTNewsHomeViewController class])]){
         
-        [FIRAnalytics logEventWithName:@"IOS-新聞"
+        [FIRAnalytics logEventWithName:@"IOS_News"
                             parameters:@{
                                          kFIRParameterItemID:[NSString stringWithFormat:@"id-%@", self.title],
                                          kFIRParameterItemName:self.title,
@@ -71,7 +71,7 @@
         
     }else if ([currentClassString isEqualToString:NSStringFromClass([SkyBallHetiRedHTFilmHomeViewController class])]){
         
-        [FIRAnalytics logEventWithName:@"IOS-影片"
+        [FIRAnalytics logEventWithName:@"IOS_Film"
                             parameters:@{
                                          kFIRParameterItemID:[NSString stringWithFormat:@"id-%@", self.title],
                                          kFIRParameterItemName:self.title,
@@ -80,7 +80,7 @@
         
     }else if ([currentClassString isEqualToString:NSStringFromClass([SkyBallHetiRedHTDataHomeViewController class])]){
         
-        [FIRAnalytics logEventWithName:@"IOS-數據"
+        [FIRAnalytics logEventWithName:@"IOS_Data"
                             parameters:@{
                                          kFIRParameterItemID:[NSString stringWithFormat:@"id-%@", self.title],
                                          kFIRParameterItemName:self.title,
@@ -89,7 +89,7 @@
         
     }else if ([currentClassString isEqualToString:NSStringFromClass([SkyBallHetiRedHTRankHomeViewController class])]){
         
-        [FIRAnalytics logEventWithName:@"IOS-排行"
+        [FIRAnalytics logEventWithName:@"IOS_Rank"
                             parameters:@{
                                          kFIRParameterItemID:[NSString stringWithFormat:@"id-%@", self.title],
                                          kFIRParameterItemName:self.title,
@@ -98,7 +98,7 @@
         
     }else if ([currentClassString isEqualToString:NSStringFromClass([SkyBallHetiRedHTTabBarHomeViewController class])]){
         
-        [FIRAnalytics logEventWithName:@"IOS-個人中心"
+        [FIRAnalytics logEventWithName:@"IOS_MeHome"
                             parameters:@{
                                          kFIRParameterItemID:[NSString stringWithFormat:@"id-%@", self.title],
                                          kFIRParameterItemName:self.title,
@@ -107,7 +107,7 @@
         
     }else if ([currentClassString isEqualToString:NSStringFromClass([SkyBallHetiRedHTMeHomeViewController class])]){
         
-        [FIRAnalytics logEventWithName:@"IOS-個人中心"
+        [FIRAnalytics logEventWithName:@"IOS_MeHome"
                             parameters:@{
                                          kFIRParameterItemID:[NSString stringWithFormat:@"id-%@", self.title],
                                          kFIRParameterItemName:self.title,
