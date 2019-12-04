@@ -23,7 +23,7 @@ pod 'JXExtension'
 pod 'IQKeyboardManager'
 
 # 友盟组建
-pod 'UMCCommon'
+pod 'UMCCommon', "~> 2.1.1"
 pod 'UMCSecurityPlugins'
 pod 'UMCAnalytics'
 pod 'UMCShare/Social/Facebook'
