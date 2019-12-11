@@ -71,6 +71,9 @@
     if (params) {
         [allParams addEntriesFromDictionary:params];
     }
+    if (!allParams.count) {
+        allParams = [NSMutableDictionary dictionaryWithDictionary:@{@"token":@""}] ;
+    }
     [[SkyBallHetiRedBJHTTPServiceEngine sharedInstance].httpEngine waterSky_getRequestWithFunctionPath:path params:allParams successBlock:^(NSURLSessionDataTask *task, id responseData) {
 #if ENABLE_REQUEST_LOG
         BJLog(@"get: path = %@,requsetHeader = %@, params = %@, data = %@", task.originalRequest.URL,task.originalRequest.allHTTPHeaderFields,params, responseData);
