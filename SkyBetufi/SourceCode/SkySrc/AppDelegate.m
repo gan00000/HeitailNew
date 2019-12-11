@@ -10,6 +10,7 @@
 #import "UIView+SkyBallHetiRedToast.h"
 #import "SkyBallHetiRedHTNewsDetailViewController.h"
 #import "SkyBallHetiRedPPXXBJNavigationController.h"
+#import "SkyBallHetiRedHTNewsHomeViewController.h"
 @import Firebase;
 
 #define UM_APP_KEY @"5bd67116f1f556f834000081"
@@ -22,6 +23,8 @@
 //    self.window.rootViewController = rootVc;
     
 //    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[SkyBallHetiRedPPXXBJLaunchViewController alloc] init]];
+    
+//     SkyBallHetiRedHTNewsHomeViewController *rootVc = [SkyBallHetiRedHTNewsHomeViewController waterSkyviewController];
     
     self.window.rootViewController = [[SkyBallHetiRedPPXXBJNavigationController alloc] initWithRootViewController:rootVc];
     [self setupPushWithLaunchOptions:launchOptions];

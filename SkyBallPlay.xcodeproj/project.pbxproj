@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32415E2323A0C522003463C9 /* UINavigationBar+DDYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 32415E2223A0C522003463C9 /* UINavigationBar+DDYExtension.m */; };
 		32642A5722EFE8FD00D2DA1E /* UIImageView+SkyBallHetiRedSVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 32642A5622EFE8FD00D2DA1E /* UIImageView+SkyBallHetiRedSVG.m */; };
 		32642A5A22F027EB00D2DA1E /* TZPhotoPickerController+SkyBallHetiRedDRExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 32642A5922F027EA00D2DA1E /* TZPhotoPickerController+SkyBallHetiRedDRExtention.m */; };
 		326434D922F04F5E00D2DA1E /* GuideImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 326434D422F04F5E00D2DA1E /* GuideImage.bundle */; };
@@ -22,6 +23,7 @@
 		32ABE1CE22EDF4D0008505BA /* SkyBallHetiRedNewsHomeOther.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32ABE1CD22EDF4D0008505BA /* SkyBallHetiRedNewsHomeOther.storyboard */; };
 		32ABE1D222EDF733008505BA /* SkyBallHetiRedHTTabBarHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ABE1CF22EDF732008505BA /* SkyBallHetiRedHTTabBarHomeViewController.m */; };
 		32ABE1D322EDF733008505BA /* SkyBallHetiRedHTTabBarHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32ABE1D022EDF732008505BA /* SkyBallHetiRedHTTabBarHomeViewController.xib */; };
+		32BFD1DF239F9B1A0037985B /* HTViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BFD1DE239F9B1A0037985B /* HTViewController2.m */; };
 		32CD877A22F4173800063A14 /* MPMoviePlayerController+BackgroundPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CD876322F4173800063A14 /* MPMoviePlayerController+BackgroundPlayback.m */; };
 		32CD877B22F4173800063A14 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CD876422F4173800063A14 /* SettingsViewController.m */; };
 		32CD877C22F4173800063A14 /* SkyAsynchronousViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CD876522F4173800063A14 /* SkyAsynchronousViewController.m */; };
@@ -296,6 +298,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32415E2123A0C521003463C9 /* UINavigationBar+DDYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+DDYExtension.h"; sourceTree = "<group>"; };
+		32415E2223A0C522003463C9 /* UINavigationBar+DDYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+DDYExtension.m"; sourceTree = "<group>"; };
 		325BD8C522E0705D00A07EC9 /* SkyBallHetiRedPPXXBJLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyBallHetiRedPPXXBJLaunchViewController.h; sourceTree = "<group>"; };
 		325BD8C822E07D6F00A07EC9 /* confuse.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = confuse.sh; sourceTree = "<group>"; };
 		325BD8C922E07D6F00A07EC9 /* func.list */ = {isa = PBXFileReference; lastKnownFileType = text; path = func.list; sourceTree = "<group>"; };
@@ -321,6 +325,8 @@
 		32ABE1CF22EDF732008505BA /* SkyBallHetiRedHTTabBarHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyBallHetiRedHTTabBarHomeViewController.m; sourceTree = "<group>"; };
 		32ABE1D022EDF732008505BA /* SkyBallHetiRedHTTabBarHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkyBallHetiRedHTTabBarHomeViewController.xib; sourceTree = "<group>"; };
 		32ABE1D122EDF733008505BA /* SkyBallHetiRedHTTabBarHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyBallHetiRedHTTabBarHomeViewController.h; sourceTree = "<group>"; };
+		32BFD1DD239F9B1A0037985B /* HTViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTViewController2.h; sourceTree = "<group>"; };
+		32BFD1DE239F9B1A0037985B /* HTViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTViewController2.m; sourceTree = "<group>"; };
 		32CD876322F4173800063A14 /* MPMoviePlayerController+BackgroundPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MPMoviePlayerController+BackgroundPlayback.m"; sourceTree = "<group>"; };
 		32CD876422F4173800063A14 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		32CD876522F4173800063A14 /* SkyAsynchronousViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyAsynchronousViewController.m; sourceTree = "<group>"; };
@@ -1127,6 +1133,8 @@
 		FEC114272143D4A0002DB617 /* MBBase */ = {
 			isa = PBXGroup;
 			children = (
+				32415E2123A0C521003463C9 /* UINavigationBar+DDYExtension.h */,
+				32415E2223A0C522003463C9 /* UINavigationBar+DDYExtension.m */,
 				FEC115212143D4A0002DB617 /* SkyBallHetiRedPPXXBJBaseNavigationController.h */,
 				FEC115242143D4A0002DB617 /* SkyBallHetiRedPPXXBJBaseNavigationController.m */,
 				FEC115232143D4A0002DB617 /* SkyBallHetiRedPPXXBJBaseTabBarController.h */,
@@ -1139,6 +1147,8 @@
 				FEC114292143D4A0002DB617 /* SkyBallHetiRedPPXXBJNavigationController.m */,
 				FEC114322143D4A0002DB617 /* SkyBallHetiRedPPXXBJViewControllerCenter.h */,
 				FEC1142B2143D4A0002DB617 /* SkyBallHetiRedPPXXBJViewControllerCenter.m */,
+				32BFD1DD239F9B1A0037985B /* HTViewController2.h */,
+				32BFD1DE239F9B1A0037985B /* HTViewController2.m */,
 			);
 			path = MBBase;
 			sourceTree = "<group>";
@@ -2173,6 +2183,7 @@
 				FEC116B82143D4A1002DB617 /* SkyBallHetiRedPPXXBJBaseNavigationController.m in Sources */,
 				FEDF8FCE21444A3E005C7C4D /* NSDateFormatter+SkyBallHetiRedDRExtension.m in Sources */,
 				FE6BD07921452B570090118A /* SkyBallHetiRedHTNewsHomeBannerCell.m in Sources */,
+				32BFD1DF239F9B1A0037985B /* HTViewController2.m in Sources */,
 				FEC117192143DEA0002DB617 /* SkyBallHetiRedHTDataHomeViewController.m in Sources */,
 				FE6BD06D214520E00090118A /* SkyBallHetiRedHTNewsBannerRequest.m in Sources */,
 				3265F1E42305A225006E3FE1 /* SkyBallHetiRedHTMatchVideoLiveViewController.m in Sources */,
@@ -2204,6 +2215,7 @@
 				FEC1160B2143D4A1002DB617 /* UIView+SkyBallHetiRedLoading.m in Sources */,
 				FECCA57C2259824F009EF494 /* SkyBallHetiRedDRDeleteAlertView.m in Sources */,
 				FEAC9F2E2199E25F00159AE9 /* SkyBallHetiRedHTSettingViewController.m in Sources */,
+				32415E2323A0C522003463C9 /* UINavigationBar+DDYExtension.m in Sources */,
 				FEC116152143D4A1002DB617 /* SkyBallHetiRedMJRefreshGenerator.m in Sources */,
 				FEC1160C2143D4A1002DB617 /* SkyBallHetiRedXJEmptyView.m in Sources */,
 				32CD877E22F4173800063A14 /* SkyThumbnailViewController.m in Sources */,

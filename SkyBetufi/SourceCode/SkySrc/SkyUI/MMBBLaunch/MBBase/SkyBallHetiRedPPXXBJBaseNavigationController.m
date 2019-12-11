@@ -25,8 +25,10 @@
 }
 #pragma mark -- 横屏在delegate中处理，这里先屏蔽
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    
     for(Class vcClass in [self waterSkyviewControllersNotHideTabBar]) {
         if ([viewController isKindOfClass:vcClass]) {
+           
             [super pushViewController:viewController animated:animated];
             return;
         }
