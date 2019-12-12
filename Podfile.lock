@@ -32,7 +32,6 @@ PODS:
   - CocoaLumberjack (3.5.1):
     - CocoaLumberjack/Core (= 3.5.1)
   - CocoaLumberjack/Core (3.5.1)
-  - FDStackView (1.0.1)
   - Firebase/Analytics (5.16.0):
     - Firebase/Core
   - Firebase/Core (5.16.0):
@@ -140,7 +139,6 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - BlocksKit
-  - FDStackView (from `https://github.com/forkingdog/FDStackView.git`)
   - Firebase/Analytics
   - HexColors (= 4.0.0)
   - HMSegmentedControl
@@ -206,24 +204,18 @@ SPEC REPOS:
     - ZFLineSDK
 
 EXTERNAL SOURCES:
-  FDStackView:
-    :git: https://github.com/forkingdog/FDStackView.git
   LTNavigationBar:
     :git: https://github.com/JeasonL/LTNavigationBar.git
 
 CHECKOUT OPTIONS:
-  FDStackView:
-    :commit: d507a47d185de1cb0cdd35cdeb28fcdd827d9859
-    :git: https://github.com/forkingdog/FDStackView.git
   LTNavigationBar:
-    :commit: fd2be1db028323b42cdfca9896a9c565f8689317
+    :commit: 669fabcb9df9558c4331e02ff9d0968a69f85ce9
     :git: https://github.com/JeasonL/LTNavigationBar.git
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   CocoaLumberjack: 2101f8a5508197a305e737d16c5c2e9e2157628c
-  FDStackView: fc0697e5be2022c8af36ce66e9e2061006058ba8
   Firebase: 749a8ff4962f9d8c79dda1966de20f6f77583d67
   FirebaseAnalytics: d35d47c03c50c73c14a7fd31463c5775843e78a9
   FirebaseCore: ea2d1816723ef21492b8e9113303e1350db5e08c
@@ -257,6 +249,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZFLineSDK: fc1485f687bd9d6af5cb7e39ab2a8266680797dd
 
-PODFILE CHECKSUM: e5a2f5fe320f6ac3e88637cddde62b1bfc0f08ec
+PODFILE CHECKSUM: 8fa3c62d6a5d4aea8a4305fd3120ad922f171920
 
 COCOAPODS: 1.8.4

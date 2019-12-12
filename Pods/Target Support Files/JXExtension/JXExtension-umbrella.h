@@ -11,6 +11,9 @@
 #endif
 
 #import "JXExtension.h"
+#import "NSDate+JXExtension.h"
+#import "NSMutableArray+JXSafeAccess.h"
+#import "NSMutableDictionary+JXSafeAccess.h"
 #import "NSString+JXDecimalCalculate.h"
 #import "NSString+JXSize.h"
 #import "NSURL+JXParameters.h"
@@ -22,9 +25,9 @@
 #import "UIScrollView+JXScrollStop.h"
 #import "UITextField+JXLimitText.h"
 #import "UITextView+JXLimitText.h"
+#import "UIView+JXClass.h"
 #import "UIView+JXDesign.h"
 #import "UIView+JXFrame.h"
-#import "JXSystemAuthManager.h"
 #import "JXDirectionPanGestureRecognizer.h"
 #import "JXInteractiveDirection.h"
 #import "JXInteractiveTransition.h"

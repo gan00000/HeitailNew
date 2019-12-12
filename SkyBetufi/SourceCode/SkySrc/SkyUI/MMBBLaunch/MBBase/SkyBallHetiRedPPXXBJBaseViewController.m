@@ -21,9 +21,6 @@
     NSLog(@"BJBaseViewController viewDidLoad %@",NSStringFromClass([self class]));
     self.view.backgroundColor = RGBA_COLOR_HEX(0xf4f4f4);
 //    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-//    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0,64)
-//                                                             forBarMetrics:UIBarMetricsDefault];
     
     if ([SkyBallHetiRedHTUserManager manager].appInView) {
         [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor hx_colorWithHexRGBAString:@"286ffb"]];
@@ -49,16 +46,11 @@
     [super viewWillAppear:animated];
     NSLog(@"BJBaseViewController viewWillAppear %@",NSStringFromClass([self class]));
     
-//    CGRect ff = self.navigationController.navigationBar.frame;
-//    ff.origin.y = 44;
-//    self.navigationController.navigationBar.frame = ff;
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-//    self.navigationController.navigationBar.frame = CGRectMake(0, 44, [UIScreen mainScreen].bounds.size.width, 44);
-    
+
     NSLog(@"BJBaseViewController viewDidAppear %@",NSStringFromClass([self class]));
     
     NSString *currentClassString = NSStringFromClass([self class]);

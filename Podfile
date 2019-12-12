@@ -17,8 +17,10 @@ pod 'HMSegmentedControl'
 pod 'RegExCategories'
 pod 'BlocksKit'
 pod 'HexColors', '4.0.0'
+
+#改库LTNavigationBar导致新版xcode导航栏出现问题
 pod 'LTNavigationBar', :git => 'https://github.com/JeasonL/LTNavigationBar.git'
-pod 'FDStackView', :git => 'https://github.com/forkingdog/FDStackView.git'
+#pod 'FDStackView', :git => 'https://github.com/forkingdog/FDStackView.git'
 pod 'JXExtension', "~> 0.4.2"
 pod 'IQKeyboardManager'
 

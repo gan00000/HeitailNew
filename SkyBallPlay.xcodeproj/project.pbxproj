@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32415E2323A0C522003463C9 /* UINavigationBar+DDYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 32415E2223A0C522003463C9 /* UINavigationBar+DDYExtension.m */; };
 		32642A5722EFE8FD00D2DA1E /* UIImageView+SkyBallHetiRedSVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 32642A5622EFE8FD00D2DA1E /* UIImageView+SkyBallHetiRedSVG.m */; };
 		32642A5A22F027EB00D2DA1E /* TZPhotoPickerController+SkyBallHetiRedDRExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 32642A5922F027EA00D2DA1E /* TZPhotoPickerController+SkyBallHetiRedDRExtention.m */; };
 		326434D922F04F5E00D2DA1E /* GuideImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 326434D422F04F5E00D2DA1E /* GuideImage.bundle */; };
@@ -43,6 +42,7 @@
 		32E7228B2309A3A6003E0A03 /* guideImageapp12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722852309A3A6003E0A03 /* guideImageapp12.jpg */; };
 		32E7228C2309A3A6003E0A03 /* guideImageapp14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722862309A3A6003E0A03 /* guideImageapp14.jpg */; };
 		32E7228D2309A3A6003E0A03 /* guideImageapp15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722872309A3A6003E0A03 /* guideImageapp15.jpg */; };
+		32FFD29123A2267200E1661A /* UIImageView+HT.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFD29023A2267200E1661A /* UIImageView+HT.m */; };
 		E96EB72A062D72ACD051C26D /* Pods_SkyBallPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC337F0671EB4742D64BA54 /* Pods_SkyBallPlay.framework */; };
 		FE08C5C422504F0C000175CB /* MMBBMe.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE08C5C322504F0C000175CB /* MMBBMe.xcassets */; };
 		FE08C5C82250506A000175CB /* SkyBallHetiRedHTMeHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08C5C62250506A000175CB /* SkyBallHetiRedHTMeHomeViewController.m */; };
@@ -298,8 +298,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		32415E2123A0C521003463C9 /* UINavigationBar+DDYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+DDYExtension.h"; sourceTree = "<group>"; };
-		32415E2223A0C522003463C9 /* UINavigationBar+DDYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+DDYExtension.m"; sourceTree = "<group>"; };
 		325BD8C522E0705D00A07EC9 /* SkyBallHetiRedPPXXBJLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyBallHetiRedPPXXBJLaunchViewController.h; sourceTree = "<group>"; };
 		325BD8C822E07D6F00A07EC9 /* confuse.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = confuse.sh; sourceTree = "<group>"; };
 		325BD8C922E07D6F00A07EC9 /* func.list */ = {isa = PBXFileReference; lastKnownFileType = text; path = func.list; sourceTree = "<group>"; };
@@ -357,6 +355,8 @@
 		32E722852309A3A6003E0A03 /* guideImageapp12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp12.jpg; sourceTree = "<group>"; };
 		32E722862309A3A6003E0A03 /* guideImageapp14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp14.jpg; sourceTree = "<group>"; };
 		32E722872309A3A6003E0A03 /* guideImageapp15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp15.jpg; sourceTree = "<group>"; };
+		32FFD28F23A2267200E1661A /* UIImageView+HT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HT.h"; sourceTree = "<group>"; };
+		32FFD29023A2267200E1661A /* UIImageView+HT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HT.m"; sourceTree = "<group>"; };
 		608E0284ECCB1F2C8732AAA8 /* Pods-HeiteBasketball.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeiteBasketball.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball.debug.xcconfig"; sourceTree = "<group>"; };
 		6DC337F0671EB4742D64BA54 /* Pods_SkyBallPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyBallPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72321527951E473E782564AC /* Pods-HeiteBasketball.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeiteBasketball.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball.release.xcconfig"; sourceTree = "<group>"; };
@@ -1133,8 +1133,6 @@
 		FEC114272143D4A0002DB617 /* MBBase */ = {
 			isa = PBXGroup;
 			children = (
-				32415E2123A0C521003463C9 /* UINavigationBar+DDYExtension.h */,
-				32415E2223A0C522003463C9 /* UINavigationBar+DDYExtension.m */,
 				FEC115212143D4A0002DB617 /* SkyBallHetiRedPPXXBJBaseNavigationController.h */,
 				FEC115242143D4A0002DB617 /* SkyBallHetiRedPPXXBJBaseNavigationController.m */,
 				FEC115232143D4A0002DB617 /* SkyBallHetiRedPPXXBJBaseTabBarController.h */,
@@ -1252,6 +1250,8 @@
 				FEC115472143D4A0002DB617 /* UIView+SkyBallHetiRedQuickFrame.m */,
 				32642A5522EFE8FD00D2DA1E /* UIImageView+SkyBallHetiRedSVG.h */,
 				32642A5622EFE8FD00D2DA1E /* UIImageView+SkyBallHetiRedSVG.m */,
+				32FFD28F23A2267200E1661A /* UIImageView+HT.h */,
+				32FFD29023A2267200E1661A /* UIImageView+HT.m */,
 			);
 			path = PKCategory;
 			sourceTree = "<group>";
@@ -2030,63 +2030,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
-				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
-				"${BUILT_PRODUCTS_DIR}/FDStackView/FDStackView.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
-				"${BUILT_PRODUCTS_DIR}/HexColors/HexColors.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
-				"${BUILT_PRODUCTS_DIR}/JXExtension/JXExtension.framework",
-				"${BUILT_PRODUCTS_DIR}/LTNavigationBar/LTNavigationBar.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/NJKWebViewProgress/NJKWebViewProgress.framework",
-				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/RegExCategories/RegExCategories.framework",
-				"${BUILT_PRODUCTS_DIR}/SDVersion/SDVersion.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework",
-				"${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework",
-				"${BUILT_PRODUCTS_DIR}/XCDYouTubeKit/XCDYouTubeKit.framework",
-				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
-				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlocksKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDStackView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HexColors.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JXExtension.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTNavigationBar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NJKWebViewProgress.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RegExCategories.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDVersion.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVGKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebViewJavascriptBridge.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCDYouTubeKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF9D3AFDF9A356103E352831 /* [CP] Check Pods Manifest.lock */ = {
@@ -2112,17 +2065,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-resources.sh",
-				"${PODS_ROOT}/UMCCommonLog/UMCommonLog/UMCommonLog.bundle",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMCommonLog.bundle",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2180,6 +2132,7 @@
 				FEC116932143D4A1002DB617 /* SkyBallHetiRedBJHTTPServiceEngine.m in Sources */,
 				FEA104F6216CB0F0000DBE63 /* SkyBallHetiRedHTMatchSummaryModel.m in Sources */,
 				FE6BD092214584C30090118A /* SkyBallHetiRedHTNewsTopHeaderView.m in Sources */,
+				32FFD29123A2267200E1661A /* UIImageView+HT.m in Sources */,
 				FEC116B82143D4A1002DB617 /* SkyBallHetiRedPPXXBJBaseNavigationController.m in Sources */,
 				FEDF8FCE21444A3E005C7C4D /* NSDateFormatter+SkyBallHetiRedDRExtension.m in Sources */,
 				FE6BD07921452B570090118A /* SkyBallHetiRedHTNewsHomeBannerCell.m in Sources */,
@@ -2215,7 +2168,6 @@
 				FEC1160B2143D4A1002DB617 /* UIView+SkyBallHetiRedLoading.m in Sources */,
 				FECCA57C2259824F009EF494 /* SkyBallHetiRedDRDeleteAlertView.m in Sources */,
 				FEAC9F2E2199E25F00159AE9 /* SkyBallHetiRedHTSettingViewController.m in Sources */,
-				32415E2323A0C522003463C9 /* UINavigationBar+DDYExtension.m in Sources */,
 				FEC116152143D4A1002DB617 /* SkyBallHetiRedMJRefreshGenerator.m in Sources */,
 				FEC1160C2143D4A1002DB617 /* SkyBallHetiRedXJEmptyView.m in Sources */,
 				32CD877E22F4173800063A14 /* SkyThumbnailViewController.m in Sources */,

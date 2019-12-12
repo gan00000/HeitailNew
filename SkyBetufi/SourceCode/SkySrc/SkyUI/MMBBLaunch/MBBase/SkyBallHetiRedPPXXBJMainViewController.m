@@ -78,49 +78,62 @@
 - (NSArray<UIViewController *> *)waterSkytabBarControllers {
     if (!self.vc1) {
         self.vc1 = [SkyBallHetiRedHTMatchHomeViewController waterSkyviewController];
-        self.vc1.modalPresentationStyle = UIModalPresentationFullScreen;
+//        self.vc1.modalPresentationStyle = UIModalPresentationFullScreen;
         self.nav1 = [[SkyBallHetiRedPPXXBJNavigationController alloc] initWithRootViewController:self.vc1];
     }
     if (!self.vc2) {
         self.vc2 = [SkyBallHetiRedHTNewsHomeViewController waterSkyviewController];
-        self.vc2.modalPresentationStyle = UIModalPresentationFullScreen;
+//        self.vc2.modalPresentationStyle = UIModalPresentationFullScreen;
         self.nav2 = [[SkyBallHetiRedPPXXBJNavigationController alloc] initWithRootViewController:self.vc2];
     }
     if (!self.vc3) {
         self.vc3 = [SkyBallHetiRedHTFilmHomeViewController waterSkyviewController];
-        self.vc3.modalPresentationStyle = UIModalPresentationFullScreen;
+//        self.vc3.modalPresentationStyle = UIModalPresentationFullScreen;
         self.nav3 = [[SkyBallHetiRedPPXXBJNavigationController alloc] initWithRootViewController:self.vc3];
     }
     if (!self.vc4) {
         self.vc4 = [SkyBallHetiRedHTDataHomeViewController waterSkyviewController];
-        self.vc4.modalPresentationStyle = UIModalPresentationFullScreen;
+//        self.vc4.modalPresentationStyle = UIModalPresentationFullScreen;
         self.nav4 = [[SkyBallHetiRedPPXXBJNavigationController alloc] initWithRootViewController:self.vc4];
     }
     if (!self.vc5) {
         self.vc5 = [SkyBallHetiRedHTRankHomeViewController waterSkyviewController];
-        self.vc5.modalPresentationStyle = UIModalPresentationFullScreen;
+//        self.vc5.modalPresentationStyle = UIModalPresentationFullScreen;
         self.nav5 = [[SkyBallHetiRedPPXXBJNavigationController alloc] initWithRootViewController:self.vc5];
     }
     if (!self.vc6) {
         self.vc6 = [SkyBallHetiRedHTTabBarHomeViewController waterSkyviewController];
-        self.vc6.modalPresentationStyle = UIModalPresentationFullScreen;
+//        self.vc6.modalPresentationStyle = UIModalPresentationFullScreen;
         self.nav6 = [[SkyBallHetiRedPPXXBJNavigationController alloc] initWithRootViewController:self.vc6];
     }
+    
+//    self.nav1.modalPresentationStyle = UIModalPresentationFullScreen;
+//    self.nav2.modalPresentationStyle = UIModalPresentationFullScreen;
+//    self.nav3.modalPresentationStyle = UIModalPresentationFullScreen;
+//    self.nav4.modalPresentationStyle = UIModalPresentationFullScreen;
+//    self.nav5.modalPresentationStyle = UIModalPresentationFullScreen;
+//    self.nav6.modalPresentationStyle = UIModalPresentationFullScreen;
+      
     if ([SkyBallHetiRedHTUserManager manager].appInView) {
          return @[self.nav2, self.nav1, self.nav5, self.nav4, self.nav6];
     }
-    self.nav1.modalPresentationStyle = UIModalPresentationFullScreen;
-     self.nav2.modalPresentationStyle = UIModalPresentationFullScreen;
-     self.nav3.modalPresentationStyle = UIModalPresentationFullScreen;
-     self.nav4.modalPresentationStyle = UIModalPresentationFullScreen;
-     self.nav5.modalPresentationStyle = UIModalPresentationFullScreen;
-    
+  
     return @[self.nav1, self.nav2, self.nav3, self.nav4, self.nav5];
 }
 #pragma MARK -- UITabBarControllerDelegate
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     self.currentSelectedIndex = self.selectedIndex;
 //    FIRAnalytics logEventWithName
+   
+    [viewController viewDidAppear:YES];
     NSLog(@"tabBarController %ld",self.currentSelectedIndex);
+}
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+//        NSLog(@"被选中的控制器将要显示的按钮");
+          //return NO;不能显示选中的控制器
+     [viewController viewWillAppear:YES];
+    
+    return YES;
 }
 @end
