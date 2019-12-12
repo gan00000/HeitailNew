@@ -82,19 +82,16 @@ PODS:
   - HexColors (4.0.0)
   - HMSegmentedControl (1.5.5)
   - IQKeyboardManager (6.2.0)
-  - JXExtension (0.3.22):
-    - JXExtension/Category (= 0.3.22)
-    - JXExtension/Manager (= 0.3.22)
-    - JXExtension/Transition (= 0.3.22)
-    - JXExtension/View (= 0.3.22)
+  - JXExtension (0.4.2):
+    - JXExtension/Category (= 0.4.2)
+    - JXExtension/Transition (= 0.4.2)
+    - JXExtension/View (= 0.4.2)
     - SDVersion
-  - JXExtension/Category (0.3.22):
+  - JXExtension/Category (0.4.2):
     - SDVersion
-  - JXExtension/Manager (0.3.22):
+  - JXExtension/Transition (0.4.2):
     - SDVersion
-  - JXExtension/Transition (0.3.22):
-    - SDVersion
-  - JXExtension/View (0.3.22):
+  - JXExtension/View (0.4.2):
     - JXExtension/Category
     - SDVersion
   - LTNavigationBar (2.1.9)
@@ -148,7 +145,7 @@ DEPENDENCIES:
   - HexColors (= 4.0.0)
   - HMSegmentedControl
   - IQKeyboardManager
-  - JXExtension
+  - JXExtension (~> 0.4.2)
   - LTNavigationBar (from `https://github.com/JeasonL/LTNavigationBar.git`)
   - Masonry
   - MBProgressHUD
@@ -172,7 +169,7 @@ DEPENDENCIES:
   - ZFLineSDK
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - BlocksKit
     - CocoaLumberjack
@@ -236,7 +233,7 @@ SPEC CHECKSUMS:
   HexColors: 5f95843ef89aff6a72e1fd3a8ebabf205cc43379
   HMSegmentedControl: f514c6dad47aa3065e0ed2e8046b73efc71221b9
   IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
-  JXExtension: e2a9636c7e93a4d8f43f3855b2f6a3eb441c62a8
+  JXExtension: a645f764c645739acde34b7cb2b367d6e0ec2ed8
   LTNavigationBar: c278785bed344862e18146b5f06792932e4feacc
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
@@ -260,6 +257,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZFLineSDK: fc1485f687bd9d6af5cb7e39ab2a8266680797dd
 
-PODFILE CHECKSUM: 0a408cfea1ac99b4b69a69d6c30c57a151b5d7d3
+PODFILE CHECKSUM: e5a2f5fe320f6ac3e88637cddde62b1bfc0f08ec
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4
