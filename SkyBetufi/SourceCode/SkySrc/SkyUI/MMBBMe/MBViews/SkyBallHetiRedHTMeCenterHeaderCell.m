@@ -1,4 +1,6 @@
 #import "SkyBallHetiRedHTMeCenterHeaderCell.h"
+#import "UIImageView+HT.h"
+
 @interface SkyBallHetiRedHTMeCenterHeaderCell ()
 @property (weak, nonatomic) IBOutlet UIView *userInfoContentView;
 @property (weak, nonatomic) IBOutlet JXImageView *avatarImageView;
@@ -17,7 +19,8 @@
     if ([SkyBallHetiRedHTUserManager waterSky_isUserLogin]) {
         self.userInfoContentView.hidden = NO;
         self.loginButton.hidden = YES;
-        self.avatarImageView.image = [SkyBallHetiRedHTUserManager waterSky_userInfo].avatar;
+//        self.avatarImageView.image = [SkyBallHetiRedHTUserManager waterSky_userInfo].avatar;
+        [self.avatarImageView th_setImageWithURL:[SkyBallHetiRedHTUserManager waterSky_userInfo].user_img placeholderImage:HT_DEFAULT_AVATAR_LOGO];
         self.userNameLabel.text = [SkyBallHetiRedHTUserManager waterSky_userInfo].display_name;
     } else {
         self.userInfoContentView.hidden = YES;

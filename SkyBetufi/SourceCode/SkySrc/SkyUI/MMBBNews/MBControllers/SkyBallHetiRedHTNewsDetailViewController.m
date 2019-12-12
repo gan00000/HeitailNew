@@ -42,18 +42,27 @@
     [super viewDidLoad];
     [self setupViews];
     self.isFirstShow = YES;
+    
+    if ([self.commentInputView.text isEqualToString:@" "]) {
+        self.commentInputView.text = nil;
+    }
+    [self loadDetailWithCompleteBlock:^{
+        [self initDataRequests];
+    }];
+    [self addHistoryRecord];
+    
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     if (self.isFirstShow) {
         self.isFirstShow = NO;
-        if ([self.commentInputView.text isEqualToString:@" "]) {
-            self.commentInputView.text = nil;
-        }
-        [self loadDetailWithCompleteBlock:^{
-            [self initDataRequests];
-        }];
-        [self addHistoryRecord];
+//        if ([self.commentInputView.text isEqualToString:@" "]) {
+//            self.commentInputView.text = nil;
+//        }
+//        [self loadDetailWithCompleteBlock:^{
+//            [self initDataRequests];
+//        }];
+//        [self addHistoryRecord];
     }
 }
 - (void)didReceiveMemoryWarning {

@@ -21,6 +21,8 @@
     if ([SkyBallHetiRedHTNewsModel waterSkycanShare]) {
         self.shareButtonContentView.hidden = NO;
     }
+    self.viewCountLabel.hidden = YES;
+    
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

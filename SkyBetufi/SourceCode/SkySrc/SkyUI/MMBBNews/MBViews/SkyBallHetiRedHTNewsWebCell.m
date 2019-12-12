@@ -5,6 +5,9 @@
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, assign) BOOL hasLoad;
 @property (nonatomic, assign) BOOL haveGetHeight;
+
+@property (nonatomic) NSMutableArray *imageUrlArr;
+
 @end
 @implementation SkyBallHetiRedHTNewsWebCell
 - (void)awakeFromNib {
@@ -46,6 +49,12 @@
     }
 }
 #pragma mark - WKNavigationDelegate
+
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
+     BJLog(@"webView didFinishNavigation");
+    [self addImgClickJS];
+}
+
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     if ([navigationAction.request.URL.scheme isEqualToString:@"haters"]) {
         NSString *url = navigationAction.request.URL.absoluteString;
@@ -60,8 +69,35 @@
             }            
         }
         decisionHandler(WKNavigationActionPolicyCancel);
+    }else if ([navigationAction.request.URL.scheme isEqualToString:@"image-preview-index"]){
+        //图片点击回调
+       NSURL * url = navigationAction.request.URL;
+       NSInteger index = [[url.absoluteString substringFromIndex:[@"image-preview-index:" length]] integerValue];
+        if (self.imageUrlArr) {
+            NSString * imgPath = self.imageUrlArr.count > index ? self.imageUrlArr[index]:nil;
+                  NSLog(@"imgPath = %@",imgPath);
+        }
+      
+       decisionHandler(WKNavigationActionPolicyCancel);
+    }else{
+       decisionHandler(WKNavigationActionPolicyAllow);
     }
-    decisionHandler(WKNavigationActionPolicyAllow);
+ 
+    
+    
+    // 类似 UIWebView 的 -webView: shouldStartLoadWithRequest: navigationType:
+    //预览图片
+//    NSURL * url = navigationAction.request.URL;
+//    if ([url.scheme isEqualToString:@"image-preview-index"]) {
+//        //图片点击回调
+//        NSInteger index = [[url.absoluteString substringFromIndex:[@"image-preview-index:" length]] integerValue];
+//        NSString * imgPath = self.imageUrlArr.count > index?self.imageUrlArr[index]:nil;
+//        NSLog(@"imgPath = %@",imgPath);
+//        decisionHandler(WKNavigationActionPolicyCancel);
+//    } else {
+//        decisionHandler(WKNavigationActionPolicyAllow);
+//    }
+    
 }
 #pragma mark - getters
 - (UIScrollView *)webContentView {
@@ -80,5 +116,47 @@
         [_webView.scrollView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
     }
     return _webView;
+}
+
+
+- (void)addImgClickJS {
+    
+    //获取所以的图片标签
+    [self.webView evaluateJavaScript:@"function getImages(){\
+         var imgs = document.getElementsByTagName('img');\
+         var imgScr = '';\
+         for(var i=0;i<imgs.length;i++){\
+             if (i == 0){ \
+                imgScr = imgs[i].src; \
+             } else {\
+                imgScr = imgScr +'***'+ imgs[i].src;\
+             } \
+         };\
+         return imgScr;\
+     };" completionHandler:nil];//注入js方法
+
+    [self.webView evaluateJavaScript:@"getImages()" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+        
+        if (!error) {
+            
+            NSMutableArray * urlArray = result ? [NSMutableArray arrayWithArray:[result componentsSeparatedByString:@"***"]]  : nil;
+            NSLog(@"urlArray = %@",urlArray);
+            self.imageUrlArr = urlArray;
+        } else {
+            self.imageUrlArr = nil;
+        }
+    }];
+   
+    //添加图片点击的回调
+    [self.webView evaluateJavaScript:@"function registerImageClickAction(){\
+         var imgs = document.getElementsByTagName('img');\
+         for(var i=0;i<imgs.length;i++){\
+             imgs[i].customIndex = i;\
+             imgs[i].onclick=function(){\
+                window.location.href='image-preview-index:'+this.customIndex;\
+             }\
+         }\
+     }" completionHandler:nil];
+    [self.webView evaluateJavaScript:@"registerImageClickAction();" completionHandler:nil];
 }
 @end

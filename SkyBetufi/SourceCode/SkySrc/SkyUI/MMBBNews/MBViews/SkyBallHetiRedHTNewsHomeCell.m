@@ -31,6 +31,8 @@
     if (!newsModel.view_count.length) {
         self.view_icon.hidden = YES;
     }
+    self.view_icon.hidden = YES;
+    self.viewLabel.hidden = YES;
 }
 - (IBAction)onShareButtonTapped:(id)sender {
     [self.newsModel waterSkyshare];

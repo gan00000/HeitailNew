@@ -3,6 +3,7 @@
 #import "SkyBallHetiRedTZImagePickerController.h"
 #import "SkyBallHetiRedHTUserRequest.h"
 #import "SkyBallHetiRedDRSandBoxManager.h"
+#import "UIImageView+HT.h"
 @interface SkyBallHetiRedHTUserInfoEditViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
@@ -28,7 +29,10 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(saveUserInfo)];
     SkyBallHetiRedHTUserInfoModel *userInfoModel = [SkyBallHetiRedHTUserManager waterSky_userInfo];
     self.userNameLabel.text = userInfoModel.display_name;
-    self.avatarImageView.image = userInfoModel.avatar;
+//    self.avatarImageView.image = userInfoModel.avatar;
+    
+    [self.avatarImageView th_setImageWithURL:userInfoModel.user_img placeholderImage:HT_DEFAULT_AVATAR_LOGO];
+    
     self.emailLabel.text = userInfoModel.user_email;
     if (userInfoModel.user_email.length) {
         self.emailLeft.hidden = NO;

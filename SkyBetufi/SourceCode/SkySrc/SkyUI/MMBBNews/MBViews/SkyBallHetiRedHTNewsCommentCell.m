@@ -3,6 +3,8 @@
 #import "SkyBallHetiRedHTUserRequest.h"
 #import "SkyBallHetiRedHTCommentExpendCell.h"
 #import <YYText/YYText.h>
+#import "UIImageView+HT.h"
+
 @interface SkyBallHetiRedHTNewsCommentCell () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet JXImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
@@ -45,7 +47,9 @@
 }
 - (void)waterSkyrefreshWithCommentModel:(SkyBallHetiRedHTCommentModel *)commentModel {
     self.commentModel = commentModel;
-    self.avatarImageView.image = commentModel.userModel.avatar;
+//    self.avatarImageView.image = commentModel.userModel.avatar;
+     [self.avatarImageView th_setImageWithURL:commentModel.userModel.user_img placeholderImage:HT_DEFAULT_AVATAR_LOGO];
+    
     self.authorLabel.text = commentModel.comment_author;
     self.commentLabel.text = commentModel.comment_content;
     self.timelabel.text = [SkyBallHetiRedBJDateFormatUtility dateToShowFromDate:commentModel.date];

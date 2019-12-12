@@ -58,6 +58,7 @@
 //默认图片
 #define HT_DEFAULT_IMAGE [UIImage imageNamed:@"image_default"]
 #define HT_DEFAULT_TEAM_LOGO [UIImage imageNamed:@"img_default_team"]
+#define HT_DEFAULT_AVATAR_LOGO [UIImage imageNamed:@"default_avatar"]
 
 #define kWeakSelf __weak typeof(self) weakSelf = self;
 
