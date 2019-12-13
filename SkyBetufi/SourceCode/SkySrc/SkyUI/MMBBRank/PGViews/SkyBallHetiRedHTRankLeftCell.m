@@ -16,7 +16,7 @@
     self.teamNameLabel.text = rankModel.teamName;
     self.contentView.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"FFFFFF"];
     if (row % 2 == 1) {
-        self.contentView.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"f4f7f0"];
+//        self.contentView.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"f4f7f0"];
     }
 }
 @end

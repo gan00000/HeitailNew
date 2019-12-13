@@ -20,8 +20,8 @@
 }
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
-    [self.scrollContentView setContentSize:CGSizeMake(560, self.leftTableView.jx_height)];
-    self.rightTableView.frame = CGRectMake(0, 0, 560, self.leftTableView.jx_height);
+    [self.scrollContentView setContentSize:CGSizeMake(300, self.leftTableView.jx_height)];
+    self.rightTableView.frame = CGRectMake(0, 0, 300, self.leftTableView.jx_height);
 }
 - (void)waterSkysetupWithTitle:(NSString *)title rankList:(NSArray<SkyBallHetiRedHTRankModel *> *)rankList {
     self.titleLabel.text = title;
@@ -36,22 +36,24 @@
     self.leftTableView.rowHeight = 30;
     self.leftTableView.sectionHeaderHeight = 30;
     self.leftTableView.sectionFooterHeight = 0;
-    self.leftTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.leftTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
+    [self.leftTableView setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)]; //设置分割线的边Insets
     if (@available(iOS 11.0, *)) {
         self.leftTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
     [self.leftTableView registerNib:[UINib nibWithNibName:NSStringFromClass([SkyBallHetiRedHTRankLeftCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SkyBallHetiRedHTRankLeftCell class])];
 }
 - (void)setupRightTableView {
-    [self.scrollContentView setContentSize:CGSizeMake(560, self.leftTableView.jx_height)];
-    self.rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 560, self.leftTableView.jx_height) style:UITableViewStylePlain];
+    [self.scrollContentView setContentSize:CGSizeMake(300, self.leftTableView.jx_height)];
+    self.rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 300, self.leftTableView.jx_height) style:UITableViewStylePlain];
     self.rightTableView.backgroundColor = [UIColor whiteColor];
     self.rightTableView.delegate = self;
     self.rightTableView.dataSource = self;
     self.rightTableView.rowHeight = 30;
     self.rightTableView.sectionHeaderHeight = 30;
     self.rightTableView.sectionFooterHeight = 0;
-    self.rightTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.rightTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
+    [self.rightTableView setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)]; //设置分割线的边Insets
     self.rightTableView.bounces = NO;
     self.rightTableView.showsVerticalScrollIndicator = NO;
     self.rightTableView.showsHorizontalScrollIndicator = NO;
@@ -92,13 +94,13 @@
     line.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"dddddd"];
     [view addSubview:line];
     if (tableView == self.leftTableView) {
-        [self addLabelToView:view withFrame:CGRectMake(0, 0, 50, 30) text:@"排名"];
-        [self addLabelToView:view withFrame:CGRectMake(50, 0, 100, 30) text:@"隊名"];
+        [self addLabelToView:view withFrame:CGRectMake(0, 0, 30, 30) text:@"排名"];
+        [self addLabelToView:view withFrame:CGRectMake(30, 0, 80, 30) text:@"隊名"];
     } else {
-        NSArray *titles = @[@"勝", @"負", @"勝率", @"主場",
-                            @"客場", @"賽區", @"得分", @"失分"];
-        for (NSInteger i=0; i<8; i++) {
-            [self addLabelToView:view withFrame:CGRectMake(i*70, 0, 70, 30) text:titles[i]];
+        NSArray *titles = @[@"勝", @"負", @"勝率", @"勝差",
+                            @"連勝/負"];
+        for (NSInteger i=0; i<5; i++) {
+            [self addLabelToView:view withFrame:CGRectMake(i*60, 0, 60, 30) text:titles[i]];
         }
     }
     return view;

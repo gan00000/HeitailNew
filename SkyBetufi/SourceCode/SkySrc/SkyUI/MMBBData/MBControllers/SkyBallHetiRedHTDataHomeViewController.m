@@ -1,6 +1,8 @@
 #import "SkyBallHetiRedHTDataHomeViewController.h"
 #import "SkyBallHetiRedHTDataHomeSubViewController.h"
 #import <HMSegmentedControl/HMSegmentedControl.h>
+#import "SkyBallHetiRedHTRankEastWestViewController.h"
+
 @interface SkyBallHetiRedHTDataHomeViewController () <UIScrollViewDelegate>
 @property (nonatomic, strong) HMSegmentedControl *segmentControl;
 @property (nonatomic, strong) UIScrollView *containerView;
@@ -20,7 +22,7 @@
 #pragma mark - private
 - (void)initData {
     self.currentIndex = 0;
-    for (NSInteger i = 0; i < 2; i++) {
+    for (NSInteger i = 0; i < 3; i++) {
         [self.loadedFlagArray addObject:@(NO)];
         [self.loadedControllersArray addObject:@(NO)];
     }
@@ -57,6 +59,18 @@
     if ([self.loadedFlagArray[index] boolValue]) {
         return;
     }
+    
+    if (index == 2) {
+        
+        SkyBallHetiRedHTRankEastWestViewController *vc = [SkyBallHetiRedHTRankEastWestViewController waterSkyviewController];
+        [self addChildViewController:vc];
+        [self.containerView addSubview:vc.view];
+        [self.loadedFlagArray replaceObjectAtIndex:index withObject:@(YES)];
+        [self.loadedControllersArray replaceObjectAtIndex:index withObject:vc];
+        [self setChildViewFrame:vc.view byIndex:index];
+        return;
+    }
+    
     SkyBallHetiRedHTDataHomeSubViewController *vc = [SkyBallHetiRedHTDataHomeSubViewController waterSkyviewController];
     vc.type = index + 1;
     [self addChildViewController:vc];
@@ -88,7 +102,7 @@
 }
 - (HMSegmentedControl *)segmentControl {
     if (!_segmentControl) {
-        _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"隊員數據", @"球隊數據"]];
+        _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"隊員數據", @"球隊數據", @"球隊排行"]];
         _segmentControl.selectionIndicatorColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"];
         _segmentControl.selectionIndicatorHeight = 3.0f;
         _segmentControl.selectionIndicatorEdgeInsets = UIEdgeInsetsMake(0, -8, 0, -18);

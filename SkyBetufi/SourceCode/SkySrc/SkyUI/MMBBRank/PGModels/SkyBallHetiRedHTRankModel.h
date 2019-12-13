@@ -35,4 +35,7 @@
 @property (nonatomic, copy) NSString *avg_against_pts;
 @property (nonatomic, assign) NSInteger matches;
 @property (nonatomic, assign) CGFloat against_pts;
+
+@property (nonatomic, copy) NSString *streakDescription;
+@property (nonatomic, copy) NSString *gamesBack;
 @end
