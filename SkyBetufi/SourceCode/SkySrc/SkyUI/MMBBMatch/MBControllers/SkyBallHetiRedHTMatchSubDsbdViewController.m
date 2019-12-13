@@ -60,7 +60,7 @@
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
     label.text = text;
     label.textColor = [UIColor hx_colorWithHexRGBAString:@"111111"];
-    label.font = [UIFont systemFontOfSize:12];
+    label.font = [UIFont systemFontOfSize:16];
     label.textAlignment = NSTextAlignmentCenter;
     [view addSubview:label];
 }
@@ -144,7 +144,7 @@
         return nil;
     }
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.jx_width, 30)];
-    view.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"f4f7f0"];
+    view.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"eef0f4"];
     UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 29, tableView.jx_width, 1)];
     line.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"dddddd"];
     [view addSubview:line];
@@ -172,7 +172,7 @@
         return nil;
     }
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.jx_width, 30)];
-    view.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"f4f7f0"];
+    view.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"ffffff"];
     UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.jx_width, 1)];
     line.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"dddddd"];
     [view addSubview:line];

@@ -27,27 +27,57 @@
 }
 - (void)waterSkyrefreshWithModel:(SkyBallHetiRedHTMatchDetailsModel *)model row:(NSInteger)row {
     self.positionLabel.text = model.position;
+    self.positionLabel.font =  [UIFont systemFontOfSize:16];
+    
     self.timeLabel.text = model.time;
+    self.timeLabel.font =  [UIFont systemFontOfSize:16];
+    
     self.ptsLabel.text = model.pts;
+    self.ptsLabel.font =  [UIFont systemFontOfSize:16];
+    
     self.astLabel.text = model.ast;
+    self.astLabel.font =  [UIFont systemFontOfSize:16];
+    
     self.rebLabel.text = model.reb;
+    self.rebLabel.font =  [UIFont systemFontOfSize:16];
+    
     self.fgmadeLabel.text = model.fgmade_show;
+    self.fgmadeLabel.font =  [UIFont systemFontOfSize:16];
+    
     self.fg3madeLabel.text = model.fg3ptmade_show;
+    self.fg3madeLabel.font =  [UIFont systemFontOfSize:16];
+    
     self.ftmageLabel.text = model.ftmade_show;
+    self.ftmageLabel.font =  [UIFont systemFontOfSize:16];
+    
     self.offrebLabel.text = model.offreb;
+    self.defrebLabel.font =  [UIFont systemFontOfSize:16];
+    
     self.defrebLabel.text = model.defreb;
+    self.defrebLabel.font =  [UIFont systemFontOfSize:16];
+    
     self.foulsLabel.text = model.fouls;
+    self.foulsLabel.font =  [UIFont systemFontOfSize:16];
+    
     self.stlLabel.text = model.stl;
+    self.stlLabel.font =  [UIFont systemFontOfSize:16];
+    
     self.blkagainstLabel.text = model.blkagainst;
+    self.blkagainstLabel.font =  [UIFont systemFontOfSize:16];
+    
     self.blkLabel.text = model.blk;
+    self.blkLabel.font =  [UIFont systemFontOfSize:16];
+    
     self.plusminusLabel.text = model.plusminus;
+    self.plusminusLabel.font =  [UIFont systemFontOfSize:16];
+    
     self.contentView.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"FFFFFF"];
-    if (row % 2 == 1) {
-        self.contentView.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"f4f7f0"];
+    if (row > 4) {
+        self.contentView.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"eef0f4"];
     }
-    self.line.hidden = YES;
-    if (row == 4) {
-        self.line.hidden = NO;
-    }
+    self.line.hidden = NO;
+//    if (row == 4) {
+//        self.line.hidden = NO;
+//    }
 }
 @end
