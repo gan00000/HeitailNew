@@ -53,7 +53,7 @@
     self.authorLabel.text = commentModel.comment_author;
     self.commentLabel.text = commentModel.comment_content;
     self.timelabel.text = [SkyBallHetiRedBJDateFormatUtility dateToShowFromDate:commentModel.date];
-    self.replyCountLabel.text = [NSString stringWithFormat:@"%ld回復", commentModel.total_reply];
+    self.replyCountLabel.text = [NSString stringWithFormat:@"%ld回覆", commentModel.total_reply];
     if (commentModel.my_like) {
         self.likeButton.selected = YES;
         [self.likeButton setTintColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];

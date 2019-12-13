@@ -5,7 +5,7 @@
         _desc = [NSString stringWithFormat:@"%@點讚了你的評論：%@", self.display_name, self.comment_content];
         _cellHeight = 105;
     } else {
-        _desc = [NSString stringWithFormat:@"%@回復了你的評論：%@", self.display_name, self.comment_content];
+        _desc = [NSString stringWithFormat:@"%@回覆了你的評論：%@", self.display_name, self.comment_content];
         CGFloat height = [self.reply_msg jx_sizeWithFont:[UIFont systemFontOfSize:15] constrainedToWidth:SCREEN_WIDTH - 30].height;
         _cellHeight = height + 125;
     }

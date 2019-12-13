@@ -42,7 +42,7 @@
 - (void)setIsReply:(BOOL)isReply {
     _isReply = isReply;
     if (isReply) {
-        _comment_content = [NSString stringWithFormat:@"回復@%@:%@", self.reply_to_display_name, self.comment_content];
+        _comment_content = [NSString stringWithFormat:@"回覆@%@:%@", self.reply_to_display_name, self.comment_content];
     }
 }
 - (void)setExpend:(BOOL)expend {

@@ -176,9 +176,9 @@
     if (section == 2) {
         [headerView waterSkyrefreshWithTitle:@"推薦閱讀"];
     } else if (section == 3 && self.commentGetter.hotComments.count > 0) {
-        [headerView waterSkyrefreshWithTitle:@"熱門回復"];
+        [headerView waterSkyrefreshWithTitle:@"熱門回覆"];
     } else {
-        [headerView waterSkyrefreshWithTitle:@"全部回復"];
+        [headerView waterSkyrefreshWithTitle:@"全部回覆"];
     }
     return headerView;
 }
