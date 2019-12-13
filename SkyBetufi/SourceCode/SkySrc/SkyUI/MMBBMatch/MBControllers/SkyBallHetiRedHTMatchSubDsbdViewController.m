@@ -153,7 +153,7 @@
     } else {
         NSArray *titles = @[@"位置", @"時間", @"得分", @"助攻",
                             @"籃板", @"投籃", @"3分", @"罰球",
-                            @"前場", @"後場", @"犯規", @"搶斷",
+                            @"前場", @"後場", @"犯規", @"抄截",
                             @"失誤", @"封蓋", @"+/-"];
         for (NSInteger i=0; i<15; i++) {
             [self addLabelToView:view withFrame:CGRectMake(i*70, 0, 70, 30) text:titles[i]];

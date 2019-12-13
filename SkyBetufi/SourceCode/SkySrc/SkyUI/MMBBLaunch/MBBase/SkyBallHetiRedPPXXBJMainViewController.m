@@ -45,7 +45,8 @@
     if ([SkyBallHetiRedHTUserManager manager].appInView) {
         return @[@"新聞",@"比賽",  @"排行", @"數據", @"我的"];
     }
-    return @[@"比賽", @"新聞", @"影片", @"數據", @"排行"];
+//    return @[@"比賽", @"新聞", @"影片", @"數據", @"排行"];
+     return @[@"比賽", @"新聞", @"影片", @"直播"];
 }
 - (NSArray<UIImage *> *)waterSkytabBarIcons {
      if ([SkyBallHetiRedHTUserManager manager].appInView) {
@@ -58,8 +59,7 @@
     return @[[[UIImage imageNamed:@"tab_icon_normal1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_normal2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_normal3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-             [[UIImage imageNamed:@"tab_icon_normal4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-             [[UIImage imageNamed:@"tab_icon_normal5"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+             [[UIImage imageNamed:@"tab_icon_normal4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 }
 - (NSArray<UIImage *> *)waterSkytabBarSelectedIcons {
     if ([SkyBallHetiRedHTUserManager manager].appInView) {
@@ -72,8 +72,7 @@
     return @[[[UIImage imageNamed:@"tab_icon_selected1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_selected2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_selected3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-             [[UIImage imageNamed:@"tab_icon_selected4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-             [[UIImage imageNamed:@"tab_icon_selected5"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+             [[UIImage imageNamed:@"tab_icon_selected4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 }
 - (NSArray<UIViewController *> *)waterSkytabBarControllers {
     if (!self.vc1) {
@@ -118,7 +117,7 @@
          return @[self.nav2, self.nav1, self.nav5, self.nav4, self.nav6];
     }
   
-    return @[self.nav1, self.nav2, self.nav3, self.nav4, self.nav5];
+    return @[self.nav1, self.nav2, self.nav3, self.nav4];
 }
 #pragma MARK -- UITabBarControllerDelegate
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {

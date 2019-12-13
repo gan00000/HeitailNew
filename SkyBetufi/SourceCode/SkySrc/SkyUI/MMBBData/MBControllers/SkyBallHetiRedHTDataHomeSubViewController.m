@@ -61,12 +61,12 @@
             [teamCell waterSkysetupWithDatas:self.homeInfoModel.ast];
         } break;
         case 3: {
-            headerCell.title = @"搶斷";
+            headerCell.title = @"抄截";
             [playerCell waterSkysetupWithDatas:self.homeInfoModel.stl];
             [teamCell waterSkysetupWithDatas:self.homeInfoModel.stl];
         } break;
         case 4: {
-            headerCell.title = @"蓋帽";
+            headerCell.title = @"阻攻";
             [playerCell waterSkysetupWithDatas:self.homeInfoModel.blk];
             [teamCell waterSkysetupWithDatas:self.homeInfoModel.blk];
         } break;
@@ -119,11 +119,11 @@
         } break;
         case 3: {
             moreVc.subType = @"stl";
-            [title appendString:@"搶斷"];
+            [title appendString:@"抄截"];
         } break;
         case 4: {
             moreVc.subType = @"blk";
-            [title appendString:@"蓋帽"];
+            [title appendString:@"阻攻"];
         } break;
         case 5: {
             moreVc.subType = @"turnover";
