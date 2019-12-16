@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -43,6 +43,8 @@
 		32E7228C2309A3A6003E0A03 /* guideImageapp14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722862309A3A6003E0A03 /* guideImageapp14.jpg */; };
 		32E7228D2309A3A6003E0A03 /* guideImageapp15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722872309A3A6003E0A03 /* guideImageapp15.jpg */; };
 		32FFD29123A2267200E1661A /* UIImageView+HT.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFD29023A2267200E1661A /* UIImageView+HT.m */; };
+		32FFD29923A397A700E1661A /* HTAdViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFD29723A397A700E1661A /* HTAdViewCell.m */; };
+		32FFD29A23A397A700E1661A /* HTAdViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32FFD29823A397A700E1661A /* HTAdViewCell.xib */; };
 		E96EB72A062D72ACD051C26D /* Pods_SkyBallPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC337F0671EB4742D64BA54 /* Pods_SkyBallPlay.framework */; };
 		FE08C5C422504F0C000175CB /* MMBBMe.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE08C5C322504F0C000175CB /* MMBBMe.xcassets */; };
 		FE08C5C82250506A000175CB /* SkyBallHetiRedHTMeHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08C5C62250506A000175CB /* SkyBallHetiRedHTMeHomeViewController.m */; };
@@ -357,6 +359,9 @@
 		32E722872309A3A6003E0A03 /* guideImageapp15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp15.jpg; sourceTree = "<group>"; };
 		32FFD28F23A2267200E1661A /* UIImageView+HT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HT.h"; sourceTree = "<group>"; };
 		32FFD29023A2267200E1661A /* UIImageView+HT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HT.m"; sourceTree = "<group>"; };
+		32FFD29623A397A700E1661A /* HTAdViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAdViewCell.h; sourceTree = "<group>"; };
+		32FFD29723A397A700E1661A /* HTAdViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAdViewCell.m; sourceTree = "<group>"; };
+		32FFD29823A397A700E1661A /* HTAdViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTAdViewCell.xib; sourceTree = "<group>"; };
 		608E0284ECCB1F2C8732AAA8 /* Pods-HeiteBasketball.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeiteBasketball.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball.debug.xcconfig"; sourceTree = "<group>"; };
 		6DC337F0671EB4742D64BA54 /* Pods_SkyBallPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyBallPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72321527951E473E782564AC /* Pods-HeiteBasketball.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeiteBasketball.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball.release.xcconfig"; sourceTree = "<group>"; };
@@ -1417,6 +1422,9 @@
 				FE800F6722636AFC00E575D5 /* SkyBallHetiRedHTNewsCommentCell.h */,
 				FE800F6822636AFC00E575D5 /* SkyBallHetiRedHTNewsCommentCell.m */,
 				FE800F6922636AFC00E575D5 /* SkyBallHetiRedHTNewsCommentCell.xib */,
+				32FFD29623A397A700E1661A /* HTAdViewCell.h */,
+				32FFD29723A397A700E1661A /* HTAdViewCell.m */,
+				32FFD29823A397A700E1661A /* HTAdViewCell.xib */,
 			);
 			path = MBViews;
 			sourceTree = "<group>";
@@ -1934,6 +1942,7 @@
 				FE6BD0522144FC270090118A /* SkyBallHetiRedMatchDetail.storyboard in Resources */,
 				FEC1162A2143D4A1002DB617 /* SkyBallHetiRedBJHUDView.xib in Resources */,
 				FEDAC975214B9117005E8B63 /* SkyBallHetiRedHTDataHomeTeamCell.xib in Resources */,
+				32FFD29A23A397A700E1661A /* HTAdViewCell.xib in Resources */,
 				32E7228D2309A3A6003E0A03 /* guideImageapp15.jpg in Resources */,
 				FE800F7022639DFD00E575D5 /* SkyBallHetiRedHTCommentExpendCell.xib in Resources */,
 				FE6BD0642144FF1F0090118A /* SkyBallHetiRedMatchDashboard.storyboard in Resources */,
@@ -2261,6 +2270,7 @@
 				FECCA56422598013009EF494 /* SkyBallHetiRedTZVideoPlayerController.m in Sources */,
 				FEC116292143D4A1002DB617 /* SkyBallHetiRedBJHUDView.m in Sources */,
 				32CD877A22F4173800063A14 /* MPMoviePlayerController+BackgroundPlayback.m in Sources */,
+				32FFD29923A397A700E1661A /* HTAdViewCell.m in Sources */,
 				FEC1167C2143D4A1002DB617 /* SkyBallHetiRedBJWebViewJSBridge.m in Sources */,
 				FEDABE522171BD0C008C8AFD /* SkyBallHetiRedHTMatchBestPlayerCell.m in Sources */,
 				FECCA5342258C8D0009EF494 /* SkyBallHetiRedHTUserInfoModel.m in Sources */,

@@ -39,5 +39,6 @@ pod 'SVGKit'
 #pod 'FBSDKLoginKit'
 #pod 'XCDLumberjackNSLogger', '~> 1.0'
 pod 'Firebase/Analytics'
+pod 'Google-Mobile-Ads-SDK'
 
 end
