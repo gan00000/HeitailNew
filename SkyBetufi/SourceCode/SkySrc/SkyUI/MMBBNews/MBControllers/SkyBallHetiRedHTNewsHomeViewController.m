@@ -88,6 +88,9 @@
         return;
     }
     SkyBallHetiRedHTNewsModel *newsModel = self.newsList[indexPath.row];
+    if ([newsModel.news_id isEqualToString:@"-100"]) {
+        return;
+    }
     SkyBallHetiRedHTNewsDetailViewController *detailVc = [SkyBallHetiRedHTNewsDetailViewController waterSkyviewController];
     detailVc.post_id = newsModel.news_id;
     [self.navigationController pushViewController:detailVc animated:YES];

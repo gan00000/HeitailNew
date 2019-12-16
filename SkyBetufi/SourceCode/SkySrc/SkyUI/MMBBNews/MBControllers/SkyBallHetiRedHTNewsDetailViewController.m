@@ -12,6 +12,7 @@
 #import "SkyBallHetiRedHTCommentGetter.h"
 #import "SkyBallHetiRedHTNewsCommentCell.h"
 #import "SkyBallHetiRedHTNoCommentFooterView.h"
+#import "HTAdViewCell.h"
 @interface SkyBallHetiRedHTNewsDetailViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
@@ -73,7 +74,7 @@
     if (!self.topRequestDone || !self.htmlLoadDone) {
         return 0;
     }
-    NSInteger num = 3;
+    NSInteger num = 4;
     if (self.commentGetter.hotComments.count > 0) {
         num ++;
     }
@@ -87,9 +88,12 @@
         return 1;
     }
     if (section == 2) {
+        return 1;
+    }
+    if (section == 3) {
         return self.topNewsList.count;
     }
-    if (section == 3 && self.commentGetter.hotComments.count > 0) {
+    if (section == 4 && self.commentGetter.hotComments.count > 0) {
         return self.commentGetter.hotComments.count;
     } else {
         return self.commentGetter.normalComments.count;
@@ -115,9 +119,13 @@
         }
         return cell;
     } else if (indexPath.section == 2) {
-        SkyBallHetiRedHTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SkyBallHetiRedHTNewsHomeCell"];
-        [cell waterSkysetupWithNewsModel:self.topNewsList[indexPath.row]];
+        HTAdViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTAdViewCell"];
+        [cell requestAd:self];
         return cell;
+    } else if (indexPath.section == 3) {
+           SkyBallHetiRedHTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SkyBallHetiRedHTNewsHomeCell"];
+           [cell waterSkysetupWithNewsModel:self.topNewsList[indexPath.row]];
+           return cell;
     }
     SkyBallHetiRedHTNewsCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SkyBallHetiRedHTNewsCommentCell class])];
     cell.onReplyBlock = ^(SkyBallHetiRedHTCommentModel * _Nonnull commentModel) {
@@ -130,7 +138,7 @@
         [weakSelf.tableView beginUpdates];
         [weakSelf.tableView endUpdates];
     };
-    if (indexPath.section == 3 && self.commentGetter.hotComments.count > 0) {
+    if (indexPath.section == 4 && self.commentGetter.hotComments.count > 0) {
         [cell waterSkyrefreshWithCommentModel:self.commentGetter.hotComments[indexPath.row]];
     } else {
         [cell waterSkyrefreshWithCommentModel:self.commentGetter.normalComments[indexPath.row]];
@@ -152,10 +160,12 @@
     } else if (indexPath.section == 1) {
         return self.newsContentHeight;
     } else if (indexPath.section == 2) {
-        return 90;
-    }
+        return 250;
+    } else if (indexPath.section == 3) {
+           return 90;
+       }
     SkyBallHetiRedHTCommentModel *commentModel;
-    if (indexPath.section == 3 && self.commentGetter.hotComments.count > 0) {
+    if (indexPath.section == 4 && self.commentGetter.hotComments.count > 0) {
         commentModel = self.commentGetter.hotComments[indexPath.row];
     } else {
         commentModel = self.commentGetter.normalComments[indexPath.row];
@@ -169,13 +179,13 @@
     return 40;
 }
 - (UITableViewHeaderFooterView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    if (section == 0 || section == 1) {
+    if (section == 0 || section == 1 || section == 2) {
         return nil;
     }
     SkyBallHetiRedHTNewsTopHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"SkyBallHetiRedHTNewsTopHeaderView"];
-    if (section == 2) {
+    if (section == 3) {
         [headerView waterSkyrefreshWithTitle:@"推薦閱讀"];
-    } else if (section == 3 && self.commentGetter.hotComments.count > 0) {
+    } else if (section == 4 && self.commentGetter.hotComments.count > 0) {
         [headerView waterSkyrefreshWithTitle:@"熱門回覆"];
     } else {
         [headerView waterSkyrefreshWithTitle:@"全部回覆"];
@@ -275,6 +285,10 @@
          forCellReuseIdentifier:@"SkyBallHetiRedHTNewsHomeCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"SkyBallHetiRedHTNewsTopHeaderView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"SkyBallHetiRedHTNewsTopHeaderView"];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SkyBallHetiRedHTNewsCommentCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SkyBallHetiRedHTNewsCommentCell class])];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"HTAdViewCell" bundle:nil]
+    forCellReuseIdentifier:@"HTAdViewCell"];
+    
     if (@available(iOS 11.0, *)) {
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {

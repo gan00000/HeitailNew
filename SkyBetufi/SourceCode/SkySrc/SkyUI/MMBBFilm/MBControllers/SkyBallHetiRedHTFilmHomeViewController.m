@@ -3,6 +3,8 @@
 #import "SkyBallHetiRedHTFilmHomeRequest.h"
 #import "SkyBallHetiRedHTFilmHomeCell.h"
 #import "SkyBallHetiRedHTNewsHomeCell.h"
+#import "HTAdViewCell.h"
+
 @interface SkyBallHetiRedHTFilmHomeViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) SkyBallHetiRedHTFilmHomeRequest *request;
@@ -31,6 +33,10 @@
         SkyBallHetiRedHTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SkyBallHetiRedHTNewsHomeCell"];
         [cell waterSkysetupWithNewsModel:model];
         return cell;
+    }else if ([model.news_id isEqualToString:@"-100"]) {
+        HTAdViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTAdViewCell"];
+        [cell requestAd:self];
+        return cell;
     }
     SkyBallHetiRedHTFilmHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SkyBallHetiRedHTFilmHomeCell"];
     [cell waterSkysetupWithNewsModel:self.filmList[indexPath.row]];
@@ -41,15 +47,43 @@
     SkyBallHetiRedHTNewsModel *model = self.filmList[indexPath.row];
     if ([model.news_type isEqualToString:@"新聞"]) {
         return 90;
+    }else if ([model.news_id isEqualToString:@"-100"]) {
+        return 250;
     }
     return model.filmCellHeight;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     SkyBallHetiRedHTNewsModel *newsModel = self.filmList[indexPath.row];
+    if ([newsModel.news_id isEqualToString:@"-100"]) {
+        return;
+    }
+    
     SkyBallHetiRedHTNewsDetailViewController *detailVc = [SkyBallHetiRedHTNewsDetailViewController waterSkyviewController];
     detailVc.post_id = newsModel.news_id;
     [self.navigationController pushViewController:detailVc animated:YES];
 }
+
+-(NSArray *) dataWithAd:(NSArray *)dataList{
+    NSMutableArray *tmpArray = [NSMutableArray array];
+    
+    for (int i = 0; i < dataList.count; i++ ) {
+        if (i==2) {
+            SkyBallHetiRedHTNewsModel *adModel = [[SkyBallHetiRedHTNewsModel alloc] init];
+            adModel.news_id = @"-100";
+            [tmpArray addObject:adModel];
+        }else if ((i - 2) % 6 == 0){
+            SkyBallHetiRedHTNewsModel *adModel = [[SkyBallHetiRedHTNewsModel alloc] init];
+            adModel.news_id = @"-100";
+            [tmpArray addObject:adModel];
+        }
+        
+        [tmpArray addObject:dataList[i]];
+    }
+    
+    return tmpArray;
+    
+}
+
 #pragma mark - private
 - (void)setupViews {
     self.title = @"影片";
@@ -64,6 +98,10 @@
          forCellReuseIdentifier:@"SkyBallHetiRedHTFilmHomeCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"SkyBallHetiRedHTNewsHomeCell" bundle:nil]
          forCellReuseIdentifier:@"SkyBallHetiRedHTNewsHomeCell"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"HTAdViewCell" bundle:nil]
+    forCellReuseIdentifier:@"HTAdViewCell"];
+    
     kWeakSelf
     self.tableView.mj_header = [SkyBallHetiRedMJRefreshGenerator bj_headerWithRefreshingBlock:^{
         [weakSelf loadData];
@@ -106,7 +144,7 @@
 - (void)loadData {
     kWeakSelf
     [self.request waterSkyrequestWithSuccessBlock:^(NSArray<SkyBallHetiRedHTNewsModel *> *newsList) {
-        weakSelf.filmList = newsList;
+        weakSelf.filmList = [self dataWithAd:newsList];
         [weakSelf refreshUI];
     } errorBlock:^(SkyBallHetiRedBJError *error) {
         weakSelf.error = error;
@@ -116,7 +154,7 @@
 - (void)loadNextPage {
     kWeakSelf
     [self.request loadNextPageWithSuccessBlock:^(NSArray<SkyBallHetiRedHTNewsModel *> *newsList) {
-        weakSelf.filmList = newsList;
+        weakSelf.filmList = [self dataWithAd:newsList];
         [weakSelf refreshUI];
     } errorBlock:^(SkyBallHetiRedBJError *error) {
         [weakSelf refreshUI];
