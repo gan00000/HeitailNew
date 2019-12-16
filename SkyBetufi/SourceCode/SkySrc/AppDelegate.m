@@ -12,6 +12,7 @@
 #import "SkyBallHetiRedPPXXBJNavigationController.h"
 #import "SkyBallHetiRedHTNewsHomeViewController.h"
 @import Firebase;
+@import GoogleMobileAds;
 
 #define UM_APP_KEY @"5bd67116f1f556f834000081"
 #define FB_APP_ID  @"479868032525276"
@@ -35,6 +36,11 @@
     if (self.pushInfo) {
         [UMessage didReceiveRemoteNotification:self.pushInfo];
     }
+    
+    //admob初始化
+    [[GADMobileAds sharedInstance] startWithCompletionHandler:^(GADInitializationStatus * _Nonnull status) {
+        NSLog(@"startWithCompletionHandler finish");
+    }];
 }
 - (void)setUpUM {
     [UMConfigure initWithAppkey:UM_APP_KEY channel:@"App Store"];

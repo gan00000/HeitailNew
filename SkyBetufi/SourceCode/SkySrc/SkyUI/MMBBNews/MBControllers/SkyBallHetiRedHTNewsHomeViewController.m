@@ -4,6 +4,7 @@
 #import "SkyBallHetiRedHTNewsBannerRequest.h"
 #import "SkyBallHetiRedHTNewsHomeCell.h"
 #import "SkyBallHetiRedHTNewsHomeBannerCell.h"
+#import "HTAdViewCell.h"
 @interface SkyBallHetiRedHTNewsHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *newsList;
@@ -39,6 +40,9 @@
     return self.newsList.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSLog(@"indexPath.section:%ld  indexPath.row:%ld", indexPath.section, indexPath.row);
+    
     if (indexPath.section == 0) {
         kWeakSelf
         SkyBallHetiRedHTNewsHomeBannerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SkyBallHetiRedHTNewsHomeBannerCell"];
@@ -50,6 +54,19 @@
         };
         return cell;
     }
+    
+    SkyBallHetiRedHTNewsModel *mmModel = self.newsList[indexPath.row];
+    if ([mmModel.news_id isEqualToString:@"-100"]) {
+        HTAdViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTAdViewCell"];
+        [cell requestAd:self];
+        return cell;
+    }
+    
+//    else if (indexPath.section == 2){
+//        HTAdViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTAdViewCell"];
+//        [cell requestAd:self];
+//        return cell;
+//    }
     SkyBallHetiRedHTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SkyBallHetiRedHTNewsHomeCell"];
     [cell waterSkysetupWithNewsModel:self.newsList[indexPath.row]];
     return cell;
@@ -58,6 +75,11 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         return SCREEN_WIDTH * 2 / 3;
+    }
+    
+    SkyBallHetiRedHTNewsModel *mmModel = self.newsList[indexPath.row];
+    if ([mmModel.news_id isEqualToString:@"-100"]) {
+        return 250;
     }
     return 90;
 }
@@ -84,6 +106,10 @@
          forCellReuseIdentifier:@"SkyBallHetiRedHTNewsHomeCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"SkyBallHetiRedHTNewsHomeBannerCell" bundle:nil]
          forCellReuseIdentifier:@"SkyBallHetiRedHTNewsHomeBannerCell"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"HTAdViewCell" bundle:nil]
+    forCellReuseIdentifier:@"HTAdViewCell"];
+    
     kWeakSelf
     self.tableView.mj_header = [SkyBallHetiRedMJRefreshGenerator bj_headerWithRefreshingBlock:^{
         weakSelf.tableView.mj_footer.hidden = YES;
@@ -130,12 +156,35 @@
     self.tableView.mj_footer.hidden = NO;
     [self.tableView reloadData];
 }
+
+-(NSArray *) dataWithAd:(NSArray<SkyBallHetiRedHTNewsModel *> *)newsList{
+    NSMutableArray *tmpArray = [NSMutableArray array];
+    
+    for (int i = 0; i < newsList.count; i++ ) {
+        if (i==2) {
+            SkyBallHetiRedHTNewsModel *adModel = [[SkyBallHetiRedHTNewsModel alloc] init];
+            adModel.news_id = @"-100";
+            [tmpArray addObject:adModel];
+        }else if ((i - 2) % 6 == 0){
+            SkyBallHetiRedHTNewsModel *adModel = [[SkyBallHetiRedHTNewsModel alloc] init];
+            adModel.news_id = @"-100";
+            [tmpArray addObject:adModel];
+        }
+        
+        [tmpArray addObject:newsList[i]];
+    }
+    
+    return tmpArray;
+    
+}
+
 - (void)loadData {
     self.bannerRequestDone = NO;
     self.newsRequestDone = NO;
     kWeakSelf
     [self.request waterSkyrequestWithSuccessBlock:^(NSArray<SkyBallHetiRedHTNewsModel *> *newsList) {
-        weakSelf.newsList = newsList;
+//        weakSelf.newsList = newsList;
+        weakSelf.newsList = [weakSelf dataWithAd:newsList];
         weakSelf.newsRequestDone = YES;
         for (SkyBallHetiRedHTNewsModel *nXRRFATKHTNewsModel in newsList) {
             NSLog(@"new imgurl: %@ newsId: %@",nXRRFATKHTNewsModel.img_url,nXRRFATKHTNewsModel.news_id);
@@ -160,7 +209,8 @@
     self.newsRequestDone = NO;
     kWeakSelf
     [self.request waterSkyloadNextPageWithSuccessBlock:^(NSArray<SkyBallHetiRedHTNewsModel *> *newsList) {
-        weakSelf.newsList = newsList;
+//        weakSelf.newsList = newsList;
+         weakSelf.newsList = [weakSelf dataWithAd:newsList];
         weakSelf.newsRequestDone = YES;
         [weakSelf refreshUI];
      } errorBlock:^(SkyBallHetiRedBJError *error) {
