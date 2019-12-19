@@ -18,6 +18,17 @@
 		326434F022F057E000D2DA1E /* guideImageapp1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 326434EB22F057E000D2DA1E /* guideImageapp1.jpg */; };
 		3265F1E02305A211006E3FE1 /* SkyBallHetiRedHTMatchVideoLive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3265F1DF2305A211006E3FE1 /* SkyBallHetiRedHTMatchVideoLive.storyboard */; };
 		3265F1E42305A225006E3FE1 /* SkyBallHetiRedHTMatchVideoLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3265F1E22305A225006E3FE1 /* SkyBallHetiRedHTMatchVideoLiveViewController.m */; };
+		326D67B523A8D83300DDB443 /* HTPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 326D67B423A8D83300DDB443 /* HTPhotoViewController.m */; };
+		326D67B723A8D8CC00DDB443 /* HTPhotoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 326D67B623A8D8CC00DDB443 /* HTPhotoViewController.storyboard */; };
+		326D67BF23A8DB9A00DDB443 /* WBImageBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 326D67B923A8DB9A00DDB443 /* WBImageBrowserView.m */; };
+		326D67C023A8DB9A00DDB443 /* WBImageBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 326D67BA23A8DB9A00DDB443 /* WBImageBrowserCell.m */; };
+		326D67C423A8DD0600DDB443 /* HTImageBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 326D67C323A8DD0600DDB443 /* HTImageBrowserViewController.m */; };
+		3277C5D123A9CA2800D43D80 /* photo_share_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3277C5CD23A9CA2700D43D80 /* photo_share_btn@2x.png */; };
+		3277C5D223A9CA2800D43D80 /* photo_down_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3277C5CE23A9CA2800D43D80 /* photo_down_btn@2x.png */; };
+		3277C5D323A9CA2800D43D80 /* photo_share_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3277C5CF23A9CA2800D43D80 /* photo_share_btn@3x.png */; };
+		3277C5D423A9CA2800D43D80 /* photo_down_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3277C5D023A9CA2800D43D80 /* photo_down_btn@3x.png */; };
+		3277C5D623A9D4DE00D43D80 /* place2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3277C5D523A9D4DE00D43D80 /* place2.png */; };
+		3277C5D823A9D71000D43D80 /* icon_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3277C5D723A9D71000D43D80 /* icon_back@2x.png */; };
 		32ABE1CC22EDF4C2008505BA /* SkyBallHetiRedHTNewsHomeOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ABE1CA22EDF4C1008505BA /* SkyBallHetiRedHTNewsHomeOtherViewController.m */; };
 		32ABE1CE22EDF4D0008505BA /* SkyBallHetiRedNewsHomeOther.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32ABE1CD22EDF4D0008505BA /* SkyBallHetiRedNewsHomeOther.storyboard */; };
 		32ABE1D222EDF733008505BA /* SkyBallHetiRedHTTabBarHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ABE1CF22EDF732008505BA /* SkyBallHetiRedHTTabBarHomeViewController.m */; };
@@ -319,6 +330,21 @@
 		3265F1DF2305A211006E3FE1 /* SkyBallHetiRedHTMatchVideoLive.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SkyBallHetiRedHTMatchVideoLive.storyboard; sourceTree = "<group>"; };
 		3265F1E22305A225006E3FE1 /* SkyBallHetiRedHTMatchVideoLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyBallHetiRedHTMatchVideoLiveViewController.m; sourceTree = "<group>"; };
 		3265F1E32305A225006E3FE1 /* SkyBallHetiRedHTMatchVideoLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyBallHetiRedHTMatchVideoLiveViewController.h; sourceTree = "<group>"; };
+		326D67B323A8D83300DDB443 /* HTPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTPhotoViewController.h; sourceTree = "<group>"; };
+		326D67B423A8D83300DDB443 /* HTPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTPhotoViewController.m; sourceTree = "<group>"; };
+		326D67B623A8D8CC00DDB443 /* HTPhotoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HTPhotoViewController.storyboard; sourceTree = "<group>"; };
+		326D67B923A8DB9A00DDB443 /* WBImageBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBImageBrowserView.m; sourceTree = "<group>"; };
+		326D67BA23A8DB9A00DDB443 /* WBImageBrowserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBImageBrowserCell.m; sourceTree = "<group>"; };
+		326D67BC23A8DB9A00DDB443 /* WBImageBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBImageBrowserView.h; sourceTree = "<group>"; };
+		326D67BD23A8DB9A00DDB443 /* WBImageBrowserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBImageBrowserCell.h; sourceTree = "<group>"; };
+		326D67C223A8DD0600DDB443 /* HTImageBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTImageBrowserViewController.h; sourceTree = "<group>"; };
+		326D67C323A8DD0600DDB443 /* HTImageBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTImageBrowserViewController.m; sourceTree = "<group>"; };
+		3277C5CD23A9CA2700D43D80 /* photo_share_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_share_btn@2x.png"; sourceTree = "<group>"; };
+		3277C5CE23A9CA2800D43D80 /* photo_down_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_down_btn@2x.png"; sourceTree = "<group>"; };
+		3277C5CF23A9CA2800D43D80 /* photo_share_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_share_btn@3x.png"; sourceTree = "<group>"; };
+		3277C5D023A9CA2800D43D80 /* photo_down_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_down_btn@3x.png"; sourceTree = "<group>"; };
+		3277C5D523A9D4DE00D43D80 /* place2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = place2.png; sourceTree = "<group>"; };
+		3277C5D723A9D71000D43D80 /* icon_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_back@2x.png"; sourceTree = "<group>"; };
 		32ABE1CA22EDF4C1008505BA /* SkyBallHetiRedHTNewsHomeOtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyBallHetiRedHTNewsHomeOtherViewController.m; sourceTree = "<group>"; };
 		32ABE1CB22EDF4C2008505BA /* SkyBallHetiRedHTNewsHomeOtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyBallHetiRedHTNewsHomeOtherViewController.h; sourceTree = "<group>"; };
 		32ABE1CD22EDF4D0008505BA /* SkyBallHetiRedNewsHomeOther.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SkyBallHetiRedNewsHomeOther.storyboard; sourceTree = "<group>"; };
@@ -852,6 +878,25 @@
 			path = Res;
 			sourceTree = "<group>";
 		};
+		326D67B823A8DB9A00DDB443 /* WBImageBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				3277C5D723A9D71000D43D80 /* icon_back@2x.png */,
+				3277C5D523A9D4DE00D43D80 /* place2.png */,
+				3277C5CE23A9CA2800D43D80 /* photo_down_btn@2x.png */,
+				3277C5D023A9CA2800D43D80 /* photo_down_btn@3x.png */,
+				3277C5CD23A9CA2700D43D80 /* photo_share_btn@2x.png */,
+				3277C5CF23A9CA2800D43D80 /* photo_share_btn@3x.png */,
+				326D67BC23A8DB9A00DDB443 /* WBImageBrowserView.h */,
+				326D67B923A8DB9A00DDB443 /* WBImageBrowserView.m */,
+				326D67BD23A8DB9A00DDB443 /* WBImageBrowserCell.h */,
+				326D67BA23A8DB9A00DDB443 /* WBImageBrowserCell.m */,
+				326D67C223A8DD0600DDB443 /* HTImageBrowserViewController.h */,
+				326D67C323A8DD0600DDB443 /* HTImageBrowserViewController.m */,
+			);
+			path = WBImageBrowser;
+			sourceTree = "<group>";
+		};
 		32CD869A22F3FB5400063A14 /* third */ = {
 			isa = PBXGroup;
 			children = (
@@ -1159,6 +1204,7 @@
 		FEC114342143D4A0002DB617 /* SkyModule */ = {
 			isa = PBXGroup;
 			children = (
+				326D67B823A8DB9A00DDB443 /* WBImageBrowser */,
 				326434D322F04F5E00D2DA1E /* CCPPDHGuidePageHUD */,
 				FECCA54222598013009EF494 /* CCPPTZImagePickerController */,
 				FEC115322143D4A0002DB617 /* CCPPUtility */,
@@ -1357,6 +1403,7 @@
 				FEC116F72143DC57002DB617 /* SkyBallHetiRedNewsHome.storyboard */,
 				FE6BD07E21457BBC0090118A /* SkyBallHetiRedNewsDetail.storyboard */,
 				FEC116F92143DC72002DB617 /* MMBBNews.xcassets */,
+				326D67B623A8D8CC00DDB443 /* HTPhotoViewController.storyboard */,
 			);
 			path = MMBBNews;
 			sourceTree = "<group>";
@@ -1385,6 +1432,8 @@
 		FEC117002143DD87002DB617 /* MBControllers */ = {
 			isa = PBXGroup;
 			children = (
+				326D67B323A8D83300DDB443 /* HTPhotoViewController.h */,
+				326D67B423A8D83300DDB443 /* HTPhotoViewController.m */,
 				32ABE1CB22EDF4C2008505BA /* SkyBallHetiRedHTNewsHomeOtherViewController.h */,
 				32ABE1CA22EDF4C1008505BA /* SkyBallHetiRedHTNewsHomeOtherViewController.m */,
 				FEC117072143DDED002DB617 /* SkyBallHetiRedHTNewsHomeViewController.h */,
@@ -1927,6 +1976,7 @@
 				FEC1160D2143D4A1002DB617 /* SkyBallHetiRedXJEmptyView.xib in Resources */,
 				FECCA5352258C8D0009EF494 /* SkyBallHetiRedHTHistoryViewController.xib in Resources */,
 				FE6BD07A21452B570090118A /* SkyBallHetiRedHTNewsHomeBannerCell.xib in Resources */,
+				3277C5D423A9CA2800D43D80 /* photo_down_btn@3x.png in Resources */,
 				FE6BD075214526980090118A /* SkyBallHetiRedHTNewsHomeCell.xib in Resources */,
 				FE800F6B22636AFC00E575D5 /* SkyBallHetiRedHTNewsCommentCell.xib in Resources */,
 				FE7E6C9B2263CADB00B2973D /* SkyBallHetiRedHTMyMessaageCell.xib in Resources */,
@@ -1956,6 +2006,7 @@
 				FEC1171B2143DEAD002DB617 /* SkyBallHetiRedDataHome.storyboard in Resources */,
 				FECCA57622598143009EF494 /* SkyBallHetiRedDRPhotoKeyboardCell.xib in Resources */,
 				FE81D1632149716D0047A4A2 /* SkyBallHetiRedHTDataHomePlayerCell.xib in Resources */,
+				3277C5D223A9CA2800D43D80 /* photo_down_btn@2x.png in Resources */,
 				FEDABE4E2171BCEE008C8AFD /* SkyBallHetiRedHTMatchPtsCompareCell.xib in Resources */,
 				326434D922F04F5E00D2DA1E /* GuideImage.bundle in Resources */,
 				FEC116072143D4A1002DB617 /* SkyBallHetiRedXJToastView.xib in Resources */,
@@ -1966,16 +2017,19 @@
 				FEC1161C2143D4A1002DB617 /* SkyBallHetiRedBJTabBarView.xib in Resources */,
 				FE08C5C422504F0C000175CB /* MMBBMe.xcassets in Resources */,
 				32E7228123098085003E0A03 /* GoogleService-Info.plist in Resources */,
+				3277C5D623A9D4DE00D43D80 /* place2.png in Resources */,
 				FEC116EF2143D8C9002DB617 /* SkyBallHetiRedMatchHome.storyboard in Resources */,
 				32ABE1CE22EDF4D0008505BA /* SkyBallHetiRedNewsHomeOther.storyboard in Resources */,
 				FECCA51D2258C8D0009EF494 /* SkyBallHetiRedHTMessageViewController.xib in Resources */,
 				32E722892309A3A6003E0A03 /* guideImageapp11.jpg in Resources */,
 				FECCA5242258C8D0009EF494 /* SkyBallHetiRedHTLoginAlertView.xib in Resources */,
 				FE6BD094214584DA0090118A /* SkyBallHetiRedHTNewsTopHeaderView.xib in Resources */,
+				3277C5D323A9CA2800D43D80 /* photo_share_btn@3x.png in Resources */,
 				FE82BB422179B77200C52C51 /* SkyBallHetiRedHTDataTeamLeftCell.xib in Resources */,
 				FEDAC97F214BBD37005E8B63 /* SkyBallHetiRedHTDatePickerView.xib in Resources */,
 				326434EC22F057E000D2DA1E /* guideImageapp3.jpg in Resources */,
 				FE9B32B8217895990055B611 /* SkyBallHetiRedHTRankLeftCell.xib in Resources */,
+				326D67B723A8D8CC00DDB443 /* HTPhotoViewController.storyboard in Resources */,
 				FECCA5212258C8D0009EF494 /* SkyBallHetiRedHTMeCenterNormalCell.xib in Resources */,
 				FE6BD04D2144FAF60090118A /* ViewStatus.xcassets in Resources */,
 				FE83FE552177838F006C714C /* SkyBallHetiRedHTMatchDataRightCell.xib in Resources */,
@@ -1989,6 +2043,7 @@
 				326434F022F057E000D2DA1E /* guideImageapp1.jpg in Resources */,
 				FE706F09215006430078DF30 /* SkyBallHetiRedHTDataHomeHeaderCell.xib in Resources */,
 				FE800F662263693A00E575D5 /* SkyBallHetiRedHTNoCommentFooterView.xib in Resources */,
+				3277C5D823A9D71000D43D80 /* icon_back@2x.png in Resources */,
 				FECCA5372258C8D0009EF494 /* SkyBallHetiRedHTLikeViewController.xib in Resources */,
 				FE706F04214FF3530078DF30 /* SkyBallHetiRedDataMore.storyboard in Resources */,
 				FE6BD0602144FED00090118A /* SkyBallHetiRedMatchWordLive.storyboard in Resources */,
@@ -2007,6 +2062,7 @@
 				FEDABE532171BD0C008C8AFD /* SkyBallHetiRedHTMatchBestPlayerCell.xib in Resources */,
 				FECCA5222258C8D0009EF494 /* SkyBallHetiRedHTMeCenterItemsCell.xib in Resources */,
 				FE82BB472179B78700C52C51 /* SkyBallHetiRedHTDataTeamRightCell.xib in Resources */,
+				3277C5D123A9CA2800D43D80 /* photo_share_btn@2x.png in Resources */,
 				FECCA5202258C8D0009EF494 /* SkyBallHetiRedHTMeCenterHeaderCell.xib in Resources */,
 				FE6BD0622144FEF90090118A /* SkyBallHetiRedMatchCompare.storyboard in Resources */,
 				32E7228B2309A3A6003E0A03 /* guideImageapp12.jpg in Resources */,
@@ -2156,6 +2212,7 @@
 				FEC116BF2143D4A1002DB617 /* SkyBallHetiRedBJDateFormatUtility.m in Sources */,
 				FECCA5232258C8D0009EF494 /* SkyBallHetiRedHTMeCenterNormalCell.m in Sources */,
 				FECCA56222598013009EF494 /* SkyBallHetiRedTZImageCropManager.m in Sources */,
+				326D67C023A8DB9A00DDB443 /* WBImageBrowserCell.m in Sources */,
 				FE81D159214819FA0047A4A2 /* SkyBallHetiRedHTDataHomeSubViewController.m in Sources */,
 				FEC116C72143D4A1002DB617 /* NSNumber+SkyBallHetiRedZGFormatter.m in Sources */,
 				FEC116B62143D4A1002DB617 /* SkyBallHetiRedBJBaseHTTPEngine.m in Sources */,
@@ -2199,6 +2256,7 @@
 				FE81D156214816710047A4A2 /* SkyBallHetiRedHTDataHomeModel.m in Sources */,
 				FEC116CA2143D4A1002DB617 /* NSString+SkyBallHetiRedMessageDigest.m in Sources */,
 				FEDABE68217336BA008C8AFD /* SkyBallHetiRedHTRankZoneViewController.m in Sources */,
+				326D67B523A8D83300DDB443 /* HTPhotoViewController.m in Sources */,
 				FECCA5302258C8D0009EF494 /* SkyBallHetiRedHTUserRequest.m in Sources */,
 				FECCA56A22598013009EF494 /* SkyBallHetiRedTZProgressView.m in Sources */,
 				FEC117092143DDEE002DB617 /* SkyBallHetiRedHTNewsHomeViewController.m in Sources */,
@@ -2222,6 +2280,7 @@
 				FE6BD05B2144FDFD0090118A /* SkyBallHetiRedHTMatchWordLiveViewController.m in Sources */,
 				32CD877D22F4173800063A14 /* AppFunVideoDelegate.m in Sources */,
 				FEC116132143D4A1002DB617 /* SkyBallHetiRedLJViewPager.m in Sources */,
+				326D67BF23A8DB9A00DDB443 /* WBImageBrowserView.m in Sources */,
 				FEDABE482171BC3A008C8AFD /* SkyBallHetiRedHTMatchQuarterCell.m in Sources */,
 				FE706F02214FF3430078DF30 /* SkyBallHetiRedHTDataMoreViewController.m in Sources */,
 				FEA5D3FE225CD506001AF0C9 /* SkyBallHetiRedHTCommentModel.m in Sources */,
@@ -2277,6 +2336,7 @@
 				FE6BD074214526980090118A /* SkyBallHetiRedHTNewsHomeCell.m in Sources */,
 				FEC116C82143D4A1002DB617 /* NSDate+SkyBallHetiRedCore.m in Sources */,
 				FE588BFC22620DFA00A44884 /* SkyBallHetiRedHTCommentGetter.m in Sources */,
+				326D67C423A8DD0600DDB443 /* HTImageBrowserViewController.m in Sources */,
 				FEA104F9216CB10C000DBE63 /* SkyBallHetiRedHTMatchCompareModel.m in Sources */,
 				32ABE1D222EDF733008505BA /* SkyBallHetiRedHTTabBarHomeViewController.m in Sources */,
 			);

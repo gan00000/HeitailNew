@@ -1,5 +1,6 @@
 #import "SkyBallHetiRedHTNewsWebCell.h"
 #import <WebKit/WebKit.h>
+#import "HTImageBrowserViewController.h"
 @interface SkyBallHetiRedHTNewsWebCell ()<WKNavigationDelegate, WKUIDelegate>
 @property (nonatomic, strong) UIScrollView *webContentView;
 @property (nonatomic, strong) WKWebView *webView;
@@ -75,7 +76,18 @@
        NSInteger index = [[url.absoluteString substringFromIndex:[@"image-preview-index:" length]] integerValue];
         if (self.imageUrlArr) {
             NSString * imgPath = self.imageUrlArr.count > index ? self.imageUrlArr[index]:nil;
-                  NSLog(@"imgPath = %@",imgPath);
+            NSLog(@"imgPath = %@",imgPath);
+            NSMutableArray *mmArr = [[NSMutableArray alloc] initWithCapacity:0];
+            [mmArr addObject:@{@"url":imgPath,@"title":[NSString stringWithFormat:@"图片"]}];
+//            for (int i = 0; i < self.imageUrlArr.count; i++) {
+//                NSString *imageUrl = self.imageUrlArr[i];
+//                [mmArr addObject:@{@"url":imageUrl,@"title":[NSString stringWithFormat:@"图片%d",i]}];
+//            }
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                HTImageBrowserViewController *imageBrController = [[HTImageBrowserViewController alloc] initWithImages:mmArr];
+                [[self navigationController] pushViewController:imageBrController animated:NO];
+            });
         }
       
        decisionHandler(WKNavigationActionPolicyCancel);
@@ -159,4 +171,26 @@
      }" completionHandler:nil];
     [self.webView evaluateJavaScript:@"registerImageClickAction();" completionHandler:nil];
 }
+
+- (UIViewController*)viewController {
+    for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder* nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UINavigationController class]]) {
+            return (UIViewController*)nextResponder;
+        }
+    }
+    return nil;
+}
+
+//获取导航控制器
+- (UINavigationController*)navigationController {
+    for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder* nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UINavigationController class]]) {
+            return (UINavigationController*)nextResponder;
+        }
+    }
+    return nil;
+}
+
 @end
