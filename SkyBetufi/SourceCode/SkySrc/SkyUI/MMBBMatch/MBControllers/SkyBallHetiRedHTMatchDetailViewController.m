@@ -9,14 +9,21 @@
 #import "UIImageView+SkyBallHetiRedSVG.h"
 #import "SkyBallHetiRedHTMatchVideoLiveViewController.h"
 
-@interface SkyBallHetiRedHTMatchDetailViewController () <UIScrollViewDelegate>
+#import "LMPlayer.h"
+
+@interface SkyBallHetiRedHTMatchDetailViewController () <UIScrollViewDelegate, LMVideoPlayerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *homeTeamLogo;
+@property (weak, nonatomic) IBOutlet UILabel *awayTeamName;
+@property (weak, nonatomic) IBOutlet UILabel *homeTeamName;
 @property (weak, nonatomic) IBOutlet UIImageView *awayTeamLogo;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *startPlayImageView;
 @property (weak, nonatomic) IBOutlet UILabel *homeTeamPtsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *awayTeamPtsLabel;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIView *topDetailView;
+
 @property (nonatomic, strong) HMSegmentedControl *segmentControl;
 @property (nonatomic, strong) UIScrollView *containerView;
 @property (nonatomic, strong) NSMutableArray *loadedControllersArray;
@@ -30,6 +37,17 @@
 @property (nonatomic, strong) SkyBallHetiRedBJError *error;
 @property (nonatomic, copy) dispatch_block_t loadedBlock;
 @property (nonatomic, strong) NSTimer *timer;
+
+@property (nonatomic, strong) LMVideoPlayer *player;
+@property (nonatomic, strong) LMPlayerModel *playerModel;
+/** 离开页面时候是否在播放 */
+@property (nonatomic, assign) BOOL isPlaying;
+/** 离开页面时候是否开始过播放 */
+@property (nonatomic, assign) BOOL isStartPlay;
+@property (nonatomic, strong) UIView *playerContentView;
+@property (weak, nonatomic) IBOutlet UILabel *startTimeLable;
+
+
 @end
 @implementation SkyBallHetiRedHTMatchDetailViewController
 + (instancetype)waterSkyviewController {
@@ -41,13 +59,85 @@
     [self setupUI];
     [self loadData];
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    
+    if (self.player && self.isPlaying) {
+        self.isPlaying = NO;
+        [self.player playVideo];
+    }
+    LMBrightnessViewShared.isStartPlay = self.isStartPlay;
+    
+}
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self stopTimer];
+    
+    // push出下一级页面时候暂停
+    if (self.player && !self.player.isPauseByUser) {
+        self.isPlaying = YES;
+        [self.player pauseVideo];
+    }
+    
+    LMBrightnessViewShared.isStartPlay = NO;
+    
 }
+
+#pragma mark - 屏幕旋转
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    if (toInterfaceOrientation == UIInterfaceOrientationPortrait) {
+        [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        [self remakePlayerFatherViewPositionInPortrait];
+    }else if (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight || toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+        [self remakePlayerFatherViewPositionInLandscape];
+    }
+}
+
+
 - (void)dealloc {
     NSLog(@"%@ dealloc", NSStringFromClass(self.class));
+     [self.player destroyVideo];
 }
+
+-(void)remakePlayerFatherViewPositionInPortrait{
+    
+//     [self.playerFatherView mas_remakeConstraints:<#^(MASConstraintMaker *make)block#>]
+    [self.playerContentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view);
+        make.leading.trailing.mas_equalTo(self.view);
+        // 这里宽高比16：9,可自定义宽高比
+//        make.height.mas_equalTo(self.view.mas_width).multipliedBy(9.0f/16.0f);
+        make.height.mas_equalTo(200);
+    }];
+}
+
+
+-(void)remakePlayerFatherViewPositionInLandscape{
+    
+    [self.playerContentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//
+//        make.top.mas_equalTo(0);
+//                make.left.right.mas_equalTo(self.view);
+//            make.height.mas_equalTo(self.view);
+        
+         make.top.leading.trailing.bottom.equalTo(self.view);
+    }];
+    
+    [self.playerContentView updateConstraintsIfNeeded];
+    [self.playerContentView layoutIfNeeded];
+    
+    self.playerContentView.frame = self.view.bounds;
+    NSLog(@"self.playerFatherView.frame.size.height:%f",self.playerContentView.frame.size.height);
+    NSLog(@"self.playerFatherView.frame.size.width:%f",self.playerContentView.frame.size.width);
+    
+    NSLog(@"self.view.frame.size.height:%f",self.view.frame.size.height);
+    NSLog(@"self.view.frame.size.width:%f",self.view.frame.size.width);
+}
+
+
 #pragma mark - private
 - (void)setupUI {
     self.title = [NSString stringWithFormat:@"%@ VS %@", self.matchModel.awayName, self.matchModel.homeName];
@@ -65,7 +155,55 @@
     self.awayTeamLogo.contentMode = UIViewContentModeScaleAspectFit;
     [self segmentedValueChangedHandle:0];
     [self.view showLoadingView];
+    
+    [self.awayTeamName setFont:[UIFont boldSystemFontOfSize:24]];
+    [self.homeTeamName setFont:[UIFont boldSystemFontOfSize:24]];
+    [self.statusLabel setFont:[UIFont boldSystemFontOfSize:20]];
+    [self.homeTeamPtsLabel setFont:[UIFont boldSystemFontOfSize:20]];
+    [self.awayTeamPtsLabel setFont:[UIFont boldSystemFontOfSize:20]];
+    [self.startTimeLable setFont:[UIFont boldSystemFontOfSize:20]];
+
+ 
+//============================
+
+//    self.topDetailView.hidden = YES;
+     self.startPlayImageView.hidden = YES;
+    self.startTimeLable.hidden = YES;
+    [self.view addSubview:self.playerContentView];
+    [self remakePlayerFatherViewPositionInPortrait];
+    
+    LMPlayerModel *model = [[LMPlayerModel alloc] init];
+    model.videoURL = [NSURL URLWithString:@"http://9890.vod.myqcloud.com/9890_4e292f9a3dd011e6b4078980237cc3d3.f30.mp4"];
+    model.seekTime = 20;
+    model.viewTime = 200;
+     
+    LMVideoPlayer *player = [LMVideoPlayer videoPlayerWithView:self.playerContentView delegate:self playerModel:model];
+    self.player = player;
+    self.playerContentView.hidden = YES;
+    
+//    [self.shareBtn addTarget:self action:@selector(shareBtnClickAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(startPlay)];
+    self.topDetailView.userInteractionEnabled = YES;
+    [self.topDetailView addGestureRecognizer:tapGes];
 }
+
+- (void)startPlay {
+    if (self.player) {
+        self.playerContentView.hidden = NO;
+        [self.player autoPlayTheVideo];
+        self.topDetailView.hidden = YES;
+    }
+}
+- (UIView *)playerContentView {
+    if (!_playerContentView) {
+        _playerContentView = [[UIView alloc] init];
+        
+        _playerContentView.backgroundColor = [UIColor grayColor];
+    }
+    return _playerContentView;
+}
+
 - (void)initData {
     
      if ([SkyBallHetiRedHTUserManager manager].showTextLive) {
@@ -131,6 +269,9 @@
         }
         [self.view showToast:self.error.msg];
     }
+    
+//    UIColor *bgColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"live_player_bg.png"]];
+//    [self.topDetailView setBackgroundColor:bgColor];
     self.homeTeamLogo.hidden = YES;
     self.awayTeamLogo.hidden = YES;
     self.homeTeamLogo.hidden = NO;
@@ -146,27 +287,36 @@
     }else{
         [self.awayTeamLogo sd_setImageWithURL:[NSURL URLWithString:self.matchSummaryModel.awayLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
     }
+    
+    self.awayTeamName.text = self.matchSummaryModel.awayName;
+    self.homeTeamName.text = self.matchSummaryModel.homeName;
+    
     self.awayTeamPtsLabel.text = self.matchSummaryModel.away_pts;
-    self.timeLabel.hidden = YES;
-    if (self.matchSummaryModel.game_status == 1) {
-        self.statusLabel.text = @"已結束";
-        [self stopTimer];
-    } else if ([self.matchSummaryModel.scheduleStatus isEqualToString:@"Final"]) {
+//    self.timeLabel.hidden = YES;
+//    if (self.matchSummaryModel.game_status == 1) {
+//        self.statusLabel.text = @"已結束";
+//        [self stopTimer];
+//    } else
+        
+    if ([self.matchSummaryModel.scheduleStatus isEqualToString:@"Final"]) {
         self.statusLabel.text = @"已結束";
         [self stopTimer];
     } else if ([self.matchSummaryModel.scheduleStatus isEqualToString:@"InProgress"]) {
-        self.statusLabel.text = [NSString stringWithFormat:@"第%@節", self.matchSummaryModel.quarter];
+         self.startPlayImageView.hidden = NO;
+        self.statusLabel.text = [NSString stringWithFormat:@"第%@節\n%@", self.matchSummaryModel.quarter, self.matchSummaryModel.time];
         if ([self.matchSummaryModel.quarter isEqualToString:@"OT"]) {
             self.statusLabel.text = self.matchSummaryModel.quarter;
         }
-        self.timeLabel.text = self.matchSummaryModel.time;
+//        self.timeLabel.text = self.matchSummaryModel.time;
         [self startTimer];
     } else if ([self.matchSummaryModel.scheduleStatus isEqualToString:@"Canceled"]) {
         self.statusLabel.text = @"已取消";
-    } else if ([self.matchSummaryModel.scheduleStatus isEqualToString:@"Postponed"]) {
+    } else  {
         self.statusLabel.text = @"未開始";
-    } else {
-        self.statusLabel.text = @"未開始";
+        self.startTimeLable.hidden = NO;
+        self.awayTeamPtsLabel.hidden = YES;
+        self.homeTeamPtsLabel.hidden = YES;
+        self.startTimeLable.text = self.matchModel.gametime;
     }
     [self segmentedValueChangedHandle:self.currentIndex];
     if (self.loadedBlock) {
@@ -195,6 +345,23 @@
     [self loadChildViewControllerByIndex:page];
     [self.segmentControl setSelectedSegmentIndex:page animated:YES];
 }
+
+#pragma mark - LMVideoPlayerDelegate
+/** 返回按钮被点击 */
+- (void)playerBackButtonClick {
+    [self.player destroyVideo];
+//    [self.navigationController popViewControllerAnimated:YES];
+}
+
+/** 控制层封面点击事件的回调 */
+- (void)controlViewTapAction {
+    if (_player) {
+        [self.player autoPlayTheVideo];
+        self.isStartPlay = YES;
+    }
+}
+
+
 #pragma mark -- HMSegmentedControl Action
 - (void)segmentedValueChangedHandle:(NSInteger)index {
     self.currentIndex = index;

@@ -53,6 +53,23 @@
 		32E7228B2309A3A6003E0A03 /* guideImageapp12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722852309A3A6003E0A03 /* guideImageapp12.jpg */; };
 		32E7228C2309A3A6003E0A03 /* guideImageapp14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722862309A3A6003E0A03 /* guideImageapp14.jpg */; };
 		32E7228D2309A3A6003E0A03 /* guideImageapp15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722872309A3A6003E0A03 /* guideImageapp15.jpg */; };
+		32FED81F23AB768700D900A7 /* LMPlayerStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED80623AB768700D900A7 /* LMPlayerStatusModel.m */; };
+		32FED82023AB768700D900A7 /* LMPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED80723AB768700D900A7 /* LMPlayerModel.m */; };
+		32FED82123AB768700D900A7 /* LMLandScapeControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED80E23AB768700D900A7 /* LMLandScapeControlView.m */; };
+		32FED82223AB768700D900A7 /* LMPortraitControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED80F23AB768700D900A7 /* LMPortraitControlView.m */; };
+		32FED82323AB768700D900A7 /* LMBrightnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED81223AB768700D900A7 /* LMBrightnessView.m */; };
+		32FED82423AB768700D900A7 /* LMVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED81323AB768700D900A7 /* LMVideoPlayerView.m */; };
+		32FED82523AB768700D900A7 /* LMCoverControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED81523AB768700D900A7 /* LMCoverControlView.m */; };
+		32FED82623AB768700D900A7 /* LMLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED81623AB768700D900A7 /* LMLoadingView.m */; };
+		32FED82723AB768700D900A7 /* MMMaterialDesignSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED81823AB768700D900A7 /* MMMaterialDesignSpinner.m */; };
+		32FED82823AB768700D900A7 /* LMPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED81A23AB768700D900A7 /* LMPlayerControlView.m */; };
+		32FED82923AB768700D900A7 /* LMVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED81B23AB768700D900A7 /* LMVideoPlayer.m */; };
+		32FED82A23AB768700D900A7 /* LMPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED81E23AB768700D900A7 /* LMPlayerManager.m */; };
+		32FED83023AB775600D900A7 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED82E23AB775600D900A7 /* UIColor+Hex.m */; };
+		32FED83223AB779C00D900A7 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32FED83123AB779C00D900A7 /* IJKMediaFramework.framework */; };
+		32FED83423AB7BB100D900A7 /* LMPlayer.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32FED83323AB7BB100D900A7 /* LMPlayer.xcassets */; };
+		32FED83623AC812200D900A7 /* live_player_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FED83523AC812200D900A7 /* live_player_bg.png */; };
+		32FED83823ACBD1100D900A7 /* icon_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FED83723ACBD1000D900A7 /* icon_play.png */; };
 		32FFD29123A2267200E1661A /* UIImageView+HT.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFD29023A2267200E1661A /* UIImageView+HT.m */; };
 		32FFD29923A397A700E1661A /* HTAdViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFD29723A397A700E1661A /* HTAdViewCell.m */; };
 		32FFD29A23A397A700E1661A /* HTAdViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32FFD29823A397A700E1661A /* HTAdViewCell.xib */; };
@@ -383,6 +400,37 @@
 		32E722852309A3A6003E0A03 /* guideImageapp12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp12.jpg; sourceTree = "<group>"; };
 		32E722862309A3A6003E0A03 /* guideImageapp14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp14.jpg; sourceTree = "<group>"; };
 		32E722872309A3A6003E0A03 /* guideImageapp15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp15.jpg; sourceTree = "<group>"; };
+		32FED80323AB768700D900A7 /* LMVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMVideoPlayer.h; sourceTree = "<group>"; };
+		32FED80423AB768700D900A7 /* LMPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMPlayer.h; sourceTree = "<group>"; };
+		32FED80623AB768700D900A7 /* LMPlayerStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPlayerStatusModel.m; sourceTree = "<group>"; };
+		32FED80723AB768700D900A7 /* LMPlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPlayerModel.m; sourceTree = "<group>"; };
+		32FED80823AB768700D900A7 /* LMPlayerStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMPlayerStatusModel.h; sourceTree = "<group>"; };
+		32FED80923AB768700D900A7 /* LMPlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMPlayerModel.h; sourceTree = "<group>"; };
+		32FED80B23AB768700D900A7 /* LMVideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMVideoPlayerView.h; sourceTree = "<group>"; };
+		32FED80C23AB768700D900A7 /* LMLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMLoadingView.h; sourceTree = "<group>"; };
+		32FED80D23AB768700D900A7 /* LMCoverControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMCoverControlView.h; sourceTree = "<group>"; };
+		32FED80E23AB768700D900A7 /* LMLandScapeControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMLandScapeControlView.m; sourceTree = "<group>"; };
+		32FED80F23AB768700D900A7 /* LMPortraitControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPortraitControlView.m; sourceTree = "<group>"; };
+		32FED81023AB768700D900A7 /* MMMaterialDesignSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMaterialDesignSpinner.h; sourceTree = "<group>"; };
+		32FED81123AB768700D900A7 /* LMPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMPlayerControlView.h; sourceTree = "<group>"; };
+		32FED81223AB768700D900A7 /* LMBrightnessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMBrightnessView.m; sourceTree = "<group>"; };
+		32FED81323AB768700D900A7 /* LMVideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMVideoPlayerView.m; sourceTree = "<group>"; };
+		32FED81423AB768700D900A7 /* LMLandScapeControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMLandScapeControlView.h; sourceTree = "<group>"; };
+		32FED81523AB768700D900A7 /* LMCoverControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMCoverControlView.m; sourceTree = "<group>"; };
+		32FED81623AB768700D900A7 /* LMLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMLoadingView.m; sourceTree = "<group>"; };
+		32FED81723AB768700D900A7 /* LMPortraitControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMPortraitControlView.h; sourceTree = "<group>"; };
+		32FED81823AB768700D900A7 /* MMMaterialDesignSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMaterialDesignSpinner.m; sourceTree = "<group>"; };
+		32FED81923AB768700D900A7 /* LMBrightnessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMBrightnessView.h; sourceTree = "<group>"; };
+		32FED81A23AB768700D900A7 /* LMPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPlayerControlView.m; sourceTree = "<group>"; };
+		32FED81B23AB768700D900A7 /* LMVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMVideoPlayer.m; sourceTree = "<group>"; };
+		32FED81D23AB768700D900A7 /* LMPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMPlayerManager.h; sourceTree = "<group>"; };
+		32FED81E23AB768700D900A7 /* LMPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPlayerManager.m; sourceTree = "<group>"; };
+		32FED82E23AB775600D900A7 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		32FED82F23AB775600D900A7 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		32FED83123AB779C00D900A7 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
+		32FED83323AB7BB100D900A7 /* LMPlayer.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LMPlayer.xcassets; sourceTree = "<group>"; };
+		32FED83523AC812200D900A7 /* live_player_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = live_player_bg.png; sourceTree = "<group>"; };
+		32FED83723ACBD1000D900A7 /* icon_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_play.png; sourceTree = "<group>"; };
 		32FFD28F23A2267200E1661A /* UIImageView+HT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HT.h"; sourceTree = "<group>"; };
 		32FFD29023A2267200E1661A /* UIImageView+HT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HT.m"; sourceTree = "<group>"; };
 		32FFD29623A397A700E1661A /* HTAdViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAdViewCell.h; sourceTree = "<group>"; };
@@ -823,6 +871,7 @@
 				FECCA4E62258C858009EF494 /* Security.framework in Frameworks */,
 				FEAC9F272199D92900159AE9 /* UserNotifications.framework in Frameworks */,
 				FE91974B218F60A100439CDD /* CoreGraphics.framework in Frameworks */,
+				32FED83223AB779C00D900A7 /* IJKMediaFramework.framework in Frameworks */,
 				FE0C27122186BD0D001C9B8C /* SystemConfiguration.framework in Frameworks */,
 				FE0C27102186BD05001C9B8C /* CoreTelephony.framework in Frameworks */,
 				FE0C270E2186BCF6001C9B8C /* libsqlite3.tbd in Frameworks */,
@@ -933,6 +982,66 @@
 				32CD877922F4173800063A14 /* PlayerEventLogger.m */,
 			);
 			path = skyvideo;
+			sourceTree = "<group>";
+		};
+		32FED80223AB768700D900A7 /* LMPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				32FED83123AB779C00D900A7 /* IJKMediaFramework.framework */,
+				32FED82F23AB775600D900A7 /* UIColor+Hex.h */,
+				32FED82E23AB775600D900A7 /* UIColor+Hex.m */,
+				32FED80323AB768700D900A7 /* LMVideoPlayer.h */,
+				32FED81B23AB768700D900A7 /* LMVideoPlayer.m */,
+				32FED80423AB768700D900A7 /* LMPlayer.h */,
+				32FED80523AB768700D900A7 /* Model */,
+				32FED80A23AB768700D900A7 /* View */,
+				32FED81C23AB768700D900A7 /* Utility */,
+				32FED83323AB7BB100D900A7 /* LMPlayer.xcassets */,
+			);
+			path = LMPlayer;
+			sourceTree = "<group>";
+		};
+		32FED80523AB768700D900A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				32FED80623AB768700D900A7 /* LMPlayerStatusModel.m */,
+				32FED80723AB768700D900A7 /* LMPlayerModel.m */,
+				32FED80823AB768700D900A7 /* LMPlayerStatusModel.h */,
+				32FED80923AB768700D900A7 /* LMPlayerModel.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		32FED80A23AB768700D900A7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				32FED81923AB768700D900A7 /* LMBrightnessView.h */,
+				32FED81223AB768700D900A7 /* LMBrightnessView.m */,
+				32FED80D23AB768700D900A7 /* LMCoverControlView.h */,
+				32FED81523AB768700D900A7 /* LMCoverControlView.m */,
+				32FED81423AB768700D900A7 /* LMLandScapeControlView.h */,
+				32FED80E23AB768700D900A7 /* LMLandScapeControlView.m */,
+				32FED80C23AB768700D900A7 /* LMLoadingView.h */,
+				32FED81623AB768700D900A7 /* LMLoadingView.m */,
+				32FED81123AB768700D900A7 /* LMPlayerControlView.h */,
+				32FED81A23AB768700D900A7 /* LMPlayerControlView.m */,
+				32FED81723AB768700D900A7 /* LMPortraitControlView.h */,
+				32FED80F23AB768700D900A7 /* LMPortraitControlView.m */,
+				32FED80B23AB768700D900A7 /* LMVideoPlayerView.h */,
+				32FED81323AB768700D900A7 /* LMVideoPlayerView.m */,
+				32FED81023AB768700D900A7 /* MMMaterialDesignSpinner.h */,
+				32FED81823AB768700D900A7 /* MMMaterialDesignSpinner.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		32FED81C23AB768700D900A7 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				32FED81D23AB768700D900A7 /* LMPlayerManager.h */,
+				32FED81E23AB768700D900A7 /* LMPlayerManager.m */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		CB747A826453EE017B9DDDC1 /* Frameworks */ = {
@@ -1204,6 +1313,7 @@
 		FEC114342143D4A0002DB617 /* SkyModule */ = {
 			isa = PBXGroup;
 			children = (
+				32FED80223AB768700D900A7 /* LMPlayer */,
 				326D67B823A8DB9A00DDB443 /* WBImageBrowser */,
 				326434D322F04F5E00D2DA1E /* CCPPDHGuidePageHUD */,
 				FECCA54222598013009EF494 /* CCPPTZImagePickerController */,
@@ -1337,6 +1447,8 @@
 		FEC116D32143D799002DB617 /* MMBBMatch */ = {
 			isa = PBXGroup;
 			children = (
+				32FED83723ACBD1000D900A7 /* icon_play.png */,
+				32FED83523AC812200D900A7 /* live_player_bg.png */,
 				3265F1DF2305A211006E3FE1 /* SkyBallHetiRedHTMatchVideoLive.storyboard */,
 				FEDF8FBD2144350E005C7C4D /* MBRequests */,
 				FEDF8FBC21443505005C7C4D /* MBModels */,
@@ -1973,6 +2085,7 @@
 				FEDABE492171BC3A008C8AFD /* SkyBallHetiRedHTMatchQuarterCell.xib in Resources */,
 				FE6BD08421457D7E0090118A /* SkyBallHetiRedHTNewsHeaderCell.xib in Resources */,
 				FEDABE6C217336D6008C8AFD /* SkyBallHetiRedRankZone.storyboard in Resources */,
+				32FED83423AB7BB100D900A7 /* LMPlayer.xcassets in Resources */,
 				FEC1160D2143D4A1002DB617 /* SkyBallHetiRedXJEmptyView.xib in Resources */,
 				FECCA5352258C8D0009EF494 /* SkyBallHetiRedHTHistoryViewController.xib in Resources */,
 				FE6BD07A21452B570090118A /* SkyBallHetiRedHTNewsHomeBannerCell.xib in Resources */,
@@ -2025,6 +2138,7 @@
 				FECCA5242258C8D0009EF494 /* SkyBallHetiRedHTLoginAlertView.xib in Resources */,
 				FE6BD094214584DA0090118A /* SkyBallHetiRedHTNewsTopHeaderView.xib in Resources */,
 				3277C5D323A9CA2800D43D80 /* photo_share_btn@3x.png in Resources */,
+				32FED83623AC812200D900A7 /* live_player_bg.png in Resources */,
 				FE82BB422179B77200C52C51 /* SkyBallHetiRedHTDataTeamLeftCell.xib in Resources */,
 				FEDAC97F214BBD37005E8B63 /* SkyBallHetiRedHTDatePickerView.xib in Resources */,
 				326434EC22F057E000D2DA1E /* guideImageapp3.jpg in Resources */,
@@ -2050,6 +2164,7 @@
 				FEDF8FC5214441C6005C7C4D /* SkyBallHetiRedHTMatchHomeCell.xib in Resources */,
 				FE81D14D2146CA1F0047A4A2 /* logo_load.html in Resources */,
 				FE81D14B2146B3090047A4A2 /* SkyBallHetiRedHTFilmHomeCell.xib in Resources */,
+				32FED83823ACBD1100D900A7 /* icon_play.png in Resources */,
 				FE6BD08921457D920090118A /* SkyBallHetiRedHTNewsWebCell.xib in Resources */,
 				FECCA57D2259824F009EF494 /* SkyBallHetiRedDRDeleteAlertView.xib in Resources */,
 				FECCA5292258C8D0009EF494 /* SkyBallHetiRedHTCommentViewController.xib in Resources */,
@@ -2153,6 +2268,7 @@
 				FEDAC97D214BBD28005E8B63 /* SkyBallHetiRedHTDatePickerView.m in Sources */,
 				326434DB22F04F5E00D2DA1E /* SkyBallHetiRedDHGuidePageHUD.m in Sources */,
 				FEC116B72143D4A1002DB617 /* SkyBallHetiRedPPXXBJBaseTabBarController.m in Sources */,
+				32FED82223AB768700D900A7 /* LMPortraitControlView.m in Sources */,
 				FEC112682143D058002DB617 /* main.m in Sources */,
 				FECCA5322258C8D0009EF494 /* SkyBallHetiRedHTUserInfoEditViewController.m in Sources */,
 				FEDABE7321738618008C8AFD /* SkyBallHetiRedHTMatchSubDsbdViewController.m in Sources */,
@@ -2174,6 +2290,7 @@
 				FECCA57122598013009EF494 /* SkyBallHetiRedLxGridViewFlowLayout.m in Sources */,
 				FEC1160E2143D4A1002DB617 /* UIView+SkyBallHetiRedToast.m in Sources */,
 				FE82BB502179B99800C52C51 /* SkyBallHetiRedHTDataAllRankRequest.m in Sources */,
+				32FED81F23AB768700D900A7 /* LMPlayerStatusModel.m in Sources */,
 				FECCA5282258C8D0009EF494 /* SkyBallHetiRedHTCommentViewController.m in Sources */,
 				FE6BD0582144FDE10090118A /* SkyBallHetiRedHTMatchCompareViewController.m in Sources */,
 				32CD878422F4173800063A14 /* VideoPickerController.m in Sources */,
@@ -2200,6 +2317,7 @@
 				32FFD29123A2267200E1661A /* UIImageView+HT.m in Sources */,
 				FEC116B82143D4A1002DB617 /* SkyBallHetiRedPPXXBJBaseNavigationController.m in Sources */,
 				FEDF8FCE21444A3E005C7C4D /* NSDateFormatter+SkyBallHetiRedDRExtension.m in Sources */,
+				32FED82323AB768700D900A7 /* LMBrightnessView.m in Sources */,
 				FE6BD07921452B570090118A /* SkyBallHetiRedHTNewsHomeBannerCell.m in Sources */,
 				32BFD1DF239F9B1A0037985B /* HTViewController2.m in Sources */,
 				FEC117192143DEA0002DB617 /* SkyBallHetiRedHTDataHomeViewController.m in Sources */,
@@ -2214,6 +2332,7 @@
 				FECCA56222598013009EF494 /* SkyBallHetiRedTZImageCropManager.m in Sources */,
 				326D67C023A8DB9A00DDB443 /* WBImageBrowserCell.m in Sources */,
 				FE81D159214819FA0047A4A2 /* SkyBallHetiRedHTDataHomeSubViewController.m in Sources */,
+				32FED82723AB768700D900A7 /* MMMaterialDesignSpinner.m in Sources */,
 				FEC116C72143D4A1002DB617 /* NSNumber+SkyBallHetiRedZGFormatter.m in Sources */,
 				FEC116B62143D4A1002DB617 /* SkyBallHetiRedBJBaseHTTPEngine.m in Sources */,
 				FEC116782143D4A1002DB617 /* SkyBallHetiRedBJURINavHelper.m in Sources */,
@@ -2235,14 +2354,17 @@
 				FECCA57C2259824F009EF494 /* SkyBallHetiRedDRDeleteAlertView.m in Sources */,
 				FEAC9F2E2199E25F00159AE9 /* SkyBallHetiRedHTSettingViewController.m in Sources */,
 				FEC116152143D4A1002DB617 /* SkyBallHetiRedMJRefreshGenerator.m in Sources */,
+				32FED82823AB768700D900A7 /* LMPlayerControlView.m in Sources */,
 				FEC1160C2143D4A1002DB617 /* SkyBallHetiRedXJEmptyView.m in Sources */,
 				32CD877E22F4173800063A14 /* SkyThumbnailViewController.m in Sources */,
 				FE82BB4D2179B7F100C52C51 /* SkyBallHetiRedHTDataPlayerRankModel.m in Sources */,
 				FECCA5252258C8D0009EF494 /* SkyBallHetiRedHTMeCenterHeaderCell.m in Sources */,
 				32CD878122F4173800063A14 /* ContextLogFormatter.m in Sources */,
+				32FED82423AB768700D900A7 /* LMVideoPlayerView.m in Sources */,
 				FEC116832143D4A1002DB617 /* AppDelegate.m in Sources */,
 				FEC1167A2143D4A1002DB617 /* SkyBallHetiRedBJWebViewCacheHelper.m in Sources */,
 				FE800F6F22639DFD00E575D5 /* SkyBallHetiRedHTCommentExpendCell.m in Sources */,
+				32FED82623AB768700D900A7 /* LMLoadingView.m in Sources */,
 				32CD878322F4173800063A14 /* SkyInlineViewController.m in Sources */,
 				FEC116142143D4A1002DB617 /* SkyBallHetiRedBJUnPasteTextField.m in Sources */,
 				FECCA56622598013009EF494 /* NSBundle+SkyBallHetiRedTZImagePicker.m in Sources */,
@@ -2255,6 +2377,7 @@
 				FE82BB3C2179B6DF00C52C51 /* SkyBallHetiRedHTDataPlayerRightCell.m in Sources */,
 				FE81D156214816710047A4A2 /* SkyBallHetiRedHTDataHomeModel.m in Sources */,
 				FEC116CA2143D4A1002DB617 /* NSString+SkyBallHetiRedMessageDigest.m in Sources */,
+				32FED82523AB768700D900A7 /* LMCoverControlView.m in Sources */,
 				FEDABE68217336BA008C8AFD /* SkyBallHetiRedHTRankZoneViewController.m in Sources */,
 				326D67B523A8D83300DDB443 /* HTPhotoViewController.m in Sources */,
 				FECCA5302258C8D0009EF494 /* SkyBallHetiRedHTUserRequest.m in Sources */,
@@ -2264,6 +2387,7 @@
 				FEDABE5C2173284E008C8AFD /* SkyBallHetiRedHTRankModel.m in Sources */,
 				FE9B32BC217896350055B611 /* SkyBallHetiRedHTRankRightCell.m in Sources */,
 				FE8EB0D3215603C500CA20F0 /* SkyBallHetiRedHTMatchLiveFeedRequest.m in Sources */,
+				32FED83023AB775600D900A7 /* UIColor+Hex.m in Sources */,
 				FECCA56D22598013009EF494 /* SkyBallHetiRedTZPhotoPreviewCell.m in Sources */,
 				FEC116112143D4A1002DB617 /* UIScrollView+SkyBallHetiRedAllowScreenEdgePanGestureRecognizer.m in Sources */,
 				FE7E6C9A2263CADB00B2973D /* SkyBallHetiRedHTMyMessaageCell.m in Sources */,
@@ -2277,11 +2401,14 @@
 				FEC117312143EAC2002DB617 /* SkyBallHetiRedBJBaseResponceModel.m in Sources */,
 				FEC1167B2143D4A1002DB617 /* SkyBallHetiRedBJWebViewInitializer.m in Sources */,
 				FEC116122143D4A1002DB617 /* SkyBallHetiRedLJTabBar.m in Sources */,
+				32FED82123AB768700D900A7 /* LMLandScapeControlView.m in Sources */,
 				FE6BD05B2144FDFD0090118A /* SkyBallHetiRedHTMatchWordLiveViewController.m in Sources */,
 				32CD877D22F4173800063A14 /* AppFunVideoDelegate.m in Sources */,
 				FEC116132143D4A1002DB617 /* SkyBallHetiRedLJViewPager.m in Sources */,
+				32FED82923AB768700D900A7 /* LMVideoPlayer.m in Sources */,
 				326D67BF23A8DB9A00DDB443 /* WBImageBrowserView.m in Sources */,
 				FEDABE482171BC3A008C8AFD /* SkyBallHetiRedHTMatchQuarterCell.m in Sources */,
+				32FED82A23AB768700D900A7 /* LMPlayerManager.m in Sources */,
 				FE706F02214FF3430078DF30 /* SkyBallHetiRedHTDataMoreViewController.m in Sources */,
 				FEA5D3FE225CD506001AF0C9 /* SkyBallHetiRedHTCommentModel.m in Sources */,
 				FE82BB412179B77200C52C51 /* SkyBallHetiRedHTDataTeamLeftCell.m in Sources */,
@@ -2309,6 +2436,7 @@
 				326434DA22F04F5E00D2DA1E /* SkyBallHetiRedDHGifImageOperation.m in Sources */,
 				FEC116C52143D4A1002DB617 /* UIView+SkyBallHetiRedBlockGesture.m in Sources */,
 				FE82A483216E42680070FFC0 /* SkyBallHetiRedHTMatchLiveFeedCell.m in Sources */,
+				32FED82023AB768700D900A7 /* LMPlayerModel.m in Sources */,
 				FEC116F22143D91D002DB617 /* SkyBallHetiRedHTMatchHomeViewController.m in Sources */,
 				FECCA56522598013009EF494 /* SkyBallHetiRedTZAssetModel.m in Sources */,
 				FECCA53E2258C972009EF494 /* UINavigationBar+SkyBallHetiRedDRExtension.m in Sources */,
@@ -2466,7 +2594,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 98DGMGPLHN;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SkyBetufi/SourceCode/SkySrc/SkyModule/LMPlayer",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SourceCode/SkySrc/SkyBallPlay.pch";
 				INFOPLIST_FILE = SkyBetufi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -2492,7 +2623,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 98DGMGPLHN;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SkyBetufi/SourceCode/SkySrc/SkyModule/LMPlayer",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SourceCode/SkySrc/SkyBallPlay.pch";
 				INFOPLIST_FILE = SkyBetufi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

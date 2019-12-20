@@ -2,7 +2,7 @@
 @implementation SkyBallHetiRedHTMatchHomeRequest
 + (void)waterSkyrequestWithStartDate:(NSString *)startDate
                      endDate:(NSString *)endDate
-                successBlock:(void(^)(NSArray<SkyBallHetiRedHTMatchHomeGroupModel *> *matchList))successBlock
+                successBlock:(void(^)(NSArray<SkyBallHetiRedHTMatchHomeGroupModel *> *matchList, NSArray<SkyBallHetiRedHTMatchHomeModel *> *matchA))successBlock
                   errorBlock:(BJServiceErrorBlock)errorBlock {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"date_from"] = startDate;
@@ -24,7 +24,7 @@
             [matchList addObject:matchModel];
         }
         if (successBlock) {
-            successBlock(groupedMatchList);
+            successBlock(groupedMatchList, allMatchList);
         }
     } errorBlock:errorBlock];
 }

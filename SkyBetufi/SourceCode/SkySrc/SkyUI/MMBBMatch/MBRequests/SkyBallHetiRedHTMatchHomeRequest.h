@@ -4,7 +4,7 @@
 @interface SkyBallHetiRedHTMatchHomeRequest : NSObject
 + (void)waterSkyrequestWithStartDate:(NSString *)startDate
                      endDate:(NSString *)endDate
-                successBlock:(void(^)(NSArray<SkyBallHetiRedHTMatchHomeGroupModel *> *matchList))successBlock
+                successBlock:(void(^)(NSArray<SkyBallHetiRedHTMatchHomeGroupModel *> *matchList, NSArray<SkyBallHetiRedHTMatchHomeModel *> *matchA))successBlock
                   errorBlock:(BJServiceErrorBlock)errorBlock;
 + (void)waterSkyrequestMatchProgressWithGameId:(NSString *)game_id
                           successBlock:(void(^)(NSString *game_id, NSString *quarter, NSString *time))successBlock

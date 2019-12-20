@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSArray *matchList;
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) NSDate *endDate;
-@property (nonatomic, strong) NSTimer *timer;
+//@property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, assign) BOOL requesting;
 @property (nonatomic, strong) NSMutableDictionary *inProgressMatchs;
 @property (nonatomic, strong) NSCalendar *calendar;
@@ -138,22 +138,22 @@
     [self loadData];
 }
 - (void)startTimer {
-    if ([self notContainToday]) {
-        [self stopTimer];
-        return;
-    }
-    if (self.timer) {
-        return;
-    }
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:10.0
-                                                  target:self
-                                                selector:@selector(loadData)
-                                                userInfo:nil
-                                                 repeats:YES];
+//    if ([self notContainToday]) {
+//        [self stopTimer];
+//        return;
+//    }
+//    if (self.timer) {
+//        return;
+//    }
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:10.0
+//                                                  target:self
+//                                                selector:@selector(loadData)
+//                                                userInfo:nil
+//                                                 repeats:YES];
 }
 - (void)stopTimer {
-    [self.timer invalidate];
-    self.timer = nil;
+//    [self.timer invalidate];
+//    self.timer = nil;
 }
 - (BOOL)notContainToday {
     NSInteger days = [self numbersOfDayFromDate:self.startDate toDate:[NSDate date]] >= 7;
@@ -189,7 +189,7 @@
     self.requesting = YES;
     [SkyBallHetiRedHTMatchHomeRequest waterSkyrequestWithStartDate:[self ymdWithDate:self.startDate]
                                      endDate:[self ymdWithDate:self.endDate]
-                                successBlock:^(NSArray<SkyBallHetiRedHTMatchHomeGroupModel *> *matchList) {
+                                successBlock:^(NSArray<SkyBallHetiRedHTMatchHomeGroupModel *> *matchList,NSArray<SkyBallHetiRedHTMatchHomeModel *> *matchA) {
                                     self.matchList = matchList;
                                     [self.tableView hideEmptyView];
                                     if (matchList.count == 0) {
