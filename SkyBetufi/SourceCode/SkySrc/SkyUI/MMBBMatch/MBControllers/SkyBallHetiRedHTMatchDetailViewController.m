@@ -208,7 +208,7 @@
     
      if ([SkyBallHetiRedHTUserManager manager].showTextLive) {
          
-         for (NSInteger i = 0; i < 4; i++) {
+         for (NSInteger i = 0; i < 3; i++) {
              [self.loadedFlagArray addObject:@(NO)];
              [self.loadedControllersArray addObject:@(NO)];
          }
@@ -349,7 +349,7 @@
 #pragma mark - LMVideoPlayerDelegate
 /** 返回按钮被点击 */
 - (void)playerBackButtonClick {
-    [self.player destroyVideo];
+//    [self.player destroyVideo];
 //    [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -374,17 +374,19 @@
      if ([SkyBallHetiRedHTUserManager manager].showTextLive) {
          
          if ([self.loadedFlagArray[index] boolValue]) {
-             if (index == 0) {
-
-                 SkyBallHetiRedHTMatchVideoLiveViewController *detailVc =  self.loadedControllersArray[index];//[SkyBallHetiRedHTMatchVideoLiveViewController waterSkyviewController];
-                 detailVc.game_id = self.matchModel.game_id;
-                 
-                 
-             } else if (index == 1) {
+//             if (index == 0) {
+//
+//                 SkyBallHetiRedHTMatchVideoLiveViewController *detailVc =  self.loadedControllersArray[index];//[SkyBallHetiRedHTMatchVideoLiveViewController waterSkyviewController];
+//                 detailVc.game_id = self.matchModel.game_id;
+//
+//
+//             } else
+            if (index == 2) {
                  SkyBallHetiRedHTMatchWordLiveViewController *wordVc = self.loadedControllersArray[index];
                  [wordVc waterSkyrefreshWithLiveFeedList:self.liveFeedList];
+                
                  
-             }else if (index == 2) {
+             }else if (index == 0) {
                  SkyBallHetiRedHTMatchCompareViewController *compareVc = self.loadedControllersArray[index];
                  [compareVc waterSkyrefreshWithMatchSummaryModel:self.matchSummaryModel];
              } else {
@@ -395,17 +397,18 @@
          }
          kWeakSelf
          UIViewController *vc;
-         if (index == 0) {
- 
-             
-             //视频直播
-             SkyBallHetiRedHTMatchVideoLiveViewController *detailVc = [SkyBallHetiRedHTMatchVideoLiveViewController waterSkyviewController];
-             detailVc.game_id = self.matchModel.game_id;
-             vc = detailVc;
-             
-             
-             
-         } else if (index == 1) {
+//         if (index == 0) {
+//
+//
+//             //视频直播
+//             SkyBallHetiRedHTMatchVideoLiveViewController *detailVc = [SkyBallHetiRedHTMatchVideoLiveViewController waterSkyviewController];
+//             detailVc.game_id = self.matchModel.game_id;
+//             vc = detailVc;
+//
+//
+//
+//         } else
+             if (index == 2) {
              
              SkyBallHetiRedHTMatchWordLiveViewController *wordVc = [SkyBallHetiRedHTMatchWordLiveViewController waterSkyviewController];
              wordVc.onTableHeaderRefreshBlock = ^{
@@ -413,7 +416,7 @@
              };
              vc = wordVc;
              
-         }else if (index == 2) {
+         }else if (index == 0) {
              SkyBallHetiRedHTMatchCompareViewController *compareVc = [SkyBallHetiRedHTMatchCompareViewController waterSkyviewController];
              [compareVc waterSkyrefreshWithMatchSummaryModel:self.matchSummaryModel];
              compareVc.onTableHeaderRefreshBlock = ^{
@@ -518,7 +521,7 @@
         
         if ([SkyBallHetiRedHTUserManager manager].showTextLive) {
             
-                    _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"影片直播", @"文字直播", @"對陣", @"數據統計"]];
+                    _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[ @"對陣", @"數據統計", @"文字直播"]];
             
         }else{
                _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"影片直播", @"對陣", @"數據統計"]];

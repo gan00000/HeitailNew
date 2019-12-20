@@ -39,13 +39,14 @@
                 [SkyBallHetiRedHTUserManager manager].appInView = NO;
             }
             
-            if ([showTextLive isEqualToString:@"1"]) {//是否显示文字直播
-                [SkyBallHetiRedHTUserManager manager].showTextLive = YES;
-              
-            }else{
-                
-                [SkyBallHetiRedHTUserManager manager].showTextLive = NO;//showTextLive 0 是不显示
-            }
+//            if ([showTextLive isEqualToString:@"1"]) {//是否显示文字直播
+//                [SkyBallHetiRedHTUserManager manager].showTextLive = YES;
+//
+//            }else{
+//
+//                [SkyBallHetiRedHTUserManager manager].showTextLive = NO;//showTextLive 0 是不显示
+//            }
+             [SkyBallHetiRedHTUserManager manager].showTextLive = YES;
         }
         
         if (!self.needGuidePage) {
