@@ -42,11 +42,11 @@
 #pragma mark - 
 - (NSArray<NSString *> *)waterSkytabBarTitles {
     BJLog(@"SkyBallHetiRedPPXXBJMainViewController waterSkytabBarTitles");
-    if ([SkyBallHetiRedHTUserManager manager].appInView) {
-        return @[@"新聞",@"比賽",  @"排行", @"數據", @"我的"];
-    }
+//    if ([SkyBallHetiRedHTUserManager manager].appInView) {
+//        return @[@"新聞",@"比賽",  @"排行", @"數據", @"我的"];
+//    }
 //    return @[@"比賽", @"新聞", @"影片", @"數據", @"排行"];
-     return @[@"比賽", @"新聞", @"影片", @"直播"];
+     return @[@"直播", @"新聞", @"影片", @"數據"];
 }
 - (NSArray<UIImage *> *)waterSkytabBarIcons {
      if ([SkyBallHetiRedHTUserManager manager].appInView) {

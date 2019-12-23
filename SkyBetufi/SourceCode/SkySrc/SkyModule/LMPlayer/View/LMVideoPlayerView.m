@@ -39,6 +39,9 @@ typedef NS_ENUM(NSInteger, PanDirection){
 @property (nonatomic, strong) UITapGestureRecognizer *doubleTap;
 /** 滑动 */
 @property (nonatomic, strong) UIPanGestureRecognizer *panRecognizer;
+
+
+
 @end
 
 @implementation LMVideoPlayerView

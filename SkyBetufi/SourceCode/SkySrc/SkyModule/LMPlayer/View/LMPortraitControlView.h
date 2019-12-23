@@ -24,10 +24,18 @@
 - (void)portraitFullScreenButtonClick;
 /** 进度条tap点击 */
 - (void)portraitProgressSliderTapAction:(CGFloat)value;
+
+- (void)portraitLineClick:(NSInteger) line;
+
+- (NSArray *)getVideos;
+
+
 @end
 
 @interface LMPortraitControlView : UIView
 @property (nonatomic, weak) id<LMPortraitControlViewDelegate> delegate;
+
+@property (nonatomic, strong) NSArray *lineArray;
 /** 重置ControlView */
 - (void)playerResetControlView;
 - (void)playEndHideView:(BOOL)playeEnd;
@@ -49,4 +57,6 @@
 
 /** 更新视频时长 */
 - (void)syncDurationTime:(NSInteger)time;
+
+- (void)setLineTips:(NSString *)tips;
 @end

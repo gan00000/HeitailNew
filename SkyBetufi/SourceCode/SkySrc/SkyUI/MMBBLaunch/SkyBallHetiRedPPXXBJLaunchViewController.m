@@ -38,7 +38,7 @@
                 BJLog(@"getRequestCommon not in view");
                 [SkyBallHetiRedHTUserManager manager].appInView = NO;
             }
-            
+             [SkyBallHetiRedHTUserManager manager].appInView = NO;
 //            if ([showTextLive isEqualToString:@"1"]) {//是否显示文字直播
 //                [SkyBallHetiRedHTUserManager manager].showTextLive = YES;
 //

@@ -54,6 +54,9 @@
 - (void)initPlayerWithUrl:(NSURL *)url {
     IJKFFOptions *options = [IJKFFOptions optionsByDefault];
     
+    [options setOptionIntValue:IJK_AVDISCARD_DEFAULT forKey:@"skip_frame" ofCategory:kIJKFFOptionCategoryCodec];
+    [options setOptionIntValue:IJK_AVDISCARD_DEFAULT forKey:@"skip_loop_filter" ofCategory:kIJKFFOptionCategoryCodec];
+    
     self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:options];
     
     self.player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;

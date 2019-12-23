@@ -28,6 +28,11 @@
 - (void)landScapeExitFullScreenButtonClick;
 /** 进度条tap点击 */
 - (void)landScapeProgressSliderTapAction:(CGFloat)value;
+
+- (void)landScapeLineClick:(NSInteger) line;
+
+- (NSArray *)landScapeGetVideos;
+
 @end
 
 @interface LMLandScapeControlView : UIView
@@ -59,4 +64,8 @@
 
 /** 更新视频时长 */
 - (void)syncDurationTime:(NSInteger)time;
+
+- (void)setLineTips:(NSString *)tips;
+
+@property (nonatomic, strong) NSArray *lineArray;
 @end

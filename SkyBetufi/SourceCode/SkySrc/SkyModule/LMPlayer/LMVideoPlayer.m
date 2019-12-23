@@ -31,6 +31,8 @@
 /** 是否被用户暂停 */
 @property (nonatomic, assign) BOOL isPauseByUser;
 
+@property (nonatomic, copy) NSString *currentPayUrl;
+
 @end
 
 @implementation LMVideoPlayer
@@ -55,6 +57,11 @@
     LMVideoPlayer *instance = [[LMVideoPlayer alloc] init];
     instance.delegate = delegate;
     
+    // 设置基本模型 (最后设置)
+    instance.playerModel = playerModel;
+    instance.currentPayUrl = playerModel.videoUrls[0];
+    
+    
     // 创建状态模型
     instance.playerStatusModel = [[LMPlayerStatusModel alloc] init];
     [instance.playerStatusModel playerResetStatusModel];
@@ -76,8 +83,8 @@
     instance.playerMgr = [LMPlayerManager playerManagerWithDelegate:instance playerStatusModel:instance.playerStatusModel];
     instance.isPauseByUser = YES;
     
-    // 设置基本模型 (最后设置)
-    instance.playerModel = playerModel;
+
+//    instance.videoPlayerView.playerControlView.portraitControlView.lineArray = playerModel.videoUrls;
     
     return instance;
 }
@@ -97,15 +104,15 @@
     return self;
 }
 
-- (void)setPlayerModel:(LMPlayerModel *)playerModel {
-    _playerModel = playerModel;
-    
-    // 同步一些属性
-    [self.videoPlayerView.coverControlView syncCoverImageViewWithURLString:playerModel.placeholderImageURLString placeholderImage:playerModel.placeholderImage];
-    self.playerMgr.seekTime = self.playerModel.seekTime;
-    self.videoPlayerView.playerControlView.viewTime = self.playerModel.viewTime;
-    [self.videoPlayerView.playerControlView.landScapeControlView syncTitle:self.playerModel.title];
-}
+//- (void)setPlayerModel:(LMPlayerModel *)playerModel {
+//    _playerModel = playerModel;
+//
+//    // 同步一些属性
+//    [self.videoPlayerView.coverControlView syncCoverImageViewWithURLString:playerModel.placeholderImageURLString placeholderImage:playerModel.placeholderImage];
+//    self.playerMgr.seekTime = self.playerModel.seekTime;
+//    self.videoPlayerView.playerControlView.viewTime = self.playerModel.viewTime;
+//    [self.videoPlayerView.playerControlView.landScapeControlView syncTitle:self.playerModel.title];
+//}
 
 /** 自动播放，默认不自动播放 */
 - (void)autoPlayTheVideo {
@@ -123,7 +130,7 @@
     }
     
     [self.videoPlayerView.playerControlView loading];
-    [self.playerMgr initPlayerWithUrl:self.playerModel.videoURL];
+    [self.playerMgr initPlayerWithUrl:[[NSURL alloc] initWithString:self.currentPayUrl]];
     [self.videoPlayerView setPlayerLayerView:self.playerMgr.playerLayerView];
     
     self.isPauseByUser = NO;
@@ -151,7 +158,7 @@
  */
 - (void)resetToPlayNewVideo:(LMPlayerModel *)playerModel {
     [self resetPlayer];
-    self.playerModel = playerModel;
+//    self.playerModel = playerModel;
     [self configLMPlayer];
 }
 
@@ -316,7 +323,7 @@
 //    }
     
     LMPlayerModel *newModel = [[LMPlayerModel alloc] init];
-    newModel.videoURL = self.playerModel.videoURL;
+//    newModel.videoURL = self.playerModel.videoURL;
     [self resetToPlayNewVideo:newModel];
 }
 
@@ -361,6 +368,24 @@
     }];
 }
 
+- (void)portraitLineClick:(NSInteger) line{
+    
+    [self.videoPlayerView.playerControlView.landScapeControlView setLineTips:[NSString stringWithFormat:@"直播%ld",line + 1]];
+    
+    [self.videoPlayerView.playerControlView.portraitControlView setLineTips:[NSString stringWithFormat:@"直播%ld",line + 1]];
+    
+    self.currentPayUrl = self.playerModel.videoUrls[line];
+        LMPlayerModel *newModel = [[LMPlayerModel alloc] init];
+    //    newModel.videoURL = self.playerModel.videoURL;
+        [self resetToPlayNewVideo:newModel];
+    
+}
+
+
+- (NSArray *)getVideos{
+    return self.playerModel.videoUrls;
+}
+
 #pragma mark - LMLandScapeControlViewDelegate
 /** 返回按钮被点击 */
 - (void)landScapeBackButtonClick {
@@ -386,7 +411,8 @@
 //        }
 //    }
     LMPlayerModel *newModel = [[LMPlayerModel alloc] init];
-    newModel.videoURL = self.playerModel.videoURL;
+//    newModel.videoURL = self.playerModel.videoURL;
+
     [self resetToPlayNewVideo:newModel];
 
 }
@@ -396,7 +422,7 @@
     [self.videoPlayerView.playerControlView autoFadeOutControlView];
     
     LMPlayerModel *newModel = [[LMPlayerModel alloc] init];
-    newModel.videoURL = self.playerModel.videoURL;
+//    newModel.videoURL = self.playerModel.videoURL;
     [self resetToPlayNewVideo:newModel];
 
 }
@@ -457,6 +483,14 @@
         // 延迟隐藏控制层
         [self.videoPlayerView.playerControlView autoFadeOutControlView];
     }];
+}
+
+- (NSArray *)landScapeGetVideos{
+    return [self getVideos];
+}
+
+- (void)landScapeLineClick:(NSInteger)line{
+    [self portraitLineClick:line];
 }
 
 #pragma mark - LMVideoPlayerViewDelagate

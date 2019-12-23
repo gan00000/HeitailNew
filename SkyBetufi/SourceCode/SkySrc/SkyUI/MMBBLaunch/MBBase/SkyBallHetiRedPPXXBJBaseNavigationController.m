@@ -48,6 +48,12 @@
         viewController.navigationItem.hidesBackButton = YES;
     }
 }
+
+
+- (UIViewController *)popViewControllerAnimated:(BOOL)animated{
+    return [super popViewControllerAnimated:animated];
+}
+
 #pragma mark -
 - (NSArray<Class> *)waterSkyviewControllersNotHideTabBar {
     return nil;
@@ -55,14 +61,19 @@
 #pragma mark - Back Action
 - (void)backAction:(UIButton *)button {
     UIViewController *viewController = self.topViewController;
-    if ([viewController respondsToSelector:@selector(waterSky_shouldHandlePopActionMySelfwaterSky_shouldHandlePopActionMySelf)]) {
+    if ([viewController respondsToSelector:@selector(waterSky_shouldHandlePopActionMySelf)]) {
         if ([(id<BJNavigationDelegate>)viewController waterSky_shouldHandlePopActionMySelf]) {
-            if ([viewController respondsToSelector:@selector(waterSky_handlePopActionMySelfwaterSky_handlePopActionMySelf)]) {
+            if ([viewController respondsToSelector:@selector(waterSky_handlePopActionMySelf)]) {
                 [(id<BJNavigationDelegate>)viewController waterSky_handlePopActionMySelf];
             }
-            return; 
+            return;
         }
     }
+    
+    if ([viewController respondsToSelector:@selector(waterSky_handleNavBack)]) {
+        [(id<BJNavigationDelegate>)viewController waterSky_handleNavBack];
+    }
+    
     if (self.viewControllers.count == 1) {
         [self dismissViewControllerAnimated:YES completion:nil];
         return;
@@ -75,7 +86,7 @@
         return NO;
     }
     UIViewController *viewController = self.topViewController;
-    if ([viewController respondsToSelector:@selector(waterSky_shouldForbidSlideBackActionwaterSky_shouldForbidSlideBackActionwaterSky_shouldForbidSlideBackAction)]) {
+    if ([viewController respondsToSelector:@selector(waterSky_shouldForbidSlideBackAction)]) {
         BJLog(@"can slide back: %d", ![(id<BJNavigationDelegate>)viewController waterSky_shouldForbidSlideBackAction]);
         return ![(id<BJNavigationDelegate>)viewController waterSky_shouldForbidSlideBackAction];
     } else {

@@ -31,6 +31,14 @@
 @property (nonatomic, strong) UIButton *fullScreenBtn;
 
 @property (nonatomic, assign) double durationTime;
+
+//线路显示
+@property (nonatomic, strong) UILabel *lineTipsLabel;
+
+@property (nonatomic, strong) UIView *lineSelectView;
+
+@property (nonatomic) BOOL isAddSelectItem;
+
 @end
 
 @implementation LMPortraitControlView
@@ -40,7 +48,13 @@
         // 添加子控件
         [self addSubview:self.backBtn];
         [self addSubview:self.shareBtn];
+        [self addSubview:self.lineTipsLabel];
+        
+        [self addSubview:self.lineSelectView];
+        self.lineSelectView.hidden = YES;
+        
         [self addSubview:self.bottomToolView];
+        
         [self.bottomToolView addSubview:self.playOrPauseBtn];
         [self.bottomToolView addSubview:self.currentTimeLabel];
         [self.bottomToolView addSubview:self.progressView];
@@ -55,13 +69,18 @@
         [self makeSubViewsConstraints];
         
         [self makeProgressAndTimeViewsHidden];
+        
+        self.backBtn.hidden = YES;
+        
+        self.shareBtn.hidden = YES;
+        self.isAddSelectItem = NO;
     }
     return self;
 }
 
 - (void)makeProgressAndTimeViewsHidden {
     
-    self.shareBtn.hidden = YES;
+//    self.shareBtn.hidden = YES;
     self.currentTimeLabel.hidden = YES;
     self.progressView.hidden = YES;
     self.totalTimeLabel.hidden = YES;
@@ -71,7 +90,7 @@
 
 - (void)makeProgressAndTimeViewsNOHidden {
     
-    self.shareBtn.hidden = NO;
+//    self.shareBtn.hidden = NO;
     self.currentTimeLabel.hidden = NO;
     self.progressView.hidden = NO;
     self.totalTimeLabel.hidden = NO;
@@ -94,6 +113,8 @@
     [self.videoSlider addTarget:self action:@selector(progressSliderValueChangedAction:) forControlEvents:UIControlEventValueChanged];
     // slider结束滑动事件
     [self.videoSlider addTarget:self action:@selector(progressSliderTouchEndedAction:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchCancel | UIControlEventTouchUpOutside];
+    
+//    [self.lineTipsLabel addTarget:self action:@selector(showLineSelectView) forControlEvents:UIControlEventTouchUpInside];
 }
 
 #pragma mark - action
@@ -104,9 +125,61 @@
     }
 }
 
+- (void)showLineSelectView {
+//    if ([self.delegate respondsToSelector:@selector(portraitBackButtonClick)]) {
+//        [self.delegate portraitBackButtonClick];
+//    }
+    
+    if ([self.delegate respondsToSelector:@selector(getVideos)]) {
+              self.lineArray = [self.delegate getVideos];
+          }
+
+       if (self.lineArray) {
+           
+           if (!self.isAddSelectItem) {
+               
+               int mTop = 10;
+              for (int i = 0; i < self.lineArray.count; i++) {
+                  UIButton *lineBtn = [[UIButton alloc] init];
+                  [lineBtn setTitle:[NSString stringWithFormat:@"直播%d", i+1] forState:UIControlStateNormal];
+                  
+                  [self.lineSelectView addSubview:lineBtn];
+                  
+                  int mmmmTop = mTop + (i * 20 ) + (i * 10);
+                  
+                  [lineBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+                           
+                            make.top.equalTo(self.lineSelectView).mas_offset(mmmmTop);
+                            make.height.mas_equalTo(20);
+                            make.width.mas_equalTo(60);
+                           make.centerX.mas_equalTo(self.lineSelectView);
+                        }];
+                  lineBtn.tag = i;
+                  [lineBtn addTarget:self action:@selector(lineBtnClickAction:) forControlEvents:UIControlEventTouchUpInside];
+              }
+               
+           }
+       
+           self.isAddSelectItem = YES;
+          
+       }
+    
+    self.lineSelectView.hidden = NO;
+    self.lineTipsLabel.hidden = YES;
+}
+
 - (void)shareBtnClickAction:(UIButton *)sender {
     if ([self.delegate respondsToSelector:@selector(portraitShareButtonClick)]) {
         [self.delegate portraitShareButtonClick];
+    }
+}
+
+- (void)lineBtnClickAction:(UIButton *)sender {
+    self.lineSelectView.hidden = YES;
+    self.lineTipsLabel.hidden = NO;
+    self.lineTipsLabel.text = [NSString stringWithFormat:@"直播%ld", sender.tag + 1];
+    if ([self.delegate respondsToSelector:@selector(portraitLineClick:)]) {
+        [self.delegate portraitLineClick:sender.tag];
     }
 }
 
@@ -216,6 +289,21 @@
         make.height.mas_equalTo(30);
     }];
     
+    [self.lineTipsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.trailing.equalTo(self.mas_trailing);
+        make.centerY.equalTo(self);
+        make.width.mas_equalTo(60);
+        make.height.mas_equalTo(20);
+    }];
+    
+    [self.lineSelectView mas_makeConstraints:^(MASConstraintMaker *make) {
+          
+           make.trailing.equalTo(self.mas_trailing);
+           make.height.equalTo(self);
+           make.width.mas_equalTo(80);
+       }];
+    
 }
 
 #pragma mark - Public method
@@ -292,6 +380,10 @@
     return timeString;
 }
 
+- (void)setLineTips:(NSString *)tips{
+    self.lineTipsLabel.text = tips;
+}
+
 #pragma mark - getter
 - (UIButton *)backBtn {
     if (!_backBtn) {
@@ -299,6 +391,25 @@
         [_backBtn setImage:[UIImage imageNamed:@"btn_播放页_返回"] forState:UIControlStateNormal];
     }
     return _backBtn;
+}
+
+- (UILabel *)lineTipsLabel {
+    
+    if (!_lineTipsLabel) {
+        _lineTipsLabel = [[UILabel alloc] init];
+        _lineTipsLabel.textColor = [UIColor colorWithHexString:@"ffffff"];
+        _lineTipsLabel.font = [UIFont systemFontOfSize:14.0f];
+        _lineTipsLabel.textAlignment = NSTextAlignmentCenter;
+        _lineTipsLabel.text = @"直播1";
+        _lineTipsLabel.numberOfLines = 1;
+        
+        _lineTipsLabel.userInteractionEnabled=YES;
+        UITapGestureRecognizer *labelTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showLineSelectView)];
+          
+        [_lineTipsLabel addGestureRecognizer:labelTapGestureRecognizer];
+    }
+    
+    return _lineTipsLabel;
 }
 
 - (UIButton *)shareBtn {
@@ -315,6 +426,14 @@
         _bottomToolView.backgroundColor = [UIColor colorWithHexString:@"000000" alpha:0.3];
     }
     return _bottomToolView;
+}
+
+- (UIView *)lineSelectView {
+    if (!_lineSelectView) {
+        _lineSelectView = [[UIView alloc] init];
+        _lineSelectView.backgroundColor = [UIColor colorWithHexString:@"000000" alpha:0.3];
+    }
+    return _lineSelectView;
 }
 
 - (UIButton *)playOrPauseBtn {

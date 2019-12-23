@@ -1,4 +1,5 @@
 #import "SkyBallHetiRedHTMatchSummaryRequest.h"
+#import "HTMacthLivePostModel.h"
 @implementation SkyBallHetiRedHTMatchSummaryRequest
 + (void)waterSkyrequestSummaryWithGameId:(NSString *)game_id
                     successBlock:(void(^)(SkyBallHetiRedHTMatchSummaryModel *summaryModel, SkyBallHetiRedHTMatchCompareModel *compareModel))successBlock
@@ -125,4 +126,18 @@
         }
     } errorBlock:errorBlock];
 }
+
++ (void)requestLivePostWithGameId:(NSString *)game_id
+                successBlock:(void(^)(HTMacthLivePostModel * livePost))successBlock
+                  errorBlock:(BJServiceErrorBlock)errorBlock {
+    [SkyBallHetiRedBJHTTPServiceEngine waterSky_getRequestWithFunctionPath:API_MATCH_LIVE_POST params:@{@"game_id":game_id} successBlock:^(id responseData) {
+        
+        HTMacthLivePostModel *livePost = [HTMacthLivePostModel yy_modelWithJSON:[responseData[@"result"] firstObject]];
+        if (successBlock) {
+            successBlock(livePost);
+        }
+        
+    } errorBlock:errorBlock];
+    
+ }
 @end

@@ -32,6 +32,9 @@
 @property (nonatomic, strong) NSArray<SkyBallHetiRedHTMatchLiveFeedModel *> *liveFeedList;
 @property (nonatomic, strong) SkyBallHetiRedHTMatchSummaryModel *matchSummaryModel;
 @property (nonatomic, strong) SkyBallHetiRedHTMatchCompareModel *matchCompareModel;
+
+@property (nonatomic, strong) HTMacthLivePostModel *livePost;
+
 @property (nonatomic, assign) BOOL feedLoaded;
 @property (nonatomic, assign) BOOL summaryLoaded;
 @property (nonatomic, strong) SkyBallHetiRedBJError *error;
@@ -99,7 +102,7 @@
 
 - (void)dealloc {
     NSLog(@"%@ dealloc", NSStringFromClass(self.class));
-     [self.player destroyVideo];
+    [self destoryPlayer];
 }
 
 -(void)remakePlayerFatherViewPositionInPortrait{
@@ -139,6 +142,17 @@
 
 
 #pragma mark - private
+- (void)setUpPlayerView:(LMPlayerModel *) model {
+            
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(startPlay)];
+    self.topDetailView.userInteractionEnabled = YES;
+    [self.topDetailView addGestureRecognizer:tapGes];
+    
+
+    LMVideoPlayer *player = [LMVideoPlayer videoPlayerWithView:self.playerContentView delegate:self playerModel:model];
+    self.player = player;
+}
+
 - (void)setupUI {
     self.title = [NSString stringWithFormat:@"%@ VS %@", self.matchModel.awayName, self.matchModel.homeName];
     [self.contentView addSubview:self.segmentControl];
@@ -167,25 +181,12 @@
 //============================
 
 //    self.topDetailView.hidden = YES;
-     self.startPlayImageView.hidden = YES;
+    self.startPlayImageView.hidden = YES;
     self.startTimeLable.hidden = YES;
     [self.view addSubview:self.playerContentView];
     [self remakePlayerFatherViewPositionInPortrait];
-    
-    LMPlayerModel *model = [[LMPlayerModel alloc] init];
-    model.videoURL = [NSURL URLWithString:@"http://9890.vod.myqcloud.com/9890_4e292f9a3dd011e6b4078980237cc3d3.f30.mp4"];
-    model.seekTime = 20;
-    model.viewTime = 200;
-     
-    LMVideoPlayer *player = [LMVideoPlayer videoPlayerWithView:self.playerContentView delegate:self playerModel:model];
-    self.player = player;
     self.playerContentView.hidden = YES;
     
-//    [self.shareBtn addTarget:self action:@selector(shareBtnClickAction:) forControlEvents:UIControlEventTouchUpInside];
-    
-    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(startPlay)];
-    self.topDetailView.userInteractionEnabled = YES;
-    [self.topDetailView addGestureRecognizer:tapGes];
 }
 
 - (void)startPlay {
@@ -195,6 +196,14 @@
         self.topDetailView.hidden = YES;
     }
 }
+
+-(void)destoryPlayer{
+    if (self.player) {
+        [self.player destroyVideo];
+    }
+ 
+}
+
 - (UIView *)playerContentView {
     if (!_playerContentView) {
         _playerContentView = [[UIView alloc] init];
@@ -220,8 +229,35 @@
          }
      }
     
-
+    if ([self.matchModel.scheduleStatus isEqualToString:@"InProgress"]) {
+        
+        self.startPlayImageView.hidden = NO;
+        [SkyBallHetiRedHTMatchSummaryRequest requestLivePostWithGameId:self.matchModel.game_id successBlock:^(HTMacthLivePostModel *livePost) {
+            if (livePost) {
+                
+                self.livePost = livePost;
+                LMPlayerModel *model = [[LMPlayerModel alloc] init];
+                //    model.videoURL = [NSURL URLWithString:@"http://9890.vod.myqcloud.com/9890_4e292f9a3dd011e6b4078980237cc3d3.f30.mp4"];
+                //    model.seekTime = 20;
+                //    model.viewTime = 200;
+                //
+                model.videoUrls = self.livePost.live_url;
+                [self setUpPlayerView:model];
+            }
+            
+        } errorBlock:^(SkyBallHetiRedBJError *error) {
+            
+         
+        }];
+    }
     
+    LMPlayerModel *model = [[LMPlayerModel alloc] init];
+    model.videoUrls = @[@"http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8", @"http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8"
+    ,@"http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"];
+//    model.videoURL = [NSURL URLWithString:@"http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"];
+  //    model.seekTime = 20;
+  //    model.viewTime = 200; 
+  [self setUpPlayerView:model];
     
     self.feedLoaded = YES;
     self.summaryLoaded = YES;
@@ -302,7 +338,7 @@
         self.statusLabel.text = @"已結束";
         [self stopTimer];
     } else if ([self.matchSummaryModel.scheduleStatus isEqualToString:@"InProgress"]) {
-         self.startPlayImageView.hidden = NO;
+        self.startPlayImageView.hidden = NO;
         self.statusLabel.text = [NSString stringWithFormat:@"第%@節\n%@", self.matchSummaryModel.quarter, self.matchSummaryModel.time];
         if ([self.matchSummaryModel.quarter isEqualToString:@"OT"]) {
             self.statusLabel.text = self.matchSummaryModel.quarter;
@@ -337,6 +373,23 @@
     [self.timer invalidate];
     self.timer = nil;
 }
+
+//- (void)waterSky_handlePopActionMySelf{
+//    NSLog(@"waterSky_handlePopActionMySelf");
+//}
+//
+//- (BOOL)waterSky_shouldHandlePopActionMySelf{
+//    NSLog(@"waterSky_shouldHandlePopActionMySelf");
+//    return YES;
+//}
+
+#pragma mark - BJNavigationDelegate
+- (void)waterSky_handleNavBack{
+     [self destoryPlayer];
+    [self viewWillDisappear:YES];
+}
+
+
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     CGPoint offset = scrollView.contentOffset;
@@ -349,8 +402,8 @@
 #pragma mark - LMVideoPlayerDelegate
 /** 返回按钮被点击 */
 - (void)playerBackButtonClick {
-//    [self.player destroyVideo];
-//    [self.navigationController popViewControllerAnimated:YES];
+
+    [self destoryPlayer];
 }
 
 /** 控制层封面点击事件的回调 */
