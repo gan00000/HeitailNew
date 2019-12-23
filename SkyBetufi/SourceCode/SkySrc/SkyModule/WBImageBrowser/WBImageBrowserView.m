@@ -19,7 +19,7 @@ static  NSString *cellID = @"cellID";
 @property (nonatomic, strong) UIImage           *currentImage;      // 当前图片
 @property (nonatomic, assign) NSInteger         currentIndex;       // 当前选中的index
 
-@property (nonatomic, strong) UIView    *topBgView;          // 顶部背景视图
+@property (nonatomic, strong) UIView    *bottomBgView;          // 顶部背景视图
 @property (nonatomic, strong) UIButton  *downloadButton;     // 下载按钮
 @property (nonatomic, strong) UIButton  *shareButton;        // 分享按钮
 @property (nonatomic, strong) UIButton  *backButton;         // 返回
@@ -75,27 +75,29 @@ static  NSString *cellID = @"cellID";
             make.top.left.right.mas_equalTo(self);
             make.bottom.mas_equalTo(self).mas_offset(-80);
         }];
+        
+        [self addSubview:self.backButton];
+            
+        [self.backButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(self).mas_offset(30);
+            make.top.mas_equalTo(self).mas_offset(30);
+            make.width.mas_equalTo(60);
+            make.height.mas_equalTo(60);
+        }];
+            
+        
                
-        [self addSubview:self.topBgView];
-        [self.topBgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self addSubview:self.bottomBgView];
+        [self.bottomBgView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.left.right.mas_equalTo(self);
             make.height.mas_equalTo(80);
         }];
         
-        
-        [self.topBgView addSubview:self.backButton];
-        
-        [self.backButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.top.bottom.mas_equalTo(self.topBgView);
-            make.width.mas_equalTo(80);
-        }];
-        
-        
        
-        [self.topBgView addSubview:self.pageLabel];
+        [self.bottomBgView addSubview:self.pageLabel];
         
         [self.pageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-                   make.top.bottom.mas_equalTo(self.topBgView);
+                   make.top.bottom.mas_equalTo(self.bottomBgView);
                   
                     make.left.mas_equalTo(self.backButton.mas_right);
                     make.width.mas_equalTo(80);
@@ -103,17 +105,17 @@ static  NSString *cellID = @"cellID";
         
         self.pageLabel.hidden = YES;
         
-        [self.topBgView addSubview:self.downloadButton];
+        [self.bottomBgView addSubview:self.downloadButton];
         
         [self.downloadButton mas_makeConstraints:^(MASConstraintMaker *make) {
-              make.top.bottom.mas_equalTo(self.topBgView);
+              make.top.bottom.mas_equalTo(self.bottomBgView);
               
-            make.right.mas_equalTo(self.topBgView.mas_right).mas_offset(-15);
+            make.right.mas_equalTo(self.bottomBgView.mas_right).mas_offset(-15);
             make.width.mas_equalTo(80);
         }];
-        [self.topBgView addSubview:self.shareButton];
+        [self.bottomBgView addSubview:self.shareButton];
              [self.shareButton mas_makeConstraints:^(MASConstraintMaker *make) {
-                     make.top.bottom.mas_equalTo(self.topBgView);
+                     make.top.bottom.mas_equalTo(self.bottomBgView);
                     
                      make.right.mas_equalTo(self.downloadButton.mas_left);
                   make.width.mas_equalTo(80);
@@ -190,7 +192,7 @@ static  NSString *cellID = @"cellID";
     self.bottomTitleLabel.font = [UIFont systemFontOfSize:15];
     self.bottomTitleLabel.textAlignment = NSTextAlignmentCenter;
     self.bottomTitleLabel.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.3];
-    self.bottomTitleLabel.hidden = self.topBgView.hidden;
+    self.bottomTitleLabel.hidden = self.bottomBgView.hidden;
     [cell.contentView addSubview:self.bottomTitleLabel];
     
     // 添加手势
@@ -231,7 +233,7 @@ static  NSString *cellID = @"cellID";
 // 单击手势
 - (void)singleTapAction:(UITapGestureRecognizer *)tap {
     
-    self.topBgView.hidden = !self.topBgView.hidden;
+    self.bottomBgView.hidden = !self.bottomBgView.hidden;
     self.bottomTitleLabel.hidden = !self.bottomTitleLabel.hidden;
 }
 
@@ -287,12 +289,12 @@ static  NSString *cellID = @"cellID";
     return _collectionView;
 }
 
-- (UIView *)topBgView {
-    if (!_topBgView) {
-        _topBgView = [[UIView alloc] init];
-        _topBgView.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.3];
+- (UIView *)bottomBgView {
+    if (!_bottomBgView) {
+        _bottomBgView = [[UIView alloc] init];
+        _bottomBgView.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.3];
     }
-    return _topBgView;
+    return _bottomBgView;
 }
 
 - (UILabel *)pageLabel {
