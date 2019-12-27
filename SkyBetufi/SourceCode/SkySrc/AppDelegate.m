@@ -11,6 +11,7 @@
 #import "SkyBallHetiRedHTNewsDetailViewController.h"
 #import "SkyBallHetiRedPPXXBJNavigationController.h"
 #import "SkyBallHetiRedHTNewsHomeViewController.h"
+#import "SkyBallHetiRedPPXXBJMainViewController.h"
 @import Firebase;
 @import GoogleMobileAds;
 
@@ -21,13 +22,13 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     SkyBallHetiRedPPXXBJLaunchViewController *rootVc = [[SkyBallHetiRedPPXXBJLaunchViewController alloc] init];
-//    self.window.rootViewController = rootVc;
+    self.window.rootViewController = rootVc;
+
     
-//    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[SkyBallHetiRedPPXXBJLaunchViewController alloc] init]];
+//    self.window.rootViewController = [[SkyBallHetiRedPPXXBJNavigationController alloc] initWithRootViewController:rootVc];
     
-//     SkyBallHetiRedHTNewsHomeViewController *rootVc = [SkyBallHetiRedHTNewsHomeViewController waterSkyviewController];
+//     self.window.rootViewController = [[SkyBallHetiRedPPXXBJMainViewController alloc] init];
     
-    self.window.rootViewController = [[SkyBallHetiRedPPXXBJNavigationController alloc] initWithRootViewController:rootVc];
     [self setupPushWithLaunchOptions:launchOptions];
     [IQKeyboardManager sharedManager].toolbarBarTintColor = [UIColor whiteColor];
     [[FBSDKApplicationDelegate sharedInstance] application:application

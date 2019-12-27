@@ -23,6 +23,8 @@
         }
         UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:tabIcon selectedImage:tabSelIcon];
         UIViewController *controller = tabControllers[i];
+        [controller viewWillAppear:YES];
+        [controller viewDidAppear:YES];
         controller.tabBarItem = tabBarItem;
     }
     self.viewControllers = tabControllers;

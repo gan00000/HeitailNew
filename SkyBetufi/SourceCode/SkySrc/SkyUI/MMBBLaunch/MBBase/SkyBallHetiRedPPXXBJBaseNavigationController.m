@@ -100,5 +100,12 @@
         hidde = [(id<BJNavigationDelegate>)viewController waterSky_shouldHideNavigationBar];
     }
     [self setNavigationBarHidden:hidde animated:YES];
+    [viewController viewWillAppear:YES];
+}
+
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    
+     [viewController viewDidAppear:YES];
+    
 }
 @end

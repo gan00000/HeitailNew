@@ -12,14 +12,16 @@
 @end
 @implementation SkyBallHetiRedPPXXBJLaunchViewController
 - (void)waterSkyGoIntoMainController {
-    [[UIApplication sharedApplication].delegate.window insertSubview:self.tabBarController.view atIndex:0];
-    CATransition *animation = [CATransition animation];
-    animation.delegate = self;
-    animation.duration = 0.1f;
-    animation.timingFunction = [CAMediaTimingFunction functionWithName:@"easeInEaseOut"];
-    animation.type = kCATransitionFade;
-    [[UIApplication sharedApplication].delegate.window exchangeSubviewAtIndex:1 withSubviewAtIndex:0];
-    [[UIApplication sharedApplication].delegate.window.layer addAnimation:animation forKey:@"animation"];
+//    [[UIApplication sharedApplication].delegate.window insertSubview:self.tabBarController.view atIndex:0];
+//    CATransition *animation = [CATransition animation];
+//    animation.delegate = self;
+//    animation.duration = 0.1f;
+//    animation.timingFunction = [CAMediaTimingFunction functionWithName:@"easeInEaseOut"];
+//    animation.type = kCATransitionFade;
+//    [[UIApplication sharedApplication].delegate.window exchangeSubviewAtIndex:1 withSubviewAtIndex:0];
+//    [[UIApplication sharedApplication].delegate.window.layer addAnimation:animation forKey:@"animation"];
+    
+    [UIApplication sharedApplication].delegate.window.rootViewController = self.tabBarController;
 }
 
 - (void)waterSkyRequestConfig {
