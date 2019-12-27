@@ -25,7 +25,7 @@
 
 -(void) requestAd:(UIViewController *)viewController{
     
-    self.thAdView.adUnitID = @"ca-app-pub-3940256099942544/2934735716";
+    self.thAdView.adUnitID = @"ca-app-pub-4059643053601138/5503853759";
     self.thAdView.rootViewController = viewController;
     [self.thAdView loadRequest:[GADRequest request]];
 }

@@ -133,11 +133,11 @@
     [self.playerContentView layoutIfNeeded];
     
     self.playerContentView.frame = self.view.bounds;
-    NSLog(@"self.playerFatherView.frame.size.height:%f",self.playerContentView.frame.size.height);
-    NSLog(@"self.playerFatherView.frame.size.width:%f",self.playerContentView.frame.size.width);
-    
-    NSLog(@"self.view.frame.size.height:%f",self.view.frame.size.height);
-    NSLog(@"self.view.frame.size.width:%f",self.view.frame.size.width);
+//    NSLog(@"self.playerFatherView.frame.size.height:%f",self.playerContentView.frame.size.height);
+//    NSLog(@"self.playerFatherView.frame.size.width:%f",self.playerContentView.frame.size.width);
+//
+//    NSLog(@"self.view.frame.size.height:%f",self.view.frame.size.height);
+//    NSLog(@"self.view.frame.size.width:%f",self.view.frame.size.width);
 }
 
 
@@ -251,13 +251,10 @@
         }];
     }
     
-    LMPlayerModel *model = [[LMPlayerModel alloc] init];
-    model.videoUrls = @[@"http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8", @"http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8"
-    ,@"http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"];
-//    model.videoURL = [NSURL URLWithString:@"http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"];
-  //    model.seekTime = 20;
-  //    model.viewTime = 200; 
-  [self setUpPlayerView:model];
+//    LMPlayerModel *model = [[LMPlayerModel alloc] init];
+//    model.videoUrls = @[@"http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8", @"http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8"
+//    ,@"http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"];
+//   [self setUpPlayerView:model];
     
     self.feedLoaded = YES;
     self.summaryLoaded = YES;
