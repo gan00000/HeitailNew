@@ -147,7 +147,7 @@
 }
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 2) {
+    if (indexPath.section == 3) {
         SkyBallHetiRedHTNewsModel *newsModel = self.topNewsList[indexPath.row];
         SkyBallHetiRedHTNewsDetailViewController *detailVc = [SkyBallHetiRedHTNewsDetailViewController waterSkyviewController];
         detailVc.post_id = newsModel.news_id;
