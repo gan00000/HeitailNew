@@ -15,6 +15,7 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 - (instancetype)init {
     self = [super init];
     if (self) {
+        self.svgImageCache = [[NSMutableDictionary alloc] initWithCapacity:0];
         if ([SkyBallHetiRedHTUserManager waterSky_isUserLogin]) {
             NSData *data = [NSData dataWithContentsOfFile:[SkyBallHetiRedHTUserManager waterSkyuserInfoPath]];
             self.userInfoModel = [SkyBallHetiRedHTUserInfoModel yy_modelWithJSON:data];
@@ -22,6 +23,8 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
     }
     return self;
 }
+
+
 + (instancetype)manager {
     static SkyBallHetiRedHTUserManager *manager;
     static dispatch_once_t onceToken;

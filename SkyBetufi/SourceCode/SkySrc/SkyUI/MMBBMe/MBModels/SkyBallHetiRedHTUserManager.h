@@ -6,6 +6,8 @@ extern const NSString * kUserLogStatusChagneNotice;
 
 @property (nonatomic, assign)BOOL showTextLive;
 
+@property (nonatomic) NSMutableDictionary *svgImageCache;
+
 + (instancetype)manager;
 + (BOOL)waterSky_isUserLogin;
 + (SkyBallHetiRedHTUserInfoModel *)waterSky_userInfo;
