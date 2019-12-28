@@ -57,7 +57,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(客隊)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Dc-fD-Z62" userLabel="(客隊)">
                                         <rect key="frame" x="324" y="150" width="60" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="0JL-L3-zfe"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="0JL-L3-zfe"/>
                                             <constraint firstAttribute="height" constant="30" id="FFf-Sx-sUw"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -68,7 +68,7 @@
                                         <rect key="frame" x="30" y="150" width="60" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="2hc-3V-4XN"/>
-                                            <constraint firstAttribute="width" constant="60" id="993-Yv-RAD"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="993-Yv-RAD"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -109,7 +109,7 @@
                                 <constraints>
                                     <constraint firstItem="6Dc-fD-Z62" firstAttribute="top" secondItem="z0h-xf-9rZ" secondAttribute="bottom" constant="20" id="0Cd-sK-gbo"/>
                                     <constraint firstItem="MfH-WP-ASL" firstAttribute="leading" secondItem="pRr-N4-RH1" secondAttribute="trailing" constant="15" id="1XI-mm-txc"/>
-                                    <constraint firstItem="6Dc-fD-Z62" firstAttribute="leading" secondItem="z0h-xf-9rZ" secondAttribute="leading" id="3Wc-8o-Uq3"/>
+                                    <constraint firstItem="6Dc-fD-Z62" firstAttribute="centerX" secondItem="z0h-xf-9rZ" secondAttribute="centerX" id="3Wc-8o-Uq3"/>
                                     <constraint firstItem="xsF-e7-sJm" firstAttribute="centerX" secondItem="WcA-4R-DjX" secondAttribute="centerX" id="7e1-w0-RCv"/>
                                     <constraint firstAttribute="height" constant="200" id="8iP-7d-R9s"/>
                                     <constraint firstItem="mlU-Fl-4PM" firstAttribute="centerY" secondItem="z0h-xf-9rZ" secondAttribute="centerY" id="9IP-WR-uLj"/>
@@ -122,7 +122,7 @@
                                     <constraint firstItem="pRr-N4-RH1" firstAttribute="leading" secondItem="WcA-4R-DjX" secondAttribute="leading" constant="30" id="SYA-Gg-sli"/>
                                     <constraint firstItem="dDr-Pe-Uad" firstAttribute="centerY" secondItem="owa-ip-yuo" secondAttribute="centerY" id="U3z-4B-PrL"/>
                                     <constraint firstItem="dDr-Pe-Uad" firstAttribute="centerX" secondItem="WcA-4R-DjX" secondAttribute="centerX" id="XIe-Tj-XhS"/>
-                                    <constraint firstItem="owa-ip-yuo" firstAttribute="leading" secondItem="pRr-N4-RH1" secondAttribute="leading" id="fU2-g4-7pW"/>
+                                    <constraint firstItem="owa-ip-yuo" firstAttribute="centerX" secondItem="pRr-N4-RH1" secondAttribute="centerX" id="fU2-g4-7pW"/>
                                     <constraint firstItem="xsF-e7-sJm" firstAttribute="centerY" secondItem="WcA-4R-DjX" secondAttribute="centerY" constant="-5" id="hBN-rH-DeC"/>
                                     <constraint firstItem="MfH-WP-ASL" firstAttribute="centerY" secondItem="pRr-N4-RH1" secondAttribute="centerY" id="jhZ-6R-xHT"/>
                                     <constraint firstItem="pRr-N4-RH1" firstAttribute="centerY" secondItem="WcA-4R-DjX" secondAttribute="centerY" id="lVV-tM-3mY"/>

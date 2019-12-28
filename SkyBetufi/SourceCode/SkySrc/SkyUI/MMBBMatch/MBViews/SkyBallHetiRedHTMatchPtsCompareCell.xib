@@ -270,7 +270,7 @@
                     <constraint firstItem="Rq2-Mc-jYz" firstAttribute="centerX" secondItem="vdD-77-SCU" secondAttribute="centerX" id="6Qz-Aa-PqQ"/>
                     <constraint firstItem="YeP-GQ-lwp" firstAttribute="top" secondItem="OcT-2K-skT" secondAttribute="bottom" id="732-a6-m2K"/>
                     <constraint firstItem="Z6s-Ro-exD" firstAttribute="top" secondItem="K8R-Mo-9lj" secondAttribute="bottom" id="73f-p8-N7o"/>
-                    <constraint firstItem="Zrl-6U-Kwh" firstAttribute="width" secondItem="rkI-mZ-5jq" secondAttribute="width" id="8Ar-T1-qfy"/>
+                    <constraint firstItem="Zrl-6U-Kwh" firstAttribute="width" relation="greaterThanOrEqual" secondItem="rkI-mZ-5jq" secondAttribute="width" id="8Ar-T1-qfy"/>
                     <constraint firstItem="p8j-rl-z4B" firstAttribute="width" secondItem="S5S-5V-l6z" secondAttribute="width" id="8EJ-dH-wgx"/>
                     <constraint firstItem="Y2v-Wf-b9f" firstAttribute="top" secondItem="5MN-DM-x92" secondAttribute="bottom" id="8eh-fR-QL0"/>
                     <constraint firstItem="pkL-4G-6ZC" firstAttribute="centerX" secondItem="V2h-Cj-UGb" secondAttribute="centerX" id="8xw-yA-OcZ"/>
@@ -304,7 +304,7 @@
                     <constraint firstAttribute="trailing" secondItem="noA-Qv-rE0" secondAttribute="trailing" constant="10" id="WK8-uh-24e"/>
                     <constraint firstItem="p8j-rl-z4B" firstAttribute="top" secondItem="S5S-5V-l6z" secondAttribute="bottom" id="WOP-hr-7HA"/>
                     <constraint firstItem="vdD-77-SCU" firstAttribute="top" secondItem="OtG-bj-vZf" secondAttribute="bottom" id="Wag-T4-0WN"/>
-                    <constraint firstItem="QpJ-pX-Ixb" firstAttribute="width" secondItem="Zrl-6U-Kwh" secondAttribute="width" id="XID-PN-DPb"/>
+                    <constraint firstItem="QpJ-pX-Ixb" firstAttribute="width" relation="greaterThanOrEqual" secondItem="Zrl-6U-Kwh" secondAttribute="width" id="XID-PN-DPb"/>
                     <constraint firstAttribute="trailing" secondItem="OtG-bj-vZf" secondAttribute="trailing" id="XId-XE-0YK"/>
                     <constraint firstItem="S5S-5V-l6z" firstAttribute="centerX" secondItem="AoX-yK-eMr" secondAttribute="centerX" id="ZN8-pn-TIL"/>
                     <constraint firstItem="YeP-GQ-lwp" firstAttribute="width" secondItem="OcT-2K-skT" secondAttribute="width" id="aec-mp-VhI"/>

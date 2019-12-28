@@ -305,26 +305,30 @@
     
 //    UIColor *bgColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"live_player_bg.png"]];
 //    [self.topDetailView setBackgroundColor:bgColor];
-    self.homeTeamLogo.hidden = YES;
-    self.awayTeamLogo.hidden = YES;
+//    self.homeTeamLogo.hidden = YES;
+//    self.awayTeamLogo.hidden = YES;
     self.homeTeamLogo.hidden = NO;
+     self.awayTeamLogo.hidden = NO;
     if ([self.matchSummaryModel.homeLogo hasSuffix:@"svg"]) {
-        [self.homeTeamLogo svg_setImageWithURL:[NSURL URLWithString:self.matchSummaryModel.homeLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
+        [self.awayTeamLogo svg_setImageWithURL:[NSURL URLWithString:self.matchSummaryModel.homeLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
     }else{
-        [self.homeTeamLogo sd_setImageWithURL:[NSURL URLWithString:self.matchSummaryModel.homeLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
+        [self.awayTeamLogo sd_setImageWithURL:[NSURL URLWithString:self.matchSummaryModel.homeLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
     }
-    self.homeTeamPtsLabel.text = self.matchSummaryModel.home_pts;
-    self.awayTeamLogo.hidden = NO;
+    self.homeTeamPtsLabel.text = self.matchSummaryModel.away_pts;
+   
     if ([self.matchSummaryModel.awayLogo hasSuffix:@"svg"]) {
-        [self.awayTeamLogo svg_setImageWithURL:[NSURL URLWithString:self.matchSummaryModel.awayLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
+        [self.homeTeamLogo svg_setImageWithURL:[NSURL URLWithString:self.matchSummaryModel.awayLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
     }else{
-        [self.awayTeamLogo sd_setImageWithURL:[NSURL URLWithString:self.matchSummaryModel.awayLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
+        [self.homeTeamLogo sd_setImageWithURL:[NSURL URLWithString:self.matchSummaryModel.awayLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
     }
     
-    self.awayTeamName.text = self.matchSummaryModel.awayName;
-    self.homeTeamName.text = self.matchSummaryModel.homeName;
+//    self.awayTeamName.text = self.matchSummaryModel.awayName;
+//    self.homeTeamName.text = self.matchSummaryModel.homeName;
     
-    self.awayTeamPtsLabel.text = self.matchSummaryModel.away_pts;
+    self.awayTeamName.text = self.matchSummaryModel.homeName;
+        self.homeTeamName.text = self.matchSummaryModel.awayName;
+    
+    self.awayTeamPtsLabel.text = self.matchSummaryModel.home_pts;
 //    self.timeLabel.hidden = YES;
 //    if (self.matchSummaryModel.game_status == 1) {
 //        self.statusLabel.text = @"已結束";
