@@ -31,7 +31,7 @@
 }
 - (NSString *)time {
     if (!_time) {
-        _time = [NSString stringWithFormat:@"%ld:%ld", self.minseconds/60, self.minseconds%60];
+        _time = [NSString stringWithFormat:@"%ld", self.minseconds/60];
     }
     return _time;
 }

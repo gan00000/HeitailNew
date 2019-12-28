@@ -51,7 +51,7 @@
     self.ftmageLabel.font =  [UIFont systemFontOfSize:16];
     
     self.offrebLabel.text = model.offreb;
-    self.defrebLabel.font =  [UIFont systemFontOfSize:16];
+    self.offrebLabel.font =  [UIFont systemFontOfSize:16];
     
     self.defrebLabel.text = model.defreb;
     self.defrebLabel.font =  [UIFont systemFontOfSize:16];
