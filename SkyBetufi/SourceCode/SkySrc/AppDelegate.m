@@ -22,10 +22,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     SkyBallHetiRedPPXXBJLaunchViewController *rootVc = [[SkyBallHetiRedPPXXBJLaunchViewController alloc] init];
-    self.window.rootViewController = rootVc;
+//    self.window.rootViewController = rootVc;
 
     
-//    self.window.rootViewController = [[SkyBallHetiRedPPXXBJNavigationController alloc] initWithRootViewController:rootVc];
+    self.window.rootViewController = [[SkyBallHetiRedPPXXBJNavigationController alloc] initWithRootViewController:rootVc];
     
 //     self.window.rootViewController = [[SkyBallHetiRedPPXXBJMainViewController alloc] init];
     

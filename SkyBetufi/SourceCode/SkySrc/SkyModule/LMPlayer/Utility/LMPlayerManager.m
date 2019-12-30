@@ -57,6 +57,29 @@
     [options setOptionIntValue:IJK_AVDISCARD_DEFAULT forKey:@"skip_frame" ofCategory:kIJKFFOptionCategoryCodec];
     [options setOptionIntValue:IJK_AVDISCARD_DEFAULT forKey:@"skip_loop_filter" ofCategory:kIJKFFOptionCategoryCodec];
     
+    
+     // 直播参数
+    [options setPlayerOptionIntValue:3000 forKey:@"max_cached_duration"];   // 最大缓存大小是3秒，可以依据自己的需求修改
+    //设置无极限的播放器buffer，这个选项常见于实时流媒体播放场景
+    [options setPlayerOptionIntValue:1 forKey:@"infbuf"];  // 无限读
+    
+    //播放器缓冲可以避免因为丢帧引入花屏的，因为丢帧都是丢到I帧之前的P/B帧为止。我之前也写过一个类似的，思路都是一样，但这个代码更精简。
+    //A：如果你想要实时性，可以去掉缓冲区，一句代码：
+    //B: 如果你这样试过，发现你的项目中播放频繁卡顿，
+    //你想留1-2秒缓冲区，让数据更平缓一些，
+    //那你可以选择保留缓冲区，不设置上面那个就行。
+//    [options setPlayerOptionIntValue:0 forKey:@"packet-buffering"];  //  关闭播放器缓冲
+    //开启硬件解码
+    [options setPlayerOptionIntValue:1  forKey:@"videotoolbox"];
+    /*-------------PlayerOption-------------*/
+    //在视频帧处理不过来的时候丢弃一些帧达到同步的效果
+    //跳帧开关，如果cpu解码能力不足，可以设置成5，否则会引起音视频不同步，也可以通过设置它来跳帧达到倍速播放
+    [options setPlayerOptionIntValue:5/*0*/ forKey:@"framedrop"];
+    //最大fps
+//    [options setPlayerOptionIntValue:30 forKey:@"max-fps"];
+    //帧速率(fps) 可以改，确认非标准桢率会导致音画不同步，所以只能设定为15或者29.97
+//    [options setPlayerOptionIntValue:29.97 forKey:@"r"];
+    
     self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:options];
     
     self.player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;

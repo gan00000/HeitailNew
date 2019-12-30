@@ -522,7 +522,7 @@ static const CGFloat LMPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 - (UIButton *)failBtn {
     if (!_failBtn) {
         _failBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-        [_failBtn setTitle:@"加载失败,点击重试" forState:UIControlStateNormal];
+        [_failBtn setTitle:@"直播斷開，請刷新或切換直播源" forState:UIControlStateNormal];
         [_failBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _failBtn.titleLabel.font = [UIFont systemFontOfSize:14.0];
         _failBtn.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.7];

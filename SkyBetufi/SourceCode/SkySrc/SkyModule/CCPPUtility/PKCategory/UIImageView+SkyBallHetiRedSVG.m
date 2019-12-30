@@ -2,7 +2,7 @@
 @implementation UIImageView (SkyBallHetiRedSVG)
 - (void)svg_setImageWithURL:(nullable NSURL *)url placeholderImage:(nullable UIImage *)placeholder {
    
-    [self setImage:placeholder];
+    
     SVGKImage *cacheObject = [SkyBallHetiRedHTUserManager.manager.svgImageCache objectForKey:url];
     if (cacheObject) {
         if(cacheObject.UIImage){
@@ -12,6 +12,7 @@
        [SkyBallHetiRedHTUserManager.manager.svgImageCache removeObjectForKey:url];
     }
     
+    [self setImage:placeholder];
 //    [self.svgImageDic removeAllObjects];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
 

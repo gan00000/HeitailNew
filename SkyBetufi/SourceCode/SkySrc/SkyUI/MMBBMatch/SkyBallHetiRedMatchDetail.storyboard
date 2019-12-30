@@ -32,7 +32,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_play.png" translatesAutoresizingMaskIntoConstraints="NO" id="xsF-e7-sJm">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video_play_normal.png" highlightedImage="video_play_pressed.png" translatesAutoresizingMaskIntoConstraints="NO" id="xsF-e7-sJm">
                                         <rect key="frame" x="182" y="70" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="af2-om-F5Y"/>
@@ -170,7 +170,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_play.png" width="200" height="200"/>
         <image name="live_player_bg.png" width="640" height="360"/>
+        <image name="video_play_normal.png" width="135" height="135"/>
+        <image name="video_play_pressed.png" width="135" height="135"/>
     </resources>
 </document>
