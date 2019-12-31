@@ -41,6 +41,7 @@
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z0h-xf-9rZ">
                                         <rect key="frame" x="324" y="70" width="60" height="60"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="GhU-QN-ugr"/>
                                             <constraint firstAttribute="width" constant="60" id="aNL-QP-8l4"/>
@@ -48,7 +49,7 @@
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pRr-N4-RH1">
                                         <rect key="frame" x="30" y="70" width="60" height="60"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="7CP-Vu-8KR"/>
                                             <constraint firstAttribute="width" constant="60" id="j93-W7-HJW"/>
