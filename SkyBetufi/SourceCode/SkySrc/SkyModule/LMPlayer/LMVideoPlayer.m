@@ -327,6 +327,19 @@
     [self resetToPlayNewVideo:newModel];
 }
 
+- (void)resetStartPlayer:(NSInteger)line{
+    
+    [self.videoPlayerView.playerControlView.landScapeControlView setLineTips:[NSString stringWithFormat:@"直播%ld",line + 1]];
+    
+    [self.videoPlayerView.playerControlView.portraitControlView setLineTips:[NSString stringWithFormat:@"直播%ld",line + 1]];
+    
+    self.currentPayUrl = self.playerModel.videoUrls[line];
+        LMPlayerModel *newModel = [[LMPlayerModel alloc] init];
+    //    newModel.videoURL = self.playerModel.videoURL;
+        [self resetToPlayNewVideo:newModel];
+    
+}
+
 /** 进度条开始拖动 */
 - (void)portraitProgressSliderBeginDrag {
     self.playerStatusModel.dragged = YES;
@@ -368,19 +381,13 @@
     }];
 }
 
-- (void)portraitLineClick:(NSInteger) line{
-    
-    [self.videoPlayerView.playerControlView.landScapeControlView setLineTips:[NSString stringWithFormat:@"直播%ld",line + 1]];
-    
-    [self.videoPlayerView.playerControlView.portraitControlView setLineTips:[NSString stringWithFormat:@"直播%ld",line + 1]];
-    
-    self.currentPayUrl = self.playerModel.videoUrls[line];
-        LMPlayerModel *newModel = [[LMPlayerModel alloc] init];
-    //    newModel.videoURL = self.playerModel.videoURL;
-        [self resetToPlayNewVideo:newModel];
-    
+- (void)landScapeLineTipsClick{
+     [self.videoPlayerView.playerControlView showLineSelectView:self.playerModel.videoUrls];
 }
 
+- (void)portraitLineTipsClick{
+    [self.videoPlayerView.playerControlView showLineSelectView:self.playerModel.videoUrls];
+}
 
 - (NSArray *)getVideos{
     return self.playerModel.videoUrls;
@@ -490,7 +497,7 @@
 }
 
 - (void)landScapeLineClick:(NSInteger)line{
-    [self portraitLineClick:line];
+    [self resetStartPlayer:line];
 }
 
 #pragma mark - LMVideoPlayerViewDelagate

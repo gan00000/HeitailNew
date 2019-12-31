@@ -205,6 +205,8 @@ typedef NS_ENUM(NSInteger, PanDirection){
             [self.playerControlView showControl];
         }
 //    }
+    
+    [self.playerControlView hideLineSelectView];
 }
 
 /**

@@ -24,6 +24,8 @@
 /** 跳转播放按钮被点击 */
 - (void)jumpPlayButtonClick:(NSInteger)viewTime;
 
+-(void)resetStartPlayer:(NSInteger)line;
+
 @end
 
 @interface LMPlayerControlView : UIView
@@ -82,5 +84,9 @@
  *  播放完成时隐藏控制层
  */
 - (void)playEndHideControlView;
+
+
+- (void)showLineSelectView:(NSArray *)lines;
+- (void)hideLineSelectView;
 
 @end

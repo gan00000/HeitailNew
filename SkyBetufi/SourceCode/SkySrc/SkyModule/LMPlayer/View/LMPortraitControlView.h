@@ -25,7 +25,8 @@
 /** 进度条tap点击 */
 - (void)portraitProgressSliderTapAction:(CGFloat)value;
 
-- (void)portraitLineClick:(NSInteger) line;
+//- (void)portraitLineClick:(NSInteger) line;
+- (void)portraitLineTipsClick;
 
 - (NSArray *)getVideos;
 
@@ -35,7 +36,7 @@
 @interface LMPortraitControlView : UIView
 @property (nonatomic, weak) id<LMPortraitControlViewDelegate> delegate;
 
-@property (nonatomic, strong) NSArray *lineArray;
+//@property (nonatomic, strong) NSArray *lineArray;
 /** 重置ControlView */
 - (void)playerResetControlView;
 - (void)playEndHideView:(BOOL)playeEnd;

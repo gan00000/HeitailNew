@@ -69,4 +69,5 @@
  *  重新播放
  */
 - (void)repeatPlay;
+
 @end

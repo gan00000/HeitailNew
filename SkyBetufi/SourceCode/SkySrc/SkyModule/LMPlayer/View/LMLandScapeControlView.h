@@ -29,7 +29,8 @@
 /** 进度条tap点击 */
 - (void)landScapeProgressSliderTapAction:(CGFloat)value;
 
-- (void)landScapeLineClick:(NSInteger) line;
+//- (void)landScapeLineClick:(NSInteger) line;
+- (void)landScapeLineTipsClick;
 
 - (NSArray *)landScapeGetVideos;
 

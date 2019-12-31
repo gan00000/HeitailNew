@@ -39,12 +39,18 @@ static const CGFloat LMPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 /** 跳转播放 */
 @property (nonatomic, strong) UIButton                *jumpPlayBtn;
 
+@property (nonatomic, strong) UIView *lineSelectView;
+
 /** 是否显示了控制层 */
 @property (nonatomic, assign, getter=isShowing) BOOL  showing;
 /** 是否播放结束 */
 @property (nonatomic, assign, getter=isPlayEnd) BOOL  playeEnd;
 /** 播放器的参数模型 */
 @property (nonatomic, strong) LMPlayerStatusModel *playerStatusModel;
+
+@property (nonatomic, strong) NSArray *lineArray;
+@property (nonatomic) BOOL isAddSelectItem;
+
 @end
 
 @implementation LMPlayerControlView
@@ -105,6 +111,9 @@ static const CGFloat LMPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     [self.watchrRecordView addSubview:self.closeWatchrRecordBtn];
     [self.watchrRecordView addSubview:self.watchrRecordLabel];
     [self.watchrRecordView addSubview:self.jumpPlayBtn];
+    
+    [self addSubview:self.lineSelectView];
+     _lineSelectView.hidden = YES;
 }
 
 // 设置子控件的响应事件
@@ -114,6 +123,13 @@ static const CGFloat LMPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     [self.repeatBtn addTarget:self action:@selector(repeatBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.closeWatchrRecordBtn addTarget:self action:@selector(closeWatchrRecordBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.jumpPlayBtn addTarget:self action:@selector(jumpPlayBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.lineSelectView mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+             make.trailing.equalTo(self.mas_trailing);
+             make.height.equalTo(self);
+             make.width.mas_equalTo(100);
+         }];
 }
 
 #pragma mark - Action
@@ -262,10 +278,13 @@ static const CGFloat LMPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     [self playerCancelAutoFadeOutControlView];
     [UIView animateWithDuration:LMPlayerControlBarAutoFadeOutTimeInterval animations:^{
         [self hideControlView];
+        
     }completion:^(BOOL finished) {
         self.showing = NO;
     }];
 }
+
+
 
 /** 强行设置是否显示了控制层 */
 - (void)setIsShowing:(BOOL)showing {
@@ -378,6 +397,69 @@ static const CGFloat LMPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
 }
 
+- (void)showLineSelectView:(NSArray *)lines{
+        
+    self.lineArray = lines;
+   if (self.lineArray) {
+
+       if (!self.isAddSelectItem) {
+
+           int mTop = 30;
+          for (int i = 0; i < self.lineArray.count; i++) {
+              UIButton *lineBtn = [[UIButton alloc] init];
+              [lineBtn setTitle:[NSString stringWithFormat:@"直播%d", i+1] forState:UIControlStateNormal];
+              [lineBtn.titleLabel setFont:[UIFont systemFontOfSize:12]];
+              lineBtn.layer.cornerRadius = 8;
+              lineBtn.backgroundColor = [UIColor colorWithHexString:@"3f8eee"];
+              [self.lineSelectView addSubview:lineBtn];
+//              if (i == 0) {
+//                  mTop = 30;
+//              }
+              int mmmmTop = mTop + (i * 20 ) + (i * 10);
+
+              [lineBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+
+                        make.top.equalTo(self.lineSelectView).mas_offset(mmmmTop);
+                        make.height.mas_equalTo(20);
+                        make.width.mas_equalTo(65);
+                       make.centerX.mas_equalTo(self.lineSelectView);
+                    }];
+              lineBtn.tag = i;
+              [lineBtn addTarget:self action:@selector(lineBtnClickAction:) forControlEvents:UIControlEventTouchUpInside];
+          }
+
+       }
+
+       self.isAddSelectItem = YES;
+
+   }
+    
+    
+
+    self.lineSelectView.hidden = NO;
+//    self.lineTipsLabel.hidden = YES;
+    [self hideControl];
+}
+
+- (void)hideLineSelectView{
+    if (![self.lineSelectView isHidden]) {
+         self.lineSelectView.hidden = YES;
+    }
+    //self.lineSelectView.hidden = YES;
+}
+
+- (void)lineBtnClickAction:(UIButton *)sender {
+    self.lineSelectView.hidden = YES;
+//    self.lineTipsLabel.hidden = NO;
+//    self.lineTipsLabel.text = [NSString stringWithFormat:@"直播%ld", sender.tag + 1];
+    if ([self.delegate respondsToSelector:@selector(resetStartPlayer:)]) {
+        [self.delegate resetStartPlayer:sender.tag];
+    }
+    
+//    [self.portraitControlView setLineTips:[NSString stringWithFormat:@"直播%ld", sender.tag + 1]];
+}
+
+
 #pragma mark - 添加子控件的约束
 /**
  *  添加子控件的约束
@@ -403,7 +485,7 @@ static const CGFloat LMPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     
     [self.failBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self);
-        make.width.mas_equalTo(130);
+        make.width.mas_equalTo(200);
         make.height.mas_equalTo(33);
     }];
     
@@ -483,6 +565,15 @@ static const CGFloat LMPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     return _activity;
 }
 
+- (UIView *)lineSelectView {
+    if (!_lineSelectView) {
+        _lineSelectView = [[UIView alloc] init];
+        _lineSelectView.backgroundColor = [UIColor colorWithHexString:@"000000" alpha:0.5];
+    }
+   
+    return _lineSelectView;
+}
+
 - (UIView *)fastView {
     if (!_fastView) {
         _fastView                     = [[UIView alloc] init];
@@ -522,7 +613,7 @@ static const CGFloat LMPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 - (UIButton *)failBtn {
     if (!_failBtn) {
         _failBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-        [_failBtn setTitle:@"直播斷開，請刷新或切換直播源" forState:UIControlStateNormal];
+        [_failBtn setTitle:@"直播斷開,請刷新或切換直播源" forState:UIControlStateNormal];
         [_failBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _failBtn.titleLabel.font = [UIFont systemFontOfSize:14.0];
         _failBtn.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.7];

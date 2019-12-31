@@ -46,7 +46,7 @@
 //线路显示
 @property (nonatomic, strong) UILabel *lineTipsLabel;
 
-@property (nonatomic, strong) UIView *lineSelectView;
+//@property (nonatomic, strong) UIView *lineSelectView;
 
 @property (nonatomic) BOOL isAddSelectItem;
 
@@ -58,8 +58,8 @@
         
         [self addSubview:self.lineTipsLabel];
         
-        [self addSubview:self.lineSelectView];
-        self.lineSelectView.hidden = YES;
+//        [self addSubview:self.lineSelectView];
+//        self.lineSelectView.hidden = YES;
         
         // 添加子控件
         [self addSubview:self.topToolView];
@@ -203,56 +203,53 @@
 }
 
 - (void)showLineSelectView {
-//    if ([self.delegate respondsToSelector:@selector(portraitBackButtonClick)]) {
-//        [self.delegate portraitBackButtonClick];
-//    }
-    
-    if ([self.delegate respondsToSelector:@selector(landScapeGetVideos)]) {
-              self.lineArray = [self.delegate landScapeGetVideos];
-          }
 
-       if (self.lineArray) {
-           
-           if (!self.isAddSelectItem) {
-               
-               int mTop = 30;
-              for (int i = 0; i < self.lineArray.count; i++) {
-                  UIButton *lineBtn = [[UIButton alloc] init];
-                  [lineBtn setTitle:[NSString stringWithFormat:@"直播%d", i+1] forState:UIControlStateNormal];
-                  
-                  [self.lineSelectView addSubview:lineBtn];
-                  
-                  int mmmmTop = mTop + (i * 20 ) + (i * 15);
-                  
-                  [lineBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-                           
-                            make.top.equalTo(self.lineSelectView).mas_offset(mmmmTop);
-                            make.height.mas_equalTo(20);
-                            make.width.mas_equalTo(60);
-                           make.centerX.mas_equalTo(self.lineSelectView);
-                        }];
-                  lineBtn.tag = i;
-                  [lineBtn addTarget:self action:@selector(lineBtnClickAction:) forControlEvents:UIControlEventTouchUpInside];
-              }
-               
-           }
-       
-           self.isAddSelectItem = YES;
-          
-       }
-    
-    self.lineSelectView.hidden = NO;
-    self.lineTipsLabel.hidden = YES;
-}
-
-- (void)lineBtnClickAction:(UIButton *)sender {
-    self.lineSelectView.hidden = YES;
-    self.lineTipsLabel.hidden = NO;
-    self.lineTipsLabel.text = [NSString stringWithFormat:@"直播%ld", sender.tag + 1];
-    if ([self.delegate respondsToSelector:@selector(landScapeLineClick:)]) {
-        [self.delegate landScapeLineClick:sender.tag];
+    if ([self.delegate respondsToSelector:@selector(landScapeLineTipsClick)]) {
+        [self.delegate landScapeLineTipsClick];
     }
+
+//       if (self.lineArray) {
+//
+//           if (!self.isAddSelectItem) {
+//
+//               int mTop = 30;
+//              for (int i = 0; i < self.lineArray.count; i++) {
+//                  UIButton *lineBtn = [[UIButton alloc] init];
+//                  [lineBtn setTitle:[NSString stringWithFormat:@"直播%d", i+1] forState:UIControlStateNormal];
+//
+//                  [self.lineSelectView addSubview:lineBtn];
+//
+//                  int mmmmTop = mTop + (i * 20 ) + (i * 15);
+//
+//                  [lineBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//                            make.top.equalTo(self.lineSelectView).mas_offset(mmmmTop);
+//                            make.height.mas_equalTo(20);
+//                            make.width.mas_equalTo(60);
+//                           make.centerX.mas_equalTo(self.lineSelectView);
+//                        }];
+//                  lineBtn.tag = i;
+//                  [lineBtn addTarget:self action:@selector(lineBtnClickAction:) forControlEvents:UIControlEventTouchUpInside];
+//              }
+//
+//           }
+//
+//           self.isAddSelectItem = YES;
+//
+//       }
+//
+//    self.lineSelectView.hidden = NO;
+//    self.lineTipsLabel.hidden = YES;
 }
+
+//- (void)lineBtnClickAction:(UIButton *)sender {
+//    self.lineSelectView.hidden = YES;
+//    self.lineTipsLabel.hidden = NO;
+//    self.lineTipsLabel.text = [NSString stringWithFormat:@"直播%ld", sender.tag + 1];
+//    if ([self.delegate respondsToSelector:@selector(landScapeLineClick:)]) {
+//        [self.delegate landScapeLineClick:sender.tag];
+//    }
+//}
 
 #pragma mark - 添加子控件的约束
 - (void)makeSubViewsConstraints {
@@ -350,18 +347,18 @@
     
     [self.lineTipsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.trailing.equalTo(self.mas_trailing);
+        make.trailing.equalTo(self.mas_trailing).offset(-5);
         make.centerY.equalTo(self);
         make.width.mas_equalTo(60);
         make.height.mas_equalTo(20);
     }];
     
-    [self.lineSelectView mas_makeConstraints:^(MASConstraintMaker *make) {
-          
-           make.trailing.equalTo(self.mas_trailing);
-           make.height.equalTo(self);
-           make.width.mas_equalTo(80);
-       }];
+//    [self.lineSelectView mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//           make.trailing.equalTo(self.mas_trailing);
+//           make.height.equalTo(self);
+//           make.width.mas_equalTo(80);
+//       }];
     
 }
 
@@ -485,6 +482,12 @@
         _lineTipsLabel.text = @"直播1";
         _lineTipsLabel.numberOfLines = 1;
         
+        _lineTipsLabel.backgroundColor = [UIColor clearColor];
+       _lineTipsLabel.layer.cornerRadius = 8;
+       _lineTipsLabel.layer.borderWidth = 1;
+       _lineTipsLabel.layer.borderColor = [[UIColor whiteColor] CGColor];
+       
+        
         _lineTipsLabel.userInteractionEnabled=YES;
         UITapGestureRecognizer *labelTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showLineSelectView)];
           
@@ -494,13 +497,13 @@
     return _lineTipsLabel;
 }
 
-- (UIView *)lineSelectView {
-    if (!_lineSelectView) {
-        _lineSelectView = [[UIView alloc] init];
-        _lineSelectView.backgroundColor = [UIColor colorWithHexString:@"000000" alpha:0.3];
-    }
-    return _lineSelectView;
-}
+//- (UIView *)lineSelectView {
+//    if (!_lineSelectView) {
+//        _lineSelectView = [[UIView alloc] init];
+//        _lineSelectView.backgroundColor = [UIColor colorWithHexString:@"000000" alpha:0.3];
+//    }
+//    return _lineSelectView;
+//}
 
 
 - (UIButton *)backBtn {
