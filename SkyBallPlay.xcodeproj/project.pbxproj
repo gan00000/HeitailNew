@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32100C4023C2E1FB00CC1DD2 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32100C3F23C2E1FB00CC1DD2 /* AuthenticationServices.framework */; };
 		32642A5722EFE8FD00D2DA1E /* UIImageView+SkyBallHetiRedSVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 32642A5622EFE8FD00D2DA1E /* UIImageView+SkyBallHetiRedSVG.m */; };
 		32642A5A22F027EB00D2DA1E /* TZPhotoPickerController+SkyBallHetiRedDRExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 32642A5922F027EA00D2DA1E /* TZPhotoPickerController+SkyBallHetiRedDRExtention.m */; };
 		326434D922F04F5E00D2DA1E /* GuideImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 326434D422F04F5E00D2DA1E /* GuideImage.bundle */; };
@@ -346,6 +347,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32100C3F23C2E1FB00CC1DD2 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		325BD8C522E0705D00A07EC9 /* SkyBallHetiRedPPXXBJLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyBallHetiRedPPXXBJLaunchViewController.h; sourceTree = "<group>"; };
 		325BD8C822E07D6F00A07EC9 /* confuse.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = confuse.sh; sourceTree = "<group>"; };
 		325BD8C922E07D6F00A07EC9 /* func.list */ = {isa = PBXFileReference; lastKnownFileType = text; path = func.list; sourceTree = "<group>"; };
@@ -905,6 +907,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32100C4023C2E1FB00CC1DD2 /* AuthenticationServices.framework in Frameworks */,
 				FECCA4E62258C858009EF494 /* Security.framework in Frameworks */,
 				FEAC9F272199D92900159AE9 /* UserNotifications.framework in Frameworks */,
 				FE91974B218F60A100439CDD /* CoreGraphics.framework in Frameworks */,
@@ -1108,6 +1111,7 @@
 		CB747A826453EE017B9DDDC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				32100C3F23C2E1FB00CC1DD2 /* AuthenticationServices.framework */,
 				FECCA4E52258C858009EF494 /* Security.framework */,
 				FEAC9F262199D92900159AE9 /* UserNotifications.framework */,
 				FE91974A218F60A100439CDD /* CoreGraphics.framework */,
@@ -2690,7 +2694,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyball.heit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = skyball_20190730;
+				PROVISIONING_PROFILE_SPECIFIER = skyball_20200106;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 arm64e armv7s";
 			};
@@ -2721,7 +2725,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyball.heit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = skyball_dis_20190730;
+				PROVISIONING_PROFILE_SPECIFIER = skyball_dis_20200106;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 arm64e armv7s";
 			};

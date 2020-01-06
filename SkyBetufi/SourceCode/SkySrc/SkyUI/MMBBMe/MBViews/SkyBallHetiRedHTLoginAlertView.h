@@ -2,7 +2,8 @@
 NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSInteger, HTLoginPlatform) {
     HTLoginPlatformFB,
-    HTLoginPlatformLine
+    HTLoginPlatformLine,
+     HTLoginPlatformAppleId
 };
 @interface SkyBallHetiRedHTLoginAlertView : UIView
 + (void)waterSkyshowLoginAlertViewWithSelectBlock:(void(^)(HTLoginPlatform platform))block;
