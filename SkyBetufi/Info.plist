@@ -58,6 +58,8 @@
 	<string>479868032525276</string>
 	<key>FacebookDisplayName</key>
 	<string>黑特體育</string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-4059643053601138~8130017090</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>lineauth2</string>
@@ -103,6 +105,8 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
