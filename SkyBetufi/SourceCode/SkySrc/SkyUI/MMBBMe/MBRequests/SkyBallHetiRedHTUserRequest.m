@@ -15,6 +15,38 @@
         }
     } errorBlock:failBlock];
 }
+
++ (void)doAppIdLoginRequestWithAccessToken:(NSString *)accessToken
+                                  sns:(NSInteger)sns
+                                    userId:(NSString *)userId
+                                nickName:(NSString *)nickName
+                                email:(NSString *)email
+                         successBlock:(void(^)(NSString *userToken))successBlock
+                            failBlock:(BJServiceErrorBlock)failBlock {
+    
+    if (!nickName) {
+        nickName = @"";
+    }
+    if (!email) {
+          email = @"";
+      }
+    
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"sns_login"] = @(sns);
+    param[@"name"] = nickName;
+    param[@"user_id"] = userId;
+    param[@"email"] = email;
+    param[@"access_token"] = accessToken;
+    param[@"device_token"] = [SkyBallHetiRedHTUserManager waterSky_deviceToken];
+    param[@"device_type"] = @(1);
+    BJLog(@"login params: %@", param);
+    [SkyBallHetiRedBJHTTPServiceEngine waterSky_postRequestWithFunctionPath:API_USER_LOGIN params:param successBlock:^(id responseData) {
+        if (successBlock) {
+            successBlock(responseData[@"result"][@"user_token"]);
+        }
+    } errorBlock:failBlock];
+}
+
 + (void)waterSkyrequestUserInfoWithSuccessBlock:(void(^)(NSDictionary *userInfo))successBlock
                               failBlock:(BJServiceErrorBlock)failBlock {
     [SkyBallHetiRedBJHTTPServiceEngine waterSky_getRequestWithFunctionPath:API_USER_INFO params:nil successBlock:^(id responseData) {

@@ -115,6 +115,31 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
         BJLog(@"登錄失敗");
     }];
 }
+
+- (void)doAppIdLoginRequesWithAccessToken:(NSString *)accessToken sns:(NSInteger)sns userId:(NSString *)userId nickName:(NSString *)nickName email:(NSString *)email {
+    
+    [SkyBallHetiRedHTUserRequest doAppIdLoginRequestWithAccessToken:accessToken
+                                                                sns:sns
+                                                             userId:userId
+                                                           nickName:nickName
+                                                              email:email
+                                                       successBlock:^(NSString * _Nonnull userToken) {
+                [SkyBallHetiRedHTUserManager saveUserToken:userToken];
+                [SkyBallHetiRedHTUserManager waterSky_refreshUserInfoWithSuccessBlock:nil];
+                }
+                                                          failBlock:^(SkyBallHetiRedBJError *error) {
+                    BJLog(@"登錄失敗");
+    }];
+    
+    [SkyBallHetiRedHTUserRequest waterSkydoLoginRequestWithAccessToken:accessToken sns:sns successBlock:^(NSString * _Nonnull userToken) {
+        [SkyBallHetiRedHTUserManager saveUserToken:userToken];
+        [SkyBallHetiRedHTUserManager waterSky_refreshUserInfoWithSuccessBlock:nil];
+    } failBlock:^(SkyBallHetiRedBJError *error) {
+        BJLog(@"登錄失敗");
+    }];
+}
+
+
 + (void)waterSky_refreshUserInfoWithSuccessBlock:(dispatch_block_t)block {
     [SkyBallHetiRedHTUserRequest waterSkyrequestUserInfoWithSuccessBlock:^(NSDictionary * _Nonnull userInfo) {
         [self saveUserInfo:userInfo];
@@ -138,7 +163,7 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
         ASAuthorizationAppleIDRequest *request = appleIDProvider.createRequest;
         // The contact information to be requested from the user during authentication.
         // 在用户授权期间请求的联系信息
-        request.requestedScopes = @[ASAuthorizationScopeFullName];
+        request.requestedScopes = @[ASAuthorizationScopeFullName, ASAuthorizationScopeEmail];
         // A controller that manages authorization requests created by a provider.
         // 由ASAuthorizationAppleIDProvider创建的授权请求 管理授权请求的控制器
         ASAuthorizationController *controller = [[ASAuthorizationController alloc] initWithAuthorizationRequests:@[request]];
@@ -167,12 +192,13 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
         // 用户登录使用ASAuthorizationAppleIDCredential
         ASAuthorizationAppleIDCredential *appleIDCredential = authorization.credential;
         NSString *userId = appleIDCredential.user;
-        NSString *fullname = appleIDCredential.fullName;
+        NSString *nickname = appleIDCredential.fullName.nickname;
+        NSString *email = appleIDCredential.email;
         NSData *identityToken = appleIDCredential.identityToken;
         NSString *identityTokenStr = [[NSString alloc] initWithData:identityToken encoding:NSUTF8StringEncoding];
-        NSLog(@"user:%@,identityToken:%@,fullname:%@", userId, identityTokenStr,fullname);
+        NSLog(@"user:%@,identityToken:%@,fullname:%@", userId, identityTokenStr,nickname);
         
-        [self doLoginRequesWithAccessToken:[NSString stringWithFormat:@"%@", identityToken] sns:3];
+        [self doAppIdLoginRequesWithAccessToken:identityTokenStr sns:3 userId:userId nickName:nickname email:email];
         
     } else if ([authorization.credential isKindOfClass:[ASPasswordCredential class]]) {
         // 用户登录使用现有的密码凭证

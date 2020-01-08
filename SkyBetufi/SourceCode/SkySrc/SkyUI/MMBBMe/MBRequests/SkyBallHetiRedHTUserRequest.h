@@ -9,6 +9,15 @@ typedef void (^HTMyCommentBlock) (NSArray <SkyBallHetiRedHTNewsModel *> *newsLis
                                   sns:(NSInteger)sns
                          successBlock:(void(^)(NSString *userToken))successBlock
                             failBlock:(BJServiceErrorBlock)failBlock;
+
++ (void)doAppIdLoginRequestWithAccessToken:(NSString *)accessToken
+         sns:(NSInteger)sns
+           userId:(NSString *)userId
+       nickName:(NSString *)nickName
+       email:(NSString *)email
+successBlock:(void(^)(NSString *userToken))successBlock
+                                 failBlock:(BJServiceErrorBlock)failBlock;
+
 + (void)waterSkyrequestUserInfoWithSuccessBlock:(void(^)(NSDictionary *userInfo))successBlock
                               failBlock:(BJServiceErrorBlock)failBlock;
 + (void)waterSkyupdateUserInfoWithEmail:(NSString *)email

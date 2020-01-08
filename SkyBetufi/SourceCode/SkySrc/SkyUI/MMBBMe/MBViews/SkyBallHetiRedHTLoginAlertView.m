@@ -30,7 +30,7 @@
     
     if (isLogin) {
         if (@available(iOS 13.0, *)) {
-            ASAuthorizationAppleIDButton *appleBtn = [[ASAuthorizationAppleIDButton alloc] initWithAuthorizationButtonType:(ASAuthorizationAppleIDButtonTypeSignIn) authorizationButtonStyle:(ASAuthorizationAppleIDButtonStyleWhite)];
+            ASAuthorizationAppleIDButton *appleBtn = [[ASAuthorizationAppleIDButton alloc] initWithAuthorizationButtonType:(ASAuthorizationAppleIDButtonTypeSignIn) authorizationButtonStyle:(ASAuthorizationAppleIDButtonStyleWhiteOutline)];
            
            [appleBtn addTarget:self action:@selector(appleIdLoginBtn:) forControlEvents:UIControlEventTouchUpInside];
            
