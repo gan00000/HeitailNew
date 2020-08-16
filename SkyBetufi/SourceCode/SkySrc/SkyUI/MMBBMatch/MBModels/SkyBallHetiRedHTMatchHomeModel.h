@@ -13,6 +13,8 @@
 @property (nonatomic, copy) NSString *location;
 @property (nonatomic, copy) NSString *season_name;
 @property (nonatomic, assign) NSInteger game_status;
+@property (nonatomic, copy) NSString *homeTeamLike;
+@property (nonatomic, copy) NSString *awayTeamLike;
 @property (nonatomic, copy) NSString *homeLogo;
 @property (nonatomic, copy) NSString *homeName;
 @property (nonatomic, copy) NSString *awayName;
@@ -26,4 +28,5 @@
 @property (nonatomic, copy) NSString *img_away_logo;
 @property (nonatomic, copy) NSString *quarter;
 @property (nonatomic, copy) NSString *quarter_time;
+@property (nonatomic, copy) NSString *videoLiveStreamName;
 @end
