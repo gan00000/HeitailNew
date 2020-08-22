@@ -10,6 +10,7 @@
 #import "SkyBallHetiRedHTMatchVideoLiveViewController.h"
 
 #import "LMPlayer.h"
+#import "HTIndicatorView.h"
 
 @interface SkyBallHetiRedHTMatchDetailViewController () <UIScrollViewDelegate, LMVideoPlayerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *homeTeamLogo;
@@ -23,6 +24,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *awayTeamPtsLabel;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIView *topDetailView;
+@property (weak, nonatomic) IBOutlet UIView *likeContentView;
+@property (weak, nonatomic) IBOutlet UIButton *leftLikeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *rightLikeBtn;
+@property (weak, nonatomic) IBOutlet UILabel *leftLikeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rightLikeLabel;
 
 @property (nonatomic, strong) HMSegmentedControl *segmentControl;
 @property (nonatomic, strong) UIScrollView *containerView;
@@ -49,7 +55,7 @@
 @property (nonatomic, assign) BOOL isStartPlay;
 @property (nonatomic, strong) UIView *playerContentView;
 @property (weak, nonatomic) IBOutlet UILabel *startTimeLable;
-
+@property (nonatomic, strong)HTIndicatorView *likeIndicatorView;
 
 @end
 @implementation SkyBallHetiRedHTMatchDetailViewController
@@ -187,6 +193,78 @@
     [self remakePlayerFatherViewPositionInPortrait];
     self.playerContentView.hidden = YES;
     
+    
+    //讚部分
+    self.likeIndicatorView = [[HTIndicatorView alloc] init];
+    [self.likeContentView addSubview:self.likeIndicatorView];
+    [self.likeIndicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(2.4);
+        make.width.mas_equalTo(self.likeContentView);
+        make.bottom.mas_equalTo(self.likeContentView.mas_bottom);
+    }];
+    
+   BOOL awayLike = [[NSUserDefaults standardUserDefaults] boolForKey:[NSString stringWithFormat:@"USER_LIKED_%@_%@", self.matchModel.game_id,@"away"]];
+    BOOL homeLike = [[NSUserDefaults standardUserDefaults] boolForKey:[NSString stringWithFormat:@"USER_LIKED_%@_%@", self.matchModel.game_id,@"home"]];
+    
+    if (awayLike) {
+        [self.leftLikeBtn setImage:[UIImage imageNamed:@"icon_left_like"] forState:(UIControlStateNormal)];
+    }else if (homeLike){
+        [self.rightLikeBtn setImage:[UIImage imageNamed:@"icon_right_like"] forState:(UIControlStateNormal)];
+    }
+    self.leftLikeLabel.text = [NSString stringWithFormat:@"客   %@", self.matchModel.awayTeamLike];
+    self.rightLikeLabel.text = [NSString stringWithFormat:@"%@   主", self.matchModel.homeTeamLike];
+}
+- (IBAction)rightLikeBtnClick:(id)sender {//主隊
+    
+    BOOL awayLike = [[NSUserDefaults standardUserDefaults] boolForKey:[NSString stringWithFormat:@"USER_LIKED_%@_%@", self.matchModel.game_id,@"away"]];
+    BOOL homeLike = [[NSUserDefaults standardUserDefaults] boolForKey:[NSString stringWithFormat:@"USER_LIKED_%@_%@", self.matchModel.game_id,@"home"]];
+    if (awayLike || homeLike) {
+        [kWindow showToast:@"已經點讚了"];
+        return;
+    }
+    //[self.likeIndicatorView updateView:0 rightValue:5];
+    [SkyBallHetiRedHTMatchSummaryRequest requestLikeMatchTeamWithGameId:self.matchModel.game_id type:@"1" successBlock:^(HTLikeTeamModel *m) {
+        if (!m) {
+           return;
+        }
+        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:[NSString stringWithFormat:@"USER_LIKED_%@_%@", self.matchModel.game_id,@"home"]];
+        if (self.likeIndicatorView) {
+            [self.likeIndicatorView updateView:[m.awayTeamLike intValue] rightValue:[m.homeTeamLike intValue]];
+        }
+        self.leftLikeLabel.text = [NSString stringWithFormat:@"客   %@", m.awayTeamLike];
+        self.rightLikeLabel.text = [NSString stringWithFormat:@"主   %@", m.homeTeamLike];
+        [self.rightLikeBtn setImage:[UIImage imageNamed:@"icon_right_like"] forState:(UIControlStateNormal)];
+        
+    } errorBlock:^(SkyBallHetiRedBJError *error) {
+        [kWindow showToast:@"請求出錯"];
+    }];
+    
+}
+- (IBAction)leftLikeBtnCliek:(id)sender {
+    
+    BOOL awayLike = [[NSUserDefaults standardUserDefaults] boolForKey:[NSString stringWithFormat:@"USER_LIKED_%@_%@", self.matchModel.game_id,@"away"]];
+    BOOL homeLike = [[NSUserDefaults standardUserDefaults] boolForKey:[NSString stringWithFormat:@"USER_LIKED_%@_%@", self.matchModel.game_id,@"home"]];
+    if (awayLike || homeLike) {
+         [kWindow showToast:@"已經點讚了"];
+        return;
+    }
+    [SkyBallHetiRedHTMatchSummaryRequest requestLikeMatchTeamWithGameId:self.matchModel.game_id type:@"2" successBlock:^(HTLikeTeamModel *m) {
+        if (!m) {
+            return;
+        }
+        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:[NSString stringWithFormat:@"USER_LIKED_%@_%@", self.matchModel.game_id,@"away"]];
+        if (self.likeIndicatorView) {
+            [self.likeIndicatorView updateView:[m.awayTeamLike intValue] rightValue:[m.homeTeamLike intValue]];
+        }
+        self.leftLikeLabel.text = [NSString stringWithFormat:@"客   %@", m.awayTeamLike];
+        self.rightLikeLabel.text = [NSString stringWithFormat:@"主   %@", m.homeTeamLike];
+        
+        [self.leftLikeBtn setImage:[UIImage imageNamed:@"icon_left_like"] forState:(UIControlStateNormal)];
+     
+        
+    } errorBlock:^(SkyBallHetiRedBJError *error) {
+        [kWindow showToast:@"請求出錯"];
+    }];
 }
 
 - (void)startPlay {
@@ -359,6 +437,13 @@
     if (self.loadedBlock) {
         self.loadedBlock();
     }
+    
+    //设置点赞部分数据
+    if (self.likeIndicatorView) {
+        [self.likeIndicatorView updateView:[self.matchSummaryModel.awayTeamLike intValue] rightValue:[self.matchSummaryModel.homeTeamLike intValue]];
+    }
+    self.leftLikeLabel.text = [NSString stringWithFormat:@"客   %@", self.matchSummaryModel.awayTeamLike];
+    self.rightLikeLabel.text = [NSString stringWithFormat:@"主   %@", self.matchSummaryModel.homeTeamLike];
 }
 - (void)startTimer {
     if (self.timer) {

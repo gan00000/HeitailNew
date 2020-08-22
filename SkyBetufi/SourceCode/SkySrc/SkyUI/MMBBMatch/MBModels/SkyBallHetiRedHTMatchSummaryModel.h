@@ -40,4 +40,9 @@
 @property (nonatomic, weak) SkyBallHetiRedHTMatchDetailsModel *away_team_ast_most;
 @property (nonatomic, weak) SkyBallHetiRedHTMatchDetailsModel *home_team_reb_most;
 @property (nonatomic, weak) SkyBallHetiRedHTMatchDetailsModel *away_team_reb_most;
+
+
+@property (nonatomic, copy) NSString *homeTeamLike;
+@property (nonatomic, copy) NSString *awayTeamLike;
+
 @end

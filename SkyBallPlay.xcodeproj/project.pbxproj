@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		32100C4023C2E1FB00CC1DD2 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32100C3F23C2E1FB00CC1DD2 /* AuthenticationServices.framework */; };
+		325A921A24F119F3008F0B2E /* HTIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 325A921924F119F3008F0B2E /* HTIndicatorView.m */; };
+		325A921D24F1637F008F0B2E /* HTLikeTeamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 325A921C24F1637F008F0B2E /* HTLikeTeamModel.m */; };
 		32642A5722EFE8FD00D2DA1E /* UIImageView+SkyBallHetiRedSVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 32642A5622EFE8FD00D2DA1E /* UIImageView+SkyBallHetiRedSVG.m */; };
 		32642A5A22F027EB00D2DA1E /* TZPhotoPickerController+SkyBallHetiRedDRExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 32642A5922F027EA00D2DA1E /* TZPhotoPickerController+SkyBallHetiRedDRExtention.m */; };
 		326434D922F04F5E00D2DA1E /* GuideImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 326434D422F04F5E00D2DA1E /* GuideImage.bundle */; };
@@ -348,6 +350,10 @@
 
 /* Begin PBXFileReference section */
 		32100C3F23C2E1FB00CC1DD2 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		325A921824F119F3008F0B2E /* HTIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTIndicatorView.h; sourceTree = "<group>"; };
+		325A921924F119F3008F0B2E /* HTIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTIndicatorView.m; sourceTree = "<group>"; };
+		325A921B24F1637F008F0B2E /* HTLikeTeamModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTLikeTeamModel.h; sourceTree = "<group>"; };
+		325A921C24F1637F008F0B2E /* HTLikeTeamModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTLikeTeamModel.m; sourceTree = "<group>"; };
 		325BD8C522E0705D00A07EC9 /* SkyBallHetiRedPPXXBJLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyBallHetiRedPPXXBJLaunchViewController.h; sourceTree = "<group>"; };
 		325BD8C822E07D6F00A07EC9 /* confuse.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = confuse.sh; sourceTree = "<group>"; };
 		325BD8C922E07D6F00A07EC9 /* func.list */ = {isa = PBXFileReference; lastKnownFileType = text; path = func.list; sourceTree = "<group>"; };
@@ -938,6 +944,15 @@
 			path = SkySrc;
 			sourceTree = "<group>";
 		};
+		325A921724F11969008F0B2E /* MyViwe */ = {
+			isa = PBXGroup;
+			children = (
+				325A921824F119F3008F0B2E /* HTIndicatorView.h */,
+				325A921924F119F3008F0B2E /* HTIndicatorView.m */,
+			);
+			path = MyViwe;
+			sourceTree = "<group>";
+		};
 		326434D322F04F5E00D2DA1E /* CCPPDHGuidePageHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -1512,6 +1527,7 @@
 		FEC116D32143D799002DB617 /* MMBBMatch */ = {
 			isa = PBXGroup;
 			children = (
+				325A921724F11969008F0B2E /* MyViwe */,
 				3287122E23B8962800AB5360 /* videoPlayerImage */,
 				32FED83723ACBD1000D900A7 /* icon_play.png */,
 				32FED83523AC812200D900A7 /* live_player_bg.png */,
@@ -2058,6 +2074,8 @@
 				FEAB2107216DD731002A05AB /* SkyBallHetiRedHTMatchDetailsModel.m */,
 				327A19EE23ADD17600F13A36 /* HTMacthLivePostModel.h */,
 				327A19EF23ADD17600F13A36 /* HTMacthLivePostModel.m */,
+				325A921B24F1637F008F0B2E /* HTLikeTeamModel.h */,
+				325A921C24F1637F008F0B2E /* HTLikeTeamModel.m */,
 			);
 			path = MBModels;
 			sourceTree = "<group>";
@@ -2399,6 +2417,7 @@
 				FEC116932143D4A1002DB617 /* SkyBallHetiRedBJHTTPServiceEngine.m in Sources */,
 				FEA104F6216CB0F0000DBE63 /* SkyBallHetiRedHTMatchSummaryModel.m in Sources */,
 				FE6BD092214584C30090118A /* SkyBallHetiRedHTNewsTopHeaderView.m in Sources */,
+				325A921A24F119F3008F0B2E /* HTIndicatorView.m in Sources */,
 				32FFD29123A2267200E1661A /* UIImageView+HT.m in Sources */,
 				FEC116B82143D4A1002DB617 /* SkyBallHetiRedPPXXBJBaseNavigationController.m in Sources */,
 				FEDF8FCE21444A3E005C7C4D /* NSDateFormatter+SkyBallHetiRedDRExtension.m in Sources */,
@@ -2489,6 +2508,7 @@
 				32FED82123AB768700D900A7 /* LMLandScapeControlView.m in Sources */,
 				FE6BD05B2144FDFD0090118A /* SkyBallHetiRedHTMatchWordLiveViewController.m in Sources */,
 				32CD877D22F4173800063A14 /* AppFunVideoDelegate.m in Sources */,
+				325A921D24F1637F008F0B2E /* HTLikeTeamModel.m in Sources */,
 				FEC116132143D4A1002DB617 /* SkyBallHetiRedLJViewPager.m in Sources */,
 				32FED82923AB768700D900A7 /* LMVideoPlayer.m in Sources */,
 				326D67BF23A8DB9A00DDB443 /* WBImageBrowserView.m in Sources */,

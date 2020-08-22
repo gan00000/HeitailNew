@@ -1,5 +1,6 @@
 #import "SkyBallHetiRedHTMatchSummaryRequest.h"
 #import "HTMacthLivePostModel.h"
+#import "HTLikeTeamModel.h"
 @implementation SkyBallHetiRedHTMatchSummaryRequest
 + (void)waterSkyrequestSummaryWithGameId:(NSString *)game_id
                     successBlock:(void(^)(SkyBallHetiRedHTMatchSummaryModel *summaryModel, SkyBallHetiRedHTMatchCompareModel *compareModel))successBlock
@@ -140,4 +141,23 @@
     } errorBlock:errorBlock];
     
  }
+
+
+//http://app.ballgametime.com/api/like_match_team/?game_id=3555239&type=1 點讚接口
+// game_id 比赛赛程id
+//type   1-主队;2-客队
++ (void)requestLikeMatchTeamWithGameId:(NSString *)game_id
+                                  type:(NSString *)type
+               successBlock:(void(^)(HTLikeTeamModel * m))successBlock
+                 errorBlock:(BJServiceErrorBlock)errorBlock {
+    [SkyBallHetiRedBJHTTPServiceEngine waterSky_getRequestWithFunctionPath:API_MATCH_LIKE_MATCH_TEAM params:@{@"game_id":game_id, @"type": type} successBlock:^(id responseData) {
+       
+       HTLikeTeamModel *mHTLikeTeamModel = [HTLikeTeamModel yy_modelWithJSON: responseData[@"team_like"]];
+       if (successBlock) {
+           successBlock(mHTLikeTeamModel);
+       }
+       
+   } errorBlock:errorBlock];
+   
+}
 @end

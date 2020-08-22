@@ -8,6 +8,8 @@
 #define API_MATCH_SUMMARY               @"api/get_match_summary"
 #define API_MATCH_LIVE_POST               @"api/get_live_post_from_game"
 #define API_MATCH_LIVE_POST_GAME               @"api/get_live_post_from_game"
+#define API_MATCH_LIKE_MATCH_TEAM               @"api/like_match_team"
+
 #pragma mark - 新聞
 #define API_NEWS_HOME                   @"news"
 #define API_NEWS_BANNER                 @"?json=get_app_index"

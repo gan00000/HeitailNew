@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sv3-UW-Fso">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sv3-UW-Fso">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -131,8 +131,67 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ne-jd-wY3">
-                                <rect key="frame" x="0.0" y="200" width="414" height="536"/>
+                                <rect key="frame" x="0.0" y="232" width="414" height="504"/>
                                 <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgR-p7-vao" userLabel="ZanView">
+                                <rect key="frame" x="0.0" y="200" width="414" height="32"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客   0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0i-g6-RmC" userLabel="leftLikeLable">
+                                        <rect key="frame" x="66" y="2" width="120" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="4ZQ-Lf-89Z"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHc-BB-5d4" userLabel="rightLike">
+                                        <rect key="frame" x="358" y="2" width="26" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="26" id="6ht-c8-Qsf"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="icon_right_unlike"/>
+                                        <connections>
+                                            <action selector="rightLikeBtnClick:" destination="Sv3-UW-Fso" eventType="touchUpInside" id="ndb-Nb-En1"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0   主" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mkj-yA-lKB" userLabel="rightLikeLable">
+                                        <rect key="frame" x="228" y="2" width="120" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="dXO-tl-y31"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLn-Ct-oc9" userLabel="leftLike">
+                                        <rect key="frame" x="30" y="2" width="26" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="26" id="S8C-1n-z5f"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="icon_left_unlike"/>
+                                        <connections>
+                                            <action selector="leftLikeBtnCliek:" destination="Sv3-UW-Fso" eventType="touchUpInside" id="QNC-uJ-Juy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="FLn-Ct-oc9" firstAttribute="top" secondItem="zgR-p7-vao" secondAttribute="top" constant="2" id="66f-4y-8tG"/>
+                                    <constraint firstItem="Q0i-g6-RmC" firstAttribute="top" secondItem="FLn-Ct-oc9" secondAttribute="top" id="IgF-TU-rh0"/>
+                                    <constraint firstItem="aHc-BB-5d4" firstAttribute="top" secondItem="zgR-p7-vao" secondAttribute="top" constant="2" id="KYV-VH-6Ne"/>
+                                    <constraint firstAttribute="trailing" secondItem="aHc-BB-5d4" secondAttribute="trailing" constant="30" id="LbY-Uo-oLu"/>
+                                    <constraint firstItem="Q0i-g6-RmC" firstAttribute="bottom" secondItem="FLn-Ct-oc9" secondAttribute="bottom" id="TOh-Id-3gX"/>
+                                    <constraint firstAttribute="height" constant="32" id="XMZ-nx-MFv"/>
+                                    <constraint firstAttribute="bottom" secondItem="FLn-Ct-oc9" secondAttribute="bottom" constant="4" id="aT7-ba-jaz"/>
+                                    <constraint firstItem="Mkj-yA-lKB" firstAttribute="bottom" secondItem="aHc-BB-5d4" secondAttribute="bottom" id="ckD-U1-BEh"/>
+                                    <constraint firstItem="Mkj-yA-lKB" firstAttribute="top" secondItem="FLn-Ct-oc9" secondAttribute="top" id="fEv-1v-ASM"/>
+                                    <constraint firstAttribute="bottom" secondItem="aHc-BB-5d4" secondAttribute="bottom" constant="4" id="szt-hN-XAu"/>
+                                    <constraint firstItem="Q0i-g6-RmC" firstAttribute="leading" secondItem="FLn-Ct-oc9" secondAttribute="trailing" constant="10" id="uNc-Hf-drA"/>
+                                    <constraint firstItem="aHc-BB-5d4" firstAttribute="leading" secondItem="Mkj-yA-lKB" secondAttribute="trailing" constant="10" id="vTH-3z-189"/>
+                                    <constraint firstItem="FLn-Ct-oc9" firstAttribute="leading" secondItem="zgR-p7-vao" secondAttribute="leading" constant="30" id="vZC-Fe-kgD"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -140,11 +199,14 @@
                             <constraint firstItem="WoZ-cF-NaX" firstAttribute="trailing" secondItem="3Ne-jd-wY3" secondAttribute="trailing" id="7cO-Rw-Xug"/>
                             <constraint firstItem="3Ne-jd-wY3" firstAttribute="leading" secondItem="WoZ-cF-NaX" secondAttribute="leading" id="8dL-xm-UMC"/>
                             <constraint firstItem="WoZ-cF-NaX" firstAttribute="trailing" secondItem="WcA-4R-DjX" secondAttribute="trailing" id="8qy-67-4xN"/>
-                            <constraint firstItem="3Ne-jd-wY3" firstAttribute="top" secondItem="WcA-4R-DjX" secondAttribute="bottom" id="B5n-T6-SBY"/>
+                            <constraint firstItem="zgR-p7-vao" firstAttribute="top" secondItem="WcA-4R-DjX" secondAttribute="bottom" id="G2g-Tq-Sff"/>
                             <constraint firstItem="WcA-4R-DjX" firstAttribute="top" secondItem="DBo-1C-urc" secondAttribute="top" id="OeZ-In-1aD"/>
+                            <constraint firstItem="zgR-p7-vao" firstAttribute="leading" secondItem="WcA-4R-DjX" secondAttribute="leading" id="U7y-Ii-aZ7"/>
                             <constraint firstItem="IwX-Q8-eVK" firstAttribute="top" secondItem="WcA-4R-DjX" secondAttribute="top" id="g8W-8q-HhH"/>
                             <constraint firstItem="IwX-Q8-eVK" firstAttribute="bottom" secondItem="WcA-4R-DjX" secondAttribute="bottom" id="gtu-Ik-OjD"/>
                             <constraint firstItem="WcA-4R-DjX" firstAttribute="leading" secondItem="WoZ-cF-NaX" secondAttribute="leading" id="hDW-2s-Nsm"/>
+                            <constraint firstItem="zgR-p7-vao" firstAttribute="trailing" secondItem="WcA-4R-DjX" secondAttribute="trailing" id="moT-mn-aDp"/>
+                            <constraint firstItem="3Ne-jd-wY3" firstAttribute="top" secondItem="zgR-p7-vao" secondAttribute="bottom" id="pxH-ie-SX2"/>
                             <constraint firstItem="IwX-Q8-eVK" firstAttribute="leading" secondItem="WcA-4R-DjX" secondAttribute="leading" id="w2X-QM-Uw9"/>
                             <constraint firstItem="IwX-Q8-eVK" firstAttribute="trailing" secondItem="WcA-4R-DjX" secondAttribute="trailing" id="z1v-NO-3ag"/>
                             <constraint firstItem="WoZ-cF-NaX" firstAttribute="bottom" secondItem="3Ne-jd-wY3" secondAttribute="bottom" id="zCi-UV-PTl"/>
@@ -159,6 +221,11 @@
                         <outlet property="homeTeamLogo" destination="pRr-N4-RH1" id="sQm-2y-gVq"/>
                         <outlet property="homeTeamName" destination="owa-ip-yuo" id="b88-a5-76d"/>
                         <outlet property="homeTeamPtsLabel" destination="MfH-WP-ASL" id="RXi-gW-FO5"/>
+                        <outlet property="leftLikeBtn" destination="FLn-Ct-oc9" id="CXS-dA-c3S"/>
+                        <outlet property="leftLikeLabel" destination="Q0i-g6-RmC" id="ox1-tf-cey"/>
+                        <outlet property="likeContentView" destination="zgR-p7-vao" id="ajB-yt-pN3"/>
+                        <outlet property="rightLikeBtn" destination="aHc-BB-5d4" id="6E5-aB-Y7f"/>
+                        <outlet property="rightLikeLabel" destination="Mkj-yA-lKB" id="qQc-c4-WmP"/>
                         <outlet property="startPlayImageView" destination="xsF-e7-sJm" id="vxu-lL-NBC"/>
                         <outlet property="startTimeLable" destination="AGT-3j-k6E" id="ehh-Ow-0yp"/>
                         <outlet property="statusLabel" destination="dDr-Pe-Uad" id="dvA-2y-nq0"/>
@@ -171,6 +238,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_left_unlike" width="100" height="100"/>
+        <image name="icon_right_unlike" width="66.666664123535156" height="66.666664123535156"/>
         <image name="live_player_bg.png" width="640" height="360"/>
         <image name="video_play_normal.png" width="135" height="135"/>
         <image name="video_play_pressed.png" width="135" height="135"/>
