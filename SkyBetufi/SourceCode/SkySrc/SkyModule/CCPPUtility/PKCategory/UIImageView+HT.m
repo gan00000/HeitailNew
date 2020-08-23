@@ -13,6 +13,9 @@
 
 - (void)th_setImageWithURL:(nullable NSString *)url placeholderImage:(nullable UIImage *)placeholder{
     
+    if (!url) {
+        return;
+    }
        if ([url hasPrefix:@"http"]) {
            [self sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:placeholder];
            

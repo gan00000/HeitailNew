@@ -18,6 +18,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *awayRebLabel;
 @property (weak, nonatomic) IBOutlet UILabel *awayRebPlayerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *awayRebPlaceLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *ptsAwayImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *ptsHomeImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *rebHomeImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *rebAwayImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *astHomeImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *astAwayImageView;
+
+
 @end
 @implementation SkyBallHetiRedHTMatchBestPlayerCell
 - (void)awakeFromNib {
@@ -46,5 +55,16 @@
     self.awayRebLabel.text = summaryModel.away_team_reb_most.reb.length > 0 ? summaryModel.away_team_reb_most.reb : @"0";
     self.awayRebPlayerLabel.text = summaryModel.away_team_reb_most.name.length > 0 ? summaryModel.away_team_reb_most.name : @"";
     self.awayRebPlaceLabel.text = [NSString stringWithFormat:@"位置：%@", summaryModel.away_team_reb_most.position.length ? summaryModel.away_team_reb_most.position : @""];
+    
+    [self.ptsAwayImageView th_setImageWithURL:summaryModel.away_team_pts_most.officialImagesrc placeholderImage:nil];
+    [self.ptsHomeImageView th_setImageWithURL:summaryModel.home_team_pts_most.officialImagesrc placeholderImage:nil];
+    
+     [self.rebAwayImageView th_setImageWithURL:summaryModel.away_team_reb_most.officialImagesrc placeholderImage:nil];
+     [self.rebHomeImageView th_setImageWithURL:summaryModel.home_team_reb_most.officialImagesrc placeholderImage:nil];
+    
+     [self.astAwayImageView th_setImageWithURL:summaryModel.away_team_ast_most.officialImagesrc placeholderImage:nil];
+    [self.astHomeImageView th_setImageWithURL:summaryModel.home_team_ast_most.officialImagesrc placeholderImage:nil];
+    
+    
 }
 @end

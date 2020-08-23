@@ -76,7 +76,7 @@
        [leftView mas_makeConstraints:^(MASConstraintMaker *make) {
               make.height.mas_equalTo(leftBgView);
               make.trailing.mas_equalTo(leftBgView);
-           make.width.mas_equalTo(leftBgView).multipliedBy(0.2);
+           make.width.mas_equalTo(leftBgView).multipliedBy(0);
           }];
     
     rightView = [[UIView alloc] init];
@@ -86,7 +86,7 @@
     [rightView mas_makeConstraints:^(MASConstraintMaker *make) {
            make.height.mas_equalTo(rightBgView);
            make.leading.mas_equalTo(rightBgView);
-        make.width.mas_equalTo(rightBgView).multipliedBy(0.2);
+        make.width.mas_equalTo(rightBgView).multipliedBy(0);
        }];
     
 }
