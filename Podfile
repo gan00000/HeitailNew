@@ -40,5 +40,5 @@ pod 'SVGKit'
 #pod 'XCDLumberjackNSLogger', '~> 1.0'
 pod 'Firebase/Analytics'
 pod 'Google-Mobile-Ads-SDK'
-
+pod 'Charts'
 end

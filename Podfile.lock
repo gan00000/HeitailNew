@@ -29,6 +29,9 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - Charts (3.4.0):
+    - Charts/Core (= 3.4.0)
+  - Charts/Core (3.4.0)
   - CocoaLumberjack (3.5.1):
     - CocoaLumberjack/Core (= 3.5.1)
   - CocoaLumberjack/Core (3.5.1)
@@ -140,6 +143,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - BlocksKit
+  - Charts
   - Firebase/Analytics
   - Google-Mobile-Ads-SDK
   - HexColors (= 4.0.0)
@@ -172,6 +176,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - BlocksKit
+    - Charts
     - CocoaLumberjack
     - Firebase
     - FirebaseAnalytics
@@ -218,6 +223,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
   CocoaLumberjack: 2101f8a5508197a305e737d16c5c2e9e2157628c
   Firebase: 749a8ff4962f9d8c79dda1966de20f6f77583d67
   FirebaseAnalytics: d35d47c03c50c73c14a7fd31463c5775843e78a9
@@ -253,6 +259,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZFLineSDK: fc1485f687bd9d6af5cb7e39ab2a8266680797dd
 
-PODFILE CHECKSUM: f9938ff78059d4310c8841086785f5cf884973c4
+PODFILE CHECKSUM: 05ac5a848101cc3590df5519ad29603ff60244b6
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.2
