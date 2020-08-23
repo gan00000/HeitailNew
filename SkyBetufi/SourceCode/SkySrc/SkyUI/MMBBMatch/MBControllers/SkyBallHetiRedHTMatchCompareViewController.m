@@ -76,7 +76,7 @@
         return 105;
     }
     if (indexPath.section == 1) {
-        return 320;
+        return 400;
     }
     return 260;
 }

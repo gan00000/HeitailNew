@@ -92,29 +92,29 @@
         summaryModel.away_team_blk = [NSString stringWithFormat:@"%ld", away_team_blk];
         summaryModel.home_team_stl = [NSString stringWithFormat:@"%ld", home_team_stl];
         summaryModel.away_team_stl = [NSString stringWithFormat:@"%ld", away_team_stl];
-        summaryModel.home_team_fgmade = @"0.00%";
+        summaryModel.home_team_fgmade = @"0%";
         if (home_team_fgatt > 0) {
-            summaryModel.home_team_fgmade = [NSString stringWithFormat:@"%.2f%%", 100.0 * home_team_fgmade / home_team_fgatt];
+            summaryModel.home_team_fgmade = [NSString stringWithFormat:@"%ld%%", (NSInteger)(100.0 * home_team_fgmade / home_team_fgatt)];
         }
-        summaryModel.away_team_fgmade = @"0.00%";
+        summaryModel.away_team_fgmade = @"0%";
         if (away_team_fgatt > 0) {
-            summaryModel.away_team_fgmade = [NSString stringWithFormat:@"%.2f%%", 100.0 * away_team_fgmade / away_team_fgatt];
+            summaryModel.away_team_fgmade = [NSString stringWithFormat:@"%ld%%", (NSInteger)(100.0 * away_team_fgmade / away_team_fgatt)];
         }
-        summaryModel.home_team_fg3ptmade = @"0.00%";
+        summaryModel.home_team_fg3ptmade = @"0%";
         if (home_team_fg3ptatt > 0) {
-            summaryModel.home_team_fg3ptmade = [NSString stringWithFormat:@"%.2f%%", 100.0 * home_team_fg3ptmade / home_team_fg3ptatt];
+            summaryModel.home_team_fg3ptmade = [NSString stringWithFormat:@"%ld%%", (NSInteger)(100.0 * home_team_fg3ptmade / home_team_fg3ptatt)];
         }
-        summaryModel.away_team_fg3ptmade = @"0.00%";
+        summaryModel.away_team_fg3ptmade = @"0%";
         if (away_team_fg3ptatt > 0) {
-            summaryModel.away_team_fg3ptmade = [NSString stringWithFormat:@"%.2f%%", 100.0 * away_team_fg3ptmade / away_team_fg3ptatt];
+            summaryModel.away_team_fg3ptmade = [NSString stringWithFormat:@"%ld%%", (NSInteger)(100.0 * away_team_fg3ptmade / away_team_fg3ptatt)];
         }
-        summaryModel.home_team_ftmade = @"0.00%";
+        summaryModel.home_team_ftmade = @"0%";
         if (home_team_ftatt > 0) {
-            summaryModel.home_team_ftmade = [NSString stringWithFormat:@"%.2f%%", 100.0 * home_team_ftmade / home_team_ftatt];
+            summaryModel.home_team_ftmade = [NSString stringWithFormat:@"%ld%%", (NSInteger)(100.0 * home_team_ftmade / home_team_ftatt)];
         }
-        summaryModel.away_team_ftmade = @"0.00%";
+        summaryModel.away_team_ftmade = @"0%";
         if (away_team_ftatt > 0) {
-            summaryModel.away_team_ftmade = [NSString stringWithFormat:@"%.2f%%", 100.0 * away_team_ftmade / away_team_ftatt];
+            summaryModel.away_team_ftmade = [NSString stringWithFormat:@"%ld%%", (NSInteger)(100.0 * away_team_ftmade / away_team_ftatt)];
         }
         summaryModel.home_team_pts_most = home_team_pts_most;
         summaryModel.home_team_ast_most = home_team_ast_most;

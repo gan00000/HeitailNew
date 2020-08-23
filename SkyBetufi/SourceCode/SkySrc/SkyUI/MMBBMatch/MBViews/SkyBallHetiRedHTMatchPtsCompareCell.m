@@ -16,6 +16,17 @@
 @property (weak, nonatomic) IBOutlet UILabel *awayFgmadeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *away3FgmadeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *awayFtmadeLabel;
+
+@property (weak, nonatomic) IBOutlet HTCompareView *ptsCompareView;
+@property (weak, nonatomic) IBOutlet HTCompareView *rebCompareView;
+@property (weak, nonatomic) IBOutlet HTCompareView *astCompareView;
+@property (weak, nonatomic) IBOutlet HTCompareView *blkCompareView;
+@property (weak, nonatomic) IBOutlet HTCompareView *stlCompareView;
+@property (weak, nonatomic) IBOutlet HTCompareView *fgmadeCompareView;
+
+@property (weak, nonatomic) IBOutlet HTCompareView *fg3madeCompareView;
+@property (weak, nonatomic) IBOutlet HTCompareView *ftCompareView;
+
 @end
 @implementation SkyBallHetiRedHTMatchPtsCompareCell
 - (void)awakeFromNib {
@@ -42,5 +53,21 @@
     self.awayFgmadeLabel.text = summaryModel.away_team_fgmade;
     self.away3FgmadeLabel.text = summaryModel.away_team_fg3ptmade;
     self.awayFtmadeLabel.text = summaryModel.away_team_ftmade;
+    
+    [self.ptsCompareView updateWithLeftValue:[summaryModel.away_pts intValue] rightValue:[summaryModel.home_pts intValue]];
+    
+    [self.rebCompareView updateWithLeftValue:[summaryModel.away_team_reb intValue] rightValue:[summaryModel.home_team_reb intValue]];
+    
+    [self.astCompareView updateWithLeftValue:[summaryModel.away_team_ast intValue] rightValue:[summaryModel.home_team_ast intValue]];
+    
+    [self.blkCompareView updateWithLeftValue:[summaryModel.away_team_blk intValue] rightValue:[summaryModel.home_team_blk intValue]];
+    
+    [self.stlCompareView updateWithLeftValue:[summaryModel.away_team_stl intValue] rightValue:[summaryModel.home_team_stl intValue]];
+    
+    [self.fgmadeCompareView updateWithLeftPercent:[[summaryModel.away_team_fgmade stringByReplacingOccurrencesOfString:@"%" withString:@""] intValue] / 100.0 rightPercent:[summaryModel.home_team_fgmade intValue] / 100.0];
+    
+    [self.fg3madeCompareView updateWithLeftPercent:[[summaryModel.away_team_fg3ptmade stringByReplacingOccurrencesOfString:@"%" withString:@""] intValue] / 100.0 rightPercent:[summaryModel.home_team_fg3ptmade intValue] / 100.0];
+    
+    [self.ftCompareView updateWithLeftPercent:[[summaryModel.away_team_ftmade stringByReplacingOccurrencesOfString:@"%" withString:@""] intValue] / 100.0 rightPercent:[summaryModel.home_team_ftmade intValue] / 100.0];
 }
 @end

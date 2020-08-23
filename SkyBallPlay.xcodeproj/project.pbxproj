@@ -50,6 +50,7 @@
 		3287124E23B8962800AB5360 /* video_play_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3287123D23B8962800AB5360 /* video_play_normal.png */; };
 		3287124F23B8962800AB5360 /* video_error_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3287123E23B8962800AB5360 /* video_error_normal.png */; };
 		3287125023B8962800AB5360 /* video_volume_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3287123F23B8962800AB5360 /* video_volume_icon.png */; };
+		32AB7E6224F276230049B022 /* HTCompareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AB7E6124F276230049B022 /* HTCompareView.m */; };
 		32ABE1CC22EDF4C2008505BA /* SkyBallHetiRedHTNewsHomeOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ABE1CA22EDF4C1008505BA /* SkyBallHetiRedHTNewsHomeOtherViewController.m */; };
 		32ABE1CE22EDF4D0008505BA /* SkyBallHetiRedNewsHomeOther.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32ABE1CD22EDF4D0008505BA /* SkyBallHetiRedNewsHomeOther.storyboard */; };
 		32ABE1D222EDF733008505BA /* SkyBallHetiRedHTTabBarHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ABE1CF22EDF732008505BA /* SkyBallHetiRedHTTabBarHomeViewController.m */; };
@@ -407,6 +408,8 @@
 		3287123D23B8962800AB5360 /* video_play_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_play_normal.png; sourceTree = "<group>"; };
 		3287123E23B8962800AB5360 /* video_error_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_error_normal.png; sourceTree = "<group>"; };
 		3287123F23B8962800AB5360 /* video_volume_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_volume_icon.png; sourceTree = "<group>"; };
+		32AB7E6024F276230049B022 /* HTCompareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTCompareView.h; sourceTree = "<group>"; };
+		32AB7E6124F276230049B022 /* HTCompareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTCompareView.m; sourceTree = "<group>"; };
 		32ABE1CA22EDF4C1008505BA /* SkyBallHetiRedHTNewsHomeOtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyBallHetiRedHTNewsHomeOtherViewController.m; sourceTree = "<group>"; };
 		32ABE1CB22EDF4C2008505BA /* SkyBallHetiRedHTNewsHomeOtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyBallHetiRedHTNewsHomeOtherViewController.h; sourceTree = "<group>"; };
 		32ABE1CD22EDF4D0008505BA /* SkyBallHetiRedNewsHomeOther.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SkyBallHetiRedNewsHomeOther.storyboard; sourceTree = "<group>"; };
@@ -949,6 +952,8 @@
 			children = (
 				325A921824F119F3008F0B2E /* HTIndicatorView.h */,
 				325A921924F119F3008F0B2E /* HTIndicatorView.m */,
+				32AB7E6024F276230049B022 /* HTCompareView.h */,
+				32AB7E6124F276230049B022 /* HTCompareView.m */,
 			);
 			path = MyViwe;
 			sourceTree = "<group>";
@@ -2441,6 +2446,7 @@
 				FEC116B62143D4A1002DB617 /* SkyBallHetiRedBJBaseHTTPEngine.m in Sources */,
 				FEC116782143D4A1002DB617 /* SkyBallHetiRedBJURINavHelper.m in Sources */,
 				FEAB2108216DD731002A05AB /* SkyBallHetiRedHTMatchDetailsModel.m in Sources */,
+				32AB7E6224F276230049B022 /* HTCompareView.m in Sources */,
 				FE81D15E21496B380047A4A2 /* SkyBallHetiRedHTDataHomeInfoModel.m in Sources */,
 				FE81D1622149716D0047A4A2 /* SkyBallHetiRedHTDataHomePlayerCell.m in Sources */,
 				FE83FE542177838F006C714C /* SkyBallHetiRedHTMatchDataRightCell.m in Sources */,
