@@ -56,6 +56,7 @@
 		32ABE1D222EDF733008505BA /* SkyBallHetiRedHTTabBarHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ABE1CF22EDF732008505BA /* SkyBallHetiRedHTTabBarHomeViewController.m */; };
 		32ABE1D322EDF733008505BA /* SkyBallHetiRedHTTabBarHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32ABE1D022EDF732008505BA /* SkyBallHetiRedHTTabBarHomeViewController.xib */; };
 		32BFD1DF239F9B1A0037985B /* HTViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BFD1DE239F9B1A0037985B /* HTViewController2.m */; };
+		32CC78E324F3EAAD00377576 /* BarChartUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CC78E224F3EAAD00377576 /* BarChartUtil.m */; };
 		32CD877A22F4173800063A14 /* MPMoviePlayerController+BackgroundPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CD876322F4173800063A14 /* MPMoviePlayerController+BackgroundPlayback.m */; };
 		32CD877B22F4173800063A14 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CD876422F4173800063A14 /* SettingsViewController.m */; };
 		32CD877C22F4173800063A14 /* SkyAsynchronousViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CD876522F4173800063A14 /* SkyAsynchronousViewController.m */; };
@@ -418,6 +419,8 @@
 		32ABE1D122EDF733008505BA /* SkyBallHetiRedHTTabBarHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyBallHetiRedHTTabBarHomeViewController.h; sourceTree = "<group>"; };
 		32BFD1DD239F9B1A0037985B /* HTViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTViewController2.h; sourceTree = "<group>"; };
 		32BFD1DE239F9B1A0037985B /* HTViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTViewController2.m; sourceTree = "<group>"; };
+		32CC78E124F3EAAD00377576 /* BarChartUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarChartUtil.h; sourceTree = "<group>"; };
+		32CC78E224F3EAAD00377576 /* BarChartUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarChartUtil.m; sourceTree = "<group>"; };
 		32CD876322F4173800063A14 /* MPMoviePlayerController+BackgroundPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MPMoviePlayerController+BackgroundPlayback.m"; sourceTree = "<group>"; };
 		32CD876422F4173800063A14 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		32CD876522F4173800063A14 /* SkyAsynchronousViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyAsynchronousViewController.m; sourceTree = "<group>"; };
@@ -1030,6 +1033,15 @@
 			path = videoPlayerImage;
 			sourceTree = "<group>";
 		};
+		32CC78E024F3EA7900377576 /* ChartUtil */ = {
+			isa = PBXGroup;
+			children = (
+				32CC78E124F3EAAD00377576 /* BarChartUtil.h */,
+				32CC78E224F3EAAD00377576 /* BarChartUtil.m */,
+			);
+			path = ChartUtil;
+			sourceTree = "<group>";
+		};
 		32CD869A22F3FB5400063A14 /* third */ = {
 			isa = PBXGroup;
 			children = (
@@ -1398,6 +1410,7 @@
 		FEC114342143D4A0002DB617 /* SkyModule */ = {
 			isa = PBXGroup;
 			children = (
+				32CC78E024F3EA7900377576 /* ChartUtil */,
 				32FED80223AB768700D900A7 /* LMPlayer */,
 				326D67B823A8DB9A00DDB443 /* WBImageBrowser */,
 				326434D322F04F5E00D2DA1E /* CCPPDHGuidePageHUD */,
@@ -2546,6 +2559,7 @@
 				FE83FE4C21778341006C714C /* SkyBallHetiRedHTMatchDataLeftCell.m in Sources */,
 				326434DA22F04F5E00D2DA1E /* SkyBallHetiRedDHGifImageOperation.m in Sources */,
 				FEC116C52143D4A1002DB617 /* UIView+SkyBallHetiRedBlockGesture.m in Sources */,
+				32CC78E324F3EAAD00377576 /* BarChartUtil.m in Sources */,
 				FE82A483216E42680070FFC0 /* SkyBallHetiRedHTMatchLiveFeedCell.m in Sources */,
 				32FED82023AB768700D900A7 /* LMPlayerModel.m in Sources */,
 				FEC116F22143D91D002DB617 /* SkyBallHetiRedHTMatchHomeViewController.m in Sources */,

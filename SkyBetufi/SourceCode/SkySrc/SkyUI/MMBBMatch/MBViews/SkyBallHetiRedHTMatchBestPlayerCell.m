@@ -1,4 +1,6 @@
 #import "SkyBallHetiRedHTMatchBestPlayerCell.h"
+#import "BarChartUtil.h"
+
 @interface SkyBallHetiRedHTMatchBestPlayerCell ()
 @property (weak, nonatomic) IBOutlet UILabel *homePtsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *homePtsPlayerLabel;
@@ -26,12 +28,24 @@
 @property (weak, nonatomic) IBOutlet UIImageView *astHomeImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *astAwayImageView;
 
+@property (weak, nonatomic) IBOutlet BarChartView *ptsBarChart;
+@property (weak, nonatomic) IBOutlet BarChartView *rebBarChart;
+@property (weak, nonatomic) IBOutlet BarChartView *astBarChart;
+
+@property (nonatomic,strong)BarChartUtil *ptsBarChartUtil;
+@property (nonatomic,strong)BarChartUtil *rebBarChartUtil;
+@property (nonatomic,strong)BarChartUtil *astBarChartUtil;
+
 
 @end
 @implementation SkyBallHetiRedHTMatchBestPlayerCell
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    self.ptsBarChartUtil = [[BarChartUtil alloc] initWithChart:self.ptsBarChart];
+    self.rebBarChartUtil = [[BarChartUtil alloc] initWithChart:self.rebBarChart];
+    self.astBarChartUtil = [[BarChartUtil alloc] initWithChart:self.astBarChart];
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
@@ -65,6 +79,30 @@
      [self.astAwayImageView th_setImageWithURL:summaryModel.away_team_ast_most.officialImagesrc placeholderImage:nil];
     [self.astHomeImageView th_setImageWithURL:summaryModel.home_team_ast_most.officialImagesrc placeholderImage:nil];
     
+    int homePts = summaryModel.home_team_pts_most.pts.length > 0 ? [summaryModel.home_team_pts_most.pts intValue] : 0;
+    int awayPts = summaryModel.away_team_pts_most.pts.length > 0 ? [summaryModel.away_team_pts_most.pts intValue] : 0;
+    
+    //得分
+    NSMutableArray *yVals = [[NSMutableArray alloc] init];
+    [yVals addObject:[[BarChartDataEntry alloc] initWithX:2 y:awayPts]];
+    [yVals addObject:[[BarChartDataEntry alloc] initWithX:4 y:homePts]];
+    [self.ptsBarChartUtil setData:yVals maxValue: awayPts > homePts ? awayPts:awayPts];
+    
+    //篮板
+    int homeReb = summaryModel.home_team_reb_most.reb.length > 0 ? [summaryModel.home_team_reb_most.reb intValue] : 0;
+    int awayReb = summaryModel.away_team_reb_most.reb.length > 0 ? [summaryModel.away_team_reb_most.reb intValue] : 0;
+    NSMutableArray *reb_yVals = [[NSMutableArray alloc] init];
+    [reb_yVals addObject:[[BarChartDataEntry alloc] initWithX:2 y:awayReb]];
+    [reb_yVals addObject:[[BarChartDataEntry alloc] initWithX:4 y:homeReb]];
+    [self.rebBarChartUtil setData:reb_yVals maxValue: awayReb > homeReb ? awayReb:homeReb];
+    
+    
+    int homeAst = summaryModel.home_team_ast_most.ast.length > 0 ? [summaryModel.home_team_ast_most.ast intValue] : 0;
+    int awayAst = summaryModel.away_team_ast_most.ast.length > 0 ? [summaryModel.away_team_ast_most.ast intValue] : 0;
+    NSMutableArray *ast_yVals = [[NSMutableArray alloc] init];
+       [ast_yVals addObject:[[BarChartDataEntry alloc] initWithX:2 y:awayAst]];
+       [ast_yVals addObject:[[BarChartDataEntry alloc] initWithX:4 y:homeAst]];
+       [self.astBarChartUtil setData:ast_yVals maxValue: awayAst > homeAst ? awayAst:homeAst];
     
 }
 @end
