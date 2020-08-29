@@ -22,4 +22,5 @@
 @property (nonatomic, assign) CGFloat turnover;
 @property (nonatomic, copy) NSString *type_avg;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *officialImagesrc;
 @end

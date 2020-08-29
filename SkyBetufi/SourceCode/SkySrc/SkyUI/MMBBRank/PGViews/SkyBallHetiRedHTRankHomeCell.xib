@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,25 +37,16 @@
                         <rect key="frame" x="0.0" y="45" width="375" height="155"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mJ3-hv-2q6">
-                                <rect key="frame" x="0.0" y="0.0" width="110" height="155"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="155"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="Mi4-y2-JVb"/>
-                                </constraints>
                             </tableView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80W-JC-Mbc">
-                                <rect key="frame" x="111" y="0.0" width="264" height="155"/>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="80W-JC-Mbc" firstAttribute="top" secondItem="WPw-pJ-cnE" secondAttribute="top" id="8eT-mP-0L4"/>
                             <constraint firstItem="mJ3-hv-2q6" firstAttribute="leading" secondItem="WPw-pJ-cnE" secondAttribute="leading" id="Lvq-Sj-moF"/>
                             <constraint firstItem="mJ3-hv-2q6" firstAttribute="top" secondItem="WPw-pJ-cnE" secondAttribute="top" id="P15-4w-sIF"/>
-                            <constraint firstAttribute="bottom" secondItem="80W-JC-Mbc" secondAttribute="bottom" id="dix-Vg-4Yz"/>
+                            <constraint firstAttribute="trailing" secondItem="mJ3-hv-2q6" secondAttribute="trailing" id="Qlw-I3-5rW"/>
                             <constraint firstAttribute="bottom" secondItem="mJ3-hv-2q6" secondAttribute="bottom" id="eH6-et-JxS"/>
-                            <constraint firstItem="80W-JC-Mbc" firstAttribute="leading" secondItem="mJ3-hv-2q6" secondAttribute="trailing" constant="1" id="fQa-ZZ-HID"/>
-                            <constraint firstAttribute="trailing" secondItem="80W-JC-Mbc" secondAttribute="trailing" id="qrL-eg-G1r"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mfW-qX-BEE">
@@ -84,7 +75,6 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="leftTableView" destination="mJ3-hv-2q6" id="bbd-uU-LNA"/>
-                <outlet property="scrollContentView" destination="80W-JC-Mbc" id="AS4-hB-Fcp"/>
                 <outlet property="titleLabel" destination="Dqk-Mk-VRs" id="1cq-hb-RZf"/>
             </connections>
             <point key="canvasLocation" x="140" y="48.575712143928037"/>

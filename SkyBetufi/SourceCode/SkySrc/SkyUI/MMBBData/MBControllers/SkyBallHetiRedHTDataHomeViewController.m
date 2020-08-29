@@ -60,9 +60,10 @@
         return;
     }
     
-    if (index == 2) {
+    if (index == 1) {
         
         SkyBallHetiRedHTRankEastWestViewController *vc = [SkyBallHetiRedHTRankEastWestViewController waterSkyviewController];
+        //vc.type = index + 1;
         [self addChildViewController:vc];
         [self.containerView addSubview:vc.view];
         [self.loadedFlagArray replaceObjectAtIndex:index withObject:@(YES)];
@@ -72,7 +73,12 @@
     }
     
     SkyBallHetiRedHTDataHomeSubViewController *vc = [SkyBallHetiRedHTDataHomeSubViewController waterSkyviewController];
-    vc.type = index + 1;
+    if (index == 0) {
+        vc.type = 1;//球员1
+    } else if(index == 2){
+         vc.type = 2;//球队2
+    }
+    
     [self addChildViewController:vc];
     [self.containerView addSubview:vc.view];
     [self.loadedFlagArray replaceObjectAtIndex:index withObject:@(YES)];
@@ -102,7 +108,7 @@
 }
 - (HMSegmentedControl *)segmentControl {
     if (!_segmentControl) {
-        _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"隊員數據", @"球隊數據", @"球隊排行"]];
+        _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"隊員數據", @"球隊排行", @"球隊數據"]];
         _segmentControl.selectionIndicatorColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"];
         _segmentControl.selectionIndicatorHeight = 3.0f;
         _segmentControl.selectionIndicatorEdgeInsets = UIEdgeInsetsMake(0, -8, 0, -18);
@@ -125,7 +131,7 @@
         _containerView.delegate = self;
         _containerView.pagingEnabled = YES;
         _containerView.autoresizingMask = UIViewAutoresizingNone;
-        _containerView.contentSize = CGSizeMake(SCREEN_WIDTH * 2, SCREEN_HEIGHT - 64 - SCREEN_HEIGHT - 1);
+        _containerView.contentSize = CGSizeMake(SCREEN_WIDTH * 3, SCREEN_HEIGHT - 64 - SCREEN_HEIGHT - 1);
         _containerView.bounces = NO;
     }
     return _containerView;

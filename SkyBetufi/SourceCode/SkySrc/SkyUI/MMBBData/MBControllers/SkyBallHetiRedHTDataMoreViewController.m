@@ -70,7 +70,7 @@
 - (void)setupLeftTableView {
     self.leftTableView.delegate = self;
     self.leftTableView.dataSource = self;
-    self.leftTableView.rowHeight = 30;
+    self.leftTableView.rowHeight = 45;
     self.leftTableView.sectionHeaderHeight = 40;
     self.leftTableView.sectionFooterHeight = 0;
     self.leftTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -97,7 +97,7 @@
     self.rightTableView.backgroundColor = [UIColor whiteColor];
     self.rightTableView.delegate = self;
     self.rightTableView.dataSource = self;
-    self.rightTableView.rowHeight = 30;
+    self.rightTableView.rowHeight = 45;
     self.rightTableView.sectionHeaderHeight = 40;
     self.rightTableView.sectionFooterHeight = 0;
     self.rightTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
