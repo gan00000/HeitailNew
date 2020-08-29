@@ -1,8 +1,10 @@
 #import "SkyBallHetiRedHTMatchWordLiveViewController.h"
 #import "SkyBallHetiRedHTMatchLiveFeedCell.h"
+#import "UIColor+Hex.h"
 @interface SkyBallHetiRedHTMatchWordLiveViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, weak) NSArray<SkyBallHetiRedHTMatchLiveFeedModel *> *liveFeedList;
+@property (nonatomic, weak) SkyBallHetiRedHTMatchSummaryModel * summaryModel;
 @end
 @implementation SkyBallHetiRedHTMatchWordLiveViewController
 + (instancetype)waterSkyviewController {
@@ -18,9 +20,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-- (void)waterSkyrefreshWithLiveFeedList:(NSArray<SkyBallHetiRedHTMatchLiveFeedModel *> *)liveFeedList {
+- (void)waterSkyrefreshWithLiveFeedList:(NSArray<SkyBallHetiRedHTMatchLiveFeedModel *> *)liveFeedList summary:(SkyBallHetiRedHTMatchSummaryModel *)summaryModel {
     [self.tableView.mj_header endRefreshing];
     self.liveFeedList = liveFeedList;
+    self.summaryModel = summaryModel;
     [self.tableView reloadData];
 }
 - (void)setupViews {
@@ -48,7 +51,12 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SkyBallHetiRedHTMatchLiveFeedCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SkyBallHetiRedHTMatchLiveFeedCell class])];
-    [cell waterSkysetupWithMatchLiveFeedModel:self.liveFeedList[indexPath.row]];
+    [cell waterSkysetupWithMatchLiveFeedModel:self.liveFeedList[indexPath.row] summary:self.summaryModel];
+    if (indexPath.row % 2 == 0) {
+        cell.contentView.backgroundColor = [UIColor whiteColor];
+    } else {
+        cell.contentView.backgroundColor = [UIColor colorWithHexString:@"f9f9fb"];
+    }
     return cell;
 }
 @end

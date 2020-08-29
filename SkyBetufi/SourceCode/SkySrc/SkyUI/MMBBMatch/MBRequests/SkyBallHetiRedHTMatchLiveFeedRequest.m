@@ -11,7 +11,21 @@
                 NSArray *quarter = [NSArray yy_modelArrayWithClass:[SkyBallHetiRedHTMatchLiveFeedModel class] json:q];
                 [feedList addObjectsFromArray:quarter];
             }
-        }        
+        }
+        
+        SkyBallHetiRedHTMatchLiveFeedModel *currentModel;
+        for (SkyBallHetiRedHTMatchLiveFeedModel *m in feedList) {
+            if (currentModel) {
+                
+                if ([m.awayPts intValue] > [currentModel.awayPts intValue] || [m.homePts intValue] > [currentModel.homePts intValue]) {
+                    m.tagSrore = 1;
+                }else if ([m.awayPts intValue] < [currentModel.awayPts intValue] || [m.homePts intValue] < [currentModel.homePts intValue]){
+                    currentModel.tagSrore = 1;
+                }
+            }
+          
+            currentModel = m;
+        }
         if (successBlock) {
             successBlock(feedList);
         }

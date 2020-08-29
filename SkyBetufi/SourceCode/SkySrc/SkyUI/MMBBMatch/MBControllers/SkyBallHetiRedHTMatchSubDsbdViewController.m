@@ -5,8 +5,9 @@
 @property (weak, nonatomic) IBOutlet UITableView *leftTableView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollContentView;
 @property (nonatomic, strong) UITableView *rightTableView;
-@property (nonatomic, weak) NSArray<SkyBallHetiRedHTMatchDetailsModel *> *dataList;
-@property (nonatomic, strong) NSMutableArray *counts;
+@property (nonatomic) NSArray<SkyBallHetiRedHTMatchDetailsModel *> *dataList;
+@property (nonatomic, strong) NSMutableArray *counts;//总计
+//@property (nonatomic) NSInteger rightViewItemCount;
 @end
 @implementation SkyBallHetiRedHTMatchSubDsbdViewController
 + (instancetype)waterSkyviewController {
@@ -34,8 +35,8 @@
     [self.leftTableView registerNib:[UINib nibWithNibName:NSStringFromClass([SkyBallHetiRedHTMatchDataLeftCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SkyBallHetiRedHTMatchDataLeftCell class])];
 }
 - (void)setupRightTableView {
-    [self.scrollContentView setContentSize:CGSizeMake(1050, self.leftTableView.jx_height)];
-    self.rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 1050, self.leftTableView.jx_height) style:UITableViewStylePlain];
+    [self.scrollContentView setContentSize:CGSizeMake(1050 - 70, self.leftTableView.jx_height)];
+    self.rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 1050 - 70, self.leftTableView.jx_height) style:UITableViewStylePlain];
     self.rightTableView.backgroundColor = [UIColor whiteColor];
     self.rightTableView.delegate = self;
     self.rightTableView.dataSource = self;
@@ -64,7 +65,7 @@
     label.textAlignment = NSTextAlignmentCenter;
     [view addSubview:label];
 }
-- (void)countWithDataList:(NSArray<SkyBallHetiRedHTMatchDetailsModel *> *)dataList {
+- (void)countWithDataList:(NSArray<SkyBallHetiRedHTMatchDetailsModel *> *)dataList { //计算总计
     if (dataList.count == 0) {
         return;
     }
@@ -116,6 +117,41 @@
     [self.counts addObject:[NSString stringWithFormat:@"%ld", stl]];
     [self.counts addObject:[NSString stringWithFormat:@"%ld", blkagainst]];
     [self.counts addObject:[NSString stringWithFormat:@"%ld", blk]];
+    
+    NSMutableArray *ppDataList = [dataList mutableCopy];
+    //添加一个命中率
+    SkyBallHetiRedHTMatchDetailsModel *xxModel = [[SkyBallHetiRedHTMatchDetailsModel alloc] init];
+    xxModel.name = @"命中率";
+    xxModel.time = @"-";
+    xxModel.pts = @"-";
+    xxModel.ast = @"-";
+    xxModel.reb = @"-";
+    if (fgatt != 0) {
+        xxModel.fgmade_show = [NSString stringWithFormat:@"%ld%%", fgmate * 100 / fgatt];
+    }else{
+        xxModel.fgmade_show = @"0%%";
+    }
+    if (fg3att == 0) {
+        xxModel.fg3ptmade_show = @"0%%";
+    } else {
+        xxModel.fg3ptmade_show = [NSString stringWithFormat:@"%ld%%", fg3mate * 100 / fg3att];
+    }
+    if (ftatt == 0) {
+        xxModel.ftmade_show = @"0%%";
+    } else {
+        xxModel.ftmade_show = [NSString stringWithFormat:@"%ld%%", ftmate * 100 / ftatt];
+    }
+    
+    xxModel.offreb = @"-";
+    xxModel.defreb = @"-";
+    xxModel.fouls = @"-";
+    xxModel.stl = @"-";
+    xxModel.blkagainst = @"-";
+    xxModel.blk = @"-";
+    xxModel.plusminus = @"-";
+    [ppDataList addObject:xxModel];
+    self.dataList = [NSArray arrayWithArray:ppDataList];
+    NSLog(@"dataList");
 }
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -150,12 +186,14 @@
     [view addSubview:line];
     if (tableView == self.leftTableView) {
         [self addLabelToView:view withFrame:view.bounds text:@"球員"];
+        //self.itemCount = self.itemCount + 1;
+        
     } else {
-        NSArray *titles = @[@"位置", @"時間", @"得分", @"助攻",
+        NSArray *titles = @[@"時間", @"得分", @"助攻",
                             @"籃板", @"投籃", @"3分", @"罰球",
                             @"前場", @"後場", @"犯規", @"抄截",
                             @"失誤", @"封蓋", @"+/-"];
-        for (NSInteger i=0; i<15; i++) {
+        for (NSInteger i=0; i<titles.count; i++) {
             [self addLabelToView:view withFrame:CGRectMake(i*70, 0, 70, 30) text:titles[i]];
         }
     }
@@ -177,10 +215,10 @@
     line.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"dddddd"];
     [view addSubview:line];
     if (tableView == self.rightTableView) {
-        for (NSInteger i=2; i<14; i++) {
-            [self addLabelToView:view withFrame:CGRectMake(i*70, 0, 70, 30) text:self.counts[i-2]];
+        for (NSInteger i=1; i< 13; i++) {
+            [self addLabelToView:view withFrame:CGRectMake(i*70, 0, 70, 30) text:self.counts[i-1]];
         }
-        for (NSInteger i=1; i<15; i++) {
+        for (NSInteger i=1; i< 14; i++) { //画线
             UIView *line = [[UIView alloc] initWithFrame:CGRectMake(70*i, 0, 1, 30)];
             line.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"dddddd"];
             [view addSubview:line];

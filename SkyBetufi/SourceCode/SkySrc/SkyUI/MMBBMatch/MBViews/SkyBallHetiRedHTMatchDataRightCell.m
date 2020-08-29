@@ -28,6 +28,7 @@
 - (void)waterSkyrefreshWithModel:(SkyBallHetiRedHTMatchDetailsModel *)model row:(NSInteger)row {
     self.positionLabel.text = model.position;
     self.positionLabel.font =  [UIFont systemFontOfSize:16];
+    self.positionLabel.hidden = YES;
     
     self.timeLabel.text = model.time;
     self.timeLabel.font =  [UIFont systemFontOfSize:16];

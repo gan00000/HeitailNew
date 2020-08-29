@@ -522,7 +522,7 @@
 //             } else
             if (index == 2) {
                  SkyBallHetiRedHTMatchWordLiveViewController *wordVc = self.loadedControllersArray[index];
-                 [wordVc waterSkyrefreshWithLiveFeedList:self.liveFeedList];
+                [wordVc waterSkyrefreshWithLiveFeedList:self.liveFeedList summary:self.matchSummaryModel];
                 
                  
              }else if (index == 0) {

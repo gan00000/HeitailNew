@@ -14,4 +14,5 @@
 @property (nonatomic, copy) NSString *homePts;
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic, copy) NSString *time;
+@property (nonatomic) NSInteger tagSrore;
 @end

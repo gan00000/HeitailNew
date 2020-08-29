@@ -16,11 +16,11 @@
     if (!url) {
         return;
     }
-       if ([url hasPrefix:@"http"]) {
-           [self sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:placeholder];
-           
-       }else if ([url hasSuffix:@"svg"]){
+       if ([url hasSuffix:@"svg"]) {//[url hasSuffix:@"svg"]
            [self svg_setImageWithURL:[NSURL URLWithString:url] placeholderImage:placeholder];
+           
+       }else if ([url hasPrefix:@"http"]){
+           [self sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:placeholder];
        }else{//base64
            
            NSData *data = [[NSData alloc] initWithBase64EncodedString:url options:NSDataBase64DecodingIgnoreUnknownCharacters];

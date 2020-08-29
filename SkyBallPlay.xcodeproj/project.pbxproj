@@ -76,6 +76,7 @@
 		32E7228B2309A3A6003E0A03 /* guideImageapp12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722852309A3A6003E0A03 /* guideImageapp12.jpg */; };
 		32E7228C2309A3A6003E0A03 /* guideImageapp14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722862309A3A6003E0A03 /* guideImageapp14.jpg */; };
 		32E7228D2309A3A6003E0A03 /* guideImageapp15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722872309A3A6003E0A03 /* guideImageapp15.jpg */; };
+		32FAACE324F6A032001574C9 /* BarChartUtilValueFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FAACE224F6A032001574C9 /* BarChartUtilValueFormat.m */; };
 		32FED81F23AB768700D900A7 /* LMPlayerStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED80623AB768700D900A7 /* LMPlayerStatusModel.m */; };
 		32FED82023AB768700D900A7 /* LMPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED80723AB768700D900A7 /* LMPlayerModel.m */; };
 		32FED82123AB768700D900A7 /* LMLandScapeControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED80E23AB768700D900A7 /* LMLandScapeControlView.m */; };
@@ -451,6 +452,8 @@
 		32E722852309A3A6003E0A03 /* guideImageapp12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp12.jpg; sourceTree = "<group>"; };
 		32E722862309A3A6003E0A03 /* guideImageapp14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp14.jpg; sourceTree = "<group>"; };
 		32E722872309A3A6003E0A03 /* guideImageapp15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp15.jpg; sourceTree = "<group>"; };
+		32FAACE124F6A032001574C9 /* BarChartUtilValueFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarChartUtilValueFormat.h; sourceTree = "<group>"; };
+		32FAACE224F6A032001574C9 /* BarChartUtilValueFormat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarChartUtilValueFormat.m; sourceTree = "<group>"; };
 		32FED80323AB768700D900A7 /* LMVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMVideoPlayer.h; sourceTree = "<group>"; };
 		32FED80423AB768700D900A7 /* LMPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMPlayer.h; sourceTree = "<group>"; };
 		32FED80623AB768700D900A7 /* LMPlayerStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPlayerStatusModel.m; sourceTree = "<group>"; };
@@ -1038,6 +1041,8 @@
 			children = (
 				32CC78E124F3EAAD00377576 /* BarChartUtil.h */,
 				32CC78E224F3EAAD00377576 /* BarChartUtil.m */,
+				32FAACE124F6A032001574C9 /* BarChartUtilValueFormat.h */,
+				32FAACE224F6A032001574C9 /* BarChartUtilValueFormat.m */,
 			);
 			path = ChartUtil;
 			sourceTree = "<group>";
@@ -2579,6 +2584,7 @@
 				FEDAC978214B9129005E8B63 /* SkyBallHetiRedHTDataCellTeamView.m in Sources */,
 				FECCA57022598013009EF494 /* SkyBallHetiRedTZGifPhotoPreviewController.m in Sources */,
 				327A19F023ADD17600F13A36 /* HTMacthLivePostModel.m in Sources */,
+				32FAACE324F6A032001574C9 /* BarChartUtilValueFormat.m in Sources */,
 				FEDABE4D2171BCEE008C8AFD /* SkyBallHetiRedHTMatchPtsCompareCell.m in Sources */,
 				FECCA56422598013009EF494 /* SkyBallHetiRedTZVideoPlayerController.m in Sources */,
 				FEC116292143D4A1002DB617 /* SkyBallHetiRedBJHUDView.m in Sources */,
