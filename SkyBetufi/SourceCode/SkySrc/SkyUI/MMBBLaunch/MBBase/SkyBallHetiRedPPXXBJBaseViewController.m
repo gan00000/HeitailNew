@@ -8,6 +8,7 @@
 #import "SkyBallHetiRedHTDataHomeViewController.h"
 #import "SkyBallHetiRedHTRankHomeViewController.h"
 #import "SkyBallHetiRedHTTabBarHomeViewController.h"
+#import "SearchViewController.h"
 @import Firebase;
 
 @interface SkyBallHetiRedPPXXBJBaseViewController ()
@@ -28,12 +29,16 @@
         [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
         
     }
-    
+    NSLog(@"viewControllers.count = %d", self.navigationController.viewControllers.count);
     if (self.navigationController.viewControllers.count == 1 && ![self isKindOfClass:[SkyBallHetiRedHTMeHomeViewController class]]) {
         UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_icon_title"]];
         self.navigationItem.titleView = titleView;
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.waterSkymeCenterButton];
         [self waterSkysetupMeCenterButton];
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.rightSearchButton];
+        [self setUpRightSearchButton];
+        
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(waterSkysetupMeCenterButton)
                                                      name:kUserLogStatusChagneNotice
@@ -142,6 +147,16 @@
     [nav.navigationBar lt_setBackgroundColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
     [self presentViewController:nav animated:YES completion:nil];
 }
+
+- (void)showSearchViewController {
+    SearchViewController *meVc = [SearchViewController waterSkyviewController];
+//    SkyBallHetiRedPPXXBJNavigationController *nav = [[SkyBallHetiRedPPXXBJNavigationController alloc] initWithRootViewController:meVc];
+//    [nav.navigationBar lt_setBackgroundColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
+//    meVc.modalPresentationStyle = UIModalPresentationFullScreen;
+//    [self presentViewController:meVc animated:YES completion:nil];
+     [self.navigationController pushViewController:meVc animated:YES];
+}
+
 - (void)waterSkysetupMeCenterButton {
     if ([SkyBallHetiRedHTUserManager waterSky_isUserLogin]) {
         [self.waterSkymeCenterButton setImage:[SkyBallHetiRedPPXXBJBaseViewController waterSkyfixImageSize:[SkyBallHetiRedHTUserManager waterSky_userInfo].avatar toSize:CGSizeMake(36, 36)] forState:UIControlStateNormal];
@@ -158,6 +173,22 @@
     }
     return _waterSkymeCenterButton;
 }
+
+- (UIButton *)rightSearchButton {
+    if (!_rightSearchButton) {
+        _rightSearchButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 28, 28)];
+        _rightSearchButton.clipsToBounds = YES;
+        _rightSearchButton.layer.cornerRadius = 18;
+        [_rightSearchButton addTarget:self action:@selector(showSearchViewController) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _rightSearchButton;
+}
+
+- (void)setUpRightSearchButton {
+    
+    [self.rightSearchButton setImage:[UIImage imageNamed:@"icon_search"] forState:UIControlStateNormal];
+}
+
 + (UIImage *)waterSkyfixImageSize:(UIImage *)image toSize:(CGSize)toSize {
     CGSize size = image.size;
     if (size.width == size.height) {

@@ -92,4 +92,6 @@
 
 static const CGFloat DRGlobalAnimationDuration = 0.25;
 
+typedef void(^ClickHander)(NSInteger);
+
 #endif

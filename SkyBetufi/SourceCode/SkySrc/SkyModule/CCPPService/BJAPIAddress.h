@@ -43,5 +43,7 @@
 #define API_USER_MESSAGE_COUNT          @"api/get_notify_counter" 
 #define API_USER_MESSAGE_LIST           @"api/get_my_notify" 
 #define API_USER_POST_COMMENT           @"api/save_post_comments" 
-#define API_USER_LIKE_ADD               @"api/save_comment_like" 
+#define API_USER_LIKE_ADD               @"api/save_comment_like"
+
+#define API_SEARCH             @"api/get_search_results"
 #endif
