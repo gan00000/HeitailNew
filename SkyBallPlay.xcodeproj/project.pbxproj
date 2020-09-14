@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		32100C4023C2E1FB00CC1DD2 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32100C3F23C2E1FB00CC1DD2 /* AuthenticationServices.framework */; };
+		3213529E250A149F00702F72 /* InfoMessage.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3213529A250A149F00702F72 /* InfoMessage.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3213529F250A149F00702F72 /* UserMessage.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3213529D250A149F00702F72 /* UserMessage.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		32135303250A2F1400702F72 /* GPBProtocolBuffers.m in Sources */ = {isa = PBXBuildFile; fileRef = 321352D8250A2F1300702F72 /* GPBProtocolBuffers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		32340FD0250F1D7F00F47F76 /* HTChatContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32340FCE250F1D7F00F47F76 /* HTChatContentCell.m */; };
+		32340FD1250F1D7F00F47F76 /* HTChatContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32340FCF250F1D7F00F47F76 /* HTChatContentCell.xib */; };
 		325A921A24F119F3008F0B2E /* HTIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 325A921924F119F3008F0B2E /* HTIndicatorView.m */; };
 		325A921D24F1637F008F0B2E /* HTLikeTeamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 325A921C24F1637F008F0B2E /* HTLikeTeamModel.m */; };
 		32642A5722EFE8FD00D2DA1E /* UIImageView+SkyBallHetiRedSVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 32642A5622EFE8FD00D2DA1E /* UIImageView+SkyBallHetiRedSVG.m */; };
@@ -85,6 +90,8 @@
 		32E7228C2309A3A6003E0A03 /* guideImageapp14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722862309A3A6003E0A03 /* guideImageapp14.jpg */; };
 		32E7228D2309A3A6003E0A03 /* guideImageapp15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722872309A3A6003E0A03 /* guideImageapp15.jpg */; };
 		32FAACE324F6A032001574C9 /* BarChartUtilValueFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FAACE224F6A032001574C9 /* BarChartUtilValueFormat.m */; };
+		32FCDD1A250C721F0037334D /* HTIMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FCDD19250C721F0037334D /* HTIMViewController.m */; };
+		32FCDD1C250C72AB0037334D /* THIMController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32FCDD1B250C72AB0037334D /* THIMController.storyboard */; };
 		32FED81F23AB768700D900A7 /* LMPlayerStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED80623AB768700D900A7 /* LMPlayerStatusModel.m */; };
 		32FED82023AB768700D900A7 /* LMPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED80723AB768700D900A7 /* LMPlayerModel.m */; };
 		32FED82123AB768700D900A7 /* LMLandScapeControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED80E23AB768700D900A7 /* LMLandScapeControlView.m */; };
@@ -361,6 +368,62 @@
 
 /* Begin PBXFileReference section */
 		32100C3F23C2E1FB00CC1DD2 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		3213529A250A149F00702F72 /* InfoMessage.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoMessage.pbobjc.m; sourceTree = "<group>"; };
+		3213529B250A149F00702F72 /* UserMessage.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMessage.pbobjc.h; sourceTree = "<group>"; };
+		3213529C250A149F00702F72 /* InfoMessage.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoMessage.pbobjc.h; sourceTree = "<group>"; };
+		3213529D250A149F00702F72 /* UserMessage.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMessage.pbobjc.m; sourceTree = "<group>"; };
+		321352A2250A2F1300702F72 /* GPBCodedOutputStream_PackagePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBCodedOutputStream_PackagePrivate.h; sourceTree = "<group>"; };
+		321352A3250A2F1300702F72 /* GPBArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBArray.h; sourceTree = "<group>"; };
+		321352A4250A2F1300702F72 /* GPBAny.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBAny.pbobjc.h; sourceTree = "<group>"; };
+		321352AA250A2F1300702F72 /* GPBProtocolBuffers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBProtocolBuffers.h; sourceTree = "<group>"; };
+		321352AC250A2F1300702F72 /* GPBFieldMask.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBFieldMask.pbobjc.h; sourceTree = "<group>"; };
+		321352AE250A2F1300702F72 /* GPBDuration.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBDuration.pbobjc.h; sourceTree = "<group>"; };
+		321352B1250A2F1300702F72 /* GPBDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBDictionary.h; sourceTree = "<group>"; };
+		321352B2250A2F1300702F72 /* GPBCodedOutputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBCodedOutputStream.h; sourceTree = "<group>"; };
+		321352B4250A2F1300702F72 /* GPBRootObject_PackagePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBRootObject_PackagePrivate.h; sourceTree = "<group>"; };
+		321352B7250A2F1300702F72 /* Api.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Api.pbobjc.h; sourceTree = "<group>"; };
+		321352B8250A2F1300702F72 /* SourceContext.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceContext.pbobjc.h; sourceTree = "<group>"; };
+		321352B9250A2F1300702F72 /* Duration.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Duration.pbobjc.h; sourceTree = "<group>"; };
+		321352BA250A2F1300702F72 /* Empty.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Empty.pbobjc.h; sourceTree = "<group>"; };
+		321352BB250A2F1300702F72 /* Wrappers.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wrappers.pbobjc.h; sourceTree = "<group>"; };
+		321352BC250A2F1300702F72 /* Struct.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Struct.pbobjc.h; sourceTree = "<group>"; };
+		321352BD250A2F1300702F72 /* FieldMask.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldMask.pbobjc.h; sourceTree = "<group>"; };
+		321352BE250A2F1300702F72 /* Timestamp.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timestamp.pbobjc.h; sourceTree = "<group>"; };
+		321352BF250A2F1300702F72 /* Type.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type.pbobjc.h; sourceTree = "<group>"; };
+		321352C0250A2F1300702F72 /* Any.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Any.pbobjc.h; sourceTree = "<group>"; };
+		321352C1250A2F1300702F72 /* GPBUtilities_PackagePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBUtilities_PackagePrivate.h; sourceTree = "<group>"; };
+		321352C4250A2F1300702F72 /* GPBWrappers.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBWrappers.pbobjc.h; sourceTree = "<group>"; };
+		321352C9250A2F1300702F72 /* GPBDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBDescriptor.h; sourceTree = "<group>"; };
+		321352CA250A2F1300702F72 /* GPBCodedInputStream_PackagePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBCodedInputStream_PackagePrivate.h; sourceTree = "<group>"; };
+		321352CB250A2F1300702F72 /* GPBRootObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBRootObject.h; sourceTree = "<group>"; };
+		321352CC250A2F1300702F72 /* GPBBootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBBootstrap.h; sourceTree = "<group>"; };
+		321352CD250A2F1300702F72 /* GPBExtensionRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBExtensionRegistry.h; sourceTree = "<group>"; };
+		321352D0250A2F1300702F72 /* GPBType.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBType.pbobjc.h; sourceTree = "<group>"; };
+		321352D1250A2F1300702F72 /* GPBRuntimeTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBRuntimeTypes.h; sourceTree = "<group>"; };
+		321352D3250A2F1300702F72 /* GPBUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBUtilities.h; sourceTree = "<group>"; };
+		321352D6250A2F1300702F72 /* GPBMessage_PackagePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBMessage_PackagePrivate.h; sourceTree = "<group>"; };
+		321352D7250A2F1300702F72 /* GPBWireFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBWireFormat.h; sourceTree = "<group>"; };
+		321352D8250A2F1300702F72 /* GPBProtocolBuffers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPBProtocolBuffers.m; sourceTree = "<group>"; };
+		321352D9250A2F1300702F72 /* GPBArray_PackagePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBArray_PackagePrivate.h; sourceTree = "<group>"; };
+		321352DA250A2F1300702F72 /* GPBEmpty.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBEmpty.pbobjc.h; sourceTree = "<group>"; };
+		321352DB250A2F1300702F72 /* GPBMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBMessage.h; sourceTree = "<group>"; };
+		321352DC250A2F1300702F72 /* GPBProtocolBuffers_RuntimeSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBProtocolBuffers_RuntimeSupport.h; sourceTree = "<group>"; };
+		321352DD250A2F1300702F72 /* GPBApi.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBApi.pbobjc.h; sourceTree = "<group>"; };
+		321352DF250A2F1300702F72 /* GPBCodedInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBCodedInputStream.h; sourceTree = "<group>"; };
+		321352E0250A2F1300702F72 /* GPBDescriptor_PackagePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBDescriptor_PackagePrivate.h; sourceTree = "<group>"; };
+		321352E1250A2F1300702F72 /* GPBTimestamp.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBTimestamp.pbobjc.h; sourceTree = "<group>"; };
+		321352E2250A2F1300702F72 /* GPBStruct.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBStruct.pbobjc.h; sourceTree = "<group>"; };
+		321352E5250A2F1300702F72 /* GPBUnknownFieldSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBUnknownFieldSet.h; sourceTree = "<group>"; };
+		321352E6250A2F1300702F72 /* GPBExtensionInternals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBExtensionInternals.h; sourceTree = "<group>"; };
+		321352E7250A2F1300702F72 /* GPBSourceContext.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBSourceContext.pbobjc.h; sourceTree = "<group>"; };
+		321352E8250A2F1300702F72 /* GPBUnknownField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBUnknownField.h; sourceTree = "<group>"; };
+		321352E9250A2F1300702F72 /* GPBUnknownFieldSet_PackagePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBUnknownFieldSet_PackagePrivate.h; sourceTree = "<group>"; };
+		321352EA250A2F1300702F72 /* GPBWellKnownTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBWellKnownTypes.h; sourceTree = "<group>"; };
+		321352EB250A2F1300702F72 /* GPBUnknownField_PackagePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBUnknownField_PackagePrivate.h; sourceTree = "<group>"; };
+		321352EC250A2F1300702F72 /* GPBDictionary_PackagePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBDictionary_PackagePrivate.h; sourceTree = "<group>"; };
+		32340FCD250F1D7F00F47F76 /* HTChatContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTChatContentCell.h; sourceTree = "<group>"; };
+		32340FCE250F1D7F00F47F76 /* HTChatContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTChatContentCell.m; sourceTree = "<group>"; };
+		32340FCF250F1D7F00F47F76 /* HTChatContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTChatContentCell.xib; sourceTree = "<group>"; };
 		325A921824F119F3008F0B2E /* HTIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTIndicatorView.h; sourceTree = "<group>"; };
 		325A921924F119F3008F0B2E /* HTIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTIndicatorView.m; sourceTree = "<group>"; };
 		325A921B24F1637F008F0B2E /* HTLikeTeamModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTLikeTeamModel.h; sourceTree = "<group>"; };
@@ -476,6 +539,9 @@
 		32E722872309A3A6003E0A03 /* guideImageapp15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp15.jpg; sourceTree = "<group>"; };
 		32FAACE124F6A032001574C9 /* BarChartUtilValueFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarChartUtilValueFormat.h; sourceTree = "<group>"; };
 		32FAACE224F6A032001574C9 /* BarChartUtilValueFormat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarChartUtilValueFormat.m; sourceTree = "<group>"; };
+		32FCDD18250C721F0037334D /* HTIMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTIMViewController.h; sourceTree = "<group>"; };
+		32FCDD19250C721F0037334D /* HTIMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTIMViewController.m; sourceTree = "<group>"; };
+		32FCDD1B250C72AB0037334D /* THIMController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = THIMController.storyboard; sourceTree = "<group>"; };
 		32FED80323AB768700D900A7 /* LMVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMVideoPlayer.h; sourceTree = "<group>"; };
 		32FED80423AB768700D900A7 /* LMPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMPlayer.h; sourceTree = "<group>"; };
 		32FED80623AB768700D900A7 /* LMPlayerStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPlayerStatusModel.m; sourceTree = "<group>"; };
@@ -961,6 +1027,89 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32135299250A149F00702F72 /* proto_out */ = {
+			isa = PBXGroup;
+			children = (
+				3213529A250A149F00702F72 /* InfoMessage.pbobjc.m */,
+				3213529B250A149F00702F72 /* UserMessage.pbobjc.h */,
+				3213529C250A149F00702F72 /* InfoMessage.pbobjc.h */,
+				3213529D250A149F00702F72 /* UserMessage.pbobjc.m */,
+			);
+			path = proto_out;
+			sourceTree = "<group>";
+		};
+		321352A0250A2F1300702F72 /* objectivec */ = {
+			isa = PBXGroup;
+			children = (
+				321352B5250A2F1300702F72 /* google */,
+				321352A4250A2F1300702F72 /* GPBAny.pbobjc.h */,
+				321352DD250A2F1300702F72 /* GPBApi.pbobjc.h */,
+				321352D9250A2F1300702F72 /* GPBArray_PackagePrivate.h */,
+				321352A3250A2F1300702F72 /* GPBArray.h */,
+				321352CC250A2F1300702F72 /* GPBBootstrap.h */,
+				321352CA250A2F1300702F72 /* GPBCodedInputStream_PackagePrivate.h */,
+				321352DF250A2F1300702F72 /* GPBCodedInputStream.h */,
+				321352A2250A2F1300702F72 /* GPBCodedOutputStream_PackagePrivate.h */,
+				321352B2250A2F1300702F72 /* GPBCodedOutputStream.h */,
+				321352E0250A2F1300702F72 /* GPBDescriptor_PackagePrivate.h */,
+				321352C9250A2F1300702F72 /* GPBDescriptor.h */,
+				321352EC250A2F1300702F72 /* GPBDictionary_PackagePrivate.h */,
+				321352B1250A2F1300702F72 /* GPBDictionary.h */,
+				321352AE250A2F1300702F72 /* GPBDuration.pbobjc.h */,
+				321352DA250A2F1300702F72 /* GPBEmpty.pbobjc.h */,
+				321352E6250A2F1300702F72 /* GPBExtensionInternals.h */,
+				321352CD250A2F1300702F72 /* GPBExtensionRegistry.h */,
+				321352AC250A2F1300702F72 /* GPBFieldMask.pbobjc.h */,
+				321352D6250A2F1300702F72 /* GPBMessage_PackagePrivate.h */,
+				321352DB250A2F1300702F72 /* GPBMessage.h */,
+				321352DC250A2F1300702F72 /* GPBProtocolBuffers_RuntimeSupport.h */,
+				321352AA250A2F1300702F72 /* GPBProtocolBuffers.h */,
+				321352D8250A2F1300702F72 /* GPBProtocolBuffers.m */,
+				321352B4250A2F1300702F72 /* GPBRootObject_PackagePrivate.h */,
+				321352CB250A2F1300702F72 /* GPBRootObject.h */,
+				321352D1250A2F1300702F72 /* GPBRuntimeTypes.h */,
+				321352E7250A2F1300702F72 /* GPBSourceContext.pbobjc.h */,
+				321352E2250A2F1300702F72 /* GPBStruct.pbobjc.h */,
+				321352E1250A2F1300702F72 /* GPBTimestamp.pbobjc.h */,
+				321352D0250A2F1300702F72 /* GPBType.pbobjc.h */,
+				321352EB250A2F1300702F72 /* GPBUnknownField_PackagePrivate.h */,
+				321352E8250A2F1300702F72 /* GPBUnknownField.h */,
+				321352E9250A2F1300702F72 /* GPBUnknownFieldSet_PackagePrivate.h */,
+				321352E5250A2F1300702F72 /* GPBUnknownFieldSet.h */,
+				321352C1250A2F1300702F72 /* GPBUtilities_PackagePrivate.h */,
+				321352D3250A2F1300702F72 /* GPBUtilities.h */,
+				321352EA250A2F1300702F72 /* GPBWellKnownTypes.h */,
+				321352D7250A2F1300702F72 /* GPBWireFormat.h */,
+				321352C4250A2F1300702F72 /* GPBWrappers.pbobjc.h */,
+			);
+			path = objectivec;
+			sourceTree = "<group>";
+		};
+		321352B5250A2F1300702F72 /* google */ = {
+			isa = PBXGroup;
+			children = (
+				321352B6250A2F1300702F72 /* protobuf */,
+			);
+			path = google;
+			sourceTree = "<group>";
+		};
+		321352B6250A2F1300702F72 /* protobuf */ = {
+			isa = PBXGroup;
+			children = (
+				321352B7250A2F1300702F72 /* Api.pbobjc.h */,
+				321352B8250A2F1300702F72 /* SourceContext.pbobjc.h */,
+				321352B9250A2F1300702F72 /* Duration.pbobjc.h */,
+				321352BA250A2F1300702F72 /* Empty.pbobjc.h */,
+				321352BB250A2F1300702F72 /* Wrappers.pbobjc.h */,
+				321352BC250A2F1300702F72 /* Struct.pbobjc.h */,
+				321352BD250A2F1300702F72 /* FieldMask.pbobjc.h */,
+				321352BE250A2F1300702F72 /* Timestamp.pbobjc.h */,
+				321352BF250A2F1300702F72 /* Type.pbobjc.h */,
+				321352C0250A2F1300702F72 /* Any.pbobjc.h */,
+			);
+			path = protobuf;
+			sourceTree = "<group>";
+		};
 		3256201222E17A9200973889 /* SkySrc */ = {
 			isa = PBXGroup;
 			children = (
@@ -1262,6 +1411,8 @@
 		FEC1124C2143D057002DB617 = {
 			isa = PBXGroup;
 			children = (
+				321352A0250A2F1300702F72 /* objectivec */,
+				32135299250A149F00702F72 /* proto_out */,
 				325BD8C822E07D6F00A07EC9 /* confuse.sh */,
 				325BD8C922E07D6F00A07EC9 /* func.list */,
 				FEC112572143D057002DB617 /* SkyBetufi */,
@@ -1618,6 +1769,7 @@
 				FE6BD0612144FEF90090118A /* SkyBallHetiRedMatchCompare.storyboard */,
 				FE6BD0632144FF1F0090118A /* SkyBallHetiRedMatchDashboard.storyboard */,
 				FEDABE6F217385F4008C8AFD /* SkyBallHetiRedMatchSubDsbd.storyboard */,
+				32FCDD1B250C72AB0037334D /* THIMController.storyboard */,
 			);
 			path = MMBBMatch;
 			sourceTree = "<group>";
@@ -1694,6 +1846,8 @@
 				FE6BD05D2144FE550090118A /* SkyBallHetiRedHTMatchDashboardViewController.m */,
 				FEDABE7121738618008C8AFD /* SkyBallHetiRedHTMatchSubDsbdViewController.h */,
 				FEDABE7221738618008C8AFD /* SkyBallHetiRedHTMatchSubDsbdViewController.m */,
+				32FCDD18250C721F0037334D /* HTIMViewController.h */,
+				32FCDD19250C721F0037334D /* HTIMViewController.m */,
 			);
 			path = MBControllers;
 			sourceTree = "<group>";
@@ -2128,6 +2282,9 @@
 				FE83FE512177838F006C714C /* SkyBallHetiRedHTMatchDataRightCell.h */,
 				FE83FE522177838F006C714C /* SkyBallHetiRedHTMatchDataRightCell.m */,
 				FE83FE532177838F006C714C /* SkyBallHetiRedHTMatchDataRightCell.xib */,
+				32340FCD250F1D7F00F47F76 /* HTChatContentCell.h */,
+				32340FCE250F1D7F00F47F76 /* HTChatContentCell.m */,
+				32340FCF250F1D7F00F47F76 /* HTChatContentCell.xib */,
 			);
 			path = MBViews;
 			sourceTree = "<group>";
@@ -2263,6 +2420,7 @@
 				FEC116042143D4A1002DB617 /* SkyBallHetiRedXJLoadingView.xib in Resources */,
 				32ABE1D322EDF733008505BA /* SkyBallHetiRedHTTabBarHomeViewController.xib in Resources */,
 				FE82BB382179B6C500C52C51 /* SkyBallHetiRedHTDataPlayerLeftCell.xib in Resources */,
+				32FCDD1C250C72AB0037334D /* THIMController.storyboard in Resources */,
 				FE82A484216E42680070FFC0 /* SkyBallHetiRedHTMatchLiveFeedCell.xib in Resources */,
 				FE800F752263BA1600E575D5 /* SkyBallHetiRedHTMyCommentCell.xib in Resources */,
 				FE6BD0522144FC270090118A /* SkyBallHetiRedMatchDetail.storyboard in Resources */,
@@ -2322,6 +2480,7 @@
 				FE6BD04D2144FAF60090118A /* ViewStatus.xcassets in Resources */,
 				FE83FE552177838F006C714C /* SkyBallHetiRedHTMatchDataRightCell.xib in Resources */,
 				32E3E97D24FD40630076AD93 /* THSearch.storyboard in Resources */,
+				32340FD1250F1D7F00F47F76 /* HTChatContentCell.xib in Resources */,
 				FECCA52F2258C8D0009EF494 /* SkyBallHetiRedHTCollectionViewController.xib in Resources */,
 				FE81D16E21497DDE0047A4A2 /* SkyBallHetiRedHTRankHomeCell.xib in Resources */,
 				FECCA56922598013009EF494 /* SkyBallHetiRedTZImagePickerController.bundle in Resources */,
@@ -2466,6 +2625,7 @@
 				FE800F6A22636AFC00E575D5 /* SkyBallHetiRedHTNewsCommentCell.m in Sources */,
 				FEC1164B2143D4A1002DB617 /* SkyBallHetiRedPPXXBJBaseViewController.m in Sources */,
 				FECCA5332258C8D0009EF494 /* SkyBallHetiRedHTUserManager.m in Sources */,
+				3213529F250A149F00702F72 /* UserMessage.pbobjc.m in Sources */,
 				FEC116052143D4A1002DB617 /* SkyBallHetiRedXJLoadingView.m in Sources */,
 				FECCA57122598013009EF494 /* SkyBallHetiRedLxGridViewFlowLayout.m in Sources */,
 				FEC1160E2143D4A1002DB617 /* UIView+SkyBallHetiRedToast.m in Sources */,
@@ -2480,6 +2640,7 @@
 				FEC1162B2143D4A1002DB617 /* SkyBallHetiRedBJLoadingHud.m in Sources */,
 				32642A5722EFE8FD00D2DA1E /* UIImageView+SkyBallHetiRedSVG.m in Sources */,
 				32CD878522F4173800063A14 /* PlayerEventLogger.m in Sources */,
+				32FCDD1A250C721F0037334D /* HTIMViewController.m in Sources */,
 				FECCA57722598143009EF494 /* SkyBallHetiRedDRPhotoKeyboardCell.m in Sources */,
 				FEC116C42143D4A1002DB617 /* UITableView+SkyBallHetiRedEstimatedHeight.m in Sources */,
 				FE08C5C82250506A000175CB /* SkyBallHetiRedHTMeHomeViewController.m in Sources */,
@@ -2575,8 +2736,10 @@
 				FE7E6C9A2263CADB00B2973D /* SkyBallHetiRedHTMyMessaageCell.m in Sources */,
 				FEC117102143DE50002DB617 /* SkyBallHetiRedHTFilmHomeViewController.m in Sources */,
 				FE706F08215006430078DF30 /* SkyBallHetiRedHTDataHomeHeaderCell.m in Sources */,
+				32340FD0250F1D7F00F47F76 /* HTChatContentCell.m in Sources */,
 				FE6BD05E2144FE550090118A /* SkyBallHetiRedHTMatchDashboardViewController.m in Sources */,
 				FE81D1462146B2680047A4A2 /* SkyBallHetiRedHTFilmHomeRequest.m in Sources */,
+				32135303250A2F1400702F72 /* GPBProtocolBuffers.m in Sources */,
 				FEDF8FC821444610005C7C4D /* SkyBallHetiRedHTMatchHomeModel.m in Sources */,
 				FEC1160A2143D4A1002DB617 /* UIView+SkyBallHetiRedEmptyView.m in Sources */,
 				FECCA5262258C8D0009EF494 /* SkyBallHetiRedHTLoginAlertView.m in Sources */,
@@ -2626,6 +2789,7 @@
 				FE82A483216E42680070FFC0 /* SkyBallHetiRedHTMatchLiveFeedCell.m in Sources */,
 				32FED82023AB768700D900A7 /* LMPlayerModel.m in Sources */,
 				FEC116F22143D91D002DB617 /* SkyBallHetiRedHTMatchHomeViewController.m in Sources */,
+				3213529E250A149F00702F72 /* InfoMessage.pbobjc.m in Sources */,
 				FECCA56522598013009EF494 /* SkyBallHetiRedTZAssetModel.m in Sources */,
 				FECCA53E2258C972009EF494 /* UINavigationBar+SkyBallHetiRedDRExtension.m in Sources */,
 				FEF468C1225BA50800E4B5F7 /* SkyBallHetiRedHTNewsAdditionRequest.m in Sources */,

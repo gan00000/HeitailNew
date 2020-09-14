@@ -11,6 +11,7 @@
 
 #import "LMPlayer.h"
 #import "HTIndicatorView.h"
+#import "HTIMViewController.h"
 
 @interface SkyBallHetiRedHTMatchDetailViewController () <UIScrollViewDelegate, LMVideoPlayerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *homeTeamLogo;
@@ -39,6 +40,8 @@
 @property (nonatomic, strong) SkyBallHetiRedHTMatchSummaryModel *matchSummaryModel;
 @property (nonatomic, strong) SkyBallHetiRedHTMatchCompareModel *matchCompareModel;
 
+@property (nonatomic,strong) HTIMViewController *imVc;
+
 @property (nonatomic, strong) HTMacthLivePostModel *livePost;
 
 @property (nonatomic, assign) BOOL feedLoaded;
@@ -56,6 +59,8 @@
 @property (nonatomic, strong) UIView *playerContentView;
 @property (weak, nonatomic) IBOutlet UILabel *startTimeLable;
 @property (nonatomic, strong)HTIndicatorView *likeIndicatorView;
+
+@property (nonatomic, strong) NSArray *titlesArray;
 
 @end
 @implementation SkyBallHetiRedHTMatchDetailViewController
@@ -295,17 +300,14 @@
     
      if ([SkyBallHetiRedHTUserManager manager].showTextLive) {
          
-         for (NSInteger i = 0; i < 3; i++) {
-             [self.loadedFlagArray addObject:@(NO)];
-             [self.loadedControllersArray addObject:@(NO)];
-         }
+         self.titlesArray = @[@"聊球", @"對陣", @"數據統計", @"文字直播"];
      }else{
-         
-         for (NSInteger i = 0; i < 3; i++) {
-             [self.loadedFlagArray addObject:@(NO)];
-             [self.loadedControllersArray addObject:@(NO)];
-         }
+         self.titlesArray =  @[@"影片直播", @"對陣", @"數據統計"];
      }
+    for (NSInteger i = 0; i < self.titlesArray.count; i++) {
+        [self.loadedFlagArray addObject:@(NO)];
+        [self.loadedControllersArray addObject:@(NO)];
+    }
     
     if ([self.matchModel.scheduleStatus isEqualToString:@"InProgress"]) {
         
@@ -358,6 +360,9 @@
         self.matchCompareModel = compareModel;
         self.summaryLoaded = YES;
         [self refreshUI];
+        
+        [self.imVc setData:self.matchModel summary:self.matchSummaryModel];
+        
     } errorBlock:^(SkyBallHetiRedBJError *error) {
         self.error = error;
         self.summaryLoaded = YES;
@@ -520,14 +525,17 @@
 //
 //
 //             } else
-            if (index == 2) {
+            if (index == 3) {//文字直播
                  SkyBallHetiRedHTMatchWordLiveViewController *wordVc = self.loadedControllersArray[index];
                 [wordVc waterSkyrefreshWithLiveFeedList:self.liveFeedList summary:self.matchSummaryModel];
                 
                  
-             }else if (index == 0) {
+             }else if (index == 1) {//對陣
                  SkyBallHetiRedHTMatchCompareViewController *compareVc = self.loadedControllersArray[index];
                  [compareVc waterSkyrefreshWithMatchSummaryModel:self.matchSummaryModel];
+             }else if (index == 0) {//聊起
+                 HTIMViewController *imVc = self.loadedControllersArray[index];
+                 //[vc waterSkyrefreshWithMatchSummaryModel:self.matchSummaryModel];
              } else {
                  SkyBallHetiRedHTMatchDashboardViewController *dashbdVc = self.loadedControllersArray[index];
                  [dashbdVc waterSkyrefreshWithMatchCompareModel:self.matchCompareModel];
@@ -547,7 +555,7 @@
 //
 //
 //         } else
-             if (index == 2) {
+             if (index == 3) {
              
              SkyBallHetiRedHTMatchWordLiveViewController *wordVc = [SkyBallHetiRedHTMatchWordLiveViewController waterSkyviewController];
              wordVc.onTableHeaderRefreshBlock = ^{
@@ -555,13 +563,21 @@
              };
              vc = wordVc;
              
-         }else if (index == 0) {
+         }else if (index == 1) {
              SkyBallHetiRedHTMatchCompareViewController *compareVc = [SkyBallHetiRedHTMatchCompareViewController waterSkyviewController];
              [compareVc waterSkyrefreshWithMatchSummaryModel:self.matchSummaryModel];
              compareVc.onTableHeaderRefreshBlock = ^{
                  [weakSelf loadData];
              };
              vc = compareVc;
+             
+         }else if (index == 0) {
+             self.imVc = [HTIMViewController waterSkyviewController];
+//             [imVc waterSkyrefreshWithMatchSummaryModel:self.matchSummaryModel];
+//             imVc.onTableHeaderRefreshBlock = ^{
+//                 [weakSelf loadData];
+//             };
+             vc = self.imVc;
          } else {
              SkyBallHetiRedHTMatchDashboardViewController *dashboardVc = [SkyBallHetiRedHTMatchDashboardViewController waterSkyviewController];
              [dashboardVc waterSkyrefreshWithMatchCompareModel:self.matchCompareModel];
@@ -657,15 +673,7 @@
 - (HMSegmentedControl *)segmentControl {
     if (!_segmentControl) {
 
-        
-        if ([SkyBallHetiRedHTUserManager manager].showTextLive) {
-            
-                    _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[ @"對陣", @"數據統計", @"文字直播"]];
-            
-        }else{
-               _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"影片直播", @"對陣", @"數據統計"]];
-        }
-      
+        _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:self.titlesArray];
         _segmentControl.selectionIndicatorColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"];
         _segmentControl.selectionIndicatorHeight = 3.0f;
         _segmentControl.selectionIndicatorEdgeInsets = UIEdgeInsetsMake(0, -8, 0, -18);
@@ -688,7 +696,7 @@
         _containerView.delegate = self;
         _containerView.pagingEnabled = YES;
         _containerView.autoresizingMask = UIViewAutoresizingNone;
-        _containerView.contentSize = CGSizeMake(SCREEN_WIDTH * 3, SCREEN_HEIGHT - 64 - SCREEN_HEIGHT - 1);
+        _containerView.contentSize = CGSizeMake(SCREEN_WIDTH * self.titlesArray.count, SCREEN_HEIGHT - 64 - SCREEN_HEIGHT - 1);
         _containerView.bounces = NO;
     }
     return _containerView;

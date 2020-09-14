@@ -41,4 +41,6 @@ pod 'SVGKit'
 pod 'Firebase/Analytics'
 pod 'Google-Mobile-Ads-SDK'
 pod 'Charts'
+#pod 'Protobuf'
+pod 'SocketRocket'
 end

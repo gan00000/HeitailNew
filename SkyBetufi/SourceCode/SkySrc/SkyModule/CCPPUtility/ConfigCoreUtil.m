@@ -53,7 +53,7 @@ static dispatch_once_t onceToken;
         if ([am.accountName isEqualToString:mAccount]) {
             am.accountPwd = password;
             if (updateTime) {
-                am.lastLoginTime = [self getTimeStamp];
+                am.lastLoginTime = [ConfigCoreUtil getTimeStamp];
             }
             [self saveAccountModels:mAccountArray];
             return;
@@ -62,7 +62,7 @@ static dispatch_once_t onceToken;
     NSMutableArray *aar = [NSMutableArray arrayWithArray:mAccountArray];
     AccountModel *mAccountModel = [[AccountModel alloc] init];
     //赋值
-    mAccountModel.lastLoginTime = [self getTimeStamp];
+    mAccountModel.lastLoginTime = [ConfigCoreUtil getTimeStamp];
     mAccountModel.accountName = mAccount;
     mAccountModel.accountPwd = password;
     [aar addObject:mAccountModel];
@@ -117,7 +117,7 @@ static dispatch_once_t onceToken;
     return accountModelList;
 }
 
--(NSString *)getTimeStamp
++(NSString *)getTimeStamp
 {
     double secondTime=[[[NSDate alloc]init] timeIntervalSince1970];
     double millisecondTime=secondTime*1000;
@@ -128,5 +128,34 @@ static dispatch_once_t onceToken;
     return MSTime;
 }
 
+//获取当前时间
+//- (NSString *)currentDateStr{
+//    NSDate *currentDate = [NSDate date];//获取当前时间，日期
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];// 创建一个时间格式化对象
+//    [dateFormatter setDateFormat:@"YYYY/MM/dd hh:mm:ss SS "];//设定时间格式,这里可以设置成自己需要的格式
+//    NSString *dateString = [dateFormatter stringFromDate:currentDate];//将时间转化成字符串
+//    return dateString;
+//}
+
+//获取当前时间戳
+//- (NSString *)currentTimeStr{
+//    NSDate* date = [NSDate dateWithTimeIntervalSinceNow:0];//获取当前时间0秒后的时间
+//    NSTimeInterval time=[date timeIntervalSince1970]*1000;// *1000 是精确到毫秒，不乘就是精确到秒
+//    NSString *timeString = [NSString stringWithFormat:@"%.0f", time];
+//    return timeString;
+//}
+
+
+//字符串转时间戳 如：2017-4-10 17:15:10
++(NSString *)getTimeStrWithString:(NSString *)str{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];// 创建一个时间格式化对象
+    [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm aa"]; //设定时间的格式
+    NSLocale *usLocale=[[NSLocale alloc]initWithLocaleIdentifier:@"en_US"];
+    dateFormatter.locale=usLocale;
+    
+    NSDate *tempDate = [dateFormatter dateFromString:str];//将字符串转换为时间对象
+    NSString *timeStr = [NSString stringWithFormat:@"%ld", (long)[tempDate timeIntervalSince1970]*1000];//字符串转成时间戳,精确到毫秒*1000
+    return timeStr;
+}
 
 @end

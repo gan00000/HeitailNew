@@ -24,6 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(NSArray *)getAccountModels;
 
++(NSString *)getTimeStamp;
+
++(NSString *)getTimeStrWithString:(NSString *)str;
 @end
 
 NS_ASSUME_NONNULL_END

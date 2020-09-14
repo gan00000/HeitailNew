@@ -117,6 +117,7 @@ PODS:
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
+  - SocketRocket (0.5.1)
   - SVGKit (2.1.0):
     - CocoaLumberjack (~> 3.0)
   - UMCAnalytics (5.5.1):
@@ -158,6 +159,7 @@ DEPENDENCIES:
   - Reachability
   - RegExCategories
   - SDWebImage
+  - SocketRocket
   - SVGKit
   - UMCAnalytics
   - UMCCommon (~> 2.1.1)
@@ -198,6 +200,7 @@ SPEC REPOS:
     - RegExCategories
     - SDVersion
     - SDWebImage
+    - SocketRocket
     - SVGKit
     - UMCAnalytics
     - UMCCommon
@@ -246,6 +249,7 @@ SPEC CHECKSUMS:
   RegExCategories: e68befacacd5bda853c88f70ec745cb2d0cfb89c
   SDVersion: 18f32c835c1543611fcfae3c6accd9a04b90597e
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SVGKit: 8a2fc74258bdb2abb54d3b65f3dd68b0277a9c4d
   UMCAnalytics: 0aff87e39008e2a650e5917430db0da2de2f8495
   UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
@@ -259,6 +263,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZFLineSDK: fc1485f687bd9d6af5cb7e39ab2a8266680797dd
 
-PODFILE CHECKSUM: 05ac5a848101cc3590df5519ad29603ff60244b6
+PODFILE CHECKSUM: de12e70bef9a33da462e1272027b4b1207f5cf4f
 
 COCOAPODS: 1.9.2
