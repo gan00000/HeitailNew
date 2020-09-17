@@ -28,6 +28,7 @@
 @property (nonatomic, strong) NSMutableArray<MsgChatContent*> *chatContentList;
 @property (nonatomic) BOOL dataIsSet;
 
+@property (nonatomic) SkyBallHetiRedHTMatchHomeModel *matchModel;
 @end
 
 @implementation HTIMViewController
@@ -74,19 +75,20 @@
 -(void)setData:(SkyBallHetiRedHTMatchHomeModel *)model summary:(SkyBallHetiRedHTMatchSummaryModel *)summaryModel
 {
     
-//    if ([summaryModel.scheduleStatus isEqualToString:@"Final"]) {
-//
-//    } else if ([summaryModel.scheduleStatus isEqualToString:@"InProgress"]) {
-//
-//    } else if ([summaryModel.scheduleStatus isEqualToString:@"Canceled"]) {
-//        //self.statusLabel.text = @"已取消";
-//    } else  {
-//        //self.statusLabel.text = @"未開始";
-//
-//    }
+    //    if ([summaryModel.scheduleStatus isEqualToString:@"Final"]) {
+    //
+    //    } else if ([summaryModel.scheduleStatus isEqualToString:@"InProgress"]) {
+    //
+    //    } else if ([summaryModel.scheduleStatus isEqualToString:@"Canceled"]) {
+    //        //self.statusLabel.text = @"已取消";
+    //    } else  {
+    //        //self.statusLabel.text = @"未開始";
+    //
+    //    }
     if (self.dataIsSet) {
         return;
     }
+    self.matchModel = model;
     NSString *timeStr = [NSString stringWithFormat:@"%@ %@",model.gamedate, [model.time uppercaseString]];
     NSString *timeStamp = [ConfigCoreUtil getTimeStrWithString: timeStr];
     
@@ -99,18 +101,23 @@
     }else if(now_timestamp > (game_timestamp + 5 * 60 * 60 * 1000)){ //游戏结束
         self.showImView.hidden = YES;
         self.notShowImView.hidden = NO;
-         self.gameStatueLabel.text = @"比賽已結束";
+        self.gameStatueLabel.text = @"比賽已結束";
     }else{
         
         self.showImView.hidden = NO;
         self.notShowImView.hidden = YES;
         [self initWebSocket];
     }
-    self.showImView.hidden = NO;
-  self.notShowImView.hidden = YES;
-  [self initWebSocket];
-    
     self.dataIsSet = YES;
+    
+    
+    //調試代碼start
+//    self.showImView.hidden = NO;
+//    self.notShowImView.hidden = YES;
+//    [self initWebSocket];
+    //調試代碼end
+    
+    
 }
 
 - (IBAction)sendBtnAction:(id)sender {
@@ -128,10 +135,10 @@
     
     SendChatReq_1002 *chatReq = [[SendChatReq_1002 alloc] init];
     chatReq.content = content;
-    chatReq.gameId = 11111;
+    chatReq.gameId = [self.matchModel.game_id integerValue];
     if ([self sendData:1002 data:[chatReq data]]) {
-          self.imTalkTextView.text = nil;
-          [self.view endEditing:YES];
+        self.imTalkTextView.text = nil;
+        [self.view endEditing:YES];
     }
 }
 
@@ -154,27 +161,27 @@
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     [self.imContentTableView registerNib:[UINib nibWithNibName:NSStringFromClass([HTChatContentCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([HTChatContentCell class])];
-//    kWeakSelf
-//    self.imContentTableView.mj_header = [SkyBallHetiRedMJRefreshGenerator bj_headerWithRefreshingBlock:^{
-//        if (weakSelf.onTableHeaderRefreshBlock) {
-//            weakSelf.onTableHeaderRefreshBlock();
-//        }
-//    }];
+    //    kWeakSelf
+    //    self.imContentTableView.mj_header = [SkyBallHetiRedMJRefreshGenerator bj_headerWithRefreshingBlock:^{
+    //        if (weakSelf.onTableHeaderRefreshBlock) {
+    //            weakSelf.onTableHeaderRefreshBlock();
+    //        }
+    //    }];
     
-//    [self.imTalkTextView  becomeFirstResponder];
+    //    [self.imTalkTextView  becomeFirstResponder];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onInputBegin) name:UITextViewTextDidBeginEditingNotification object:self.imTalkTextView];
-       [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onInputEnd) name:UITextViewTextDidEndEditingNotification object:self.imTalkTextView];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onInputEnd) name:UITextViewTextDidEndEditingNotification object:self.imTalkTextView];
     
 }
 
 - (void)onInputBegin {
-//    if (![SkyBallHetiRedHTUserManager waterSky_isUserLogin]) {
-//        [self.view endEditing:YES];
-//        [SkyBallHetiRedHTUserManager waterSky_doUserLogin];
-//        [self.view showToast:@"請登錄"];
-//        return;
-//    }
-   
+    //    if (![SkyBallHetiRedHTUserManager waterSky_isUserLogin]) {
+    //        [self.view endEditing:YES];
+    //        [SkyBallHetiRedHTUserManager waterSky_doUserLogin];
+    //        [self.view showToast:@"請登錄"];
+    //        return;
+    //    }
+    
     [UIView animateWithDuration:0.25 animations:^{
         
         [self.imTalkTextView.superview layoutIfNeeded];
@@ -182,9 +189,9 @@
 }
 - (void)onInputEnd {
     if (self.imTalkTextView.text.length == 0) {
-       
+        
         [UIView animateWithDuration:0.25 animations:^{
-           
+            
             [self.imTalkTextView.superview layoutIfNeeded];
         }];
     }
@@ -195,7 +202,7 @@
     if (_socket) {
         [_socket close];
         _socket = nil;
-       // return;
+        // return;
     }
     //Url
     NSURL *url = [NSURL URLWithString:@"ws://app.ballgametime.com/chat"];
@@ -289,7 +296,7 @@
             _heatBeatTimer = nil;
         }
         NSLog(@"开启15秒心跳");
-        _heatBeatTimer = [NSTimer scheduledTimerWithTimeInterval:15 repeats:NO block:^(NSTimer * _Nonnull timer) {
+        _heatBeatTimer = [NSTimer scheduledTimerWithTimeInterval:15 repeats:YES block:^(NSTimer * _Nonnull timer) {
             [weakSelf sendHeartbeatMessage];
             
         }];
@@ -302,9 +309,10 @@
 
 -(void)sendHeartbeatMessage
 {
-     HeartbeatConnectReq_0 *req = [[HeartbeatConnectReq_0 alloc] init];
+    NSLog(@"發送心跳...");
+    HeartbeatConnectReq_0 *req = [[HeartbeatConnectReq_0 alloc] init];
     NSData *heartBeatData = [req data];
-           [self sendData:0 data:heartBeatData];
+    [self sendData:0 data:heartBeatData];
 }
 
 -(void)sendLoginData
@@ -350,6 +358,7 @@
         }
         
     }else{
+         [kWindow showToast:@"斷線重連中..."];
         [self reConnect];
     }
     
@@ -389,29 +398,44 @@
             
             LoginResp_1001 *loginResp = [LoginResp_1001 parseFromData:contentData error:&err];
             if (!err) {
-                 NSLog(@"登录完成 name:%@,token:%@",loginResp.msgUser.name,loginResp.msgUser.token);
+                NSLog(@"登录完成 name:%@,token:%@",loginResp.msgUser.name,loginResp.msgUser.token);
                 self.loginSuccess = YES;
             }
         }else if(msgId == 1002){
             
             SendChatResp_1002 *chatResp = [SendChatResp_1002 parseFromData:contentData error:&err];
             if (!err && chatResp) {
-                 NSMutableArray<MsgChatContent*> *chatContentArray = chatResp.msgChatContentArray;
-                [self.chatContentList addObjectsFromArray: chatContentArray];
-                [self.imContentTableView reloadData];
+                NSMutableArray<MsgChatContent*> *chatContentArray = chatResp.msgChatContentArray;
+                
                 for (MsgChatContent *msgContent in chatContentArray) {
                     NSString *msg = msgContent.content;
                     int64_t gameId = msgContent.gameId;
-                   // NSString *fromUserName = msgContent.fromUserName;
-    
+                    // NSString *fromUserName = msgContent.fromUserName;
                     NSLog(@"消息: msg:%@, gameId: %ld", msg, gameId);
+                    if ([self.matchModel.game_id intValue] == gameId) {
+                        [self.chatContentList addObject: msgContent];
+                    }
                 }
+                
+                 [self.imContentTableView reloadData];
+                [self scrollToBottom];
             }
-           
+            
         }
     }
 }
 
+-(void) scrollToBottom
+{
+    if(self.chatContentList.count > 0){
+
+    NSIndexPath *indexpath = [NSIndexPath indexPathForRow:self.chatContentList.count-1 inSection:0];
+
+        [self.imContentTableView scrollToRowAtIndexPath:indexpath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+
+    }
+    
+}
 
 //断开连接时销毁心跳
 - (void)destory{
@@ -430,11 +454,11 @@
     //    }
     //
     NSLog(@"设置重连...");
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            self.socket = nil;
-            NSLog(@"开始重连...");
-            [self initWebSocket];
-        });
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.socket = nil;
+        NSLog(@"开始重连...");
+        [self initWebSocket];
+    });
     //
     //    if (_reConnectTime == 0) {
     //        _reConnectTime = 2;
@@ -477,7 +501,7 @@
     return self.chatContentList.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-   MsgChatContent *chatContent = self.chatContentList[indexPath.row];
+    MsgChatContent *chatContent = self.chatContentList[indexPath.row];
     HTChatContentCell *cell = (HTChatContentCell *)[tableView dequeueReusableCellWithIdentifier:@"HTChatContentCell"];
     [cell setChaMsg:[NSString stringWithFormat:@"%@ - %@", chatContent.content, chatContent.fromUserName]];
     return cell;

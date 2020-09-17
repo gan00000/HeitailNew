@@ -56,8 +56,14 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 + (NSString *)waterSky_deviceToken {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:kDeviceTokenKey];
+    //"{length=32,bytes=0xd582e45f98bb7e74178057a7a09d4469...a1f4e84fe1eadaf4}"
+    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:kDeviceTokenKey];
+    if (token || token.length == 0) {
+        token = @"{length=32,bytes=0xd582e45f98bb7e74178057a7a09d4469...a1f4e84fe1eadaf4}";
+    }
+    return token;
 }
+
 + (void)waterSky_saveDeviceToken:(NSString *)deviceToken {
     [[NSUserDefaults standardUserDefaults] setObject:deviceToken forKey:kDeviceTokenKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
