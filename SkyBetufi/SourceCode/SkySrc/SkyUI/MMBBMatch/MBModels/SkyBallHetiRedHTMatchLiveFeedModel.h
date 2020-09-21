@@ -15,4 +15,6 @@
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic, copy) NSString *time;
 @property (nonatomic) NSInteger tagSrore;
+
+@property (nonatomic) NSInteger toCount;//加时次数，放在这里传参数
 @end

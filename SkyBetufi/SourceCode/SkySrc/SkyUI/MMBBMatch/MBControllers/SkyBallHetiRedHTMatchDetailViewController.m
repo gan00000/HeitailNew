@@ -532,7 +532,7 @@
                  
              }else if (index == 1) {//對陣
                  SkyBallHetiRedHTMatchCompareViewController *compareVc = self.loadedControllersArray[index];
-                 [compareVc waterSkyrefreshWithMatchSummaryModel:self.matchSummaryModel];
+                 [compareVc waterSkyrefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList];
              }else if (index == 0) {//聊起
                  HTIMViewController *imVc = self.loadedControllersArray[index];
                  //[vc waterSkyrefreshWithMatchSummaryModel:self.matchSummaryModel];
@@ -565,7 +565,7 @@
              
          }else if (index == 1) {
              SkyBallHetiRedHTMatchCompareViewController *compareVc = [SkyBallHetiRedHTMatchCompareViewController waterSkyviewController];
-             [compareVc waterSkyrefreshWithMatchSummaryModel:self.matchSummaryModel];
+             [compareVc waterSkyrefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList];
              compareVc.onTableHeaderRefreshBlock = ^{
                  [weakSelf loadData];
              };
@@ -606,7 +606,7 @@
 
         } else if (index == 1) {
             SkyBallHetiRedHTMatchCompareViewController *compareVc = self.loadedControllersArray[index];
-            [compareVc waterSkyrefreshWithMatchSummaryModel:self.matchSummaryModel];
+            [compareVc waterSkyrefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList];
         } else {
             SkyBallHetiRedHTMatchDashboardViewController *dashbdVc = self.loadedControllersArray[index];
             [dashbdVc waterSkyrefreshWithMatchCompareModel:self.matchCompareModel];
@@ -631,7 +631,7 @@
         
     } else if (index == 1) {
         SkyBallHetiRedHTMatchCompareViewController *compareVc = [SkyBallHetiRedHTMatchCompareViewController waterSkyviewController];
-        [compareVc waterSkyrefreshWithMatchSummaryModel:self.matchSummaryModel];
+        [compareVc waterSkyrefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList];
         compareVc.onTableHeaderRefreshBlock = ^{
             [weakSelf loadData];
         };

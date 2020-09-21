@@ -112,9 +112,9 @@
     
     
     //調試代碼start
-//    self.showImView.hidden = NO;
-//    self.notShowImView.hidden = YES;
-//    [self initWebSocket];
+    self.showImView.hidden = NO;
+    self.notShowImView.hidden = YES;
+    [self initWebSocket];
     //調試代碼end
     
     

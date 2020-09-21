@@ -6,7 +6,11 @@
     [SkyBallHetiRedBJHTTPServiceEngine waterSky_getRequestWithFunctionPath:API_MATCH_LIVE_FEED params:@{@"game_id":game_id} successBlock:^(id responseData) {
         NSMutableArray *feedList = [NSMutableArray array];
         NSArray *data = responseData[@"live_feed"];
+        NSInteger toCount = 0;
         if ([data isKindOfClass:[NSArray class]] && data.count > 0) {
+            if (data.count > 4) {
+                toCount = data.count - 4;
+            }
             for (NSArray *q in data) {
                 NSArray *quarter = [NSArray yy_modelArrayWithClass:[SkyBallHetiRedHTMatchLiveFeedModel class] json:q];
                 [feedList addObjectsFromArray:quarter];
@@ -15,6 +19,7 @@
         
         SkyBallHetiRedHTMatchLiveFeedModel *currentModel;
         for (SkyBallHetiRedHTMatchLiveFeedModel *m in feedList) {
+            m.toCount = toCount;
             if (currentModel) {
                 
                 if ([m.awayPts intValue] > [currentModel.awayPts intValue] || [m.homePts intValue] > [currentModel.homePts intValue]) {

@@ -2,9 +2,12 @@
 #import "SkyBallHetiRedHTMatchQuarterCell.h"
 #import "SkyBallHetiRedHTMatchPtsCompareCell.h"
 #import "SkyBallHetiRedHTMatchBestPlayerCell.h"
+#import "HTScoreViewCell.h"
+
 @interface SkyBallHetiRedHTMatchCompareViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, weak) SkyBallHetiRedHTMatchSummaryModel *summaryModel;
+@property (nonatomic, weak)NSArray<SkyBallHetiRedHTMatchLiveFeedModel *> *liveFeedModel;
 @end
 @implementation SkyBallHetiRedHTMatchCompareViewController
 + (instancetype)waterSkyviewController {
@@ -20,9 +23,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-- (void)waterSkyrefreshWithMatchSummaryModel:(SkyBallHetiRedHTMatchSummaryModel *)summaryModel {
+- (void)waterSkyrefreshWithMatchSummaryModel:(SkyBallHetiRedHTMatchSummaryModel *)summaryModel liveFeedModel:(NSArray<SkyBallHetiRedHTMatchLiveFeedModel *> *)liveFeedModel{
     [self.tableView.mj_header endRefreshing];
     self.summaryModel = summaryModel;
+    self.liveFeedModel = liveFeedModel;
     [self.tableView reloadData];
 }
 - (void)setupViews {
@@ -41,6 +45,9 @@
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SkyBallHetiRedHTMatchQuarterCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SkyBallHetiRedHTMatchQuarterCell class])];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SkyBallHetiRedHTMatchPtsCompareCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SkyBallHetiRedHTMatchPtsCompareCell class])];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SkyBallHetiRedHTMatchBestPlayerCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SkyBallHetiRedHTMatchBestPlayerCell class])];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HTScoreViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([HTScoreViewCell class])];
+    
     kWeakSelf
     self.tableView.mj_header = [SkyBallHetiRedMJRefreshGenerator bj_headerWithRefreshingBlock:^{
         if (weakSelf.onTableHeaderRefreshBlock) {
@@ -50,7 +57,7 @@
 }
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 4;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
@@ -62,6 +69,12 @@
         return cell;
     }
     if (indexPath.section == 1) {
+        HTScoreViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTScoreViewCell class])];
+        //[cell waterSkysetupWithMatchSummaryModel:self.summaryModel];
+        [cell setMatchSummaryModel:self.summaryModel liveFeedModel:self.liveFeedModel];
+        return cell;
+    }
+    if (indexPath.section == 2) {
         SkyBallHetiRedHTMatchPtsCompareCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SkyBallHetiRedHTMatchPtsCompareCell class])];
         [cell waterSkysetupWithMatchSummaryModel:self.summaryModel];
         return cell;
@@ -76,6 +89,9 @@
         return 105;
     }
     if (indexPath.section == 1) {
+        return 210;
+    }
+    if (indexPath.section == 2) {
         return 400;
     }
     return 450;

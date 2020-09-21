@@ -89,6 +89,9 @@
 		32E7228B2309A3A6003E0A03 /* guideImageapp12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722852309A3A6003E0A03 /* guideImageapp12.jpg */; };
 		32E7228C2309A3A6003E0A03 /* guideImageapp14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722862309A3A6003E0A03 /* guideImageapp14.jpg */; };
 		32E7228D2309A3A6003E0A03 /* guideImageapp15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E722872309A3A6003E0A03 /* guideImageapp15.jpg */; };
+		32F1F2BE2514F7D700EE85B8 /* HTScoreViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F1F2BC2514F7D700EE85B8 /* HTScoreViewCell.m */; };
+		32F1F2BF2514F7D700EE85B8 /* HTScoreViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F1F2BD2514F7D700EE85B8 /* HTScoreViewCell.xib */; };
+		32F1F2C22514FB7C00EE85B8 /* LineChartUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F1F2C12514FB7C00EE85B8 /* LineChartUtil.m */; };
 		32FAACE324F6A032001574C9 /* BarChartUtilValueFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FAACE224F6A032001574C9 /* BarChartUtilValueFormat.m */; };
 		32FCDD1A250C721F0037334D /* HTIMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FCDD19250C721F0037334D /* HTIMViewController.m */; };
 		32FCDD1C250C72AB0037334D /* THIMController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32FCDD1B250C72AB0037334D /* THIMController.storyboard */; };
@@ -537,6 +540,11 @@
 		32E722852309A3A6003E0A03 /* guideImageapp12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp12.jpg; sourceTree = "<group>"; };
 		32E722862309A3A6003E0A03 /* guideImageapp14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp14.jpg; sourceTree = "<group>"; };
 		32E722872309A3A6003E0A03 /* guideImageapp15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImageapp15.jpg; sourceTree = "<group>"; };
+		32F1F2BB2514F7D700EE85B8 /* HTScoreViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTScoreViewCell.h; sourceTree = "<group>"; };
+		32F1F2BC2514F7D700EE85B8 /* HTScoreViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTScoreViewCell.m; sourceTree = "<group>"; };
+		32F1F2BD2514F7D700EE85B8 /* HTScoreViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTScoreViewCell.xib; sourceTree = "<group>"; };
+		32F1F2C02514FB7C00EE85B8 /* LineChartUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineChartUtil.h; sourceTree = "<group>"; };
+		32F1F2C12514FB7C00EE85B8 /* LineChartUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LineChartUtil.m; sourceTree = "<group>"; };
 		32FAACE124F6A032001574C9 /* BarChartUtilValueFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarChartUtilValueFormat.h; sourceTree = "<group>"; };
 		32FAACE224F6A032001574C9 /* BarChartUtilValueFormat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarChartUtilValueFormat.m; sourceTree = "<group>"; };
 		32FCDD18250C721F0037334D /* HTIMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTIMViewController.h; sourceTree = "<group>"; };
@@ -1225,6 +1233,8 @@
 				32CC78E224F3EAAD00377576 /* BarChartUtil.m */,
 				32FAACE124F6A032001574C9 /* BarChartUtilValueFormat.h */,
 				32FAACE224F6A032001574C9 /* BarChartUtilValueFormat.m */,
+				32F1F2C02514FB7C00EE85B8 /* LineChartUtil.h */,
+				32F1F2C12514FB7C00EE85B8 /* LineChartUtil.m */,
 			);
 			path = ChartUtil;
 			sourceTree = "<group>";
@@ -2285,6 +2295,9 @@
 				32340FCD250F1D7F00F47F76 /* HTChatContentCell.h */,
 				32340FCE250F1D7F00F47F76 /* HTChatContentCell.m */,
 				32340FCF250F1D7F00F47F76 /* HTChatContentCell.xib */,
+				32F1F2BB2514F7D700EE85B8 /* HTScoreViewCell.h */,
+				32F1F2BC2514F7D700EE85B8 /* HTScoreViewCell.m */,
+				32F1F2BD2514F7D700EE85B8 /* HTScoreViewCell.xib */,
 			);
 			path = MBViews;
 			sourceTree = "<group>";
@@ -2417,6 +2430,7 @@
 				FE08C5C92250506A000175CB /* SkyBallHetiRedHTMeHomeViewController.xib in Resources */,
 				FEDAC97A214B9139005E8B63 /* SkyBallHetiRedHTDataCellTeamView.xib in Resources */,
 				FEDF8FE02144D05C005C7C4D /* SkyBallHetiRedHTMatchHomeGroupHeaderView.xib in Resources */,
+				32F1F2BF2514F7D700EE85B8 /* HTScoreViewCell.xib in Resources */,
 				FEC116042143D4A1002DB617 /* SkyBallHetiRedXJLoadingView.xib in Resources */,
 				32ABE1D322EDF733008505BA /* SkyBallHetiRedHTTabBarHomeViewController.xib in Resources */,
 				FE82BB382179B6C500C52C51 /* SkyBallHetiRedHTDataPlayerLeftCell.xib in Resources */,
@@ -2676,6 +2690,8 @@
 				FE81D159214819FA0047A4A2 /* SkyBallHetiRedHTDataHomeSubViewController.m in Sources */,
 				32FED82723AB768700D900A7 /* MMMaterialDesignSpinner.m in Sources */,
 				FEC116C72143D4A1002DB617 /* NSNumber+SkyBallHetiRedZGFormatter.m in Sources */,
+				32F1F2BE2514F7D700EE85B8 /* HTScoreViewCell.m in Sources */,
+				32F1F2C22514FB7C00EE85B8 /* LineChartUtil.m in Sources */,
 				FEC116B62143D4A1002DB617 /* SkyBallHetiRedBJBaseHTTPEngine.m in Sources */,
 				FEC116782143D4A1002DB617 /* SkyBallHetiRedBJURINavHelper.m in Sources */,
 				FEAB2108216DD731002A05AB /* SkyBallHetiRedHTMatchDetailsModel.m in Sources */,
@@ -2968,7 +2984,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = skyball_20200106;
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "arm64 arm64e armv7s";
 			};
 			name = Debug;
 		};
@@ -3001,7 +3016,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = skyball_dis_20200106;
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "arm64 arm64e armv7s";
 			};
 			name = Release;
 		};
