@@ -4,7 +4,7 @@ platform :ios, '9.0'
 
 target 'SkyBallPlay' do
 
-pod 'AFNetworking'
+pod 'AFNetworking', '~> 4.0'
 pod 'SDWebImage'
 pod 'Reachability'
 pod 'Masonry'
