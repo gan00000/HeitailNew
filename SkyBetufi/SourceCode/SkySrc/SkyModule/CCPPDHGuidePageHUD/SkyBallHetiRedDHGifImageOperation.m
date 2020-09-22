@@ -9,6 +9,7 @@
 #import "SkyBallHetiRedDHGifImageOperation.h"
 #import <ImageIO/ImageIO.h>
 #import <QuartzCore/QuartzCore.h>
+#import <WebKit/WebKit.h>
 
 @interface SkyBallHetiRedDHGifImageOperation ()
 {
@@ -118,11 +119,20 @@
     if (self) {
         NSString *gifImgName = [gifImageName stringByReplacingOccurrencesOfString:@".gif" withString:@""];
         NSData *gifData      = [NSData dataWithContentsOfFile: [[NSBundle mainBundle] pathForResource:gifImgName ofType:@"gif"]];
-        UIWebView *webView   = [[UIWebView alloc] initWithFrame:frame];
+//        UIWebView *webView   = [[UIWebView alloc] initWithFrame:frame];
+//        [webView setBackgroundColor:[UIColor clearColor]];
+//        [webView setScalesPageToFit:YES];
+//        [webView.scrollView setScrollEnabled:NO];
+//        [webView loadData:gifData MIMEType:@"image/gif" textEncodingName:@"" baseURL:[NSURL URLWithString:@""]];
+//
+        
+        WKWebView *webView   = [[WKWebView alloc] initWithFrame:frame];
         [webView setBackgroundColor:[UIColor clearColor]];
-        [webView setScalesPageToFit:YES];
+//        [webView setScalesPageToFit:YES];
         [webView.scrollView setScrollEnabled:NO];
-        [webView loadData:gifData MIMEType:@"image/gif" textEncodingName:@"" baseURL:[NSURL URLWithString:@""]];
+//        [webView loadData:gifData MIMEType:@"image/gif" textEncodingName:@"" baseURL:[NSURL URLWithString:@""]];
+        
+        [webView loadData:gifData MIMEType:@"image/gif" characterEncodingName:@"" baseURL:[NSURL URLWithString:@""]];
         
         UIButton *clearButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [clearButton setFrame:webView.frame];
@@ -130,6 +140,7 @@
         [clearButton addTarget:self action:@selector(activiTap:) forControlEvents:UIControlEventTouchUpInside];
         [webView addSubview:clearButton];
         [self addSubview:webView];
+        
     }
     return self;
 }

@@ -15,7 +15,6 @@
 #import "SkyBallHetiRedPPXXBJNavigationController.h"
 #import "SkyBallHetiRedHTNewsAdditionRequest.h"
 #import "SkyBallHetiRedHTUserRequest.h"
-#import <BlocksKit/BlocksKit.h>
 #import <YYText/YYText.h>
 #import "SkyBallHetiRedHTCommentGetter.h"
 #import "SkyBallHetiRedHTNewsCommentCell.h"

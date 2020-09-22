@@ -20,16 +20,32 @@
                       successBlock:(BJHTTPSuccessBlock)successBlock
                         errorBlock:(BJHTTPFailureBlock)errorBlock {
     @try {
-        [self.sessionManager GET:path parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+        [self.sessionManager GET:path parameters:params headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+            
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             if (successBlock) {
                 successBlock(task, responseObject);
             }
+            
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            
             if (errorBlock) {
                 errorBlock(task, error);
             }
+            
         }];
+        
+//        [self.sessionManager GET:path parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+//        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//            if (successBlock) {
+//                successBlock(task, responseObject);
+//            }
+//        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//            if (errorBlock) {
+//                errorBlock(task, error);
+//            }
+//        }];
     } @catch (NSException *exception) {
     };
 }
@@ -38,16 +54,31 @@
                        successBlock:(BJHTTPSuccessBlock)successBlock
                          errorBlock:(BJHTTPFailureBlock)errorBlock {
     @try {
-        [self.sessionManager POST:path parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+        [self.sessionManager POST:path parameters:params headers:nil progress:^(NSProgress * _Nonnull uploadProgress) {
+            
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            
             if (successBlock) {
                 successBlock(task, responseObject);
             }
+            
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             if (errorBlock) {
                 errorBlock(task, error);
             }
         }];
+        
+//        [self.sessionManager POST:path parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+//        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//            if (successBlock) {
+//                successBlock(task, responseObject);
+//            }
+//        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//            if (errorBlock) {
+//                errorBlock(task, error);
+//            }
+//        }];
     } @catch (NSException *exception) {
     };
 }
