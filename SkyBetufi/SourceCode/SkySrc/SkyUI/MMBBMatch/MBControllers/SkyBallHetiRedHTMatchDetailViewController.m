@@ -12,6 +12,8 @@
 #import "LMPlayer.h"
 #import "HTIndicatorView.h"
 #import "HTIMViewController.h"
+//#import <SafariServices/SFFoundation.h>
+@import SafariServices;
 
 @interface SkyBallHetiRedHTMatchDetailViewController () <UIScrollViewDelegate, LMVideoPlayerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *homeTeamLogo;
@@ -247,6 +249,10 @@
 }
 - (IBAction)leftLikeBtnCliek:(id)sender {
     
+//    if (sender) {
+//        [self startPlay];
+//        return;
+//    }
     BOOL awayLike = [[NSUserDefaults standardUserDefaults] boolForKey:[NSString stringWithFormat:@"USER_LIKED_%@_%@", self.matchModel.game_id,@"away"]];
     BOOL homeLike = [[NSUserDefaults standardUserDefaults] boolForKey:[NSString stringWithFormat:@"USER_LIKED_%@_%@", self.matchModel.game_id,@"home"]];
     if (awayLike || homeLike) {
@@ -273,11 +279,19 @@
 }
 
 - (void)startPlay {
-    if (self.player) {
-        self.playerContentView.hidden = NO;
-        [self.player autoPlayTheVideo];
-        self.topDetailView.hidden = YES;
-    }
+//    @"http://www.bballman.com/category/live"
+    SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://www.bballman.com/category/live"]];
+//        safariVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:safariVC animated:YES completion:^{
+        
+    }];
+    
+    //========由于版权的问题，不能播放了==============//
+//    if (self.player) {
+//        self.playerContentView.hidden = NO;
+//        [self.player autoPlayTheVideo];
+//        self.topDetailView.hidden = YES;
+//    }
 }
 
 -(void)destoryPlayer{

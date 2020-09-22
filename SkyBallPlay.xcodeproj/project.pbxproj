@@ -2965,7 +2965,7 @@
 				CODE_SIGN_ENTITLEMENTS = SkyBetufi/SkyBallPlay.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: yupeng su (6HM9UCSUQM)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4.0.0;
+				CURRENT_PROJECT_VERSION = 4.0.1;
 				DEVELOPMENT_TEAM = 98DGMGPLHN;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2979,11 +2979,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.0;
+				MARKETING_VERSION = 4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyball.heit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = skyball_20200106;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 arm64e armv7s";
 			};
 			name = Debug;
 		};
@@ -2997,7 +2998,7 @@
 				CODE_SIGN_ENTITLEMENTS = SkyBetufi/SkyBallPlay.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: yupeng su (98DGMGPLHN)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4.0.0;
+				CURRENT_PROJECT_VERSION = 4.0.1;
 				DEVELOPMENT_TEAM = 98DGMGPLHN;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3011,11 +3012,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.0;
+				MARKETING_VERSION = 4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyball.heit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = skyball_dis_20200106;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 arm64e armv7s";
 			};
 			name = Release;
 		};
