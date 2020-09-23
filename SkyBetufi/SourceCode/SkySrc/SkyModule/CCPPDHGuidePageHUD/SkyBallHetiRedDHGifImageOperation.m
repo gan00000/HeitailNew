@@ -119,13 +119,7 @@
     if (self) {
         NSString *gifImgName = [gifImageName stringByReplacingOccurrencesOfString:@".gif" withString:@""];
         NSData *gifData      = [NSData dataWithContentsOfFile: [[NSBundle mainBundle] pathForResource:gifImgName ofType:@"gif"]];
-//        UIWebView *webView   = [[UIWebView alloc] initWithFrame:frame];
-//        [webView setBackgroundColor:[UIColor clearColor]];
-//        [webView setScalesPageToFit:YES];
-//        [webView.scrollView setScrollEnabled:NO];
-//        [webView loadData:gifData MIMEType:@"image/gif" textEncodingName:@"" baseURL:[NSURL URLWithString:@""]];
-//
-        
+   
         WKWebView *webView   = [[WKWebView alloc] initWithFrame:frame];
         [webView setBackgroundColor:[UIColor clearColor]];
 //        [webView setScalesPageToFit:YES];

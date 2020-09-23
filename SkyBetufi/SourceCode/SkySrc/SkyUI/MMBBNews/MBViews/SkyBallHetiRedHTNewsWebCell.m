@@ -97,7 +97,7 @@
  
     
     
-    // 类似 UIWebView 的 -webView: shouldStartLoadWithRequest: navigationType:
+    // 类似 xx 的 -webView: shouldStartLoadWithRequest: navigationType:
     //预览图片
 //    NSURL * url = navigationAction.request.URL;
 //    if ([url.scheme isEqualToString:@"image-preview-index"]) {

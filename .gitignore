@@ -62,4 +62,4 @@ fastlane/test_output
 
 iOSInjectionProject/
 HeiteBasketball.xcworkspace/xcshareddata
-Pods
+Pods/Target Support Files
