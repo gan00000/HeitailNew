@@ -186,7 +186,17 @@
 
 - (void)setUpRightSearchButton {
     
-    [self.rightSearchButton setImage:[UIImage imageNamed:@"icon_search"] forState:UIControlStateNormal];
+    NSString *currentClassString = NSStringFromClass([self class]);
+    if ([currentClassString isEqualToString:NSStringFromClass([SkyBallHetiRedHTNewsHomeViewController class])]){
+        [self.rightSearchButton setImage:[UIImage imageNamed:@"icon_search"] forState:UIControlStateNormal];
+
+    }else if ([currentClassString isEqualToString:NSStringFromClass([SkyBallHetiRedHTFilmHomeViewController class])]){
+        
+        [self.rightSearchButton setImage:[UIImage imageNamed:@"icon_search"] forState:UIControlStateNormal];
+    }else{
+        self.rightSearchButton.hidden = YES;
+    }
+    
 }
 
 + (UIImage *)waterSkyfixImageSize:(UIImage *)image toSize:(CGSize)toSize {

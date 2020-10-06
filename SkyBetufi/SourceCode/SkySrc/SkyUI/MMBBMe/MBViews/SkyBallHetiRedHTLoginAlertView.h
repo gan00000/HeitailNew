@@ -8,5 +8,8 @@ typedef NS_ENUM(NSInteger, HTLoginPlatform) {
 @interface SkyBallHetiRedHTLoginAlertView : UIView
 + (void)waterSkyshowLoginAlertViewWithSelectBlock:(void(^)(HTLoginPlatform platform))block;
 + (void)waterSkyshowShareAlertViewWithSelectBlock:(void(^)(HTLoginPlatform platform))block;
+
++ (void)waterSkyshowShareAlertViewWithFB:(void(^)(HTLoginPlatform platform))block;
+    
 @end
 NS_ASSUME_NONNULL_END

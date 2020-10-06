@@ -112,9 +112,9 @@
     
     
     //調試代碼start
-    self.showImView.hidden = NO;
-    self.notShowImView.hidden = YES;
-    [self initWebSocket];
+//    self.showImView.hidden = NO;
+//    self.notShowImView.hidden = YES;
+//    [self initWebSocket];
     //調試代碼end
     
     
@@ -413,6 +413,9 @@
                     // NSString *fromUserName = msgContent.fromUserName;
                     NSLog(@"消息: msg:%@, gameId: %ld", msg, gameId);
                     if ([self.matchModel.game_id intValue] == gameId) {
+                        if (self.chatContentList.count > 1000) {//防止数据太多内存泄露，最多1000条
+                            [self.chatContentList removeObjectAtIndex:0];
+                        }
                         [self.chatContentList addObject: msgContent];
                     }
                 }

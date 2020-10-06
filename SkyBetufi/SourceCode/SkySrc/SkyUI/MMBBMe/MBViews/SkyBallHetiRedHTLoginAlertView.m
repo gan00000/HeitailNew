@@ -9,6 +9,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *containerViewHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *containerViewBottom;
 @property (weak, nonatomic) IBOutlet JXImageView *lineLoginImageView;
+@property (weak, nonatomic) IBOutlet UIView *lineView;
 
 @property (nonatomic, copy) void (^onPlatformButtonTapped)(HTLoginPlatform platform);
 @end
@@ -24,6 +25,17 @@
     alertView.onPlatformButtonTapped = block;
     [alertView show:NO];
 }
+
++ (void)waterSkyshowShareAlertViewWithFB:(void(^)(HTLoginPlatform platform))block {
+    SkyBallHetiRedHTLoginAlertView *alertView = kLoadXibWithName(NSStringFromClass([self class]));
+    alertView.titleLabel.text = @"分享至";
+    alertView.onPlatformButtonTapped = block;
+//    alertView.lineLoginBtn.hidden = YES;
+//    alertView.lineLoginImageView.hidden = YES;
+    alertView.lineView.hidden = YES;
+    [alertView show:NO];
+}
+
 - (void)show:(Boolean) isLogin {
     self.frame = kDRWindow.bounds;
     [kDRWindow addSubview:self];

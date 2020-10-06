@@ -9,6 +9,8 @@
 #import "PlayerInfoViewController.h"
 #import "UIImageView+HT.h"
 #import "SkyBallHetiRedHTMatchSummaryRequest.h"
+#import "SkyBallHetiRedHTLoginAlertView.h"
+#import <UMShare/UMShare.h>
 
 @interface PlayerInfoViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
@@ -52,6 +54,8 @@
     
     self.title = @"數據卡";
     NSLog(@"PlayerInfoViewController viewDidLoad");
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav_icon_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonTapped:)];
     
     [self initSegmentControl];
     
@@ -245,6 +249,51 @@
 //    }else{
 //        self.teamLabel.text = [NSString stringWithFormat:@"%@ %@", matchSummaryModel.awayName, self.model.jerseynumber];
 //    }
+}
+
+
+- (void)share {
+//    kWeakSelf
+    [SkyBallHetiRedHTLoginAlertView waterSkyshowShareAlertViewWithFB:^(HTLoginPlatform platform) {
+        UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+        if (platform == HTLoginPlatformFB) {
+//            UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:weakSelf.title descr:nil thumImage:weakSelf.share_thub];
+//            shareObject.webpageUrl = weakSelf.url;
+//            messageObject.shareObject = shareObject;
+            
+            UMShareImageObject *imageObj = [UMShareImageObject shareObjectWithTitle:@"" descr:@"" thumImage:[self makeImageWithView:self.view withSize:self.view.frame.size]];
+            messageObject.shareObject = imageObj;
+            
+            [self doShareToPlatform:UMSocialPlatformType_Facebook withMessage:messageObject];
+        } else if (platform == HTLoginPlatformLine) {
+            
+        }
+            
+    }];
+}
+
+- (void)doShareToPlatform:(UMSocialPlatformType)platformType withMessage:(UMSocialMessageObject *)messageObject {
+    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:[SkyBallHetiRedPPXXBJViewControllerCenter currentViewController] completion:^(id result, NSError *error) {
+        BJLog(@"result = %@", error);
+    }];
+}
+
+#pragma mark 生成image
+- (UIImage *)makeImageWithView:(UIView *)view withSize:(CGSize)size
+{
+    
+    // 下面方法，第一个参数表示区域大小。第二个参数表示是否是非透明的。如果需要显示半透明效果，需要传NO，否则传YES。第三个参数就是屏幕密度了，关键就是第三个参数 [UIScreen mainScreen].scale。
+    UIGraphicsBeginImageContextWithOptions(size, YES, [UIScreen mainScreen].scale);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+    
+}
+
+#pragma mark - actions
+- (void)onShareButtonTapped:(id)sender {
+    [self share];
 }
 
 @end

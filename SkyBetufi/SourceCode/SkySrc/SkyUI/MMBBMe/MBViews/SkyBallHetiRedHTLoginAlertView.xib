@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +30,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1e5-nc-zBw">
                             <rect key="frame" x="15" y="42.5" width="100" height="82.5"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pof-Tp-KHB">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pof-Tp-KHB">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="82.5"/>
                                     <connections>
                                         <action selector="loginAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="oJS-rm-oBn"/>
@@ -72,7 +72,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8w-J2-G1G">
                             <rect key="frame" x="115" y="42.5" width="100" height="82.5"/>
                             <subviews>
-                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TV-cX-KQT">
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TV-cX-KQT">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="82.5"/>
                                     <connections>
                                         <action selector="loginAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="0OT-Sv-QEt"/>
@@ -126,6 +126,7 @@
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="blL-DD-De7" secondAttribute="bottom" id="AMQ-8o-PZp"/>
@@ -136,12 +137,12 @@
                 <constraint firstAttribute="trailing" secondItem="B7I-Vt-lgu" secondAttribute="trailing" id="x2l-9H-XT8"/>
                 <constraint firstAttribute="bottom" secondItem="B7I-Vt-lgu" secondAttribute="bottom" id="xCE-xc-PWQ"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="containerViewBottom" destination="AMQ-8o-PZp" id="0fU-8A-LuP"/>
                 <outlet property="containerViewHeight" destination="EQp-3F-dn2" id="PPI-Bk-HzN"/>
                 <outlet property="lineLoginBtn" destination="3TV-cX-KQT" id="SQH-7T-Keu"/>
                 <outlet property="lineLoginImageView" destination="sly-cX-68S" id="FXY-pk-9ls"/>
+                <outlet property="lineView" destination="n8w-J2-G1G" id="uAX-jD-r7c"/>
                 <outlet property="safeBackView" destination="B7I-Vt-lgu" id="ISx-1o-Qnk"/>
                 <outlet property="titleLabel" destination="Pjn-eL-jzR" id="XVr-Wx-Lom"/>
             </connections>
