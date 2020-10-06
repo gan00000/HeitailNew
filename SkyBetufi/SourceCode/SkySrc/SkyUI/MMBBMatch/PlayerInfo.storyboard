@@ -56,18 +56,18 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QE2-CP-Evk" userLabel="SeleteTabView" customClass="HMSegmentedControl">
-                                <rect key="frame" x="0.0" y="150" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="150" width="414" height="50"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="sHk-f9-Nai"/>
+                                    <constraint firstAttribute="height" constant="50" id="sHk-f9-Nai"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8PM-p5-clg" userLabel="tipsView">
-                                <rect key="frame" x="0.0" y="510" width="414" height="140"/>
+                                <rect key="frame" x="0.0" y="460" width="414" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11-11" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWQ-wO-M9D">
-                                        <rect key="frame" x="30" y="0.0" width="354" height="140"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="30" y="0.0" width="354" height="100"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -77,12 +77,12 @@
                                     <constraint firstAttribute="bottom" secondItem="RWQ-wO-M9D" secondAttribute="bottom" id="2Ja-wa-N4A"/>
                                     <constraint firstItem="RWQ-wO-M9D" firstAttribute="top" secondItem="8PM-p5-clg" secondAttribute="top" id="Tys-sC-L9V"/>
                                     <constraint firstItem="RWQ-wO-M9D" firstAttribute="leading" secondItem="8PM-p5-clg" secondAttribute="leading" constant="30" id="gu2-OC-ZM1"/>
-                                    <constraint firstAttribute="height" constant="140" id="wz3-Qj-kFz"/>
+                                    <constraint firstAttribute="height" constant="100" id="wz3-Qj-kFz"/>
                                     <constraint firstAttribute="trailing" secondItem="RWQ-wO-M9D" secondAttribute="trailing" constant="30" id="z7p-QN-fOY"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AMh-Nd-pmA">
-                                <rect key="frame" x="0.0" y="210" width="414" height="300"/>
+                                <rect key="frame" x="0.0" y="200" width="414" height="260"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HdF-9Y-gf0" userLabel="View1">
                                         <rect key="frame" x="7" y="0.0" width="400" height="80"/>
@@ -408,7 +408,7 @@
                                     <constraint firstItem="fC8-gL-s8v" firstAttribute="top" secondItem="YKm-f0-WFc" secondAttribute="bottom" id="HgD-ye-qal"/>
                                     <constraint firstAttribute="trailing" secondItem="fC8-gL-s8v" secondAttribute="trailing" constant="7" id="SBL-VJ-yO8"/>
                                     <constraint firstAttribute="trailing" secondItem="HdF-9Y-gf0" secondAttribute="trailing" constant="7" id="VoW-ys-UKu"/>
-                                    <constraint firstAttribute="height" constant="300" id="X9i-hX-gKS"/>
+                                    <constraint firstAttribute="height" constant="260" id="X9i-hX-gKS"/>
                                     <constraint firstItem="YKm-f0-WFc" firstAttribute="leading" secondItem="AMh-Nd-pmA" secondAttribute="leading" constant="7" id="aF6-Mp-GyT"/>
                                     <constraint firstItem="YKm-f0-WFc" firstAttribute="top" secondItem="HdF-9Y-gf0" secondAttribute="bottom" id="nTn-pX-8Av"/>
                                     <constraint firstAttribute="trailing" secondItem="YKm-f0-WFc" secondAttribute="trailing" constant="7" id="yru-zy-Z8X"/>
