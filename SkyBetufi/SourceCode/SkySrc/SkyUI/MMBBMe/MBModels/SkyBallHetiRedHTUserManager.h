@@ -1,12 +1,16 @@
 #import <Foundation/Foundation.h>
 #import "SkyBallHetiRedHTUserInfoModel.h"
+#import "SkyBallHetiRedHTMatchSummaryModel.h"
+
 extern const NSString * kUserLogStatusChagneNotice;
 @interface SkyBallHetiRedHTUserManager : NSObject
 @property (nonatomic, assign)BOOL appInView;
 
 @property (nonatomic, assign)BOOL showTextLive;
 
-@property (nonatomic) NSMutableDictionary *svgImageCache;
+@property (nonatomic, strong) NSMutableDictionary *svgImageCache;
+
+@property (nonatomic, strong) SkyBallHetiRedHTMatchSummaryModel *matchSummaryModel;
 
 + (instancetype)manager;
 + (BOOL)waterSky_isUserLogin;

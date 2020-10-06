@@ -1,6 +1,8 @@
 #import "SkyBallHetiRedHTMatchSubDsbdViewController.h"
 #import "SkyBallHetiRedHTMatchDataLeftCell.h"
 #import "SkyBallHetiRedHTMatchDataRightCell.h"
+#import "PlayerInfoViewController.h"
+
 @interface SkyBallHetiRedHTMatchSubDsbdViewController ()<UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *leftTableView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollContentView;
@@ -226,6 +228,17 @@
     }
     return view;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (tableView == self.leftTableView) {
+        SkyBallHetiRedHTMatchDetailsModel *model = self.dataList[indexPath.row];
+        
+        PlayerInfoViewController *piVc = [PlayerInfoViewController waterSkyviewController];
+        [piVc setData:model];
+        [self.navigationController pushViewController:piVc animated:YES];
+    }
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (scrollView == self.leftTableView) {
         self.rightTableView.contentOffset = scrollView.contentOffset;
@@ -233,4 +246,5 @@
         self.leftTableView.contentOffset = scrollView.contentOffset;
     }
 }
+
 @end

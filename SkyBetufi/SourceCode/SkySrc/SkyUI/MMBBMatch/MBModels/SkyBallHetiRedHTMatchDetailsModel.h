@@ -41,4 +41,9 @@
 @property (nonatomic, copy) NSString *ftmade_show;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *time;
+
+//=========後面增加
+@property (nonatomic, copy) NSString *plName;
+@property (nonatomic, copy) NSString *quarter;
+//@property (nonatomic, copy) NSString *shoot;
 @end

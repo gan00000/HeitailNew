@@ -9,6 +9,7 @@
 #define API_MATCH_LIVE_POST               @"api/get_live_post_from_game"
 #define API_MATCH_LIVE_POST_GAME               @"api/get_live_post_from_game"
 #define API_MATCH_LIKE_MATCH_TEAM               @"api/like_match_team"
+#define API_MATCH_PLAYER_INFO               @"api/get_player_match_summary"
 
 #pragma mark - 新聞
 #define API_NEWS_HOME                   @"news"

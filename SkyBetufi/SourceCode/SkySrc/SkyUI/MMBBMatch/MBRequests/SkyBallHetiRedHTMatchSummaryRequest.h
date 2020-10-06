@@ -18,4 +18,10 @@ successBlock:(void(^)(HTMacthLivePostModel * livePost))successBlock
                    type:(NSString *)type
 successBlock:(void(^)(HTLikeTeamModel * m))successBlock
                             errorBlock:(BJServiceErrorBlock)errorBlock;
+
++ (void)requestPlayerInfo:(NSString *)game_id
+                  teamId:(NSString *)team_id
+                playerId:(NSString *)player_id
+               successBlock:(void(^)(NSArray<SkyBallHetiRedHTMatchDetailsModel *> * model))successBlock
+               errorBlock:(BJServiceErrorBlock)errorBlock;
 @end

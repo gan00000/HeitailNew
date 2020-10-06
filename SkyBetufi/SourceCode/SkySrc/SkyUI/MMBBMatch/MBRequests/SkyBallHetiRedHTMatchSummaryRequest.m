@@ -160,5 +160,22 @@
    } errorBlock:errorBlock];
    
 }
+///api/get_player_match_summary/  game_id") String gameId,@Query("team_id") String team_id,@Query("player_id")
+
++ (void)requestPlayerInfo:(NSString *)game_id
+                  teamId:(NSString *)team_id
+                playerId:(NSString *)player_id
+               successBlock:(void(^)(NSArray<SkyBallHetiRedHTMatchDetailsModel *> * model))successBlock
+                 errorBlock:(BJServiceErrorBlock)errorBlock {
+    [SkyBallHetiRedBJHTTPServiceEngine waterSky_getRequestWithFunctionPath:API_MATCH_PLAYER_INFO params:@{@"game_id":game_id, @"team_id": team_id, @"player_id": player_id} successBlock:^(id responseData) {
+       
+        NSArray *models = [NSArray yy_modelArrayWithClass:[SkyBallHetiRedHTMatchDetailsModel class] json:responseData[@"matchDetails"]];
+       if (successBlock) {
+           successBlock(models);
+       }
+       
+   } errorBlock:errorBlock];
+   
+}
 
 @end

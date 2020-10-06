@@ -31,6 +31,8 @@
 		326D67BF23A8DB9A00DDB443 /* WBImageBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 326D67B923A8DB9A00DDB443 /* WBImageBrowserView.m */; };
 		326D67C023A8DB9A00DDB443 /* WBImageBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 326D67BA23A8DB9A00DDB443 /* WBImageBrowserCell.m */; };
 		326D67C423A8DD0600DDB443 /* HTImageBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 326D67C323A8DD0600DDB443 /* HTImageBrowserViewController.m */; };
+		327191D2251B3BD600CD9D85 /* PlayerInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 327191D1251B3BD600CD9D85 /* PlayerInfo.storyboard */; };
+		327191D5251B461200CD9D85 /* PlayerInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 327191D4251B461200CD9D85 /* PlayerInfoViewController.m */; };
 		3277C5D123A9CA2800D43D80 /* photo_share_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3277C5CD23A9CA2700D43D80 /* photo_share_btn@2x.png */; };
 		3277C5D223A9CA2800D43D80 /* photo_down_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3277C5CE23A9CA2800D43D80 /* photo_down_btn@2x.png */; };
 		3277C5D323A9CA2800D43D80 /* photo_share_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3277C5CF23A9CA2800D43D80 /* photo_share_btn@3x.png */; };
@@ -460,6 +462,9 @@
 		326D67BD23A8DB9A00DDB443 /* WBImageBrowserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBImageBrowserCell.h; sourceTree = "<group>"; };
 		326D67C223A8DD0600DDB443 /* HTImageBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTImageBrowserViewController.h; sourceTree = "<group>"; };
 		326D67C323A8DD0600DDB443 /* HTImageBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTImageBrowserViewController.m; sourceTree = "<group>"; };
+		327191D1251B3BD600CD9D85 /* PlayerInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayerInfo.storyboard; sourceTree = "<group>"; };
+		327191D3251B461200CD9D85 /* PlayerInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerInfoViewController.h; sourceTree = "<group>"; };
+		327191D4251B461200CD9D85 /* PlayerInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerInfoViewController.m; sourceTree = "<group>"; };
 		3277C5CD23A9CA2700D43D80 /* photo_share_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_share_btn@2x.png"; sourceTree = "<group>"; };
 		3277C5CE23A9CA2800D43D80 /* photo_down_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_down_btn@2x.png"; sourceTree = "<group>"; };
 		3277C5CF23A9CA2800D43D80 /* photo_share_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_share_btn@3x.png"; sourceTree = "<group>"; };
@@ -1785,6 +1790,7 @@
 				FE6BD0632144FF1F0090118A /* SkyBallHetiRedMatchDashboard.storyboard */,
 				FEDABE6F217385F4008C8AFD /* SkyBallHetiRedMatchSubDsbd.storyboard */,
 				32FCDD1B250C72AB0037334D /* THIMController.storyboard */,
+				327191D1251B3BD600CD9D85 /* PlayerInfo.storyboard */,
 			);
 			path = MMBBMatch;
 			sourceTree = "<group>";
@@ -1863,6 +1869,8 @@
 				FEDABE7221738618008C8AFD /* SkyBallHetiRedHTMatchSubDsbdViewController.m */,
 				32FCDD18250C721F0037334D /* HTIMViewController.h */,
 				32FCDD19250C721F0037334D /* HTIMViewController.m */,
+				327191D3251B461200CD9D85 /* PlayerInfoViewController.h */,
+				327191D4251B461200CD9D85 /* PlayerInfoViewController.m */,
 			);
 			path = MBControllers;
 			sourceTree = "<group>";
@@ -2423,6 +2431,7 @@
 				FE6BD08421457D7E0090118A /* SkyBallHetiRedHTNewsHeaderCell.xib in Resources */,
 				FEDABE6C217336D6008C8AFD /* SkyBallHetiRedRankZone.storyboard in Resources */,
 				32FED83423AB7BB100D900A7 /* LMPlayer.xcassets in Resources */,
+				327191D2251B3BD600CD9D85 /* PlayerInfo.storyboard in Resources */,
 				3287124023B8962800AB5360 /* video_pause_normal.png in Resources */,
 				FEC1160D2143D4A1002DB617 /* SkyBallHetiRedXJEmptyView.xib in Resources */,
 				FECCA5352258C8D0009EF494 /* SkyBallHetiRedHTHistoryViewController.xib in Resources */,
@@ -2796,6 +2805,7 @@
 				FECCA56C22598013009EF494 /* SkyBallHetiRedTZPhotoPickerController.m in Sources */,
 				32CD877C22F4173800063A14 /* SkyAsynchronousViewController.m in Sources */,
 				FEC116772143D4A1002DB617 /* SkyBallHetiRedBJWebViewController.m in Sources */,
+				327191D5251B461200CD9D85 /* PlayerInfoViewController.m in Sources */,
 				FEAC9F352199EA2300159AE9 /* SkyBallHetiRedHTContactUsViewController.m in Sources */,
 				FE800F642263692E00E575D5 /* SkyBallHetiRedHTNoCommentFooterView.m in Sources */,
 				FE6BD08821457D920090118A /* SkyBallHetiRedHTNewsWebCell.m in Sources */,

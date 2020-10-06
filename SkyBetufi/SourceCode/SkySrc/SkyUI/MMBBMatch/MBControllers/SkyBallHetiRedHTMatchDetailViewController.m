@@ -12,6 +12,7 @@
 #import "LMPlayer.h"
 #import "HTIndicatorView.h"
 #import "HTIMViewController.h"
+#import "SkyBallHetiRedHTUserManager.h"
 //#import <SafariServices/SFFoundation.h>
 @import SafariServices;
 
@@ -116,6 +117,7 @@
 - (void)dealloc {
     NSLog(@"%@ dealloc", NSStringFromClass(self.class));
     [self destoryPlayer];
+    [SkyBallHetiRedHTUserManager manager].matchSummaryModel = nil;
 }
 
 -(void)remakePlayerFatherViewPositionInPortrait{
@@ -376,6 +378,8 @@
         [self refreshUI];
         
         [self.imVc setData:self.matchModel summary:self.matchSummaryModel];
+        
+        [SkyBallHetiRedHTUserManager manager].matchSummaryModel = self.matchSummaryModel;
         
     } errorBlock:^(SkyBallHetiRedBJError *error) {
         self.error = error;
