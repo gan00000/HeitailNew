@@ -155,6 +155,7 @@
     if (!liveFeedModel || liveFeedModel.count < 1) {
         return;
     }
+    //liveFeedModel = [[liveFeedModel reverseObjectEnumerator] allObjects]; //test
     BOOL inProgress = NO;
     if ([summaryModel.scheduleStatus isEqualToString:@"Final"]) {
         //已结束
@@ -174,8 +175,9 @@
     }
     
     NSArray<SkyBallHetiRedHTMatchLiveFeedModel *> *c_liveFeedModel = [liveFeedModel copy];
+    
     if (inProgress) {//进行中数据顺序翻转
-        [c_liveFeedModel reverseObjectEnumerator];
+        c_liveFeedModel = [[c_liveFeedModel reverseObjectEnumerator] allObjects];
     }
     
     NSMutableArray *yVals1 = [[NSMutableArray alloc] init];

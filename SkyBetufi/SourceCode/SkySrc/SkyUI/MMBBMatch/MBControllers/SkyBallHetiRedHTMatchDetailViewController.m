@@ -314,6 +314,7 @@
 
 - (void)initData {
     
+    [SkyBallHetiRedHTUserManager manager].showTextLive = YES;
      if ([SkyBallHetiRedHTUserManager manager].showTextLive) {
          
          self.titlesArray = @[@"聊球", @"對陣", @"數據統計", @"文字直播"];
@@ -363,7 +364,7 @@
     self.summaryLoaded = NO;
     self.error = nil;
     [SkyBallHetiRedHTMatchLiveFeedRequest waterSkyrequestLiveFeedWithGameId:self.matchModel.game_id successBlock:^(NSArray<SkyBallHetiRedHTMatchLiveFeedModel *> *feedList) {
-        self.liveFeedList = feedList;
+        self.liveFeedList = feedList;//[NSArray arrayWithObject:[feedList lastObject]];
         self.feedLoaded = YES;
         [self refreshUI];
     } errorBlock:^(SkyBallHetiRedBJError *error) {
@@ -372,6 +373,7 @@
         [self refreshUI];
     }];
     [SkyBallHetiRedHTMatchSummaryRequest waterSkyrequestSummaryWithGameId:self.matchModel.game_id successBlock:^(SkyBallHetiRedHTMatchSummaryModel *summaryModel, SkyBallHetiRedHTMatchCompareModel *compareModel) {
+       //summaryModel.scheduleStatus = @"InProgress";
         self.matchSummaryModel = summaryModel;
         self.matchCompareModel = compareModel;
         self.summaryLoaded = YES;
