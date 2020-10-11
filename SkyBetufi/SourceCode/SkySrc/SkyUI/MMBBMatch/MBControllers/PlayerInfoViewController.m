@@ -11,6 +11,7 @@
 #import "SkyBallHetiRedHTMatchSummaryRequest.h"
 #import "SkyBallHetiRedHTLoginAlertView.h"
 #import <UMShare/UMShare.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
 @interface PlayerInfoViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
@@ -253,24 +254,36 @@
 
 
 - (void)share {
-//    kWeakSelf
+    kWeakSelf
     [SkyBallHetiRedHTLoginAlertView waterSkyshowShareAlertViewWithFB:^(HTLoginPlatform platform) {
-        UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+//        UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
         if (platform == HTLoginPlatformFB) {
-//            UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:weakSelf.title descr:nil thumImage:weakSelf.share_thub];
-//            shareObject.webpageUrl = weakSelf.url;
-//            messageObject.shareObject = shareObject;
             
-            UMShareImageObject *imageObj = [UMShareImageObject shareObjectWithTitle:@"" descr:@"" thumImage:[self makeImageWithView:self.view withSize:self.view.frame.size]];
-            messageObject.shareObject = imageObj;
+            UIImage *image = [self makeImageWithView:self.view withSize:self.view.frame.size];
+            if (image) {
+                FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc] init];
+                  photo.image = image;
+                  photo.userGenerated = YES;
+                  FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc] init];
+                  content.photos = @[photo];
+                
+                [FBSDKShareDialog showFromViewController:self
+                                              withContent:content
+                                                 delegate:nil];
+            }
             
-            [self doShareToPlatform:UMSocialPlatformType_Facebook withMessage:messageObject];
+            
+            
         } else if (platform == HTLoginPlatformLine) {
-            
+
         }
-            
+
     }];
+    
+
 }
+
+
 
 - (void)doShareToPlatform:(UMSocialPlatformType)platformType withMessage:(UMSocialMessageObject *)messageObject {
     [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:[SkyBallHetiRedPPXXBJViewControllerCenter currentViewController] completion:^(id result, NSError *error) {
