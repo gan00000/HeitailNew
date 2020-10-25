@@ -82,7 +82,7 @@
 {
     if (!leftView) {
         leftView = [[UIView alloc] init];
-        leftView.backgroundColor = [UIColor blueColor];
+        leftView.backgroundColor = [UIColor colorWithHexString:@"608FD4"];
     }
     return leftView;
 }

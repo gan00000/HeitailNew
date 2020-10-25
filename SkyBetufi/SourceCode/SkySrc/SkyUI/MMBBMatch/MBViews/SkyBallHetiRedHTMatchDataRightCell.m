@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *blkLabel;
 @property (weak, nonatomic) IBOutlet UILabel *plusminusLabel;
 @property (weak, nonatomic) IBOutlet UIView *line;
+
 @end
 @implementation SkyBallHetiRedHTMatchDataRightCell
 - (void)awakeFromNib {
@@ -26,51 +27,59 @@
     [super setSelected:selected animated:animated];
 }
 - (void)waterSkyrefreshWithModel:(SkyBallHetiRedHTMatchDetailsModel *)model row:(NSInteger)row {
+    
+    CGFloat textSize = 14;
+    CGFloat textLabelWitdh = 50;
+    
     self.positionLabel.text = model.position;
-    self.positionLabel.font =  [UIFont systemFontOfSize:16];
+    self.positionLabel.font =  [UIFont systemFontOfSize:textSize];
     self.positionLabel.hidden = YES;
+    self.positionLabel.jx_width = textLabelWitdh;
     
     self.timeLabel.text = model.time;
-    self.timeLabel.font =  [UIFont systemFontOfSize:16];
+    self.timeLabel.font =  [UIFont systemFontOfSize:textSize];
+    self.timeLabel.jx_width = textLabelWitdh;
     
     self.ptsLabel.text = model.pts;
-    self.ptsLabel.font =  [UIFont systemFontOfSize:16];
+    self.ptsLabel.font =  [UIFont systemFontOfSize:textSize];
+    self.ptsLabel.jx_width = textLabelWitdh;
     
     self.astLabel.text = model.ast;
-    self.astLabel.font =  [UIFont systemFontOfSize:16];
+    self.astLabel.font =  [UIFont systemFontOfSize:textSize];
+    self.astLabel.jx_width = textLabelWitdh;
     
     self.rebLabel.text = model.reb;
-    self.rebLabel.font =  [UIFont systemFontOfSize:16];
+    self.rebLabel.font =  [UIFont systemFontOfSize:textSize];
     
     self.fgmadeLabel.text = model.fgmade_show;
-    self.fgmadeLabel.font =  [UIFont systemFontOfSize:16];
+    self.fgmadeLabel.font =  [UIFont systemFontOfSize:textSize];
     
     self.fg3madeLabel.text = model.fg3ptmade_show;
-    self.fg3madeLabel.font =  [UIFont systemFontOfSize:16];
+    self.fg3madeLabel.font =  [UIFont systemFontOfSize:textSize];
     
     self.ftmageLabel.text = model.ftmade_show;
-    self.ftmageLabel.font =  [UIFont systemFontOfSize:16];
+    self.ftmageLabel.font =  [UIFont systemFontOfSize:textSize];
     
     self.offrebLabel.text = model.offreb;
-    self.offrebLabel.font =  [UIFont systemFontOfSize:16];
+    self.offrebLabel.font =  [UIFont systemFontOfSize:textSize];
     
     self.defrebLabel.text = model.defreb;
-    self.defrebLabel.font =  [UIFont systemFontOfSize:16];
+    self.defrebLabel.font =  [UIFont systemFontOfSize:textSize];
     
     self.foulsLabel.text = model.fouls;
-    self.foulsLabel.font =  [UIFont systemFontOfSize:16];
+    self.foulsLabel.font =  [UIFont systemFontOfSize:textSize];
     
     self.stlLabel.text = model.stl;
-    self.stlLabel.font =  [UIFont systemFontOfSize:16];
+    self.stlLabel.font =  [UIFont systemFontOfSize:textSize];
     
     self.blkagainstLabel.text = model.blkagainst;
-    self.blkagainstLabel.font =  [UIFont systemFontOfSize:16];
+    self.blkagainstLabel.font =  [UIFont systemFontOfSize:textSize];
     
     self.blkLabel.text = model.blk;
-    self.blkLabel.font =  [UIFont systemFontOfSize:16];
+    self.blkLabel.font =  [UIFont systemFontOfSize:textSize];
     
     self.plusminusLabel.text = model.plusminus;
-    self.plusminusLabel.font =  [UIFont systemFontOfSize:16];
+    self.plusminusLabel.font =  [UIFont systemFontOfSize:textSize];
     
     self.contentView.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"FFFFFF"];
     if (row > 4) {

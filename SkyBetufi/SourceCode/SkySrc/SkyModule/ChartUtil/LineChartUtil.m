@@ -110,6 +110,7 @@
 //        set1.fillColor = [UIColor colorWithRed:51/255.f green:181/255.f blue:229/255.f alpha:1.f];
 //        set1.highlightColor = [UIColor colorWithRed:244/255.f green:117/255.f blue:117/255.f alpha:1.f];
         set1.drawCircleHoleEnabled = YES;
+        set1.drawValuesEnabled = false;
         
         set2 = [[LineChartDataSet alloc] initWithEntries:yVals2 label:lable2];
 //        set2.axisDependency = AxisDependencyRight;
@@ -121,6 +122,7 @@
 //        set2.fillColor = UIColor.redColor;
 //        set2.highlightColor = [UIColor colorWithRed:244/255.f green:117/255.f blue:117/255.f alpha:1.f];
         set2.drawCircleHoleEnabled = YES;
+        set2.drawValuesEnabled = false;
         
         
         NSMutableArray *dataSets = [[NSMutableArray alloc] init];

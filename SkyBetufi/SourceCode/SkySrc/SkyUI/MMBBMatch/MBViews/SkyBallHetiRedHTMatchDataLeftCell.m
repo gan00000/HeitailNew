@@ -13,7 +13,7 @@
 }
 - (void)waterSkyrefreshWithName:(NSString *)name row:(NSInteger)row {
     self.nameLabel.text = name;
-    self.nameLabel.font =  [UIFont boldSystemFontOfSize:16];
+    self.nameLabel.font =  [UIFont boldSystemFontOfSize:14];
     self.contentView.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"FFFFFF"];
     if (row > 4) {
         self.contentView.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"eef0f4"];
