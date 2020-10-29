@@ -64,6 +64,7 @@
 		32ABE1CE22EDF4D0008505BA /* SkyBallHetiRedNewsHomeOther.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32ABE1CD22EDF4D0008505BA /* SkyBallHetiRedNewsHomeOther.storyboard */; };
 		32ABE1D222EDF733008505BA /* SkyBallHetiRedHTTabBarHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ABE1CF22EDF732008505BA /* SkyBallHetiRedHTTabBarHomeViewController.m */; };
 		32ABE1D322EDF733008505BA /* SkyBallHetiRedHTTabBarHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32ABE1D022EDF732008505BA /* SkyBallHetiRedHTTabBarHomeViewController.xib */; };
+		32B0F58B2545B6A3005642DC /* HTMatchWebPlayControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B0F58A2545B6A3005642DC /* HTMatchWebPlayControllerViewController.m */; };
 		32BDB9DD251A42DF0066200F /* sss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BDB9DC251A42DF0066200F /* sss.swift */; };
 		32BFD1DF239F9B1A0037985B /* HTViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BFD1DE239F9B1A0037985B /* HTViewController2.m */; };
 		32C65DED250676AE0068D2C7 /* ConfigCoreUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C65DEC250676AD0068D2C7 /* ConfigCoreUtil.m */; };
@@ -502,6 +503,8 @@
 		32ABE1CF22EDF732008505BA /* SkyBallHetiRedHTTabBarHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyBallHetiRedHTTabBarHomeViewController.m; sourceTree = "<group>"; };
 		32ABE1D022EDF732008505BA /* SkyBallHetiRedHTTabBarHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkyBallHetiRedHTTabBarHomeViewController.xib; sourceTree = "<group>"; };
 		32ABE1D122EDF733008505BA /* SkyBallHetiRedHTTabBarHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyBallHetiRedHTTabBarHomeViewController.h; sourceTree = "<group>"; };
+		32B0F5892545B6A3005642DC /* HTMatchWebPlayControllerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchWebPlayControllerViewController.h; sourceTree = "<group>"; };
+		32B0F58A2545B6A3005642DC /* HTMatchWebPlayControllerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchWebPlayControllerViewController.m; sourceTree = "<group>"; };
 		32BDB9DB251A42DF0066200F /* SkyBallPlay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SkyBallPlay-Bridging-Header.h"; sourceTree = "<group>"; };
 		32BDB9DC251A42DF0066200F /* sss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sss.swift; sourceTree = "<group>"; };
 		32BFD1DD239F9B1A0037985B /* HTViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTViewController2.h; sourceTree = "<group>"; };
@@ -1871,6 +1874,8 @@
 				32FCDD19250C721F0037334D /* HTIMViewController.m */,
 				327191D3251B461200CD9D85 /* PlayerInfoViewController.h */,
 				327191D4251B461200CD9D85 /* PlayerInfoViewController.m */,
+				32B0F5892545B6A3005642DC /* HTMatchWebPlayControllerViewController.h */,
+				32B0F58A2545B6A3005642DC /* HTMatchWebPlayControllerViewController.m */,
 			);
 			path = MBControllers;
 			sourceTree = "<group>";
@@ -2670,6 +2675,7 @@
 				32642A5722EFE8FD00D2DA1E /* UIImageView+SkyBallHetiRedSVG.m in Sources */,
 				32CD878522F4173800063A14 /* PlayerEventLogger.m in Sources */,
 				32FCDD1A250C721F0037334D /* HTIMViewController.m in Sources */,
+				32B0F58B2545B6A3005642DC /* HTMatchWebPlayControllerViewController.m in Sources */,
 				FECCA57722598143009EF494 /* SkyBallHetiRedDRPhotoKeyboardCell.m in Sources */,
 				FEC116C42143D4A1002DB617 /* UITableView+SkyBallHetiRedEstimatedHeight.m in Sources */,
 				FE08C5C82250506A000175CB /* SkyBallHetiRedHTMeHomeViewController.m in Sources */,

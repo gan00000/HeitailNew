@@ -13,6 +13,7 @@
 #import "HTIndicatorView.h"
 #import "HTIMViewController.h"
 #import "SkyBallHetiRedHTUserManager.h"
+#import "HTMatchWebPlayControllerViewController.h"
 //#import <SafariServices/SFFoundation.h>
 @import SafariServices;
 
@@ -283,10 +284,15 @@
 - (void)startPlay {
 //    @"http://www.bballman.com/category/live"
     SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://www.bballman.com/category/live"]];
-//        safariVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    safariVC.modalPresentationStyle = UIModalPresentationOverFullScreen;
     [self presentViewController:safariVC animated:YES completion:^{
-        
+
     }];
+//
+//    HTMatchWebPlayControllerViewController *playerVc = [[HTMatchWebPlayControllerViewController alloc] init];
+//    [self presentViewController:playerVc animated:YES completion:^{
+//
+//       }];
     
     //========由于版权的问题，不能播放了==============//
 //    if (self.player) {
@@ -348,10 +354,13 @@
         }];
     }
     
+//    =======tests========
+//    self.startPlayImageView.hidden = NO;
 //    LMPlayerModel *model = [[LMPlayerModel alloc] init];
 //    model.videoUrls = @[@"http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8", @"http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8"
 //    ,@"http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"];
 //   [self setUpPlayerView:model];
+//    =======tests========
     
     self.feedLoaded = YES;
     self.summaryLoaded = YES;
