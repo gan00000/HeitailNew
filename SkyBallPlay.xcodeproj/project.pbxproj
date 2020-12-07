@@ -3003,10 +3003,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.skyball.heit;
+				MARKETING_VERSION = 5.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tbbl.onefit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = skyball_20200106;
+				PROVISIONING_PROFILE_SPECIFIER = com.tbbl.onefit20201029;
 				SWIFT_OBJC_BRIDGING_HEADER = "SkyBetufi/SkyBallPlay-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -3040,10 +3040,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.skyball.heit;
+				MARKETING_VERSION = 5.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tbbl.onefit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = skyball_dis_20200106;
+				PROVISIONING_PROFILE_SPECIFIER = com.tbbl.onefitI_dis_20201029;
 				SWIFT_OBJC_BRIDGING_HEADER = "SkyBetufi/SkyBallPlay-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

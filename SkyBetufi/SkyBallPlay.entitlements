@@ -10,7 +10,7 @@
 	</array>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)com.skyball.heit</string>
+		<string>$(AppIdentifierPrefix)com.tbbl.onefit</string>
 	</array>
 </dict>
 </plist>

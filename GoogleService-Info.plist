@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>88314986807-ckths4esfleds7k9gvl4f8eq7rm1qg5c.apps.googleusercontent.com</string>
+	<string>88314986807-du3mjh4a8b8b556od8s681ii4bp1fnbr.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.88314986807-ckths4esfleds7k9gvl4f8eq7rm1qg5c</string>
+	<string>com.googleusercontent.apps.88314986807-du3mjh4a8b8b556od8s681ii4bp1fnbr</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBHIFV-iZxR4bzt1Q-WU7hGMcNrKN9Ou8M</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.skyball.heit</string>
+	<string>com.tbbl.onefit</string>
 	<key>PROJECT_ID</key>
 	<string>haters-f9398</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:88314986807:ios:b4e2572dedbea66d</string>
+	<string>1:88314986807:ios:d01e9f2b83473bbd7f9ab2</string>
 	<key>DATABASE_URL</key>
 	<string>https://haters-f9398.firebaseio.com</string>
 </dict>
