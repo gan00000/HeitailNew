@@ -283,16 +283,26 @@
 
 - (void)startPlay {
 //    @"http://www.bballman.com/category/live"
-    SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://www.bballman.com/category/live"]];
-    safariVC.modalPresentationStyle = UIModalPresentationOverFullScreen;
-    [self presentViewController:safariVC animated:YES completion:^{
+//    SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://www.bballman.com/category/live"]];
+//    safariVC.modalPresentationStyle = UIModalPresentationOverFullScreen;
+//    [self presentViewController:safariVC animated:YES completion:^{
+//
+//    }];
+    
+    NSString *token = @"";
+    if ([SkyBallHetiRedHTUserManager waterSky_isUserLogin]) {
+        token = [SkyBallHetiRedHTUserManager waterSky_userToken];
+    }
+    
+    NSString *webUrl = [NSString stringWithFormat:@"http://app.ballgametime.com/api/nbaschedule.php?token=%@&game_id=%@",token,self.matchModel.game_id];
+    
+    if (@available(iOS 10.0, *)) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:webUrl] options:@{} completionHandler:nil];
+    } else {
+        // Fallback on earlier versions
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:webUrl]];
+    }
 
-    }];
-//
-//    HTMatchWebPlayControllerViewController *playerVc = [[HTMatchWebPlayControllerViewController alloc] init];
-//    [self presentViewController:playerVc animated:YES completion:^{
-//
-//       }];
     
     //========由于版权的问题，不能播放了==============//
 //    if (self.player) {
