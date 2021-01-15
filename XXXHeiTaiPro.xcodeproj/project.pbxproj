@@ -757,7 +757,7 @@
 		FEAC9F372199EA3A00159AE9 /* SkyBallHetiRedHTAboutUsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkyBallHetiRedHTAboutUsViewController.m; sourceTree = "<group>"; };
 		FEB46C802157903B00E482CE /* SkyBallHetiRedHTMatchLiveFeedModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkyBallHetiRedHTMatchLiveFeedModel.h; sourceTree = "<group>"; };
 		FEB46C812157903B00E482CE /* SkyBallHetiRedHTMatchLiveFeedModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkyBallHetiRedHTMatchLiveFeedModel.m; sourceTree = "<group>"; };
-		FEC112552143D057002DB617 /* SkyBallPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyBallPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEC112552143D057002DB617 /* XXXHeiTai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XXXHeiTai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC112612143D058002DB617 /* MMBBAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MMBBAssets.xcassets; sourceTree = "<group>"; };
 		FEC112662143D058002DB617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEC112672143D058002DB617 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1446,7 +1446,7 @@
 		FEC112562143D057002DB617 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FEC112552143D057002DB617 /* SkyBallPlay.app */,
+				FEC112552143D057002DB617 /* XXXHeiTai.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2359,9 +2359,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FEC112542143D057002DB617 /* SkyBallPlay */ = {
+		FEC112542143D057002DB617 /* XXXHeiTai */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEC1126B2143D058002DB617 /* Build configuration list for PBXNativeTarget "SkyBallPlay" */;
+			buildConfigurationList = FEC1126B2143D058002DB617 /* Build configuration list for PBXNativeTarget "XXXHeiTai" */;
 			buildPhases = (
 				BF9D3AFDF9A356103E352831 /* [CP] Check Pods Manifest.lock */,
 				FEC112512143D057002DB617 /* Sources */,
@@ -2375,9 +2375,9 @@
 			);
 			dependencies = (
 			);
-			name = SkyBallPlay;
+			name = XXXHeiTai;
 			productName = HeiteBasketball;
-			productReference = FEC112552143D057002DB617 /* SkyBallPlay.app */;
+			productReference = FEC112552143D057002DB617 /* XXXHeiTai.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -2407,7 +2407,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FEC112502143D057002DB617 /* Build configuration list for PBXProject "SkyBallPlay" */;
+			buildConfigurationList = FEC112502143D057002DB617 /* Build configuration list for PBXProject "XXXHeiTaiPro" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -2421,7 +2421,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FEC112542143D057002DB617 /* SkyBallPlay */,
+				FEC112542143D057002DB617 /* XXXHeiTai */,
 			);
 		};
 /* End PBXProject section */
@@ -3054,7 +3054,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FEC112502143D057002DB617 /* Build configuration list for PBXProject "SkyBallPlay" */ = {
+		FEC112502143D057002DB617 /* Build configuration list for PBXProject "XXXHeiTaiPro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEC112692143D058002DB617 /* Debug */,
@@ -3063,7 +3063,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		FEC1126B2143D058002DB617 /* Build configuration list for PBXNativeTarget "SkyBallPlay" */ = {
+		FEC1126B2143D058002DB617 /* Build configuration list for PBXNativeTarget "XXXHeiTai" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEC1126C2143D058002DB617 /* Debug */,
