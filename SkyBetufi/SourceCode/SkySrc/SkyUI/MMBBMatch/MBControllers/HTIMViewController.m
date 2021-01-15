@@ -35,7 +35,7 @@
 
 
 + (instancetype)waterSkyviewController {
-    return kLoadStoryboardWithName(@"THIMController");
+    return kLoadStoryboardWithName(@"THIM");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

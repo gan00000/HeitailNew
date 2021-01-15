@@ -27,7 +27,7 @@
 		3265F1E02305A211006E3FE1 /* SkyBallHetiRedHTMatchVideoLive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3265F1DF2305A211006E3FE1 /* SkyBallHetiRedHTMatchVideoLive.storyboard */; };
 		3265F1E42305A225006E3FE1 /* SkyBallHetiRedHTMatchVideoLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3265F1E22305A225006E3FE1 /* SkyBallHetiRedHTMatchVideoLiveViewController.m */; };
 		326D67B523A8D83300DDB443 /* HTPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 326D67B423A8D83300DDB443 /* HTPhotoViewController.m */; };
-		326D67B723A8D8CC00DDB443 /* HTPhotoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 326D67B623A8D8CC00DDB443 /* HTPhotoViewController.storyboard */; };
+		326D67B723A8D8CC00DDB443 /* HTPhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 326D67B623A8D8CC00DDB443 /* HTPhoto.storyboard */; };
 		326D67BF23A8DB9A00DDB443 /* WBImageBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 326D67B923A8DB9A00DDB443 /* WBImageBrowserView.m */; };
 		326D67C023A8DB9A00DDB443 /* WBImageBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 326D67BA23A8DB9A00DDB443 /* WBImageBrowserCell.m */; };
 		326D67C423A8DD0600DDB443 /* HTImageBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 326D67C323A8DD0600DDB443 /* HTImageBrowserViewController.m */; };
@@ -98,7 +98,7 @@
 		32F1F2C22514FB7C00EE85B8 /* LineChartUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F1F2C12514FB7C00EE85B8 /* LineChartUtil.m */; };
 		32FAACE324F6A032001574C9 /* BarChartUtilValueFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FAACE224F6A032001574C9 /* BarChartUtilValueFormat.m */; };
 		32FCDD1A250C721F0037334D /* HTIMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FCDD19250C721F0037334D /* HTIMViewController.m */; };
-		32FCDD1C250C72AB0037334D /* THIMController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32FCDD1B250C72AB0037334D /* THIMController.storyboard */; };
+		32FCDD1C250C72AB0037334D /* THIM.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32FCDD1B250C72AB0037334D /* THIM.storyboard */; };
 		32FED81F23AB768700D900A7 /* LMPlayerStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED80623AB768700D900A7 /* LMPlayerStatusModel.m */; };
 		32FED82023AB768700D900A7 /* LMPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED80723AB768700D900A7 /* LMPlayerModel.m */; };
 		32FED82123AB768700D900A7 /* LMLandScapeControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED80E23AB768700D900A7 /* LMLandScapeControlView.m */; };
@@ -456,7 +456,7 @@
 		3265F1E32305A225006E3FE1 /* SkyBallHetiRedHTMatchVideoLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyBallHetiRedHTMatchVideoLiveViewController.h; sourceTree = "<group>"; };
 		326D67B323A8D83300DDB443 /* HTPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTPhotoViewController.h; sourceTree = "<group>"; };
 		326D67B423A8D83300DDB443 /* HTPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTPhotoViewController.m; sourceTree = "<group>"; };
-		326D67B623A8D8CC00DDB443 /* HTPhotoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HTPhotoViewController.storyboard; sourceTree = "<group>"; };
+		326D67B623A8D8CC00DDB443 /* HTPhoto.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HTPhoto.storyboard; sourceTree = "<group>"; };
 		326D67B923A8DB9A00DDB443 /* WBImageBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBImageBrowserView.m; sourceTree = "<group>"; };
 		326D67BA23A8DB9A00DDB443 /* WBImageBrowserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBImageBrowserCell.m; sourceTree = "<group>"; };
 		326D67BC23A8DB9A00DDB443 /* WBImageBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBImageBrowserView.h; sourceTree = "<group>"; };
@@ -560,7 +560,7 @@
 		32FAACE224F6A032001574C9 /* BarChartUtilValueFormat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarChartUtilValueFormat.m; sourceTree = "<group>"; };
 		32FCDD18250C721F0037334D /* HTIMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTIMViewController.h; sourceTree = "<group>"; };
 		32FCDD19250C721F0037334D /* HTIMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTIMViewController.m; sourceTree = "<group>"; };
-		32FCDD1B250C72AB0037334D /* THIMController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = THIMController.storyboard; sourceTree = "<group>"; };
+		32FCDD1B250C72AB0037334D /* THIM.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = THIM.storyboard; sourceTree = "<group>"; };
 		32FED80323AB768700D900A7 /* LMVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMVideoPlayer.h; sourceTree = "<group>"; };
 		32FED80423AB768700D900A7 /* LMPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMPlayer.h; sourceTree = "<group>"; };
 		32FED80623AB768700D900A7 /* LMPlayerStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPlayerStatusModel.m; sourceTree = "<group>"; };
@@ -1792,7 +1792,7 @@
 				FE6BD0612144FEF90090118A /* SkyBallHetiRedMatchCompare.storyboard */,
 				FE6BD0632144FF1F0090118A /* SkyBallHetiRedMatchDashboard.storyboard */,
 				FEDABE6F217385F4008C8AFD /* SkyBallHetiRedMatchSubDsbd.storyboard */,
-				32FCDD1B250C72AB0037334D /* THIMController.storyboard */,
+				32FCDD1B250C72AB0037334D /* THIM.storyboard */,
 				327191D1251B3BD600CD9D85 /* PlayerInfo.storyboard */,
 			);
 			path = MMBBMatch;
@@ -1848,7 +1848,7 @@
 				FEC116F72143DC57002DB617 /* SkyBallHetiRedNewsHome.storyboard */,
 				FE6BD07E21457BBC0090118A /* SkyBallHetiRedNewsDetail.storyboard */,
 				FEC116F92143DC72002DB617 /* MMBBNews.xcassets */,
-				326D67B623A8D8CC00DDB443 /* HTPhotoViewController.storyboard */,
+				326D67B623A8D8CC00DDB443 /* HTPhoto.storyboard */,
 			);
 			path = MMBBNews;
 			sourceTree = "<group>";
@@ -2454,7 +2454,7 @@
 				FEC116042143D4A1002DB617 /* SkyBallHetiRedXJLoadingView.xib in Resources */,
 				32ABE1D322EDF733008505BA /* SkyBallHetiRedHTTabBarHomeViewController.xib in Resources */,
 				FE82BB382179B6C500C52C51 /* SkyBallHetiRedHTDataPlayerLeftCell.xib in Resources */,
-				32FCDD1C250C72AB0037334D /* THIMController.storyboard in Resources */,
+				32FCDD1C250C72AB0037334D /* THIM.storyboard in Resources */,
 				FE82A484216E42680070FFC0 /* SkyBallHetiRedHTMatchLiveFeedCell.xib in Resources */,
 				FE800F752263BA1600E575D5 /* SkyBallHetiRedHTMyCommentCell.xib in Resources */,
 				FE6BD0522144FC270090118A /* SkyBallHetiRedMatchDetail.storyboard in Resources */,
@@ -2509,7 +2509,7 @@
 				FEDAC97F214BBD37005E8B63 /* SkyBallHetiRedHTDatePickerView.xib in Resources */,
 				326434EC22F057E000D2DA1E /* guideImageapp3.jpg in Resources */,
 				FE9B32B8217895990055B611 /* SkyBallHetiRedHTRankLeftCell.xib in Resources */,
-				326D67B723A8D8CC00DDB443 /* HTPhotoViewController.storyboard in Resources */,
+				326D67B723A8D8CC00DDB443 /* HTPhoto.storyboard in Resources */,
 				FECCA5212258C8D0009EF494 /* SkyBallHetiRedHTMeCenterNormalCell.xib in Resources */,
 				FE6BD04D2144FAF60090118A /* ViewStatus.xcassets in Resources */,
 				FE83FE552177838F006C714C /* SkyBallHetiRedHTMatchDataRightCell.xib in Resources */,
