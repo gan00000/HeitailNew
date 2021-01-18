@@ -6,12 +6,12 @@
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "AFNetworkReachabilityManager.h"
-#import "SkyBallHetiRedPPXXBJLaunchViewController.h"
-#import "UIView+SkyBallHetiRedToast.h"
-#import "SkyBallHetiRedHTNewsDetailViewController.h"
-#import "SkyBallHetiRedPPXXBJNavigationController.h"
-#import "SkyBallHetiRedHTNewsHomeViewController.h"
-#import "SkyBallHetiRedPPXXBJMainViewController.h"
+#import "GlodBulePPXXBJLaunchViewController.h"
+#import "UIView+GlodBuleToast.h"
+#import "GlodBuleHTNewsDetailViewController.h"
+#import "GlodBulePPXXBJNavigationController.h"
+#import "GlodBuleHTNewsHomeViewController.h"
+#import "GlodBulePPXXBJMainViewController.h"
 @import Firebase;
 @import GoogleMobileAds;
 
@@ -21,13 +21,13 @@
 - (void)openViewController:(UIApplication * _Nonnull)application launchOptions:(NSDictionary * _Nullable)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
-    SkyBallHetiRedPPXXBJLaunchViewController *rootVc = [[SkyBallHetiRedPPXXBJLaunchViewController alloc] init];
+    GlodBulePPXXBJLaunchViewController *rootVc = [[GlodBulePPXXBJLaunchViewController alloc] init];
 //    self.window.rootViewController = rootVc;
 
     
-    self.window.rootViewController = [[SkyBallHetiRedPPXXBJNavigationController alloc] initWithRootViewController:rootVc];
+    self.window.rootViewController = [[GlodBulePPXXBJNavigationController alloc] initWithRootViewController:rootVc];
     
-//     self.window.rootViewController = [[SkyBallHetiRedPPXXBJMainViewController alloc] init];
+//     self.window.rootViewController = [[GlodBulePPXXBJMainViewController alloc] init];
     
     [self setupPushWithLaunchOptions:launchOptions];
     [IQKeyboardManager sharedManager].toolbarBarTintColor = [UIColor whiteColor];
@@ -149,7 +149,7 @@
                                  stringByReplacingOccurrencesOfString:@" " withString:@""];
     if (pushDeviceToken.length) {
         BJLog(@"deviceToken: %@", pushDeviceToken);
-        [SkyBallHetiRedHTUserManager waterSky_saveDeviceToken:pushDeviceToken];
+        [GlodBuleHTUserManager waterSky_saveDeviceToken:pushDeviceToken];
     }
 }
 - (void)responsePushInfo:(NSDictionary *)pushInfo fromViewController:(UIViewController *)vc {
@@ -157,9 +157,9 @@
         return;
     }
     if (!vc) {
-        vc = [SkyBallHetiRedPPXXBJViewControllerCenter currentViewController];
+        vc = [GlodBulePPXXBJViewControllerCenter currentViewController];
     }
-    SkyBallHetiRedHTNewsDetailViewController *detailVc = [SkyBallHetiRedHTNewsDetailViewController waterSkyviewController];
+    GlodBuleHTNewsDetailViewController *detailVc = [GlodBuleHTNewsDetailViewController waterSkyviewController];
     detailVc.post_id = pushInfo[@"postId"];
     if (vc.navigationController) {
         [vc.navigationController pushViewController:detailVc animated:YES];

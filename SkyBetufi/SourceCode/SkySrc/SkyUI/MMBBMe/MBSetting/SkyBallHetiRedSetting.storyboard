@@ -13,7 +13,7 @@
         <!--Setting View Controller-->
         <scene sceneID="2eK-Dz-EvO">
             <objects>
-                <viewController id="aea-6F-Zvh" customClass="SkyBallHetiRedHTSettingViewController" sceneMemberID="viewController">
+                <viewController id="aea-6F-Zvh" customClass="GlodBuleHTSettingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0af-ze-FEk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -215,7 +215,7 @@
         <!--About Us View Controller-->
         <scene sceneID="i08-7d-aeh">
             <objects>
-                <viewController id="O3G-Rh-Yxj" customClass="SkyBallHetiRedHTAboutUsViewController" sceneMemberID="viewController">
+                <viewController id="O3G-Rh-Yxj" customClass="GlodBuleHTAboutUsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eFU-1D-WUJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -257,7 +257,7 @@
         <!--Contact Us View Controller-->
         <scene sceneID="Gd0-H4-LqJ">
             <objects>
-                <viewController id="jJ7-6i-sRE" customClass="SkyBallHetiRedHTContactUsViewController" sceneMemberID="viewController">
+                <viewController id="jJ7-6i-sRE" customClass="GlodBuleHTContactUsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4DL-bx-na4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

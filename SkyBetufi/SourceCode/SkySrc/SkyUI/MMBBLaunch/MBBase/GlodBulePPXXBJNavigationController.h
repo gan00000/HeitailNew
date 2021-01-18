@@ -1,0 +1,3 @@
+#import "GlodBulePPXXBJBaseNavigationController.h"
+@interface GlodBulePPXXBJNavigationController : GlodBulePPXXBJBaseNavigationController
+@end

@@ -13,7 +13,7 @@
         <!--Match Dashboard View Controller-->
         <scene sceneID="XNV-IU-EGn">
             <objects>
-                <viewController id="qKk-Mh-7Lp" customClass="SkyBallHetiRedHTMatchDashboardViewController" sceneMemberID="viewController">
+                <viewController id="qKk-Mh-7Lp" customClass="GlodBuleHTMatchDashboardViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iYU-gL-KlC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
