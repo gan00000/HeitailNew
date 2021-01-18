@@ -113,14 +113,14 @@
 		32FED82A23AB768700D900A7 /* GlodBuleLMPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED81E23AB768700D900A7 /* GlodBuleLMPlayerManager.m */; };
 		32FED83023AB775600D900A7 /* UIColor+GlodBuleHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED82E23AB775600D900A7 /* UIColor+GlodBuleHex.m */; };
 		32FED83223AB779C00D900A7 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32FED83123AB779C00D900A7 /* IJKMediaFramework.framework */; };
-		32FED83423AB7BB100D900A7 /* LMPlayer.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32FED83323AB7BB100D900A7 /* LMPlayer.xcassets */; };
+		32FED83423AB7BB100D900A7 /* KKRESLMPlayer.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32FED83323AB7BB100D900A7 /* KKRESLMPlayer.xcassets */; };
 		32FED83623AC812200D900A7 /* live_player_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FED83523AC812200D900A7 /* live_player_bg.png */; };
 		32FED83823ACBD1100D900A7 /* icon_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FED83723ACBD1000D900A7 /* icon_play.png */; };
 		32FFD29123A2267200E1661A /* UIImageView+GlodBuleHT.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFD29023A2267200E1661A /* UIImageView+GlodBuleHT.m */; };
 		32FFD29923A397A700E1661A /* GlodBuleHTAdViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFD29723A397A700E1661A /* GlodBuleHTAdViewCell.m */; };
 		32FFD29A23A397A700E1661A /* GlodBuleHTAdViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32FFD29823A397A700E1661A /* GlodBuleHTAdViewCell.xib */; };
 		E96EB72A062D72ACD051C26D /* Pods_SkyBallPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC337F0671EB4742D64BA54 /* Pods_SkyBallPlay.framework */; };
-		FE08C5C422504F0C000175CB /* MMBBMe.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE08C5C322504F0C000175CB /* MMBBMe.xcassets */; };
+		FE08C5C422504F0C000175CB /* KKRESMMBBMe.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE08C5C322504F0C000175CB /* KKRESMMBBMe.xcassets */; };
 		FE08C5C82250506A000175CB /* GlodBuleHTMeHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08C5C62250506A000175CB /* GlodBuleHTMeHomeViewController.m */; };
 		FE08C5C92250506A000175CB /* GlodBuleHTMeHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE08C5C72250506A000175CB /* GlodBuleHTMeHomeViewController.xib */; };
 		FE0C270C2186BCE8001C9B8C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C270B2186BCE7001C9B8C /* libz.tbd */; };
@@ -129,8 +129,8 @@
 		FE0C27122186BD0D001C9B8C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C27112186BD0D001C9B8C /* SystemConfiguration.framework */; };
 		FE588BFC22620DFA00A44884 /* GlodBuleHTCommentGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = FE588BFB22620DFA00A44884 /* GlodBuleHTCommentGetter.m */; };
 		FE6BD0492144EB660090118A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE6BD0482144EB660090118A /* ImageIO.framework */; };
-		FE6BD04B2144FA3C0090118A /* HUD.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE6BD04A2144FA3C0090118A /* HUD.xcassets */; };
-		FE6BD04D2144FAF60090118A /* ViewStatus.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE6BD04C2144FAF60090118A /* ViewStatus.xcassets */; };
+		FE6BD04B2144FA3C0090118A /* KKRESHUD.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE6BD04A2144FA3C0090118A /* KKRESHUD.xcassets */; };
+		FE6BD04D2144FAF60090118A /* KKRESViewStatus.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE6BD04C2144FAF60090118A /* KKRESViewStatus.xcassets */; };
 		FE6BD0502144FC190090118A /* GlodBuleHTMatchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6BD04F2144FC190090118A /* GlodBuleHTMatchDetailViewController.m */; };
 		FE6BD0522144FC270090118A /* SkyBallHetiRedMatchDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6BD0512144FC270090118A /* SkyBallHetiRedMatchDetail.storyboard */; };
 		FE6BD0582144FDE10090118A /* GlodBuleHTMatchCompareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6BD0572144FDE10090118A /* GlodBuleHTMatchCompareViewController.m */; };
@@ -218,7 +218,7 @@
 		FEAC9F352199EA2300159AE9 /* GlodBuleHTContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAC9F342199EA2300159AE9 /* GlodBuleHTContactUsViewController.m */; };
 		FEAC9F382199EA3A00159AE9 /* GlodBuleHTAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAC9F372199EA3A00159AE9 /* GlodBuleHTAboutUsViewController.m */; };
 		FEB46C822157903B00E482CE /* GlodBuleHTMatchLiveFeedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB46C812157903B00E482CE /* GlodBuleHTMatchLiveFeedModel.m */; };
-		FEC112622143D058002DB617 /* MMBBAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC112612143D058002DB617 /* MMBBAssets.xcassets */; };
+		FEC112622143D058002DB617 /* KKRESAPPAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC112612143D058002DB617 /* KKRESAPPAssets.xcassets */; };
 		FEC112682143D058002DB617 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC112672143D058002DB617 /* main.m */; };
 		FEC115BD2143D4A0002DB617 /* GlodBulePPXXBJLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113132143D4A0002DB617 /* GlodBulePPXXBJLaunchViewController.m */; };
 		FEC116042143D4A1002DB617 /* GlodBuleXJLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEC1139F2143D4A0002DB617 /* GlodBuleXJLoadingView.xib */; };
@@ -274,11 +274,11 @@
 		FEC116CC2143D4A1002DB617 /* UIColor+GlodBuleGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115542143D4A0002DB617 /* UIColor+GlodBuleGenerator.m */; };
 		FEC116CD2143D4A1002DB617 /* UIImage+GlodBuleResize.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115552143D4A0002DB617 /* UIImage+GlodBuleResize.m */; };
 		FEC116D22143D4A1002DB617 /* GlodBuleBJUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115632143D4A0002DB617 /* GlodBuleBJUtility.m */; };
-		FEC116DD2143D877002DB617 /* MMBBMatch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC116DC2143D877002DB617 /* MMBBMatch.xcassets */; };
+		FEC116DD2143D877002DB617 /* KKRESMMBBMatch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC116DC2143D877002DB617 /* KKRESMMBBMatch.xcassets */; };
 		FEC116EF2143D8C9002DB617 /* SkyBallHetiRedMatchHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC116EE2143D8C9002DB617 /* SkyBallHetiRedMatchHome.storyboard */; };
 		FEC116F22143D91D002DB617 /* GlodBuleHTMatchHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC116F12143D91D002DB617 /* GlodBuleHTMatchHomeViewController.m */; };
 		FEC116F82143DC57002DB617 /* SkyBallHetiRedNewsHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC116F72143DC57002DB617 /* SkyBallHetiRedNewsHome.storyboard */; };
-		FEC116FA2143DC72002DB617 /* MMBBNews.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC116F92143DC72002DB617 /* MMBBNews.xcassets */; };
+		FEC116FA2143DC72002DB617 /* KKRESMMBBNews.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC116F92143DC72002DB617 /* KKRESMMBBNews.xcassets */; };
 		FEC116FF2143DCAF002DB617 /* SkyBallHetiRedFilmHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC116FE2143DCAF002DB617 /* SkyBallHetiRedFilmHome.storyboard */; };
 		FEC117092143DDEE002DB617 /* GlodBuleHTNewsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC117082143DDEE002DB617 /* GlodBuleHTNewsHomeViewController.m */; };
 		FEC117102143DE50002DB617 /* GlodBuleHTFilmHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1170F2143DE50002DB617 /* GlodBuleHTFilmHomeViewController.m */; };
@@ -286,7 +286,7 @@
 		FEC1171B2143DEAD002DB617 /* SkyBallHetiRedDataHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC1171A2143DEAD002DB617 /* SkyBallHetiRedDataHome.storyboard */; };
 		FEC117242143DF12002DB617 /* GlodBuleHTRankHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC117232143DF12002DB617 /* GlodBuleHTRankHomeViewController.m */; };
 		FEC117262143DF33002DB617 /* SkyBallHetiRedRankHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC117252143DF33002DB617 /* SkyBallHetiRedRankHome.storyboard */; };
-		FEC1172B2143E43A002DB617 /* MMBBLaunch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC1172A2143E43A002DB617 /* MMBBLaunch.xcassets */; };
+		FEC1172B2143E43A002DB617 /* KKRESMMBBLaunch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC1172A2143E43A002DB617 /* KKRESMMBBLaunch.xcassets */; };
 		FEC1172E2143EAA3002DB617 /* GlodBuleBJError.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1172D2143EAA3002DB617 /* GlodBuleBJError.m */; };
 		FEC117312143EAC2002DB617 /* GlodBuleBJBaseResponceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1172F2143EAC2002DB617 /* GlodBuleBJBaseResponceModel.m */; };
 		FECCA4E62258C858009EF494 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FECCA4E52258C858009EF494 /* Security.framework */; };
@@ -589,7 +589,7 @@
 		32FED82E23AB775600D900A7 /* UIColor+GlodBuleHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GlodBuleHex.m"; sourceTree = "<group>"; };
 		32FED82F23AB775600D900A7 /* UIColor+GlodBuleHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+GlodBuleHex.h"; sourceTree = "<group>"; };
 		32FED83123AB779C00D900A7 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
-		32FED83323AB7BB100D900A7 /* LMPlayer.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LMPlayer.xcassets; sourceTree = "<group>"; };
+		32FED83323AB7BB100D900A7 /* KKRESLMPlayer.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = KKRESLMPlayer.xcassets; sourceTree = "<group>"; };
 		32FED83523AC812200D900A7 /* live_player_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = live_player_bg.png; sourceTree = "<group>"; };
 		32FED83723ACBD1000D900A7 /* icon_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_play.png; sourceTree = "<group>"; };
 		32FFD28F23A2267200E1661A /* UIImageView+GlodBuleHT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+GlodBuleHT.h"; sourceTree = "<group>"; };
@@ -603,7 +603,7 @@
 		89189E29CC0B9E5A3FEA5137 /* Pods-SkyBallPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyBallPlay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay.debug.xcconfig"; sourceTree = "<group>"; };
 		C0EBF7000495782F4C2F67C5 /* Pods-SkyBallPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyBallPlay.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay.release.xcconfig"; sourceTree = "<group>"; };
 		C96ED51AF657F6A6678FAF42 /* Pods_HeiteBasketball.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeiteBasketball.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE08C5C322504F0C000175CB /* MMBBMe.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MMBBMe.xcassets; sourceTree = "<group>"; };
+		FE08C5C322504F0C000175CB /* KKRESMMBBMe.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = KKRESMMBBMe.xcassets; sourceTree = "<group>"; };
 		FE08C5C52250506A000175CB /* GlodBuleHTMeHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTMeHomeViewController.h; sourceTree = "<group>"; };
 		FE08C5C62250506A000175CB /* GlodBuleHTMeHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTMeHomeViewController.m; sourceTree = "<group>"; };
 		FE08C5C72250506A000175CB /* GlodBuleHTMeHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GlodBuleHTMeHomeViewController.xib; sourceTree = "<group>"; };
@@ -614,8 +614,8 @@
 		FE588BFA22620DFA00A44884 /* GlodBuleHTCommentGetter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTCommentGetter.h; sourceTree = "<group>"; };
 		FE588BFB22620DFA00A44884 /* GlodBuleHTCommentGetter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTCommentGetter.m; sourceTree = "<group>"; };
 		FE6BD0482144EB660090118A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		FE6BD04A2144FA3C0090118A /* HUD.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = HUD.xcassets; sourceTree = "<group>"; };
-		FE6BD04C2144FAF60090118A /* ViewStatus.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ViewStatus.xcassets; sourceTree = "<group>"; };
+		FE6BD04A2144FA3C0090118A /* KKRESHUD.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = KKRESHUD.xcassets; sourceTree = "<group>"; };
+		FE6BD04C2144FAF60090118A /* KKRESViewStatus.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = KKRESViewStatus.xcassets; sourceTree = "<group>"; };
 		FE6BD04E2144FC190090118A /* GlodBuleHTMatchDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTMatchDetailViewController.h; sourceTree = "<group>"; };
 		FE6BD04F2144FC190090118A /* GlodBuleHTMatchDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTMatchDetailViewController.m; sourceTree = "<group>"; };
 		FE6BD0512144FC270090118A /* SkyBallHetiRedMatchDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SkyBallHetiRedMatchDetail.storyboard; sourceTree = "<group>"; };
@@ -758,7 +758,7 @@
 		FEB46C802157903B00E482CE /* GlodBuleHTMatchLiveFeedModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTMatchLiveFeedModel.h; sourceTree = "<group>"; };
 		FEB46C812157903B00E482CE /* GlodBuleHTMatchLiveFeedModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTMatchLiveFeedModel.m; sourceTree = "<group>"; };
 		FEC112552143D057002DB617 /* XXXHeiTai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XXXHeiTai.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEC112612143D058002DB617 /* MMBBAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MMBBAssets.xcassets; sourceTree = "<group>"; };
+		FEC112612143D058002DB617 /* KKRESAPPAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = KKRESAPPAssets.xcassets; sourceTree = "<group>"; };
 		FEC112662143D058002DB617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEC112672143D058002DB617 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEC113132143D4A0002DB617 /* GlodBulePPXXBJLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBulePPXXBJLaunchViewController.m; sourceTree = "<group>"; };
@@ -862,13 +862,13 @@
 		FEC1155B2143D4A0002DB617 /* GlodBuleBJUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleBJUtility.h; sourceTree = "<group>"; };
 		FEC1155C2143D4A0002DB617 /* GlodBuleBJDateFormatUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleBJDateFormatUtility.h; sourceTree = "<group>"; };
 		FEC115632143D4A0002DB617 /* GlodBuleBJUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleBJUtility.m; sourceTree = "<group>"; };
-		FEC116DC2143D877002DB617 /* MMBBMatch.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MMBBMatch.xcassets; sourceTree = "<group>"; };
+		FEC116DC2143D877002DB617 /* KKRESMMBBMatch.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = KKRESMMBBMatch.xcassets; sourceTree = "<group>"; };
 		FEC116EE2143D8C9002DB617 /* SkyBallHetiRedMatchHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SkyBallHetiRedMatchHome.storyboard; sourceTree = "<group>"; };
 		FEC116F02143D91D002DB617 /* GlodBuleHTMatchHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTMatchHomeViewController.h; sourceTree = "<group>"; };
 		FEC116F12143D91D002DB617 /* GlodBuleHTMatchHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTMatchHomeViewController.m; sourceTree = "<group>"; };
 		FEC116F32143D994002DB617 /* SkyBallPlay.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkyBallPlay.pch; sourceTree = "<group>"; };
 		FEC116F72143DC57002DB617 /* SkyBallHetiRedNewsHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SkyBallHetiRedNewsHome.storyboard; sourceTree = "<group>"; };
-		FEC116F92143DC72002DB617 /* MMBBNews.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MMBBNews.xcassets; sourceTree = "<group>"; };
+		FEC116F92143DC72002DB617 /* KKRESMMBBNews.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = KKRESMMBBNews.xcassets; sourceTree = "<group>"; };
 		FEC116FE2143DCAF002DB617 /* SkyBallHetiRedFilmHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SkyBallHetiRedFilmHome.storyboard; sourceTree = "<group>"; };
 		FEC117072143DDED002DB617 /* GlodBuleHTNewsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTNewsHomeViewController.h; sourceTree = "<group>"; };
 		FEC117082143DDEE002DB617 /* GlodBuleHTNewsHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTNewsHomeViewController.m; sourceTree = "<group>"; };
@@ -880,7 +880,7 @@
 		FEC117222143DF11002DB617 /* GlodBuleHTRankHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTRankHomeViewController.h; sourceTree = "<group>"; };
 		FEC117232143DF12002DB617 /* GlodBuleHTRankHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTRankHomeViewController.m; sourceTree = "<group>"; };
 		FEC117252143DF33002DB617 /* SkyBallHetiRedRankHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SkyBallHetiRedRankHome.storyboard; sourceTree = "<group>"; };
-		FEC1172A2143E43A002DB617 /* MMBBLaunch.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MMBBLaunch.xcassets; sourceTree = "<group>"; };
+		FEC1172A2143E43A002DB617 /* KKRESMMBBLaunch.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = KKRESMMBBLaunch.xcassets; sourceTree = "<group>"; };
 		FEC1172C2143EAA3002DB617 /* GlodBuleBJError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleBJError.h; sourceTree = "<group>"; };
 		FEC1172D2143EAA3002DB617 /* GlodBuleBJError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleBJError.m; sourceTree = "<group>"; };
 		FEC1172F2143EAC2002DB617 /* GlodBuleBJBaseResponceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleBJBaseResponceModel.m; sourceTree = "<group>"; };
@@ -1133,7 +1133,7 @@
 			isa = PBXGroup;
 			children = (
 				326434DC22F0536E00D2DA1E /* Res */,
-				FEC112612143D058002DB617 /* MMBBAssets.xcassets */,
+				FEC112612143D058002DB617 /* KKRESAPPAssets.xcassets */,
 				FEC114332143D4A0002DB617 /* AppDelegate.h */,
 				FEC1149C2143D4A0002DB617 /* AppDelegate.m */,
 				FEC116F32143D994002DB617 /* SkyBallPlay.pch */,
@@ -1314,7 +1314,7 @@
 				32FED80523AB768700D900A7 /* Model */,
 				32FED80A23AB768700D900A7 /* View */,
 				32FED81C23AB768700D900A7 /* Utility */,
-				32FED83323AB7BB100D900A7 /* LMPlayer.xcassets */,
+				32FED83323AB7BB100D900A7 /* KKRESLMPlayer.xcassets */,
 			);
 			path = LMPlayer;
 			sourceTree = "<group>";
@@ -1410,7 +1410,7 @@
 				FECCA5192258C8D0009EF494 /* MBLike */,
 				FECCA4E72258C8CE009EF494 /* MBMessage */,
 				FEAC9F2B2199E22700159AE9 /* MBSetting */,
-				FE08C5C322504F0C000175CB /* MMBBMe.xcassets */,
+				FE08C5C322504F0C000175CB /* KKRESMMBBMe.xcassets */,
 			);
 			path = MMBBMe;
 			sourceTree = "<group>";
@@ -1497,7 +1497,7 @@
 				325BD8C522E0705D00A07EC9 /* GlodBulePPXXBJLaunchViewController.h */,
 				FEC113132143D4A0002DB617 /* GlodBulePPXXBJLaunchViewController.m */,
 				FEC114272143D4A0002DB617 /* MBBase */,
-				FEC1172A2143E43A002DB617 /* MMBBLaunch.xcassets */,
+				FEC1172A2143E43A002DB617 /* KKRESMMBBLaunch.xcassets */,
 			);
 			path = MMBBLaunch;
 			sourceTree = "<group>";
@@ -1532,7 +1532,7 @@
 				FEC113AC2143D4A0002DB617 /* UIView+GlodBuleLoading.m */,
 				FEC113AB2143D4A0002DB617 /* UIView+GlodBuleToast.h */,
 				FEC113B22143D4A0002DB617 /* UIView+GlodBuleToast.m */,
-				FE6BD04C2144FAF60090118A /* ViewStatus.xcassets */,
+				FE6BD04C2144FAF60090118A /* KKRESViewStatus.xcassets */,
 			);
 			path = PKViewStatus;
 			sourceTree = "<group>";
@@ -1598,7 +1598,7 @@
 				FEC113EB2143D4A0002DB617 /* GlodBuleBJLoadingHud.h */,
 				FEC113F02143D4A0002DB617 /* GlodBuleBJLoadingHud.m */,
 				FEC113EC2143D4A0002DB617 /* View */,
-				FE6BD04A2144FA3C0090118A /* HUD.xcassets */,
+				FE6BD04A2144FA3C0090118A /* KKRESHUD.xcassets */,
 			);
 			path = PKHUD;
 			sourceTree = "<group>";
@@ -1785,7 +1785,7 @@
 				FEDF8FBC21443505005C7C4D /* MBModels */,
 				FEDF8FBB214434F8005C7C4D /* MBViews */,
 				FEC116D82143D82D002DB617 /* MBControllers */,
-				FEC116DC2143D877002DB617 /* MMBBMatch.xcassets */,
+				FEC116DC2143D877002DB617 /* KKRESMMBBMatch.xcassets */,
 				FEC116EE2143D8C9002DB617 /* SkyBallHetiRedMatchHome.storyboard */,
 				FE6BD0512144FC270090118A /* SkyBallHetiRedMatchDetail.storyboard */,
 				FE6BD05F2144FED00090118A /* SkyBallHetiRedMatchWordLive.storyboard */,
@@ -1847,7 +1847,7 @@
 				FEC117002143DD87002DB617 /* MBControllers */,
 				FEC116F72143DC57002DB617 /* SkyBallHetiRedNewsHome.storyboard */,
 				FE6BD07E21457BBC0090118A /* SkyBallHetiRedNewsDetail.storyboard */,
-				FEC116F92143DC72002DB617 /* MMBBNews.xcassets */,
+				FEC116F92143DC72002DB617 /* KKRESMMBBNews.xcassets */,
 				326D67B623A8D8CC00DDB443 /* HTPhoto.storyboard */,
 			);
 			path = MMBBNews;
@@ -2435,7 +2435,7 @@
 				FEDABE492171BC3A008C8AFD /* GlodBuleHTMatchQuarterCell.xib in Resources */,
 				FE6BD08421457D7E0090118A /* GlodBuleHTNewsHeaderCell.xib in Resources */,
 				FEDABE6C217336D6008C8AFD /* SkyBallHetiRedRankZone.storyboard in Resources */,
-				32FED83423AB7BB100D900A7 /* LMPlayer.xcassets in Resources */,
+				32FED83423AB7BB100D900A7 /* KKRESLMPlayer.xcassets in Resources */,
 				327191D2251B3BD600CD9D85 /* PlayerInfo.storyboard in Resources */,
 				3287124023B8962800AB5360 /* video_pause_normal.png in Resources */,
 				FEC1160D2143D4A1002DB617 /* GlodBuleXJEmptyView.xib in Resources */,
@@ -2445,7 +2445,7 @@
 				FE6BD075214526980090118A /* GlodBuleHTNewsHomeCell.xib in Resources */,
 				FE800F6B22636AFC00E575D5 /* GlodBuleHTNewsCommentCell.xib in Resources */,
 				FE7E6C9B2263CADB00B2973D /* GlodBuleHTMyMessaageCell.xib in Resources */,
-				FEC116FA2143DC72002DB617 /* MMBBNews.xcassets in Resources */,
+				FEC116FA2143DC72002DB617 /* KKRESMMBBNews.xcassets in Resources */,
 				3287125023B8962800AB5360 /* video_volume_icon.png in Resources */,
 				FE08C5C92250506A000175CB /* GlodBuleHTMeHomeViewController.xib in Resources */,
 				FEDAC97A214B9139005E8B63 /* GlodBuleHTDataCellTeamView.xib in Resources */,
@@ -2476,7 +2476,7 @@
 				FEC116092143D4A1002DB617 /* GlodBuleXJToastImageView.xib in Resources */,
 				FEDABE70217385F4008C8AFD /* SkyBallHetiRedMatchSubDsbd.storyboard in Resources */,
 				326434EE22F057E000D2DA1E /* guideImageapp5.jpg in Resources */,
-				FE6BD04B2144FA3C0090118A /* HUD.xcassets in Resources */,
+				FE6BD04B2144FA3C0090118A /* KKRESHUD.xcassets in Resources */,
 				FEC1171B2143DEAD002DB617 /* SkyBallHetiRedDataHome.storyboard in Resources */,
 				FECCA57622598143009EF494 /* GlodBuleDRPhotoKeyboardCell.xib in Resources */,
 				FE81D1632149716D0047A4A2 /* GlodBuleHTDataHomePlayerCell.xib in Resources */,
@@ -2488,10 +2488,10 @@
 				3287124323B8962800AB5360 /* video_brightness_6_white_36dp.png in Resources */,
 				FE6BD07F21457BBC0090118A /* SkyBallHetiRedNewsDetail.storyboard in Resources */,
 				32E722882309A3A6003E0A03 /* guideImageapp13.jpg in Resources */,
-				FEC1172B2143E43A002DB617 /* MMBBLaunch.xcassets in Resources */,
+				FEC1172B2143E43A002DB617 /* KKRESMMBBLaunch.xcassets in Resources */,
 				3287124123B8962800AB5360 /* video_shrink.png in Resources */,
 				FEC1161C2143D4A1002DB617 /* GlodBuleBJTabBarView.xib in Resources */,
-				FE08C5C422504F0C000175CB /* MMBBMe.xcassets in Resources */,
+				FE08C5C422504F0C000175CB /* KKRESMMBBMe.xcassets in Resources */,
 				32E7228123098085003E0A03 /* GoogleService-Info.plist in Resources */,
 				3277C5D623A9D4DE00D43D80 /* place2.png in Resources */,
 				FEC116EF2143D8C9002DB617 /* SkyBallHetiRedMatchHome.storyboard in Resources */,
@@ -2511,7 +2511,7 @@
 				FE9B32B8217895990055B611 /* GlodBuleHTRankLeftCell.xib in Resources */,
 				326D67B723A8D8CC00DDB443 /* HTPhoto.storyboard in Resources */,
 				FECCA5212258C8D0009EF494 /* GlodBuleHTMeCenterNormalCell.xib in Resources */,
-				FE6BD04D2144FAF60090118A /* ViewStatus.xcassets in Resources */,
+				FE6BD04D2144FAF60090118A /* KKRESViewStatus.xcassets in Resources */,
 				FE83FE552177838F006C714C /* GlodBuleHTMatchDataRightCell.xib in Resources */,
 				32E3E97D24FD40630076AD93 /* THSearch.storyboard in Resources */,
 				32340FD1250F1D7F00F47F76 /* GlodBuleHTChatContentCell.xib in Resources */,
@@ -2542,7 +2542,7 @@
 				FECCA57D2259824F009EF494 /* GlodBuleDRDeleteAlertView.xib in Resources */,
 				FECCA5292258C8D0009EF494 /* GlodBuleHTCommentViewController.xib in Resources */,
 				FE81D15B2149613B0047A4A2 /* SkyBallHetiRedDataHomeSub.storyboard in Resources */,
-				FEC116DD2143D877002DB617 /* MMBBMatch.xcassets in Resources */,
+				FEC116DD2143D877002DB617 /* KKRESMMBBMatch.xcassets in Resources */,
 				FE82BB3D2179B6DF00C52C51 /* GlodBuleHTDataPlayerRightCell.xib in Resources */,
 				FEDABE6E21734A53008C8AFD /* SkyBallHetiRedRankEastWest.storyboard in Resources */,
 				FE83FE4D21778341006C714C /* GlodBuleHTMatchDataLeftCell.xib in Resources */,
@@ -2558,7 +2558,7 @@
 				32CD878222F4173800063A14 /* PlatVideoStoryboard.storyboard in Resources */,
 				FEAC9F302199E28800159AE9 /* SkyBallHetiRedSetting.storyboard in Resources */,
 				FEEABBE72149F90800A585DA /* iframe_load.html in Resources */,
-				FEC112622143D058002DB617 /* MMBBAssets.xcassets in Resources */,
+				FEC112622143D058002DB617 /* KKRESAPPAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
