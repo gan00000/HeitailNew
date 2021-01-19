@@ -149,7 +149,7 @@
                                  stringByReplacingOccurrencesOfString:@" " withString:@""];
     if (pushDeviceToken.length) {
         BJLog(@"deviceToken: %@", pushDeviceToken);
-        [GlodBuleHTUserManager waterSky_saveDeviceToken:pushDeviceToken];
+        [GlodBuleHTUserManager tao_saveDeviceToken:pushDeviceToken];
     }
 }
 - (void)responsePushInfo:(NSDictionary *)pushInfo fromViewController:(UIViewController *)vc {
@@ -159,7 +159,7 @@
     if (!vc) {
         vc = [GlodBulePPXXBJViewControllerCenter currentViewController];
     }
-    GlodBuleHTNewsDetailViewController *detailVc = [GlodBuleHTNewsDetailViewController waterSkyviewController];
+    GlodBuleHTNewsDetailViewController *detailVc = [GlodBuleHTNewsDetailViewController taoviewController];
     detailVc.post_id = pushInfo[@"postId"];
     if (vc.navigationController) {
         [vc.navigationController pushViewController:detailVc animated:YES];

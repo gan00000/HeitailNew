@@ -1137,8 +1137,8 @@
 				FEC114332143D4A0002DB617 /* AppDelegate.h */,
 				FEC1149C2143D4A0002DB617 /* AppDelegate.m */,
 				FEC116F32143D994002DB617 /* SkyBallPlay.pch */,
-				FEC1126F2143D4A0002DB617 /* SkyUI */,
-				FEC114342143D4A0002DB617 /* SkyModule */,
+				FEC1126F2143D4A0002DB617 /* AppUI */,
+				FEC114342143D4A0002DB617 /* CommonModule */,
 			);
 			path = SkySrc;
 			sourceTree = "<group>";
@@ -1154,7 +1154,7 @@
 			path = MyViwe;
 			sourceTree = "<group>";
 		};
-		326434D322F04F5E00D2DA1E /* CCPPDHGuidePageHUD */ = {
+		326434D322F04F5E00D2DA1E /* GDHGuidePageHUD */ = {
 			isa = PBXGroup;
 			children = (
 				326434D422F04F5E00D2DA1E /* GuideImage.bundle */,
@@ -1163,7 +1163,7 @@
 				326434D722F04F5E00D2DA1E /* GlodBuleDHGifImageOperation.h */,
 				326434D822F04F5E00D2DA1E /* GlodBuleDHGuidePageHUD.m */,
 			);
-			path = CCPPDHGuidePageHUD;
+			path = GDHGuidePageHUD;
 			sourceTree = "<group>";
 		};
 		326434DC22F0536E00D2DA1E /* Res */ = {
@@ -1237,7 +1237,7 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
-		32CC78E024F3EA7900377576 /* ChartUtil */ = {
+		32CC78E024F3EA7900377576 /* MonChartUtil */ = {
 			isa = PBXGroup;
 			children = (
 				32CC78E124F3EAAD00377576 /* GlodBuleBarChartUtil.h */,
@@ -1247,7 +1247,7 @@
 				32F1F2C02514FB7C00EE85B8 /* GlodBuleLineChartUtil.h */,
 				32F1F2C12514FB7C00EE85B8 /* GlodBuleLineChartUtil.m */,
 			);
-			path = ChartUtil;
+			path = MonChartUtil;
 			sourceTree = "<group>";
 		};
 		32CD869A22F3FB5400063A14 /* third */ = {
@@ -1288,7 +1288,7 @@
 			path = skyvideo;
 			sourceTree = "<group>";
 		};
-		32E3E97B24FD3FE40076AD93 /* Search */ = {
+		32E3E97B24FD3FE40076AD93 /* ModuleSearch */ = {
 			isa = PBXGroup;
 			children = (
 				32A51D662508D85100603A36 /* Request */,
@@ -1299,10 +1299,10 @@
 				32C65DF425067D290068D2C7 /* GlodBuleHTSearchHistoryTableViewCell.m */,
 				32C65DF525067D290068D2C7 /* GlodBuleHTSearchHistoryTableViewCell.xib */,
 			);
-			path = Search;
+			path = ModuleSearch;
 			sourceTree = "<group>";
 		};
-		32FED80223AB768700D900A7 /* LMPlayer */ = {
+		32FED80223AB768700D900A7 /* MonLMPlayer */ = {
 			isa = PBXGroup;
 			children = (
 				32FED83123AB779C00D900A7 /* IJKMediaFramework.framework */,
@@ -1316,7 +1316,7 @@
 				32FED81C23AB768700D900A7 /* Utility */,
 				32FED83323AB7BB100D900A7 /* KKRESLMPlayer.xcassets */,
 			);
-			path = LMPlayer;
+			path = MonLMPlayer;
 			sourceTree = "<group>";
 		};
 		32FED80523AB768700D900A7 /* Model */ = {
@@ -1391,7 +1391,7 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		FE2DDB0421F41AEA006D824A /* MMBBMe */ = {
+		FE2DDB0421F41AEA006D824A /* ModuleMe */ = {
 			isa = PBXGroup;
 			children = (
 				32ABE1D122EDF733008505BA /* GlodBuleHTTabBarHomeViewController.h */,
@@ -1400,22 +1400,22 @@
 				FE08C5C52250506A000175CB /* GlodBuleHTMeHomeViewController.h */,
 				FE08C5C62250506A000175CB /* GlodBuleHTMeHomeViewController.m */,
 				FE08C5C72250506A000175CB /* GlodBuleHTMeHomeViewController.xib */,
-				FECCA5092258C8CF009EF494 /* MBRequests */,
-				FECCA5102258C8D0009EF494 /* MBModels */,
-				FECCA4EB2258C8CE009EF494 /* MBViews */,
-				FECCA50C2258C8CF009EF494 /* MBInfoEdit */,
-				FECCA5052258C8CF009EF494 /* MBCollection */,
-				FECCA4F92258C8CF009EF494 /* MBComment */,
-				FECCA5152258C8D0009EF494 /* MBHistory */,
-				FECCA5192258C8D0009EF494 /* MBLike */,
-				FECCA4E72258C8CE009EF494 /* MBMessage */,
-				FEAC9F2B2199E22700159AE9 /* MBSetting */,
+				FECCA5092258C8CF009EF494 /* MeRequests */,
+				FECCA5102258C8D0009EF494 /* MeModels */,
+				FECCA4EB2258C8CE009EF494 /* MeViews */,
+				FECCA50C2258C8CF009EF494 /* MeInfoEdit */,
+				FECCA5052258C8CF009EF494 /* MeCollection */,
+				FECCA4F92258C8CF009EF494 /* MeComment */,
+				FECCA5152258C8D0009EF494 /* MeHistory */,
+				FECCA5192258C8D0009EF494 /* MeLike */,
+				FECCA4E72258C8CE009EF494 /* MeMessage */,
+				FEAC9F2B2199E22700159AE9 /* MeSetting */,
 				FE08C5C322504F0C000175CB /* KKRESMMBBMe.xcassets */,
 			);
-			path = MMBBMe;
+			path = ModuleMe;
 			sourceTree = "<group>";
 		};
-		FEAC9F2B2199E22700159AE9 /* MBSetting */ = {
+		FEAC9F2B2199E22700159AE9 /* MeSetting */ = {
 			isa = PBXGroup;
 			children = (
 				FEAC9F2C2199E25F00159AE9 /* GlodBuleHTSettingViewController.h */,
@@ -1426,7 +1426,7 @@
 				FEAC9F372199EA3A00159AE9 /* GlodBuleHTAboutUsViewController.m */,
 				FEAC9F2F2199E28800159AE9 /* SkyBallHetiRedSetting.storyboard */,
 			);
-			path = MBSetting;
+			path = MeSetting;
 			sourceTree = "<group>";
 		};
 		FEC1124C2143D057002DB617 = {
@@ -1476,22 +1476,22 @@
 			path = SourceCode;
 			sourceTree = "<group>";
 		};
-		FEC1126F2143D4A0002DB617 /* SkyUI */ = {
+		FEC1126F2143D4A0002DB617 /* AppUI */ = {
 			isa = PBXGroup;
 			children = (
-				32E3E97B24FD3FE40076AD93 /* Search */,
-				FEC113102143D4A0002DB617 /* MMBBLaunch */,
-				FE2DDB0421F41AEA006D824A /* MMBBMe */,
-				FEC116D32143D799002DB617 /* MMBBMatch */,
-				FEC116D72143D80A002DB617 /* MMBBNews */,
-				FEC116D62143D7FD002DB617 /* MMBBFilm */,
-				FEC116D52143D7F3002DB617 /* MMBBData */,
-				FEC116D42143D7C0002DB617 /* MMBBRank */,
+				32E3E97B24FD3FE40076AD93 /* ModuleSearch */,
+				FEC113102143D4A0002DB617 /* ModuleLaunch */,
+				FE2DDB0421F41AEA006D824A /* ModuleMe */,
+				FEC116D32143D799002DB617 /* ModuleMatch */,
+				FEC116D72143D80A002DB617 /* ModuleNews */,
+				FEC116D62143D7FD002DB617 /* ModuleFilm */,
+				FEC116D52143D7F3002DB617 /* ModuleData */,
+				FEC116D42143D7C0002DB617 /* ModuleRank */,
 			);
-			path = SkyUI;
+			path = AppUI;
 			sourceTree = "<group>";
 		};
-		FEC113102143D4A0002DB617 /* MMBBLaunch */ = {
+		FEC113102143D4A0002DB617 /* ModuleLaunch */ = {
 			isa = PBXGroup;
 			children = (
 				325BD8C522E0705D00A07EC9 /* GlodBulePPXXBJLaunchViewController.h */,
@@ -1499,10 +1499,10 @@
 				FEC114272143D4A0002DB617 /* MBBase */,
 				FEC1172A2143E43A002DB617 /* KKRESMMBBLaunch.xcassets */,
 			);
-			path = MMBBLaunch;
+			path = ModuleLaunch;
 			sourceTree = "<group>";
 		};
-		FEC1139B2143D4A0002DB617 /* CCPPViews */ = {
+		FEC1139B2143D4A0002DB617 /* GViews */ = {
 			isa = PBXGroup;
 			children = (
 				FEC1139C2143D4A0002DB617 /* GlodBuleBJEmptyTableViewCell.h */,
@@ -1517,7 +1517,7 @@
 				FEC113BF2143D4A0002DB617 /* CCPPMJRefreshGenerator */,
 				FEC1139D2143D4A0002DB617 /* PKViewStatus */,
 			);
-			path = CCPPViews;
+			path = GViews;
 			sourceTree = "<group>";
 		};
 		FEC1139D2143D4A0002DB617 /* PKViewStatus */ = {
@@ -1634,23 +1634,23 @@
 			path = MBBase;
 			sourceTree = "<group>";
 		};
-		FEC114342143D4A0002DB617 /* SkyModule */ = {
+		FEC114342143D4A0002DB617 /* CommonModule */ = {
 			isa = PBXGroup;
 			children = (
-				32CC78E024F3EA7900377576 /* ChartUtil */,
-				32FED80223AB768700D900A7 /* LMPlayer */,
+				32CC78E024F3EA7900377576 /* MonChartUtil */,
+				32FED80223AB768700D900A7 /* MonLMPlayer */,
 				326D67B823A8DB9A00DDB443 /* WBImageBrowser */,
-				326434D322F04F5E00D2DA1E /* CCPPDHGuidePageHUD */,
-				FECCA54222598013009EF494 /* CCPPTZImagePickerController */,
-				FEC115322143D4A0002DB617 /* CCPPUtility */,
-				FEC1149D2143D4A0002DB617 /* CCPPService */,
-				FEC1139B2143D4A0002DB617 /* CCPPViews */,
-				FEC114802143D4A0002DB617 /* CCPPWebAppBridge */,
+				326434D322F04F5E00D2DA1E /* GDHGuidePageHUD */,
+				FECCA54222598013009EF494 /* GTZImagePickerController */,
+				FEC115322143D4A0002DB617 /* GUtility */,
+				FEC1149D2143D4A0002DB617 /* GService */,
+				FEC1139B2143D4A0002DB617 /* GViews */,
+				FEC114802143D4A0002DB617 /* GWebAppBridge */,
 			);
-			path = SkyModule;
+			path = CommonModule;
 			sourceTree = "<group>";
 		};
-		FEC114802143D4A0002DB617 /* CCPPWebAppBridge */ = {
+		FEC114802143D4A0002DB617 /* GWebAppBridge */ = {
 			isa = PBXGroup;
 			children = (
 				FEC114822143D4A0002DB617 /* GlodBuleBJURINavHelper.h */,
@@ -1667,10 +1667,10 @@
 				FEC1148D2143D4A0002DB617 /* GlodBuleBJWebViewJSBridge.m */,
 				FEC114892143D4A0002DB617 /* BJWKWebViewPostJS.html */,
 			);
-			path = CCPPWebAppBridge;
+			path = GWebAppBridge;
 			sourceTree = "<group>";
 		};
-		FEC1149D2143D4A0002DB617 /* CCPPService */ = {
+		FEC1149D2143D4A0002DB617 /* GService */ = {
 			isa = PBXGroup;
 			children = (
 				FEC1151B2143D4A0002DB617 /* BJAPIAddress.h */,
@@ -1685,10 +1685,10 @@
 				FEC114A02143D4A0002DB617 /* GlodBuleBJServiceConfigurator.h */,
 				FEC114B82143D4A0002DB617 /* GlodBuleBJServiceConfigurator.m */,
 			);
-			path = CCPPService;
+			path = GService;
 			sourceTree = "<group>";
 		};
-		FEC115322143D4A0002DB617 /* CCPPUtility */ = {
+		FEC115322143D4A0002DB617 /* GUtility */ = {
 			isa = PBXGroup;
 			children = (
 				32C65DEE2506771A0068D2C7 /* GlodBuleAccountModel.h */,
@@ -1703,7 +1703,7 @@
 				FE81D14E2146CA920047A4A2 /* GlodBuleHTHtmlLoadUtil.h */,
 				FE81D14F2146CA920047A4A2 /* GlodBuleHTHtmlLoadUtil.m */,
 			);
-			path = CCPPUtility;
+			path = GUtility;
 			sourceTree = "<group>";
 		};
 		FEC115352143D4A0002DB617 /* PKCategory */ = {
@@ -1773,7 +1773,7 @@
 			path = UITextField;
 			sourceTree = "<group>";
 		};
-		FEC116D32143D799002DB617 /* MMBBMatch */ = {
+		FEC116D32143D799002DB617 /* ModuleMatch */ = {
 			isa = PBXGroup;
 			children = (
 				325A921724F11969008F0B2E /* MyViwe */,
@@ -1781,10 +1781,10 @@
 				32FED83723ACBD1000D900A7 /* icon_play.png */,
 				32FED83523AC812200D900A7 /* live_player_bg.png */,
 				3265F1DF2305A211006E3FE1 /* SkyBallHetiRedHTMatchVideoLive.storyboard */,
-				FEDF8FBD2144350E005C7C4D /* MBRequests */,
-				FEDF8FBC21443505005C7C4D /* MBModels */,
-				FEDF8FBB214434F8005C7C4D /* MBViews */,
-				FEC116D82143D82D002DB617 /* MBControllers */,
+				FEDF8FBD2144350E005C7C4D /* MatchRequests */,
+				FEDF8FBC21443505005C7C4D /* MatchModels */,
+				FEDF8FBB214434F8005C7C4D /* MatchViews */,
+				FEC116D82143D82D002DB617 /* MatchControllers */,
 				FEC116DC2143D877002DB617 /* KKRESMMBBMatch.xcassets */,
 				FEC116EE2143D8C9002DB617 /* SkyBallHetiRedMatchHome.storyboard */,
 				FE6BD0512144FC270090118A /* SkyBallHetiRedMatchDetail.storyboard */,
@@ -1795,65 +1795,65 @@
 				32FCDD1B250C72AB0037334D /* THIM.storyboard */,
 				327191D1251B3BD600CD9D85 /* PlayerInfo.storyboard */,
 			);
-			path = MMBBMatch;
+			path = ModuleMatch;
 			sourceTree = "<group>";
 		};
-		FEC116D42143D7C0002DB617 /* MMBBRank */ = {
+		FEC116D42143D7C0002DB617 /* ModuleRank */ = {
 			isa = PBXGroup;
 			children = (
-				FEC117212143DEFF002DB617 /* PGRequests */,
-				FEC117202143DEF8002DB617 /* PGModels */,
-				FEC1171F2143DEED002DB617 /* PGViews */,
-				FEC1171E2143DEE5002DB617 /* PGControllers */,
+				FEC117212143DEFF002DB617 /* Requests */,
+				FEC117202143DEF8002DB617 /* RankModels */,
+				FEC1171F2143DEED002DB617 /* RankViews */,
+				FEC1171E2143DEE5002DB617 /* RankControllers */,
 				FEC117252143DF33002DB617 /* SkyBallHetiRedRankHome.storyboard */,
 				FEDABE6D21734A53008C8AFD /* SkyBallHetiRedRankEastWest.storyboard */,
 				FEDABE6B217336D6008C8AFD /* SkyBallHetiRedRankZone.storyboard */,
 			);
-			path = MMBBRank;
+			path = ModuleRank;
 			sourceTree = "<group>";
 		};
-		FEC116D52143D7F3002DB617 /* MMBBData */ = {
+		FEC116D52143D7F3002DB617 /* ModuleData */ = {
 			isa = PBXGroup;
 			children = (
-				FEC117162143DE8D002DB617 /* MBRequests */,
-				FEC117152143DE84002DB617 /* MBModels */,
-				FEC117142143DE7B002DB617 /* MBViews */,
-				FEC117132143DE69002DB617 /* MBControllers */,
+				FEC117162143DE8D002DB617 /* DataRequests */,
+				FEC117152143DE84002DB617 /* DataModels */,
+				FEC117142143DE7B002DB617 /* DataViews */,
+				FEC117132143DE69002DB617 /* DataControllers */,
 				FEC1171A2143DEAD002DB617 /* SkyBallHetiRedDataHome.storyboard */,
 				FE81D15A2149613B0047A4A2 /* SkyBallHetiRedDataHomeSub.storyboard */,
 				FE706F03214FF3530078DF30 /* SkyBallHetiRedDataMore.storyboard */,
 			);
-			path = MMBBData;
+			path = ModuleData;
 			sourceTree = "<group>";
 		};
-		FEC116D62143D7FD002DB617 /* MMBBFilm */ = {
+		FEC116D62143D7FD002DB617 /* ModuleFilm */ = {
 			isa = PBXGroup;
 			children = (
-				FEC1170D2143DE32002DB617 /* MBRequests */,
-				FEC1170B2143DE1A002DB617 /* MBViews */,
-				FEC1170A2143DE0E002DB617 /* MBControllers */,
+				FEC1170D2143DE32002DB617 /* FilmRequests */,
+				FEC1170B2143DE1A002DB617 /* FilmViews */,
+				FEC1170A2143DE0E002DB617 /* FilmControllers */,
 				FEC116FE2143DCAF002DB617 /* SkyBallHetiRedFilmHome.storyboard */,
 			);
-			path = MMBBFilm;
+			path = ModuleFilm;
 			sourceTree = "<group>";
 		};
-		FEC116D72143D80A002DB617 /* MMBBNews */ = {
+		FEC116D72143D80A002DB617 /* ModuleNews */ = {
 			isa = PBXGroup;
 			children = (
 				32ABE1CD22EDF4D0008505BA /* SkyBallHetiRedNewsHomeOther.storyboard */,
-				FEC117032143DDBC002DB617 /* MBRequests */,
-				FEC117022143DDB6002DB617 /* MBModels */,
-				FEC117012143DDAF002DB617 /* MBViews */,
-				FEC117002143DD87002DB617 /* MBControllers */,
+				FEC117032143DDBC002DB617 /* NewsRequests */,
+				FEC117022143DDB6002DB617 /* NewsModels */,
+				FEC117012143DDAF002DB617 /* NewsViews */,
+				FEC117002143DD87002DB617 /* NewsControllers */,
 				FEC116F72143DC57002DB617 /* SkyBallHetiRedNewsHome.storyboard */,
 				FE6BD07E21457BBC0090118A /* SkyBallHetiRedNewsDetail.storyboard */,
 				FEC116F92143DC72002DB617 /* KKRESMMBBNews.xcassets */,
 				326D67B623A8D8CC00DDB443 /* HTPhoto.storyboard */,
 			);
-			path = MMBBNews;
+			path = ModuleNews;
 			sourceTree = "<group>";
 		};
-		FEC116D82143D82D002DB617 /* MBControllers */ = {
+		FEC116D82143D82D002DB617 /* MatchControllers */ = {
 			isa = PBXGroup;
 			children = (
 				3265F1E32305A225006E3FE1 /* GlodBuleHTMatchVideoLiveViewController.h */,
@@ -1877,10 +1877,10 @@
 				32B0F5892545B6A3005642DC /* GlodBuleHTMatchWebPlayControllerViewController.h */,
 				32B0F58A2545B6A3005642DC /* GlodBuleHTMatchWebPlayControllerViewController.m */,
 			);
-			path = MBControllers;
+			path = MatchControllers;
 			sourceTree = "<group>";
 		};
-		FEC117002143DD87002DB617 /* MBControllers */ = {
+		FEC117002143DD87002DB617 /* NewsControllers */ = {
 			isa = PBXGroup;
 			children = (
 				326D67B323A8D83300DDB443 /* GlodBuleHTPhotoViewController.h */,
@@ -1892,10 +1892,10 @@
 				FE6BD07B21457BAF0090118A /* GlodBuleHTNewsDetailViewController.h */,
 				FE6BD07C21457BAF0090118A /* GlodBuleHTNewsDetailViewController.m */,
 			);
-			path = MBControllers;
+			path = NewsControllers;
 			sourceTree = "<group>";
 		};
-		FEC117012143DDAF002DB617 /* MBViews */ = {
+		FEC117012143DDAF002DB617 /* NewsViews */ = {
 			isa = PBXGroup;
 			children = (
 				FE6BD071214526980090118A /* GlodBuleHTNewsHomeCell.h */,
@@ -1926,10 +1926,10 @@
 				32FFD29723A397A700E1661A /* GlodBuleHTAdViewCell.m */,
 				32FFD29823A397A700E1661A /* GlodBuleHTAdViewCell.xib */,
 			);
-			path = MBViews;
+			path = NewsViews;
 			sourceTree = "<group>";
 		};
-		FEC117022143DDB6002DB617 /* MBModels */ = {
+		FEC117022143DDB6002DB617 /* NewsModels */ = {
 			isa = PBXGroup;
 			children = (
 				FE6BD0682145136F0090118A /* GlodBuleHTNewsModel.h */,
@@ -1937,10 +1937,10 @@
 				FEA5D3FC225CD506001AF0C9 /* GlodBuleHTCommentModel.h */,
 				FEA5D3FD225CD506001AF0C9 /* GlodBuleHTCommentModel.m */,
 			);
-			path = MBModels;
+			path = NewsModels;
 			sourceTree = "<group>";
 		};
-		FEC117032143DDBC002DB617 /* MBRequests */ = {
+		FEC117032143DDBC002DB617 /* NewsRequests */ = {
 			isa = PBXGroup;
 			children = (
 				FE6BD065214512EC0090118A /* GlodBuleHTNewsHomeRequest.h */,
@@ -1954,38 +1954,38 @@
 				FE588BFA22620DFA00A44884 /* GlodBuleHTCommentGetter.h */,
 				FE588BFB22620DFA00A44884 /* GlodBuleHTCommentGetter.m */,
 			);
-			path = MBRequests;
+			path = NewsRequests;
 			sourceTree = "<group>";
 		};
-		FEC1170A2143DE0E002DB617 /* MBControllers */ = {
+		FEC1170A2143DE0E002DB617 /* FilmControllers */ = {
 			isa = PBXGroup;
 			children = (
 				FEC1170E2143DE50002DB617 /* GlodBuleHTFilmHomeViewController.h */,
 				FEC1170F2143DE50002DB617 /* GlodBuleHTFilmHomeViewController.m */,
 			);
-			path = MBControllers;
+			path = FilmControllers;
 			sourceTree = "<group>";
 		};
-		FEC1170B2143DE1A002DB617 /* MBViews */ = {
+		FEC1170B2143DE1A002DB617 /* FilmViews */ = {
 			isa = PBXGroup;
 			children = (
 				FE81D1472146B3090047A4A2 /* GlodBuleHTFilmHomeCell.h */,
 				FE81D1482146B3090047A4A2 /* GlodBuleHTFilmHomeCell.m */,
 				FE81D1492146B3090047A4A2 /* GlodBuleHTFilmHomeCell.xib */,
 			);
-			path = MBViews;
+			path = FilmViews;
 			sourceTree = "<group>";
 		};
-		FEC1170D2143DE32002DB617 /* MBRequests */ = {
+		FEC1170D2143DE32002DB617 /* FilmRequests */ = {
 			isa = PBXGroup;
 			children = (
 				FE81D1442146B2680047A4A2 /* GlodBuleHTFilmHomeRequest.h */,
 				FE81D1452146B2680047A4A2 /* GlodBuleHTFilmHomeRequest.m */,
 			);
-			path = MBRequests;
+			path = FilmRequests;
 			sourceTree = "<group>";
 		};
-		FEC117132143DE69002DB617 /* MBControllers */ = {
+		FEC117132143DE69002DB617 /* DataControllers */ = {
 			isa = PBXGroup;
 			children = (
 				FEC117172143DEA0002DB617 /* GlodBuleHTDataHomeViewController.h */,
@@ -1995,10 +1995,10 @@
 				FE706F00214FF3430078DF30 /* GlodBuleHTDataMoreViewController.h */,
 				FE706F01214FF3430078DF30 /* GlodBuleHTDataMoreViewController.m */,
 			);
-			path = MBControllers;
+			path = DataControllers;
 			sourceTree = "<group>";
 		};
-		FEC117142143DE7B002DB617 /* MBViews */ = {
+		FEC117142143DE7B002DB617 /* DataViews */ = {
 			isa = PBXGroup;
 			children = (
 				FEEABBF4214AA57600A585DA /* GlodBuleHTDataCellPlayerView.h */,
@@ -2029,10 +2029,10 @@
 				FE82BB442179B78700C52C51 /* GlodBuleHTDataTeamRightCell.m */,
 				FE82BB452179B78700C52C51 /* GlodBuleHTDataTeamRightCell.xib */,
 			);
-			path = MBViews;
+			path = DataViews;
 			sourceTree = "<group>";
 		};
-		FEC117152143DE84002DB617 /* MBModels */ = {
+		FEC117152143DE84002DB617 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
 				FE81D154214816710047A4A2 /* GlodBuleHTDataHomeModel.h */,
@@ -2044,10 +2044,10 @@
 				FE82BB4B2179B7F100C52C51 /* GlodBuleHTDataPlayerRankModel.h */,
 				FE82BB4C2179B7F100C52C51 /* GlodBuleHTDataPlayerRankModel.m */,
 			);
-			path = MBModels;
+			path = DataModels;
 			sourceTree = "<group>";
 		};
-		FEC117162143DE8D002DB617 /* MBRequests */ = {
+		FEC117162143DE8D002DB617 /* DataRequests */ = {
 			isa = PBXGroup;
 			children = (
 				FE81D151214815DC0047A4A2 /* GlodBuleHTDataHomeRequest.h */,
@@ -2055,10 +2055,10 @@
 				FE82BB4E2179B99800C52C51 /* GlodBuleHTDataAllRankRequest.h */,
 				FE82BB4F2179B99800C52C51 /* GlodBuleHTDataAllRankRequest.m */,
 			);
-			path = MBRequests;
+			path = DataRequests;
 			sourceTree = "<group>";
 		};
-		FEC1171E2143DEE5002DB617 /* PGControllers */ = {
+		FEC1171E2143DEE5002DB617 /* RankControllers */ = {
 			isa = PBXGroup;
 			children = (
 				FEC117222143DF11002DB617 /* GlodBuleHTRankHomeViewController.h */,
@@ -2068,10 +2068,10 @@
 				FEDABE66217336BA008C8AFD /* GlodBuleHTRankZoneViewController.h */,
 				FEDABE67217336BA008C8AFD /* GlodBuleHTRankZoneViewController.m */,
 			);
-			path = PGControllers;
+			path = RankControllers;
 			sourceTree = "<group>";
 		};
-		FEC1171F2143DEED002DB617 /* PGViews */ = {
+		FEC1171F2143DEED002DB617 /* RankViews */ = {
 			isa = PBXGroup;
 			children = (
 				FE81D16A21497DDE0047A4A2 /* GlodBuleHTRankHomeCell.h */,
@@ -2084,10 +2084,10 @@
 				FE9B32BA217896350055B611 /* GlodBuleHTRankRightCell.m */,
 				FE9B32BB217896350055B611 /* GlodBuleHTRankRightCell.xib */,
 			);
-			path = PGViews;
+			path = RankViews;
 			sourceTree = "<group>";
 		};
-		FEC117202143DEF8002DB617 /* PGModels */ = {
+		FEC117202143DEF8002DB617 /* RankModels */ = {
 			isa = PBXGroup;
 			children = (
 				FEDABE5A2173284E008C8AFD /* GlodBuleHTRankModel.h */,
@@ -2097,10 +2097,10 @@
 				FEDABE6021732A67008C8AFD /* GlodBuleHTRankZoneModel.h */,
 				FEDABE6121732A67008C8AFD /* GlodBuleHTRankZoneModel.m */,
 			);
-			path = PGModels;
+			path = RankModels;
 			sourceTree = "<group>";
 		};
-		FEC117212143DEFF002DB617 /* PGRequests */ = {
+		FEC117212143DEFF002DB617 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
 				FEDABE542173277D008C8AFD /* GlodBuleHTRankEastWestRequest.h */,
@@ -2108,10 +2108,10 @@
 				FEDABE572173279F008C8AFD /* GlodBuleHTRankZoneRequest.h */,
 				FEDABE582173279F008C8AFD /* GlodBuleHTRankZoneRequest.m */,
 			);
-			path = PGRequests;
+			path = Requests;
 			sourceTree = "<group>";
 		};
-		FECCA4E72258C8CE009EF494 /* MBMessage */ = {
+		FECCA4E72258C8CE009EF494 /* MeMessage */ = {
 			isa = PBXGroup;
 			children = (
 				FECCA4E82258C8CE009EF494 /* GlodBuleHTMessageViewController.h */,
@@ -2121,10 +2121,10 @@
 				FE7E6C982263CADB00B2973D /* GlodBuleHTMyMessaageCell.m */,
 				FE7E6C992263CADB00B2973D /* GlodBuleHTMyMessaageCell.xib */,
 			);
-			path = MBMessage;
+			path = MeMessage;
 			sourceTree = "<group>";
 		};
-		FECCA4EB2258C8CE009EF494 /* MBViews */ = {
+		FECCA4EB2258C8CE009EF494 /* MeViews */ = {
 			isa = PBXGroup;
 			children = (
 				FECCA4EF2258C8CE009EF494 /* GlodBuleHTLoginAlertView.h */,
@@ -2140,10 +2140,10 @@
 				FECCA4F22258C8CE009EF494 /* GlodBuleHTMeCenterNormalCell.m */,
 				FECCA4F02258C8CE009EF494 /* GlodBuleHTMeCenterNormalCell.xib */,
 			);
-			path = MBViews;
+			path = MeViews;
 			sourceTree = "<group>";
 		};
-		FECCA4F92258C8CF009EF494 /* MBComment */ = {
+		FECCA4F92258C8CF009EF494 /* MeComment */ = {
 			isa = PBXGroup;
 			children = (
 				FECCA4FC2258C8CF009EF494 /* GlodBuleHTCommentViewController.h */,
@@ -2153,39 +2153,39 @@
 				FE800F722263BA1600E575D5 /* GlodBuleHTMyCommentCell.m */,
 				FE800F732263BA1600E575D5 /* GlodBuleHTMyCommentCell.xib */,
 			);
-			path = MBComment;
+			path = MeComment;
 			sourceTree = "<group>";
 		};
-		FECCA5052258C8CF009EF494 /* MBCollection */ = {
+		FECCA5052258C8CF009EF494 /* MeCollection */ = {
 			isa = PBXGroup;
 			children = (
 				FECCA5082258C8CF009EF494 /* GlodBuleHTCollectionViewController.h */,
 				FECCA5062258C8CF009EF494 /* GlodBuleHTCollectionViewController.m */,
 				FECCA5072258C8CF009EF494 /* GlodBuleHTCollectionViewController.xib */,
 			);
-			path = MBCollection;
+			path = MeCollection;
 			sourceTree = "<group>";
 		};
-		FECCA5092258C8CF009EF494 /* MBRequests */ = {
+		FECCA5092258C8CF009EF494 /* MeRequests */ = {
 			isa = PBXGroup;
 			children = (
 				FECCA50A2258C8CF009EF494 /* GlodBuleHTUserRequest.h */,
 				FECCA50B2258C8CF009EF494 /* GlodBuleHTUserRequest.m */,
 			);
-			path = MBRequests;
+			path = MeRequests;
 			sourceTree = "<group>";
 		};
-		FECCA50C2258C8CF009EF494 /* MBInfoEdit */ = {
+		FECCA50C2258C8CF009EF494 /* MeInfoEdit */ = {
 			isa = PBXGroup;
 			children = (
 				FECCA50D2258C8CF009EF494 /* GlodBuleHTUserInfoEditViewController.h */,
 				FECCA50F2258C8CF009EF494 /* GlodBuleHTUserInfoEditViewController.m */,
 				FECCA50E2258C8CF009EF494 /* GlodBuleHTUserInfoEditViewController.xib */,
 			);
-			path = MBInfoEdit;
+			path = MeInfoEdit;
 			sourceTree = "<group>";
 		};
-		FECCA5102258C8D0009EF494 /* MBModels */ = {
+		FECCA5102258C8D0009EF494 /* MeModels */ = {
 			isa = PBXGroup;
 			children = (
 				FECCA5112258C8D0009EF494 /* GlodBuleHTUserInfoModel.h */,
@@ -2197,30 +2197,30 @@
 				FEA5D3F9225CD31E001AF0C9 /* GlodBuleHTMyMessageModel.h */,
 				FEA5D3FA225CD31E001AF0C9 /* GlodBuleHTMyMessageModel.m */,
 			);
-			path = MBModels;
+			path = MeModels;
 			sourceTree = "<group>";
 		};
-		FECCA5152258C8D0009EF494 /* MBHistory */ = {
+		FECCA5152258C8D0009EF494 /* MeHistory */ = {
 			isa = PBXGroup;
 			children = (
 				FECCA5162258C8D0009EF494 /* GlodBuleHTHistoryViewController.h */,
 				FECCA5182258C8D0009EF494 /* GlodBuleHTHistoryViewController.m */,
 				FECCA5172258C8D0009EF494 /* GlodBuleHTHistoryViewController.xib */,
 			);
-			path = MBHistory;
+			path = MeHistory;
 			sourceTree = "<group>";
 		};
-		FECCA5192258C8D0009EF494 /* MBLike */ = {
+		FECCA5192258C8D0009EF494 /* MeLike */ = {
 			isa = PBXGroup;
 			children = (
 				FECCA51C2258C8D0009EF494 /* GlodBuleHTLikeViewController.h */,
 				FECCA51B2258C8D0009EF494 /* GlodBuleHTLikeViewController.m */,
 				FECCA51A2258C8D0009EF494 /* GlodBuleHTLikeViewController.xib */,
 			);
-			path = MBLike;
+			path = MeLike;
 			sourceTree = "<group>";
 		};
-		FECCA54222598013009EF494 /* CCPPTZImagePickerController */ = {
+		FECCA54222598013009EF494 /* GTZImagePickerController */ = {
 			isa = PBXGroup;
 			children = (
 				FECCA5782259824E009EF494 /* PKDRDeleteAlertView */,
@@ -2257,7 +2257,7 @@
 				FECCA55C22598013009EF494 /* UIView+GlodBuleLayout.h */,
 				FECCA54D22598013009EF494 /* UIView+GlodBuleLayout.m */,
 			);
-			path = CCPPTZImagePickerController;
+			path = GTZImagePickerController;
 			sourceTree = "<group>";
 		};
 		FECCA57222598143009EF494 /* PKDRPhotoKeyboardCell */ = {
@@ -2280,7 +2280,7 @@
 			path = PKDRDeleteAlertView;
 			sourceTree = "<group>";
 		};
-		FEDF8FBB214434F8005C7C4D /* MBViews */ = {
+		FEDF8FBB214434F8005C7C4D /* MatchViews */ = {
 			isa = PBXGroup;
 			children = (
 				FEDF8FC1214441C6005C7C4D /* GlodBuleHTMatchHomeCell.h */,
@@ -2317,10 +2317,10 @@
 				32F1F2BC2514F7D700EE85B8 /* GlodBuleHTScoreViewCell.m */,
 				32F1F2BD2514F7D700EE85B8 /* GlodBuleHTScoreViewCell.xib */,
 			);
-			path = MBViews;
+			path = MatchViews;
 			sourceTree = "<group>";
 		};
-		FEDF8FBC21443505005C7C4D /* MBModels */ = {
+		FEDF8FBC21443505005C7C4D /* MatchModels */ = {
 			isa = PBXGroup;
 			children = (
 				FEDF8FC621444610005C7C4D /* GlodBuleHTMatchHomeModel.h */,
@@ -2340,10 +2340,10 @@
 				325A921B24F1637F008F0B2E /* GlodBuleHTLikeTeamModel.h */,
 				325A921C24F1637F008F0B2E /* GlodBuleHTLikeTeamModel.m */,
 			);
-			path = MBModels;
+			path = MatchModels;
 			sourceTree = "<group>";
 		};
-		FEDF8FBD2144350E005C7C4D /* MBRequests */ = {
+		FEDF8FBD2144350E005C7C4D /* MatchRequests */ = {
 			isa = PBXGroup;
 			children = (
 				FEDF8FD52144B1CC005C7C4D /* GlodBuleHTMatchHomeRequest.h */,
@@ -2353,7 +2353,7 @@
 				FE8EB0D4215606B400CA20F0 /* GlodBuleHTMatchSummaryRequest.h */,
 				FE8EB0D5215606B400CA20F0 /* GlodBuleHTMatchSummaryRequest.m */,
 			);
-			path = MBRequests;
+			path = MatchRequests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2995,6 +2995,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SkyBetufi/SourceCode/SkySrc/SkyModule/LMPlayer",
+					"$(PROJECT_DIR)/SkyBetufi/SourceCode/SkySrc/CommonModule/MonLMPlayer",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SourceCode/SkySrc/SkyBallPlay.pch";
 				INFOPLIST_FILE = SkyBetufi/Info.plist;
@@ -3032,6 +3033,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SkyBetufi/SourceCode/SkySrc/SkyModule/LMPlayer",
+					"$(PROJECT_DIR)/SkyBetufi/SourceCode/SkySrc/CommonModule/MonLMPlayer",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SourceCode/SkySrc/SkyBallPlay.pch";
 				INFOPLIST_FILE = SkyBetufi/Info.plist;
