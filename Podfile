@@ -2,7 +2,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 platform :ios, '9.0'
 
-target 'SkyBallPlay' do
+target 'XXXHeiTai' do
 
 pod 'AFNetworking', '~> 4.0'
 pod 'SDWebImage'
@@ -35,7 +35,8 @@ pod 'UMCPush'
 pod 'ZFLineSDK'
 pod 'YYText'
 pod "XCDYouTubeKit", "~> 2.7"
-pod 'SVGKit'
+#pod 'SVGKit'
+pod 'SVGKit', :git => 'https://github.com/SVGKit/SVGKit.git', :branch => '3.x'
 #pod 'FBSDKLoginKit'
 #pod 'XCDLumberjackNSLogger', '~> 1.0'
 pod 'Firebase/Analytics'

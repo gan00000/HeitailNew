@@ -32,9 +32,9 @@ PODS:
   - Charts (3.4.0):
     - Charts/Core (= 3.4.0)
   - Charts/Core (3.4.0)
-  - CocoaLumberjack (3.5.1):
-    - CocoaLumberjack/Core (= 3.5.1)
-  - CocoaLumberjack/Core (3.5.1)
+  - CocoaLumberjack (3.6.2):
+    - CocoaLumberjack/Core (= 3.6.2)
+  - CocoaLumberjack/Core (3.6.2)
   - Firebase/Analytics (6.32.2):
     - Firebase/Core
   - Firebase/Core (6.32.2):
@@ -175,7 +175,7 @@ DEPENDENCIES:
   - RegExCategories
   - SDWebImage
   - SocketRocket
-  - SVGKit
+  - SVGKit (from `https://github.com/SVGKit/SVGKit.git`, branch `3.x`)
   - UMCAnalytics
   - UMCCommon (~> 2.1.1)
   - UMCCommonLog
@@ -220,7 +220,6 @@ SPEC REPOS:
     - SDVersion
     - SDWebImage
     - SocketRocket
-    - SVGKit
     - UMCAnalytics
     - UMCCommon
     - UMCCommonLog
@@ -236,17 +235,23 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   LTNavigationBar:
     :git: https://github.com/JeasonL/LTNavigationBar.git
+  SVGKit:
+    :branch: 3.x
+    :git: https://github.com/SVGKit/SVGKit.git
 
 CHECKOUT OPTIONS:
   LTNavigationBar:
     :commit: 669fabcb9df9558c4331e02ff9d0968a69f85ce9
     :git: https://github.com/JeasonL/LTNavigationBar.git
+  SVGKit:
+    :commit: 11b6d774d2710a8b1c0493146be5d56e56961946
+    :git: https://github.com/SVGKit/SVGKit.git
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
-  CocoaLumberjack: 2101f8a5508197a305e737d16c5c2e9e2157628c
+  CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
   Firebase: 47176280bfba198e531f909cfb1612dad216cb96
   FirebaseAnalytics: 3c2fee6a922023ccfda7af87e4e641bad1fc11ba
   FirebaseCore: 1d697bb944bf2af5fc248f1a66e165c9dd88bf97
@@ -273,7 +278,7 @@ SPEC CHECKSUMS:
   SDVersion: 18f32c835c1543611fcfae3c6accd9a04b90597e
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
-  SVGKit: 8a2fc74258bdb2abb54d3b65f3dd68b0277a9c4d
+  SVGKit: 132b010efbf57ec345309fe4a7f627c0a40c5d63
   UMCAnalytics: 0aff87e39008e2a650e5917430db0da2de2f8495
   UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
   UMCCommonLog: 05a2d5de21858e3d870551562cff405c1366d244
@@ -286,6 +291,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZFLineSDK: fc1485f687bd9d6af5cb7e39ab2a8266680797dd
 
-PODFILE CHECKSUM: 4c74f07359fecb5960f96d27637238525a227f24
+PODFILE CHECKSUM: b870207fb07e1b8cb99e0a7d9001fd87f3091c81
 
 COCOAPODS: 1.9.2
