@@ -40,7 +40,7 @@
                 BJLog(@"getRequestCommon not in view");
                 [GlodBuleHTUserManager manager].appInView = NO;
             }
-             [GlodBuleHTUserManager manager].appInView = NO;
+//             [GlodBuleHTUserManager manager].appInView = YES;
 //            if ([showTextLive isEqualToString:@"1"]) {//是否显示文字直播
 //                [GlodBuleHTUserManager manager].showTextLive = YES;
 //

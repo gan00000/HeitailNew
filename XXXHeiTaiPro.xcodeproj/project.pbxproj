@@ -119,7 +119,7 @@
 		32FFD29123A2267200E1661A /* UIImageView+GlodBuleHT.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFD29023A2267200E1661A /* UIImageView+GlodBuleHT.m */; };
 		32FFD29923A397A700E1661A /* GlodBuleHTAdViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFD29723A397A700E1661A /* GlodBuleHTAdViewCell.m */; };
 		32FFD29A23A397A700E1661A /* GlodBuleHTAdViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32FFD29823A397A700E1661A /* GlodBuleHTAdViewCell.xib */; };
-		E96EB72A062D72ACD051C26D /* Pods_SkyBallPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC337F0671EB4742D64BA54 /* Pods_SkyBallPlay.framework */; };
+		4DD0983875DAF6547E89491E /* Pods_XXXHeiTai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8608351CF0427548F1242C /* Pods_XXXHeiTai.framework */; };
 		FE08C5C422504F0C000175CB /* KKRESMMBBMe.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE08C5C322504F0C000175CB /* KKRESMMBBMe.xcassets */; };
 		FE08C5C82250506A000175CB /* GlodBuleHTMeHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08C5C62250506A000175CB /* GlodBuleHTMeHomeViewController.m */; };
 		FE08C5C92250506A000175CB /* GlodBuleHTMeHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE08C5C72250506A000175CB /* GlodBuleHTMeHomeViewController.xib */; };
@@ -598,11 +598,13 @@
 		32FFD29723A397A700E1661A /* GlodBuleHTAdViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTAdViewCell.m; sourceTree = "<group>"; };
 		32FFD29823A397A700E1661A /* GlodBuleHTAdViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GlodBuleHTAdViewCell.xib; sourceTree = "<group>"; };
 		608E0284ECCB1F2C8732AAA8 /* Pods-HeiteBasketball.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeiteBasketball.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball.debug.xcconfig"; sourceTree = "<group>"; };
-		6DC337F0671EB4742D64BA54 /* Pods_SkyBallPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyBallPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72321527951E473E782564AC /* Pods-HeiteBasketball.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeiteBasketball.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball.release.xcconfig"; sourceTree = "<group>"; };
 		89189E29CC0B9E5A3FEA5137 /* Pods-SkyBallPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyBallPlay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay.debug.xcconfig"; sourceTree = "<group>"; };
 		C0EBF7000495782F4C2F67C5 /* Pods-SkyBallPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyBallPlay.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay.release.xcconfig"; sourceTree = "<group>"; };
 		C96ED51AF657F6A6678FAF42 /* Pods_HeiteBasketball.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeiteBasketball.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D51E62E1A92A1557109DF0C3 /* Pods-XXXHeiTai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XXXHeiTai.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XXXHeiTai/Pods-XXXHeiTai.debug.xcconfig"; sourceTree = "<group>"; };
+		D56ADC0A35608BB62F69A143 /* Pods-XXXHeiTai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XXXHeiTai.release.xcconfig"; path = "Pods/Target Support Files/Pods-XXXHeiTai/Pods-XXXHeiTai.release.xcconfig"; sourceTree = "<group>"; };
+		EA8608351CF0427548F1242C /* Pods_XXXHeiTai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XXXHeiTai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE08C5C322504F0C000175CB /* KKRESMMBBMe.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = KKRESMMBBMe.xcassets; sourceTree = "<group>"; };
 		FE08C5C52250506A000175CB /* GlodBuleHTMeHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTMeHomeViewController.h; sourceTree = "<group>"; };
 		FE08C5C62250506A000175CB /* GlodBuleHTMeHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTMeHomeViewController.m; sourceTree = "<group>"; };
@@ -1039,7 +1041,7 @@
 				FE0C270E2186BCF6001C9B8C /* libsqlite3.tbd in Frameworks */,
 				FE0C270C2186BCE8001C9B8C /* libz.tbd in Frameworks */,
 				FE6BD0492144EB660090118A /* ImageIO.framework in Frameworks */,
-				E96EB72A062D72ACD051C26D /* Pods_SkyBallPlay.framework in Frameworks */,
+				4DD0983875DAF6547E89491E /* Pods_XXXHeiTai.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1375,7 +1377,7 @@
 				FE0C270B2186BCE7001C9B8C /* libz.tbd */,
 				FE6BD0482144EB660090118A /* ImageIO.framework */,
 				C96ED51AF657F6A6678FAF42 /* Pods_HeiteBasketball.framework */,
-				6DC337F0671EB4742D64BA54 /* Pods_SkyBallPlay.framework */,
+				EA8608351CF0427548F1242C /* Pods_XXXHeiTai.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1387,6 +1389,8 @@
 				72321527951E473E782564AC /* Pods-HeiteBasketball.release.xcconfig */,
 				89189E29CC0B9E5A3FEA5137 /* Pods-SkyBallPlay.debug.xcconfig */,
 				C0EBF7000495782F4C2F67C5 /* Pods-SkyBallPlay.release.xcconfig */,
+				D51E62E1A92A1557109DF0C3 /* Pods-XXXHeiTai.debug.xcconfig */,
+				D56ADC0A35608BB62F69A143 /* Pods-XXXHeiTai.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -2584,15 +2588,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-XXXHeiTai/Pods-XXXHeiTai-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-XXXHeiTai/Pods-XXXHeiTai-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XXXHeiTai/Pods-XXXHeiTai-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF9D3AFDF9A356103E352831 /* [CP] Check Pods Manifest.lock */ = {
@@ -2606,7 +2610,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SkyBallPlay-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-XXXHeiTai-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2619,15 +2623,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-XXXHeiTai/Pods-XXXHeiTai-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-XXXHeiTai/Pods-XXXHeiTai-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XXXHeiTai/Pods-XXXHeiTai-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2980,7 +2984,7 @@
 		};
 		FEC1126C2143D058002DB617 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89189E29CC0B9E5A3FEA5137 /* Pods-SkyBallPlay.debug.xcconfig */;
+			baseConfigurationReference = D51E62E1A92A1557109DF0C3 /* Pods-XXXHeiTai.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3018,7 +3022,7 @@
 		};
 		FEC1126D2143D058002DB617 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C0EBF7000495782F4C2F67C5 /* Pods-SkyBallPlay.release.xcconfig */;
+			baseConfigurationReference = D56ADC0A35608BB62F69A143 /* Pods-XXXHeiTai.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

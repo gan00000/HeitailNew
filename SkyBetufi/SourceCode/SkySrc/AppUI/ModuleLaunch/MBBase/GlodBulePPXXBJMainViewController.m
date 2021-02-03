@@ -42,17 +42,17 @@
 #pragma mark - 
 - (NSArray<NSString *> *)taotabBarTitles {
     BJLog(@"GlodBulePPXXBJMainViewController taotabBarTitles");
-//    if ([GlodBuleHTUserManager manager].appInView) {
-//        return @[@"新聞",@"比賽",  @"排行", @"數據", @"我的"];
-//    }
+    if ([GlodBuleHTUserManager manager].appInView) {
+        return @[@"直播", @"新聞", @"數據",@"我的"];
+    }
 //    return @[@"比賽", @"新聞", @"影片", @"數據", @"排行"];
      return @[@"直播", @"新聞", @"影片", @"數據"];
 }
 - (NSArray<UIImage *> *)taotabBarIcons {
      if ([GlodBuleHTUserManager manager].appInView) {
-         return @[[[UIImage imageNamed:@"tab_icon_normal2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                  [[UIImage imageNamed:@"tab_icon_normal1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                  [[UIImage imageNamed:@"tab_icon_normal5"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+         return @[[[UIImage imageNamed:@"tab_icon_normal1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                  [[UIImage imageNamed:@"tab_icon_normal2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+//                  [[UIImage imageNamed:@"tab_icon_normal3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                   [[UIImage imageNamed:@"tab_icon_normal4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                   [[UIImage imageNamed:@"tab_icon_me"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
      }
@@ -63,10 +63,10 @@
 }
 - (NSArray<UIImage *> *)taotabBarSelectedIcons {
     if ([GlodBuleHTUserManager manager].appInView) {
-        return @[[[UIImage imageNamed:@"tab_icon_selected2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                 [[UIImage imageNamed:@"tab_icon_selected1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                 [[UIImage imageNamed:@"tab_icon_selected5"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                 [[UIImage imageNamed:@"tab_icon_selected4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+        return  @[[[UIImage imageNamed:@"tab_icon_selected1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                  [[UIImage imageNamed:@"tab_icon_selected2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+//                  [[UIImage imageNamed:@"tab_icon_selected3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                  [[UIImage imageNamed:@"tab_icon_selected4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                  [[UIImage imageNamed:@"tab_icon_me_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     }
     return @[[[UIImage imageNamed:@"tab_icon_selected1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
@@ -114,7 +114,7 @@
 //    self.nav6.modalPresentationStyle = UIModalPresentationFullScreen;
       
     if ([GlodBuleHTUserManager manager].appInView) {
-         return @[self.nav2, self.nav1, self.nav5, self.nav4, self.nav6];
+         return @[self.nav1, self.nav2, self.nav4, self.nav6];
     }
   
     return @[self.nav1, self.nav2, self.nav3, self.nav4];
