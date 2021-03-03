@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GlodBuleHTChatContentCell : UITableViewCell
+@interface GlodBuleHTChatSelfContentCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet JXLabel *chatContentLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *userImage;

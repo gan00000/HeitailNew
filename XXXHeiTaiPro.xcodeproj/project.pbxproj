@@ -13,6 +13,8 @@
 		32135303250A2F1400702F72 /* GPBProtocolBuffers.m in Sources */ = {isa = PBXBuildFile; fileRef = 321352D8250A2F1300702F72 /* GPBProtocolBuffers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		32340FD0250F1D7F00F47F76 /* GlodBuleHTChatContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32340FCE250F1D7F00F47F76 /* GlodBuleHTChatContentCell.m */; };
 		32340FD1250F1D7F00F47F76 /* GlodBuleHTChatContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32340FCF250F1D7F00F47F76 /* GlodBuleHTChatContentCell.xib */; };
+		324C9AF425EFB01200235E92 /* GlodBuleHTChatSelfContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 324C9AF225EFB01200235E92 /* GlodBuleHTChatSelfContentCell.xib */; };
+		324C9AF525EFB01200235E92 /* GlodBuleHTChatSelfContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 324C9AF325EFB01200235E92 /* GlodBuleHTChatSelfContentCell.m */; };
 		325A921A24F119F3008F0B2E /* GlodBuleHTIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 325A921924F119F3008F0B2E /* GlodBuleHTIndicatorView.m */; };
 		325A921D24F1637F008F0B2E /* GlodBuleHTLikeTeamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 325A921C24F1637F008F0B2E /* GlodBuleHTLikeTeamModel.m */; };
 		32642A5722EFE8FD00D2DA1E /* UIImageView+GlodBuleSVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 32642A5622EFE8FD00D2DA1E /* UIImageView+GlodBuleSVG.m */; };
@@ -411,6 +413,9 @@
 		32340FCD250F1D7F00F47F76 /* GlodBuleHTChatContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTChatContentCell.h; sourceTree = "<group>"; };
 		32340FCE250F1D7F00F47F76 /* GlodBuleHTChatContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTChatContentCell.m; sourceTree = "<group>"; };
 		32340FCF250F1D7F00F47F76 /* GlodBuleHTChatContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GlodBuleHTChatContentCell.xib; sourceTree = "<group>"; };
+		324C9AF125EFB01200235E92 /* GlodBuleHTChatSelfContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTChatSelfContentCell.h; sourceTree = "<group>"; };
+		324C9AF225EFB01200235E92 /* GlodBuleHTChatSelfContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GlodBuleHTChatSelfContentCell.xib; sourceTree = "<group>"; };
+		324C9AF325EFB01200235E92 /* GlodBuleHTChatSelfContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTChatSelfContentCell.m; sourceTree = "<group>"; };
 		325A921824F119F3008F0B2E /* GlodBuleHTIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTIndicatorView.h; sourceTree = "<group>"; };
 		325A921924F119F3008F0B2E /* GlodBuleHTIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTIndicatorView.m; sourceTree = "<group>"; };
 		325A921B24F1637F008F0B2E /* GlodBuleHTLikeTeamModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTLikeTeamModel.h; sourceTree = "<group>"; };
@@ -2169,6 +2174,9 @@
 		FEDF8FBB214434F8005C7C4D /* MatchViews */ = {
 			isa = PBXGroup;
 			children = (
+				324C9AF125EFB01200235E92 /* GlodBuleHTChatSelfContentCell.h */,
+				324C9AF325EFB01200235E92 /* GlodBuleHTChatSelfContentCell.m */,
+				324C9AF225EFB01200235E92 /* GlodBuleHTChatSelfContentCell.xib */,
 				FEDF8FC1214441C6005C7C4D /* GlodBuleHTMatchHomeCell.h */,
 				FEDF8FC2214441C6005C7C4D /* GlodBuleHTMatchHomeCell.m */,
 				FEDF8FC3214441C6005C7C4D /* GlodBuleHTMatchHomeCell.xib */,
@@ -2410,6 +2418,7 @@
 				326434F022F057E000D2DA1E /* guideImageapp1.jpg in Resources */,
 				FE706F09215006430078DF30 /* GlodBuleHTDataHomeHeaderCell.xib in Resources */,
 				3287124723B8962800AB5360 /* video_small_close.png in Resources */,
+				324C9AF425EFB01200235E92 /* GlodBuleHTChatSelfContentCell.xib in Resources */,
 				FE800F662263693A00E575D5 /* GlodBuleHTNoCommentFooterView.xib in Resources */,
 				32C65DF725067D290068D2C7 /* GlodBuleHTSearchHistoryTableViewCell.xib in Resources */,
 				3277C5D823A9D71000D43D80 /* icon_back@2x.png in Resources */,
@@ -2685,6 +2694,7 @@
 				FE800F642263692E00E575D5 /* GlodBuleHTNoCommentFooterView.m in Sources */,
 				FE6BD08821457D920090118A /* GlodBuleHTNewsWebCell.m in Sources */,
 				FEDF8FDA2144B2BF005C7C4D /* GlodBuleHTMatchHomeGroupModel.m in Sources */,
+				324C9AF525EFB01200235E92 /* GlodBuleHTChatSelfContentCell.m in Sources */,
 				FE800F742263BA1600E575D5 /* GlodBuleHTMyCommentCell.m in Sources */,
 				32A51D692508D87D00603A36 /* GlodBuleSearchRequest.m in Sources */,
 				FEC116062143D4A1002DB617 /* GlodBuleXJToastImageView.m in Sources */,

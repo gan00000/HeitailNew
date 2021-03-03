@@ -6,16 +6,16 @@
 //  Copyright © 2020 Dean_F. All rights reserved.
 //
 
-#import "GlodBuleHTChatContentCell.h"
+#import "GlodBuleHTChatSelfContentCell.h"
 #import "UIColor+GlodBuleHex.h"
 
-@interface GlodBuleHTChatContentCell()
+@interface GlodBuleHTChatSelfContentCell()
 
 
 
 @end
 
-@implementation GlodBuleHTChatContentCell
+@implementation GlodBuleHTChatSelfContentCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

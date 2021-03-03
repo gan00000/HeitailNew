@@ -13,6 +13,7 @@
 #import "GlodBuleHTChatContentCell.h"
 #import "GlodBuleConfigCoreUtil.h"
 #import "UIColor+GlodBuleHex.h"
+#import "GlodBuleHTChatSelfContentCell.h"
 
 @interface GlodBuleHTIMViewController () <UITableViewDelegate, UITableViewDataSource, SRWebSocketDelegate>
 @property (weak, nonatomic) IBOutlet UIView *notShowImView;
@@ -50,6 +51,8 @@
 }
 - (void)dealloc {
     NSLog(@"%@ dealloc", NSStringFromClass(self.class));
+    //一般是在dealloc中实现
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -128,7 +131,7 @@
 - (IBAction)sendBtnAction:(id)sender {
     
     NSString *content = self.imTalkTextView.text;
-    if (!content) {
+    if (!content || [@"" isEqualToString:content]) {
         [kWindow showToast:@"請輸入內容"];
         return;
     }
@@ -172,6 +175,9 @@
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     [self.imContentTableView registerNib:[UINib nibWithNibName:NSStringFromClass([GlodBuleHTChatContentCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([GlodBuleHTChatContentCell class])];
+    
+    [self.imContentTableView registerNib:[UINib nibWithNibName:NSStringFromClass([GlodBuleHTChatSelfContentCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([GlodBuleHTChatSelfContentCell class])];
+    
     //    kWeakSelf
     //    self.imContentTableView.mj_header = [GlodBuleMJRefreshGenerator bj_headerWithRefreshingBlock:^{
     //        if (weakSelf.onTableHeaderRefreshBlock) {
@@ -182,7 +188,20 @@
     //    [self.imTalkTextView  becomeFirstResponder];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onInputBegin) name:UITextViewTextDidBeginEditingNotification object:self.imTalkTextView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onInputEnd) name:UITextViewTextDidEndEditingNotification object:self.imTalkTextView];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidChangeValue:) name:UITextViewTextDidChangeNotification object:self.imTalkTextView];
     
+}
+
+//输入中监听
+- (void)textFieldDidChangeValue:(NSNotification *)notification
+{
+    NSLog(@"textFieldDidChangeValue");
+    UITextField *sender = (UITextField *)[notification object];
+    NSString *text = sender.text;
+    NSLog(@"text=%@",text);
+    if (text.length > 200) {
+        self.imTalkTextView.text = [text substringWithRange:(NSMakeRange(0, 200))];
+    }
 }
 
 - (void)onInputBegin {
@@ -425,6 +444,7 @@
                     int64_t gameId = msgContent.gameId;
                     // NSString *fromUserName = msgContent.fromUserName;
                     NSLog(@"消息: msg:%@, gameId: %ld", msg, gameId);
+                    NSLog(@"消息: msg url:%@", msgContent.fromUserImg);
                     if ([self.matchModel.game_id intValue] == gameId) {
                         if (self.chatContentList.count > 1000) {//防止数据太多内存泄露，最多1000条
                             [self.chatContentList removeObjectAtIndex:0];
@@ -518,8 +538,23 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MsgChatContent *chatContent = self.chatContentList[indexPath.row];
+    GlodBuleHTUserInfoModel *userInfoModel = [GlodBuleHTUserManager tao_userInfo];
+    
+    if ([chatContent.fromUserName isEqualToString:userInfoModel.display_name]) {
+        
+        GlodBuleHTChatContentCell *cell = (GlodBuleHTChatContentCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([GlodBuleHTChatSelfContentCell class])];
+        //[cell setChaMsg:[NSString stringWithFormat:@"%@ - %@", chatContent.content, chatContent.fromUserName]];
+        cell.chatContentLabel.text = chatContent.content;
+        cell.userNameLabel.text = chatContent.fromUserName;
+        [cell.userImage sd_setImageWithURL:[NSURL URLWithString:chatContent.fromUserImg] placeholderImage:HT_DEFAULT_TEAM_LOGO];
+        return cell;
+    }
+    
     GlodBuleHTChatContentCell *cell = (GlodBuleHTChatContentCell *)[tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTChatContentCell"];
-    [cell setChaMsg:[NSString stringWithFormat:@"%@ - %@", chatContent.content, chatContent.fromUserName]];
+    //[cell setChaMsg:[NSString stringWithFormat:@"%@ - %@", chatContent.content, chatContent.fromUserName]];
+    cell.chatContentLabel.text = chatContent.content;
+    cell.userNameLabel.text = chatContent.fromUserName;
+    [cell.userImage sd_setImageWithURL:[NSURL URLWithString:chatContent.fromUserImg] placeholderImage:HT_DEFAULT_TEAM_LOGO];
     return cell;
 }
 @end
