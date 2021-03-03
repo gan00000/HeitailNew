@@ -9,6 +9,7 @@
 #import "GlodBuleHTRankHomeViewController.h"
 #import "GlodBuleHTTabBarHomeViewController.h"
 #import "GlodBuleSearchViewController.h"
+#import <UIButton+WebCache.h>
 @import Firebase;
 
 @interface GlodBulePPXXBJBaseViewController ()
@@ -159,7 +160,10 @@
 
 - (void)taosetupMeCenterButton {
     if ([GlodBuleHTUserManager tao_isUserLogin]) {
-        [self.taomeCenterButton setImage:[GlodBulePPXXBJBaseViewController taofixImageSize:[GlodBuleHTUserManager tao_userInfo].avatar toSize:CGSizeMake(36, 36)] forState:UIControlStateNormal];
+//        UIImage *userImage = [GlodBuleHTUserManager tao_userInfo].avatar;
+//        [self.taomeCenterButton setImage:[GlodBulePPXXBJBaseViewController taofixImageSize:userImage toSize:CGSizeMake(36, 36)] forState:UIControlStateNormal];
+        
+        [self.taomeCenterButton sd_setImageWithURL:[NSURL URLWithString:[GlodBuleHTUserManager tao_userInfo].user_img] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"default_avatar"]];
     } else {
         [self.taomeCenterButton setImage:[UIImage imageNamed:@"default_avatar"] forState:UIControlStateNormal];
     }
@@ -170,6 +174,11 @@
         _taomeCenterButton.clipsToBounds = YES;
         _taomeCenterButton.layer.cornerRadius = 18;
         [_taomeCenterButton addTarget:self action:@selector(showMeCenter) forControlEvents:UIControlEventTouchUpInside];
+        _taomeCenterButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
+        
+       // 测试的时候发现给这个Button设置frame是没有用的，仍然会充满UINavigationBar，我们需要通过下列方式来约束控件的width和height：
+        [_taomeCenterButton.widthAnchor constraintEqualToConstant:36].active = YES;
+        [_taomeCenterButton.heightAnchor constraintEqualToConstant:36].active = YES;
     }
     return _taomeCenterButton;
 }
