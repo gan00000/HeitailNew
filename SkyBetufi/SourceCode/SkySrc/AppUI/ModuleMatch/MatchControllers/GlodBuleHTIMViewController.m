@@ -94,7 +94,7 @@
     
     double now_timestamp = [[GlodBuleConfigCoreUtil getTimeStamp] doubleValue];
     double game_timestamp = [timeStamp doubleValue];
-    if (now_timestamp < (game_timestamp - 1 * 60 * 60 * 1000)) { //游戏未开始
+    /*if (now_timestamp < (game_timestamp - 1 * 60 * 60 * 1000)) { //游戏未开始
         self.showImView.hidden = YES;
         self.notShowImView.hidden = NO;
         self.gameStatueLabel.text = @"比賽未開始";
@@ -107,7 +107,12 @@
         self.showImView.hidden = NO;
         self.notShowImView.hidden = YES;
         [self initWebSocket];
-    }
+    }*/
+    //新需求需要一直打開聊天窗口
+    self.showImView.hidden = NO;
+    self.notShowImView.hidden = YES;
+    [self initWebSocket];
+    
     self.dataIsSet = YES;
     
     
@@ -130,6 +135,12 @@
     
     if (!self.loginSuccess) {
         [kWindow showToast:@"請先登入帳號"];
+        return;
+    }
+    
+    //最大輸入200字
+    if (content.length > 200) {
+        [kWindow showToast:@"最大輸入200個字符"];
         return;
     }
     
@@ -181,13 +192,15 @@
     //        [self.view showToast:@"請登錄"];
     //        return;
     //    }
-    
+    NSLog(@"onInputBegin");
     [UIView animateWithDuration:0.25 animations:^{
         
         [self.imTalkTextView.superview layoutIfNeeded];
     }];
 }
 - (void)onInputEnd {
+    
+    NSLog(@"onInputEnd");
     if (self.imTalkTextView.text.length == 0) {
         
         [UIView animateWithDuration:0.25 animations:^{

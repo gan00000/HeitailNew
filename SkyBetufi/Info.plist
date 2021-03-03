@@ -36,7 +36,7 @@
 			<string>facebook</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb479868032525276</string>
+				<string>fb3840659425954285</string>
 				<string>line3rdp.$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 			</array>
 		</dict>
@@ -47,7 +47,7 @@
 			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>haters.line1627163842</string>
+				<string>haters.line1655709379</string>
 			</array>
 		</dict>
 		<dict/>
@@ -55,7 +55,7 @@
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>FacebookAppID</key>
-	<string>479868032525276</string>
+	<string>3840659425954285</string>
 	<key>FacebookDisplayName</key>
 	<string>黑特體育</string>
 	<key>GADApplicationIdentifier</key>
@@ -77,7 +77,7 @@
 	<key>LineSDKConfig</key>
 	<dict>
 		<key>ChannelID</key>
-		<string>1627163842</string>
+		<string>1655709379</string>
 	</dict>
 	<key>NSAppTransportSecurity</key>
 	<dict>

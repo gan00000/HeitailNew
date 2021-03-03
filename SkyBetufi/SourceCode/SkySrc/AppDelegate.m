@@ -16,7 +16,7 @@
 @import GoogleMobileAds;
 
 #define UM_APP_KEY @"5bd67116f1f556f834000081"
-#define FB_APP_ID  @"479868032525276"
+#define FB_APP_ID  @"3840659425954285"
 @implementation AppDelegate
 - (void)openViewController:(UIApplication * _Nonnull)application launchOptions:(NSDictionary * _Nullable)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
