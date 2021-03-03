@@ -33,6 +33,12 @@
     } failBlock:nil];
     self.taomeCenterButton.hidden = YES;
 }
+
+
+- (void)viewDidAppear:(BOOL)animated{
+    NSLog(@"GlodBuleHTTabBarHomeViewController viewDidAppear");
+    [self.tableView reloadData];
+}
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }

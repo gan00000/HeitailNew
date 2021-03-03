@@ -44,4 +44,5 @@ pod 'Google-Mobile-Ads-SDK'
 pod 'Charts'
 #pod 'Protobuf'
 pod 'SocketRocket'
+pod 'TZImagePickerController' #iOS8 and later
 end

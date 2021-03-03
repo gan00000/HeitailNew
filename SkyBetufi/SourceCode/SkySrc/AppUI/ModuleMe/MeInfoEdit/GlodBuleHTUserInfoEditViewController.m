@@ -1,6 +1,6 @@
 #import "GlodBuleHTUserInfoEditViewController.h"
 #import <Photos/Photos.h>
-#import "GlodBuleTZImagePickerController.h"
+#import <TZImagePickerController.h>
 #import "GlodBuleHTUserRequest.h"
 #import "GlodBuleDRSandBoxManager.h"
 #import "UIImageView+GlodBuleHT.h"
@@ -23,13 +23,10 @@
 + (instancetype)taoviewController {
     return [[GlodBuleHTUserInfoEditViewController alloc] init];
 }
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.title = @"個人信息";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(saveUserInfo)];
+- (void)updateUserInfo {
     GlodBuleHTUserInfoModel *userInfoModel = [GlodBuleHTUserManager tao_userInfo];
     self.userNameLabel.text = userInfoModel.display_name;
-//    self.avatarImageView.image = userInfoModel.avatar;
+    //    self.avatarImageView.image = userInfoModel.avatar;
     
     [self.avatarImageView th_setImageWithURL:userInfoModel.user_img placeholderImage:HT_DEFAULT_AVATAR_LOGO];
     
@@ -46,6 +43,13 @@
         self.userNameTextField.hidden = YES;
         self.userNameContentHeight.constant = 55;
     }
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.title = @"個人信息";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(saveUserInfo)];
+    [self updateUserInfo];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserNameChagne) name:UITextFieldTextDidChangeNotification object:self.userNameTextField];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onEmailChagne) name:UITextFieldTextDidChangeNotification object:self.emailTextField];
 }
@@ -83,10 +87,12 @@
     }
     kWeakSelf
     [GlodBuleHTUserRequest taoupdateUserInfoWithEmail:email displayName:userName file:base64Avatar successBlock:^(NSDictionary * _Nonnull userInfo) {
+        
         [GlodBuleHTUserManager tao_refreshUserInfoWithSuccessBlock:^{
             [GlodBuleBJLoadingHud hideHUDInView:weakSelf.navigationController.view];
             [weakSelf.view showToast:@"保存成功"];
             [weakSelf.navigationController popViewControllerAnimated:YES];
+            [self updateUserInfo];
         }];
     } failBlock:^(GlodBuleBJError *error) {
         [GlodBuleBJLoadingHud hideHUDInView:weakSelf.navigationController.view];
@@ -106,7 +112,7 @@
 - (void)showTZImagePickerController {
     CGFloat cropHeight = SCREEN_WIDTH;
     kWeakSelf
-    GlodBuleTZImagePickerController *imagePickerViewController = [[GlodBuleTZImagePickerController alloc] initWithMaxImagesCount:1 columnNumber:3 delegate:nil pushPhotoPickerVc:YES];
+    TZImagePickerController *imagePickerViewController = [[TZImagePickerController alloc] initWithMaxImagesCount:1 columnNumber:3 delegate:nil pushPhotoPickerVc:YES];
     imagePickerViewController.isSelectOriginalPhoto = YES;
     imagePickerViewController.allowPickingVideo = NO;
     imagePickerViewController.allowCrop = YES;

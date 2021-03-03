@@ -316,26 +316,6 @@
 		FECCA53D2258C972009EF494 /* UITabBar+GlodBuleDRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA5392258C971009EF494 /* UITabBar+GlodBuleDRExtension.m */; };
 		FECCA53E2258C972009EF494 /* UINavigationBar+GlodBuleDRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA53C2258C972009EF494 /* UINavigationBar+GlodBuleDRExtension.m */; };
 		FECCA5412258CC3E009EF494 /* GlodBuleDRSandBoxManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA53F2258CC3D009EF494 /* GlodBuleDRSandBoxManager.m */; };
-		FECCA56222598013009EF494 /* GlodBuleTZImageCropManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA54522598013009EF494 /* GlodBuleTZImageCropManager.m */; };
-		FECCA56322598013009EF494 /* GlodBuleTZAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA54722598013009EF494 /* GlodBuleTZAssetCell.m */; };
-		FECCA56422598013009EF494 /* GlodBuleTZVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA54822598013009EF494 /* GlodBuleTZVideoPlayerController.m */; };
-		FECCA56522598013009EF494 /* GlodBuleTZAssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA54922598013009EF494 /* GlodBuleTZAssetModel.m */; };
-		FECCA56622598013009EF494 /* NSBundle+GlodBuleTZImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA54A22598013009EF494 /* NSBundle+GlodBuleTZImagePicker.m */; };
-		FECCA56722598013009EF494 /* UIView+GlodBuleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA54D22598013009EF494 /* UIView+GlodBuleLayout.m */; };
-		FECCA56822598013009EF494 /* GlodBuleTZPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA54E22598013009EF494 /* GlodBuleTZPhotoPreviewController.m */; };
-		FECCA56922598013009EF494 /* SkyBallHetiRedTZImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FECCA54F22598013009EF494 /* SkyBallHetiRedTZImagePickerController.bundle */; };
-		FECCA56A22598013009EF494 /* GlodBuleTZProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA55022598013009EF494 /* GlodBuleTZProgressView.m */; };
-		FECCA56B22598013009EF494 /* GlodBuleTZImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA55422598013009EF494 /* GlodBuleTZImageManager.m */; };
-		FECCA56C22598013009EF494 /* GlodBuleTZPhotoPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA55622598013009EF494 /* GlodBuleTZPhotoPickerController.m */; };
-		FECCA56D22598013009EF494 /* GlodBuleTZPhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA55722598013009EF494 /* GlodBuleTZPhotoPreviewCell.m */; };
-		FECCA56E22598013009EF494 /* GlodBuleTZImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA55D22598013009EF494 /* GlodBuleTZImagePickerController.m */; };
-		FECCA56F22598013009EF494 /* GlodBuleTZLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA55E22598013009EF494 /* GlodBuleTZLocationManager.m */; };
-		FECCA57022598013009EF494 /* GlodBuleTZGifPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA55F22598013009EF494 /* GlodBuleTZGifPhotoPreviewController.m */; };
-		FECCA57122598013009EF494 /* GlodBuleLxGridViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA56022598013009EF494 /* GlodBuleLxGridViewFlowLayout.m */; };
-		FECCA57622598143009EF494 /* GlodBuleDRPhotoKeyboardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FECCA57422598143009EF494 /* GlodBuleDRPhotoKeyboardCell.xib */; };
-		FECCA57722598143009EF494 /* GlodBuleDRPhotoKeyboardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA57522598143009EF494 /* GlodBuleDRPhotoKeyboardCell.m */; };
-		FECCA57C2259824F009EF494 /* GlodBuleDRDeleteAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA5792259824F009EF494 /* GlodBuleDRDeleteAlertView.m */; };
-		FECCA57D2259824F009EF494 /* GlodBuleDRDeleteAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FECCA57A2259824F009EF494 /* GlodBuleDRDeleteAlertView.xib */; };
 		FEDABE482171BC3A008C8AFD /* GlodBuleHTMatchQuarterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDABE462171BC3A008C8AFD /* GlodBuleHTMatchQuarterCell.m */; };
 		FEDABE492171BC3A008C8AFD /* GlodBuleHTMatchQuarterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDABE472171BC3A008C8AFD /* GlodBuleHTMatchQuarterCell.xib */; };
 		FEDABE4D2171BCEE008C8AFD /* GlodBuleHTMatchPtsCompareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDABE4B2171BCEE008C8AFD /* GlodBuleHTMatchPtsCompareCell.m */; };
@@ -930,43 +910,6 @@
 		FECCA53C2258C972009EF494 /* UINavigationBar+GlodBuleDRExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+GlodBuleDRExtension.m"; sourceTree = "<group>"; };
 		FECCA53F2258CC3D009EF494 /* GlodBuleDRSandBoxManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleDRSandBoxManager.m; sourceTree = "<group>"; };
 		FECCA5402258CC3D009EF494 /* GlodBuleDRSandBoxManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleDRSandBoxManager.h; sourceTree = "<group>"; };
-		FECCA54322598013009EF494 /* GlodBuleTZPhotoPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleTZPhotoPreviewCell.h; sourceTree = "<group>"; };
-		FECCA54422598013009EF494 /* GlodBuleTZPhotoPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleTZPhotoPickerController.h; sourceTree = "<group>"; };
-		FECCA54522598013009EF494 /* GlodBuleTZImageCropManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleTZImageCropManager.m; sourceTree = "<group>"; };
-		FECCA54622598013009EF494 /* GlodBuleTZImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleTZImageManager.h; sourceTree = "<group>"; };
-		FECCA54722598013009EF494 /* GlodBuleTZAssetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleTZAssetCell.m; sourceTree = "<group>"; };
-		FECCA54822598013009EF494 /* GlodBuleTZVideoPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleTZVideoPlayerController.m; sourceTree = "<group>"; };
-		FECCA54922598013009EF494 /* GlodBuleTZAssetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleTZAssetModel.m; sourceTree = "<group>"; };
-		FECCA54A22598013009EF494 /* NSBundle+GlodBuleTZImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+GlodBuleTZImagePicker.m"; sourceTree = "<group>"; };
-		FECCA54B22598013009EF494 /* GlodBuleTZLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleTZLocationManager.h; sourceTree = "<group>"; };
-		FECCA54C22598013009EF494 /* GlodBuleTZImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleTZImagePickerController.h; sourceTree = "<group>"; };
-		FECCA54D22598013009EF494 /* UIView+GlodBuleLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GlodBuleLayout.m"; sourceTree = "<group>"; };
-		FECCA54E22598013009EF494 /* GlodBuleTZPhotoPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleTZPhotoPreviewController.m; sourceTree = "<group>"; };
-		FECCA54F22598013009EF494 /* SkyBallHetiRedTZImagePickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SkyBallHetiRedTZImagePickerController.bundle; sourceTree = "<group>"; };
-		FECCA55022598013009EF494 /* GlodBuleTZProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleTZProgressView.m; sourceTree = "<group>"; };
-		FECCA55122598013009EF494 /* GlodBuleTZGifPhotoPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleTZGifPhotoPreviewController.h; sourceTree = "<group>"; };
-		FECCA55222598013009EF494 /* GlodBuleLxGridViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleLxGridViewFlowLayout.h; sourceTree = "<group>"; };
-		FECCA55322598013009EF494 /* GlodBuleTZAssetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleTZAssetCell.h; sourceTree = "<group>"; };
-		FECCA55422598013009EF494 /* GlodBuleTZImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleTZImageManager.m; sourceTree = "<group>"; };
-		FECCA55522598013009EF494 /* GlodBuleTZImageCropManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleTZImageCropManager.h; sourceTree = "<group>"; };
-		FECCA55622598013009EF494 /* GlodBuleTZPhotoPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleTZPhotoPickerController.m; sourceTree = "<group>"; };
-		FECCA55722598013009EF494 /* GlodBuleTZPhotoPreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleTZPhotoPreviewCell.m; sourceTree = "<group>"; };
-		FECCA55822598013009EF494 /* NSBundle+GlodBuleTZImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+GlodBuleTZImagePicker.h"; sourceTree = "<group>"; };
-		FECCA55922598013009EF494 /* GlodBuleTZAssetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleTZAssetModel.h; sourceTree = "<group>"; };
-		FECCA55A22598013009EF494 /* GlodBuleTZVideoPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleTZVideoPlayerController.h; sourceTree = "<group>"; };
-		FECCA55B22598013009EF494 /* GlodBuleTZPhotoPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleTZPhotoPreviewController.h; sourceTree = "<group>"; };
-		FECCA55C22598013009EF494 /* UIView+GlodBuleLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GlodBuleLayout.h"; sourceTree = "<group>"; };
-		FECCA55D22598013009EF494 /* GlodBuleTZImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleTZImagePickerController.m; sourceTree = "<group>"; };
-		FECCA55E22598013009EF494 /* GlodBuleTZLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleTZLocationManager.m; sourceTree = "<group>"; };
-		FECCA55F22598013009EF494 /* GlodBuleTZGifPhotoPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleTZGifPhotoPreviewController.m; sourceTree = "<group>"; };
-		FECCA56022598013009EF494 /* GlodBuleLxGridViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleLxGridViewFlowLayout.m; sourceTree = "<group>"; };
-		FECCA56122598013009EF494 /* GlodBuleTZProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleTZProgressView.h; sourceTree = "<group>"; };
-		FECCA57322598143009EF494 /* GlodBuleDRPhotoKeyboardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleDRPhotoKeyboardCell.h; sourceTree = "<group>"; };
-		FECCA57422598143009EF494 /* GlodBuleDRPhotoKeyboardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GlodBuleDRPhotoKeyboardCell.xib; sourceTree = "<group>"; };
-		FECCA57522598143009EF494 /* GlodBuleDRPhotoKeyboardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleDRPhotoKeyboardCell.m; sourceTree = "<group>"; };
-		FECCA5792259824F009EF494 /* GlodBuleDRDeleteAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleDRDeleteAlertView.m; sourceTree = "<group>"; };
-		FECCA57A2259824F009EF494 /* GlodBuleDRDeleteAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GlodBuleDRDeleteAlertView.xib; sourceTree = "<group>"; };
-		FECCA57B2259824F009EF494 /* GlodBuleDRDeleteAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleDRDeleteAlertView.h; sourceTree = "<group>"; };
 		FEDABE452171BC3A008C8AFD /* GlodBuleHTMatchQuarterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTMatchQuarterCell.h; sourceTree = "<group>"; };
 		FEDABE462171BC3A008C8AFD /* GlodBuleHTMatchQuarterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTMatchQuarterCell.m; sourceTree = "<group>"; };
 		FEDABE472171BC3A008C8AFD /* GlodBuleHTMatchQuarterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GlodBuleHTMatchQuarterCell.xib; sourceTree = "<group>"; };
@@ -1645,7 +1588,6 @@
 				32FED80223AB768700D900A7 /* MonLMPlayer */,
 				326D67B823A8DB9A00DDB443 /* WBImageBrowser */,
 				326434D322F04F5E00D2DA1E /* GDHGuidePageHUD */,
-				FECCA54222598013009EF494 /* GTZImagePickerController */,
 				FEC115322143D4A0002DB617 /* GUtility */,
 				FEC1149D2143D4A0002DB617 /* GService */,
 				FEC1139B2143D4A0002DB617 /* GViews */,
@@ -2224,66 +2166,6 @@
 			path = MeLike;
 			sourceTree = "<group>";
 		};
-		FECCA54222598013009EF494 /* GTZImagePickerController */ = {
-			isa = PBXGroup;
-			children = (
-				FECCA5782259824E009EF494 /* PKDRDeleteAlertView */,
-				FECCA57222598143009EF494 /* PKDRPhotoKeyboardCell */,
-				FECCA55222598013009EF494 /* GlodBuleLxGridViewFlowLayout.h */,
-				FECCA56022598013009EF494 /* GlodBuleLxGridViewFlowLayout.m */,
-				FECCA55822598013009EF494 /* NSBundle+GlodBuleTZImagePicker.h */,
-				FECCA54A22598013009EF494 /* NSBundle+GlodBuleTZImagePicker.m */,
-				FECCA55322598013009EF494 /* GlodBuleTZAssetCell.h */,
-				FECCA54722598013009EF494 /* GlodBuleTZAssetCell.m */,
-				FECCA55922598013009EF494 /* GlodBuleTZAssetModel.h */,
-				FECCA54922598013009EF494 /* GlodBuleTZAssetModel.m */,
-				FECCA55122598013009EF494 /* GlodBuleTZGifPhotoPreviewController.h */,
-				FECCA55F22598013009EF494 /* GlodBuleTZGifPhotoPreviewController.m */,
-				FECCA55522598013009EF494 /* GlodBuleTZImageCropManager.h */,
-				FECCA54522598013009EF494 /* GlodBuleTZImageCropManager.m */,
-				FECCA54622598013009EF494 /* GlodBuleTZImageManager.h */,
-				FECCA55422598013009EF494 /* GlodBuleTZImageManager.m */,
-				FECCA54F22598013009EF494 /* SkyBallHetiRedTZImagePickerController.bundle */,
-				FECCA54C22598013009EF494 /* GlodBuleTZImagePickerController.h */,
-				FECCA55D22598013009EF494 /* GlodBuleTZImagePickerController.m */,
-				FECCA54B22598013009EF494 /* GlodBuleTZLocationManager.h */,
-				FECCA55E22598013009EF494 /* GlodBuleTZLocationManager.m */,
-				FECCA54422598013009EF494 /* GlodBuleTZPhotoPickerController.h */,
-				FECCA55622598013009EF494 /* GlodBuleTZPhotoPickerController.m */,
-				FECCA54322598013009EF494 /* GlodBuleTZPhotoPreviewCell.h */,
-				FECCA55722598013009EF494 /* GlodBuleTZPhotoPreviewCell.m */,
-				FECCA55B22598013009EF494 /* GlodBuleTZPhotoPreviewController.h */,
-				FECCA54E22598013009EF494 /* GlodBuleTZPhotoPreviewController.m */,
-				FECCA56122598013009EF494 /* GlodBuleTZProgressView.h */,
-				FECCA55022598013009EF494 /* GlodBuleTZProgressView.m */,
-				FECCA55A22598013009EF494 /* GlodBuleTZVideoPlayerController.h */,
-				FECCA54822598013009EF494 /* GlodBuleTZVideoPlayerController.m */,
-				FECCA55C22598013009EF494 /* UIView+GlodBuleLayout.h */,
-				FECCA54D22598013009EF494 /* UIView+GlodBuleLayout.m */,
-			);
-			path = GTZImagePickerController;
-			sourceTree = "<group>";
-		};
-		FECCA57222598143009EF494 /* PKDRPhotoKeyboardCell */ = {
-			isa = PBXGroup;
-			children = (
-				FECCA57322598143009EF494 /* GlodBuleDRPhotoKeyboardCell.h */,
-				FECCA57422598143009EF494 /* GlodBuleDRPhotoKeyboardCell.xib */,
-				FECCA57522598143009EF494 /* GlodBuleDRPhotoKeyboardCell.m */,
-			);
-			path = PKDRPhotoKeyboardCell;
-			sourceTree = "<group>";
-		};
-		FECCA5782259824E009EF494 /* PKDRDeleteAlertView */ = {
-			isa = PBXGroup;
-			children = (
-				FECCA5792259824F009EF494 /* GlodBuleDRDeleteAlertView.m */,
-				FECCA57A2259824F009EF494 /* GlodBuleDRDeleteAlertView.xib */,
-				FECCA57B2259824F009EF494 /* GlodBuleDRDeleteAlertView.h */,
-			);
-			path = PKDRDeleteAlertView;
-			sourceTree = "<group>";
-		};
 		FEDF8FBB214434F8005C7C4D /* MatchViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -2482,7 +2364,6 @@
 				326434EE22F057E000D2DA1E /* guideImageapp5.jpg in Resources */,
 				FE6BD04B2144FA3C0090118A /* KKRESHUD.xcassets in Resources */,
 				FEC1171B2143DEAD002DB617 /* SkyBallHetiRedDataHome.storyboard in Resources */,
-				FECCA57622598143009EF494 /* GlodBuleDRPhotoKeyboardCell.xib in Resources */,
 				FE81D1632149716D0047A4A2 /* GlodBuleHTDataHomePlayerCell.xib in Resources */,
 				3277C5D223A9CA2800D43D80 /* photo_down_btn@2x.png in Resources */,
 				FEDABE4E2171BCEE008C8AFD /* GlodBuleHTMatchPtsCompareCell.xib in Resources */,
@@ -2521,7 +2402,6 @@
 				32340FD1250F1D7F00F47F76 /* GlodBuleHTChatContentCell.xib in Resources */,
 				FECCA52F2258C8D0009EF494 /* GlodBuleHTCollectionViewController.xib in Resources */,
 				FE81D16E21497DDE0047A4A2 /* GlodBuleHTRankHomeCell.xib in Resources */,
-				FECCA56922598013009EF494 /* SkyBallHetiRedTZImagePickerController.bundle in Resources */,
 				3287124923B8962800AB5360 /* video_play_pressed.png in Resources */,
 				326434EF22F057E000D2DA1E /* guideImageapp2.jpg in Resources */,
 				FECCA5312258C8D0009EF494 /* GlodBuleHTUserInfoEditViewController.xib in Resources */,
@@ -2543,7 +2423,6 @@
 				32FED83823ACBD1100D900A7 /* icon_play.png in Resources */,
 				FE6BD08921457D920090118A /* GlodBuleHTNewsWebCell.xib in Resources */,
 				3287124D23B8962800AB5360 /* video_pause_pressed.png in Resources */,
-				FECCA57D2259824F009EF494 /* GlodBuleDRDeleteAlertView.xib in Resources */,
 				FECCA5292258C8D0009EF494 /* GlodBuleHTCommentViewController.xib in Resources */,
 				FE81D15B2149613B0047A4A2 /* SkyBallHetiRedDataHomeSub.storyboard in Resources */,
 				FEC116DD2143D877002DB617 /* KKRESMMBBMatch.xcassets in Resources */,
@@ -2649,10 +2528,8 @@
 				FEC112682143D058002DB617 /* main.m in Sources */,
 				FECCA5322258C8D0009EF494 /* GlodBuleHTUserInfoEditViewController.m in Sources */,
 				FEDABE7321738618008C8AFD /* GlodBuleHTMatchSubDsbdViewController.m in Sources */,
-				FECCA56E22598013009EF494 /* GlodBuleTZImagePickerController.m in Sources */,
 				FEC116762143D4A1002DB617 /* GlodBuleBJURINavigator.m in Sources */,
 				FEC116492143D4A1002DB617 /* GlodBulePPXXBJMainViewController.m in Sources */,
-				FECCA56722598013009EF494 /* UIView+GlodBuleLayout.m in Sources */,
 				FEDABE6521733693008C8AFD /* GlodBuleHTRankEastWestViewController.m in Sources */,
 				FECCA51E2258C8D0009EF494 /* GlodBuleHTMessageViewController.m in Sources */,
 				FE82BB372179B6C500C52C51 /* GlodBuleHTDataPlayerLeftCell.m in Sources */,
@@ -2665,7 +2542,6 @@
 				FECCA5332258C8D0009EF494 /* GlodBuleHTUserManager.m in Sources */,
 				3213529F250A149F00702F72 /* UserMessage.pbobjc.m in Sources */,
 				FEC116052143D4A1002DB617 /* GlodBuleXJLoadingView.m in Sources */,
-				FECCA57122598013009EF494 /* GlodBuleLxGridViewFlowLayout.m in Sources */,
 				FEC1160E2143D4A1002DB617 /* UIView+GlodBuleToast.m in Sources */,
 				FE82BB502179B99800C52C51 /* GlodBuleHTDataAllRankRequest.m in Sources */,
 				32FED81F23AB768700D900A7 /* GlodBuleLMPlayerStatusModel.m in Sources */,
@@ -2680,7 +2556,6 @@
 				32CD878522F4173800063A14 /* PlayerEventLogger.m in Sources */,
 				32FCDD1A250C721F0037334D /* GlodBuleHTIMViewController.m in Sources */,
 				32B0F58B2545B6A3005642DC /* GlodBuleHTMatchWebPlayControllerViewController.m in Sources */,
-				FECCA57722598143009EF494 /* GlodBuleDRPhotoKeyboardCell.m in Sources */,
 				FEC116C42143D4A1002DB617 /* UITableView+GlodBuleEstimatedHeight.m in Sources */,
 				FE08C5C82250506A000175CB /* GlodBuleHTMeHomeViewController.m in Sources */,
 				32CD877F22F4173800063A14 /* NowPlayingInfoCenterProvider.m in Sources */,
@@ -2706,11 +2581,9 @@
 				3265F1E42305A225006E3FE1 /* GlodBuleHTMatchVideoLiveViewController.m in Sources */,
 				FEC1172E2143EAA3002DB617 /* GlodBuleBJError.m in Sources */,
 				FE82BB462179B78700C52C51 /* GlodBuleHTDataTeamRightCell.m in Sources */,
-				FECCA56822598013009EF494 /* GlodBuleTZPhotoPreviewController.m in Sources */,
 				FEDF8FC4214441C6005C7C4D /* GlodBuleHTMatchHomeCell.m in Sources */,
 				FEC116BF2143D4A1002DB617 /* GlodBuleBJDateFormatUtility.m in Sources */,
 				FECCA5232258C8D0009EF494 /* GlodBuleHTMeCenterNormalCell.m in Sources */,
-				FECCA56222598013009EF494 /* GlodBuleTZImageCropManager.m in Sources */,
 				326D67C023A8DB9A00DDB443 /* GlodBuleWBImageBrowserCell.m in Sources */,
 				FE81D159214819FA0047A4A2 /* GlodBuleHTDataHomeSubViewController.m in Sources */,
 				32FED82723AB768700D900A7 /* GlodBuleMMMaterialDesignSpinner.m in Sources */,
@@ -2728,14 +2601,11 @@
 				FEC116CB2143D4A1002DB617 /* UITextField+GlodBuleMQCustom.m in Sources */,
 				32CD877B22F4173800063A14 /* SettingsViewController.m in Sources */,
 				FE6BD08F21457FEC0090118A /* GlodBuleHTNewsTopRequest.m in Sources */,
-				FECCA56322598013009EF494 /* GlodBuleTZAssetCell.m in Sources */,
 				FECCA5382258C8D0009EF494 /* GlodBuleHTLikeViewController.m in Sources */,
-				FECCA56B22598013009EF494 /* GlodBuleTZImageManager.m in Sources */,
 				FEA5D3FB225CD31E001AF0C9 /* GlodBuleHTMyMessageModel.m in Sources */,
 				FEDABE5F2173297B008C8AFD /* GlodBuleHTRankEastWestModel.m in Sources */,
 				FEC116CC2143D4A1002DB617 /* UIColor+GlodBuleGenerator.m in Sources */,
 				FEC1160B2143D4A1002DB617 /* UIView+GlodBuleLoading.m in Sources */,
-				FECCA57C2259824F009EF494 /* GlodBuleDRDeleteAlertView.m in Sources */,
 				FEAC9F2E2199E25F00159AE9 /* GlodBuleHTSettingViewController.m in Sources */,
 				FEC116152143D4A1002DB617 /* GlodBuleMJRefreshGenerator.m in Sources */,
 				32FED82823AB768700D900A7 /* GlodBuleLMPlayerControlView.m in Sources */,
@@ -2751,7 +2621,6 @@
 				32FED82623AB768700D900A7 /* GlodBuleLMLoadingView.m in Sources */,
 				32CD878322F4173800063A14 /* SkyInlineViewController.m in Sources */,
 				FEC116142143D4A1002DB617 /* GlodBuleBJUnPasteTextField.m in Sources */,
-				FECCA56622598013009EF494 /* NSBundle+GlodBuleTZImagePicker.m in Sources */,
 				FE81D1502146CA920047A4A2 /* GlodBuleHTHtmlLoadUtil.m in Sources */,
 				FEB46C822157903B00E482CE /* GlodBuleHTMatchLiveFeedModel.m in Sources */,
 				FE6BD0502144FC190090118A /* GlodBuleHTMatchDetailViewController.m in Sources */,
@@ -2765,14 +2634,12 @@
 				FEDABE68217336BA008C8AFD /* GlodBuleHTRankZoneViewController.m in Sources */,
 				326D67B523A8D83300DDB443 /* GlodBuleHTPhotoViewController.m in Sources */,
 				FECCA5302258C8D0009EF494 /* GlodBuleHTUserRequest.m in Sources */,
-				FECCA56A22598013009EF494 /* GlodBuleTZProgressView.m in Sources */,
 				FEC117092143DDEE002DB617 /* GlodBuleHTNewsHomeViewController.m in Sources */,
 				FEC1161B2143D4A1002DB617 /* GlodBuleBJEmptyTableViewCell.m in Sources */,
 				FEDABE5C2173284E008C8AFD /* GlodBuleHTRankModel.m in Sources */,
 				FE9B32BC217896350055B611 /* GlodBuleHTRankRightCell.m in Sources */,
 				FE8EB0D3215603C500CA20F0 /* GlodBuleHTMatchLiveFeedRequest.m in Sources */,
 				32FED83023AB775600D900A7 /* UIColor+GlodBuleHex.m in Sources */,
-				FECCA56D22598013009EF494 /* GlodBuleTZPhotoPreviewCell.m in Sources */,
 				FEC116112143D4A1002DB617 /* UIScrollView+GlodBuleAllowScreenEdgePanGestureRecognizer.m in Sources */,
 				FE7E6C9A2263CADB00B2973D /* GlodBuleHTMyMessaageCell.m in Sources */,
 				FEC117102143DE50002DB617 /* GlodBuleHTFilmHomeViewController.m in Sources */,
@@ -2801,7 +2668,6 @@
 				FEA5D3FE225CD506001AF0C9 /* GlodBuleHTCommentModel.m in Sources */,
 				FE82BB412179B77200C52C51 /* GlodBuleHTDataTeamLeftCell.m in Sources */,
 				FEDABE592173279F008C8AFD /* GlodBuleHTRankZoneRequest.m in Sources */,
-				FECCA56F22598013009EF494 /* GlodBuleTZLocationManager.m in Sources */,
 				FEC116C22143D4A1002DB617 /* UIView+GlodBuleViewController.m in Sources */,
 				FE82BB4A2179B7E300C52C51 /* GlodBuleHTDataTeamRankModel.m in Sources */,
 				32642A5A22F027EB00D2DA1E /* TZPhotoPickerController+GlodBuleDRExtention.m in Sources */,
@@ -2812,7 +2678,6 @@
 				FE6BD08321457D7E0090118A /* GlodBuleHTNewsHeaderCell.m in Sources */,
 				32A51D6C2508DCC400603A36 /* GlodBuleSearchData.m in Sources */,
 				FEC115BD2143D4A0002DB617 /* GlodBulePPXXBJLaunchViewController.m in Sources */,
-				FECCA56C22598013009EF494 /* GlodBuleTZPhotoPickerController.m in Sources */,
 				32CD877C22F4173800063A14 /* SkyAsynchronousViewController.m in Sources */,
 				FEC116772143D4A1002DB617 /* GlodBuleBJWebViewController.m in Sources */,
 				327191D5251B461200CD9D85 /* GlodBulePlayerInfoViewController.m in Sources */,
@@ -2833,7 +2698,6 @@
 				32FED82023AB768700D900A7 /* GlodBuleLMPlayerModel.m in Sources */,
 				FEC116F22143D91D002DB617 /* GlodBuleHTMatchHomeViewController.m in Sources */,
 				3213529E250A149F00702F72 /* InfoMessage.pbobjc.m in Sources */,
-				FECCA56522598013009EF494 /* GlodBuleTZAssetModel.m in Sources */,
 				FECCA53E2258C972009EF494 /* UINavigationBar+GlodBuleDRExtension.m in Sources */,
 				FEF468C1225BA50800E4B5F7 /* GlodBuleHTNewsAdditionRequest.m in Sources */,
 				FECCA51F2258C8D0009EF494 /* GlodBuleHTMeCenterItemsCell.m in Sources */,
@@ -2847,12 +2711,10 @@
 				FE81D16D21497DDE0047A4A2 /* GlodBuleHTRankHomeCell.m in Sources */,
 				FEC116C02143D4A1002DB617 /* UIImage+GlodBuleGenerator.m in Sources */,
 				FEDAC978214B9129005E8B63 /* GlodBuleHTDataCellTeamView.m in Sources */,
-				FECCA57022598013009EF494 /* GlodBuleTZGifPhotoPreviewController.m in Sources */,
 				32C65DF625067D290068D2C7 /* GlodBuleHTSearchHistoryTableViewCell.m in Sources */,
 				327A19F023ADD17600F13A36 /* GlodBuleHTMacthLivePostModel.m in Sources */,
 				32FAACE324F6A032001574C9 /* GlodBuleBarChartUtilValueFormat.m in Sources */,
 				FEDABE4D2171BCEE008C8AFD /* GlodBuleHTMatchPtsCompareCell.m in Sources */,
-				FECCA56422598013009EF494 /* GlodBuleTZVideoPlayerController.m in Sources */,
 				FEC116292143D4A1002DB617 /* GlodBuleBJHUDView.m in Sources */,
 				32CD877A22F4173800063A14 /* MPMoviePlayerController+BackgroundPlayback.m in Sources */,
 				32FFD29923A397A700E1661A /* GlodBuleHTAdViewCell.m in Sources */,

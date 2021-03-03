@@ -1,3 +1,3 @@
-#import "GlodBuleTZPhotoPickerController.h"
-@interface GlodBuleTZPhotoPickerController (SkyBallHetiRedDRExtention)
+#import <TZPhotoPickerController.h>
+@interface TZPhotoPickerController (SkyBallHetiRedDRExtention)
 @end

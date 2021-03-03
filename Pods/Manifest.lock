@@ -135,6 +135,7 @@ PODS:
   - SocketRocket (0.5.1)
   - SVGKit (2.1.0):
     - CocoaLumberjack (~> 3.0)
+  - TZImagePickerController (3.4.2)
   - UMCAnalytics (5.5.1):
     - UMCCommon
   - UMCCommon (2.1.1)
@@ -176,6 +177,7 @@ DEPENDENCIES:
   - SDWebImage
   - SocketRocket
   - SVGKit (from `https://github.com/SVGKit/SVGKit.git`, branch `3.x`)
+  - TZImagePickerController
   - UMCAnalytics
   - UMCCommon (~> 2.1.1)
   - UMCCommonLog
@@ -220,6 +222,7 @@ SPEC REPOS:
     - SDVersion
     - SDWebImage
     - SocketRocket
+    - TZImagePickerController
     - UMCAnalytics
     - UMCCommon
     - UMCCommonLog
@@ -279,6 +282,7 @@ SPEC CHECKSUMS:
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SVGKit: 132b010efbf57ec345309fe4a7f627c0a40c5d63
+  TZImagePickerController: cc0b74d5f01ab4cddcc24dcdfc3c7d68e6261056
   UMCAnalytics: 0aff87e39008e2a650e5917430db0da2de2f8495
   UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
   UMCCommonLog: 05a2d5de21858e3d870551562cff405c1366d244
@@ -291,6 +295,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZFLineSDK: fc1485f687bd9d6af5cb7e39ab2a8266680797dd
 
-PODFILE CHECKSUM: b870207fb07e1b8cb99e0a7d9001fd87f3091c81
+PODFILE CHECKSUM: 43103fb65168b6e39cc1770139cb1b10241603d6
 
 COCOAPODS: 1.9.2

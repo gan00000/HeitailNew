@@ -1,6 +1,6 @@
 #import "TZPhotoPickerController+GlodBuleDRExtention.h"
 #import <AVFoundation/AVFoundation.h>
-@implementation GlodBuleTZPhotoPickerController (SkyBallHetiRedDRExtention)
+@implementation TZPhotoPickerController (SkyBallHetiRedDRExtention)
 - (void)takePhoto {
     AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     if (status == AVAuthorizationStatusAuthorized) {
