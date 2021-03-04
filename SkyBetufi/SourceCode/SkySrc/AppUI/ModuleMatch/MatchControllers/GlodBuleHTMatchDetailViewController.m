@@ -40,7 +40,7 @@
 @property (nonatomic, strong) NSMutableArray *loadedControllersArray;
 @property (nonatomic, strong) NSMutableArray *loadedFlagArray;
 @property (nonatomic, assign) NSInteger currentIndex;
-@property (nonatomic, strong) NSArray<GlodBuleHTMatchLiveFeedModel *> *liveFeedList;
+@property (nonatomic, strong) NSArray<GlodBuleHTMatchLiveFeedModel *> *liveFeedList;//对阵也会用到这数据
 @property (nonatomic, strong) GlodBuleHTMatchSummaryModel *matchSummaryModel;
 @property (nonatomic, strong) GlodBuleHTMatchCompareModel *matchCompareModel;
 
@@ -566,7 +566,7 @@
 //             } else
             if (index == 3) {//文字直播
                  GlodBuleHTMatchWordLiveViewController *wordVc = self.loadedControllersArray[index];
-                [wordVc taorefreshWithLiveFeedList:self.liveFeedList summary:self.matchSummaryModel];
+                [wordVc taorefreshWithLiveFeedList:self.liveFeedList summary:self.matchSummaryModel gameId:self.matchModel.game_id];
                 
                  
              }else if (index == 1) {//對陣

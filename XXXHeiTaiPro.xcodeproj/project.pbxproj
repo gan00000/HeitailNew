@@ -13,6 +13,7 @@
 		32135303250A2F1400702F72 /* GPBProtocolBuffers.m in Sources */ = {isa = PBXBuildFile; fileRef = 321352D8250A2F1300702F72 /* GPBProtocolBuffers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		32340FD0250F1D7F00F47F76 /* GlodBuleHTChatContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32340FCE250F1D7F00F47F76 /* GlodBuleHTChatContentCell.m */; };
 		32340FD1250F1D7F00F47F76 /* GlodBuleHTChatContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32340FCF250F1D7F00F47F76 /* GlodBuleHTChatContentCell.xib */; };
+		3238C62425F0BA3D0045F1B9 /* HTWordLive2Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 3238C62325F0BA3D0045F1B9 /* HTWordLive2Request.m */; };
 		324C9AF425EFB01200235E92 /* GlodBuleHTChatSelfContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 324C9AF225EFB01200235E92 /* GlodBuleHTChatSelfContentCell.xib */; };
 		324C9AF525EFB01200235E92 /* GlodBuleHTChatSelfContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 324C9AF325EFB01200235E92 /* GlodBuleHTChatSelfContentCell.m */; };
 		325A921A24F119F3008F0B2E /* GlodBuleHTIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 325A921924F119F3008F0B2E /* GlodBuleHTIndicatorView.m */; };
@@ -413,6 +414,8 @@
 		32340FCD250F1D7F00F47F76 /* GlodBuleHTChatContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTChatContentCell.h; sourceTree = "<group>"; };
 		32340FCE250F1D7F00F47F76 /* GlodBuleHTChatContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTChatContentCell.m; sourceTree = "<group>"; };
 		32340FCF250F1D7F00F47F76 /* GlodBuleHTChatContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GlodBuleHTChatContentCell.xib; sourceTree = "<group>"; };
+		3238C62225F0BA3D0045F1B9 /* HTWordLive2Request.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTWordLive2Request.h; sourceTree = "<group>"; };
+		3238C62325F0BA3D0045F1B9 /* HTWordLive2Request.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTWordLive2Request.m; sourceTree = "<group>"; };
 		324C9AF125EFB01200235E92 /* GlodBuleHTChatSelfContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTChatSelfContentCell.h; sourceTree = "<group>"; };
 		324C9AF225EFB01200235E92 /* GlodBuleHTChatSelfContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GlodBuleHTChatSelfContentCell.xib; sourceTree = "<group>"; };
 		324C9AF325EFB01200235E92 /* GlodBuleHTChatSelfContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTChatSelfContentCell.m; sourceTree = "<group>"; };
@@ -2246,6 +2249,8 @@
 				FE8EB0D2215603C500CA20F0 /* GlodBuleHTMatchLiveFeedRequest.m */,
 				FE8EB0D4215606B400CA20F0 /* GlodBuleHTMatchSummaryRequest.h */,
 				FE8EB0D5215606B400CA20F0 /* GlodBuleHTMatchSummaryRequest.m */,
+				3238C62225F0BA3D0045F1B9 /* HTWordLive2Request.h */,
+				3238C62325F0BA3D0045F1B9 /* HTWordLive2Request.m */,
 			);
 			path = MatchRequests;
 			sourceTree = "<group>";
@@ -2733,6 +2738,7 @@
 				32E3E98024FD40E00076AD93 /* GlodBuleSearchViewController.m in Sources */,
 				FECCA5342258C8D0009EF494 /* GlodBuleHTUserInfoModel.m in Sources */,
 				FE6BD074214526980090118A /* GlodBuleHTNewsHomeCell.m in Sources */,
+				3238C62425F0BA3D0045F1B9 /* HTWordLive2Request.m in Sources */,
 				FEC116C82143D4A1002DB617 /* NSDate+GlodBuleCore.m in Sources */,
 				FE588BFC22620DFA00A44884 /* GlodBuleHTCommentGetter.m in Sources */,
 				326D67C423A8DD0600DDB443 /* GlodBuleHTImageBrowserViewController.m in Sources */,
