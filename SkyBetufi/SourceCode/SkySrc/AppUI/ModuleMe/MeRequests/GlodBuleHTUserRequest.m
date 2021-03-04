@@ -16,7 +16,7 @@
     } errorBlock:failBlock];
 }
 
-+ (void)doAppIdLoginRequestWithAccessToken:(NSString *)accessToken
++ (void)doThirdLoginRequestWithAccessToken:(NSString *)accessToken
                                   sns:(NSInteger)sns
                                     userId:(NSString *)userId
                                 nickName:(NSString *)nickName

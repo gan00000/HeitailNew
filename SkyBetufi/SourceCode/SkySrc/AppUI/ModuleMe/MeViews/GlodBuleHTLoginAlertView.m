@@ -48,13 +48,34 @@
            
             [self addSubview:appleBtn];
             [appleBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.mas_equalTo(self.lineLoginBtn.mas_right).mas_offset(10);
-                make.width.mas_equalTo(120);
+                make.leading.mas_equalTo(self.lineLoginBtn.mas_trailing).mas_offset(5);
+                make.width.mas_equalTo(60);
                make.top.bottom.mas_equalTo(self.lineLoginImageView);
             }];
+
             
+            GIDSignInButton *gidSignInBtn = [[GIDSignInButton alloc] init];
+            [self addSubview:gidSignInBtn];
+            [gidSignInBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.leading.mas_equalTo(appleBtn.mas_trailing).mas_offset(5);
+                make.width.mas_equalTo(60);
+               make.top.bottom.mas_equalTo(self.lineLoginImageView);
+            }];
+            [gidSignInBtn addTarget:self action:@selector(gidLoginBtn:) forControlEvents:UIControlEventTouchUpInside];
+        }else{
+            
+            GIDSignInButton *gidSignInBtn = [[GIDSignInButton alloc] init];
+            [self addSubview:gidSignInBtn];
+            [gidSignInBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.leading.mas_equalTo(self.lineLoginBtn.mas_trailing).mas_offset(10);
+                make.width.mas_equalTo(100);
+               make.top.bottom.mas_equalTo(self.lineLoginImageView);
+            }];
+            [gidSignInBtn addTarget:self action:@selector(gidLoginBtn:) forControlEvents:UIControlEventTouchUpInside];
         }
     }
+    
+    
 
     [UIView performWithoutAnimation:^{
         self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0];
@@ -94,6 +115,14 @@
     
     if (self.onPlatformButtonTapped) {
         self.onPlatformButtonTapped(HTLoginPlatformAppleId);
+    }
+    [self dismiss];
+}
+
+- (void)gidLoginBtn:(UIButton *)sender {
+    
+    if (self.onPlatformButtonTapped) {
+        self.onPlatformButtonTapped(HTLoginPlatformGid);
     }
     [self dismiss];
 }

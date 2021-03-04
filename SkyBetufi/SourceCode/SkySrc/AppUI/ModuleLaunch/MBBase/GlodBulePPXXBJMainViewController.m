@@ -9,6 +9,8 @@
 #import "GlodBuleHTTabBarHomeViewController.h"
 #import "GlodBuleHTNewsHomeOtherViewController.h"
 #import "GlodBuleHTViewController2.h"
+@import Firebase;
+@import GoogleSignIn;
 
 @interface GlodBulePPXXBJMainViewController ()<UITabBarControllerDelegate>
 @property (nonatomic, strong) GlodBulePPXXBJNavigationController *nav1;
@@ -35,6 +37,8 @@
     [self.tabBar setShadowImage:[UIImage imageNamed:@"tab_bar_shadow"]];
     self.tabBar.translucent = NO;
     self.delegate = self;
+    
+    [GIDSignIn sharedInstance].presentingViewController = self;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

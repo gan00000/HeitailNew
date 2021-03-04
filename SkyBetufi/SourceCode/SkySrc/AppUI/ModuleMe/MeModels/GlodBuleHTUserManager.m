@@ -77,6 +77,8 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
             [manager getAuthWithUserInfoFromLine];
         }else if (platform == HTLoginPlatformAppleId){
             [manager handleAuthrization];
+        }else if (platform == HTLoginPlatformGid){
+            [manager handleGidSign];
         }
     }];
 }
@@ -132,9 +134,9 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
     }];
 }
 
-- (void)doAppIdLoginRequesWithAccessToken:(NSString *)accessToken sns:(NSInteger)sns userId:(NSString *)userId nickName:(NSString *)nickName email:(NSString *)email {
+- (void)doThirdLoginRequesWithAccessToken:(NSString *)accessToken sns:(NSInteger)sns userId:(NSString *)userId nickName:(NSString *)nickName email:(NSString *)email {
     
-    [GlodBuleHTUserRequest doAppIdLoginRequestWithAccessToken:accessToken
+    [GlodBuleHTUserRequest doThirdLoginRequestWithAccessToken:accessToken
                                                                 sns:sns
                                                              userId:userId
                                                            nickName:nickName
@@ -144,15 +146,10 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
                 [GlodBuleHTUserManager tao_refreshUserInfoWithSuccessBlock:nil];
                 }
                                                           failBlock:^(GlodBuleBJError *error) {
-                    BJLog(@"登錄失敗");
+                    BJLog(@"登入失敗");
+        [kWindow showToast:@"登入失敗"];
     }];
     
-    [GlodBuleHTUserRequest taodoLoginRequestWithAccessToken:accessToken sns:sns successBlock:^(NSString * _Nonnull userToken) {
-        [GlodBuleHTUserManager saveUserToken:userToken];
-        [GlodBuleHTUserManager tao_refreshUserInfoWithSuccessBlock:nil];
-    } failBlock:^(GlodBuleBJError *error) {
-        BJLog(@"登錄失敗");
-    }];
 }
 
 
@@ -195,6 +192,12 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
     }
 }
 
+- (void)handleGidSign{
+//    [GIDSignIn sharedInstance].presentingViewController = self;
+    [[GIDSignIn sharedInstance] signIn];
+}
+
+
 #pragma mark - ASAuthorizationControllerDelegate
 - (void)authorizationController:(ASAuthorizationController *)controller didCompleteWithAuthorization:(ASAuthorization *)authorization API_AVAILABLE(ios(13.0)){
     
@@ -214,7 +217,7 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
         NSString *identityTokenStr = [[NSString alloc] initWithData:identityToken encoding:NSUTF8StringEncoding];
         NSLog(@"user:%@,identityToken:%@,fullname:%@", userId, identityTokenStr,nickname);
         
-        [self doAppIdLoginRequesWithAccessToken:identityTokenStr sns:3 userId:userId nickName:nickname email:email];
+        [self doThirdLoginRequesWithAccessToken:identityTokenStr sns:3 userId:userId nickName:nickname email:email];
         
     } else if ([authorization.credential isKindOfClass:[ASPasswordCredential class]]) {
         // 用户登录使用现有的密码凭证

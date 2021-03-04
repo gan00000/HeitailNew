@@ -10,7 +10,7 @@ typedef void (^HTMyCommentBlock) (NSArray <GlodBuleHTNewsModel *> *newsList, NSI
                          successBlock:(void(^)(NSString *userToken))successBlock
                             failBlock:(BJServiceErrorBlock)failBlock;
 
-+ (void)doAppIdLoginRequestWithAccessToken:(NSString *)accessToken
++ (void)doThirdLoginRequestWithAccessToken:(NSString *)accessToken
          sns:(NSInteger)sns
            userId:(NSString *)userId
        nickName:(NSString *)nickName

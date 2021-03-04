@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,16 +28,16 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1e5-nc-zBw">
-                            <rect key="frame" x="15" y="42.5" width="100" height="82.5"/>
+                            <rect key="frame" x="15" y="42.5" width="80" height="82.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pof-Tp-KHB">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="82.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="82.5"/>
                                     <connections>
                                         <action selector="loginAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="oJS-rm-oBn"/>
                                     </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_facebook" translatesAutoresizingMaskIntoConstraints="NO" id="Zw2-8r-Cor" customClass="JXImageView">
-                                    <rect key="frame" x="27" y="5" width="46" height="46"/>
+                                    <rect key="frame" x="17" y="5" width="46" height="46"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="46" id="QtV-LG-ODs"/>
@@ -50,8 +50,8 @@
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qep-Rh-SjH">
-                                    <rect key="frame" x="16.5" y="61" width="67" height="18"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <rect key="frame" x="12.5" y="61" width="55" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -62,7 +62,7 @@
                                 <constraint firstItem="qep-Rh-SjH" firstAttribute="centerX" secondItem="Zw2-8r-Cor" secondAttribute="centerX" id="8mA-RS-Czz"/>
                                 <constraint firstItem="Zw2-8r-Cor" firstAttribute="top" secondItem="1e5-nc-zBw" secondAttribute="top" constant="5" id="CTQ-Oh-7oO"/>
                                 <constraint firstAttribute="trailing" secondItem="pof-Tp-KHB" secondAttribute="trailing" id="FOj-Ul-kGo"/>
-                                <constraint firstAttribute="width" constant="100" id="NlB-tV-JKw"/>
+                                <constraint firstAttribute="width" constant="80" id="NlB-tV-JKw"/>
                                 <constraint firstItem="pof-Tp-KHB" firstAttribute="top" secondItem="1e5-nc-zBw" secondAttribute="top" id="SZi-qy-ZrD"/>
                                 <constraint firstItem="qep-Rh-SjH" firstAttribute="top" secondItem="Zw2-8r-Cor" secondAttribute="bottom" constant="10" id="UnM-8S-tf2"/>
                                 <constraint firstItem="Zw2-8r-Cor" firstAttribute="centerX" secondItem="1e5-nc-zBw" secondAttribute="centerX" id="f9r-v3-DqN"/>
@@ -70,16 +70,16 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8w-J2-G1G">
-                            <rect key="frame" x="115" y="42.5" width="100" height="82.5"/>
+                            <rect key="frame" x="95" y="42.5" width="80" height="82.5"/>
                             <subviews>
                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TV-cX-KQT">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="82.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="82.5"/>
                                     <connections>
                                         <action selector="loginAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="0OT-Sv-QEt"/>
                                     </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_line" translatesAutoresizingMaskIntoConstraints="NO" id="sly-cX-68S" customClass="JXImageView">
-                                    <rect key="frame" x="27" y="5" width="46" height="46"/>
+                                    <rect key="frame" x="17" y="5" width="46" height="46"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="46" id="Ja4-90-lX9"/>
@@ -92,8 +92,8 @@
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Line" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDf-Eu-cQJ">
-                                    <rect key="frame" x="35.5" y="61" width="29" height="18"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <rect key="frame" x="28" y="61" width="24" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -107,7 +107,7 @@
                                 <constraint firstItem="3TV-cX-KQT" firstAttribute="top" secondItem="n8w-J2-G1G" secondAttribute="top" id="O5X-2l-lCW"/>
                                 <constraint firstItem="sly-cX-68S" firstAttribute="top" secondItem="n8w-J2-G1G" secondAttribute="top" constant="5" id="a0Q-EE-SQg"/>
                                 <constraint firstAttribute="trailing" secondItem="3TV-cX-KQT" secondAttribute="trailing" id="llx-eO-JqG"/>
-                                <constraint firstAttribute="width" constant="100" id="vvB-li-m1u"/>
+                                <constraint firstAttribute="width" constant="80" id="vvB-li-m1u"/>
                                 <constraint firstItem="3TV-cX-KQT" firstAttribute="leading" secondItem="n8w-J2-G1G" secondAttribute="leading" id="xfr-bq-VH3"/>
                             </constraints>
                         </view>

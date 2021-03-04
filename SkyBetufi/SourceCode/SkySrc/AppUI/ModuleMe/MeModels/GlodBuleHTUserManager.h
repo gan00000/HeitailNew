@@ -28,4 +28,9 @@ extern const NSString * kUserLogStatusChagneNotice;
               cancelButton:(NSString *)cancelButton
              confirmButton:(NSString *)confirmButton
               confirmBlock:(dispatch_block_t)confirmBlock;
+
+- (void)handleGidSign;
+
+- (void)doThirdLoginRequesWithAccessToken:(NSString *)accessToken sns:(NSInteger)sns userId:(NSString *)userId nickName:(NSString *)nickName email:(NSString *)email;
+
 @end

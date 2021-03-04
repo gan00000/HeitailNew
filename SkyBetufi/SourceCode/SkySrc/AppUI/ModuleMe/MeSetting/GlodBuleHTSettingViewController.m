@@ -54,6 +54,7 @@
 }
 - (IBAction)logoutAction:(id)sender {
     [GlodBuleHTUserManager tao_doUserLogout];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    [kWindow showToast:@"退出成功"];
 }
 @end

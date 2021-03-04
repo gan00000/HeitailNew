@@ -14,6 +14,7 @@
 #import "GlodBulePPXXBJMainViewController.h"
 @import Firebase;
 @import GoogleMobileAds;
+#import "GlodBuleHTUserManager.h"
 
 #define UM_APP_KEY @"5bd67116f1f556f834000081"
 #define FB_APP_ID  @"3840659425954285"
@@ -63,7 +64,13 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [FIRApp configure];//firebase
+   
+    // Use Firebase library to configure APIs
+    [FIRApp configure];
+    //GIDSignIn
+    [GIDSignIn sharedInstance].clientID = [FIRApp defaultApp].options.clientID;
+    [GIDSignIn sharedInstance].delegate = self;
+    
     [self setUpUM];
     [self sdk_setUpNetworkReachability];
     [self openViewController:application launchOptions:launchOptions];
@@ -99,6 +106,9 @@
     }
     if (!result) {
         result = [[UMSocialManager defaultManager] handleOpenURL:url options:options];
+    }
+    if (!result) {
+        result = [[GIDSignIn sharedInstance] handleURL:url];
     }
     return result;
 }
@@ -205,5 +215,32 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
         [self responsePushInfo:userInfo fromViewController:nil]; 
     }else{
     }
+}
+
+
+#pragma mark - GIDSignIn
+- (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error {
+  // ...
+  if (error == nil) {
+    GIDAuthentication *authentication = user.authentication;
+//    FIRAuthCredential *credential =
+//    [FIRGoogleAuthProvider credentialWithIDToken:authentication.idToken accessToken:authentication.accessToken];
+      NSString *idToken = authentication.idToken;
+      NSString *userId = user.userID;
+      NSString *name = user.profile.name;
+      NSString *email = user.profile.email;
+      
+      [[GlodBuleHTUserManager manager] doThirdLoginRequesWithAccessToken:idToken sns:4 userId:userId nickName:name email:email];
+    // ...
+  } else {
+    // ...
+      NSLog(@"GIDSignIn didDisconnectWithUser:%@",error.localizedDescription);
+  }
+}
+
+- (void)signIn:(GIDSignIn *)signIn didDisconnectWithUser:(GIDGoogleUser *)user withError:(NSError *)error {
+  // Perform any operations when the user disconnects from app here.
+  // ...
+    NSLog(@"GIDSignIn didDisconnectWithUser:%@",error.localizedDescription);
 }
 @end

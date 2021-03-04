@@ -45,4 +45,7 @@ pod 'Charts'
 #pod 'Protobuf'
 pod 'SocketRocket'
 pod 'TZImagePickerController' #iOS8 and later
+
+pod 'Firebase/Auth'
+pod 'GoogleSignIn'
 end
