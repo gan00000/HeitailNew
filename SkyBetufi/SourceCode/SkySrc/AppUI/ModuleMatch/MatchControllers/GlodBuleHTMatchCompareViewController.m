@@ -3,6 +3,7 @@
 #import "GlodBuleHTMatchPtsCompareCell.h"
 #import "GlodBuleHTMatchBestPlayerCell.h"
 #import "GlodBuleHTScoreViewCell.h"
+#import "HTHotShootCellTableViewCell.h"
 
 @interface GlodBuleHTMatchCompareViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -45,8 +46,11 @@
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([GlodBuleHTMatchQuarterCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([GlodBuleHTMatchQuarterCell class])];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([GlodBuleHTMatchPtsCompareCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([GlodBuleHTMatchPtsCompareCell class])];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([GlodBuleHTMatchBestPlayerCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([GlodBuleHTMatchBestPlayerCell class])];
-    
+   
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([GlodBuleHTScoreViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([GlodBuleHTScoreViewCell class])];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HTHotShootCellTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([HTHotShootCellTableViewCell class])];
+    
     
     kWeakSelf
     self.tableView.mj_header = [GlodBuleMJRefreshGenerator bj_headerWithRefreshingBlock:^{
@@ -57,7 +61,7 @@
 }
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 5;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
@@ -79,8 +83,16 @@
         [cell taosetupWithMatchSummaryModel:self.summaryModel];
         return cell;
     }
-    GlodBuleHTMatchBestPlayerCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([GlodBuleHTMatchBestPlayerCell class])];
-    [cell taosetupWithMatchSummaryModel:self.summaryModel];
+    if (indexPath.section == 3) {
+        GlodBuleHTMatchBestPlayerCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([GlodBuleHTMatchBestPlayerCell class])];
+        [cell taosetupWithMatchSummaryModel:self.summaryModel];
+        return cell;
+    }
+    
+    HTHotShootCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTHotShootCellTableViewCell class])];
+
+    [cell.hotShootView setDataCount:floorf(self.view.width)];
+    
     return cell;
 }
 #pragma mark - UITableViewDelegate
