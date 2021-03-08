@@ -7,6 +7,7 @@
 @property (nonatomic, copy) NSString *date;
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, copy) NSString *time;
+@property (nonatomic, copy) NSString *thumbnail;
 @property (nonatomic, strong) NSDictionary *custom_fields;
 @property (nonatomic, assign) NSInteger total_comment;
 @property (nonatomic, assign) NSInteger total_like;

@@ -35,7 +35,7 @@
         return 0;
     }
     if (section == 0) {
-        return 1;
+        return self.bannerList.count;
     }
     return self.newsList.count;
 }
@@ -44,14 +44,18 @@
     NSLog(@"indexPath.section:%ld  indexPath.row:%ld", indexPath.section, indexPath.row);
     
     if (indexPath.section == 0) {
-        kWeakSelf
-        GlodBuleHTNewsHomeBannerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsHomeBannerCell"];
-        [cell taosetupWithNewsModels:self.bannerList];
-        cell.onBannerTappedBlock = ^(GlodBuleHTNewsModel *newsModel) {
-            GlodBuleHTNewsDetailViewController *detailVc = [GlodBuleHTNewsDetailViewController taoviewController];
-            detailVc.post_id = newsModel.news_id;
-            [weakSelf.navigationController pushViewController:detailVc animated:YES];
-        };
+//        kWeakSelf
+//        GlodBuleHTNewsHomeBannerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsHomeBannerCell"];
+//        [cell taosetupWithNewsModels:self.bannerList];
+//        cell.onBannerTappedBlock = ^(GlodBuleHTNewsModel *newsModel) {
+//            GlodBuleHTNewsDetailViewController *detailVc = [GlodBuleHTNewsDetailViewController taoviewController];
+//            detailVc.post_id = newsModel.news_id;
+//            [weakSelf.navigationController pushViewController:detailVc animated:YES];
+//        };
+        //==============
+        GlodBuleHTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsHomeCell"];
+        [cell taosetupWithNewsModel:self.bannerList[indexPath.row]];
+        cell.topLabel.hidden = NO;
         return cell;
     }
     
@@ -69,12 +73,14 @@
 //    }
     GlodBuleHTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsHomeCell"];
     [cell taosetupWithNewsModel:self.newsList[indexPath.row]];
+    cell.topLabel.hidden = YES;
     return cell;
 }
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return SCREEN_WIDTH * 2 / 3;
+        //return SCREEN_WIDTH * 2 / 3;
+        return 90;
     }
     
     GlodBuleHTNewsModel *mmModel = self.newsList[indexPath.row];
@@ -85,6 +91,10 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
+        GlodBuleHTNewsModel *newsModel = self.bannerList[indexPath.row];
+        GlodBuleHTNewsDetailViewController *detailVc = [GlodBuleHTNewsDetailViewController taoviewController];
+        detailVc.post_id = newsModel.news_id;
+        [self.navigationController pushViewController:detailVc animated:YES];
         return;
     }
     GlodBuleHTNewsModel *newsModel = self.newsList[indexPath.row];
