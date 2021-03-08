@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HotShootPointModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HTCourtHotShootView : UIView
 
-- (void)setDataCount:(NSInteger) width;
+- (void)setDataModel:(NSArray<HotShootPointModel *> *) model isLeft:(BOOL) isLeft width:(CGFloat)width height:(CGFloat)height;
 
 @end
 

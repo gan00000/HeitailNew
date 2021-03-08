@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "HTCourtHotShootView.h"
+#import "HotShootPointModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HTHotShootCellTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet HTCourtHotShootView *hotShootView;
+
+-(void) updateDataModel:(NSArray<HotShootPointModel *> *) model;
 
 @end
 

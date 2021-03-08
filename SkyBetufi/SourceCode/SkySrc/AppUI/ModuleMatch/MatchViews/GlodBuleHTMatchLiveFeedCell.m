@@ -31,15 +31,15 @@
        self.eventLabel.font = [UIFont systemFontOfSize:12];
        self.ptsCompareLabel.font = [UIFont systemFontOfSize:12];
     }
-    if ([feedModel.teamName isEqualToString:summaryModel.homeName]) {
-         [self.teamImageView th_setImageWithURL:summaryModel.homeLogo placeholderImage:nil];
-    } else {
-         [self.teamImageView th_setImageWithURL:summaryModel.awayLogo placeholderImage:nil];
-    }
-   
-    self.timeLabel.text = feedModel.time;
-    self.teamLabel.text = feedModel.teamName;
-    self.eventLabel.text = feedModel.desc;
+//    if ([feedModel.teamName isEqualToString:summaryModel.homeName]) {
+//         [self.teamImageView th_setImageWithURL:summaryModel.homeLogo placeholderImage:nil];
+//    } else {
+//         [self.teamImageView th_setImageWithURL:summaryModel.awayLogo placeholderImage:nil];
+//    }
+//   
+//    self.timeLabel.text = feedModel.time;
+//    self.teamLabel.text = feedModel.teamName;
+//    self.eventLabel.text = feedModel.desc;
     self.ptsCompareLabel.text = [NSString stringWithFormat:@"%@ - %@", feedModel.awayPts, feedModel.homePts];
 }
 @end

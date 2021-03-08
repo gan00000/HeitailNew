@@ -571,7 +571,7 @@
                  
              }else if (index == 1) {//對陣
                  GlodBuleHTMatchCompareViewController *compareVc = self.loadedControllersArray[index];
-                 [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList];
+                 [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList matchModel:self.matchModel];
              }else if (index == 0) {//聊起
                  GlodBuleHTIMViewController *imVc = self.loadedControllersArray[index];
                  //[vc taorefreshWithMatchSummaryModel:self.matchSummaryModel];
@@ -604,7 +604,7 @@
              
          }else if (index == 1) {
              GlodBuleHTMatchCompareViewController *compareVc = [GlodBuleHTMatchCompareViewController taoviewController];
-             [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList];
+             [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList matchModel:self.matchModel];
              compareVc.onTableHeaderRefreshBlock = ^{
                  [weakSelf loadData];
              };
@@ -645,7 +645,7 @@
 
         } else if (index == 1) {
             GlodBuleHTMatchCompareViewController *compareVc = self.loadedControllersArray[index];
-            [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList];
+            [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList matchModel:self.matchModel];
         } else {
             GlodBuleHTMatchDashboardViewController *dashbdVc = self.loadedControllersArray[index];
             [dashbdVc taorefreshWithMatchCompareModel:self.matchCompareModel];
@@ -670,7 +670,7 @@
         
     } else if (index == 1) {
         GlodBuleHTMatchCompareViewController *compareVc = [GlodBuleHTMatchCompareViewController taoviewController];
-        [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList];
+        [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList matchModel:self.matchModel];
         compareVc.onTableHeaderRefreshBlock = ^{
             [weakSelf loadData];
         };

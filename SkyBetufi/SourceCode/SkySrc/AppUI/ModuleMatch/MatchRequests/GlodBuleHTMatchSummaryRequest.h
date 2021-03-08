@@ -4,6 +4,7 @@
 #import "GlodBuleHTMatchCompareModel.h"
 #import "GlodBuleHTMacthLivePostModel.h"
 #import "GlodBuleHTLikeTeamModel.h"
+#import "HotShootPointModel.h"
 
 @interface GlodBuleHTMatchSummaryRequest : NSObject
 + (void)taorequestSummaryWithGameId:(NSString *)game_id
@@ -24,4 +25,12 @@ successBlock:(void(^)(GlodBuleHTLikeTeamModel * m))successBlock
                 playerId:(NSString *)player_id
                successBlock:(void(^)(NSArray<GlodBuleHTMatchDetailsModel *> * model))successBlock
                errorBlock:(BJServiceErrorBlock)errorBlock;
+
+
++ (void)getShootPointWithGameId:(NSString *)game_id
+            home_away:(NSString *)home_away //1-主队 2-客队
+                playerId:(NSString *)player_id
+                 quarter:(NSString *)quarter
+               successBlock:(void(^)(NSArray<HotShootPointModel *> * model))successBlock
+           errorBlock:(BJServiceErrorBlock)errorBlock;
 @end

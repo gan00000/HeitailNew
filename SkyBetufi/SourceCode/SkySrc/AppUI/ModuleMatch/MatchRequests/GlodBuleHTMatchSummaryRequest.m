@@ -1,6 +1,8 @@
 #import "GlodBuleHTMatchSummaryRequest.h"
 #import "GlodBuleHTMacthLivePostModel.h"
 #import "GlodBuleHTLikeTeamModel.h"
+
+
 @implementation GlodBuleHTMatchSummaryRequest
 + (void)taorequestSummaryWithGameId:(NSString *)game_id
                     successBlock:(void(^)(GlodBuleHTMatchSummaryModel *summaryModel, GlodBuleHTMatchCompareModel *compareModel))successBlock
@@ -176,6 +178,25 @@
        
    } errorBlock:errorBlock];
    
+}
+
+
++ (void)getShootPointWithGameId:(NSString *)game_id
+            home_away:(NSString *)home_away //1-主队 2-客队
+                playerId:(NSString *)player_id
+                 quarter:(NSString *)quarter
+               successBlock:(void(^)(NSArray<HotShootPointModel *> * model))successBlock
+                 errorBlock:(BJServiceErrorBlock)errorBlock
+{
+    
+    [GlodBuleBJHTTPServiceEngine tao_getRequestWithFunctionPath:API_MATCH_GET_SHOOT_POINT params:@{@"game_id":game_id, @"home_away": home_away, @"player_id": player_id, @"quarter":quarter} successBlock:^(id responseData) {
+
+        NSArray *models = [NSArray yy_modelArrayWithClass:[HotShootPointModel class] json:responseData[@"result"]];
+            if (successBlock) {
+                successBlock(models);
+            }
+
+        } errorBlock:errorBlock];
 }
 
 @end

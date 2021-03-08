@@ -106,69 +106,127 @@
     
     mScatterChartView.userInteractionEnabled = NO;
    
-    mScatterChartView.rightAxis.enabled = NO;
-    mScatterChartView.leftAxis.enabled = NO;
+    mScatterChartView.rightAxis.enabled = YES;
+    mScatterChartView.leftAxis.enabled = YES;
     mScatterChartView.legend.enabled = NO;
     
     ChartXAxis *xAxis = mScatterChartView.xAxis;
-    xAxis.enabled = NO;
-    xAxis.labelPosition = XAxisLabelPositionBottom;
+//    xAxis.enabled = NO;
+    xAxis.labelPosition = XAxisLabelPositionBottomInside;
 //    xAxis.labelFont = [UIFont systemFontOfSize:10.f];
     xAxis.drawGridLinesEnabled = NO;
-
+    xAxis.xOffset = 0;
+    xAxis.yOffset = 0;
+    xAxis.drawLabelsEnabled = NO;
 }
 
 
-- (void)setDataCount:(NSInteger) width
+- (void)setDataModel:(NSArray<HotShootPointModel *> *) model isLeft:(BOOL) isLeft width:(CGFloat)width height:(CGFloat)height
 {
+    NSMutableArray<HotShootPointModel *> *hitDataModel = [[NSMutableArray alloc] init];
+    NSMutableArray<HotShootPointModel *> *notHitDataModel = [[NSMutableArray alloc] init];
     
-//    CGFloat width = self.leftChartView.width;
-    CGFloat height = 200;//self.leftChartView.height;
+    NSMutableArray *hitVals1 = [[NSMutableArray alloc] init];
+    NSMutableArray *notHitVals2 = [[NSMutableArray alloc] init];
     
-    NSMutableArray *yVals1 = [[NSMutableArray alloc] init];
-    NSMutableArray *yVals2 = [[NSMutableArray alloc] init];
-   
-    int count = width/2;//floorf(width);
     
-    for (int i = 0; i < count; i++)
-    {
-        double val = (double) (arc4random_uniform(height)) + 3;
-        [yVals1 addObject:[[ChartDataEntry alloc] initWithX:(double)i y:val]];
-        
-        val = (double) (arc4random_uniform(height)) + 3;
-        [yVals2 addObject:[[ChartDataEntry alloc] initWithX:(double)i + 0.33 y:val]];
-        
+    CGFloat v_width = self.leftChartView.width;
+    CGFloat v_height = self.leftChartView.height;
+    
+    if (v_width == 0) {
+        return;
     }
     
-    ScatterChartDataSet *setLeft = [[ScatterChartDataSet alloc] initWithEntries:yVals1 label:@""];
-    [setLeft setScatterShape:ScatterShapeCircle];
-//    setLeft.drawIconsEnabled = NO;
-//    setLeft.drawValuesEnabled = NO;
-    setLeft.scatterShapeHoleRadius = 3.5f;
+    if (v_width < 1) {
+        v_width = (width - 8 - 4)/2;
+    }
+    double sa_w = v_width/50;
     
-    [setLeft setColor:UIColor.blueColor];
+    if (v_height < 1) {
+        v_height = 200;
+    }
+    double sa_h = v_height/32;
     
-    ScatterChartDataSet *setRight = [[ScatterChartDataSet alloc] initWithEntries:yVals2 label:@""];
-    [setRight setScatterShape:ScatterShapeCircle];
-//    set2.scatterShapeHoleColor = UIColor.blueColor;//ChartColorTemplates.colorful[3];
-    setRight.scatterShapeHoleRadius = 3.5f;
-    [setRight setColor:UIColor.blueColor];
+    for (HotShootPointModel *pm in model) {//是否命中 1-是 0-否
+
+        double xValue = [pm.xAxis doubleValue] * sa_w;
+        double yValue = [pm.yAxis doubleValue] * sa_h;
+        if (xValue >= 0 && yValue >= 0) {
+            
+            if ([pm.isHit isEqualToString:@"1"]) {
+                [hitDataModel addObject:pm];
+                [hitVals1 addObject:[[ChartDataEntry alloc] initWithX:xValue y:yValue]];
+                
+            }else{
+                [notHitDataModel addObject:pm];
+                [notHitVals2 addObject:[[ChartDataEntry alloc] initWithX:xValue y:yValue]];
+            }
+        }else{
+            NSLog(@"HotShootPointModel xValue小于0->%f , %f",xValue,yValue);
+        }
+       
+    }
+    
+//    [hitVals1 sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+//        ChartDataEntry *mChartDataEntry1 = obj1;
+//        ChartDataEntry *mChartDataEntry2 = obj2;
+//        
+//        if (mChartDataEntry1.x < mChartDataEntry2.x) {
+//            return NSOrderedAscending;//表示两个比较的对象前者小于后置
+//        }else if(mChartDataEntry2.x == mChartDataEntry1.x){
+//            return NSOrderedSame;
+//        }
+//        return NSOrderedDescending;
+//    }];
+//
+//    [notHitVals2 sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+//        ChartDataEntry *mChartDataEntry1 = obj1;
+//        ChartDataEntry *mChartDataEntry2 = obj2;
+//        
+//        if (mChartDataEntry1.x < mChartDataEntry2.x) {
+//            return NSOrderedAscending;//表示两个比较的对象前者小于后置
+//        }else if(mChartDataEntry2.x == mChartDataEntry1.x){
+//            return NSOrderedSame;
+//        }
+//        return NSOrderedDescending;
+//    }];
+    
+    ScatterChartDataSet *hitDataSet = [[ScatterChartDataSet alloc] initWithEntries:hitVals1 label:@""];
+    [hitDataSet setScatterShape:ScatterShapeCircle];
+    hitDataSet.scatterShapeHoleColor = UIColor.blueColor;
+    hitDataSet.scatterShapeHoleRadius = 2.5f;
+    [hitDataSet setColor:UIColor.blueColor];
+    
+    ScatterChartDataSet *notHitDataSet = [[ScatterChartDataSet alloc] initWithEntries:notHitVals2 label:@""];
+    [notHitDataSet setScatterShape:ScatterShapeCircle];
+    //notHitDataSet.scatterShapeHoleColor = UIColor.blueColor;
+    notHitDataSet.scatterShapeHoleRadius = 2.5f;
+    [notHitDataSet setColor:UIColor.blueColor];
    
     
-    setLeft.scatterShapeSize = 8.0;
-    setRight.scatterShapeSize = 8.0;
+    hitDataSet.scatterShapeSize = 6.0;
+    notHitDataSet.scatterShapeSize = 6.0;
    
     NSMutableArray *dataSets = [[NSMutableArray alloc] init];
-    [dataSets addObject:setLeft];
+    [dataSets addObject:hitDataSet];
+    [dataSets addObject:notHitDataSet];
   
     ScatterChartData *data = [[ScatterChartData alloc] initWithDataSets:dataSets];
     data.highlightEnabled = NO;
     
     self.leftChartView.data = data;
-    self.rightChartView.data = data;
-    
     [self.leftChartView notifyDataSetChanged];
-    [self.rightChartView notifyDataSetChanged];
+//    self.rightChartView.data = data;
+//    [self.rightChartView notifyDataSetChanged];
+    
+//    if (isLeft) {
+//        self.leftChartView.data = data;
+//        [self.leftChartView notifyDataSetChanged];
+//    }else{
+//        self.rightChartView.data = data;
+//        [self.rightChartView notifyDataSetChanged];
+//    }
+    
 }
 
 @end

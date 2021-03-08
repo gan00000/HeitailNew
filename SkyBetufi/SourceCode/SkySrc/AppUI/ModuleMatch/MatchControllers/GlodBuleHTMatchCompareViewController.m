@@ -4,11 +4,15 @@
 #import "GlodBuleHTMatchBestPlayerCell.h"
 #import "GlodBuleHTScoreViewCell.h"
 #import "HTHotShootCellTableViewCell.h"
+#import "GlodBuleHTMatchSummaryRequest.h"
+#import "HotShootPointModel.h"
 
 @interface GlodBuleHTMatchCompareViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, weak) GlodBuleHTMatchSummaryModel *summaryModel;
 @property (nonatomic, weak)NSArray<GlodBuleHTMatchLiveFeedModel *> *liveFeedModel;
+
+@property (nonatomic, strong)NSArray<HotShootPointModel *> *hotShootPointModel;
 @end
 @implementation GlodBuleHTMatchCompareViewController
 + (instancetype)taoviewController {
@@ -24,10 +28,23 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-- (void)taorefreshWithMatchSummaryModel:(GlodBuleHTMatchSummaryModel *)summaryModel liveFeedModel:(NSArray<GlodBuleHTMatchLiveFeedModel *> *)liveFeedModel{
+- (void)taorefreshWithMatchSummaryModel:(GlodBuleHTMatchSummaryModel *)summaryModel liveFeedModel:(NSArray<GlodBuleHTMatchLiveFeedModel *> *)liveFeedModel matchModel:(GlodBuleHTMatchHomeModel *)matchModel{
     [self.tableView.mj_header endRefreshing];
     self.summaryModel = summaryModel;
     self.liveFeedModel = liveFeedModel;
+   
+    if (!self.hotShootPointModel) {//第一次需要加载  home_away主客队 1-主队 2-客队
+        [GlodBuleHTMatchSummaryRequest getShootPointWithGameId:matchModel.game_id home_away:@"1" playerId:@"" quarter:@"" successBlock:^(NSArray<HotShootPointModel *> *model) {
+            
+            kWeakSelf
+            weakSelf.hotShootPointModel = model;
+            [weakSelf.tableView reloadData];
+            
+        } errorBlock:^(GlodBuleBJError *error) {
+            
+        }];
+    }
+    
     [self.tableView reloadData];
 }
 - (void)setupViews {
@@ -91,7 +108,9 @@
     
     HTHotShootCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTHotShootCellTableViewCell class])];
 
-    [cell.hotShootView setDataCount:floorf(self.view.width)];
+    if (self.hotShootPointModel) {
+        [cell.hotShootView setDataModel:self.hotShootPointModel isLeft:YES width:self.view.width height:self.view.height];
+    }
     
     return cell;
 }

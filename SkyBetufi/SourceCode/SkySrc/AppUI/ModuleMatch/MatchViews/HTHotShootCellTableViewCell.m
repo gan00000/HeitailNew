@@ -21,4 +21,9 @@
     // Configure the view for the selected state
 }
 
+
+-(void) updateDataModel:(NSArray<HotShootPointModel *> *) model
+{
+    //[self.hotShootView setDataModel:model isLeft:YES];
+}
 @end
