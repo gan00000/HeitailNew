@@ -7,7 +7,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, weak) NSArray<GlodBuleHTMatchLiveFeedModel *> *liveFeedList;
 
-@property (nonatomic, weak) NSArray<GlodBuleHTMatchLiveFeedModel *> *showLiveFeedList;
+@property (nonatomic, strong) NSArray<GlodBuleHTMatchLiveFeedModel *> *showLiveFeedList;
 
 @property (nonatomic, weak) GlodBuleHTMatchSummaryModel * summaryModel;
 
@@ -16,6 +16,10 @@
 @property (nonatomic, copy)NSString *gameId;
 
 @property (nonatomic, assign) BOOL wordLiveRequestDone;
+
+@property (weak, nonatomic) IBOutlet UILabel *teamPtsps;
+
+@property (nonatomic)BOOL isLiving;
 
 @end
 @implementation GlodBuleHTMatchWordLiveViewController
@@ -39,17 +43,25 @@
     self.gameId = gameId;
     [self loadData];
    // [self.tableView reloadData];
+    
+    if ([self.summaryModel.scheduleStatus isEqualToString:@"Final"]) {
+        self.teamPtsps.text = [NSString stringWithFormat:@"已结束 %@-%@",summaryModel.away_pts, summaryModel.home_pts];
+    }else if ([self.summaryModel.scheduleStatus isEqualToString:@"InProgress"]) {
+        self.isLiving = YES;
+    }else{
+//        @"未開始"
+        self.teamPtsps.text = [NSString stringWithFormat:@"未開始"];
+    }
 }
 - (void)setupViews {
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.estimatedRowHeight = 40;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;//自动
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    self.tableView.estimatedRowHeight = 0;
+    self.tableView.estimatedRowHeight = 80;
     self.tableView.estimatedSectionFooterHeight = 0;
     self.tableView.estimatedSectionHeaderHeight = 0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;//自动
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     self.tableView.tableFooterView = [[UIView alloc] init];
     
@@ -69,18 +81,44 @@
     
     self.tableView.mj_footer = [GlodBuleMJRefreshGenerator bj_foorterWithRefreshingBlock:^{
         weakSelf.tableView.mj_header.hidden = YES;
-        //[weakSelf loadNextPage];
+        [weakSelf loadNextPage];
     }];
 }
 
 - (void)loadData {
     self.wordLiveRequestDone = NO;
 
-    kWeakSelf
     if (!self.gameId) {
         return;
     }
-    [self.request getWordLiveFeedWithGameId:self.gameId successBlock:^(NSArray<GlodBuleHTMatchLiveFeedModel *> * _Nonnull newsList) {
+    kWeakSelf
+    [self.request getWordLiveFeedWithGameId:self.gameId
+                                      first:YES
+                               successBlock:^(NSArray<GlodBuleHTMatchLiveFeedModel *> * _Nonnull newsList) {
+        
+        weakSelf.error = nil;
+        weakSelf.wordLiveRequestDone = YES;
+        weakSelf.showLiveFeedList = newsList;
+        [weakSelf refreshUI];
+        
+        if (self.isLiving) {
+            
+            self.teamPtsps.text = [NSString stringWithFormat:@"第%@節 %@-%@",newsList[0].quarter,newsList[0].awayPts, newsList[0].homePts];
+        }
+        
+    } errorBlock:^(GlodBuleBJError *error) {
+        weakSelf.error = error;
+        weakSelf.wordLiveRequestDone = YES;
+        [weakSelf refreshUI];
+    }];
+}
+
+- (void)loadNextPage {
+    self.wordLiveRequestDone = NO;
+    kWeakSelf
+    [self.request getWordLiveFeedWithGameId:self.gameId
+                                      first:NO
+                               successBlock:^(NSArray<GlodBuleHTMatchLiveFeedModel *> * _Nonnull newsList) {
         weakSelf.error = nil;
         weakSelf.wordLiveRequestDone = YES;
         weakSelf.showLiveFeedList = newsList;
@@ -133,16 +171,24 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.liveFeedList.count;
+    if (!self.showLiveFeedList) {
+        return 0;
+    }
+    return self.showLiveFeedList.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GlodBuleHTMatchLiveFeedCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([GlodBuleHTMatchLiveFeedCell class])];
-    [cell taosetupWithMatchLiveFeedModel:self.liveFeedList[indexPath.row] summary:self.summaryModel];
-    if (indexPath.row % 2 == 0) {
-        cell.contentView.backgroundColor = [UIColor whiteColor];
-    } else {
-        cell.contentView.backgroundColor = [UIColor colorWithHexString:@"f9f9fb"];
-    }
+    [cell taosetupWithMatchLiveFeedModel:self.showLiveFeedList[indexPath.row] summary:self.summaryModel];
+//    if (indexPath.row % 2 == 0) {
+//        cell.contentView.backgroundColor = [UIColor whiteColor];
+//    } else {
+//        cell.contentView.backgroundColor = [UIColor colorWithHexString:@"f9f9fb"];
+//    }
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
 }
 @end

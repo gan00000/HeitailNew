@@ -14,7 +14,9 @@
 @end
 @implementation HTWordLive2Request
 
-- (void)getWordLiveFeedWithGameId:(NSString *)game_id successBlock:(void(^)(NSArray<GlodBuleHTMatchLiveFeedModel *> *newsList))successBlock
+- (void)getWordLiveFeedWithGameId:(NSString *)game_id
+                          first:(BOOL)isFirst
+                     successBlock:(void(^)(NSArray<GlodBuleHTMatchLiveFeedModel *> *newsList))successBlock
                        errorBlock:(BJServiceErrorBlock)errorBlock{
     if (!self.wordLiveList) {
         self.wordLiveList = [NSMutableArray array];
@@ -22,10 +24,21 @@
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"game_id"] = game_id;
-    params[@"limit"] = @20;
-    params[@"pages"] = @0;//当前页，默认0
+    params[@"count"] = @20;
+    if (isFirst) {
+        params[@"page"] = @1;//当前页，默认1
+        self.hasMore = NO;
+        self.page = 1;
+        
+    }else{
+        params[@"page"] = @(self.page);//[NSString stringWithFormat:@"%d",self.page];//当前页，默认1
+    }
+    
+    //get_live_feed_paging
     [GlodBuleBJHTTPServiceEngine tao_getRequestWithFunctionPath:API_MATCH_LIVE_FEED_PAGING params:params successBlock:^(id responseData) {
-        [self.wordLiveList removeAllObjects];
+        if (isFirst) {
+            [self.wordLiveList removeAllObjects];
+        }
         if (self.page < [responseData[@"pages"] integerValue]) {
             self.page ++;
             self.hasMore = YES;
@@ -34,11 +47,11 @@
         }
         
         NSArray *data = responseData[@"live_feed"];
-        NSInteger toCount = 0;
+//        NSInteger toCount = 0;
         if ([data isKindOfClass:[NSArray class]] && data.count > 0) {
-            if (data.count > 4) {
-                toCount = data.count - 4;
-            }
+//            if (data.count > 4) {
+//                toCount = data.count - 4;
+//            }
             for (NSArray *q in data) {
                 NSArray *quarter = [NSArray yy_modelArrayWithClass:[GlodBuleHTMatchLiveFeedModel class] json:q];
                 [self.wordLiveList addObjectsFromArray:quarter];
@@ -46,12 +59,13 @@
         }
         
         GlodBuleHTMatchLiveFeedModel *currentModel;
+      
         for (GlodBuleHTMatchLiveFeedModel *m in self.wordLiveList) {
-            m.toCount = toCount;
+//            m.toCount = toCount;
             if (currentModel) {
-                
+                //判断是否得分
                 if ([m.awayPts intValue] > [currentModel.awayPts intValue] || [m.homePts intValue] > [currentModel.homePts intValue]) {
-                    m.tagSrore = 1;
+                    m.tagSrore = 1;//标记得分
                 }else if ([m.awayPts intValue] < [currentModel.awayPts intValue] || [m.homePts intValue] < [currentModel.homePts intValue]){
                     currentModel.tagSrore = 1;
                 }

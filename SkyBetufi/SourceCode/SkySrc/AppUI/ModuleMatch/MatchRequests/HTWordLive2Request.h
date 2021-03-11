@@ -15,7 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HTWordLive2Request : NSObject
 @property (nonatomic, assign) BOOL hasMore;
 
-- (void)getWordLiveFeedWithGameId:(NSString *)game_id successBlock:(void(^)(NSArray<GlodBuleHTMatchLiveFeedModel *> *newsList))successBlock
+- (void)getWordLiveFeedWithGameId:(NSString *)game_id
+                            first:(BOOL)isFirst
+                     successBlock:(void(^)(NSArray<GlodBuleHTMatchLiveFeedModel *> *newsList))successBlock
                              errorBlock:(BJServiceErrorBlock)errorBlock;
 @end
 
