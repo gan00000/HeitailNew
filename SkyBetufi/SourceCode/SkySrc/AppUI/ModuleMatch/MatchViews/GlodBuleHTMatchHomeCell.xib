@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -83,6 +84,42 @@
                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pfb-Ig-5rt" userLabel="backView">
+                        <rect key="frame" x="144.5" y="77" width="86" height="22"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_play_back" translatesAutoresizingMaskIntoConstraints="NO" id="kee-GV-2Fl">
+                                <rect key="frame" x="6" y="2" width="18" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="18" id="c1W-5j-pFr"/>
+                                    <constraint firstAttribute="height" constant="18" id="sRg-ES-b2U"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="賽事回顧" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQh-cZ-dVS">
+                                <rect key="frame" x="28" y="0.0" width="50" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Ag9-GJ-iXi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <constraints>
+                            <constraint firstItem="GQh-cZ-dVS" firstAttribute="top" secondItem="Pfb-Ig-5rt" secondAttribute="top" id="0li-xR-hgY"/>
+                            <constraint firstAttribute="centerY" secondItem="kee-GV-2Fl" secondAttribute="centerY" id="PJJ-0N-Pt1"/>
+                            <constraint firstItem="kee-GV-2Fl" firstAttribute="leading" secondItem="Pfb-Ig-5rt" secondAttribute="leading" constant="6" id="Uaj-qF-e9D"/>
+                            <constraint firstAttribute="bottom" secondItem="GQh-cZ-dVS" secondAttribute="bottom" id="efg-BT-1B6"/>
+                            <constraint firstAttribute="width" constant="86" id="g7t-Jt-7R6"/>
+                            <constraint firstItem="GQh-cZ-dVS" firstAttribute="leading" secondItem="kee-GV-2Fl" secondAttribute="trailing" constant="4" id="jPV-9z-WBn"/>
+                            <constraint firstAttribute="height" constant="22" id="oWR-6L-bEN"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -106,23 +143,27 @@
                     <constraint firstItem="Mla-r3-DgM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="i71-PB-Jse"/>
                     <constraint firstItem="xSU-Cj-0Co" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="kqw-FJ-qGI"/>
                     <constraint firstItem="ZHp-h7-aFJ" firstAttribute="centerY" secondItem="nev-06-B5k" secondAttribute="centerY" id="mNz-CB-JC8"/>
+                    <constraint firstItem="Pfb-Ig-5rt" firstAttribute="centerY" secondItem="1ap-vv-aRg" secondAttribute="centerY" id="mzH-ZV-Per"/>
                     <constraint firstItem="9dK-Rl-I3S" firstAttribute="centerX" secondItem="xSU-Cj-0Co" secondAttribute="centerX" id="oqk-wu-Sgn"/>
                     <constraint firstAttribute="trailing" secondItem="Ver-ec-BOK" secondAttribute="trailing" constant="15" id="rA4-ZU-Z2n"/>
                     <constraint firstItem="1ap-vv-aRg" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="sIJ-Lb-ZH1"/>
                     <constraint firstItem="nev-06-B5k" firstAttribute="top" secondItem="Jem-2g-OtG" secondAttribute="bottom" constant="15" id="wTc-V0-nVa"/>
+                    <constraint firstItem="Pfb-Ig-5rt" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="wYl-Ma-e4V"/>
                 </constraints>
             </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="awayTeamLogo" destination="Jem-2g-OtG" id="q2A-jJ-f6v"/>
                 <outlet property="awayTeamNameLabel" destination="nev-06-B5k" id="g6r-ae-aFi"/>
                 <outlet property="awayTeamPtsLabel" destination="rXw-v9-UOv" id="OT1-NF-wxZ"/>
+                <outlet property="backPlayView" destination="Pfb-Ig-5rt" id="y92-Fl-pLF"/>
                 <outlet property="homeTeamLogo" destination="Ver-ec-BOK" id="Jhq-L0-3Tf"/>
                 <outlet property="homeTeamNameLabel" destination="ZHp-h7-aFJ" id="wgR-5W-FJE"/>
                 <outlet property="homeTeamPtsLabel" destination="Mla-r3-DgM" id="BDi-IY-DJU"/>
                 <outlet property="matchStatusLabel" destination="xSU-Cj-0Co" id="dKY-y0-IqK"/>
+                <outlet property="playBtnImageView" destination="1ap-vv-aRg" id="0fk-Mf-fqT"/>
                 <outlet property="timeLabel" destination="9dK-Rl-I3S" id="ItZ-uZ-mtN"/>
             </connections>
             <point key="canvasLocation" x="-61.600000000000001" y="15.292353823088456"/>
@@ -130,5 +171,9 @@
     </objects>
     <resources>
         <image name="icon_play.png" width="200" height="200"/>
+        <image name="img_play_back" width="100" height="100"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

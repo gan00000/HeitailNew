@@ -36,6 +36,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *leftLikeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rightLikeLabel;
 
+@property (weak, nonatomic) IBOutlet UIView *backPlayView;
+
+@property (weak, nonatomic) IBOutlet UILabel *gameTimeLabel;
+
+
 @property (nonatomic, strong) HMSegmentedControl *segmentControl;
 @property (nonatomic, strong) UIScrollView *containerView;
 @property (nonatomic, strong) NSMutableArray *loadedControllersArray;
@@ -194,7 +199,8 @@
     [self.awayTeamPtsLabel setFont:[UIFont boldSystemFontOfSize:20]];
     [self.startTimeLable setFont:[UIFont boldSystemFontOfSize:20]];
 
- 
+    self.backPlayView.hidden = YES;
+    self.gameTimeLabel.hidden = YES;
 //============================
 
 //    self.topDetailView.hidden = YES;
@@ -460,6 +466,15 @@
         
     if ([self.matchSummaryModel.scheduleStatus isEqualToString:@"Final"]) {
         self.statusLabel.text = @"已結束";
+        self.statusLabel.hidden = YES;
+        
+        self.gameTimeLabel.hidden = NO;
+        self.gameTimeLabel.text = [NSString stringWithFormat:@"%@ %@",self.matchSummaryModel.date,self.matchSummaryModel.time];
+        self.backPlayView.hidden = NO;
+        UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(startPlay)];
+        self.backPlayView.userInteractionEnabled = YES;
+        [self.backPlayView addGestureRecognizer:tapGes];
+        
         [self stopTimer];
     } else if ([self.matchSummaryModel.scheduleStatus isEqualToString:@"InProgress"]) {
         self.startPlayImageView.hidden = NO;

@@ -10,6 +10,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *awayTeamPtsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *matchStatusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *playBtnImageView;
+
+@property (nonatomic, strong) GlodBuleHTMatchHomeModel *matchModel;
+
 @end
 @implementation GlodBuleHTMatchHomeCell
 - (void)awakeFromNib {
@@ -22,6 +26,9 @@
     [super setSelected:selected animated:animated];
 }
 - (void)taosetupWithMatchModel:(GlodBuleHTMatchHomeModel *)matchModel {
+    
+    self.matchModel = matchModel;
+    
     if ([matchModel.homeLogo hasSuffix:@"svg"]) {
          [self.homeTeamLogo svg_setImageWithURL:[NSURL URLWithString:matchModel.homeLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
     }else{
@@ -55,6 +62,13 @@
     if ([matchModel.scheduleStatus isEqualToString:@"Final"]) {
         self.matchStatusLabel.text = @"已結束";
         self.timeLabel.hidden = YES;
+        self.backPlayView.hidden = NO;
+        self.playBtnImageView.hidden = YES;
+        
+        UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(startPlay)];
+        self.backPlayView.userInteractionEnabled = YES;
+        [self.backPlayView addGestureRecognizer:tapGes];
+        
     } else if ([matchModel.scheduleStatus isEqualToString:@"InProgress"]) {
         if (matchModel.quarter.length > 0) {
             self.matchStatusLabel.text = matchModel.quarter;
@@ -68,6 +82,23 @@
         self.matchStatusLabel.text = @"未開始";
     } else {
         self.matchStatusLabel.text = @"未開始";
+    }
+}
+
+- (void)startPlay {
+    
+    NSString *token = @"";
+    if ([GlodBuleHTUserManager tao_isUserLogin]) {
+        token = [GlodBuleHTUserManager tao_userToken];
+    }
+    
+    NSString *webUrl = [NSString stringWithFormat:@"http://app.ballgametime.com/api/nbaschedule.php?token=%@&game_id=%@",token,self.matchModel.game_id];
+    
+    if (@available(iOS 10.0, *)) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:webUrl] options:@{} completionHandler:nil];
+    } else {
+        // Fallback on earlier versions
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:webUrl]];
     }
 }
 @end
