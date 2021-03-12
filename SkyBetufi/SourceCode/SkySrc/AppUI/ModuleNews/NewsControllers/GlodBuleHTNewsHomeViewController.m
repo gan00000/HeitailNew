@@ -199,9 +199,9 @@
 //        weakSelf.newsList = newsList;
         weakSelf.newsList = [weakSelf dataWithAd:newsList];
         weakSelf.newsRequestDone = YES;
-        for (GlodBuleHTNewsModel *nXRRFATKHTNewsModel in newsList) {
-            NSLog(@"new imgurl: %@ newsId: %@",nXRRFATKHTNewsModel.img_url,nXRRFATKHTNewsModel.news_id);
-        }
+//        for (GlodBuleHTNewsModel *nXRRFATKHTNewsModel in newsList) {
+//            NSLog(@"new imgurl: %@ newsId: %@",nXRRFATKHTNewsModel.img_url,nXRRFATKHTNewsModel.news_id);
+//        }
         [weakSelf refreshUI];
     } errorBlock:^(GlodBuleBJError *error) {
         weakSelf.error = error;

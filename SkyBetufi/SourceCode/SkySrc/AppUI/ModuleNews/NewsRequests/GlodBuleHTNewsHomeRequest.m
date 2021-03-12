@@ -53,4 +53,27 @@
         }
     } errorBlock:errorBlock];
 }
+
++(void)taorequestHighLightWithGameId:(NSString *)gameId successBlock:(void(^)(NSArray<GlodBuleHTNewsModel *> *newsList))successBlock
+                         errorBlock:(BJServiceErrorBlock)errorBlock {
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"game_id"] = gameId;
+    [GlodBuleBJHTTPServiceEngine tao_getRequestWithFunctionPath:API_MATCH_GET_highlights params:params successBlock:^(id responseData) {
+        
+//        if (self.page < [responseData[@"pages"] integerValue]) {
+//            self.page ++;
+//            self.hasMore = YES;
+//        } else {
+//            self.hasMore = NO;
+//        }
+        NSArray *list = [NSArray yy_modelArrayWithClass:[GlodBuleHTNewsModel class] json:responseData[@"posts"]];
+//        if (list) {
+//            [self.newsList addObjectsFromArray:list];
+//        }
+        if (successBlock) {
+            successBlock(list);
+        }
+    } errorBlock:errorBlock];
+}
 @end

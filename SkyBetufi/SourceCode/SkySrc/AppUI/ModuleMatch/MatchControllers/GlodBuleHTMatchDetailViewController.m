@@ -14,6 +14,7 @@
 #import "GlodBuleHTIMViewController.h"
 #import "GlodBuleHTUserManager.h"
 #import "GlodBuleHTMatchWebPlayControllerViewController.h"
+#import "HTHighLightsViewController.h"
 //#import <SafariServices/SFFoundation.h>
 @import SafariServices;
 
@@ -333,7 +334,7 @@
     [GlodBuleHTUserManager manager].showTextLive = YES;
      if ([GlodBuleHTUserManager manager].showTextLive) {
          
-         self.titlesArray = @[@"聊球", @"對陣", @"數據統計", @"文字直播"];
+         self.titlesArray = @[@"嗨賴",@"聊球", @"對陣", @"數據統計", @"文字直播"];
      }else{
          self.titlesArray =  @[@"影片直播", @"對陣", @"數據統計"];
      }
@@ -557,22 +558,22 @@
      if ([GlodBuleHTUserManager manager].showTextLive) {
          
          if ([self.loadedFlagArray[index] boolValue]) {
-//             if (index == 0) {
-//
+             if (index == 0) {
+
 //                 GlodBuleHTMatchVideoLiveViewController *detailVc =  self.loadedControllersArray[index];//[GlodBuleHTMatchVideoLiveViewController taoviewController];
 //                 detailVc.game_id = self.matchModel.game_id;
-//
-//
-//             } else
-            if (index == 3) {//文字直播
+                 HTHighLightsViewController *hlVc = [HTHighLightsViewController taoviewController];
+                 [hlVc refreshDataWithGameId:self.matchModel.game_id];
+                
+             } else if (index == 4) {//文字直播
                  GlodBuleHTMatchWordLiveViewController *wordVc = self.loadedControllersArray[index];
                 [wordVc taorefreshWithLiveFeedList:self.liveFeedList summary:self.matchSummaryModel gameId:self.matchModel.game_id];
                 
                  
-             }else if (index == 1) {//對陣
+             }else if (index == 2) {//對陣
                  GlodBuleHTMatchCompareViewController *compareVc = self.loadedControllersArray[index];
                  [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList matchModel:self.matchModel];
-             }else if (index == 0) {//聊起
+             }else if (index == 1) {//聊起
                  GlodBuleHTIMViewController *imVc = self.loadedControllersArray[index];
                  //[vc taorefreshWithMatchSummaryModel:self.matchSummaryModel];
              } else {
@@ -583,18 +584,16 @@
          }
          kWeakSelf
          UIViewController *vc;
-//         if (index == 0) {
-//
-//
-//             //视频直播
-//             GlodBuleHTMatchVideoLiveViewController *detailVc = [GlodBuleHTMatchVideoLiveViewController taoviewController];
-//             detailVc.game_id = self.matchModel.game_id;
-//             vc = detailVc;
-//
-//
-//
-//         } else
-             if (index == 3) {
+         if (index == 0) {
+
+
+             //视频直播
+             HTHighLightsViewController *hlVc = [HTHighLightsViewController taoviewController];
+             [hlVc refreshDataWithGameId:self.matchModel.game_id];
+             vc = hlVc;
+
+         } else
+             if (index == 4) {
              
              GlodBuleHTMatchWordLiveViewController *wordVc = [GlodBuleHTMatchWordLiveViewController taoviewController];
              wordVc.onTableHeaderRefreshBlock = ^{
@@ -602,7 +601,7 @@
              };
              vc = wordVc;
              
-         }else if (index == 1) {
+         }else if (index == 2) {
              GlodBuleHTMatchCompareViewController *compareVc = [GlodBuleHTMatchCompareViewController taoviewController];
              [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList matchModel:self.matchModel];
              compareVc.onTableHeaderRefreshBlock = ^{
@@ -610,7 +609,7 @@
              };
              vc = compareVc;
              
-         }else if (index == 0) {
+         }else if (index == 1) {
              self.imVc = [GlodBuleHTIMViewController taoviewController];
 //             [imVc taorefreshWithMatchSummaryModel:self.matchSummaryModel];
 //             imVc.onTableHeaderRefreshBlock = ^{

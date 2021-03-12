@@ -7,4 +7,7 @@
                      errorBlock:(BJServiceErrorBlock)errorBlock;
 - (void)taoloadNextPageWithSuccessBlock:(void(^)(NSArray<GlodBuleHTNewsModel *> *newsList))successBlock
                           errorBlock:(BJServiceErrorBlock)errorBlock;
+
++(void)taorequestHighLightWithGameId:(NSString *)gameId successBlock:(void(^)(NSArray<GlodBuleHTNewsModel *> *newsList))successBlock
+                          errorBlock:(BJServiceErrorBlock)errorBlock;
 @end
