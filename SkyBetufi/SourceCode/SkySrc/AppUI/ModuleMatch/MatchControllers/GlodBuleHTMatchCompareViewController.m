@@ -12,7 +12,9 @@
 @property (nonatomic, weak) GlodBuleHTMatchSummaryModel *summaryModel;
 @property (nonatomic, weak)NSArray<GlodBuleHTMatchLiveFeedModel *> *liveFeedModel;
 
-@property (nonatomic, strong)NSArray<HotShootPointModel *> *hotShootPointModel;
+@property (nonatomic, strong)NSArray<HotShootPointModel *> *hotShootPointModel_away;
+@property (nonatomic, strong)NSArray<HotShootPointModel *> *hotShootPointModel_home;
+
 @end
 @implementation GlodBuleHTMatchCompareViewController
 + (instancetype)taoviewController {
@@ -33,11 +35,23 @@
     self.summaryModel = summaryModel;
     self.liveFeedModel = liveFeedModel;
    
-    if (!self.hotShootPointModel) {//第一次需要加载  home_away主客队 1-主队 2-客队
+    if (!self.hotShootPointModel_away) {//第一次需要加载  home_away主客队 1-主队 2-客队
+        [GlodBuleHTMatchSummaryRequest getShootPointWithGameId:matchModel.game_id home_away:@"2" playerId:@"" quarter:@"" successBlock:^(NSArray<HotShootPointModel *> *model) {
+            
+            kWeakSelf
+            weakSelf.hotShootPointModel_away = model;
+            [weakSelf.tableView reloadData];
+            
+        } errorBlock:^(GlodBuleBJError *error) {
+            
+        }];
+    }
+    
+    if (!self.hotShootPointModel_home) {//第一次需要加载  home_away主客队 1-主队 2-客队
         [GlodBuleHTMatchSummaryRequest getShootPointWithGameId:matchModel.game_id home_away:@"1" playerId:@"" quarter:@"" successBlock:^(NSArray<HotShootPointModel *> *model) {
             
             kWeakSelf
-            weakSelf.hotShootPointModel = model;
+            weakSelf.hotShootPointModel_home = model;
             [weakSelf.tableView reloadData];
             
         } errorBlock:^(GlodBuleBJError *error) {
@@ -108,8 +122,11 @@
     
     HTHotShootCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTHotShootCellTableViewCell class])];
 
-    if (self.hotShootPointModel) {
-        [cell.hotShootView setDataModel:self.hotShootPointModel isLeft:YES width:self.view.width height:self.view.height];
+    if (self.hotShootPointModel_away) {
+        [cell.hotShootView setDataModel:self.hotShootPointModel_away isLeft:YES width:self.view.width height:self.view.height];
+    }
+    if (self.hotShootPointModel_home) {
+        [cell.hotShootView setDataModel:self.hotShootPointModel_home isLeft:NO width:self.view.width height:self.view.height];
     }
     
     return cell;

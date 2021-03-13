@@ -13,8 +13,8 @@
 
 @interface HTCourtHotShootView()
 
-@property (nonatomic, strong) ScatterChartView *leftChartView;
-@property (nonatomic, strong) ScatterChartView *rightChartView;
+@property (nonatomic, strong) UIView *leftPlayGroundView;
+@property (nonatomic, strong) UIView *rightPlayGroundView;
 
 @end
 
@@ -29,8 +29,8 @@
     self = [super initWithCoder:coder];
     if (self) {
         [self setView];
-        [self initScatterChartView:self.leftChartView];
-        [self initScatterChartView:self.rightChartView];
+//        [self initScatterChartView:self.leftChartView];
+//        [self initScatterChartView:self.rightChartView];
         
 //        [self setDataCount];
     }
@@ -57,9 +57,9 @@
         make.trailing.mas_equalTo(leftView);
     }];
     
-    _leftChartView = [[ScatterChartView alloc] init];
-    [leftView addSubview:_leftChartView];
-    [_leftChartView mas_makeConstraints:^(MASConstraintMaker *make) {
+    _leftPlayGroundView = [[UIView alloc] init];
+    [leftView addSubview:_leftPlayGroundView];
+    [_leftPlayGroundView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.top.mas_equalTo(bgView);
         make.bottom.mas_equalTo(bgView);
         make.trailing.mas_equalTo(bgView);
@@ -86,15 +86,102 @@
         make.trailing.mas_equalTo(rightView);
     }];
     
-    _rightChartView = [[ScatterChartView alloc] init];
-    [rightView addSubview:_rightChartView];
-    [_rightChartView mas_makeConstraints:^(MASConstraintMaker *make) {
+    _rightPlayGroundView = [[UIView alloc] init];
+    [rightView addSubview:_rightPlayGroundView];
+    [_rightPlayGroundView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.top.mas_equalTo(bgView2);
         make.bottom.mas_equalTo(bgView2);
         make.trailing.mas_equalTo(bgView2);
     }];
 }
 
+- (void)setDataModel:(NSArray<HotShootPointModel *> *) model isLeft:(BOOL) isLeft width:(CGFloat)width height:(CGFloat)height
+{
+    CGFloat xxWidth = _leftPlayGroundView.width;
+    CGFloat xxHeight = _leftPlayGroundView.height;
+    
+    if (xxWidth < 1) {
+        xxWidth = (width - 4 - 4 - 4) / 2 ;
+    }
+    if (xxHeight < 1) {
+        xxHeight = 200- 4 - 4;
+    }
+    
+    CGFloat point_cornerRadius = 4;
+    if (isLeft) {
+        
+        for(UIView *subView in [_leftPlayGroundView subviews])
+        {
+            [subView removeFromSuperview];
+        }
+        
+        for (HotShootPointModel *m in model) { //X = 49 Y = 32
+            
+            
+            CGFloat x = [m.xAxis floatValue] * (xxWidth / 49);
+            CGFloat y = [m.yAxis floatValue] * (xxHeight / 32);
+            
+            if (x > xxWidth || y > xxHeight) {
+                continue;
+            }
+            
+            UIView *pointView = [self createPoint];
+            if ([m.isHit isEqualToString:@"1"]) {
+                pointView.backgroundColor = UIColor.blueColor;
+            }
+            pointView.layer.cornerRadius = point_cornerRadius;
+            
+            [_leftPlayGroundView addSubview:pointView];
+            
+            [pointView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.height.width.mas_equalTo(point_cornerRadius * 2);
+                make.top.mas_equalTo(_leftPlayGroundView).mas_offset(y-point_cornerRadius);
+                make.leading.mas_equalTo(_leftPlayGroundView).mas_offset(x-point_cornerRadius);
+            }];
+        }
+    }else{
+        
+        for(UIView *subView in [_rightPlayGroundView subviews])
+        {
+            [subView removeFromSuperview];
+        }
+        
+        for (HotShootPointModel *m in model) {
+            
+            CGFloat x = [m.xAxis floatValue] * (xxWidth / 49);
+            CGFloat y = [m.yAxis floatValue] * (xxHeight / 32);
+            
+            if (x > xxWidth || y > xxHeight) {
+                continue;
+            }
+            
+            UIView *pointView = [self createPoint];
+            if ([m.isHit isEqualToString:@"1"]) {
+                pointView.backgroundColor = UIColor.blueColor;
+            }
+            pointView.layer.cornerRadius = point_cornerRadius;
+            
+            [_rightPlayGroundView addSubview:pointView];
+            
+            [pointView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.height.width.mas_equalTo(point_cornerRadius * 2);
+                make.top.mas_equalTo(_rightPlayGroundView).mas_offset(y-point_cornerRadius);
+                make.trailing.mas_equalTo(_rightPlayGroundView).mas_offset(-(x - point_cornerRadius));
+            }];
+        }
+    }
+    
+}
+
+-(UIView *)createPoint
+{
+    UIView *point = [[UIView alloc] init];
+    point.layer.borderWidth = 1.2;
+    point.layer.borderColor = UIColor.blueColor.CGColor;
+    return point;
+}
+
+/**
 -(void) initScatterChartView:(ScatterChartView *)mScatterChartView
 {
     mScatterChartView.chartDescription.enabled = NO;
@@ -166,31 +253,6 @@
         }
        
     }
-    
-//    [hitVals1 sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-//        ChartDataEntry *mChartDataEntry1 = obj1;
-//        ChartDataEntry *mChartDataEntry2 = obj2;
-//        
-//        if (mChartDataEntry1.x < mChartDataEntry2.x) {
-//            return NSOrderedAscending;//表示两个比较的对象前者小于后置
-//        }else if(mChartDataEntry2.x == mChartDataEntry1.x){
-//            return NSOrderedSame;
-//        }
-//        return NSOrderedDescending;
-//    }];
-//
-//    [notHitVals2 sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-//        ChartDataEntry *mChartDataEntry1 = obj1;
-//        ChartDataEntry *mChartDataEntry2 = obj2;
-//        
-//        if (mChartDataEntry1.x < mChartDataEntry2.x) {
-//            return NSOrderedAscending;//表示两个比较的对象前者小于后置
-//        }else if(mChartDataEntry2.x == mChartDataEntry1.x){
-//            return NSOrderedSame;
-//        }
-//        return NSOrderedDescending;
-//    }];
-    
     ScatterChartDataSet *hitDataSet = [[ScatterChartDataSet alloc] initWithEntries:hitVals1 label:@""];
     [hitDataSet setScatterShape:ScatterShapeCircle];
     hitDataSet.scatterShapeHoleColor = UIColor.blueColor;
@@ -216,17 +278,7 @@
     
     self.leftChartView.data = data;
     [self.leftChartView notifyDataSetChanged];
-//    self.rightChartView.data = data;
-//    [self.rightChartView notifyDataSetChanged];
     
-//    if (isLeft) {
-//        self.leftChartView.data = data;
-//        [self.leftChartView notifyDataSetChanged];
-//    }else{
-//        self.rightChartView.data = data;
-//        [self.rightChartView notifyDataSetChanged];
-//    }
-    
-}
+}*/
 
 @end
