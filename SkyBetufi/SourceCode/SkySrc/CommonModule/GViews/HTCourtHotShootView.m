@@ -9,6 +9,7 @@
 #import "HTCourtHotShootView.h"
 #import <Masonry.h>
 @import Charts;
+#import "UIColor+GlodBuleHex.h"
 
 
 @interface HTCourtHotShootView()
@@ -127,9 +128,10 @@
             
             UIView *pointView = [self createPoint];
             if ([m.isHit isEqualToString:@"1"]) {
-                pointView.backgroundColor = UIColor.blueColor;
+                pointView.backgroundColor = [UIColor colorWithHexString:@"6290d2"];
             }
             pointView.layer.cornerRadius = point_cornerRadius;
+            pointView.layer.borderColor = [UIColor colorWithHexString:@"6290d2"].CGColor;
             
             [_leftPlayGroundView addSubview:pointView];
             
@@ -157,9 +159,10 @@
             
             UIView *pointView = [self createPoint];
             if ([m.isHit isEqualToString:@"1"]) {
-                pointView.backgroundColor = UIColor.blueColor;
+                pointView.backgroundColor = [UIColor colorWithHexString:@"e95c3b"];
             }
             pointView.layer.cornerRadius = point_cornerRadius;
+            pointView.layer.borderColor = [UIColor colorWithHexString:@"e95c3b"].CGColor;
             
             [_rightPlayGroundView addSubview:pointView];
             
@@ -177,7 +180,7 @@
 {
     UIView *point = [[UIView alloc] init];
     point.layer.borderWidth = 1.2;
-    point.layer.borderColor = UIColor.blueColor.CGColor;
+    //point.layer.borderColor = UIColor.blueColor.CGColor;
     return point;
 }
 

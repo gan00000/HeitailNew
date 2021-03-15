@@ -184,7 +184,7 @@
 + (void)getShootPointWithGameId:(NSString *)game_id
             home_away:(NSString *)home_away //1-主队 2-客队
                 playerId:(NSString *)player_id
-                 quarter:(NSString *)quarter
+                 quarter:(NSString *)quarter //小节数，如：1,2,3,4
                successBlock:(void(^)(NSArray<HotShootPointModel *> * model))successBlock
                  errorBlock:(BJServiceErrorBlock)errorBlock
 {

@@ -11,6 +11,9 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, weak) GlodBuleHTMatchSummaryModel *summaryModel;
 @property (nonatomic, weak)NSArray<GlodBuleHTMatchLiveFeedModel *> *liveFeedModel;
+@property (nonatomic, weak) GlodBuleHTMatchCompareModel *matchCompareModel;
+
+@property (nonatomic, weak) GlodBuleHTMatchHomeModel *matchModel;
 
 @property (nonatomic, strong)NSArray<HotShootPointModel *> *hotShootPointModel_away;
 @property (nonatomic, strong)NSArray<HotShootPointModel *> *hotShootPointModel_home;
@@ -30,11 +33,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-- (void)taorefreshWithMatchSummaryModel:(GlodBuleHTMatchSummaryModel *)summaryModel liveFeedModel:(NSArray<GlodBuleHTMatchLiveFeedModel *> *)liveFeedModel matchModel:(GlodBuleHTMatchHomeModel *)matchModel{
+- (void)taorefreshWithMatchSummaryModel:(GlodBuleHTMatchSummaryModel *)summaryModel matchCompareModel:(GlodBuleHTMatchCompareModel *)matchCompareModel liveFeedModel:(NSArray<GlodBuleHTMatchLiveFeedModel *> *)liveFeedModel matchModel:(GlodBuleHTMatchHomeModel *)matchModel{
     [self.tableView.mj_header endRefreshing];
     self.summaryModel = summaryModel;
     self.liveFeedModel = liveFeedModel;
-   
+    self.matchCompareModel = matchCompareModel;
+    self.matchModel = matchModel;
+    
     if (!self.hotShootPointModel_away) {//第一次需要加载  home_away主客队 1-主队 2-客队
         [GlodBuleHTMatchSummaryRequest getShootPointWithGameId:matchModel.game_id home_away:@"2" playerId:@"" quarter:@"" successBlock:^(NSArray<HotShootPointModel *> *model) {
             
@@ -123,11 +128,17 @@
     HTHotShootCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTHotShootCellTableViewCell class])];
 
     if (self.hotShootPointModel_away) {
-        [cell.hotShootView setDataModel:self.hotShootPointModel_away isLeft:YES width:self.view.width height:self.view.height];
+        [cell updateDataModel:self.hotShootPointModel_away summaryModel:self.summaryModel matchCompareModel:self.matchCompareModel gameId:self.matchModel.game_id isLeft:YES];
+        
+        [cell setDataModel:self.hotShootPointModel_away isLeft:YES width:self.view.width height:self.view.height];
     }
     if (self.hotShootPointModel_home) {
-        [cell.hotShootView setDataModel:self.hotShootPointModel_home isLeft:NO width:self.view.width height:self.view.height];
+        
+        [cell updateDataModel:self.hotShootPointModel_home summaryModel:self.summaryModel matchCompareModel:self.matchCompareModel gameId:self.matchModel.game_id isLeft:NO];
+        
+        [cell setDataModel:self.hotShootPointModel_home isLeft:NO width:self.view.width height:self.view.height];
     }
+    
     
     return cell;
 }

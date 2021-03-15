@@ -578,7 +578,7 @@
 //                 GlodBuleHTMatchVideoLiveViewController *detailVc =  self.loadedControllersArray[index];//[GlodBuleHTMatchVideoLiveViewController taoviewController];
 //                 detailVc.game_id = self.matchModel.game_id;
                  HTHighLightsViewController *hlVc = [HTHighLightsViewController taoviewController];
-                 [hlVc refreshDataWithGameId:self.matchModel.game_id];
+                 [hlVc refreshDataWithGameId:self.matchModel.game_id mMatchSummaryModel:self.matchSummaryModel mCompareModel:self.matchCompareModel];
                 
              } else if (index == 4) {//文字直播
                  GlodBuleHTMatchWordLiveViewController *wordVc = self.loadedControllersArray[index];
@@ -587,7 +587,7 @@
                  
              }else if (index == 2) {//對陣
                  GlodBuleHTMatchCompareViewController *compareVc = self.loadedControllersArray[index];
-                 [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList matchModel:self.matchModel];
+                 [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel matchCompareModel:self.matchCompareModel liveFeedModel:self.liveFeedList matchModel:self.matchModel];
              }else if (index == 1) {//聊起
                  GlodBuleHTIMViewController *imVc = self.loadedControllersArray[index];
                  //[vc taorefreshWithMatchSummaryModel:self.matchSummaryModel];
@@ -604,7 +604,7 @@
 
              //视频直播
              HTHighLightsViewController *hlVc = [HTHighLightsViewController taoviewController];
-             [hlVc refreshDataWithGameId:self.matchModel.game_id];
+             [hlVc refreshDataWithGameId:self.matchModel.game_id mMatchSummaryModel:self.matchSummaryModel mCompareModel:self.matchCompareModel];
              vc = hlVc;
 
          } else
@@ -618,7 +618,9 @@
              
          }else if (index == 2) {
              GlodBuleHTMatchCompareViewController *compareVc = [GlodBuleHTMatchCompareViewController taoviewController];
-             [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList matchModel:self.matchModel];
+             
+             [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel matchCompareModel:self.matchModel liveFeedModel:self.liveFeedList  matchModel:self.matchModel];
+            
              compareVc.onTableHeaderRefreshBlock = ^{
                  [weakSelf loadData];
              };
@@ -659,7 +661,9 @@
 
         } else if (index == 1) {
             GlodBuleHTMatchCompareViewController *compareVc = self.loadedControllersArray[index];
-            [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList matchModel:self.matchModel];
+//            [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList matchModel:self.matchModel];
+            [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel matchCompareModel:self.matchModel liveFeedModel:self.liveFeedList  matchModel:self.matchModel];
+            
         } else {
             GlodBuleHTMatchDashboardViewController *dashbdVc = self.loadedControllersArray[index];
             [dashbdVc taorefreshWithMatchCompareModel:self.matchCompareModel];
@@ -684,8 +688,12 @@
         
     } else if (index == 1) {
         GlodBuleHTMatchCompareViewController *compareVc = [GlodBuleHTMatchCompareViewController taoviewController];
-        [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList matchModel:self.matchModel];
+        
+        [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel matchCompareModel:self.matchCompareModel liveFeedModel:self.liveFeedList matchModel:self.matchModel];
+//        [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel matchCompareModel:self.matchCompareModel maliveFeedModel:self.liveFeedList matchModel:self.matchModel];
+        
         compareVc.onTableHeaderRefreshBlock = ^{
+            
             [weakSelf loadData];
         };
         vc = compareVc;

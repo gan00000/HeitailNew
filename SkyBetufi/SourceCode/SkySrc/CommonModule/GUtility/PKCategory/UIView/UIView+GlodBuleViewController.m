@@ -11,4 +11,12 @@
     } while (responder);
     return nil;
 }
+
+-(void) setViewTapGestureWithTarget:(nullable id)target action:(nullable SEL)action{
+    
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:target action:action];
+    self.userInteractionEnabled = YES;
+    [self addGestureRecognizer:tapGes];
+
+}
 @end

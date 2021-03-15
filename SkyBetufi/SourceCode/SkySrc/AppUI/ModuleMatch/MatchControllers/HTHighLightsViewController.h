@@ -8,12 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "GlodBulePPXXBJBaseViewController.h"
+#import "GlodBuleHTMatchCompareModel.h"
+#import "GlodBuleHTMatchHomeModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HTHighLightsViewController : GlodBulePPXXBJBaseViewController
 
--(void)refreshDataWithGameId:(NSString *)game_id;
+//-(void)refreshDataWithGameId:(NSString *)game_id;
+
+-(void)refreshDataWithGameId:(NSString *)game_id mMatchSummaryModel:(GlodBuleHTMatchHomeModel *)matchModel mCompareModel:(GlodBuleHTMatchCompareModel *)matchCompareModel;
 
 @end
 

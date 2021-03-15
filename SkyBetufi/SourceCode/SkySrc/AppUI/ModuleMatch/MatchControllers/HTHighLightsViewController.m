@@ -18,6 +18,9 @@
 @property (nonatomic, strong)NSArray<GlodBuleHTNewsModel *> *newsList;
 @property (nonatomic, copy) NSString *game_id;
 
+@property (nonatomic, weak)GlodBuleHTMatchSummaryModel *mMatchSummaryModel;
+@property (nonatomic, weak)GlodBuleHTMatchCompareModel *mMatchCompareModel;
+
 @end
 
 @implementation HTHighLightsViewController
@@ -61,8 +64,10 @@
     [self.view showLoadingView];
 }
 
--(void)refreshDataWithGameId:(NSString *)game_id{
+-(void)refreshDataWithGameId:(NSString *)game_id mMatchSummaryModel:(GlodBuleHTMatchSummaryModel *)matchModel mCompareModel:(GlodBuleHTMatchCompareModel *)matchCompareModel{
     self.game_id = game_id;
+    self.mMatchCompareModel = matchCompareModel;
+    self.mMatchSummaryModel = matchModel;
     [self loadData];
 }
 

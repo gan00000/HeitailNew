@@ -125,6 +125,7 @@
 		32FED83423AB7BB100D900A7 /* KKRESLMPlayer.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32FED83323AB7BB100D900A7 /* KKRESLMPlayer.xcassets */; };
 		32FED83623AC812200D900A7 /* live_player_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FED83523AC812200D900A7 /* live_player_bg.png */; };
 		32FED83823ACBD1100D900A7 /* icon_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FED83723ACBD1000D900A7 /* icon_play.png */; };
+		32FF953C25FDAD8D001BC4A3 /* GamaAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FF953925FDAD8D001BC4A3 /* GamaAlertView.m */; };
 		32FFD29123A2267200E1661A /* UIImageView+GlodBuleHT.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFD29023A2267200E1661A /* UIImageView+GlodBuleHT.m */; };
 		32FFD29923A397A700E1661A /* GlodBuleHTAdViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFD29723A397A700E1661A /* GlodBuleHTAdViewCell.m */; };
 		32FFD29A23A397A700E1661A /* GlodBuleHTAdViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32FFD29823A397A700E1661A /* GlodBuleHTAdViewCell.xib */; };
@@ -596,6 +597,8 @@
 		32FED83323AB7BB100D900A7 /* KKRESLMPlayer.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = KKRESLMPlayer.xcassets; sourceTree = "<group>"; };
 		32FED83523AC812200D900A7 /* live_player_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = live_player_bg.png; sourceTree = "<group>"; };
 		32FED83723ACBD1000D900A7 /* icon_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_play.png; sourceTree = "<group>"; };
+		32FF953525FDAD8D001BC4A3 /* GamaAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamaAlertView.h; sourceTree = "<group>"; };
+		32FF953925FDAD8D001BC4A3 /* GamaAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamaAlertView.m; sourceTree = "<group>"; };
 		32FFD28F23A2267200E1661A /* UIImageView+GlodBuleHT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+GlodBuleHT.h"; sourceTree = "<group>"; };
 		32FFD29023A2267200E1661A /* UIImageView+GlodBuleHT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+GlodBuleHT.m"; sourceTree = "<group>"; };
 		32FFD29623A397A700E1661A /* GlodBuleHTAdViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTAdViewCell.h; sourceTree = "<group>"; };
@@ -1331,6 +1334,15 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		32FF953325FDAD8D001BC4A3 /* AlertViewUtil */ = {
+			isa = PBXGroup;
+			children = (
+				32FF953525FDAD8D001BC4A3 /* GamaAlertView.h */,
+				32FF953925FDAD8D001BC4A3 /* GamaAlertView.m */,
+			);
+			path = AlertViewUtil;
+			sourceTree = "<group>";
+		};
 		CB747A826453EE017B9DDDC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1663,6 +1675,7 @@
 		FEC115322143D4A0002DB617 /* GUtility */ = {
 			isa = PBXGroup;
 			children = (
+				32FF953325FDAD8D001BC4A3 /* AlertViewUtil */,
 				32C65DEE2506771A0068D2C7 /* GlodBuleAccountModel.h */,
 				32C65DEF2506771A0068D2C7 /* GlodBuleAccountModel.m */,
 				32C65DEB250676AD0068D2C7 /* GlodBuleConfigCoreUtil.h */,
@@ -2585,6 +2598,7 @@
 				3213529F250A149F00702F72 /* UserMessage.pbobjc.m in Sources */,
 				FEC116052143D4A1002DB617 /* GlodBuleXJLoadingView.m in Sources */,
 				FEC1160E2143D4A1002DB617 /* UIView+GlodBuleToast.m in Sources */,
+				32FF953C25FDAD8D001BC4A3 /* GamaAlertView.m in Sources */,
 				FE82BB502179B99800C52C51 /* GlodBuleHTDataAllRankRequest.m in Sources */,
 				32FED81F23AB768700D900A7 /* GlodBuleLMPlayerStatusModel.m in Sources */,
 				FECCA5282258C8D0009EF494 /* GlodBuleHTCommentViewController.m in Sources */,
