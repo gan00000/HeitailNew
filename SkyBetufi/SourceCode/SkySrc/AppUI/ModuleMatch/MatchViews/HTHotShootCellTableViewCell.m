@@ -42,6 +42,10 @@
 @property (nonatomic, strong)NSArray<HotShootPointModel *> *hotShootPointModel_away_temp;
 @property (nonatomic, strong)NSArray<HotShootPointModel *> *hotShootPointModel_home_temp;
 
+@property (weak, nonatomic) IBOutlet UILabel *hotPointDesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *leftPtsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rightPtsLabel;
+
 @end
 
 @implementation HTHotShootCellTableViewCell
@@ -66,6 +70,7 @@
     self.quartId = @"";
     self.awayPlayerId = @"";
     self.homePlayerId = @"";
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -80,16 +85,20 @@
             
         if (!_hotShootPointModel_away_temp) {
             [self.hotShootView setDataModel:model isLeft:isLeft width:width height:height];
+            self.leftPtsLabel.text = [self setHitRate:model];
         }else{
             [self.hotShootView setDataModel:_hotShootPointModel_away_temp isLeft:YES width:width height:height];
+            self.leftPtsLabel.text = [self setHitRate:_hotShootPointModel_away_temp];
         }
         
     }else{
         
         if (!_hotShootPointModel_home_temp) {
             [self.hotShootView setDataModel:model isLeft:isLeft width:width height:height];
+            self.rightPtsLabel.text = [self setHitRate:model];
         }else{
             [self.hotShootView setDataModel:_hotShootPointModel_home_temp isLeft:NO width:width height:height];
+            self.rightPtsLabel.text = [self setHitRate:_hotShootPointModel_home_temp];
         }
         
     }
@@ -105,6 +114,16 @@
     [self.rightTeamIcon sd_setImageWithURL:[NSURL URLWithString:summaryModel.homeLogo]];
     
     self.game_id = gameId;
+    
+    NSString *gameStatus = @"";
+    if ([summaryModel.scheduleStatus isEqualToString:@"Final"]) {
+        gameStatus = @"已結束";
+       
+    } else if ([summaryModel.scheduleStatus isEqualToString:@"InProgress"]) {
+        gameStatus = [NSString stringWithFormat:@"第%@節", summaryModel.quarter];
+    }
+    
+    self.hotPointDesLabel.text = [NSString stringWithFormat:@"%@ %@-%@ %@ %@ %@",summaryModel.awayName,summaryModel.away_pts,summaryModel.home_pts,summaryModel.homeName,gameStatus,summaryModel.date];
     
     if (isLeft) {
         if (_awayPlayerArrayIds.count > 1) {
@@ -194,9 +213,14 @@
         if ([team isEqualToString:@"1"]) {
             [weakSelf.hotShootView setDataModel:model isLeft:NO width:SCREEN_WIDTH height:0];
             weakSelf.hotShootPointModel_home_temp = model;
+
+            weakSelf.rightPtsLabel.text = [weakSelf setHitRate:model];
+            
         }else{
             [weakSelf.hotShootView setDataModel:model isLeft:YES width:SCREEN_WIDTH height:0];
             weakSelf.hotShootPointModel_away_temp = model;
+            
+            weakSelf.leftPtsLabel.text = [weakSelf setHitRate:model];
         }
         
         
@@ -204,5 +228,27 @@
         
     }];
     
+}
+
+-(NSString *)setHitRate:(NSArray<HotShootPointModel *> *)model
+{
+    CGFloat hitCount = 0;
+    NSUInteger allCount = model.count;
+    if (model) {
+        for (HotShootPointModel *x in model) {
+            if ([x.isHit isEqualToString:@"1"]) {
+                hitCount = hitCount + 1;
+            }
+        }
+    }
+    CGFloat hitRate = (hitCount / allCount) * 100;
+    
+    CGFloat rounded_up = round(hitRate);
+    NSLog(@"%.0lf",rounded_up);
+    
+    NSString *rate = [NSString stringWithFormat:@"投籃:(%.0lf-%d) %.0lf%@", hitCount, allCount, rounded_up,@"%"];
+//    self.leftPtsLabel.text = rate;
+//    self.rightPtsLabel.text = rate;
+    return rate;
 }
 @end
