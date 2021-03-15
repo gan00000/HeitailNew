@@ -577,7 +577,7 @@
 
 //                 GlodBuleHTMatchVideoLiveViewController *detailVc =  self.loadedControllersArray[index];//[GlodBuleHTMatchVideoLiveViewController taoviewController];
 //                 detailVc.game_id = self.matchModel.game_id;
-                 HTHighLightsViewController *hlVc = [HTHighLightsViewController taoviewController];
+                 HTHighLightsViewController *hlVc =  self.loadedControllersArray[index];
                  [hlVc refreshDataWithGameId:self.matchModel.game_id mMatchSummaryModel:self.matchSummaryModel mCompareModel:self.matchCompareModel];
                 
              } else if (index == 4) {//文字直播

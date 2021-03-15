@@ -13,6 +13,7 @@
 #define API_MATCH_LIVE_FEED_PAGING           @"api/get_live_feed_paging"
 #define API_MATCH_GET_SHOOT_POINT           @"api/get_shootpoint"
 #define API_MATCH_GET_highlights    @"/api/get_highlights"
+#define API_MATCH_GET_LEAGUE_LIST  @"/api/get_league_list"
 
 
 #pragma mark - 新聞

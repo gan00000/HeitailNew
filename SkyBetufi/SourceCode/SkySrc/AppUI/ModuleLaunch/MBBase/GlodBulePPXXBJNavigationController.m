@@ -1,5 +1,5 @@
 #import "GlodBulePPXXBJNavigationController.h"
-#import "GlodBuleHTMatchHomeViewController.h"
+#import "GlodBuleHTNewMatchHomeViewController.h"
 #import "GlodBuleHTNewsHomeViewController.h"
 #import "GlodBuleHTFilmHomeViewController.h"
 #import "GlodBuleHTDataHomeViewController.h"
@@ -38,7 +38,7 @@
     [super didReceiveMemoryWarning];
 }
 - (NSArray<Class> *)taoviewControllersNotHideTabBar {
-    return @[[GlodBuleHTMatchHomeViewController class],
+    return @[[GlodBuleHTNewMatchHomeViewController class],
              [GlodBuleHTNewsHomeViewController class],
              [GlodBuleHTFilmHomeViewController class],
              [GlodBuleHTDataHomeViewController class],

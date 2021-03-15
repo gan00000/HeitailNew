@@ -2,11 +2,15 @@
 @implementation GlodBuleHTMatchHomeRequest
 + (void)taorequestWithStartDate:(NSString *)startDate
                      endDate:(NSString *)endDate
+                 competition_id:(NSString *)competition_id
                 successBlock:(void(^)(NSArray<GlodBuleHTMatchHomeGroupModel *> *matchList, NSArray<GlodBuleHTMatchHomeModel *> *matchA))successBlock
                   errorBlock:(BJServiceErrorBlock)errorBlock {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"date_from"] = startDate;
     params[@"date_to"] = endDate;
+    if (competition_id) {
+        params[@"competition_id"] = competition_id;
+    }
     [GlodBuleBJHTTPServiceEngine tao_getRequestWithFunctionPath:API_MATCH_HOME params:params successBlock:^(id responseData) {
         NSArray *allMatchList = [NSArray yy_modelArrayWithClass:[GlodBuleHTMatchHomeModel class] json:responseData[@"matches"]];
         NSMutableArray *groupedMatchList = [NSMutableArray array];
@@ -37,6 +41,17 @@
         if (successBlock) {
             NSDictionary *match_progress = responseData[@"match_progress"];
             successBlock(match_progress[@"game_id"], match_progress[@"quarter"], match_progress[@"time"]);
+        }
+    } errorBlock:errorBlock];
+}
+
++ (void)get_league_list_successBlock:(void(^)(NSDictionary *leagueList))successBlock
+             errorBlock:(BJServiceErrorBlock)errorBlock
+{
+    [GlodBuleBJHTTPServiceEngine tao_getRequestWithFunctionPath:API_MATCH_GET_LEAGUE_LIST params:nil successBlock:^(id responseData) {
+        if (successBlock) {
+            NSDictionary *match_progress = responseData[@"result"];
+            successBlock(match_progress);
         }
     } errorBlock:errorBlock];
 }

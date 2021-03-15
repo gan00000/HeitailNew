@@ -29,13 +29,13 @@
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    if (app.pushInfo) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [app responsePushInfo:app.pushInfo fromViewController:self];
-            app.pushInfo = nil;
-        });
-    }
+//    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//    if (app.pushInfo) {
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [app responsePushInfo:app.pushInfo fromViewController:self];
+//            app.pushInfo = nil;
+//        });
+//    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -105,7 +105,7 @@
 #pragma mark - private
 - (void)setupViews {
     
-    self.title = @"比賽";
+//    self.title = @"比賽";
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -196,6 +196,7 @@
     self.requesting = YES;
     [GlodBuleHTMatchHomeRequest taorequestWithStartDate:[self ymdWithDate:self.startDate]
                                      endDate:[self ymdWithDate:self.endDate]
+                                         competition_id:self.matchType
                                 successBlock:^(NSArray<GlodBuleHTMatchHomeGroupModel *> *matchList,NSArray<GlodBuleHTMatchHomeModel *> *matchA) {
                                     self.matchList = matchList;
                                     [self.tableView hideEmptyView];

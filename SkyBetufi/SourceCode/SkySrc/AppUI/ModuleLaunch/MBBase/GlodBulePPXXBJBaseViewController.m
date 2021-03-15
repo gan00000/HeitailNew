@@ -2,7 +2,7 @@
 #import "GlodBuleHTMeHomeViewController.h"
 #import "GlodBulePPXXBJNavigationController.h"
 #import "GlodBuleHTUserManager.h"
-#import "GlodBuleHTMatchHomeViewController.h"
+#import "GlodBuleHTNewMatchHomeViewController.h"
 #import "GlodBuleHTNewsHomeViewController.h"
 #import "GlodBuleHTFilmHomeViewController.h"
 #import "GlodBuleHTDataHomeViewController.h"
@@ -60,7 +60,7 @@
     NSLog(@"BJBaseViewController viewDidAppear %@",NSStringFromClass([self class]));
     
     NSString *currentClassString = NSStringFromClass([self class]);
-    if ([currentClassString isEqualToString:NSStringFromClass([GlodBuleHTMatchHomeViewController class])]) {
+    if ([currentClassString isEqualToString:NSStringFromClass([GlodBuleHTNewMatchHomeViewController class])]) {
         
         [FIRAnalytics logEventWithName:@"IOS_Match"
                             parameters:@{

@@ -9,12 +9,15 @@
 #import "GlodBuleHTTabBarHomeViewController.h"
 #import "GlodBuleHTNewsHomeOtherViewController.h"
 #import "GlodBuleHTViewController2.h"
+#import "GlodBuleHTNewMatchHomeViewController.h"
+#import "AppDelegate.h"
+
 @import Firebase;
 @import GoogleSignIn;
 
 @interface GlodBulePPXXBJMainViewController ()<UITabBarControllerDelegate>
 @property (nonatomic, strong) GlodBulePPXXBJNavigationController *nav1;
-@property (nonatomic, strong) GlodBuleHTMatchHomeViewController *vc1;
+@property (nonatomic, strong) GlodBuleHTNewMatchHomeViewController *vc1;
 @property (nonatomic, strong) GlodBulePPXXBJNavigationController *nav2;
 @property (nonatomic, strong) GlodBuleHTNewsHomeViewController *vc2;
 @property (nonatomic, strong) GlodBulePPXXBJNavigationController *nav3;
@@ -39,6 +42,15 @@
     self.delegate = self;
     
     [GIDSignIn sharedInstance].presentingViewController = self;
+    
+    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    if (app.pushInfo) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [app responsePushInfo:app.pushInfo fromViewController:self];
+            app.pushInfo = nil;
+        });
+    }
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -80,7 +92,8 @@
 }
 - (NSArray<UIViewController *> *)taotabBarControllers {
     if (!self.vc1) {
-        self.vc1 = [GlodBuleHTMatchHomeViewController taoviewController];
+//        self.vc1 = [GlodBuleHTMatchHomeViewController taoviewController];
+        self.vc1 = [GlodBuleHTNewMatchHomeViewController taoviewController];
 //        self.vc1.modalPresentationStyle = UIModalPresentationFullScreen;
         self.nav1 = [[GlodBulePPXXBJNavigationController alloc] initWithRootViewController:self.vc1];
     }

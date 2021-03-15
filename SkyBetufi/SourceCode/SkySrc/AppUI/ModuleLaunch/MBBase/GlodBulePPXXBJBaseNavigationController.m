@@ -1,5 +1,5 @@
 #import "GlodBulePPXXBJBaseNavigationController.h"
-#import "GlodBuleHTMatchHomeViewController.h"
+#import "GlodBuleHTNewMatchHomeViewController.h"
 #import "GlodBuleHTNewsHomeViewController.h"
 #import "GlodBuleHTFilmHomeViewController.h"
 #import "GlodBuleHTDataHomeViewController.h"
@@ -36,7 +36,7 @@
     viewController.hidesBottomBarWhenPushed = YES;
     [super pushViewController:viewController animated:animated];
     if (self.viewControllers.count > 1 ||
-        (![self isKindOfClass:[GlodBuleHTMatchHomeViewController class]] &&
+        (![self isKindOfClass:[GlodBuleHTNewMatchHomeViewController class]] &&
          ![self isKindOfClass:[GlodBuleHTNewsHomeViewController class]] &&
          ![self isKindOfClass:[GlodBuleHTFilmHomeViewController class]] &&
          ![self isKindOfClass:[GlodBuleHTDataHomeViewController class]] &&
