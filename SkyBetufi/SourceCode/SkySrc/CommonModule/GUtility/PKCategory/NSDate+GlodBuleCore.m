@@ -333,4 +333,15 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     return components.year;
 }
+
+-(NSString *)getTimeStamp
+{
+    double secondTime=[self timeIntervalSince1970];
+    double millisecondTime=secondTime*1000;
+    NSString * millisecondTimeStr=[NSString stringWithFormat:@"%f",millisecondTime];
+    NSRange pointRange=[millisecondTimeStr rangeOfString:@"."];
+    NSString * MSTime=[millisecondTimeStr substringToIndex:pointRange.location];
+    
+    return MSTime;
+}
 @end

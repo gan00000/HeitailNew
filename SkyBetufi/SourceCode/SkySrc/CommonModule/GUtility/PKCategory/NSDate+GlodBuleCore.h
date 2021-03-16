@@ -82,4 +82,6 @@
 @property (readonly) NSInteger weekday;
 @property (readonly) NSInteger nthWeekday; 
 @property (readonly) NSInteger year;
+
+-(NSString *)getTimeStamp;
 @end

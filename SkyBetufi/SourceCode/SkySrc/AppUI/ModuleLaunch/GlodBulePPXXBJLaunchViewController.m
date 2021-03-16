@@ -4,6 +4,7 @@
 #import "GlodBuleBJHTTPServiceEngine.h"
 
 #import "GlodBuleDHGuidePageHUD.h"
+#import "NSDate+GlodBuleCore.h"
 
 @interface GlodBulePPXXBJLaunchViewController () <CAAnimationDelegate>
 @property (nonatomic, strong) GlodBulePPXXBJMainViewController *tabBarController;
@@ -25,7 +26,8 @@
 }
 
 - (void)taoRequestConfig {
-    [GlodBuleBJHTTPServiceEngine tao_getRequestCommon:@"ios_config.json" params:nil successBlock:^(id responseData) {
+    NSString *url = [NSString stringWithFormat:@"ios_config.json?t=%@",[[NSDate dateNow] getTimeStamp]];
+    [GlodBuleBJHTTPServiceEngine tao_getRequestCommon:url params:nil successBlock:^(id responseData) {
         NSDictionary *configDictionary = responseData; 
         if (configDictionary) {
             NSString *version = configDictionary[@"version"];
