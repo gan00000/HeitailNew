@@ -1,6 +1,6 @@
 #import "GlodBuleHTDataCellTeamView.h"
 #import <WebKit/WebKit.h>
-#import <UIImageView+GlodBuleSVG.h>
+#import "UIImageView+GlodBuleSVG.h"
 @interface GlodBuleHTDataCellTeamView ()
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
