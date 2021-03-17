@@ -15,7 +15,7 @@
 /** 视频URL */
 //@property (nonatomic, strong) NSURL        *videoURL;
 
-@property (nonatomic, strong) NSArray        *videoUrls;
+@property (nonatomic, strong) NSArray<NSString *>        *videoUrls;
 
 /** 视频封面本地图片 */
 @property (nonatomic, strong) UIImage      *placeholderImage;

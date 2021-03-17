@@ -29,6 +29,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GlodBuleHTNewsModel *model = self.filmList[indexPath.row];
+    
     if ([model.news_type isEqualToString:@"新聞"]) {
         GlodBuleHTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsHomeCell"];
         [cell taosetupWithNewsModel:model];
@@ -50,7 +51,7 @@
     }else if ([model.news_id isEqualToString:@"-100"]) {
         return 250;
     }
-    return model.filmCellHeight;
+    return 260;//model.filmCellHeight;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     GlodBuleHTNewsModel *newsModel = self.filmList[indexPath.row];
@@ -77,7 +78,11 @@
             [tmpArray addObject:adModel];
         }
         
-        [tmpArray addObject:dataList[i]];
+        GlodBuleHTNewsModel *m = dataList[i];
+        if (m.play_url && ![m.play_url isEqualToString:@""]) {
+            m.news_type = @"影片";
+        }
+        [tmpArray addObject:m];
     }
     
     return tmpArray;

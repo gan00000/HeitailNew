@@ -58,9 +58,10 @@
     instance.delegate = delegate;
     
     // 设置基本模型 (最后设置)
-    instance.playerModel = playerModel;
-    instance.currentPayUrl = playerModel.videoUrls[0];
-    
+    if (playerModel) {
+        instance.playerModel = playerModel;
+        instance.currentPayUrl = playerModel.videoUrls[0];
+    }
     
     // 创建状态模型
     instance.playerStatusModel = [[GlodBuleLMPlayerStatusModel alloc] init];
@@ -159,6 +160,13 @@
 - (void)resetToPlayNewVideo:(GlodBuleLMPlayerModel *)playerModel {
     [self resetPlayer];
 //    self.playerModel = playerModel;
+    [self configLMPlayer];
+}
+
+- (void)playNewVideo:(GlodBuleLMPlayerModel *)playerModel {
+    [self resetPlayer];
+    self.playerModel = playerModel;
+    self.currentPayUrl = playerModel.videoUrls[0];
     [self configLMPlayer];
 }
 

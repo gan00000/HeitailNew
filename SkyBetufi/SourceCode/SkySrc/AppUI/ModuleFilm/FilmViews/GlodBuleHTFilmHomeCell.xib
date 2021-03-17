@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -66,7 +67,7 @@
                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xas-Z2-i4n">
                         <rect key="frame" x="150" y="211.5" width="64" height="30"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIt-aK-OS3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIt-aK-OS3">
                                 <rect key="frame" x="0.0" y="0.0" width="64" height="30"/>
                                 <connections>
                                     <action selector="onShareButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eoR-ya-vn0"/>
@@ -100,16 +101,23 @@
                             <constraint firstAttribute="trailing" secondItem="yIt-aK-OS3" secondAttribute="trailing" id="ttO-8Q-SJ4"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUg-Kq-Qjp" userLabel="localPlayerView">
+                        <rect key="frame" x="15" y="42" width="345" height="167.5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="aVb-xg-1HH" secondAttribute="trailing" id="0lc-Ri-G4G"/>
+                    <constraint firstItem="rwP-Wg-1xf" firstAttribute="trailing" secondItem="aUg-Kq-Qjp" secondAttribute="trailing" id="AIr-6z-p6E"/>
                     <constraint firstAttribute="bottom" secondItem="aVb-xg-1HH" secondAttribute="bottom" constant="10" id="B6Z-vv-0x1"/>
+                    <constraint firstItem="aUg-Kq-Qjp" firstAttribute="leading" secondItem="rwP-Wg-1xf" secondAttribute="leading" id="D1G-sg-5qb"/>
                     <constraint firstItem="Xas-Z2-i4n" firstAttribute="centerY" secondItem="itZ-4i-GUV" secondAttribute="centerY" id="Dst-8h-HDW"/>
                     <constraint firstItem="L4k-8c-Iq3" firstAttribute="centerY" secondItem="vc1-UD-eXl" secondAttribute="centerY" id="K3N-pL-t4k"/>
                     <constraint firstItem="Xas-Z2-i4n" firstAttribute="leading" secondItem="itZ-4i-GUV" secondAttribute="trailing" constant="8" id="L5V-Ix-ee2"/>
                     <constraint firstItem="itZ-4i-GUV" firstAttribute="centerY" secondItem="ZgI-Yn-5bj" secondAttribute="centerY" id="NTk-eu-xaJ"/>
                     <constraint firstItem="ZgI-Yn-5bj" firstAttribute="leading" secondItem="L4k-8c-Iq3" secondAttribute="trailing" constant="20" id="Pdn-JU-e9g"/>
+                    <constraint firstItem="aUg-Kq-Qjp" firstAttribute="top" secondItem="rwP-Wg-1xf" secondAttribute="top" id="UJR-Sl-XUy"/>
                     <constraint firstItem="rwP-Wg-1xf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="V4x-hF-pqc"/>
                     <constraint firstItem="aVb-xg-1HH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="WdW-i4-mSx"/>
                     <constraint firstItem="ZgI-Yn-5bj" firstAttribute="centerY" secondItem="L4k-8c-Iq3" secondAttribute="centerY" id="Zwa-rA-baI"/>
@@ -117,6 +125,7 @@
                     <constraint firstAttribute="bottomMargin" secondItem="L4k-8c-Iq3" secondAttribute="bottom" constant="15" id="aa9-lQ-O9j"/>
                     <constraint firstAttribute="trailing" secondItem="lTr-0I-WbP" secondAttribute="trailing" constant="15" id="ajl-zS-Xhf"/>
                     <constraint firstItem="lTr-0I-WbP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="bVO-Cp-Sj3"/>
+                    <constraint firstItem="rwP-Wg-1xf" firstAttribute="bottom" secondItem="aUg-Kq-Qjp" secondAttribute="bottom" id="c1y-nR-VhR"/>
                     <constraint firstItem="vc1-UD-eXl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="eqf-FU-HeE"/>
                     <constraint firstItem="L4k-8c-Iq3" firstAttribute="leading" secondItem="vc1-UD-eXl" secondAttribute="trailing" constant="5" id="l8o-Gj-dFf"/>
                     <constraint firstItem="aVb-xg-1HH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="qLU-Ry-7C2"/>
@@ -127,6 +136,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="localPlayerView" destination="aUg-Kq-Qjp" id="9iH-8c-c8h"/>
                 <outlet property="shareButtonContentView" destination="Xas-Z2-i4n" id="72e-AK-8zG"/>
                 <outlet property="timeLabel" destination="L4k-8c-Iq3" id="QuZ-Gp-LU9"/>
                 <outlet property="titleLabel" destination="lTr-0I-WbP" id="grq-A3-Fwa"/>
@@ -141,5 +151,8 @@
         <image name="icon_news_share" width="14" height="14"/>
         <image name="icon_news_time" width="14" height="14"/>
         <image name="icon_news_view" width="14" height="14"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

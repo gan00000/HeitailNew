@@ -48,6 +48,7 @@
  */
 - (void)resetToPlayNewVideo:(GlodBuleLMPlayerModel *)playerModel; 
 
+- (void)playNewVideo:(GlodBuleLMPlayerModel *)playerModel;
 
 /** 自动播放，默认不自动播放 */
 - (void)autoPlayTheVideo;

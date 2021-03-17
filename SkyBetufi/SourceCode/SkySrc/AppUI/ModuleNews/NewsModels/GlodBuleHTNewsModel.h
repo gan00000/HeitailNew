@@ -28,6 +28,9 @@
 @property (nonatomic, assign) CGFloat iframe_height;
 @property (nonatomic, assign) CGFloat filmCellHeight;
 @property (nonatomic, strong) id share_thub;
+
+@property (nonatomic, copy) NSString *play_url;
+
 - (void)taogetClearContentWithBlock:(void(^)(BOOL success, NSString *content))block;
 + (BOOL)taocanShare;
 - (void)taoshare;
