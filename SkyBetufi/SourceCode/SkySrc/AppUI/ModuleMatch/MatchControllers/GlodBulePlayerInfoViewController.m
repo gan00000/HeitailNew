@@ -12,6 +12,7 @@
 #import "GlodBuleHTLoginAlertView.h"
 #import <UMShare/UMShare.h>
 #import <FBSDKShareKit/FBSDKShareKit.h>
+#import "UIColor+GlodBuleHex.h"
 
 @interface GlodBulePlayerInfoViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
@@ -45,7 +46,10 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *mScrollView;
 @property (weak, nonatomic) IBOutlet UIView *mContentView;
+@property (weak, nonatomic) IBOutlet UIView *hotShootView;
+@property (weak, nonatomic) IBOutlet UIImageView *hotShootBgImageView;
 
+@property (strong, nonatomic) UIView *hotPointView;
 @end
 
 @implementation GlodBulePlayerInfoViewController
@@ -59,11 +63,17 @@
     self.title = @"數據卡";
     NSLog(@"GlodBulePlayerInfoViewController viewDidLoad");
     
-    self.mScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, 900);
-    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav_icon_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonTapped:)];
     
     [self initSegmentControl];
+    
+    
+    self.mScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, 900);
+    self.hotPointView = [[UIView alloc] init];
+    [self.hotShootView addSubview:self.hotPointView];
+    [self.hotPointView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.top.trailing.bottom.mas_equalTo(self.hotShootView);
+    }];
     
     self.model_all = [[GlodBuleHTMatchDetailsModel alloc] init];
     
@@ -157,6 +167,8 @@
         [self.iconImageView th_setImageWithURL:self.model.officialImagesrc placeholderImage:HT_DEFAULT_AVATAR_LOGO];
      
     }
+    
+    [self requestHotShootDataWithQuarter:@""];
 }
 
 
@@ -192,14 +204,19 @@
     
     if (index == 0) {
         [self setPlayerData:self.model_1];
+        [self requestHotShootDataWithQuarter:@"1"];
     }else if(index == 1) {
         [self setPlayerData:self.model_2];
+        [self requestHotShootDataWithQuarter:@"2"];
     }else if(index == 2) {
         [self setPlayerData:self.model_3];
+        [self requestHotShootDataWithQuarter:@"3"];
     }else if(index == 3) {
         [self setPlayerData:self.model_4];
+        [self requestHotShootDataWithQuarter:@"4"];
     }else if(index == 4) {
         [self setPlayerData:self.model_all];
+        [self requestHotShootDataWithQuarter:@""];
     }
     
 }
@@ -313,5 +330,69 @@
 - (void)onShareButtonTapped:(id)sender {
     [self share];
 }
+
+#pragma mark - requestData
+
+-(void) requestHotShootDataWithQuarter:(NSString *)quartId//1-主队 2-客队
+{
+    kWeakSelf
+    [GlodBuleHTMatchSummaryRequest getShootPointWithGameId:self.model.gameId home_away:@"" playerId:self.model.playerId quarter:quartId successBlock:^(NSArray<HotShootPointModel *> *model) {
+        
+        if (model) {
+            [weakSelf addPointToViewWithData:model];
+        }
+
+    } errorBlock:^(GlodBuleBJError *error) {
+        
+    }];
+    
+}
+
+-(void)addPointToViewWithData:(NSArray<HotShootPointModel *> *)model
+{
+    CGFloat point_cornerRadius = 4;
+    CGFloat xxWidth = self.hotPointView.width;
+    CGFloat xxHeight = self.hotPointView.height;
+        
+        for(UIView *subView in [self.hotPointView subviews])
+        {
+            [subView removeFromSuperview];
+        }
+        
+        for (HotShootPointModel *m in model) { //X = 49 Y = 32
+            
+            
+            CGFloat x = [m.xAxis floatValue] * (xxHeight / 49);
+            CGFloat y = [m.yAxis floatValue] * (xxWidth / 32);
+            
+            if (x > xxHeight || y > xxWidth) {
+                continue;
+            }
+            
+            UIView *pointView = [self createPoint];
+            if ([m.isHit isEqualToString:@"1"]) {
+                pointView.backgroundColor = [UIColor colorWithHexString:@"6290d2"];
+            }
+            pointView.layer.cornerRadius = point_cornerRadius;
+            pointView.layer.borderColor = [UIColor colorWithHexString:@"6290d2"].CGColor;
+            
+            [self.hotPointView addSubview:pointView];
+            
+            [pointView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.height.width.mas_equalTo(point_cornerRadius * 2);
+                make.centerY.mas_equalTo(self.hotPointView.mas_bottom).mas_offset(-x);
+                make.centerX.mas_equalTo(self.hotPointView.mas_leading).mas_offset(y);
+            }];
+        }
+}
+
+-(UIView *)createPoint
+{
+    UIView *point = [[UIView alloc] init];
+    point.layer.borderWidth = 1.2;
+    //point.layer.borderColor = UIColor.blueColor.CGColor;
+    return point;
+}
+
 
 @end

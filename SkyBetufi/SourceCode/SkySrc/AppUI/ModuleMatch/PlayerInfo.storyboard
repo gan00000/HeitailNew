@@ -491,6 +491,8 @@
                         <outlet property="fanguiLabel" destination="46U-Q2-XcI" id="g9r-UT-BCB"/>
                         <outlet property="faqiuLabel" destination="msz-5I-7Cb" id="LKt-Ea-KyQ"/>
                         <outlet property="fenggaiLabel" destination="hRq-r5-8qQ" id="ADc-By-9cV"/>
+                        <outlet property="hotShootBgImageView" destination="VUZ-Mf-JmE" id="2oI-7Z-RCc"/>
+                        <outlet property="hotShootView" destination="YZI-k1-lcP" id="lhN-vF-Vl2"/>
                         <outlet property="houbanLabel" destination="LFx-PP-iat" id="8Pe-xv-a1I"/>
                         <outlet property="iconImageView" destination="BWe-5s-RCI" id="fAV-cA-Mwx"/>
                         <outlet property="mContentView" destination="fhn-it-Xvg" id="u40-4N-zpQ"/>
