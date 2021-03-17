@@ -43,6 +43,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *desInfoLabel;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *mScrollView;
+@property (weak, nonatomic) IBOutlet UIView *mContentView;
+
 @end
 
 @implementation GlodBulePlayerInfoViewController
@@ -55,6 +58,8 @@
     
     self.title = @"數據卡";
     NSLog(@"GlodBulePlayerInfoViewController viewDidLoad");
+    
+    self.mScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, 900);
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav_icon_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonTapped:)];
     
@@ -259,7 +264,7 @@
 //        UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
         if (platform == HTLoginPlatformFB) {
             
-            UIImage *image = [self makeImageWithView:self.view withSize:self.view.frame.size];
+            UIImage *image = [self makeImageWithView:self.mContentView withSize: CGSizeMake(SCREEN_WIDTH, 900)];
             if (image) {
                 FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc] init];
                   photo.image = image;

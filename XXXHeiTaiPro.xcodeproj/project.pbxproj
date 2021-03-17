@@ -106,6 +106,7 @@
 		32F1F2BE2514F7D700EE85B8 /* GlodBuleHTScoreViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F1F2BC2514F7D700EE85B8 /* GlodBuleHTScoreViewCell.m */; };
 		32F1F2BF2514F7D700EE85B8 /* GlodBuleHTScoreViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F1F2BD2514F7D700EE85B8 /* GlodBuleHTScoreViewCell.xib */; };
 		32F1F2C22514FB7C00EE85B8 /* GlodBuleLineChartUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F1F2C12514FB7C00EE85B8 /* GlodBuleLineChartUtil.m */; };
+		32F4776F2601A3FB00377292 /* aaadb.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F4776E2601A3FB00377292 /* aaadb.storyboard */; };
 		32FAACE324F6A032001574C9 /* GlodBuleBarChartUtilValueFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FAACE224F6A032001574C9 /* GlodBuleBarChartUtilValueFormat.m */; };
 		32FC51CB25FFA3E40025B269 /* GlodBuleHTNewMatchHomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32FC51CA25FFA3E40025B269 /* GlodBuleHTNewMatchHomeViewController.storyboard */; };
 		32FCDD1A250C721F0037334D /* GlodBuleHTIMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FCDD19250C721F0037334D /* GlodBuleHTIMViewController.m */; };
@@ -565,6 +566,7 @@
 		32F1F2BD2514F7D700EE85B8 /* GlodBuleHTScoreViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GlodBuleHTScoreViewCell.xib; sourceTree = "<group>"; };
 		32F1F2C02514FB7C00EE85B8 /* GlodBuleLineChartUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleLineChartUtil.h; sourceTree = "<group>"; };
 		32F1F2C12514FB7C00EE85B8 /* GlodBuleLineChartUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleLineChartUtil.m; sourceTree = "<group>"; };
+		32F4776E2601A3FB00377292 /* aaadb.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = aaadb.storyboard; sourceTree = "<group>"; };
 		32FAACE124F6A032001574C9 /* GlodBuleBarChartUtilValueFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleBarChartUtilValueFormat.h; sourceTree = "<group>"; };
 		32FAACE224F6A032001574C9 /* GlodBuleBarChartUtilValueFormat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleBarChartUtilValueFormat.m; sourceTree = "<group>"; };
 		32FC51CA25FFA3E40025B269 /* GlodBuleHTNewMatchHomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GlodBuleHTNewMatchHomeViewController.storyboard; sourceTree = "<group>"; };
@@ -1785,6 +1787,7 @@
 				32FCDD1B250C72AB0037334D /* THIM.storyboard */,
 				327191D1251B3BD600CD9D85 /* PlayerInfo.storyboard */,
 				32FC51CA25FFA3E40025B269 /* GlodBuleHTNewMatchHomeViewController.storyboard */,
+				32F4776E2601A3FB00377292 /* aaadb.storyboard */,
 			);
 			path = ModuleMatch;
 			sourceTree = "<group>";
@@ -2385,6 +2388,7 @@
 				327191D2251B3BD600CD9D85 /* PlayerInfo.storyboard in Resources */,
 				3287124023B8962800AB5360 /* video_pause_normal.png in Resources */,
 				FEC1160D2143D4A1002DB617 /* GlodBuleXJEmptyView.xib in Resources */,
+				32F4776F2601A3FB00377292 /* aaadb.storyboard in Resources */,
 				FECCA5352258C8D0009EF494 /* GlodBuleHTHistoryViewController.xib in Resources */,
 				FE6BD07A21452B570090118A /* GlodBuleHTNewsHomeBannerCell.xib in Resources */,
 				3277C5D423A9CA2800D43D80 /* photo_down_btn@3x.png in Resources */,
