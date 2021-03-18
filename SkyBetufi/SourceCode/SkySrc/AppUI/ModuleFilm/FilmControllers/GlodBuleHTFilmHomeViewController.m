@@ -61,9 +61,11 @@
     if (cell == self.playingCell) return;
     
     NSArray *array = [self.tableView visibleCells];
-    for (GlodBuleHTFilmHomeCell *tempCell in array) {
-        if (cell != tempCell) {
-            [tempCell stop];
+    for (UITableViewCell *tempCell in array) {
+        
+        if (cell != tempCell && [tempCell isKindOfClass:[GlodBuleHTFilmHomeCell class]]) {
+            GlodBuleHTFilmHomeCell *xxTempCell = (GlodBuleHTFilmHomeCell *)tempCell;
+            [xxTempCell stop];//所有其他不播放的可见cell stop
         }
     }
     self.playingCell = cell;
@@ -80,7 +82,7 @@
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-
+    NSLog(@"scrollViewDidEndDragging");
     if (decelerate) return;
     if (nil == self.playingCell) {
 //        [self playTopCell];
@@ -88,6 +90,7 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSLog(@"scrollViewDidEndDecelerating");
     if (nil == self.playingCell) {
 //        [self playTopCell];
     }
@@ -129,7 +132,8 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (cell == self.playingCell) {
+    
+    if ([cell isKindOfClass:[GlodBuleHTFilmHomeCell class]] && cell == self.playingCell) {
         [self.playingCell stop];
         self.playingCell = nil;
     }
@@ -172,6 +176,9 @@
         GlodBuleHTNewsModel *m = dataList[i];
         if (m.play_url && ![m.play_url isEqualToString:@""]) {
             m.news_type = @"影片";
+        }
+        if (!m.plMediaInfo) {
+            [m initPLMediaInfo];
         }
         [tmpArray addObject:m];
     }

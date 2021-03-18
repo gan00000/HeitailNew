@@ -1,6 +1,6 @@
 #import "GlodBuleBJServiceConfigurator.h"
 static NSString * const kServerProductURL = @"http://app.ballgametime.com/";
-static NSString * const kServerTestURL = @"http://app.ballgametime.com/"; 
+static NSString * const kServerTestURL = @"http://testwww.ballgametime.com/"; 
 static NSString * const kServerDevURL = @"http://app.ballgametime.com/"; 
 static NSString * const kH5ProductURL = @"";
 static NSString * const kH5TestURL = @""; 

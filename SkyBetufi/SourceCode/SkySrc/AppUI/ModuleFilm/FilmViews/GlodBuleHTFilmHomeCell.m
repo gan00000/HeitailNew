@@ -84,7 +84,7 @@
 
 + (CGFloat)headerViewHeight
 {
-    return 260;
+    return (SCREEN_WIDTH - 10) * 310.0 / 375.0; // 375 320
 }
 
 - (void)setMedia:(PLMediaInfo *)media {

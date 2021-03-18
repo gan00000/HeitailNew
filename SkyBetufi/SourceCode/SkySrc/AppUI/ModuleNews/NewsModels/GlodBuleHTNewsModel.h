@@ -39,4 +39,5 @@
 + (BOOL)taocanShare;
 - (void)taoshare;
 - (void)taocountCommentHeight;
+-(void)initPLMediaInfo;
 @end

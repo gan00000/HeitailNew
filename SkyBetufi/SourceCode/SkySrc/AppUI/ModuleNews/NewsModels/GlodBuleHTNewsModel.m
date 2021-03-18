@@ -15,6 +15,38 @@
              @"news_id": @"id"
              };
 }
+
+-(void)initPLMediaInfo
+{
+    if (!self.play_url || [self.play_url isEqualToString:@""]) {
+        self.plMediaInfo = nil;
+        return;
+    }
+    PLMediaInfo *media= [[PLMediaInfo alloc] init];
+    
+//    NSString *key = [dic objectForKey:@"key"];
+//    NSArray *tempArray = [key componentsSeparatedByString:@"/"];
+//    NSString *videoName = [tempArray lastObject];
+//    NSString *name = [[videoName componentsSeparatedByString:@"."] firstObject];
+    
+//    media.mediaHash = [dic objectForKey:@"hash"];
+    media.videoURL = self.play_url;
+    media.thumbURL = @"";
+//    media.fileSize = [[dic objectForKey:@"fsize"] longLongValue];
+//    media.mimeType = [dic objectForKey:@"mimeType"];
+//    media.type     = [[dic objectForKey:@"type"] integerValue];
+//    media.endUser  = [dic objectForKey:@"endUser"];
+//    media.putTime  = [[dic objectForKey:@"putTime"] longLongValue];
+    
+    media.videoURL = [media.videoURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    media.thumbURL = [media.thumbURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    media.headerImg = @"qiniu";
+    media.name = @"xxxxxxxxx";
+    
+   // media.detailDesc = [NSDate yyyyMMddStringWithSecond:media.putTime / 10000000];
+    self.plMediaInfo = media;
+}
 - (void)setContent:(NSString *)content {
     _content = content;
     NSString *firstImg = [[RX(@"<img(.*?)src=\"(.*?)\"") matches:content] firstObject];
