@@ -3,7 +3,8 @@
 #import "GlodBuleLMVideoPlayer.h"
 #import "GlodBuleLMPlayerModel.h"
 
-@interface GlodBuleHTFilmHomeCell () <WKNavigationDelegate, LMVideoPlayerDelegate>
+
+@interface GlodBuleHTFilmHomeCell () <WKNavigationDelegate, PLPlayerViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *webContentView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
@@ -15,10 +16,9 @@
 
 @property (weak, nonatomic) IBOutlet UIView *localPlayerView;
 
-@property (nonatomic, strong) GlodBuleLMVideoPlayer *player;
-@property (nonatomic, strong) GlodBuleLMPlayerModel *playerModel;
-
-@property (nonatomic, strong) GlodBuleLMPlayerModel *playModel;
+//========
+@property (nonatomic, assign) BOOL isNeedReset;
+@property (nonatomic, strong) PLPlayerView *playerView;
 
 @end
 @implementation GlodBuleHTFilmHomeCell
@@ -34,9 +34,13 @@
     }
     self.viewCountLabel.hidden = YES;
     
-    self.playModel = [[GlodBuleLMPlayerModel alloc] init];
-    
-    self.localPlayerView.backgroundColor = UIColor.blueColor;
+    self.isNeedReset = YES;
+    self.playerView = [[PLPlayerView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200)];
+    self.playerView.delegate = self;
+    [_webContentView addSubview:self.playerView];
+    [self.playerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.top.bottom.mas_equalTo(_webContentView);
+    }];
     
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -53,18 +57,8 @@
     self.titleLabel.text = newsModel.title;
     self.timeLabel.text = newsModel.time;
     self.viewCountLabel.text = newsModel.view_count;
+    [self setMedia:newsModel.plMediaInfo];
     
-    if (self.playModel.videoUrls && self.playModel.videoUrls.count > 0) {
-        NSString *mVideo = self.playModel.videoUrls[0];
-        if ([mVideo isEqualToString:newsModel.play_url]) {
-            return;
-        }
-    }
-    self.playModel.videoUrls = @[newsModel.play_url];
-    GlodBuleLMVideoPlayer *player = [GlodBuleLMVideoPlayer videoPlayerWithView:self.localPlayerView delegate:self playerModel:self.playModel];
-    self.player = player;
-//    [self.player playNewVideo:self.playModel];
-//    [player autoPlayTheVideo];
 }
 - (IBAction)onShareButtonTapped:(id)sender {
     [self.newsModel taoshare];
@@ -86,20 +80,82 @@
     return _webView;
 }
 
+#pragma mark - 播放器代理PLPlayerViewDelegate
 
-#pragma mark - LMVideoPlayerDelegate
-/** 返回按钮被点击 */
-- (void)playerBackButtonClick {
-
-//    [self destoryPlayer];
++ (CGFloat)headerViewHeight
+{
+    return 260;
 }
 
-/** 控制层封面点击事件的回调 */
-- (void)controlViewTapAction {
-    if (_player) {
-        [self.player autoPlayTheVideo];
-//        self.isStartPlay = YES;
-    }
+- (void)setMedia:(PLMediaInfo *)media {
+    _media = media;
+    
+//    self.headerImageView.image = [UIImage imageNamed:media.headerImg];
+//    self.detailDescLabel.text = media.detailDesc;
+//    self.nameLabel.text = media.name;
+    self.playerView.media = media;
 }
+
+- (void)prepareForReuse {
+    [self stop];
+    [super prepareForReuse];
+}
+
+- (void)play {
+    [self.playerView play];
+}
+
+- (void)stop {
+    [self.playerView stop];
+}
+
+- (void)configureVideo:(BOOL)enableRender {
+    [self.playerView configureVideo:enableRender];
+}
+
+- (void)playerViewEnterFullScreen:(PLPlayerView *)playerView {
+    
+    UIView *superView = [UIApplication sharedApplication].delegate.window.rootViewController.view;
+    [self.playerView removeFromSuperview];
+    [superView addSubview:self.playerView];
+    [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(superView.mas_height);
+        make.height.equalTo(superView.mas_width);
+        make.center.equalTo(superView);
+    }];
+    
+    [superView setNeedsUpdateConstraints];
+    [superView updateConstraintsIfNeeded];
+    
+    [UIView animateWithDuration:.3 animations:^{
+        [superView layoutIfNeeded];
+    }];
+    
+    [self.delegate tableViewCellEnterFullScreen:self];
+}
+
+- (void)playerViewExitFullScreen:(PLPlayerView *)playerView {
+    
+    [self.playerView removeFromSuperview];
+    [self.webContentView addSubview:self.playerView];
+    
+    [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.webContentView);
+    }];
+    
+    [self setNeedsUpdateConstraints];
+    [self updateConstraintsIfNeeded];
+    
+    [UIView animateWithDuration:.3 animations:^{
+        [self layoutIfNeeded];
+    }];
+    
+    [self.delegate tableViewCellExitFullScreen:self];
+}
+
+- (void)playerViewWillPlay:(PLPlayerView *)playerView {
+    [self.delegate tableViewWillPlay:self];
+}
+
 
 @end

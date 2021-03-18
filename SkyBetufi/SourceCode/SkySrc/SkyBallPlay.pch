@@ -43,7 +43,7 @@
 #define OFFICIAL_RELEASE 0
 
 // 未发布到App Store的版本
-#define BJ_DEBUG  YES//(!OFFICIAL_RELEASE)
+#define BJ_DEBUG  NO//(!OFFICIAL_RELEASE)
 
 // 当前引导页版本
 #define BJ_GUIDE_PAGE_VERSION 1
@@ -89,6 +89,33 @@
 #define kDefaultImage(imageName) [UIImage imageNamed:(imageName)]
 
 #define kDRWindow [UIApplication sharedApplication].keyWindow
+
+//==========视频 start ======
+//third
+#import <PLPlayerKit/PLPlayerKit.h>
+#import <Masonry.h>
+#import <UIImageView+WebCache.h>
+//#import <Bugsnag/Bugsnag.h>
+
+// category
+#import "UIView+Alert.h"
+#import "UIButton+Animate.h"
+#import "NSString+URLCheck.h"
+#import "NSDate+Covert.h"
+#import "NSObject+Auth.h"
+
+// common
+#import "MacroDefine.h"
+#import "PLHttpSession.h"
+#import "PLMediaInfo.h"
+
+#import <UIKit/UIKit.h>
+#import "PLQRCodeViewController.h"
+#import "PLPlayViewController.h"
+
+#define PLPLAYER_URL_DOMAIN @"https://api-demo.qnsdk.com"
+#define PLPLAYER_ENTERPRISE_BUNDLEID @"com.qbox.niuplayer"
+//==========视频 end ======
 
 static const CGFloat DRGlobalAnimationDuration = 0.25;
 

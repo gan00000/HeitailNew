@@ -5,11 +5,17 @@
 #import "GlodBuleHTNewsHomeCell.h"
 #import "GlodBuleHTAdViewCell.h"
 
-@interface GlodBuleHTFilmHomeViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface GlodBuleHTFilmHomeViewController ()<UITableViewDelegate, UITableViewDataSource, PLLongMediaTableViewCellDelegate, PLCodeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) GlodBuleHTFilmHomeRequest *request;
 @property (nonatomic, strong) NSArray *filmList;
 @property (nonatomic, strong) GlodBuleBJError *error;
+
+//@property (nonatomic, strong) NSArray *mediaArray;
+@property (nonatomic, assign) BOOL isFullScreen;
+
+@property (nonatomic, weak) GlodBuleHTFilmHomeCell *playingCell;
+
 @end
 @implementation GlodBuleHTFilmHomeViewController
 + (instancetype)taoviewController {
@@ -22,7 +28,71 @@
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    
 }
+
+// 根据cell的位置，决定播放哪个cell
+- (void)playTopCell {
+    
+    if (self.playingCell) return;
+    
+    NSArray *array = [self.tableView visibleCells];
+    
+    GlodBuleHTFilmHomeCell *playCell = nil;
+    CGFloat minOriginY = self.view.bounds.size.height;
+    CGFloat navigationBarHeight = 20 + self.navigationController.navigationBar.bounds.size.height;
+    for (GlodBuleHTFilmHomeCell *cell in array) {
+        CGRect rc = [self.tableView convertRect:cell.frame toView:self.view];
+        rc.size.height -= [GlodBuleHTFilmHomeCell headerViewHeight];
+        if (rc.origin.y > navigationBarHeight && rc.origin.y + rc.size.height < self.view.bounds.size.height) {
+            if (rc.origin.y < minOriginY) {
+                minOriginY = rc.origin.y;
+                playCell = cell;
+            }
+            break;
+        }
+    }
+    
+    self.playingCell = playCell;
+    [playCell play];
+}
+
+- (void)tableViewWillPlay:(GlodBuleHTFilmHomeCell *)cell {
+    if (cell == self.playingCell) return;
+    
+    NSArray *array = [self.tableView visibleCells];
+    for (GlodBuleHTFilmHomeCell *tempCell in array) {
+        if (cell != tempCell) {
+            [tempCell stop];
+        }
+    }
+    self.playingCell = cell;
+}
+
+- (void)tableViewCellEnterFullScreen:(GlodBuleHTFilmHomeCell *)cell {
+    self.isFullScreen = YES;
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+- (void)tableViewCellExitFullScreen:(GlodBuleHTFilmHomeCell *)cell {
+    self.isFullScreen = NO;
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+
+    if (decelerate) return;
+    if (nil == self.playingCell) {
+//        [self playTopCell];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if (nil == self.playingCell) {
+//        [self playTopCell];
+    }
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.filmList.count;
@@ -40,10 +110,31 @@
         return cell;
     }
     GlodBuleHTFilmHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTFilmHomeCell"];
-    [cell taosetupWithNewsModel:self.filmList[indexPath.row]];
+    [cell taosetupWithNewsModel: model];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.delegate = self;
+    cell.backgroundColor = [UIColor whiteColor];
+
     return cell;
 }
+
+- (void)codeViewController:(PLQRCodeViewController *)codeController scanResult:(NSString *)result {
+    if (!result) return;
+    PLPlayViewController *playController = [[PLPlayViewController alloc] init];
+    playController.url = [NSURL URLWithString:result];
+    [self presentViewController:playController animated:YES completion:nil];
+
+}
+
 #pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (cell == self.playingCell) {
+        [self.playingCell stop];
+        self.playingCell = nil;
+    }
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     GlodBuleHTNewsModel *model = self.filmList[indexPath.row];
     if ([model.news_type isEqualToString:@"新聞"]) {
@@ -51,7 +142,7 @@
     }else if ([model.news_id isEqualToString:@"-100"]) {
         return 250;
     }
-    return 260;//model.filmCellHeight;
+    return [GlodBuleHTFilmHomeCell headerViewHeight];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     GlodBuleHTNewsModel *newsModel = self.filmList[indexPath.row];
@@ -172,4 +263,6 @@
     }
     return _request;
 }
+
+
 @end

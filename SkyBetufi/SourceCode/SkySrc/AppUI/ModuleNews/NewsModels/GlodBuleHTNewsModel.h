@@ -1,4 +1,6 @@
 #import <Foundation/Foundation.h>
+#import "PLMediaInfo.h"
+
 @interface GlodBuleHTNewsModel : NSObject
 @property (nonatomic, copy) NSString *news_id;
 @property (nonatomic, copy) NSString *title;
@@ -30,6 +32,8 @@
 @property (nonatomic, strong) id share_thub;
 
 @property (nonatomic, copy) NSString *play_url;
+
+@property (nonatomic, strong) PLMediaInfo *plMediaInfo;
 
 - (void)taogetClearContentWithBlock:(void(^)(BOOL success, NSString *content))block;
 + (BOOL)taocanShare;

@@ -26,7 +26,7 @@
 #define API_NEWS_HOT_COMMENT            @"api/get_post_hot_comments" 
 #define API_NEWS_ALL_COMMENT            @"api/get_post_all_comments" 
 #pragma mark - 影片
-#define API_FILM_HOME                   @"highlight"
+#define API_FILM_HOME                   @"video-library"
 #pragma mark - 数据
 #define API_PLAYER_RANK                 @"api/get_player_rank"
 #define API_PLAYER_RANK_ALL             @"api/get_player_rank_all"
