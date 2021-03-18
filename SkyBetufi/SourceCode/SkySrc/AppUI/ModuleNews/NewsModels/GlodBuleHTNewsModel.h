@@ -32,6 +32,9 @@
 @property (nonatomic, strong) id share_thub;
 
 @property (nonatomic, copy) NSString *play_url;
+@property (nonatomic, copy) NSString *play_poster;
+@property (nonatomic, copy) NSString *play_width;
+@property (nonatomic, copy) NSString *play_height;
 
 @property (nonatomic, strong) PLMediaInfo *plMediaInfo;
 

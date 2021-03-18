@@ -23,6 +23,10 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
+    
     [self setupViews];
     [self loadData];
 }

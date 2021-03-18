@@ -31,7 +31,7 @@
     
 //    media.mediaHash = [dic objectForKey:@"hash"];
     media.videoURL = self.play_url;
-    media.thumbURL = @"";
+    media.thumbURL = self.play_poster;
 //    media.fileSize = [[dic objectForKey:@"fsize"] longLongValue];
 //    media.mimeType = [dic objectForKey:@"mimeType"];
 //    media.type     = [[dic objectForKey:@"type"] integerValue];
