@@ -43,7 +43,7 @@ UIGestureRecognizerDelegate
 @property (nonatomic, strong) UIImageView *thumbImageView;
 @property (nonatomic, assign) UIDeviceOrientation deviceOrientation;
 
-@property (nonatomic, strong) PLPlayer *player;
+//@property (nonatomic, strong) PLPlayer *player;
 @property (nonatomic, strong) PLPlayerOption *playerOption;
 @property (nonatomic, assign) BOOL isNeedSetupPlayer;
 
@@ -69,6 +69,9 @@ UIGestureRecognizerDelegate
 
 // 适配iPhone X
 @property (nonatomic, assign) CGFloat edgeSpace;
+
+@property (nonatomic, assign) BOOL isFullScreen;
+@property (nonatomic, assign) BOOL isPoratFullScreen;
 
 @end
 
@@ -484,14 +487,31 @@ UIGestureRecognizerDelegate
 
 - (void)clickExitFullScreenButton {
     [self transformWithOrientation:UIDeviceOrientationPortrait];
+    self.isFullScreen = NO;
+    self.isPoratFullScreen = NO;
 }
 
 - (void)clickEnterFullScreenButton {
-    if (UIDeviceOrientationLandscapeRight == [[UIDevice currentDevice]orientation]) {
-        [self transformWithOrientation:UIDeviceOrientationLandscapeRight];
-    } else {
-        [self transformWithOrientation:UIDeviceOrientationLandscapeLeft];
+    
+    if (_player.width < _player.height) {
+        
+        if (self.isPoratFullScreen) {
+            [self clickExitFullScreenButton];
+        }else{
+            [self transformWithOrientation2:UIDeviceOrientationPortrait];
+            self.isPoratFullScreen = YES;
+            
+        }
+       
+    }else{
+        if (UIDeviceOrientationLandscapeRight == [[UIDevice currentDevice]orientation]) {
+            [self transformWithOrientation:UIDeviceOrientationLandscapeRight];
+        } else {
+            [self transformWithOrientation:UIDeviceOrientationLandscapeLeft];
+        }
     }
+   
+    self.isFullScreen = YES;
 }
 
 - (void)clickMoreButton {
@@ -582,7 +602,7 @@ UIGestureRecognizerDelegate
 
 - (void)transformWithOrientation:(UIDeviceOrientation)or {
     
-    if (or == self.deviceOrientation) return;
+    if (!self.isPoratFullScreen && or == self.deviceOrientation) return;
     if (!(UIDeviceOrientationPortrait == or || UIDeviceOrientationLandscapeLeft == or || UIDeviceOrientationLandscapeRight == or)) return;
     
     BOOL isFirst = UIDeviceOrientationUnknown == self.deviceOrientation;
@@ -661,6 +681,59 @@ UIGestureRecognizerDelegate
     }
     
     self.deviceOrientation = or;
+}
+
+- (void)transformWithOrientation2:(UIDeviceOrientation)or {
+    
+    if (self.isPoratFullScreen) return;
+    if (!(UIDeviceOrientationPortrait == or || UIDeviceOrientationLandscapeLeft == or || UIDeviceOrientationLandscapeRight == or)) return;
+    
+    BOOL isFirst = UIDeviceOrientationUnknown == self.deviceOrientation;
+    
+    if (or == UIDeviceOrientationPortrait) {
+        
+//        [self removeGestureRecognizer:self.panGesture];
+        
+        if (![[self gestureRecognizers] containsObject:self.panGesture]) {
+            [self addGestureRecognizer:self.panGesture];
+        }
+        
+        self.snapshotButton.hidden = YES;
+        
+        [self.playButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.bottom.mas_equalTo(self.bottomBarView);
+            make.left.mas_equalTo(self.bottomBarView).offset(5);
+            make.width.mas_equalTo(0);
+        }];
+        
+        [self.enterFullScreenButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.right.top.bottom.mas_equalTo(self.bottomBarView);
+            make.width.mas_equalTo(self.enterFullScreenButton.mas_height);
+        }];
+        
+        [self.centerPlayButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.center.mas_equalTo(self);
+            make.size.mas_equalTo(CGSizeMake(64, 64));
+        }];
+        
+        if (!isFirst) {
+//            [self hideTopBar];
+//            [self hideControlView];
+            [self doConstraintAnimation];
+            //[self.delegate playerViewExitFullScreen:self];
+            [self.delegate playerViewEnterFullScreen:self];
+            
+//            if (![self.gestureRecognizers containsObject:self.tapGesture]) {
+//                [self addGestureRecognizer:self.tapGesture];
+//            }
+        }
+        [UIView animateWithDuration:.3 animations:^{
+            self.transform = CGAffineTransformMakeRotation(0);
+        }];
+        
+    }
+    
+//    self.deviceOrientation = or;
 }
 
 -(void)addFullStreenNotify{
@@ -1054,6 +1127,12 @@ UIGestureRecognizerDelegate
     CGFloat totalDuration = CMTimeGetSeconds(self.player.totalDuration);
     self.bufferingView.progress = (durationSeconds - startSeconds) / totalDuration;
     self.bottomBufferingProgressView.progress = self.bufferingView.progress;
+}
+
+- (void)player:(nonnull PLPlayer *)player width:(int)width height:(int)height{
+    if (width < height) {
+        
+    }
 }
 
 @end

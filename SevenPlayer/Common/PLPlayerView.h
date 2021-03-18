@@ -27,6 +27,8 @@
 
 @property (nonatomic, strong) PLMediaInfo *media;
 
+@property (nonatomic, strong) PLPlayer *player;
+
 - (void)play;
 
 - (void)stop;

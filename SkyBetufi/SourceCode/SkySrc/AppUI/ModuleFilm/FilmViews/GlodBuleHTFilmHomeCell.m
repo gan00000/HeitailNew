@@ -34,7 +34,7 @@
     }
     self.viewCountLabel.hidden = YES;
     
-    self.contentView.backgroundColor = UIColor.whiteColor;
+//    self.contentView.backgroundColor = UIColor.whiteColor;
     self.isNeedReset = YES;
     self.playerView = [[PLPlayerView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200)];
     self.playerView.delegate = self;
@@ -118,12 +118,31 @@
     
     UIView *superView = [UIApplication sharedApplication].delegate.window.rootViewController.view;
     [self.playerView removeFromSuperview];
-    [superView addSubview:self.playerView];
-    [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(superView.mas_height);
-        make.height.equalTo(superView.mas_width);
-        make.center.equalTo(superView);
-    }];
+    
+    if (self.playerView.player.width < self.playerView.player.height) {
+        
+        [superView addSubview:self.playerView];
+//        superView.backgroundColor = UIColor.blackColor;
+        [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//            make.leading.equalTo(superView).mas_offset(20);
+//            make.trailing.equalTo(superView).mas_offset(-20);
+//            make.top.equalTo(superView).mas_offset(44);
+//            make.bottom.equalTo(superView).mas_offset(-44);
+            
+            
+            make.width.equalTo(superView.mas_width);
+            make.height.equalTo(superView.mas_height);
+            make.center.equalTo(superView);
+        }];
+        
+    }else{
+        [superView addSubview:self.playerView];
+        [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(superView.mas_height);
+            make.height.equalTo(superView.mas_width);
+            make.center.equalTo(superView);
+        }];
+    }
     
     [superView setNeedsUpdateConstraints];
     [superView updateConstraintsIfNeeded];
@@ -136,6 +155,9 @@
 }
 
 - (void)playerViewExitFullScreen:(PLPlayerView *)playerView {
+    
+//    UIView *superView = [UIApplication sharedApplication].delegate.window.rootViewController.view;
+//    superView.backgroundColor = UIColor.clearColor;
     
     [self.playerView removeFromSuperview];
     [self.webContentView addSubview:self.playerView];
