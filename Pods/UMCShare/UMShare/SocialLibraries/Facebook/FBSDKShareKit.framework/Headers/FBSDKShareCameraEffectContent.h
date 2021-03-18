@@ -16,24 +16,16 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "TargetConditionals.h"
-
-#if !TARGET_OS_TV
-
 #import <Foundation/Foundation.h>
 
-#import "FBSDKCameraEffectArguments.h"
-#import "FBSDKCameraEffectTextures.h"
-#import "FBSDKSharingContent.h"
-#import "FBSDKSharingScheme.h"
-
-NS_ASSUME_NONNULL_BEGIN
+#import <FBSDKShareKit/FBSDKCameraEffectArguments.h>
+#import <FBSDKShareKit/FBSDKCameraEffectTextures.h>
+#import <FBSDKShareKit/FBSDKSharingContent.h>
 
 /**
  A model for content to share with a Facebook camera effect.
  */
-NS_SWIFT_NAME(ShareCameraEffectContent)
-@interface FBSDKShareCameraEffectContent : NSObject <FBSDKSharingContent, FBSDKSharingScheme>
+@interface FBSDKShareCameraEffectContent : NSObject <FBSDKSharingContent>
 
 /**
  ID of the camera effect to use.
@@ -52,13 +44,9 @@ NS_SWIFT_NAME(ShareCameraEffectContent)
 
 /**
  Compares the receiver to another camera effect content.
- @param content The other content
- @return YES if the receiver's values are equal to the other content's values; otherwise NO
+ - Parameter content: The other content
+ - Returns: YES if the receiver's values are equal to the other content's values; otherwise NO
  */
 - (BOOL)isEqualToShareCameraEffectContent:(FBSDKShareCameraEffectContent *)content;
 
 @end
-
-NS_ASSUME_NONNULL_END
-
-#endif

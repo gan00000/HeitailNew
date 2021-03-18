@@ -5,7 +5,7 @@ platform :ios, '9.0'
 target 'XXXHeiTai' do
 
 pod 'AFNetworking', '~> 4.0'
-pod 'SDWebImage'
+pod 'SDWebImage' , '= 4.4.2'
 pod 'Reachability'
 pod 'Masonry'
 pod 'YYModel'
@@ -39,13 +39,25 @@ pod "XCDYouTubeKit", "~> 2.7"
 pod 'SVGKit', :git => 'https://github.com/SVGKit/SVGKit.git', :branch => '3.x'
 #pod 'FBSDKLoginKit'
 #pod 'XCDLumberjackNSLogger', '~> 1.0'
-pod 'Firebase/Analytics'
+
 pod 'Google-Mobile-Ads-SDK'
 pod 'Charts'
 #pod 'Protobuf'
 pod 'SocketRocket'
 pod 'TZImagePickerController' #iOS8 and later
 
+pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
+pod 'Firebase/Crashlytics'
+#pod 'Firebase/Messaging'
+pod 'Firebase/Core'
+
+
 pod 'GoogleSignIn'
+
+#pod 'PLPlayerKit' #真机，发布是要使用
+pod "PLPlayerKit", :podspec =>   'https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec'  #真机 + 模拟器
+
+pod 'MMMaterialDesignSpinner'
+pod 'JGProgressHUD'
 end

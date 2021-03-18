@@ -18,31 +18,32 @@
 
 #import <Foundation/Foundation.h>
 
-#import "FBSDKSharePhoto.h"
-#import "FBSDKShareVideo.h"
-#import "FBSDKSharingContent.h"
-
-NS_ASSUME_NONNULL_BEGIN
+#import <FBSDKShareKit/FBSDKSharePhoto.h>
+#import <FBSDKShareKit/FBSDKShareVideo.h>
+#import <FBSDKShareKit/FBSDKSharingContent.h>
 
 /**
   A model for video content to be shared.
  */
-NS_SWIFT_NAME(ShareVideoContent)
 @interface FBSDKShareVideoContent : NSObject <FBSDKSharingContent>
 
 /**
+  The photo that represents the video.
+ - Returns: The photo
+ */
+@property (nonatomic, copy) FBSDKSharePhoto *previewPhoto;
+
+/**
   The video to be shared.
- @return The video
+ - Returns: The video
  */
 @property (nonatomic, copy) FBSDKShareVideo *video;
 
 /**
   Compares the receiver to another video content.
- @param content The other content
- @return YES if the receiver's values are equal to the other content's values; otherwise NO
+ - Parameter content: The other content
+ - Returns: YES if the receiver's values are equal to the other content's values; otherwise NO
  */
 - (BOOL)isEqualToShareVideoContent:(FBSDKShareVideoContent *)content;
 
 @end
-
-NS_ASSUME_NONNULL_END

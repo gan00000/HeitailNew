@@ -16,60 +16,26 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "TargetConditionals.h"
-
-#if TARGET_OS_TV
-
-// This is an unfortunate hack for Swift Package Manager support.
-// SPM does not allow us to conditionally exclude Swift files for compilation by platform.
-//
-// So to support tvOS with SPM we need to use runtime availability checks in the Swift files.
-// This means that even though the Swift extension of ShareDialog will never be run for tvOS
-// targets, it still needs to be able to compile. Hence we need to declare it here.
-//
-// The way to fix this is to remove extensions of ObjC types in Swift.
-
-NS_SWIFT_NAME(ShareDialog)
-@interface FBSDKShareDialog : NSObject
-@end
-
-#else
-
 #import <UIKit/UIKit.h>
 
-#import "FBSDKShareDialogMode.h"
-#import "FBSDKSharing.h"
-#import "FBSDKSharingContent.h"
-
-NS_ASSUME_NONNULL_BEGIN
+#import <FBSDKShareKit/FBSDKShareDialogMode.h>
+#import <FBSDKShareKit/FBSDKSharing.h>
+#import <FBSDKShareKit/FBSDKSharingContent.h>
 
 /**
   A dialog for sharing content on Facebook.
  */
-NS_SWIFT_NAME(ShareDialog)
 @interface FBSDKShareDialog : NSObject <FBSDKSharingDialog>
 
 /**
-  Convenience method to create a FBSDKShareDialog with a fromViewController, content and a delegate.
- @param viewController A UIViewController to present the dialog from, if appropriate.
- @param content The content to be shared.
- @param delegate The receiver's delegate.
- */
-+ (instancetype)dialogWithViewController:(nullable UIViewController *)viewController
-                             withContent:(id<FBSDKSharingContent>)content
-                                delegate:(nullable id<FBSDKSharingDelegate>)delegate
-NS_SWIFT_NAME(init(fromViewController:content:delegate:));
-
-/**
- Convenience method to show an FBSDKShareDialog with a fromViewController, content and a delegate.
- @param viewController A UIViewController to present the dialog from, if appropriate.
- @param content The content to be shared.
- @param delegate The receiver's delegate.
+  Convenience method to show an FBSDKShareDialog with a fromViewController, content and a delegate.
+ - Parameter viewController: A UIViewController to present the dialog from, if appropriate.
+ - Parameter content: The content to be shared.
+ - Parameter delegate: The receiver's delegate.
  */
 + (instancetype)showFromViewController:(UIViewController *)viewController
                            withContent:(id<FBSDKSharingContent>)content
-                              delegate:(nullable id<FBSDKSharingDelegate>)delegate
-NS_SWIFT_UNAVAILABLE("Use init(fromViewController:content:delegate:).show() instead");
+                              delegate:(id<FBSDKSharingDelegate>)delegate;
 
 /**
   A UIViewController to present the dialog from.
@@ -86,7 +52,3 @@ NS_SWIFT_UNAVAILABLE("Use init(fromViewController:content:delegate:).show() inst
 @property (nonatomic, assign) FBSDKShareDialogMode mode;
 
 @end
-
-NS_ASSUME_NONNULL_END
-
-#endif

@@ -16,40 +16,28 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "TargetConditionals.h"
-
-#if !TARGET_OS_TV
-
 #import <UIKit/UIKit.h>
 
-#import "FBSDKCoreKitImport.h"
-
-NS_ASSUME_NONNULL_BEGIN
+#import <FBSDKCoreKit/FBSDKCopying.h>
 
 /**
  * A container of textures for a camera effect.
  * A texture for a camera effect is an UIImages identified by a NSString key.
  */
-NS_SWIFT_NAME(CameraEffectTextures)
 @interface FBSDKCameraEffectTextures : NSObject <FBSDKCopying, NSSecureCoding>
 
 /**
  Sets the image for a texture key.
- @param image The UIImage for the texture
- @param key The key for the texture
+ - Parameter image: The UIImage for the texture
+ - Parameter name: The key for the texture
  */
-- (void)setImage:(nullable UIImage *)image forKey:(NSString *)key
-NS_SWIFT_NAME(set(_:forKey:));
+- (void)setImage:(UIImage *)image forKey:(NSString *)key;
 
 /**
  Gets the image for a texture key.
- @param key The key for the texture
- @return The texture UIImage or nil
+ - Parameter name: The key for the texture
+ - Returns: The texture UIImage or nil
  */
-- (nullable UIImage *)imageForKey:(NSString *)key;
+- (UIImage *)imageForKey:(NSString *)key;
 
 @end
-
-NS_ASSUME_NONNULL_END
-
-#endif

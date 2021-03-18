@@ -743,7 +743,7 @@
         _segmentControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
         _segmentControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
         kWeakSelf
-        _segmentControl.indexChangeBlock = ^(NSInteger index){
+        _segmentControl.indexChangeBlock = ^(NSUInteger index){
             [weakSelf segmentedValueChangedHandle:index];
         };
     }

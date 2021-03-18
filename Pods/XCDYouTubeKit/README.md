@@ -5,6 +5,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/XCDYouTubeKit.svg?style=flat)](http://cocoadocs.org/docsets/XCDYouTubeKit/)
 [![Pod Version](https://img.shields.io/cocoapods/v/XCDYouTubeKit.svg?style=flat)](https://cocoapods.org/pods/XCDYouTubeKit)
 [![Carthage Compatibility](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage/)
+[![Swift Package Manager Compatibility](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen)](ttps://swift.org/package-manager/)
 [![License](https://img.shields.io/cocoapods/l/XCDYouTubeKit.svg?style=flat)](LICENSE)
 
 **XCDYouTubeKit** is a YouTube video player for iOS, tvOS and macOS.
@@ -27,18 +28,28 @@ XCDYouTubeKit is against the YouTube [Terms of Service](https://www.youtube.com/
 
 ## Installation
 
-XCDYouTubeKit is available through CocoaPods and Carthage.
+XCDYouTubeKit is available through [CocoaPods](https://cocoapods.org/), [Carthage](https://github.com/Carthage/Carthage) and [Swift Package Manager](https://swift.org/package-manager/).
 
 CocoaPods:
 
 ```ruby
-pod "XCDYouTubeKit", "~> 2.7"
+pod "XCDYouTubeKit", "~> 2.15"
 ```
 
 Carthage:
 
 ```objc
-github "0xced/XCDYouTubeKit" ~> 2.7
+github "0xced/XCDYouTubeKit" ~> 2.15
+```
+
+Swift Package Manager:
+
+Add `XCDYouTubeKit` to the dependencies value of your `Package.swift`
+
+```swift
+dependencies: [
+	.package(url: "https://github.com/0xced/XCDYouTubeKit.git", from: "2.15.0")
+]
 ```
 
 Alternatively, you can manually use the provided static library or dynamic framework. In order to use the static library, you must:

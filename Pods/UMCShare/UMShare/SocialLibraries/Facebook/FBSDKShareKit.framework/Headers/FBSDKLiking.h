@@ -16,24 +16,15 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "TargetConditionals.h"
-
-#if !TARGET_OS_TV
-
 #import <Foundation/Foundation.h>
-
-#import "FBSDKLikeObjectType.h"
-
-NS_ASSUME_NONNULL_BEGIN
 
 /**
   The common interface for components that initiate liking.
 
- @see FBSDKLikeButton
+- See:FBSDKLikeButton
 
- @see FBSDKLikeControl
+- See:FBSDKLikeControl
  */
-NS_SWIFT_NAME(Liking)
 @protocol FBSDKLiking <NSObject>
 
 /**
@@ -41,7 +32,7 @@ NS_SWIFT_NAME(Liking)
 
 
  This value may be an Open Graph object ID or a string representation of an URL that describes an
- Open Graph object. The objects may be public objects, like pages, or objects that are defined by your application.
+ Open Graph object.  The objects may be public objects, like pages, or objects that are defined by your application.
  */
 @property (nonatomic, copy) NSString *objectID;
 
@@ -56,7 +47,3 @@ NS_SWIFT_NAME(Liking)
 @property (nonatomic, assign) FBSDKLikeObjectType objectType;
 
 @end
-
-NS_ASSUME_NONNULL_END
-
-#endif

@@ -16,17 +16,9 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "TargetConditionals.h"
-
-#if !TARGET_OS_TV
-
 #import <Foundation/Foundation.h>
 
-#import "FBSDKCoreKitImport.h"
-
-#import "FBSDKSharingValidation.h"
-
-NS_ASSUME_NONNULL_BEGIN
+#import <FBSDKCoreKit/FBSDKCopying.h>
 
 /**
  NS_ENUM(NSUInteger, FBSDKGameRequestActionType)
@@ -42,7 +34,7 @@ typedef NS_ENUM(NSUInteger, FBSDKGameRequestActionType)
   FBSDKGameRequestActionTypeAskFor,
   /** Turn action type: It is the turn of the friends to play against the user in a match. (no object) */
   FBSDKGameRequestActionTypeTurn,
-} NS_SWIFT_NAME(GameRequestActionType);
+};
 
 /**
  NS_ENUM(NSUInteger, FBSDKGameRequestFilters)
@@ -56,13 +48,12 @@ typedef NS_ENUM(NSUInteger, FBSDKGameRequestFilter)
   FBSDKGameRequestFilterAppUsers,
   /** Friends not using the app can be displayed. */
   FBSDKGameRequestFilterAppNonUsers,
-} NS_SWIFT_NAME(GameRequestFilter);
+};
 
 /**
   A model for a game request.
  */
-NS_SWIFT_NAME(GameRequestContent)
-@interface FBSDKGameRequestContent : NSObject <FBSDKCopying, FBSDKSharingValidation, NSSecureCoding>
+@interface FBSDKGameRequestContent : NSObject <FBSDKCopying, NSSecureCoding>
 
 /**
   Used when defining additional context about the nature of the request.
@@ -76,8 +67,8 @@ NS_SWIFT_NAME(GameRequestContent)
 
 /**
   Compares the receiver to another game request content.
- @param content The other content
- @return YES if the receiver's values are equal to the other content's values; otherwise NO
+ - Parameter content: The other content
+ - Returns: YES if the receiver's values are equal to the other content's values; otherwise NO
  */
 - (BOOL)isEqualToGameRequestContent:(FBSDKGameRequestContent *)content;
 
@@ -85,7 +76,7 @@ NS_SWIFT_NAME(GameRequestContent)
   Additional freeform data you may pass for tracking. This will be stored as part of
  the request objects created. The maximum length is 255 characters.
  */
-@property (nonatomic, copy, nullable) NSString *data;
+@property (nonatomic, copy) NSString *data;
 
 /**
   This controls the set of friends someone sees if a multi-friend selector is shown.
@@ -118,7 +109,7 @@ NS_SWIFT_NAME(GameRequestContent)
 
  This is equivalent to the "to" parameter when using the web game request dialog.
  */
-@property (nonatomic, copy) NSArray<NSString *> *recipients;
+@property (nonatomic, copy) NSArray *recipients;
 
 /**
   An array of user IDs that will be included in the dialog as the first suggested friends.
@@ -126,15 +117,23 @@ NS_SWIFT_NAME(GameRequestContent)
 
  This is equivalent to the "suggestions" parameter when using the web game request dialog.
 */
-@property (nonatomic, copy) NSArray<NSString *> *recipientSuggestions;
+@property (nonatomic, copy) NSArray *recipientSuggestions;
+
+/**
+
+- Warning:Use `recipientSuggestions` instead.
+*/
+@property (nonatomic, copy) NSArray *suggestions __attribute__ ((deprecated("use recipientSuggestions instead")));
 
 /**
   The title for the dialog.
  */
 @property (nonatomic, copy) NSString *title;
 
+/**
+
+- Warning:Use `recipients` instead.
+ */
+@property (nonatomic, copy) NSArray *to __attribute__ ((deprecated("use recipients instead")));
+
 @end
-
-NS_ASSUME_NONNULL_END
-
-#endif

@@ -18,45 +18,17 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
-#if TARGET_OS_TV
-
-// This is an unfortunate hack for Swift Package Manager support.
-// SPM does not allow us to conditionally exclude Swift files for compilation by platform.
-//
-// So to support tvOS with SPM we need to use runtime availability checks in the Swift files.
-// This means that even though the code in `LoginManager.swift` will never be run for tvOS
-// targets, it still needs to be able to compile. Hence we need to declare it here.
-//
-// The way to fix this is to remove extensions of ObjC types in Swift.
-
-@interface LoginManagerLoginResult : NSObject
-
-@property (copy, nonatomic, nullable) FBSDKAccessToken *token;
-@property (readonly, nonatomic) BOOL isCancelled;
-@property (copy, nonatomic) NSSet<NSString *> *grantedPermissions;
-@property (copy, nonatomic) NSSet<NSString *> *declinedPermissions;
-
-@end
-
-#else
-
 @class FBSDKAccessToken;
 
 /**
   Describes the result of a login attempt.
  */
-NS_SWIFT_NAME(LoginManagerLoginResult)
 @interface FBSDKLoginManagerLoginResult : NSObject
-
-- (instancetype)init NS_UNAVAILABLE;
-+ (instancetype)new NS_UNAVAILABLE;
 
 /**
   the access token.
  */
-@property (copy, nonatomic, nullable) FBSDKAccessToken *token;
+@property (copy, nonatomic) FBSDKAccessToken *token;
 
 /**
   whether the login was cancelled by the user.
@@ -68,29 +40,25 @@ NS_SWIFT_NAME(LoginManagerLoginResult)
 
  inspect the token's permissions set for a complete list.
  */
-@property (copy, nonatomic) NSSet<NSString *> *grantedPermissions;
+@property (copy, nonatomic) NSSet *grantedPermissions;
 
 /**
   the set of permissions declined by the user in the associated request.
 
  inspect the token's permissions set for a complete list.
  */
-@property (copy, nonatomic) NSSet<NSString *> *declinedPermissions;
+@property (copy, nonatomic) NSSet *declinedPermissions;
 
 /**
   Initializes a new instance.
- @param token the access token
- @param isCancelled whether the login was cancelled by the user
- @param grantedPermissions the set of granted permissions
- @param declinedPermissions the set of declined permissions
+ - Parameter token: the access token
+ - Parameter isCancelled: whether the login was cancelled by the user
+ - Parameter grantedPermissions: the set of granted permissions
+ - Parameter declinedPermissions: the set of declined permissions
  */
-- (instancetype)initWithToken:(nullable FBSDKAccessToken *)token
+- (instancetype)initWithToken:(FBSDKAccessToken *)token
                   isCancelled:(BOOL)isCancelled
-           grantedPermissions:(NSSet<NSString *> *)grantedPermissions
-          declinedPermissions:(NSSet<NSString *> *)declinedPermissions
+           grantedPermissions:(NSSet *)grantedPermissions
+          declinedPermissions:(NSSet *)declinedPermissions
 NS_DESIGNATED_INITIALIZER;
 @end
-
-#endif
-
-NS_ASSUME_NONNULL_END
