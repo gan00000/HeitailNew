@@ -16,6 +16,8 @@ static inline BOOL p_addMethod(Class theClass, SEL selector, Method method) {
 + (NSString *)appBuild;
 + (NSString *)appBundleId;
 + (NSString *)buildType;
+
++(BOOL)isIPhoneXSeries;
 @end
 @interface GlodBuleBJUtility (Device)
 + (NSString *)modelName;

@@ -13,6 +13,7 @@
 #import "UIView+Alert.h"
 #import "UIButton+Animate.h"
 #import "MacroDefine.h"
+#import "GlodBuleBJUtility.h"
 
 @class PLControlView;
 
@@ -92,9 +93,10 @@ UIGestureRecognizerDelegate
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor blackColor];
-        if (CGRectEqualToRect([UIScreen mainScreen].bounds, CGRectMake(0, 0, 375, 812))) {
+//        if (CGRectEqualToRect([UIScreen mainScreen].bounds, CGRectMake(0, 0, 375, 812))) {
+        if([GlodBuleBJUtility isIPhoneXSeries]){
             // iPhone X
-            self.edgeSpace = 20;
+            self.edgeSpace = 44;
         } else {
             self.edgeSpace = 5;
         }
@@ -139,6 +141,8 @@ UIGestureRecognizerDelegate
     [self.moreButton setImage:[UIImage imageNamed:@"more"] forState:(UIControlStateNormal)];
     [self.moreButton addTarget:self action:@selector(clickMoreButton) forControlEvents:(UIControlEventTouchUpInside)];
     
+    self.moreButton.hidden = YES;//隐藏工具栏先，用不到
+    
     [self.topBarView addSubview:self.titleLabel];
     [self.topBarView addSubview:self.exitfullScreenButton];
     [self.topBarView addSubview:self.moreButton];
@@ -172,11 +176,11 @@ UIGestureRecognizerDelegate
     self.slider.continuous = NO;
     [self.slider setThumbImage:[UIImage imageNamed:@"slider_thumb"] forState:(UIControlStateNormal)];
     self.slider.maximumTrackTintColor = [UIColor clearColor];
-    self.slider.minimumTrackTintColor = [UIColor colorWithRed:.2 green:.2 blue:.8 alpha:1];
+    self.slider.minimumTrackTintColor = [UIColor whiteColor];//[UIColor colorWithRed:.2 green:.2 blue:.8 alpha:1];
     [self.slider addTarget:self action:@selector(sliderValueChange) forControlEvents:(UIControlEventValueChanged)];
     
     self.bufferingView = [[UIProgressView alloc] init];
-    self.bufferingView.progressTintColor = [UIColor colorWithWhite:1 alpha:1];
+    self.bufferingView.progressTintColor = [UIColor lightGrayColor];//[UIColor colorWithWhite:1 alpha:1];
     self.bufferingView.trackTintColor = [UIColor colorWithWhite:1 alpha:.33];
     
     self.enterFullScreenButton = [UIButton buttonWithType:(UIButtonTypeSystem)];
@@ -227,6 +231,7 @@ UIGestureRecognizerDelegate
     self.snapshotButton = [[UIButton alloc] init];
     [self.snapshotButton addTarget:self action:@selector(clickSnapshotButton) forControlEvents:(UIControlEventTouchUpInside)];
     [self.snapshotButton setImage:[UIImage imageNamed:@"screen-cut"] forState:(UIControlStateNormal)];
+    self.snapshotButton.hidden = NO;  //先隐藏，用不到
     
     self.bottomPlayProgreeeView = [[UIProgressView alloc] init];
     self.bottomPlayProgreeeView.progressTintColor = [UIColor colorWithRed:.2 green:.2 blue:.8 alpha:1];
@@ -535,7 +540,7 @@ UIGestureRecognizerDelegate
 - (void)hideBottomBar {
     [self.bottomBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(self);
-        make.top.mas_equalTo(self.mas_bottom);
+        make.top.mas_equalTo(self.mas_bottom).mas_offset(1);
         make.height.mas_equalTo(44);
     }];
     
@@ -553,7 +558,7 @@ UIGestureRecognizerDelegate
         make.left.top.right.mas_equalTo(self);
         make.height.mas_equalTo(44);
     }];
-    self.snapshotButton.hidden = NO;
+//    self.snapshotButton.hidden = NO;  //先隐藏，用不到
 }
 
 - (void)showBottomBar {

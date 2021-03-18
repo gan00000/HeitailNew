@@ -35,6 +35,44 @@
     
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return self.isFullScreen;
+}
+
+- (void)onUIApplication:(BOOL)active {
+    if (self.playingCell) {
+        [self.playingCell configureVideo:active];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"GlodBuleHTFilmHomeViewController viewDidAppear");
+    [self onUIApplication:YES];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    NSLog(@"GlodBuleHTFilmHomeViewController viewDidDisappear");
+    [self stop];
+    [self onUIApplication:NO];
+}
+
+- (void)stop {
+    
+    NSArray *array = [self.tableView visibleCells];
+
+    for (UITableViewCell *tempCell in array) {
+        
+        if ([tempCell isKindOfClass:[GlodBuleHTFilmHomeCell class]]) {
+            GlodBuleHTFilmHomeCell *xxTempCell = (GlodBuleHTFilmHomeCell *)tempCell;
+            [xxTempCell stop];//所有其他不播放的可见cell stop
+        }
+//        [cell stop];
+    }
+}
+
 // 根据cell的位置，决定播放哪个cell
 - (void)playTopCell {
     

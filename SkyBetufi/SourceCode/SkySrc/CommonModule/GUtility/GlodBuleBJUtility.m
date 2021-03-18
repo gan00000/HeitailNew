@@ -7,6 +7,53 @@
 @implementation GlodBuleBJUtility
 @end
 @implementation GlodBuleBJUtility (App)
+
++(BOOL)isIPhoneXSeries
+{
+    BOOL iPhoneXSeries = NO;
+    if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPhone) {
+        return iPhoneXSeries;
+    }
+    
+    if (@available(iOS 11.0, *)) {
+        UIWindow *mainWindow = [self getCurrentWindow];
+        if (mainWindow !=  nil && !mainWindow.isKeyWindow) {
+            NSLog(@"Unable to obtain a key window, marking as keyWindow");
+            [mainWindow makeKeyWindow];
+        }
+
+        if (mainWindow.safeAreaInsets.bottom > 0.0) {
+            iPhoneXSeries = YES;
+        }
+    }
+    
+    return iPhoneXSeries;
+}
+
+/* *****如果keyWindow获取不到；windows获取不到；最后去delegate window获取****/
++ (UIWindow *)getCurrentWindow
+{
+    UIWindow* window = nil;
+    if ([[[UIApplication sharedApplication] delegate] respondsToSelector:@selector(window)]) {
+        window = [[[UIApplication sharedApplication] delegate] window];
+    }else if ([[UIApplication sharedApplication] respondsToSelector:@selector(keyWindow)]) {
+        window = [UIApplication sharedApplication].keyWindow;
+    }
+    
+    if (window == nil || window.windowLevel != UIWindowLevelNormal) {
+        for (window in [UIApplication sharedApplication].windows) {
+            if (window.windowLevel == UIWindowLevelNormal) {
+                break;
+            }
+        }
+    }
+    
+    if (window == nil) {
+        NSLog(@"Unable to find a valid UIWindow");
+    }
+    return window;
+}
+
 + (id)valueInPlistForKey:(NSString *)key {
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     return [infoDictionary objectForKey:key];

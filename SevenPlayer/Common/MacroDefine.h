@@ -5,7 +5,7 @@
 //  Created by hxiongan on 2018/3/1.
 //  Copyright © 2018年 hxiongan. All rights reserved.
 //
-
+#import "GlodBuleBJUtility.h"
 #ifndef MacroDefine_h
 #define MacroDefine_h
 
@@ -14,7 +14,7 @@
     #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof(arr[0]))
 #endif
 
-#define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhoneX [GlodBuleBJUtility isIPhoneXSeries]//([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
 #ifndef dispatch_queue_async_safe
 #define dispatch_queue_async_safe(queue, block)\

@@ -34,6 +34,7 @@
     }
     self.viewCountLabel.hidden = YES;
     
+    self.contentView.backgroundColor = UIColor.whiteColor;
     self.isNeedReset = YES;
     self.playerView = [[PLPlayerView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200)];
     self.playerView.delegate = self;
