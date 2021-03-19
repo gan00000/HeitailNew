@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lac-Tn-T9A">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lac-Tn-T9A">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--News Detail View Controller-->
+        <!--Glod BuleHT News Detail View Controller-->
         <scene sceneID="Lop-AV-UBa">
             <objects>
                 <viewController id="Lac-Tn-T9A" customClass="GlodBuleHTNewsDetailViewController" sceneMemberID="viewController">
@@ -18,9 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sVY-Jo-WX5" userLabel="playerContentView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="233"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sVY-Jo-WX5" secondAttribute="height" multiplier="16:9" id="d2h-hO-jwj"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ikq-Sg-jbE">
-                                <rect key="frame" x="0.0" y="44" width="414" height="758"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="283" width="414" height="519"/>
+                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAJ-va-NcJ">
                                 <rect key="frame" x="0.0" y="802" width="414" height="60"/>
@@ -129,7 +135,7 @@
                                             <constraint firstItem="bqw-St-MRp" firstAttribute="leading" secondItem="3y6-P3-mMs" secondAttribute="trailing" constant="-20" id="xyG-mz-YxK"/>
                                         </constraints>
                                     </view>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lD-Qc-gR2">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lD-Qc-gR2">
                                         <rect key="frame" x="354" y="0.0" width="45" height="60"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <state key="normal" title="發佈">
@@ -166,17 +172,20 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="RVw-GL-4rl"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RVw-GL-4rl" firstAttribute="trailing" secondItem="ikq-Sg-jbE" secondAttribute="trailing" id="1QP-Ms-2IJ"/>
                             <constraint firstItem="dAJ-va-NcJ" firstAttribute="top" secondItem="ikq-Sg-jbE" secondAttribute="bottom" id="4eA-H2-f5X"/>
-                            <constraint firstItem="ikq-Sg-jbE" firstAttribute="top" secondItem="RVw-GL-4rl" secondAttribute="top" id="LrI-hs-fC0"/>
+                            <constraint firstItem="ikq-Sg-jbE" firstAttribute="top" secondItem="sVY-Jo-WX5" secondAttribute="bottom" constant="6" id="LrI-hs-fC0"/>
                             <constraint firstItem="ikq-Sg-jbE" firstAttribute="leading" secondItem="RVw-GL-4rl" secondAttribute="leading" id="Q65-Fx-kRR"/>
+                            <constraint firstItem="sVY-Jo-WX5" firstAttribute="leading" secondItem="RVw-GL-4rl" secondAttribute="leading" id="UdD-be-UI1"/>
+                            <constraint firstItem="sVY-Jo-WX5" firstAttribute="top" secondItem="RVw-GL-4rl" secondAttribute="top" id="VlZ-ws-va2"/>
                             <constraint firstItem="RVw-GL-4rl" firstAttribute="bottom" secondItem="dAJ-va-NcJ" secondAttribute="bottom" id="WS3-GK-5fl"/>
                             <constraint firstItem="dAJ-va-NcJ" firstAttribute="leading" secondItem="RVw-GL-4rl" secondAttribute="leading" id="bJq-O5-DaI"/>
                             <constraint firstItem="RVw-GL-4rl" firstAttribute="trailing" secondItem="dAJ-va-NcJ" secondAttribute="trailing" id="iY8-nd-p5C"/>
+                            <constraint firstItem="RVw-GL-4rl" firstAttribute="trailing" secondItem="sVY-Jo-WX5" secondAttribute="trailing" id="kKb-yc-w9Y"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="RVw-GL-4rl"/>
                     </view>
                     <connections>
                         <outlet property="buttonContentView" destination="ucc-Pi-9N4" id="9gr-ru-BxC"/>
@@ -186,6 +195,8 @@
                         <outlet property="commentInputView" destination="kTW-SS-LUD" id="CMA-WW-oLv"/>
                         <outlet property="comtentHeight" destination="Rle-eK-FMH" id="ZAE-s2-vMe"/>
                         <outlet property="contentRight" destination="qfL-7R-4Yw" id="1rh-CQ-4PD"/>
+                        <outlet property="playContentViewTralling" destination="kKb-yc-w9Y" id="j7f-wl-eww"/>
+                        <outlet property="playerContentView" destination="sVY-Jo-WX5" id="W0i-Xi-gwn"/>
                         <outlet property="saveButton" destination="ghJ-F0-AhU" id="PAL-fF-x8R"/>
                         <outlet property="sendButton" destination="6lD-Qc-gR2" id="6wf-iM-gLh"/>
                         <outlet property="tableView" destination="ikq-Sg-jbE" id="mEA-jz-vRf"/>
@@ -199,5 +210,11 @@
     <resources>
         <image name="icon_add_collection" width="22" height="22"/>
         <image name="icon_add_comment" width="20" height="20"/>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

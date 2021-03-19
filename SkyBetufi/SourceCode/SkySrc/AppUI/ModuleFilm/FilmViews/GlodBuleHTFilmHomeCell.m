@@ -81,7 +81,6 @@
     return _webView;
 }
 
-#pragma mark - 播放器代理PLPlayerViewDelegate
 
 + (CGFloat)headerViewHeight
 {
@@ -114,6 +113,8 @@
     [self.playerView configureVideo:enableRender];
 }
 
+
+#pragma mark -PLPlayerViewDelegate
 - (void)playerViewEnterFullScreen:(PLPlayerView *)playerView {
     
     UIView *superView = [UIApplication sharedApplication].delegate.window.rootViewController.view;

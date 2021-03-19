@@ -13,7 +13,10 @@
 #import "GlodBuleHTNewsCommentCell.h"
 #import "GlodBuleHTNoCommentFooterView.h"
 #import "GlodBuleHTAdViewCell.h"
-@interface GlodBuleHTNewsDetailViewController () <UITableViewDelegate, UITableViewDataSource>
+
+#import "PLPlayerView.h"
+
+@interface GlodBuleHTNewsDetailViewController () <UITableViewDelegate, UITableViewDataSource, PLPlayerViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
@@ -34,6 +37,16 @@
 @property (nonatomic, strong) GlodBuleHTCommentGetter *commentGetter;
 @property (nonatomic, strong) GlodBuleHTNoCommentFooterView *noCommentsFooterView;
 @property (nonatomic, assign) BOOL isFirstShow;
+
+@property (weak, nonatomic) IBOutlet UIView *playerContentView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *playContentViewTralling;
+
+
+//========
+@property (nonatomic, assign) BOOL isNeedReset;
+@property (nonatomic, strong) PLPlayerView *playerView;
+@property (nonatomic, assign) BOOL isPlayFilm;
+
 @end
 @implementation GlodBuleHTNewsDetailViewController
 + (instancetype)taoviewController {
@@ -52,6 +65,29 @@
 //    }];
 //    [self addHistoryRecord];
     
+    if (self.filmModel && self.filmModel
+        .plMediaInfo && self.filmModel
+        .plMediaInfo.videoURL && ![self.filmModel
+                                  .plMediaInfo.videoURL isEqualToString:@""]) {
+        
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+        [[AVAudioSession sharedInstance] setActive:YES error:nil];
+        
+        self.playerView = [[PLPlayerView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200)];
+        self.playerView.delegate = self;
+        [self.playerContentView addSubview:self.playerView];
+        [self.playerView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.leading.trailing.top.bottom.mas_equalTo(self.playerContentView);
+        }];
+        self.playerView.media = self.filmModel.plMediaInfo;
+        
+        self.isPlayFilm = YES;
+    }else{
+        self.isPlayFilm = NO;
+        
+    }
+
+    
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -65,10 +101,41 @@
         }];
         [self addHistoryRecord];
     }
+    if (!self.isPlayFilm) {
+
+        self.playContentViewTralling.constant = SCREEN_WIDTH - 0.1;
+        [self.playerContentView setNeedsUpdateConstraints];
+        [self.playerContentView updateConstraintsIfNeeded];
+        [self.playerContentView layoutIfNeeded];
+    }
+    [self onUIApplication:YES];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+
+//- (BOOL)prefersStatusBarHidden {
+//    return self.isFullScreen;
+//}
+
+- (void)onUIApplication:(BOOL)active {
+    if (self.playerView) {
+        [self.playerView configureVideo:active];
+    }
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    NSLog(@"GlodBuleHTNewsDetailViewController viewDidDisappear");
+    if (self.playerView) {
+        [self.playerView stop];
+    }
+    [self onUIApplication:NO];
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if (!self.topRequestDone || !self.htmlLoadDone) {
@@ -442,4 +509,74 @@
     }
     return _noCommentsFooterView;
 }
+
+
+#pragma mark -PLPlayerViewDelegate
+- (void)playerViewEnterFullScreen:(PLPlayerView *)playerView {
+    
+    UIView *superView = [UIApplication sharedApplication].delegate.window.rootViewController.view;
+    [self.playerView removeFromSuperview];
+    
+    if (self.playerView.player.width < self.playerView.player.height) {
+        
+        [superView addSubview:self.playerView];
+//        superView.backgroundColor = UIColor.blackColor;
+        [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//            make.leading.equalTo(superView).mas_offset(20);
+//            make.trailing.equalTo(superView).mas_offset(-20);
+//            make.top.equalTo(superView).mas_offset(44);
+//            make.bottom.equalTo(superView).mas_offset(-44);
+            
+            
+            make.width.equalTo(superView.mas_width);
+            make.height.equalTo(superView.mas_height);
+            make.center.equalTo(superView);
+        }];
+        
+    }else{
+        [superView addSubview:self.playerView];
+        [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(superView.mas_height);
+            make.height.equalTo(superView.mas_width);
+            make.center.equalTo(superView);
+        }];
+    }
+    
+    [superView setNeedsUpdateConstraints];
+    [superView updateConstraintsIfNeeded];
+    
+    [UIView animateWithDuration:.3 animations:^{
+        [superView layoutIfNeeded];
+    }];
+    
+//    [self.delegate tableViewCellEnterFullScreen:self];
+}
+
+- (void)playerViewExitFullScreen:(PLPlayerView *)playerView {
+    
+//    UIView *superView = [UIApplication sharedApplication].delegate.window.rootViewController.view;
+//    superView.backgroundColor = UIColor.clearColor;
+    
+    [self.playerView removeFromSuperview];
+    [self.playerContentView addSubview:self.playerView];
+    
+    [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.playerContentView);
+    }];
+    
+    [self.playerContentView setNeedsUpdateConstraints];
+    [self.playerContentView updateConstraintsIfNeeded];
+    
+    [UIView animateWithDuration:.3 animations:^{
+        [self.playerContentView layoutIfNeeded];
+    }];
+    
+//    [self.delegate tableViewCellExitFullScreen:self];
+}
+
+- (void)playerViewWillPlay:(PLPlayerView *)playerView {
+//    [self.delegate tableViewWillPlay:self];
+}
+
+
 @end

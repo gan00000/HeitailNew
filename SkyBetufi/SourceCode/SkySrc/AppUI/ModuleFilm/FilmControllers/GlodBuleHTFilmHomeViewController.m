@@ -99,6 +99,7 @@
     [playCell play];
 }
 
+#pragma mark - 播放器代理PLLongMediaTableViewCellDelegate
 - (void)tableViewWillPlay:(GlodBuleHTFilmHomeCell *)cell {
     if (cell == self.playingCell) return;
     
@@ -123,6 +124,8 @@
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
+
+#pragma mark - 1
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     NSLog(@"scrollViewDidEndDragging");
     if (decelerate) return;
@@ -198,6 +201,7 @@
     
     GlodBuleHTNewsDetailViewController *detailVc = [GlodBuleHTNewsDetailViewController taoviewController];
     detailVc.post_id = newsModel.news_id;
+    detailVc.filmModel = newsModel;
     [self.navigationController pushViewController:detailVc animated:YES];
 }
 
