@@ -388,8 +388,15 @@ static  NSString *cellID = @"cellID";
 }
 
 - (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
-    error ? NSLog(@"%@", [error description]) : NSLog(@"成功保存到相册");
-    error ?  [kWindow showToast:@"保存失敗"] : [kWindow showToast:@"保存到相冊成功"];
+//    error ? NSLog(@"%@", [error description]) : NSLog(@"成功保存到相册");
+//    error ?  [kWindow showToast:@"保存失敗"] : [kWindow showToast:@"保存到相冊成功"];
+    if (error) {
+        NSLog(@"%@", [error description]);
+        [kWindow showToast:@"保存失敗"];
+    }else{
+        NSLog(@"成功保存到相册");
+        [kWindow showToast:@"保存到相冊成功"];
+    }
 }
 
 - (void)backButtonClick {

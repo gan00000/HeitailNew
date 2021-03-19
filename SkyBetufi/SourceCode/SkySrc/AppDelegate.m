@@ -45,8 +45,11 @@
     }];
 }
 - (void)setUpUM {
+    
+     [UMConfigure setEncryptEnabled:YES];//打开加密传输
+     [UMConfigure setLogEnabled:YES];//设置打开日志
+//     [UMConfigure setLogEnabled:YES];
     [UMConfigure initWithAppkey:UM_APP_KEY channel:@"App Store"];
-    [UMConfigure setLogEnabled:YES];
     [[UMSocialManager defaultManager] openLog:YES];
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Facebook
                                           appKey:FB_APP_ID
@@ -151,7 +154,7 @@
     if([[[UIDevice currentDevice] systemVersion]intValue] < 10){
         [UMessage didReceiveRemoteNotification:userInfo];
     }
-    completionHandler(UIBackgroundFetchResultNewData);
+//    completionHandler(UIBackgroundFetchResultNewData);
 }
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSString *pushDeviceToken = [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""]
