@@ -25,13 +25,24 @@ pod 'JXExtension', "~> 0.4.2"
 pod 'IQKeyboardManager'
 
 # 友盟组建
-pod 'UMCCommon', "~> 2.1.1"
-pod 'UMCSecurityPlugins'
-pod 'UMCAnalytics'
-pod 'UMCShare/Social/Facebook'
-pod 'UMCShare/Social/Line'
+#pod 'UMCCommon', "= 2.1.1"
+#pod 'UMCSecurityPlugins',"1.0.6"
+#pod 'UMCAnalytics',"= 5.5.1"
+#pod 'UMCShare/Social/Facebook'
+#pod 'UMCShare/Social/Line'
+#pod 'UMCCommonLog',"= 1.0.0"
+#pod 'UMCPush',"= 3.2.3"
+
+pod 'UMCommon' #原为'UMCCommon'
+pod 'UMDevice'
 pod 'UMCCommonLog'
-pod 'UMCPush'
+pod 'UMPush' #原为'UMCPush'
+pod 'UMCSecurityPlugins'
+pod 'UMShare/UI'
+pod 'UMShare/Social/Facebook'
+pod 'UMShare/Social/Line'
+
+
 pod 'ZFLineSDK'
 pod 'YYText'
 pod "XCDYouTubeKit", "~> 2.7"

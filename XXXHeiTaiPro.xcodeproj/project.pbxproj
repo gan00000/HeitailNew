@@ -107,6 +107,14 @@
 		32AC0CA525FB156D003B21FC /* HTHighLightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AC0CA325FB156D003B21FC /* HTHighLightsViewController.m */; };
 		32AC0CA825FB15AD003B21FC /* HTHighLightsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32AC0CA725FB15AD003B21FC /* HTHighLightsViewController.storyboard */; };
 		32B0F58B2545B6A3005642DC /* GlodBuleHTMatchWebPlayControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B0F58A2545B6A3005642DC /* GlodBuleHTMatchWebPlayControllerViewController.m */; };
+		32B62D73260381D400EE8E92 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B62D72260381D400EE8E92 /* AVKit.framework */; };
+		32B62D75260381EF00EE8E92 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B62D74260381EF00EE8E92 /* OpenGLES.framework */; };
+		32B62D77260381F900EE8E92 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B62D76260381F900EE8E92 /* Accelerate.framework */; };
+		32B62D792603820500EE8E92 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B62D782603820500EE8E92 /* QuartzCore.framework */; };
+		32B62D7B2603822C00EE8E92 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B62D7A2603822B00EE8E92 /* CoreAudio.framework */; };
+		32B62D7D2603824100EE8E92 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B62D7C2603824100EE8E92 /* libresolv.tbd */; };
+		32B62D802603824E00EE8E92 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B62D7F2603824E00EE8E92 /* libiconv.tbd */; };
+		32B62D832603827000EE8E92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B62D822603827000EE8E92 /* Foundation.framework */; };
 		32BDB9DD251A42DF0066200F /* sss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BDB9DC251A42DF0066200F /* sss.swift */; };
 		32BFD1DF239F9B1A0037985B /* GlodBuleHTViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BFD1DE239F9B1A0037985B /* GlodBuleHTViewController2.m */; };
 		32C65DED250676AE0068D2C7 /* GlodBuleConfigCoreUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C65DEC250676AD0068D2C7 /* GlodBuleConfigCoreUtil.m */; };
@@ -604,6 +612,14 @@
 		32AC0CA725FB15AD003B21FC /* HTHighLightsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HTHighLightsViewController.storyboard; sourceTree = "<group>"; };
 		32B0F5892545B6A3005642DC /* GlodBuleHTMatchWebPlayControllerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTMatchWebPlayControllerViewController.h; sourceTree = "<group>"; };
 		32B0F58A2545B6A3005642DC /* GlodBuleHTMatchWebPlayControllerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTMatchWebPlayControllerViewController.m; sourceTree = "<group>"; };
+		32B62D72260381D400EE8E92 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		32B62D74260381EF00EE8E92 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		32B62D76260381F900EE8E92 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		32B62D782603820500EE8E92 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		32B62D7A2603822B00EE8E92 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		32B62D7C2603824100EE8E92 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		32B62D7F2603824E00EE8E92 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		32B62D822603827000EE8E92 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		32BDB9DB251A42DF0066200F /* SkyBallPlay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SkyBallPlay-Bridging-Header.h"; sourceTree = "<group>"; };
 		32BDB9DC251A42DF0066200F /* sss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sss.swift; sourceTree = "<group>"; };
 		32BFD1DD239F9B1A0037985B /* GlodBuleHTViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTViewController2.h; sourceTree = "<group>"; };
@@ -1104,7 +1120,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32B62D832603827000EE8E92 /* Foundation.framework in Frameworks */,
+				32B62D802603824E00EE8E92 /* libiconv.tbd in Frameworks */,
+				32B62D7D2603824100EE8E92 /* libresolv.tbd in Frameworks */,
+				32B62D7B2603822C00EE8E92 /* CoreAudio.framework in Frameworks */,
+				FE91974B218F60A100439CDD /* CoreGraphics.framework in Frameworks */,
+				32B62D792603820500EE8E92 /* QuartzCore.framework in Frameworks */,
+				32B62D77260381F900EE8E92 /* Accelerate.framework in Frameworks */,
+				32B62D75260381EF00EE8E92 /* OpenGLES.framework in Frameworks */,
 				328894D22603326A00759311 /* CoreMedia.framework in Frameworks */,
+				32B62D73260381D400EE8E92 /* AVKit.framework in Frameworks */,
 				328894D02603325E00759311 /* AudioToolbox.framework in Frameworks */,
 				328894CD2603324200759311 /* VideoToolbox.framework in Frameworks */,
 				328894CE2603324200759311 /* MediaToolbox.framework in Frameworks */,
@@ -1113,7 +1138,6 @@
 				32100C4023C2E1FB00CC1DD2 /* AuthenticationServices.framework in Frameworks */,
 				FECCA4E62258C858009EF494 /* Security.framework in Frameworks */,
 				FEAC9F272199D92900159AE9 /* UserNotifications.framework in Frameworks */,
-				FE91974B218F60A100439CDD /* CoreGraphics.framework in Frameworks */,
 				32FED83223AB779C00D900A7 /* IJKMediaFramework.framework in Frameworks */,
 				FE0C27122186BD0D001C9B8C /* SystemConfiguration.framework in Frameworks */,
 				FE0C27102186BD05001C9B8C /* CoreTelephony.framework in Frameworks */,
@@ -1375,19 +1399,19 @@
 		328894552603310900759311 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				328894562603310900759311 /* PLHttpSession.h */,
-				328894572603310900759311 /* PLAlertUserAgreeView.h */,
-				328894582603310900759311 /* PLPlayViewController.h */,
-				328894592603310900759311 /* PLPlayerView.h */,
-				3288945A2603310900759311 /* PLMediaInfo.m */,
-				3288945B2603310900759311 /* PLQRCodeViewController.m */,
-				3288945C2603310900759311 /* PLAlertUserAgreeView.m */,
-				3288945D2603310900759311 /* PLHttpSession.m */,
-				3288945E2603310900759311 /* PLPlayViewController.m */,
-				3288945F2603310900759311 /* PLPlayerView.m */,
 				328894602603310900759311 /* MacroDefine.h */,
-				328894612603310900759311 /* PLQRCodeViewController.h */,
+				328894572603310900759311 /* PLAlertUserAgreeView.h */,
+				3288945C2603310900759311 /* PLAlertUserAgreeView.m */,
+				328894562603310900759311 /* PLHttpSession.h */,
+				3288945D2603310900759311 /* PLHttpSession.m */,
 				328894622603310900759311 /* PLMediaInfo.h */,
+				3288945A2603310900759311 /* PLMediaInfo.m */,
+				328894592603310900759311 /* PLPlayerView.h */,
+				3288945F2603310900759311 /* PLPlayerView.m */,
+				328894582603310900759311 /* PLPlayViewController.h */,
+				3288945E2603310900759311 /* PLPlayViewController.m */,
+				328894612603310900759311 /* PLQRCodeViewController.h */,
+				3288945B2603310900759311 /* PLQRCodeViewController.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1564,6 +1588,14 @@
 		CB747A826453EE017B9DDDC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				32B62D822603827000EE8E92 /* Foundation.framework */,
+				32B62D7F2603824E00EE8E92 /* libiconv.tbd */,
+				32B62D7C2603824100EE8E92 /* libresolv.tbd */,
+				32B62D7A2603822B00EE8E92 /* CoreAudio.framework */,
+				32B62D782603820500EE8E92 /* QuartzCore.framework */,
+				32B62D76260381F900EE8E92 /* Accelerate.framework */,
+				32B62D74260381EF00EE8E92 /* OpenGLES.framework */,
+				32B62D72260381D400EE8E92 /* AVKit.framework */,
 				328894D12603326A00759311 /* CoreMedia.framework */,
 				328894CF2603325D00759311 /* AudioToolbox.framework */,
 				328894CC2603324200759311 /* MediaToolbox.framework */,
