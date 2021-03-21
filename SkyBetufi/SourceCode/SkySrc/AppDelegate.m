@@ -32,6 +32,7 @@
     
     [self setupPushWithLaunchOptions:launchOptions];
     [IQKeyboardManager sharedManager].toolbarBarTintColor = [UIColor whiteColor];
+//    [IQKeyboardManager sharedManager].enable = NO;
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
     self.pushInfo = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];

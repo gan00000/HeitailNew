@@ -16,6 +16,8 @@
 #import "GlodBuleHTMatchWebPlayControllerViewController.h"
 #import "HTHighLightsViewController.h"
 //#import <SafariServices/SFFoundation.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
+
 @import SafariServices;
 
 @interface GlodBuleHTMatchDetailViewController () <UIScrollViewDelegate, LMVideoPlayerDelegate>
@@ -85,7 +87,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    
+   
     if (self.player && self.isPlaying) {
         self.isPlaying = NO;
         [self.player playVideo];
@@ -95,6 +97,7 @@
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    
     [self stopTimer];
     
     // push出下一级页面时候暂停
@@ -105,6 +108,18 @@
     
     LMBrightnessViewShared.isStartPlay = NO;
     
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"GlodBuleHTMatchDetailViewController viewDidAppear");
+    [IQKeyboardManager sharedManager].enable = NO;
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    NSLog(@"GlodBuleHTMatchDetailViewController viewDidDisappear");
+    [IQKeyboardManager sharedManager].enable = YES;
 }
 
 #pragma mark - 屏幕旋转

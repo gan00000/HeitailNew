@@ -13,6 +13,9 @@
 #import "GlodBuleHTNewsCommentCell.h"
 #import "GlodBuleHTNoCommentFooterView.h"
 #import "GlodBuleHTAdViewCell.h"
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#import "UIColor+GlodBuleHex.h"
+#import "UIView+GlodBuleBlockGesture.h"
 
 #import "PLPlayerView.h"
 
@@ -46,6 +49,11 @@
 @property (nonatomic, assign) BOOL isNeedReset;
 @property (nonatomic, strong) PLPlayerView *playerView;
 @property (nonatomic, assign) BOOL isPlayFilm;
+
+@property (nonatomic, strong)UIView * replyInputAccessoryView;
+@property (nonatomic, strong)UIButton * cancelButton;
+@property (nonatomic, strong)UIButton * submitButton;
+@property (nonatomic, strong)UITextView *replyTextView;
 
 @end
 @implementation GlodBuleHTNewsDetailViewController
@@ -87,10 +95,73 @@
         
     }
 
+    self.commentInputView.inputAccessoryView = self.replyInputAccessoryView;
     
+    [self.commentInputView addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+        NSLog(@"_imTalkTextView addTapActionWithBlock:");
+        [self.commentInputView becomeFirstResponder];
+        [self.replyTextView becomeFirstResponder];
+    }];
 }
+
+- (UIView *)replyInputAccessoryView
+{
+    if (!_replyInputAccessoryView) {
+        _replyInputAccessoryView  = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
+        _replyInputAccessoryView.backgroundColor = [UIColor whiteColor];
+        
+        _cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _cancelButton.titleLabel.font = [UIFont systemFontOfSize:12.0f];
+        [_cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+        [_cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_cancelButton setTitleColor:[UIColor colorWithHexString:@"848484"] forState:UIControlStateHighlighted];
+        [_cancelButton addTarget:self action:@selector(cancelButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+        [_replyInputAccessoryView addSubview:_cancelButton];
+        
+        [_cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(_replyInputAccessoryView).offset(10);
+            make.height.centerY.equalTo(_replyInputAccessoryView);
+        }];
+        
+        _submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _submitButton.titleLabel.font = [UIFont systemFontOfSize: 12.0f];
+        [_submitButton setTitle:@"完成" forState:UIControlStateNormal];
+        [_submitButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_submitButton setTitleColor:[UIColor colorWithHexString:@"848484"] forState:UIControlStateHighlighted];
+        [_submitButton addTarget:self action:@selector(submitButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+        [_replyInputAccessoryView addSubview:_submitButton];
+        
+        [_submitButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(_replyInputAccessoryView).offset(-10);
+            make.height.centerY.equalTo(_replyInputAccessoryView);
+        }];
+        
+        _replyTextView = [[UITextView alloc] init];
+        _replyTextView.layer.cornerRadius = 4.0f;
+        _replyTextView.layer.masksToBounds = YES;
+        _replyTextView.layer.borderColor = [UIColor colorWithHexString:@"848484"].CGColor;
+        _replyTextView.layer.borderWidth = 1.0f / [[UIScreen mainScreen] scale];
+        _replyTextView.font = [UIFont systemFontOfSize: 12.0f];
+        _replyTextView.textColor = [UIColor blackColor];
+        _replyTextView.backgroundColor = [UIColor clearColor];
+        [_replyInputAccessoryView addSubview:_replyTextView];
+        
+        [_replyTextView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(_replyInputAccessoryView).offset(-4);
+            make.centerY.equalTo(_replyInputAccessoryView);
+            make.left.equalTo(_cancelButton.mas_right).offset(10);
+            make.right.equalTo(_submitButton.mas_left).offset(-10);
+        }];
+        
+    }
+    return _replyInputAccessoryView;
+}
+
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    NSLog(@"GlodBuleHTNewsDetailViewController viewDidAppear");
+    [IQKeyboardManager sharedManager].enable = NO;
     if (self.isFirstShow) {
         self.isFirstShow = NO;
         if ([self.commentInputView.text isEqualToString:@" "]) {
@@ -130,6 +201,8 @@
     [super viewDidDisappear:animated];
     
     NSLog(@"GlodBuleHTNewsDetailViewController viewDidDisappear");
+    [IQKeyboardManager sharedManager].enable = YES;
+    
     if (self.playerView) {
         [self.playerView stop];
     }
@@ -578,5 +651,22 @@
 //    [self.delegate tableViewWillPlay:self];
 }
 
+#pragma mark - UIButton Target Aciton
+- (void)cancelButtonClicked
+{
+    [_replyTextView resignFirstResponder];
+   // [_replyInput resignFirstResponder];
+    [self.view endEditing:YES];
+    
+}
+
+- (void)submitButtonClicked
+{
+
+    [_replyTextView resignFirstResponder];
+    self.commentInputView.text = _replyTextView.text;
+    [self.view endEditing:YES];
+    
+}
 
 @end
