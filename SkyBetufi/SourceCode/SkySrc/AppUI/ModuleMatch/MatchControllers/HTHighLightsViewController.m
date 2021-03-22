@@ -117,7 +117,7 @@
 //    detailVc.post_id = newsModel.news_id;
 //    [self.navigationController pushViewController:detailVc animated:YES];
     
-    NSString *webUrl = newsModel.url;//;[NSString stringWithFormat:@"http://app.ballgametime.com/api/nbaschedule.php?token=%@&game_id=%@",token,self.matchModel.game_id];
+    NSString *webUrl = newsModel.hl_url;//;[NSString stringWithFormat:@"http://app.ballgametime.com/api/nbaschedule.php?token=%@&game_id=%@",token,self.matchModel.game_id];
     
     if (@available(iOS 10.0, *)) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:webUrl] options:@{} completionHandler:nil];

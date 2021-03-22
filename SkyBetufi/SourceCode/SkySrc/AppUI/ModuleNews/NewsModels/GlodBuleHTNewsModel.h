@@ -36,6 +36,8 @@
 @property (nonatomic, copy) NSString *play_width;
 @property (nonatomic, copy) NSString *play_height;
 
+@property (nonatomic, copy) NSString *hl_url;
+
 @property (nonatomic, strong) PLMediaInfo *plMediaInfo;
 
 - (void)taogetClearContentWithBlock:(void(^)(BOOL success, NSString *content))block;

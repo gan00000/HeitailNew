@@ -74,6 +74,8 @@
 
 @property (nonatomic, strong) NSArray *titlesArray;
 
+@property (nonatomic, assign) BOOL isFinal;
+
 @end
 @implementation GlodBuleHTMatchDetailViewController
 + (instancetype)taoviewController {
@@ -366,13 +368,14 @@
 
 - (void)initData {
     
-    [GlodBuleHTUserManager manager].showTextLive = YES;
-     if ([GlodBuleHTUserManager manager].showTextLive) {
-         
-         self.titlesArray = @[@"嗨賴",@"聊球", @"對陣", @"數據統計", @"文字直播"];
-     }else{
-         self.titlesArray =  @[@"影片直播", @"對陣", @"數據統計"];
-     }
+    if ([self.matchModel.scheduleStatus isEqualToString:@"Final"]) {
+        self.titlesArray = @[@" 嗨賴 ",@" 聊球 ", @" 對陣 ", @"數據統計", @"文字直播"];
+        self.isFinal = YES;
+    }else{
+        self.titlesArray = @[@" 聊球 ", @" 對陣 ", @"數據統計", @"文字直播"];
+        self.isFinal = NO;
+    }
+    
     for (NSInteger i = 0; i < self.titlesArray.count; i++) {
         [self.loadedFlagArray addObject:@(NO)];
         [self.loadedControllersArray addObject:@(NO)];
@@ -492,8 +495,10 @@
 //        self.statusLabel.text = @"已結束";
 //        [self stopTimer];
 //    } else
-        
+    
     if ([self.matchSummaryModel.scheduleStatus isEqualToString:@"Final"]) {
+        
+        self.isFinal = YES;
         self.statusLabel.text = @"已結束";
         self.statusLabel.hidden = YES;
         
@@ -599,7 +604,7 @@
 - (void)loadChildViewControllerByIndex:(NSInteger)index {
     
     //显示文字直播
-     if ([GlodBuleHTUserManager manager].showTextLive) {
+     if (self.isFinal) {
          
          if ([self.loadedFlagArray[index] boolValue]) {
              if (index == 0) {
@@ -677,22 +682,19 @@
          return;
      }
     
-    //不显示文字直播
+    //=====
     if ([self.loadedFlagArray[index] boolValue]) {
-        if (index == 0) {
-//            GlodBuleHTMatchWordLiveViewController *wordVc = self.loadedControllersArray[index];
-//            [wordVc taorefreshWithLiveFeedList:self.liveFeedList];
-            
-            
-            GlodBuleHTMatchVideoLiveViewController *detailVc = self.loadedControllersArray[index];//[GlodBuleHTMatchVideoLiveViewController taoviewController];
-            detailVc.game_id = self.matchModel.game_id;
+        if (index == 3) {//文字直播
+            GlodBuleHTMatchWordLiveViewController *wordVc = self.loadedControllersArray[index];
+           [wordVc taorefreshWithLiveFeedList:self.liveFeedList summary:self.matchSummaryModel gameId:self.matchModel.game_id];
            
-
-        } else if (index == 1) {
-            GlodBuleHTMatchCompareViewController *compareVc = self.loadedControllersArray[index];
-//            [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel liveFeedModel:self.liveFeedList matchModel:self.matchModel];
-            [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel matchCompareModel:self.matchModel liveFeedModel:self.liveFeedList  matchModel:self.matchModel];
             
+        }else if (index == 1) {//對陣
+            GlodBuleHTMatchCompareViewController *compareVc = self.loadedControllersArray[index];
+            [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel matchCompareModel:self.matchCompareModel liveFeedModel:self.liveFeedList matchModel:self.matchModel];
+        }else if (index == 0) {//聊起
+            GlodBuleHTIMViewController *imVc = self.loadedControllersArray[index];
+            //[vc taorefreshWithMatchSummaryModel:self.matchSummaryModel];
         } else {
             GlodBuleHTMatchDashboardViewController *dashbdVc = self.loadedControllersArray[index];
             [dashbdVc taorefreshWithMatchCompareModel:self.matchCompareModel];
@@ -701,31 +703,32 @@
     }
     kWeakSelf
     UIViewController *vc;
-    if (index == 0) {
-//        GlodBuleHTMatchWordLiveViewController *wordVc = [GlodBuleHTMatchWordLiveViewController taoviewController];
-//        wordVc.onTableHeaderRefreshBlock = ^{
-//            [weakSelf loadData];
-//        };
-//        vc = wordVc;
+ 
+    if (index == 3) {
         
-        //视频直播
-        GlodBuleHTMatchVideoLiveViewController *detailVc = [GlodBuleHTMatchVideoLiveViewController taoviewController];
-        detailVc.game_id = self.matchModel.game_id;
-        vc = detailVc;
+        GlodBuleHTMatchWordLiveViewController *wordVc = [GlodBuleHTMatchWordLiveViewController taoviewController];
+        wordVc.onTableHeaderRefreshBlock = ^{
+            [weakSelf loadData];
+        };
+        vc = wordVc;
         
-
-        
-    } else if (index == 1) {
+    }else if (index == 1) {
         GlodBuleHTMatchCompareViewController *compareVc = [GlodBuleHTMatchCompareViewController taoviewController];
         
-        [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel matchCompareModel:self.matchCompareModel liveFeedModel:self.liveFeedList matchModel:self.matchModel];
-//        [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel matchCompareModel:self.matchCompareModel maliveFeedModel:self.liveFeedList matchModel:self.matchModel];
-        
+        [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel matchCompareModel:self.matchModel liveFeedModel:self.liveFeedList  matchModel:self.matchModel];
+       
         compareVc.onTableHeaderRefreshBlock = ^{
-            
             [weakSelf loadData];
         };
         vc = compareVc;
+        
+    }else if (index == 0) {
+        self.imVc = [GlodBuleHTIMViewController taoviewController];
+//             [imVc taorefreshWithMatchSummaryModel:self.matchSummaryModel];
+//             imVc.onTableHeaderRefreshBlock = ^{
+//                 [weakSelf loadData];
+//             };
+        vc = self.imVc;
     } else {
         GlodBuleHTMatchDashboardViewController *dashboardVc = [GlodBuleHTMatchDashboardViewController taoviewController];
         [dashboardVc taorefreshWithMatchCompareModel:self.matchCompareModel];
@@ -736,8 +739,8 @@
     [self.loadedFlagArray replaceObjectAtIndex:index withObject:@(YES)];
     [self.loadedControllersArray replaceObjectAtIndex:index withObject:vc];
     [self setChildViewFrame:vc.view byIndex:index];
-    [weakSelf loadData];
     
+    [self loadData];
 }
 - (void)setChildViewFrame:(UIView *)childView byIndex:(NSInteger)index {
     [childView mas_makeConstraints:^(MASConstraintMaker *make) {
