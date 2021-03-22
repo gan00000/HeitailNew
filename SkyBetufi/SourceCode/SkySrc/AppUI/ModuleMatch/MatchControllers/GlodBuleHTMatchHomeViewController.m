@@ -76,10 +76,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //用户登录
-    if (!GlodBuleHTUserManager.tao_userToken || [@"" isEqualToString:GlodBuleHTUserManager.tao_userToken]) {
-        [kWindow showToast:@"請先登入帳號"];
-        return;
-    }
+//    if (!GlodBuleHTUserManager.tao_userToken || [@"" isEqualToString:GlodBuleHTUserManager.tao_userToken]) {
+//        [kWindow showToast:@"請先登入帳號"];
+//        return;
+//    }
     
     GlodBuleHTMatchHomeGroupModel *groupModel = self.matchList[indexPath.section];
     GlodBuleHTMatchDetailViewController *detailVc = [GlodBuleHTMatchDetailViewController taoviewController];

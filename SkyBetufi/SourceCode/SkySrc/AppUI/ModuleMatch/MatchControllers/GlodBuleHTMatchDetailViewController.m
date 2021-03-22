@@ -312,10 +312,13 @@
 //    }];
     
     NSString *token = @"";
-    if ([GlodBuleHTUserManager tao_isUserLogin]) {
-        token = [GlodBuleHTUserManager tao_userToken];
+    if (![GlodBuleHTUserManager tao_isUserLogin]) {
+        [kWindow showToast:@"請先登入帳號"];
+        [GlodBuleHTUserManager tao_doUserLogin];
+        return;
     }
-
+    token = [GlodBuleHTUserManager tao_userToken];
+    
     NSString *webUrl = [NSString stringWithFormat:@"http://app.ballgametime.com/api/nbaschedule.php?token=%@&game_id=%@",token,self.matchModel.game_id];
 
     if (@available(iOS 10.0, *)) {

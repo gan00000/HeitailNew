@@ -214,8 +214,15 @@
         return;
     }
     
-    if (!self.loginSuccess) {
+    if (![GlodBuleHTUserManager tao_isUserLogin]) {
         [kWindow showToast:@"請先登入帳號"];
+        [GlodBuleHTUserManager tao_doUserLogin];
+        return;
+    }
+    
+    if (!self.loginSuccess) {
+        [kWindow showToast:@"正在登入聊天服務器"];
+        [self sendLoginData];
         return;
     }
     
