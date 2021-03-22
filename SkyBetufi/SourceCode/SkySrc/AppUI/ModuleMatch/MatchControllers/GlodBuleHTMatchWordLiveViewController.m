@@ -92,10 +92,11 @@
         return;
     }
     kWeakSelf
+    [self.view showLoadingView];
     [self.request getWordLiveFeedWithGameId:self.gameId
                                       first:YES
                                successBlock:^(NSArray<GlodBuleHTMatchLiveFeedModel *> * _Nonnull newsList) {
-        
+        [self.view hideLoadingView];
         weakSelf.error = nil;
         weakSelf.wordLiveRequestDone = YES;
         weakSelf.showLiveFeedList = newsList;

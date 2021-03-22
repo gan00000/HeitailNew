@@ -315,9 +315,9 @@
     if ([GlodBuleHTUserManager tao_isUserLogin]) {
         token = [GlodBuleHTUserManager tao_userToken];
     }
-    
+
     NSString *webUrl = [NSString stringWithFormat:@"http://app.ballgametime.com/api/nbaschedule.php?token=%@&game_id=%@",token,self.matchModel.game_id];
-    
+
     if (@available(iOS 10.0, *)) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:webUrl] options:@{} completionHandler:nil];
     } else {
@@ -327,6 +327,17 @@
 
     
     //========由于版权的问题，不能播放了==============//
+//    if (self.player) {
+//        self.playerContentView.hidden = NO;
+//        [self.player autoPlayTheVideo];
+//        self.topDetailView.hidden = YES;
+//    }
+    
+    
+//    GlodBuleLMPlayerModel *model = [[GlodBuleLMPlayerModel alloc] init];
+//    model.videoUrls = @[@"https://demo-videos.qnsdk.com/movies/Sunset.mp4"];
+//    [self setUpPlayerView:model];
+//
 //    if (self.player) {
 //        self.playerContentView.hidden = NO;
 //        [self.player autoPlayTheVideo];
