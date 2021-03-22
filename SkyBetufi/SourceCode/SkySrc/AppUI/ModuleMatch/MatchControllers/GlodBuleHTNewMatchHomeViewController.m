@@ -71,9 +71,13 @@
         
         for (NSString *key in leagueList) {
             //处理字典的键值
-            NSString *value = leagueList[key];
+            NSString *value = [NSString stringWithFormat:@"%@", leagueList[key]];
+//            NSUInteger xxx = leagueList[key];
+//            NSNumber *longNumber = [NSNumber numberWithLong: xxx];
+//            NSString *longStr = [longNumber stringValue];
+            
             [self.titlesArray addObject:key];
-            [self.titlesArrayValue addObject:value];
+            [self.titlesArrayValue addObject: value];
         }
         
         [self setupUI];

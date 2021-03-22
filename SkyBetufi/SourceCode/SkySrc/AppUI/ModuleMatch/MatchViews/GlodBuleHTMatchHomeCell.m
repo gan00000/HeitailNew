@@ -25,7 +25,7 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 }
-- (void)taosetupWithMatchModel:(GlodBuleHTMatchHomeModel *)matchModel {
+- (void)taosetupWithMatchModel:(GlodBuleHTMatchHomeModel *)matchModel matchType:(NSString *)matchType{
     
     self.matchModel = matchModel;
     
@@ -58,16 +58,21 @@
 //        self.matchStatusLabel.text = @"已結束";
 //        self.timeLabel.hidden = YES;
 //    } else
-        
+    
+    self.backPlayView.hidden = YES;
+    self.playBtnImageView.hidden = NO;
     if ([matchModel.scheduleStatus isEqualToString:@"Final"]) {
         self.matchStatusLabel.text = @"已結束";
         self.timeLabel.hidden = YES;
-        self.backPlayView.hidden = NO;
+        if ([matchType isEqualToString:@"1"]) {
+            self.backPlayView.hidden = NO;
+        }
+       
         self.playBtnImageView.hidden = YES;
         
-        UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(startPlay)];
-        self.backPlayView.userInteractionEnabled = YES;
-        [self.backPlayView addGestureRecognizer:tapGes];
+//        UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(startPlay)];
+//        self.backPlayView.userInteractionEnabled = YES;
+//        [self.backPlayView addGestureRecognizer:tapGes];
         
     } else if ([matchModel.scheduleStatus isEqualToString:@"InProgress"]) {
         if (matchModel.quarter.length > 0) {

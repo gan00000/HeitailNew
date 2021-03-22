@@ -67,7 +67,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GlodBuleHTMatchHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTMatchHomeCell"];
     GlodBuleHTMatchHomeGroupModel *groupModel = self.matchList[indexPath.section];
-    [cell taosetupWithMatchModel:groupModel.matchList[indexPath.row]];
+    [cell taosetupWithMatchModel:groupModel.matchList[indexPath.row] matchType:self.matchType];
+    
+    
     return cell;
 }
 #pragma mark - UITableViewDelegate
