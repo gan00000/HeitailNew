@@ -125,10 +125,10 @@
         [superView addSubview:self.playerView];
 //        superView.backgroundColor = UIColor.blackColor;
         [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.leading.equalTo(superView).mas_offset(20);
-//            make.trailing.equalTo(superView).mas_offset(-20);
-//            make.top.equalTo(superView).mas_offset(44);
-//            make.bottom.equalTo(superView).mas_offset(-44);
+//            make.leading.equalTo(superView);
+//            make.trailing.equalTo(superView);
+//            make.top.equalTo(superView);//.mas_offset(44);
+//            make.bottom.equalTo(superView).mas_offset(-20);
             
             
             make.width.equalTo(superView.mas_width);

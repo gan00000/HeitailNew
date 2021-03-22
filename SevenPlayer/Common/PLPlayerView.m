@@ -125,9 +125,9 @@ UIGestureRecognizerDelegate
     return self;
 }
 
-- (BOOL)isFullScreen {
-    return UIDeviceOrientationPortrait != self.deviceOrientation;
-}
+//- (BOOL)isFullScreen {
+//    return UIDeviceOrientationPortrait != self.deviceOrientation;
+//}
 
 - (void)initTopBar {
     self.topBarView = [[UIView alloc] init];
@@ -139,6 +139,7 @@ UIGestureRecognizerDelegate
     self.exitfullScreenButton = [[UIButton alloc] init];
     [self.exitfullScreenButton setImage:[UIImage imageNamed:@"player_back"] forState:(UIControlStateNormal)];
     [self.exitfullScreenButton addTarget:self action:@selector(clickExitFullScreenButton) forControlEvents:(UIControlEventTouchUpInside)];
+    self.exitfullScreenButton.hidden = YES;
     
     self.moreButton = [[UIButton alloc] init];
     [self.moreButton setImage:[UIImage imageNamed:@"more"] forState:(UIControlStateNormal)];
@@ -189,7 +190,7 @@ UIGestureRecognizerDelegate
     self.enterFullScreenButton = [UIButton buttonWithType:(UIButtonTypeSystem)];
     [self.enterFullScreenButton setTintColor:[UIColor whiteColor]];
     [self.enterFullScreenButton setImage:[UIImage imageNamed:@"full-screen"] forState:(UIControlStateNormal)];
-    [self.enterFullScreenButton addTarget:self action:@selector(clickEnterFullScreenButton) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.enterFullScreenButton addTarget:self action:@selector(clickEnterOrExitFullScreenButton) forControlEvents:(UIControlEventTouchUpInside)];
     
     self.playButton = [UIButton buttonWithType:(UIButtonTypeSystem)];
     [self.playButton setTintColor:[UIColor whiteColor]];
@@ -296,7 +297,7 @@ UIGestureRecognizerDelegate
     }];
     
     [self.durationLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self.enterFullScreenButton.mas_left);
+        make.right.mas_equalTo(self.enterFullScreenButton.mas_left).mas_offset(-10);
         make.centerY.mas_equalTo(self.bottomBarView);
         make.size.mas_equalTo(self.durationLabel.bounds.size);
     }];
@@ -444,7 +445,7 @@ UIGestureRecognizerDelegate
     
     [self showBottomBar];
     self.centerPauseButton.hidden = NO;
-    if ([self isFullScreen]) {
+    if (self.isFullScreen) {
         [self showTopBar];
     }
     [self doConstraintAnimation];
@@ -483,6 +484,19 @@ UIGestureRecognizerDelegate
     } completion:^(BOOL finished) {
         self.controlView.hidden = YES;
     }];
+}
+
+-(void)clickEnterOrExitFullScreenButton
+{
+    //exit_full_screen
+    if (self.isFullScreen) {//当前全屏中
+        [self.enterFullScreenButton setImage:[UIImage imageNamed:@"full-screen"] forState:(UIControlStateNormal)];
+        [self clickExitFullScreenButton];
+        
+    }else{
+        [self.enterFullScreenButton setImage:[UIImage imageNamed:@"exit_full_screen"] forState:(UIControlStateNormal)];
+        [self clickEnterFullScreenButton];
+    }
 }
 
 - (void)clickExitFullScreenButton {
@@ -582,10 +596,21 @@ UIGestureRecognizerDelegate
 }
 
 - (void)showBottomBar {
-    [self.bottomBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.bottom.right.mas_equalTo(self);
-        make.height.mas_equalTo(44);
-    }];
+    
+    if (_isPoratFullScreen) {
+        [self.bottomBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.mas_equalTo(self);
+            make.bottom.mas_equalTo(self).mas_offset(-20);
+            make.height.mas_equalTo(44);
+        }];
+    }else{
+        
+        [self.bottomBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.bottom.right.mas_equalTo(self);
+            make.height.mas_equalTo(44);
+        }];
+    }
+ 
     
     [self hideBottomProgressView];
 }
@@ -619,8 +644,10 @@ UIGestureRecognizerDelegate
         }];
         
         [self.enterFullScreenButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.right.top.bottom.mas_equalTo(self.bottomBarView);
-            make.width.mas_equalTo(self.enterFullScreenButton.mas_height);
+            make.right.mas_equalTo(self.bottomBarView).mas_offset(-10);
+            make.centerY.mas_equalTo(self.bottomBarView);
+            make.height.mas_equalTo(20);
+            make.width.mas_equalTo(20);
         }];
         
         [self.centerPlayButton mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -658,9 +685,14 @@ UIGestureRecognizerDelegate
             }];
             
             [self.enterFullScreenButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-                make.top.bottom.mas_equalTo(self.bottomBarView);
-                make.right.mas_equalTo(self.bottomBarView).offset(-self.edgeSpace);
-                make.width.mas_equalTo(0);
+//                make.top.bottom.mas_equalTo(self.bottomBarView);
+//                make.right.mas_equalTo(self.bottomBarView).offset(-self.edgeSpace);
+//                make.width.mas_equalTo(0);
+                
+                make.right.mas_equalTo(self.bottomBarView).mas_offset(-self.edgeSpace);;
+                make.centerY.mas_equalTo(self.bottomBarView);
+                make.height.mas_equalTo(20);
+                make.width.mas_equalTo(20);
             }];
             
             [self.centerPlayButton mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -683,7 +715,7 @@ UIGestureRecognizerDelegate
     self.deviceOrientation = or;
 }
 
-- (void)transformWithOrientation2:(UIDeviceOrientation)or {
+- (void)transformWithOrientation2:(UIDeviceOrientation)or {//竖板进入全屏用到
     
     if (self.isPoratFullScreen) return;
     if (!(UIDeviceOrientationPortrait == or || UIDeviceOrientationLandscapeLeft == or || UIDeviceOrientationLandscapeRight == or)) return;
@@ -707,8 +739,14 @@ UIGestureRecognizerDelegate
         }];
         
         [self.enterFullScreenButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.right.top.bottom.mas_equalTo(self.bottomBarView);
-            make.width.mas_equalTo(self.enterFullScreenButton.mas_height);
+//            make.right.top.bottom.mas_equalTo(self.bottomBarView);
+//            make.width.mas_equalTo(self.enterFullScreenButton.mas_height);
+            
+            make.right.mas_equalTo(self.bottomBarView).mas_offset(-16);
+            make.centerY.mas_equalTo(self.bottomBarView);
+            make.height.mas_equalTo(20);
+            make.width.mas_equalTo(20);
+            
         }];
         
         [self.centerPlayButton mas_remakeConstraints:^(MASConstraintMaker *make) {
