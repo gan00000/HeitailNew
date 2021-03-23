@@ -10,6 +10,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *containerViewBottom;
 @property (weak, nonatomic) IBOutlet JXImageView *lineLoginImageView;
 @property (weak, nonatomic) IBOutlet UIView *lineView;
+@property (weak, nonatomic) IBOutlet UIView *saveView;
 
 @property (nonatomic, copy) void (^onPlatformButtonTapped)(HTLoginPlatform platform);
 @end
@@ -33,6 +34,17 @@
 //    alertView.lineLoginBtn.hidden = YES;
 //    alertView.lineLoginImageView.hidden = YES;
     alertView.lineView.hidden = YES;
+    [alertView show:NO];
+}
+
++ (void)taoshowShareAlertViewWithFBAndSave:(void(^)(HTLoginPlatform platform))block {
+    GlodBuleHTLoginAlertView *alertView = kLoadXibWithName(NSStringFromClass([self class]));
+    alertView.titleLabel.text = @"分享至";
+    alertView.onPlatformButtonTapped = block;
+//    alertView.lineLoginBtn.hidden = YES;
+//    alertView.lineLoginImageView.hidden = YES;
+    alertView.lineView.hidden = YES;
+    alertView.saveView.hidden = NO;
     [alertView show:NO];
 }
 

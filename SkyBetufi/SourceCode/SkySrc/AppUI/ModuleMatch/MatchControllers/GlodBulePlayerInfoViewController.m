@@ -63,12 +63,17 @@
     self.title = @"數據卡";
     NSLog(@"GlodBulePlayerInfoViewController viewDidLoad");
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav_icon_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonTapped:)];
+   
+    UIBarButtonItem *shareUIBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav_icon_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonTapped:)];
+    
+//    UIBarButtonItem *saveUIBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav_icon_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonTapped:)];
+    
+    self.navigationItem.rightBarButtonItem = shareUIBarButtonItem;
     
     [self initSegmentControl];
     
     
-    self.mScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, 900);
+    self.mScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, 820);
     self.hotPointView = [[UIView alloc] init];
     [self.hotShootView addSubview:self.hotPointView];
     [self.hotPointView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -277,7 +282,7 @@
 
 - (void)share {
     kWeakSelf
-    [GlodBuleHTLoginAlertView taoshowShareAlertViewWithFB:^(HTLoginPlatform platform) {
+    [GlodBuleHTLoginAlertView taoshowShareAlertViewWithFBAndSave:^(HTLoginPlatform platform) {
 //        UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
         if (platform == HTLoginPlatformFB) {
             
@@ -296,8 +301,13 @@
             
             
             
-        } else if (platform == HTLoginPlatformLine) {
-
+        } else if (platform == HTLoginPlatformSave) {
+            
+            UIImage *image = [self makeImageWithView:self.mContentView withSize: CGSizeMake(SCREEN_WIDTH, 900)];
+            if (image) {
+                
+                UIImageWriteToSavedPhotosAlbum(image, self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
+            }
         }
 
     }];
@@ -305,6 +315,18 @@
 
 }
 
+
+- (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+//    error ? NSLog(@"%@", [error description]) : NSLog(@"成功保存到相册");
+//    error ?  [kWindow showToast:@"保存失敗"] : [kWindow showToast:@"保存到相冊成功"];
+    if (error) {
+        NSLog(@"%@", [error description]);
+        [kWindow showToast:@"保存失敗"];
+    }else{
+        NSLog(@"成功保存到相册");
+        [kWindow showToast:@"保存到相冊成功"];
+    }
+}
 
 
 - (void)doShareToPlatform:(UMSocialPlatformType)platformType withMessage:(UMSocialMessageObject *)messageObject {

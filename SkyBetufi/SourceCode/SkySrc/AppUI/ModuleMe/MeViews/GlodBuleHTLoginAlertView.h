@@ -6,6 +6,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSInteger, HTLoginPlatform) {
     HTLoginPlatformFB,
     HTLoginPlatformLine,
+    HTLoginPlatformSave,
     HTLoginPlatformAppleId,
     HTLoginPlatformGid
 };
@@ -14,6 +15,8 @@ typedef NS_ENUM(NSInteger, HTLoginPlatform) {
 + (void)taoshowShareAlertViewWithSelectBlock:(void(^)(HTLoginPlatform platform))block;
 
 + (void)taoshowShareAlertViewWithFB:(void(^)(HTLoginPlatform platform))block;
+
++ (void)taoshowShareAlertViewWithFBAndSave:(void(^)(HTLoginPlatform platform))block;
     
 @end
 NS_ASSUME_NONNULL_END
