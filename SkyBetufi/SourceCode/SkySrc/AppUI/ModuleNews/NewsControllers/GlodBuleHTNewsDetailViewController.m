@@ -107,11 +107,11 @@
 - (UIView *)replyInputAccessoryView
 {
     if (!_replyInputAccessoryView) {
-        _replyInputAccessoryView  = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
+        _replyInputAccessoryView  = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 60)];
         _replyInputAccessoryView.backgroundColor = [UIColor whiteColor];
         
         _cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _cancelButton.titleLabel.font = [UIFont systemFontOfSize:12.0f];
+        _cancelButton.titleLabel.font = [UIFont systemFontOfSize:14.0f];
         [_cancelButton setTitle:@"取消" forState:UIControlStateNormal];
         [_cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_cancelButton setTitleColor:[UIColor colorWithHexString:@"848484"] forState:UIControlStateHighlighted];
@@ -125,7 +125,7 @@
         
         _submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _submitButton.titleLabel.font = [UIFont systemFontOfSize: 12.0f];
-        [_submitButton setTitle:@"完成" forState:UIControlStateNormal];
+        [_submitButton setTitle:@"發佈" forState:UIControlStateNormal];
         [_submitButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_submitButton setTitleColor:[UIColor colorWithHexString:@"848484"] forState:UIControlStateHighlighted];
         [_submitButton addTarget:self action:@selector(submitButtonClicked) forControlEvents:UIControlEventTouchUpInside];
@@ -390,6 +390,8 @@
             [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
         }
         [weakSelf.tableView reloadData];
+        
+//        [weakSelf onShowCommentListAction:nil];
     }];
 }
 - (void)updateAfterComment {
@@ -538,6 +540,7 @@
     }
     [GlodBuleHTUserRequest taopostCommentWithComment_txt:self.commentInputView.text post_id:self.newsModel.news_id reply_comment_id:self.currentCommentModel.comment_id successBlock:^{
         self.commentInputView.text = nil;
+        self.replyTextView.text = nil;
         [self.view endEditing:YES];
         [kWindow showToast:@"評論成功"];
         [self updateAfterComment];
@@ -552,8 +555,8 @@
         [self.view showToast:@"請登錄"];
         return;
     }
-    self.buttonContentView.hidden = YES;
-    self.sendButton.hidden = NO;
+//    self.buttonContentView.hidden = YES;
+//    self.sendButton.hidden = NO;
     [UIView animateWithDuration:0.25 animations:^{
         self.contentRight.constant = 20;
         [self.commentInputView.superview layoutIfNeeded];
@@ -561,8 +564,8 @@
 }
 - (void)onInputEnd {
     if (self.commentInputView.text.length == 0) {
-        self.buttonContentView.hidden = NO;
-        self.sendButton.hidden = YES;
+//        self.buttonContentView.hidden = NO;
+//        self.sendButton.hidden = YES;
         [UIView animateWithDuration:0.25 animations:^{
             self.contentRight.constant = 80;
             [self.commentInputView.superview layoutIfNeeded];
@@ -666,7 +669,7 @@
     [_replyTextView resignFirstResponder];
     self.commentInputView.text = _replyTextView.text;
     [self.view endEditing:YES];
-    
+    [self sendCommentAction:self.sendButton];
 }
 
 @end
