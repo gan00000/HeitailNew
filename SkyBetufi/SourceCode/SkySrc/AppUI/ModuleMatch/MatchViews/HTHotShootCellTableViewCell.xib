@@ -218,6 +218,13 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fau-ey-3Vs">
+                        <rect key="frame" x="171.5" y="300" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="a3j-Vx-UMc"/>
+                            <constraint firstAttribute="width" constant="32" id="vTp-9I-zB3"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Fln-0t-EZX" firstAttribute="top" secondItem="xpE-79-azq" secondAttribute="bottom" constant="10" id="0jd-CR-WM9"/>
@@ -228,6 +235,7 @@
                     <constraint firstAttribute="trailing" secondItem="pa9-p9-D2b" secondAttribute="trailing" id="E6O-Mq-91m"/>
                     <constraint firstItem="5xG-Cq-QdO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Mm7-N3-saI"/>
                     <constraint firstItem="xpE-79-azq" firstAttribute="top" secondItem="Xux-Gp-Soi" secondAttribute="bottom" constant="4" id="Orj-jT-uKo"/>
+                    <constraint firstItem="Fau-ey-3Vs" firstAttribute="centerY" secondItem="xpE-79-azq" secondAttribute="centerY" id="P07-3m-iPB"/>
                     <constraint firstItem="5xG-Cq-QdO" firstAttribute="centerX" secondItem="Xux-Gp-Soi" secondAttribute="trailing" constant="10" id="Tm1-J5-gNg"/>
                     <constraint firstItem="1q1-UO-vbh" firstAttribute="top" secondItem="Xux-Gp-Soi" secondAttribute="top" id="V2z-sv-Z1U"/>
                     <constraint firstAttribute="trailing" secondItem="xpE-79-azq" secondAttribute="trailing" id="VNQ-Yg-VfO"/>
@@ -237,6 +245,7 @@
                     <constraint firstItem="5xG-Cq-QdO" firstAttribute="top" secondItem="L83-LU-36L" secondAttribute="bottom" constant="4" id="dxK-ci-Yit"/>
                     <constraint firstItem="xpE-79-azq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="g5g-iM-Xa1"/>
                     <constraint firstItem="L83-LU-36L" firstAttribute="top" secondItem="pa9-p9-D2b" secondAttribute="bottom" constant="4" id="hy6-It-JNU"/>
+                    <constraint firstItem="Fau-ey-3Vs" firstAttribute="centerX" secondItem="xpE-79-azq" secondAttribute="centerX" id="iw6-bH-R01"/>
                     <constraint firstItem="Xux-Gp-Soi" firstAttribute="leading" secondItem="5xG-Cq-QdO" secondAttribute="leading" constant="12" id="m5a-Dw-ElB"/>
                     <constraint firstItem="Xux-Gp-Soi" firstAttribute="top" secondItem="5xG-Cq-QdO" secondAttribute="bottom" constant="4" id="oHL-vv-ZQQ"/>
                     <constraint firstAttribute="trailing" secondItem="L83-LU-36L" secondAttribute="trailing" constant="10" id="oZZ-pJ-CWQ"/>
@@ -257,6 +266,7 @@
                 <outlet property="rightTeamPlayerSelectView" destination="Oe3-Om-yyQ" id="gNs-Ox-cWA"/>
                 <outlet property="selectQuartLabel" destination="mFl-vf-evW" id="yd9-Sq-BNS"/>
                 <outlet property="selectQuartView" destination="L83-LU-36L" id="dqB-dL-oG3"/>
+                <outlet property="teamIcon" destination="Fau-ey-3Vs" id="7CP-3v-rw8"/>
             </connections>
             <point key="canvasLocation" x="-87.681159420289859" y="57.589285714285708"/>
         </tableViewCell>

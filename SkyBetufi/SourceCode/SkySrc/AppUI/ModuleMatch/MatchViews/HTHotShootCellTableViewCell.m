@@ -10,6 +10,7 @@
 #import "GamaAlertView.h"
 #import "UIView+GlodBuleViewController.h"
 #import "GlodBuleHTMatchSummaryRequest.h"
+#import "UIImageView+GlodBuleHT.h"
 
 @interface HTHotShootCellTableViewCell ()
 
@@ -45,6 +46,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *hotPointDesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *leftPtsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rightPtsLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *teamIcon;
 
 @end
 
@@ -114,6 +116,8 @@
     [self.rightTeamIcon sd_setImageWithURL:[NSURL URLWithString:summaryModel.homeLogo]];
     
     self.game_id = gameId;
+    
+    [self.teamIcon th_setImageWithURL:summaryModel.homeLogo placeholderImage:nil];
     
     NSString *gameStatus = @"";
     if ([summaryModel.scheduleStatus isEqualToString:@"Final"]) {

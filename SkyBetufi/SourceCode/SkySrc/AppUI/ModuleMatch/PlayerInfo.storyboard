@@ -73,10 +73,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8PM-p5-clg" userLabel="tipsView">
-                                                <rect key="frame" x="0.0" y="740" width="414" height="100"/>
+                                                <rect key="frame" x="10" y="740" width="394" height="100"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11-11" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWQ-wO-M9D">
-                                                        <rect key="frame" x="30" y="0.0" width="354" height="100"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11-11" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWQ-wO-M9D">
+                                                        <rect key="frame" x="30" y="0.0" width="334" height="100"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" systemColor="systemGrayColor"/>
                                                         <nil key="highlightedColor"/>
@@ -452,14 +452,14 @@
                                             <constraint firstItem="QE2-CP-Evk" firstAttribute="leading" secondItem="fhn-it-Xvg" secondAttribute="leading" id="3JY-Ua-8kB"/>
                                             <constraint firstItem="AMh-Nd-pmA" firstAttribute="top" secondItem="QE2-CP-Evk" secondAttribute="bottom" id="AG9-6q-EPc"/>
                                             <constraint firstItem="AMh-Nd-pmA" firstAttribute="centerX" secondItem="fhn-it-Xvg" secondAttribute="centerX" id="Aa9-jV-sVf"/>
-                                            <constraint firstItem="8PM-p5-clg" firstAttribute="leading" secondItem="fhn-it-Xvg" secondAttribute="leading" id="I04-RH-Yf2"/>
+                                            <constraint firstItem="8PM-p5-clg" firstAttribute="leading" secondItem="fhn-it-Xvg" secondAttribute="leading" constant="10" id="I04-RH-Yf2"/>
                                             <constraint firstItem="3le-S8-mjY" firstAttribute="leading" secondItem="fhn-it-Xvg" secondAttribute="leading" constant="20" id="I3u-Yz-myY"/>
                                             <constraint firstAttribute="trailing" secondItem="3le-S8-mjY" secondAttribute="trailing" constant="20" id="Id4-ik-cV7"/>
                                             <constraint firstItem="3le-S8-mjY" firstAttribute="top" secondItem="fhn-it-Xvg" secondAttribute="top" constant="8" id="TvT-el-GVV"/>
                                             <constraint firstAttribute="height" constant="900" id="UCY-fA-mzg"/>
                                             <constraint firstItem="8PM-p5-clg" firstAttribute="top" secondItem="YZI-k1-lcP" secondAttribute="bottom" constant="8" id="Vfb-Ab-T4O"/>
                                             <constraint firstItem="YZI-k1-lcP" firstAttribute="centerX" secondItem="fhn-it-Xvg" secondAttribute="centerX" id="b1Z-4p-z5h"/>
-                                            <constraint firstAttribute="trailing" secondItem="8PM-p5-clg" secondAttribute="trailing" id="gbw-0a-dOY"/>
+                                            <constraint firstAttribute="trailing" secondItem="8PM-p5-clg" secondAttribute="trailing" constant="10" id="gbw-0a-dOY"/>
                                             <constraint firstItem="YZI-k1-lcP" firstAttribute="top" secondItem="AMh-Nd-pmA" secondAttribute="bottom" constant="4" id="rw0-Pn-WaI"/>
                                             <constraint firstAttribute="trailing" secondItem="QE2-CP-Evk" secondAttribute="trailing" id="sRs-bY-FlO"/>
                                             <constraint firstItem="QE2-CP-Evk" firstAttribute="top" secondItem="3le-S8-mjY" secondAttribute="bottom" constant="10" id="wtt-i8-qn5"/>

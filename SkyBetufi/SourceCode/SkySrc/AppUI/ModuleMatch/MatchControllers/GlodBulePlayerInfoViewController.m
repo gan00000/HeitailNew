@@ -153,7 +153,7 @@
     
         }
 //        self.desInfoLabel.textAlignment = NSTextAlignmentRight|NSTextAlig
-        self.desInfoLabel.text = [NSString stringWithFormat:@"%@\n%@\n %@%@ - %@%@", matchSummaryModel.date, status, matchSummaryModel.homeName,matchSummaryModel.home_pts, matchSummaryModel.away_pts,matchSummaryModel.awayName];
+        self.desInfoLabel.text = [NSString stringWithFormat:@"%@ %@-%@ %@ %@ %@",matchSummaryModel.awayName, matchSummaryModel.away_pts, matchSummaryModel.home_pts,matchSummaryModel.homeName,status, matchSummaryModel.date];
         
         
         self.playerNameLabel.text = self.model.name;
@@ -362,10 +362,10 @@
         for (HotShootPointModel *m in model) { //X = 49 Y = 32
             
             
-            CGFloat x = [m.xAxis floatValue] * (xxHeight / 49);
-            CGFloat y = [m.yAxis floatValue] * (xxWidth / 32);
+            CGFloat x = [m.xAxis floatValue] * (xxWidth / 49);
+            CGFloat y = [m.yAxis floatValue] * (xxHeight / 32);
             
-            if (x > xxHeight || y > xxWidth) {
+            if (x > xxWidth || y > xxHeight) {
                 continue;
             }
             
@@ -380,8 +380,8 @@
             
             [pointView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.height.width.mas_equalTo(point_cornerRadius * 2);
-                make.centerY.mas_equalTo(self.hotPointView.mas_bottom).mas_offset(-x);
-                make.centerX.mas_equalTo(self.hotPointView.mas_leading).mas_offset(y);
+                make.centerY.mas_equalTo(self.hotPointView.mas_top).mas_offset(y);
+                make.centerX.mas_equalTo(self.hotPointView.mas_leading).mas_offset(x);
             }];
         }
 }

@@ -45,7 +45,7 @@
     [leftView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.top.mas_equalTo(self).mas_offset(4);
         make.bottom.mas_equalTo(self).mas_offset(-4);
-        make.trailing.mas_equalTo(self.mas_centerX).mas_offset(-2);
+        make.trailing.mas_equalTo(self.mas_centerX).mas_offset(-0.2);
 //        make.width.mas_equalTo(120);
     }];
     
@@ -75,7 +75,7 @@
         make.top.mas_equalTo(self).mas_offset(4);
         make.bottom.mas_equalTo(self).mas_offset(-4);
         make.trailing.mas_equalTo(self).mas_offset(-4);
-        make.leading.mas_equalTo(self.mas_centerX).mas_offset(2);
+        make.leading.mas_equalTo(self.mas_centerX).mas_offset(0.2);
     }];
     
     UIImageView *bgView2 = [[UIImageView alloc] init];
@@ -102,7 +102,7 @@
     CGFloat xxHeight = _leftPlayGroundView.height;
     
     if (xxWidth < 1) {
-        xxWidth = (width - 4 - 4 - 4) / 2 ;
+        xxWidth = (width - 4 - 4 - 1) / 2 ;
     }
     if (xxHeight < 1) {
         xxHeight = 200- 4 - 4;
@@ -119,8 +119,8 @@
         for (HotShootPointModel *m in model) { //X = 49 Y = 32
             
             
-            CGFloat x = [m.xAxis floatValue] * (xxWidth / 49);
-            CGFloat y = [m.yAxis floatValue] * (xxHeight / 32);
+            CGFloat y = [m.xAxis floatValue] * (xxHeight / 49);
+            CGFloat x = [m.yAxis floatValue] * (xxWidth / 32);
             
             if (x > xxWidth || y > xxHeight) {
                 continue;
@@ -137,8 +137,8 @@
             
             [pointView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.height.width.mas_equalTo(point_cornerRadius * 2);
-                make.top.mas_equalTo(_leftPlayGroundView).mas_offset(y-point_cornerRadius);
-                make.leading.mas_equalTo(_leftPlayGroundView).mas_offset(x-point_cornerRadius);
+                make.centerX.mas_equalTo(_leftPlayGroundView.mas_leading).mas_offset(x);
+                make.centerY.mas_equalTo(_leftPlayGroundView.mas_bottom).mas_offset(-y);
             }];
         }
     }else{
@@ -150,8 +150,8 @@
         
         for (HotShootPointModel *m in model) {
             
-            CGFloat x = [m.xAxis floatValue] * (xxWidth / 49);
-            CGFloat y = [m.yAxis floatValue] * (xxHeight / 32);
+            CGFloat y = [m.xAxis floatValue] * (xxHeight / 49);
+            CGFloat x = [m.yAxis floatValue] * (xxWidth / 32);
             
             if (x > xxWidth || y > xxHeight) {
                 continue;
@@ -168,8 +168,8 @@
             
             [pointView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.height.width.mas_equalTo(point_cornerRadius * 2);
-                make.top.mas_equalTo(_rightPlayGroundView).mas_offset(y-point_cornerRadius);
-                make.trailing.mas_equalTo(_rightPlayGroundView).mas_offset(-(x - point_cornerRadius));
+                make.centerX.mas_equalTo(_rightPlayGroundView.mas_trailing).mas_offset(-x);
+                make.centerY.mas_equalTo(_rightPlayGroundView.mas_top).mas_offset(y);
             }];
         }
     }
