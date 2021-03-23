@@ -57,7 +57,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    self.tableView.estimatedRowHeight = 80;
+    self.tableView.estimatedRowHeight = 50;
     self.tableView.estimatedSectionFooterHeight = 0;
     self.tableView.estimatedSectionHeaderHeight = 0;
     self.tableView.rowHeight = UITableViewAutomaticDimension;//自动
