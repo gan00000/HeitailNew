@@ -21,8 +21,10 @@
     [super awakeFromNib];
     // Initialization code
     self.contentView.backgroundColor = [UIColor colorWithHexString:@"f3f3f4"];
-    self.chatContentLabel.adjustsFontSizeToFitWidth = YES;
+//    self.chatContentLabel.adjustsFontSizeToFitWidth = YES;
     self.chatContentLabel.backgroundColor = [UIColor colorWithHexString:@"aae77e"];
+    
+    self.chatContentLabel.preferredMaxLayoutWidth = 300;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

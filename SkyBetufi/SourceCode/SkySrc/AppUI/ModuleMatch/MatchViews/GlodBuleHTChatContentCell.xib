@@ -18,9 +18,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="安監局案件二級件案件耳機耳機接耳機額額楠楠難道你的安大男大女難道" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whj-Qb-IYW" customClass="JXLabel">
-                        <rect key="frame" x="44" y="32" width="272" height="28"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whj-Qb-IYW" customClass="JXLabel">
+                        <rect key="frame" x="44" y="32" width="1" height="28"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="1" id="uIL-c3-Yks"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -69,7 +72,6 @@
                 <constraints>
                     <constraint firstItem="Whj-Qb-IYW" firstAttribute="top" secondItem="rva-BI-H7I" secondAttribute="bottom" constant="4" id="Hap-WQ-IRU"/>
                     <constraint firstItem="spN-hg-q5E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="JPd-WE-mu1"/>
-                    <constraint firstAttribute="trailing" secondItem="Whj-Qb-IYW" secondAttribute="trailing" constant="4" id="Kw5-q5-iJY"/>
                     <constraint firstAttribute="bottom" secondItem="Whj-Qb-IYW" secondAttribute="bottom" constant="4" id="Usi-sz-KzO"/>
                     <constraint firstItem="rva-BI-H7I" firstAttribute="leading" secondItem="spN-hg-q5E" secondAttribute="trailing" constant="6" id="ZRV-pa-mh8"/>
                     <constraint firstItem="Whj-Qb-IYW" firstAttribute="leading" secondItem="rva-BI-H7I" secondAttribute="leading" constant="6" id="gCL-cv-rnC"/>

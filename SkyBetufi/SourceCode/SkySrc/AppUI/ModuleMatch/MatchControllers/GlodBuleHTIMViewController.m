@@ -77,7 +77,7 @@
 - (UIView *)replyInputAccessoryView
 {
     if (!_replyInputAccessoryView) {
-        _replyInputAccessoryView  = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
+        _replyInputAccessoryView  = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 60)];
         _replyInputAccessoryView.backgroundColor = [UIColor whiteColor];
         
         _cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -95,7 +95,7 @@
         
         _submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _submitButton.titleLabel.font = [UIFont systemFontOfSize: 12.0f];
-        [_submitButton setTitle:@"完成" forState:UIControlStateNormal];
+        [_submitButton setTitle:@"發送" forState:UIControlStateNormal];
         [_submitButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_submitButton setTitleColor:[UIColor colorWithHexString:@"848484"] forState:UIControlStateHighlighted];
         [_submitButton addTarget:self action:@selector(submitButtonClicked) forControlEvents:UIControlEventTouchUpInside];
@@ -111,7 +111,7 @@
         _replyTextView.layer.masksToBounds = YES;
         _replyTextView.layer.borderColor = [UIColor colorWithHexString:@"848484"].CGColor;
         _replyTextView.layer.borderWidth = 1.0f / [[UIScreen mainScreen] scale];
-        _replyTextView.font = [UIFont systemFontOfSize: 12.0f];
+        _replyTextView.font = [UIFont systemFontOfSize: 14.0f];
         _replyTextView.textColor = [UIColor blackColor];
         _replyTextView.backgroundColor = [UIColor clearColor];
         [_replyInputAccessoryView addSubview:_replyTextView];
@@ -237,7 +237,9 @@
     chatReq.gameId = [self.matchModel.game_id integerValue];
     if ([self sendData:1002 data:[chatReq data]]) {
         self.imTalkTextView.text = nil;
+        _replyTextView.text = nil;
         [self.view endEditing:YES];
+        
     }
 }
 
@@ -660,6 +662,10 @@
     [_replyTextView resignFirstResponder];
     self.imTalkTextView.text = _replyTextView.text;
     [self.view endEditing:YES];
+    
+    [self sendBtnAction:self.imTalkTextView];
+    
+//    _replyTextView.text = @"";
     
 }
 
