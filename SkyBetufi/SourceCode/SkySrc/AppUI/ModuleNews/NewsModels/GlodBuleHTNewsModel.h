@@ -37,6 +37,7 @@
 @property (nonatomic, copy) NSString *play_height;
 
 @property (nonatomic, copy) NSString *hl_url;
+@property (nonatomic, copy) NSString *hl_time;
 
 @property (nonatomic, strong) PLMediaInfo *plMediaInfo;
 

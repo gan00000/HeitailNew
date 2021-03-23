@@ -2,14 +2,7 @@
 
 #import "NSString+GlodBuleMessageDigest.h"
 @interface GlodBuleHTNewsHomeCell ()
-@property (weak, nonatomic) IBOutlet UIImageView *thumbImageView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *viewLabel;
-@property (weak, nonatomic) IBOutlet UIView *shareButtonContentView;
-@property (weak, nonatomic) IBOutlet UIImageView *view_icon;
-@property (nonatomic, weak) GlodBuleHTNewsModel *newsModel;
-@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
+
 
 @end
 @implementation GlodBuleHTNewsHomeCell
@@ -19,6 +12,9 @@
     if ([GlodBuleHTNewsModel taocanShare]) {
         //self.shareButtonContentView.hidden = NO;
     }
+    
+//    self.timeLongLabel.layer.cornerRadius = 6;
+//    self.timeLongLabel.layer.
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
@@ -41,6 +37,8 @@
     self.viewLabel.hidden = YES;
     
     self.commentLabel.text = [NSString stringWithFormat:@"%d則留言", newsModel.total_comment];
+    
+    self.timeLongLabel.text = newsModel.hl_time;
 }
 - (IBAction)onShareButtonTapped:(id)sender {
     [self.newsModel taoshare];

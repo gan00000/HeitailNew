@@ -102,6 +102,14 @@
     GlodBuleHTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsHomeCell"];
     [cell taosetupWithNewsModel:self.newsList[indexPath.row]];
     cell.topLabel.hidden = YES;
+    cell.commentLabel.hidden = YES;
+    cell.news_time_icon.hidden = YES;
+    cell.timeLabel.hidden = YES;
+    cell.viewLabel.hidden = YES;
+    cell.view_icon.hidden = YES;
+    cell.shareButtonContentView.hidden = YES;
+    cell.timeLongLabel.hidden = NO;
+    
     return cell;
 }
 #pragma mark - UITableViewDelegate
