@@ -191,7 +191,7 @@
     }*/
     //新需求需要一直打開聊天窗口
     self.showImView.hidden = NO;
-    self.notShowImView.hidden = YES;
+//    self.notShowImView.hidden = YES;
     [self initWebSocket];
     
     self.dataIsSet = YES;
