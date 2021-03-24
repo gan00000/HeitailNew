@@ -103,27 +103,30 @@
 //        set1.axisDependency = AxisDependencyLeft;
         [set1 setColor:[UIColor colorWithHexString:@"608FD4"]];
         [set1 setCircleColor: [UIColor colorWithHexString:@"608FD4"]];
-        set1.lineWidth = 1.4;
+        set1.lineWidth = 2.2;
         set1.circleRadius = 2.0;
         
 //        set1.fillAlpha = 65/255.0;
 //        set1.fillColor = [UIColor colorWithRed:51/255.f green:181/255.f blue:229/255.f alpha:1.f];
 //        set1.highlightColor = [UIColor colorWithRed:244/255.f green:117/255.f blue:117/255.f alpha:1.f];
         set1.drawCircleHoleEnabled = YES;
-        set1.drawValuesEnabled = false;
+        set1.drawValuesEnabled = NO;
+        set1.drawCirclesEnabled = NO;
+        set1.mode = LineChartModeCubicBezier;
         
         set2 = [[LineChartDataSet alloc] initWithEntries:yVals2 label:lable2];
 //        set2.axisDependency = AxisDependencyRight;
         [set2 setColor: [UIColor colorWithHexString:@"F35930"]];
         [set2 setCircleColor: [UIColor colorWithHexString:@"F35930"]];
-        set2.lineWidth = 1.4;
+        set2.lineWidth = 2.2;
         set2.circleRadius = 2.0;
 //        set2.fillAlpha = 65/255.0;
 //        set2.fillColor = UIColor.redColor;
 //        set2.highlightColor = [UIColor colorWithRed:244/255.f green:117/255.f blue:117/255.f alpha:1.f];
-        set2.drawCircleHoleEnabled = YES;
-        set2.drawValuesEnabled = false;
-        
+        set2.drawCircleHoleEnabled = NO;
+        set2.drawValuesEnabled = NO;
+        set2.drawCirclesEnabled = NO;
+        set2.mode = LineChartModeCubicBezier;
         
         NSMutableArray *dataSets = [[NSMutableArray alloc] init];
         [dataSets addObject:set1];
