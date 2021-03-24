@@ -39,6 +39,7 @@ message InfoResp_2 {
 //登录
 message LoginReq_1001{
     string token = 1;//用户token
+    int64 gameId = 2;    //赛程id
 }
 
 //登陆成功后获得的数据
@@ -59,14 +60,23 @@ message SendChatResp_1002 {
 }
 
 
+//后台管理员发送聊天信息
+message SendAdminChatReq_1003 {
+    string userId = 1; //用户名或者id
+    string key = 2;    //秘钥验证
+    int64 gameId = 3;    //赛程id
+    string content = 4; //聊天内容
+}
+
 
 //******************************公共数据**********************************//
 
 //用户数据
 message MsgUser{
-    string token = 1;//ID
+    string token = 1;//token
     string name= 2;//昵称
     string img= 3;//头像地址
+    int64 id= 4;//用户id
 }
 
  
@@ -79,6 +89,7 @@ message MsgChatContent{
     int64 fromTime = 3;            //发送时间
     string content = 4;             //聊天内容
     int64 gameId = 5;    //赛程id
+    int64 fromUserId = 6;  //发送时间
 }
 
 
