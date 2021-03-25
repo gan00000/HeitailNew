@@ -30,6 +30,7 @@
 //    NSString *name = [[videoName componentsSeparatedByString:@"."] firstObject];
     
 //    media.mediaHash = [dic objectForKey:@"hash"];
+//    self.play_url = @"https://output.newbanker.cn/mp4MultibitrateIn30/ed77288065a511eaa2e7d9eff256d7b2.mp4";
     media.videoURL = self.play_url;
     media.thumbURL = self.play_poster;
 //    media.fileSize = [[dic objectForKey:@"fsize"] longLongValue];

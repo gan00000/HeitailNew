@@ -18,8 +18,9 @@
 #import "UIView+GlodBuleBlockGesture.h"
 
 #import "PLPlayerView.h"
+#import "YSPlayerController.h"
 
-@interface GlodBuleHTNewsDetailViewController () <UITableViewDelegate, UITableViewDataSource, PLPlayerViewDelegate>
+@interface GlodBuleHTNewsDetailViewController () <UITableViewDelegate, UITableViewDataSource, YSPlayerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
@@ -46,8 +47,9 @@
 
 
 //========
-@property (nonatomic, assign) BOOL isNeedReset;
-@property (nonatomic, strong) PLPlayerView *playerView;
+@property (strong, nonatomic) YSPlayerController *playerController;
+@property (strong, nonatomic) UIView *playerView;
+@property (nonatomic, assign) BOOL fullScreen;
 @property (nonatomic, assign) BOOL isPlayFilm;
 
 @property (nonatomic, strong)UIView * replyInputAccessoryView;
@@ -78,16 +80,21 @@
         .plMediaInfo.videoURL && ![self.filmModel
                                   .plMediaInfo.videoURL isEqualToString:@""]) {
         
-        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
-        [[AVAudioSession sharedInstance] setActive:YES error:nil];
+//        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+//        [[AVAudioSession sharedInstance] setActive:YES error:nil];
         
-        self.playerView = [[PLPlayerView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200)];
-        self.playerView.delegate = self;
+        [self.playerController shutdown];
+        [self.playerView removeFromSuperview];
+        self.playerController = nil;
+        
+        self.playerController = [[YSPlayerController alloc] initWithContentMediaInfo: self.filmModel.plMediaInfo];
+        self.playerController.delegate = self;
+        self.playerController.needPortFullScreen = YES;
+        self.playerView = self.playerController.view;
         [self.playerContentView addSubview:self.playerView];
         [self.playerView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.leading.trailing.top.bottom.mas_equalTo(self.playerContentView);
+            make.edges.mas_equalTo(self.playerContentView);
         }];
-        self.playerView.media = self.filmModel.plMediaInfo;
         
         self.isPlayFilm = YES;
     }else{
@@ -179,7 +186,7 @@
         [self.playerContentView updateConstraintsIfNeeded];
         [self.playerContentView layoutIfNeeded];
     }
-    [self onUIApplication:YES];
+//    [self.playerController play];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -187,26 +194,13 @@
 }
 
 
-//- (BOOL)prefersStatusBarHidden {
-//    return self.isFullScreen;
-//}
-
-- (void)onUIApplication:(BOOL)active {
-    if (self.playerView) {
-        [self.playerView configureVideo:active];
-    }
-}
-
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
     NSLog(@"GlodBuleHTNewsDetailViewController viewDidDisappear");
     [IQKeyboardManager sharedManager].enable = YES;
     
-    if (self.playerView) {
-        [self.playerView stop];
-    }
-    [self onUIApplication:NO];
+    [self.playerController pause];
 }
 
 #pragma mark - UITableViewDataSource
@@ -215,6 +209,9 @@
         return 0;
     }
     NSInteger num = 4;
+    if (self.isPlayFilm) {
+        num = 1;
+    }
     if (self.commentGetter.hotComments.count > 0) {
         num ++;
     }
@@ -224,6 +221,18 @@
     return num;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    if (self.isPlayFilm) { //兼容影片 新调整
+        if (section == 0) {
+            return 1;
+        }
+        if (section == 1 && self.commentGetter.hotComments.count > 0) {
+            return self.commentGetter.hotComments.count;
+        } else {
+            return self.commentGetter.normalComments.count;
+        }
+    }
+    
     if (section == 0 || section == 1) {
         return 1;
     }
@@ -240,6 +249,35 @@
     }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (self.isPlayFilm) {
+        
+        kWeakSelf
+        if (indexPath.section == 0) {
+            GlodBuleHTNewsHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsHeaderCell"];
+            [cell taosetupWithNewsModel:self.newsModel];
+            return cell;
+        }
+        GlodBuleHTNewsCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([GlodBuleHTNewsCommentCell class])];
+        cell.onReplyBlock = ^(GlodBuleHTCommentModel * _Nonnull commentModel) {
+            weakSelf.currentCommentModel = commentModel;
+            weakSelf.commentInputView.placeholder = [NSString stringWithFormat:@"回復 %@", commentModel.comment_author];
+            weakSelf.commentInputView.text = nil;
+            [weakSelf.commentInputView becomeFirstResponder];
+        };
+        cell.onExpendBlock = ^{
+            [weakSelf.tableView beginUpdates];
+            [weakSelf.tableView endUpdates];
+        };
+        if (indexPath.section == 1 && self.commentGetter.hotComments.count > 0) {
+            [cell taorefreshWithCommentModel:self.commentGetter.hotComments[indexPath.row]];
+        } else {
+            [cell taorefreshWithCommentModel:self.commentGetter.normalComments[indexPath.row]];
+        }
+        return cell;
+        
+    }
+    
     kWeakSelf
     if (indexPath.section == 0) {
         GlodBuleHTNewsHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsHeaderCell"];
@@ -287,6 +325,9 @@
 }
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.isPlayFilm) {
+        return;
+    }
     if (indexPath.section == 3) {
         GlodBuleHTNewsModel *newsModel = self.topNewsList[indexPath.row];
         GlodBuleHTNewsDetailViewController *detailVc = [GlodBuleHTNewsDetailViewController taoviewController];
@@ -295,6 +336,20 @@
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (self.isPlayFilm) {
+        if (indexPath.section == 0) {
+            return self.newsModel.detailHeaderHeight;
+        }
+        GlodBuleHTCommentModel *commentModel;
+        if (indexPath.section == 1 && self.commentGetter.hotComments.count > 0) {
+            commentModel = self.commentGetter.hotComments[indexPath.row];
+        } else {
+            commentModel = self.commentGetter.normalComments[indexPath.row];
+        }
+        return commentModel.cellHeight;
+    }
+    
     if (indexPath.section == 0) {
         return self.newsModel.detailHeaderHeight;
     } else if (indexPath.section == 1) {
@@ -313,12 +368,34 @@
     return commentModel.cellHeight;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
+    if (self.isPlayFilm) {
+        if (section == 0) {
+            return 0.1;
+        }
+        return 40;
+    }
+    
     if (section == 0 || section == 1) {
         return 0.1;
     }
     return 40;
 }
 - (UITableViewHeaderFooterView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    if (self.isPlayFilm) {
+        if (section == 0) {
+            return nil;
+        }
+        GlodBuleHTNewsTopHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"GlodBuleHTNewsTopHeaderView"];
+        if (section == 1 && self.commentGetter.hotComments.count > 0) {
+            [headerView taorefreshWithTitle:@"熱門回覆"];
+        } else {
+            [headerView taorefreshWithTitle:@"全部回覆"];
+        }
+        return headerView;
+    }
+    
     if (section == 0 || section == 1 || section == 2) {
         return nil;
     }
@@ -586,22 +663,32 @@
     return _noCommentsFooterView;
 }
 
+#pragma mark - YSPlayerControllerDelegate
 
-#pragma mark -PLPlayerViewDelegate
-- (void)playerViewEnterFullScreen:(PLPlayerView *)playerView {
+- (void)playerControllerDidClickFullScreen:(YSPlayerController *)playerController {
+    self.fullScreen = self.playerController.isFullScreen;
+    [self playerViewEnterFullScreen];
+}
+
+- (void)playerExitFullScreen:(YSPlayerController *)playerController
+{
+    [self playerViewExitFullScreen];
+}
+
+- (void)playerViewEnterFullScreen{
     
     UIView *superView = [UIApplication sharedApplication].delegate.window.rootViewController.view;
     [self.playerView removeFromSuperview];
     
-    if (self.playerView.player.width < self.playerView.player.height) {
+    if (self.playerController.videoWidth < self.playerController.videoHeight) {
         
         [superView addSubview:self.playerView];
 //        superView.backgroundColor = UIColor.blackColor;
         [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.leading.equalTo(superView).mas_offset(20);
-//            make.trailing.equalTo(superView).mas_offset(-20);
-//            make.top.equalTo(superView).mas_offset(44);
-//            make.bottom.equalTo(superView).mas_offset(-44);
+//            make.leading.equalTo(superView);
+//            make.trailing.equalTo(superView);
+//            make.top.equalTo(superView);//.mas_offset(44);
+//            make.bottom.equalTo(superView).mas_offset(-20);
             
             
             make.width.equalTo(superView.mas_width);
@@ -625,10 +712,10 @@
         [superView layoutIfNeeded];
     }];
     
-//    [self.delegate tableViewCellEnterFullScreen:self];
+    //[self.mPlayerTableViewCellDelegate tableViewCellEnterFullScreen:self];
 }
 
-- (void)playerViewExitFullScreen:(PLPlayerView *)playerView {
+- (void)playerViewExitFullScreen {
     
 //    UIView *superView = [UIApplication sharedApplication].delegate.window.rootViewController.view;
 //    superView.backgroundColor = UIColor.clearColor;
@@ -640,18 +727,22 @@
         make.edges.equalTo(self.playerContentView);
     }];
     
-    [self.playerContentView setNeedsUpdateConstraints];
-    [self.playerContentView updateConstraintsIfNeeded];
+    [self.view setNeedsUpdateConstraints];
+    [self.view updateConstraintsIfNeeded];
     
     [UIView animateWithDuration:.3 animations:^{
-        [self.playerContentView layoutIfNeeded];
+        [self.view layoutIfNeeded];
     }];
     
-//    [self.delegate tableViewCellExitFullScreen:self];
+    //[self.mPlayerTableViewCellDelegate tableViewCellExitFullScreen:self];
 }
 
-- (void)playerViewWillPlay:(PLPlayerView *)playerView {
-//    [self.delegate tableViewWillPlay:self];
+
+-(void)startPlay:(YSPlayerController *)playerController
+{
+//    if (self.mPlayerTableViewCellDelegate) {
+//        [self.mPlayerTableViewCellDelegate tableViewWillPlay:self];
+//    }
 }
 
 #pragma mark - UIButton Target Aciton

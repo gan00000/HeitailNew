@@ -51,11 +51,9 @@
 //    [self.webView loadHTMLString:newsModel.iframe baseURL:nil];
 //    [self.webView showLoadingView];
     self.titleLabel.text = newsModel.title;
-    if (newsModel.total_comment > 0) {
-        self.timeLabel.text = [NSString stringWithFormat:@"%d"],newsModel.total_comment;
-    }
-    self.timeLabel.text = @"0";
-    self.viewCountLabel.text = newsModel.view_count;
+    self.timeLabel.text = [NSString stringWithFormat:@"%d", newsModel.total_comment];
+    
+    self.viewCountLabel.text = [NSString stringWithFormat:@"%d", newsModel.total_save];
 //    [self setMedia:newsModel.plMediaInfo];
     
     
@@ -67,6 +65,7 @@
     
     self.playerController = [[YSPlayerController alloc] initWithContentMediaInfo: newsModel.plMediaInfo];
     self.playerController.delegate = self;
+    self.playerController.needPortFullScreen = YES;
     self.playerView = self.playerController.view;
     [self.webContentView addSubview:self.playerView];
     [self.playerView mas_makeConstraints:^(MASConstraintMaker *make) {

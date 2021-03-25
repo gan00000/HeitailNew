@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,14 +24,17 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_news_time" translatesAutoresizingMaskIntoConstraints="NO" id="Rvy-rT-Jh1">
-                        <rect key="frame" x="15" y="80.5" width="14" height="14"/>
+                        <rect key="frame" x="293.5" y="80" width="14" height="14"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="14" id="q4l-GQ-T1O"/>
                             <constraint firstAttribute="height" constant="14" id="v0w-UZ-uVU"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1小時前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUY-2h-6ze">
-                        <rect key="frame" x="34" y="80" width="42.5" height="15"/>
+                        <rect key="frame" x="312.5" y="79.5" width="42.5" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42.5" id="fwH-v0-Shp"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -60,18 +63,18 @@
                 <constraints>
                     <constraint firstItem="AqQ-qE-Ccw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="1z3-X0-PoQ"/>
                     <constraint firstItem="3Ha-s9-a3q" firstAttribute="centerY" secondItem="E8V-vZ-wuV" secondAttribute="centerY" id="53z-st-PPt"/>
-                    <constraint firstItem="E8V-vZ-wuV" firstAttribute="centerY" secondItem="aUY-2h-6ze" secondAttribute="centerY" id="9FK-3q-OtI"/>
+                    <constraint firstItem="AqQ-qE-Ccw" firstAttribute="top" secondItem="aUY-2h-6ze" secondAttribute="bottom" constant="15" id="9NU-Pd-XXJ"/>
+                    <constraint firstAttribute="trailing" secondItem="aUY-2h-6ze" secondAttribute="trailing" constant="20" id="AYE-o9-oaz"/>
+                    <constraint firstItem="Rvy-rT-Jh1" firstAttribute="centerY" secondItem="aUY-2h-6ze" secondAttribute="centerY" id="Ccf-U7-7EG"/>
+                    <constraint firstItem="aUY-2h-6ze" firstAttribute="leading" secondItem="Rvy-rT-Jh1" secondAttribute="trailing" constant="5" id="D0x-SA-o3p"/>
                     <constraint firstAttribute="trailing" secondItem="AqQ-qE-Ccw" secondAttribute="trailing" id="GQi-1m-BSe"/>
-                    <constraint firstItem="aUY-2h-6ze" firstAttribute="centerY" secondItem="Rvy-rT-Jh1" secondAttribute="centerY" id="SyW-xk-sTY"/>
-                    <constraint firstItem="AqQ-qE-Ccw" firstAttribute="top" secondItem="Rvy-rT-Jh1" secondAttribute="bottom" constant="15" id="XaZ-pg-kkv"/>
-                    <constraint firstItem="E8V-vZ-wuV" firstAttribute="leading" secondItem="aUY-2h-6ze" secondAttribute="trailing" constant="20" id="Xnr-AQ-KVF"/>
+                    <constraint firstItem="AqQ-qE-Ccw" firstAttribute="top" secondItem="E8V-vZ-wuV" secondAttribute="bottom" constant="15" id="RaB-yp-vwy"/>
                     <constraint firstItem="aDC-9u-ej2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ZPE-7j-2u6"/>
                     <constraint firstItem="aDC-9u-ej2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="bbm-Tt-Qxv"/>
-                    <constraint firstItem="Rvy-rT-Jh1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="bpQ-rk-rIV"/>
                     <constraint firstAttribute="bottom" secondItem="AqQ-qE-Ccw" secondAttribute="bottom" id="dbU-mt-XjQ"/>
                     <constraint firstAttribute="trailing" secondItem="aDC-9u-ej2" secondAttribute="trailing" constant="15" id="fJ5-Wa-hjd"/>
-                    <constraint firstItem="3Ha-s9-a3q" firstAttribute="leading" secondItem="E8V-vZ-wuV" secondAttribute="trailing" constant="5" id="j3M-l9-rgZ"/>
-                    <constraint firstItem="aUY-2h-6ze" firstAttribute="leading" secondItem="Rvy-rT-Jh1" secondAttribute="trailing" constant="5" id="pCH-er-Lbw"/>
+                    <constraint firstItem="3Ha-s9-a3q" firstAttribute="leading" secondItem="E8V-vZ-wuV" secondAttribute="trailing" constant="5" id="hIc-HZ-hDa"/>
+                    <constraint firstItem="E8V-vZ-wuV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="80.5" id="rw7-R4-vaM"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
