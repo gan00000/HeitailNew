@@ -13,6 +13,8 @@ static char kActionHandlerLongPressGestureKey;
         [self addGestureRecognizer:gesture];
         objc_setAssociatedObject(self, &kActionHandlerTapGestureKey, gesture, OBJC_ASSOCIATION_RETAIN);
     }
+    // 解决点击当前view时候响应其他控件事件
+    [gesture setDelaysTouchesBegan:YES];
     objc_setAssociatedObject(self, &kActionHandlerTapBlockKey, block, OBJC_ASSOCIATION_COPY);
 }
 - (void)handleActionForTapGesture:(UITapGestureRecognizer*)gesture {

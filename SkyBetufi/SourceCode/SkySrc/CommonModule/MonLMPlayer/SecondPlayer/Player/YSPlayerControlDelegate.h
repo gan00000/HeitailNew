@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol YSPlayerControlDelegate <NSObject>
 
+
+-(void) initPlayAndPrepareToPlay;
+
 /**
  done按钮点击
  */
@@ -25,7 +28,11 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  播放按钮点击
  */
-- (void)play;
+- (void)playOrPause;
+
+//- (void)shutdown;
+//
+//- (void)stop;
 
 /**
  开始滑动

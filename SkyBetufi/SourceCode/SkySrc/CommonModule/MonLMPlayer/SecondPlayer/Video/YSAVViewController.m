@@ -25,7 +25,7 @@
     } else {
         self.view.backgroundColor = [UIColor whiteColor];
     }
-    self.playerController = [[YSPlayerController alloc] initWithContentURL:self.fileURL];
+//    self.playerController = [[YSPlayerController alloc] initWithContentURL:self.fileURL];
     self.playerController.view.frame = CGRectMake(0, [UIApplication sharedApplication].statusBarFrame.size.height, self.view.bounds.size.width, self.view.bounds.size.width * 9 / 16.0);
     self.playerController.delegate = self;
     [self.view addSubview:self.playerController.view];
@@ -73,8 +73,10 @@
 #pragma mark - dealloc
 
 - (void)dealloc {
-    [self.playerController.player shutdown];
     NSLog(@"%s", __func__);
+    if (self.playerController) {
+        [self.playerController.player shutdown];
+    }
 }
 
 @end

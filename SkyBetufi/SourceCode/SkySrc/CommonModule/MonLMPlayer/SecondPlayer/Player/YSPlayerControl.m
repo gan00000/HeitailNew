@@ -14,6 +14,7 @@
 #import "YSScreenBrightnessTool.h"
 #import "YSVolumeTool.h"
 //#import "SDWeakProxy.h"
+#import "GlodBuleBJUtility.h"
 
 #define NAV_BAR_HEIGHT 50
 #define TOOL_BAR_HEIGHT 50
@@ -31,6 +32,12 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *navBarTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolBarBottomConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolBarLeadingConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolBarTrailingConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *playBtnLeadingConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *fullScreenTralingConstraint;
 
 /*
  status bar
@@ -69,6 +76,14 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 @property (strong, nonatomic) YSBatteryTool *batteryTool;
 @property (strong, nonatomic) YSVolumeTool *volumeTool;
 
+//=========
+/** 单击 */
+@property (nonatomic, strong) UITapGestureRecognizer *singleTap;
+/** 双击 */
+@property (nonatomic, strong) UITapGestureRecognizer *doubleTap;
+/** 滑动 */
+@property (nonatomic, strong) UIPanGestureRecognizer *panRecognizer;
+
 @end
 
 @implementation YSPlayerControl
@@ -85,18 +100,25 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     self.clipsToBounds = YES;
     // 音量、亮度view
     self.volumeView.layer.cornerRadius = 5;
+    
+    //播放进度条
+    self.progressSlider.continuous = NO;
+    [self.progressSlider setThumbImage:[UIImage imageNamed:@"slider_thumb"] forState:(UIControlStateNormal)];
+    self.progressSlider.maximumTrackTintColor = [UIColor grayColor];
+    self.progressSlider.minimumTrackTintColor = [UIColor whiteColor];//[UIColor
+    
     // 添加触摸手势
     [self addTapGesture];
     // 添加滑动手势
-    [self addPanGesture];
+//    [self addPanGesture];
     // 开启timer
     [self resetTimer];
     // 获取运营商
-    [self loadCarrier];
+//    [self loadCarrier];
     // 获取网络信息
-    [self loadNetworkInfo];
+//    [self loadNetworkInfo];
     // 获取电池信息
-    [self loadBatteryInfo];
+//    [self loadBatteryInfo];
     // 开启获取系统时间timer
     [self startTimeTimer];
     // 添加MPVolumeView
@@ -129,16 +151,19 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 #pragma mark - Event response
 
 - (void)handleSingleTapGesture:(UITapGestureRecognizer *)tap {
+    NSLog(@"ysplayer handleSingleTapGesture");
     [self toggleBar];
 }
 
 - (void)handleDoubleTapGesture:(UITapGestureRecognizer *)tap {
-    if ([self.delegate respondsToSelector:@selector(play)]) {
-        [self.delegate play];
+    NSLog(@"ysplayer handleDoubleTapGesture");
+    if ([self.delegate respondsToSelector:@selector(playOrPause)]) {
+        [self.delegate playOrPause];
     }
 }
 
 - (void)handlePanGesture:(UIPanGestureRecognizer *)pan {
+    NSLog(@"ysplayer handlePanGesture");
     // 根据上次和本次移动的位置，算出一个速率的point
     //这个很关键,这个速率直接决定了平移手势的快慢
     CGPoint veloctyPoint = [pan velocityInView:pan.view];
@@ -281,8 +306,8 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 
 - (IBAction)playOrPause:(UIButton *)sender {
     [self resetTimer];
-    if ([self.delegate respondsToSelector:@selector(play)]) {
-        [self.delegate play];
+    if ([self.delegate respondsToSelector:@selector(playOrPause)]) {
+        [self.delegate playOrPause];
     }
 }
 
@@ -325,7 +350,23 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     _fullScreen = fullScreen;
     NSString *img = fullScreen ? @"player-small-screen" : @"player-full-screen";
     [self.fullScreenBtn setImage:[UIImage imageNamed:img] forState:UIControlStateNormal];
-    self.statusBar.hidden = fullScreen ? NO : YES;
+//    self.statusBar.hidden = fullScreen ? NO : YES;
+    if (fullScreen) {
+        
+        [self addPanGesture];
+        if ([GlodBuleBJUtility isIPhoneXSeries]) {
+            self.playBtnLeadingConstraint.constant = 50;
+            self.fullScreenTralingConstraint.constant = 50;
+        }
+        
+    }else
+    {
+        [self removePanGesture];
+        if ([GlodBuleBJUtility isIPhoneXSeries]) {
+            self.playBtnLeadingConstraint.constant = 8;
+            self.fullScreenTralingConstraint.constant = 8;
+        }
+    }
 }
 
 - (void)setPrepareToPlay:(BOOL)prepareToPlay {
@@ -340,22 +381,68 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 #pragma mark - Private methods
 
 - (void)addTapGesture {
-    // 单击手势
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture:)];
-    singleTap.delegate = self;
-    [self addGestureRecognizer:singleTap];
-    // 双击手势
-    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTapGesture:)];
-    doubleTap.numberOfTapsRequired = 2;
-    [self addGestureRecognizer:doubleTap];
-    // 解决双击手势和单击手势冲突
-    [singleTap requireGestureRecognizerToFail:doubleTap];
+    
+    if (self.singleTap || self.doubleTap) {
+        [self removeGestureRecognizer:self.singleTap];
+        [self removeGestureRecognizer:self.doubleTap];
+//        [self removeGestureRecognizer:self.panRecognizer];
+    }
+      
+    // 单击
+    self.singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleSingleTapGesture:)];
+    self.singleTap.delegate                = self;
+    self.singleTap.numberOfTouchesRequired = 1; //手指数
+    self.singleTap.numberOfTapsRequired    = 1;
+    [self addGestureRecognizer:self.singleTap];
+    
+    // 双击(播放/暂停)
+    self.doubleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleDoubleTapGesture:)];
+    self.doubleTap.delegate                = self;
+    self.doubleTap.numberOfTouchesRequired = 1; //手指数
+    self.doubleTap.numberOfTapsRequired    = 2;
+    
+    [self addGestureRecognizer:self.doubleTap];
+    
+    // 解决点击当前view时候响应其他控件事件
+    [self.singleTap setDelaysTouchesBegan:YES];
+    [self.doubleTap setDelaysTouchesBegan:YES];
+    // 双击失败响应单击事件
+    [self.singleTap requireGestureRecognizerToFail:self.doubleTap];
+    
+    
+//    // 单击手势
+//    self.singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture:)];
+//    //singleTap.delegate = self;
+//    [self addGestureRecognizer:self.singleTap];
+//    // 双击手势
+//    self.doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTapGesture:)];
+//    self.doubleTap.numberOfTapsRequired = 2;
+//    [self addGestureRecognizer:self.doubleTap];
+//    // 解决双击手势和单击手势冲突
+//    [self.singleTap requireGestureRecognizerToFail:self.doubleTap];
 }
 
 - (void)addPanGesture {
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
-    pan.delegate = self;
-    [self addGestureRecognizer:pan];
+    
+    if (self.panRecognizer) {
+//        [self removeGestureRecognizer:self.singleTap];
+//        [self removeGestureRecognizer:self.doubleTap];
+        [self removeGestureRecognizer:self.panRecognizer];
+    }
+    
+    // 添加平移手势，用来控制音量、亮度、快进快退
+    self.panRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePanGesture:)];
+    self.panRecognizer.delegate = self;
+    [self.panRecognizer setMaximumNumberOfTouches:1];
+    [self.panRecognizer setDelaysTouchesBegan:YES];
+    [self.panRecognizer setDelaysTouchesEnded:YES];
+    [self.panRecognizer setCancelsTouchesInView:YES];
+    [self addGestureRecognizer:self.panRecognizer];
+}
+
+- (void)removePanGesture {
+    [self removeGestureRecognizer:self.panRecognizer];
+    self.panRecognizer = nil;
 }
 
 // 添加MPVolumeView

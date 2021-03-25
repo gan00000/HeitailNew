@@ -13,7 +13,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YSPlayerView : UIView
 
+-(void) setThumbWithUrl:(NSString *)url;
 @property (strong, nonatomic, readonly) id<YSPlayerControlProtocol> playControl;
+
+@property (strong, nonatomic) id<YSPlayerControlDelegate> mYSPlayerControlDelegate;
+
+
+@property (strong, nonatomic) UIView *thumbView;
+@property (strong, nonatomic) UIImageView *thumbImageView;
+@property (strong, nonatomic) UIButton *thumbPlayBtn;
 
 @end
 
