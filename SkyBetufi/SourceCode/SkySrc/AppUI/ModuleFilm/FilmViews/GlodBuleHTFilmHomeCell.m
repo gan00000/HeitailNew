@@ -32,10 +32,11 @@
     [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 
-    if ([GlodBuleHTNewsModel taocanShare]) {
-        self.shareButtonContentView.hidden = NO;
-    }
-    self.viewCountLabel.hidden = YES;
+//    if ([GlodBuleHTNewsModel taocanShare]) {
+//        self.shareButtonContentView.hidden = NO;
+//    }
+    self.shareButtonContentView.hidden = NO;
+//    self.viewCountLabel.hidden = YES;
     
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -50,7 +51,10 @@
 //    [self.webView loadHTMLString:newsModel.iframe baseURL:nil];
 //    [self.webView showLoadingView];
     self.titleLabel.text = newsModel.title;
-    self.timeLabel.text = newsModel.time;
+    if (newsModel.total_comment > 0) {
+        self.timeLabel.text = [NSString stringWithFormat:@"%d"],newsModel.total_comment;
+    }
+    self.timeLabel.text = @"0";
     self.viewCountLabel.text = newsModel.view_count;
 //    [self setMedia:newsModel.plMediaInfo];
     
@@ -98,7 +102,7 @@
 
 + (CGFloat)headerViewHeight
 {
-    return (SCREEN_WIDTH - 10) * 310.0 / 375.0; // 375 320
+    return (SCREEN_WIDTH) * 330.0 / 375.0 + 4; // 375 320
 }
 
 - (void)prepareForReuse {

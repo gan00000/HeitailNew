@@ -233,7 +233,8 @@
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.estimatedRowHeight = 310;
+    self.tableView.estimatedRowHeight = 330;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedSectionFooterHeight = 0;
     self.tableView.estimatedSectionHeaderHeight = 0;
     [self.tableView registerNib:[UINib nibWithNibName:@"GlodBuleHTFilmHomeCell" bundle:nil]
