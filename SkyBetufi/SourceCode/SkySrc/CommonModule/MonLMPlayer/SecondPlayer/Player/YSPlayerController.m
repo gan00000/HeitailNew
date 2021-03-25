@@ -79,7 +79,41 @@
     
     // 解决音视频不同步的问题
     [options setPlayerOptionIntValue:1 forKey:@"framedrop"];
-    self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:self.pLMediaInfo.videoURL] withOptions:options];
+    
+    //设置缓存
+//    mMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_FORMAT, "cache_file_path",“/storage/emulated/0/1.tmp");每首歌的临时文件名自己根据自己需要生成就行了。
+//            mMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_FORMAT, "cache_map_path",“/storage/emulated/0/2.tmp"");//暂时不知道设置有什么用
+//            mMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_FORMAT, "parse_cache_map",
+//                    1);
+//            mMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_FORMAT, "auto_save_map", 1);
+    
+    // 获取Caches目录路径
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *cachesDir = [paths objectAtIndex:0];
+    
+    NSString * filePath = self.pLMediaInfo.videoURL;
+    //从路径中获得完整的文件名 （带后缀）
+    NSString *fileName = [filePath lastPathComponent];
+    NSString *fileNameNoExtension = [fileName stringByDeletingPathExtension];
+    
+    //获得文件名 （不带后缀）
+//    NSString *fileName1 = [filePath stringByDeletingPathExtension];
+
+    //获得文件的后缀名 （不带'.'）
+//    NSString *suffix = [filePath pathExtension];
+    
+    
+    NSString *fileCacheName = [[[cachesDir stringByAppendingPathComponent:@"thMovies"] stringByAppendingPathComponent:fileNameNoExtension] stringByAppendingPathExtension:@"temp"];
+    
+    NSString *fileCacheNameMap = [[[cachesDir stringByAppendingPathComponent:@"thMovies"] stringByAppendingPathComponent:fileNameNoExtension] stringByAppendingPathExtension:@"mapTemp"];
+    
+    [options setOptionValue:fileCacheName forKey:@"cache_file_path" ofCategory:(kIJKFFOptionCategoryFormat)];
+    [options setOptionValue:fileCacheNameMap forKey:@"cache_map_path" ofCategory:(kIJKFFOptionCategoryFormat)];
+    [options setOptionValue:@"1" forKey:@"parse_cache_map" ofCategory:(kIJKFFOptionCategoryFormat)];
+    [options setOptionValue:@"1" forKey:@"auto_save_map" ofCategory:(kIJKFFOptionCategoryFormat)];
+    
+    NSString *cache_filePath = [NSString stringWithFormat:@"ijkio:cache:ffio:%@",filePath];
+    self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString: cache_filePath] withOptions:options];
     self.player.scalingMode = IJKMPMovieScalingModeAspectFit;
     self.player.playbackRate = 1.0;
     
@@ -265,26 +299,42 @@
     self.player.playbackRate = playbackRate;
 }
 
+
+/**
+ 准备播放             IJKMPMediaPlaybackIsPreparedToPlayDidChangeNotification;
+ 尺寸改变发出的通知     IJKMPMoviePlayerScalingModeDidChangeNotification;
+ 播放完成或者用户退出   IJKMPMoviePlayerPlaybackDidFinishNotification;
+ 播放完成或者用户退出的原因（key） IJKMPMoviePlayerPlaybackDidFinishReasonUserInfoKey; // NSNumber (IJKMPMovieFinishReason)
+ 播放状态改变了        IJKMPMoviePlayerPlaybackStateDidChangeNotification;
+ 加载状态改变了        IJKMPMoviePlayerLoadStateDidChangeNotification;
+ 目前不知道这个代表啥          IJKMPMoviePlayerIsAirPlayVideoActiveDidChangeNotification;
+ **/
 #pragma mark - Event response
 
+// 加载状态改变了
 - (void)handleLoadStateDidChangeNotification:(NSNotification *)notification {
+    NSLog(@"self.player 加载状态改变了 handleLoadStateDidChangeNotification");
     IJKMPMovieLoadState loadState = self.player.loadState;
     self.playerView.playControl.prepareToPlay = (loadState & IJKMPMovieLoadStatePlaythroughOK) != 0 || (loadState & IJKMPMovieLoadStatePlayable) != 0;
 }
-
+//播放状态改变了
 - (void)handlePlaybackStateDidChangeNotification:(NSNotification *)notification {
+    NSLog(@"self.player 播放状态改变了 handlePlaybackStateDidChangeNotification");
     IJKMPMoviePlaybackState playbackState = self.player.playbackState;
     self.playerView.playControl.playing = (playbackState == IJKMPMoviePlaybackStatePlaying);
 }
 
+//播放完成或者用户退出
 - (void)handlePlaybackDidFinishNotification:(NSNotification *)notification {
+    NSLog(@"self.player 播放完成或者用户退出handlePlaybackDidFinishNotification");
     [self invalidTimer];
+    self.playerView.thumbView.hidden = NO;
     [self.playerView.playControl playbackComplete];
 }
 
 // 准备开始播放了
 - (void)mediaIsPreparedToPlayDidChange:(NSNotification*)notification {
-    NSLog(@"mediaIsPrepareToPlayDidChange\n");
+    NSLog(@"self.player 准备开始播放了 mediaIsPrepareToPlayDidChange\n");
 }
 
 
@@ -367,8 +417,22 @@
 - (void)setPlayTimeAndTotalTime {
     [self.playerView.playControl setPlayTime:self.player.currentPlaybackTime
                                    totalTime:self.player.duration];
+    
+    NSLog(@"self.player.bufferingProgress = %d", self.player.bufferingProgress);
+    NSLog(@"self.player.numberOfBytesTransferred = %ld", self.player.numberOfBytesTransferred);
+    NSLog(@"self.player.playableDuration = %ld", (NSInteger)self.player.playableDuration);
+    
 }
 
+/**
+ 准备播放             IJKMPMediaPlaybackIsPreparedToPlayDidChangeNotification;
+ 尺寸改变发出的通知     IJKMPMoviePlayerScalingModeDidChangeNotification;
+ 播放完成或者用户退出   IJKMPMoviePlayerPlaybackDidFinishNotification;
+ 播放完成或者用户退出的原因（key） IJKMPMoviePlayerPlaybackDidFinishReasonUserInfoKey; // NSNumber (IJKMPMovieFinishReason)
+ 播放状态改变了        IJKMPMoviePlayerPlaybackStateDidChangeNotification;
+ 加载状态改变了        IJKMPMoviePlayerLoadStateDidChangeNotification;
+ 目前不知道这个代表啥          IJKMPMoviePlayerIsAirPlayVideoActiveDidChangeNotification;
+ **/
 - (void)addNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLoadStateDidChangeNotification:) name:IJKMPMoviePlayerLoadStateDidChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePlaybackStateDidChangeNotification:) name:IJKMPMoviePlayerPlaybackStateDidChangeNotification object:nil];

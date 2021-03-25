@@ -60,8 +60,8 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
  视频操作相关按钮
  */
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
-@property (weak, nonatomic) IBOutlet UILabel *playTimeLbl;
-@property (weak, nonatomic) IBOutlet UILabel *totalTimeLbl;
+@property (weak, nonatomic) IBOutlet UILabel *playTimeLbl; //播放的时间
+@property (weak, nonatomic) IBOutlet UILabel *totalTimeLbl;//视频时间长度
 @property (weak, nonatomic) IBOutlet UISlider *progressSlider;
 @property (weak, nonatomic) IBOutlet UIButton *fullScreenBtn;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
@@ -314,12 +314,17 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 
 
 - (IBAction)rePlayBtnClick:(id)sender {
-    
     [self playOrPause:sender];
+    
+    self.rePlayBtn.hidden = YES;
+    self.rePauseBtn.hidden = NO;
+
 }
 
 - (IBAction)pauseBtnClick:(id)sender {
     [self playOrPause:sender];
+    self.rePlayBtn.hidden = NO;
+    self.rePauseBtn.hidden = YES;
 }
 
 
@@ -364,15 +369,6 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     _playing = playing;
     NSString *img = playing ? @"player-pause" : @"player-start";
     [self.playBtn setImage:[UIImage imageNamed:img] forState:UIControlStateNormal];
-    
-    if (playing) {
-        self.rePlayBtn.hidden = YES;
-        self.rePauseBtn.hidden = NO;
-    }else{
-        self.rePlayBtn.hidden = NO;
-        self.rePauseBtn.hidden = YES;
-    }
-    
     
 }
 
