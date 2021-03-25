@@ -190,19 +190,45 @@
                         <constraint firstItem="quV-FJ-eXs" firstAttribute="centerY" secondItem="lb3-zs-BJB" secondAttribute="centerY" id="o8y-7c-9Pd"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9z1-74-LKo" userLabel="playButton">
+                    <rect key="frame" x="423" y="182" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="glM-H5-GTf"/>
+                        <constraint firstAttribute="width" constant="50" id="z8f-dU-O0L"/>
+                    </constraints>
+                    <state key="normal" image="play_Image"/>
+                    <connections>
+                        <action selector="rePlayBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="pCk-kV-wL9"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyl-bU-WaS" userLabel="pauseButton">
+                    <rect key="frame" x="423" y="182" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="TK8-wh-uZf"/>
+                        <constraint firstAttribute="height" constant="50" id="vPF-c3-LWh"/>
+                    </constraints>
+                    <state key="normal" image="player-pause"/>
+                    <connections>
+                        <action selector="pauseBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="yGd-FG-vKd"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="lb3-zs-BJB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="143-jL-kh9"/>
                 <constraint firstItem="06i-0d-UZl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="G7P-wl-RRw"/>
+                <constraint firstItem="9z1-74-LKo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="GwM-6a-tqb"/>
+                <constraint firstItem="9z1-74-LKo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="KBa-uJ-kl9"/>
                 <constraint firstItem="mz9-zX-8mK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ner-zi-NAD"/>
                 <constraint firstAttribute="bottom" secondItem="06i-0d-UZl" secondAttribute="bottom" id="QdB-zA-Koc"/>
                 <constraint firstItem="Bbf-f0-IIg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TNj-SC-ERF"/>
                 <constraint firstAttribute="trailing" secondItem="06i-0d-UZl" secondAttribute="trailing" id="VVm-s2-92A"/>
                 <constraint firstItem="mz9-zX-8mK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WNJ-JB-qLZ"/>
+                <constraint firstItem="Kyl-bU-WaS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Zs6-rI-l0h"/>
                 <constraint firstItem="lb3-zs-BJB" firstAttribute="top" secondItem="mz9-zX-8mK" secondAttribute="bottom" constant="8" id="jTQ-as-VZ9"/>
                 <constraint firstItem="Bbf-f0-IIg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="kQD-7I-0Vl"/>
                 <constraint firstAttribute="trailing" secondItem="mz9-zX-8mK" secondAttribute="trailing" id="lhF-ky-aRY"/>
+                <constraint firstItem="Kyl-bU-WaS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xoi-px-WBo"/>
             </constraints>
             <connections>
                 <outlet property="activityIndicatorView" destination="Bbf-f0-IIg" id="xeS-YJ-tCR"/>
@@ -218,6 +244,8 @@
                 <outlet property="playBtnLeadingConstraint" destination="96B-9z-4Uv" id="vjI-Sg-oAs"/>
                 <outlet property="playTimeLbl" destination="7tx-lZ-WTS" id="lFz-Ht-CGz"/>
                 <outlet property="progressSlider" destination="WIW-Rv-eE9" id="4By-vV-asi"/>
+                <outlet property="rePauseBtn" destination="Kyl-bU-WaS" id="Laq-KN-P45"/>
+                <outlet property="rePlayBtn" destination="9z1-74-LKo" id="rHZ-Nb-cwX"/>
                 <outlet property="statusBar" destination="i51-sr-QqL" id="RqN-gc-3YZ"/>
                 <outlet property="timeLbl" destination="3v4-Lw-Czr" id="H1F-pC-n1o"/>
                 <outlet property="toolBar" destination="06i-0d-UZl" id="DuY-T2-UqW"/>
@@ -233,7 +261,9 @@
         </view>
     </objects>
     <resources>
+        <image name="play_Image" width="30" height="30"/>
         <image name="player-full-screen" width="21" height="21"/>
+        <image name="player-pause" width="21" height="21"/>
         <image name="player-start" width="21" height="21"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -76,6 +76,10 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 @property (strong, nonatomic) YSBatteryTool *batteryTool;
 @property (strong, nonatomic) YSVolumeTool *volumeTool;
 
+@property (weak, nonatomic) IBOutlet UIButton *rePlayBtn;
+@property (weak, nonatomic) IBOutlet UIButton *rePauseBtn;
+
+
 //=========
 /** 单击 */
 @property (nonatomic, strong) UITapGestureRecognizer *singleTap;
@@ -106,6 +110,9 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     [self.progressSlider setThumbImage:[UIImage imageNamed:@"slider_thumb"] forState:(UIControlStateNormal)];
     self.progressSlider.maximumTrackTintColor = [UIColor grayColor];
     self.progressSlider.minimumTrackTintColor = [UIColor whiteColor];//[UIColor
+    
+    self.rePlayBtn.hidden = YES;
+    self.rePauseBtn.hidden = YES;
     
     // 添加触摸手势
     [self addTapGesture];
@@ -304,6 +311,17 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     }
 }
 
+
+- (IBAction)rePlayBtnClick:(id)sender {
+    
+    [self playOrPause:sender];
+}
+
+- (IBAction)pauseBtnClick:(id)sender {
+    [self playOrPause:sender];
+}
+
+
 - (IBAction)playOrPause:(UIButton *)sender {
     [self resetTimer];
     if ([self.delegate respondsToSelector:@selector(playOrPause)]) {
@@ -344,6 +362,16 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     _playing = playing;
     NSString *img = playing ? @"player-pause" : @"player-start";
     [self.playBtn setImage:[UIImage imageNamed:img] forState:UIControlStateNormal];
+    
+    if (playing) {
+        self.rePlayBtn.hidden = YES;
+        self.rePauseBtn.hidden = NO;
+    }else{
+        self.rePlayBtn.hidden = NO;
+        self.rePauseBtn.hidden = YES;
+    }
+    
+    
 }
 
 - (void)setFullScreen:(BOOL)fullScreen {
@@ -523,6 +551,20 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     } completion:^(BOOL finished) {
         
     }];
+    
+    if (self.hideBar) {
+        self.rePlayBtn.hidden = YES;
+        self.rePauseBtn.hidden = YES;
+    }else{
+        
+        if (self.isPlaying) {
+            self.rePlayBtn.hidden = YES;
+            self.rePauseBtn.hidden = NO;
+        }else{
+            self.rePlayBtn.hidden = NO;
+            self.rePauseBtn.hidden = YES;
+        }
+    }
     if (self.isHideBar) {
         [self invalidTimer];
     } else {
