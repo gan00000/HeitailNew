@@ -628,7 +628,7 @@
     MsgChatContent *chatContent = self.chatContentList[indexPath.row];
     GlodBuleHTUserInfoModel *userInfoModel = [GlodBuleHTUserManager tao_userInfo];
     
-    if ([chatContent.fromUserName isEqualToString:userInfoModel.display_name]) {
+    if (chatContent.fromUserId == [userInfoModel.user_id longLongValue]) {
         
         GlodBuleHTChatContentCell *cell = (GlodBuleHTChatContentCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([GlodBuleHTChatSelfContentCell class])];
         //[cell setChaMsg:[NSString stringWithFormat:@"%@ - %@", chatContent.content, chatContent.fromUserName]];

@@ -111,6 +111,7 @@ GPB_FINAL @interface InfoResp_2 : GPBMessage
 
 typedef GPB_ENUM(LoginReq_1001_FieldNumber) {
   LoginReq_1001_FieldNumber_Token = 1,
+  LoginReq_1001_FieldNumber_GameId = 2,
 };
 
 /**
@@ -120,6 +121,9 @@ GPB_FINAL @interface LoginReq_1001 : GPBMessage
 
 /** 用户token */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *token;
+
+/** 赛程id */
+@property(nonatomic, readwrite) int64_t gameId;
 
 @end
 
@@ -179,12 +183,41 @@ GPB_FINAL @interface SendChatResp_1002 : GPBMessage
 
 @end
 
+#pragma mark - SendAdminChatReq_1003
+
+typedef GPB_ENUM(SendAdminChatReq_1003_FieldNumber) {
+  SendAdminChatReq_1003_FieldNumber_UserId = 1,
+  SendAdminChatReq_1003_FieldNumber_Key = 2,
+  SendAdminChatReq_1003_FieldNumber_GameId = 3,
+  SendAdminChatReq_1003_FieldNumber_Content = 4,
+};
+
+/**
+ * 后台管理员发送聊天信息
+ **/
+GPB_FINAL @interface SendAdminChatReq_1003 : GPBMessage
+
+/** 用户名或者id */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
+
+/** 秘钥验证 */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *key;
+
+/** 赛程id */
+@property(nonatomic, readwrite) int64_t gameId;
+
+/** 聊天内容 */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *content;
+
+@end
+
 #pragma mark - MsgUser
 
 typedef GPB_ENUM(MsgUser_FieldNumber) {
   MsgUser_FieldNumber_Token = 1,
   MsgUser_FieldNumber_Name = 2,
   MsgUser_FieldNumber_Img = 3,
+  MsgUser_FieldNumber_Id_p = 4,
 };
 
 /**
@@ -192,7 +225,7 @@ typedef GPB_ENUM(MsgUser_FieldNumber) {
  **/
 GPB_FINAL @interface MsgUser : GPBMessage
 
-/** ID */
+/** token */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *token;
 
 /** 昵称 */
@@ -200,6 +233,9 @@ GPB_FINAL @interface MsgUser : GPBMessage
 
 /** 头像地址 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *img;
+
+/** 用户id */
+@property(nonatomic, readwrite) int64_t id_p;
 
 @end
 
@@ -211,6 +247,7 @@ typedef GPB_ENUM(MsgChatContent_FieldNumber) {
   MsgChatContent_FieldNumber_FromTime = 3,
   MsgChatContent_FieldNumber_Content = 4,
   MsgChatContent_FieldNumber_GameId = 5,
+  MsgChatContent_FieldNumber_FromUserId = 6,
 };
 
 /**
@@ -232,6 +269,9 @@ GPB_FINAL @interface MsgChatContent : GPBMessage
 
 /** 赛程id */
 @property(nonatomic, readwrite) int64_t gameId;
+
+/** 发送时间 */
+@property(nonatomic, readwrite) int64_t fromUserId;
 
 @end
 
