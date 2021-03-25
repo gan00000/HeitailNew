@@ -8,7 +8,6 @@
 
 #import "PLPlayerView.h"
 #import <AVFoundation/AVFoundation.h>
-#import <PLPlayerKit/PLPlayerKit.h>
 #import "PLMediaInfo.h"
 #import "UIView+Alert.h"
 #import "UIButton+Animate.h"
@@ -44,7 +43,7 @@ UIGestureRecognizerDelegate
 @property (nonatomic, assign) UIDeviceOrientation deviceOrientation;
 
 //@property (nonatomic, strong) PLPlayer *player;
-@property (nonatomic, strong) PLPlayerOption *playerOption;
+//@property (nonatomic, strong) PLPlayerOption *playerOption;
 @property (nonatomic, assign) BOOL isNeedSetupPlayer;
 
 @property (nonatomic, strong) NSTimer *playTimer;
@@ -809,25 +808,25 @@ UIGestureRecognizerDelegate
     self.thumbImageView.hidden = NO;
     [self.thumbImageView sd_setImageWithURL:[NSURL URLWithString:_media.thumbURL]];
     
-    self.playerOption = [PLPlayerOption defaultOption];
-    PLPlayFormat format = kPLPLAY_FORMAT_UnKnown;
-    NSString *urlString = _media.videoURL.lowercaseString;
-    if ([urlString hasSuffix:@"mp4"]) {
-        format = kPLPLAY_FORMAT_MP4;
-    } else if ([urlString hasPrefix:@"rtmp:"]) {
-        format = kPLPLAY_FORMAT_FLV;
-    } else if ([urlString hasSuffix:@".mp3"]) {
-        format = kPLPLAY_FORMAT_MP3;
-    } else if ([urlString hasSuffix:@".m3u8"]) {
-        format = kPLPLAY_FORMAT_M3U8;
-    }
-    [self.playerOption setOptionValue:@(format) forKey:PLPlayerOptionKeyVideoPreferFormat];
-    [self.playerOption setOptionValue:@(kPLLogNone) forKey:PLPlayerOptionKeyLogLevel];
+//    self.playerOption = [PLPlayerOption defaultOption];
+//    PLPlayFormat format = kPLPLAY_FORMAT_UnKnown;
+//    NSString *urlString = _media.videoURL.lowercaseString;
+//    if ([urlString hasSuffix:@"mp4"]) {
+//        format = kPLPLAY_FORMAT_MP4;
+//    } else if ([urlString hasPrefix:@"rtmp:"]) {
+//        format = kPLPLAY_FORMAT_FLV;
+//    } else if ([urlString hasSuffix:@".mp3"]) {
+//        format = kPLPLAY_FORMAT_MP3;
+//    } else if ([urlString hasSuffix:@".m3u8"]) {
+//        format = kPLPLAY_FORMAT_M3U8;
+//    }
+//    [self.playerOption setOptionValue:@(format) forKey:PLPlayerOptionKeyVideoPreferFormat];
+//    [self.playerOption setOptionValue:@(kPLLogNone) forKey:PLPlayerOptionKeyLogLevel];
+//
+//    NSDate *date = [NSDate date];
+//    self.player = [PLPlayer playerWithURL:[NSURL URLWithString:_media.videoURL] option:self.playerOption];
     
-    NSDate *date = [NSDate date];
-    self.player = [PLPlayer playerWithURL:[NSURL URLWithString:_media.videoURL] option:self.playerOption];
-    
-    NSLog(@"playerWithURL 耗时： %f s",[[NSDate date] timeIntervalSinceDate:date]);
+//    NSLog(@"playerWithURL 耗时： %f s",[[NSDate date] timeIntervalSinceDate:date]);
     
     self.player.delegateQueue = dispatch_get_main_queue();
     self.player.playerView.contentMode = UIViewContentModeScaleAspectFit;
@@ -1041,17 +1040,18 @@ UIGestureRecognizerDelegate
 }
 
 - (BOOL)controlViewCache:(PLControlView *)controlView {
-    if ([self.playerOption optionValueForKey:PLPlayerOptionKeyVideoCacheFolderPath]) {
-        [_playerOption setOptionValue:nil forKey:PLPlayerOptionKeyVideoCacheFolderPath];
-        [_playerOption setOptionValue:nil forKey:PLPlayerOptionKeyVideoCacheExtensionName];
-        return NO;
-    } else {
-        NSString* docPathDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-        docPathDir = [docPathDir stringByAppendingString:@"/PLCache/"];
-        [_playerOption setOptionValue:docPathDir forKey:PLPlayerOptionKeyVideoCacheFolderPath];
-        [_playerOption setOptionValue:@"mp4" forKey:PLPlayerOptionKeyVideoCacheExtensionName];
-        return YES;
-    }
+//    if ([self.playerOption optionValueForKey:PLPlayerOptionKeyVideoCacheFolderPath]) {
+//        [_playerOption setOptionValue:nil forKey:PLPlayerOptionKeyVideoCacheFolderPath];
+//        [_playerOption setOptionValue:nil forKey:PLPlayerOptionKeyVideoCacheExtensionName];
+//        return NO;
+//    } else {
+//        NSString* docPathDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+//        docPathDir = [docPathDir stringByAppendingString:@"/PLCache/"];
+//        [_playerOption setOptionValue:docPathDir forKey:PLPlayerOptionKeyVideoCacheFolderPath];
+//        [_playerOption setOptionValue:@"mp4" forKey:PLPlayerOptionKeyVideoCacheExtensionName];
+//        return YES;
+//    }
+    return YES;
 }
 
 

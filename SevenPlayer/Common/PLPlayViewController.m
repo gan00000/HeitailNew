@@ -7,7 +7,6 @@
 //
 
 #import "PLPlayViewController.h"
-#import <PLPlayerKit/PLPlayerKit.h>
 #import "UIButton+Animate.h"
 #import "UIView+Alert.h"
 
@@ -114,22 +113,22 @@
     
     NSLog(@"播放地址: %@", _url.absoluteString);
     
-    PLPlayerOption *option = [PLPlayerOption defaultOption];
-    PLPlayFormat format = kPLPLAY_FORMAT_UnKnown;
-    NSString *urlString = _url.absoluteString.lowercaseString;
-    if ([urlString hasSuffix:@"mp4"]) {
-        format = kPLPLAY_FORMAT_MP4;
-    } else if ([urlString hasPrefix:@"rtmp:"]) {
-        format = kPLPLAY_FORMAT_FLV;
-    } else if ([urlString hasSuffix:@".mp3"]) {
-        format = kPLPLAY_FORMAT_MP3;
-    } else if ([urlString hasSuffix:@".m3u8"]) {
-        format = kPLPLAY_FORMAT_M3U8;
-    }
-    [option setOptionValue:@(format) forKey:PLPlayerOptionKeyVideoPreferFormat];
-    [option setOptionValue:@(kPLLogNone) forKey:PLPlayerOptionKeyLogLevel];
-    
-    self.player = [PLPlayer playerWithURL:_url option:option];
+//    PLPlayerOption *option = [PLPlayerOption defaultOption];
+//    PLPlayFormat format = kPLPLAY_FORMAT_UnKnown;
+//    NSString *urlString = _url.absoluteString.lowercaseString;
+//    if ([urlString hasSuffix:@"mp4"]) {
+//        format = kPLPLAY_FORMAT_MP4;
+//    } else if ([urlString hasPrefix:@"rtmp:"]) {
+//        format = kPLPLAY_FORMAT_FLV;
+//    } else if ([urlString hasSuffix:@".mp3"]) {
+//        format = kPLPLAY_FORMAT_MP3;
+//    } else if ([urlString hasSuffix:@".m3u8"]) {
+//        format = kPLPLAY_FORMAT_M3U8;
+//    }
+//    [option setOptionValue:@(format) forKey:PLPlayerOptionKeyVideoPreferFormat];
+//    [option setOptionValue:@(kPLLogNone) forKey:PLPlayerOptionKeyLogLevel];
+//    
+//    self.player = [PLPlayer playerWithURL:_url option:option];
     [self.view insertSubview:self.player.playerView atIndex:0];
     [self.player.playerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);

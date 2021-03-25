@@ -7,8 +7,7 @@
 //
 
 #import "PLBaseViewController.h"
-
-#import <PLPlayerKit/PLPlayerKit.h>
+#import "PLPlayer.h"
 
 @interface PLPlayViewController : PLBaseViewController<PLPlayerDelegate>
 

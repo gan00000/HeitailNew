@@ -7,7 +7,6 @@
 //
 
 #import "PLPlayViewController.h"
-#import <PLPlayerKit/PLPlayerKit.h>
 #import "PLMediaInfo.h"
 
 @interface PLShortPlayerViewController : PLPlayViewController

@@ -161,9 +161,6 @@ PODS:
     - NJKWebViewProgress/ProgressView (= 0.2.3)
   - NJKWebViewProgress/Core (0.2.3)
   - NJKWebViewProgress/ProgressView (0.2.3)
-  - PLPlayerKit (3.4.4):
-    - PLPlayerKit/universal (= 3.4.4)
-  - PLPlayerKit/universal (3.4.4)
   - PromisesObjC (1.2.12)
   - Reachability (3.2)
   - RegExCategories (1.0)
@@ -220,7 +217,6 @@ DEPENDENCIES:
   - MJRefresh
   - MMMaterialDesignSpinner
   - NJKWebViewProgress
-  - PLPlayerKit (from `https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec`)
   - Reachability
   - RegExCategories
   - SDWebImage (= 4.4.2)
@@ -296,8 +292,6 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   LTNavigationBar:
     :git: https://github.com/JeasonL/LTNavigationBar.git
-  PLPlayerKit:
-    :podspec: https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec
   SVGKit:
     :branch: 3.x
     :git: https://github.com/SVGKit/SVGKit.git
@@ -343,7 +337,6 @@ SPEC CHECKSUMS:
   MMMaterialDesignSpinner: a548042720c2e5f04212048483085d7942ac3e81
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
-  PLPlayerKit: 676c9adaa476b682aa9bb0a99a0205bbda711655
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   RegExCategories: e68befacacd5bda853c88f70ec745cb2d0cfb89c
@@ -364,6 +357,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZFLineSDK: fc1485f687bd9d6af5cb7e39ab2a8266680797dd
 
-PODFILE CHECKSUM: 10076b488818db0b5c9649af1278ef4871452e40
+PODFILE CHECKSUM: 50df4f8b6be90d276cd11b867ef6ad965011c537
 
 COCOAPODS: 1.9.2

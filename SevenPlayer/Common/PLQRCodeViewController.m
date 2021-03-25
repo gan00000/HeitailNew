@@ -7,7 +7,6 @@
 //
 
 #import "PLQRCodeViewController.h"
-#import <PLPlayerKit/PLPlayerKit.h>
 #import "NSObject+Auth.h"
 #import "NSString+URLCheck.h"
 #import "UIView+Alert.h"

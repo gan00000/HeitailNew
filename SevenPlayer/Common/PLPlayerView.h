@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <PLPlayerKit/PLPlayerKit.h>
 #import "PLMediaInfo.h"
 
 @class PLPlayerView;

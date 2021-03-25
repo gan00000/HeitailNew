@@ -67,7 +67,7 @@ pod 'Firebase/Core'
 pod 'GoogleSignIn'
 
 #pod 'PLPlayerKit' #真机，发布是要使用
-pod "PLPlayerKit", :podspec =>   'https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec'  #真机 + 模拟器
+#pod "PLPlayerKit", :podspec =>   'https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec'  #真机 + 模拟器
 
 pod 'MMMaterialDesignSpinner'
 pod 'JGProgressHUD'
