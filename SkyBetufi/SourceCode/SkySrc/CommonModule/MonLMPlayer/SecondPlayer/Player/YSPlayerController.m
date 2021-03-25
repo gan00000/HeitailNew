@@ -151,6 +151,7 @@
         [self.player pause];
     } else {
         [self.player play];
+        self.playerView.thumbView.hidden = YES;
         [self.delegate startPlay:self];
     }
     self.playerView.playControl.playing = self.player.isPlaying;

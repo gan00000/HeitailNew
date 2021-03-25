@@ -154,6 +154,8 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 - (void)playbackComplete {
     self.progressSlider.value = 0.0;
     self.playTimeLbl.text = @"00:00";
+    self.rePlayBtn.hidden = NO;
+    self.rePauseBtn.hidden = YES;
 }
 
 #pragma mark - Event response
@@ -370,6 +372,14 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     NSString *img = playing ? @"player-pause" : @"player-start";
     [self.playBtn setImage:[UIImage imageNamed:img] forState:UIControlStateNormal];
     
+    if (!playing) {
+        self.rePlayBtn.hidden = NO;
+        self.rePauseBtn.hidden = YES;
+    }else{
+        self.rePlayBtn.hidden = YES;
+        self.rePauseBtn.hidden = YES;
+    }
+//    [self toggleBar];
 }
 
 - (void)setFullScreen:(BOOL)fullScreen{
@@ -569,8 +579,15 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     }
     
     if (self.hideBar) {
-        self.rePlayBtn.hidden = YES;
-        self.rePauseBtn.hidden = YES;
+        
+        if (self.isPlaying) {
+            self.rePlayBtn.hidden = YES;
+            self.rePauseBtn.hidden = YES;
+        }else{
+            self.rePlayBtn.hidden = NO;
+            self.rePauseBtn.hidden = YES;
+        }
+       
     }else{
         
         if (self.isPlaying) {
