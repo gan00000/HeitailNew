@@ -203,6 +203,11 @@
     [self.playerController pause];
 }
 
+- (void)dealloc
+{
+    [self.playerController shutdown];
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if (!self.topRequestDone || !self.htmlLoadDone) {
