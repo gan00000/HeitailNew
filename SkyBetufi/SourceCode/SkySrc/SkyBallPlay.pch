@@ -43,7 +43,7 @@
 #define OFFICIAL_RELEASE 0
 
 // 未发布到App Store的版本
-#define BJ_DEBUG  NO//(!OFFICIAL_RELEASE)
+#define BJ_DEBUG  YES//(!OFFICIAL_RELEASE)
 
 // 当前引导页版本
 #define BJ_GUIDE_PAGE_VERSION 1
@@ -92,7 +92,7 @@
 
 //==========视频 start ======
 //third
-#import <PLPlayerKit/PLPlayerKit.h>
+//#import <PLPlayerKit/PLPlayerKit.h>
 #import <Masonry.h>
 #import <UIImageView+WebCache.h>
 //#import <Bugsnag/Bugsnag.h>
@@ -113,8 +113,10 @@
 #import "PLQRCodeViewController.h"
 #import "PLPlayViewController.h"
 
-#define PLPLAYER_URL_DOMAIN @"https://api-demo.qnsdk.com"
-#define PLPLAYER_ENTERPRISE_BUNDLEID @"com.qbox.niuplayer"
+#import "PLPlayer.h"
+
+//#define PLPLAYER_URL_DOMAIN @"https://api-demo.qnsdk.com"
+//#define PLPLAYER_ENTERPRISE_BUNDLEID @"com.qbox.niuplayer"
 //==========视频 end ======
 
 static const CGFloat DRGlobalAnimationDuration = 0.25;
