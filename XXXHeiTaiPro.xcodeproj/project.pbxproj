@@ -11,6 +11,18 @@
 		3213529E250A149F00702F72 /* InfoMessage.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3213529A250A149F00702F72 /* InfoMessage.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3213529F250A149F00702F72 /* UserMessage.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3213529D250A149F00702F72 /* UserMessage.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		32135303250A2F1400702F72 /* GPBProtocolBuffers.m in Sources */ = {isa = PBXBuildFile; fileRef = 321352D8250A2F1300702F72 /* GPBProtocolBuffers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		32184803260B1BFD008D836C /* YSAVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 321847EC260B1BFC008D836C /* YSAVViewController.m */; };
+		32184804260B1BFD008D836C /* YSBatteryTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 321847F0260B1BFC008D836C /* YSBatteryTool.m */; };
+		32184805260B1BFD008D836C /* YSCarrierTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 321847F2260B1BFC008D836C /* YSCarrierTool.m */; };
+		32184806260B1BFD008D836C /* YSVolumeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 321847F3260B1BFC008D836C /* YSVolumeTool.m */; };
+		32184807260B1BFD008D836C /* YSNetworkInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 321847F4260B1BFC008D836C /* YSNetworkInfoTool.m */; };
+		32184808260B1BFD008D836C /* YSScreenBrightnessTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 321847F6260B1BFC008D836C /* YSScreenBrightnessTool.m */; };
+		32184809260B1BFD008D836C /* YSPlayerControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 321847F9260B1BFD008D836C /* YSPlayerControl.xib */; };
+		3218480A260B1BFD008D836C /* YSPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 321847FB260B1BFD008D836C /* YSPlayerView.m */; };
+		3218480B260B1BFD008D836C /* YSPlayerControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 321847FC260B1BFD008D836C /* YSPlayerControl.m */; };
+		3218480C260B1BFD008D836C /* YSPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 321847FD260B1BFD008D836C /* YSPlayerController.m */; };
+		3218480D260B1BFD008D836C /* XXXAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32184802260B1BFD008D836C /* XXXAssets.xcassets */; };
+		3221B416260AE5C700BE7394 /* PLPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3221B415260AE5C700BE7394 /* PLPlayer.m */; };
 		32340FD0250F1D7F00F47F76 /* GlodBuleHTChatContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32340FCE250F1D7F00F47F76 /* GlodBuleHTChatContentCell.m */; };
 		32340FD1250F1D7F00F47F76 /* GlodBuleHTChatContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32340FCF250F1D7F00F47F76 /* GlodBuleHTChatContentCell.xib */; };
 		3238C62425F0BA3D0045F1B9 /* HTWordLive2Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 3238C62325F0BA3D0045F1B9 /* HTWordLive2Request.m */; };
@@ -465,6 +477,30 @@
 		321352EA250A2F1300702F72 /* GPBWellKnownTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBWellKnownTypes.h; sourceTree = "<group>"; };
 		321352EB250A2F1300702F72 /* GPBUnknownField_PackagePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBUnknownField_PackagePrivate.h; sourceTree = "<group>"; };
 		321352EC250A2F1300702F72 /* GPBDictionary_PackagePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBDictionary_PackagePrivate.h; sourceTree = "<group>"; };
+		321847EB260B1BFC008D836C /* YSAVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSAVViewController.h; sourceTree = "<group>"; };
+		321847EC260B1BFC008D836C /* YSAVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSAVViewController.m; sourceTree = "<group>"; };
+		321847EE260B1BFC008D836C /* YSVolumeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSVolumeTool.h; sourceTree = "<group>"; };
+		321847EF260B1BFC008D836C /* YSScreenBrightnessTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSScreenBrightnessTool.h; sourceTree = "<group>"; };
+		321847F0260B1BFC008D836C /* YSBatteryTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSBatteryTool.m; sourceTree = "<group>"; };
+		321847F1260B1BFC008D836C /* YSNetworkInfoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSNetworkInfoTool.h; sourceTree = "<group>"; };
+		321847F2260B1BFC008D836C /* YSCarrierTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCarrierTool.m; sourceTree = "<group>"; };
+		321847F3260B1BFC008D836C /* YSVolumeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSVolumeTool.m; sourceTree = "<group>"; };
+		321847F4260B1BFC008D836C /* YSNetworkInfoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSNetworkInfoTool.m; sourceTree = "<group>"; };
+		321847F5260B1BFC008D836C /* YSBatteryTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSBatteryTool.h; sourceTree = "<group>"; };
+		321847F6260B1BFC008D836C /* YSScreenBrightnessTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSScreenBrightnessTool.m; sourceTree = "<group>"; };
+		321847F7260B1BFC008D836C /* YSCarrierTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSCarrierTool.h; sourceTree = "<group>"; };
+		321847F9260B1BFD008D836C /* YSPlayerControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSPlayerControl.xib; sourceTree = "<group>"; };
+		321847FA260B1BFD008D836C /* YSPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPlayerController.h; sourceTree = "<group>"; };
+		321847FB260B1BFD008D836C /* YSPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPlayerView.m; sourceTree = "<group>"; };
+		321847FC260B1BFD008D836C /* YSPlayerControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPlayerControl.m; sourceTree = "<group>"; };
+		321847FD260B1BFD008D836C /* YSPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPlayerController.m; sourceTree = "<group>"; };
+		321847FE260B1BFD008D836C /* YSPlayerControlDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPlayerControlDelegate.h; sourceTree = "<group>"; };
+		321847FF260B1BFD008D836C /* YSPlayerControlProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPlayerControlProtocol.h; sourceTree = "<group>"; };
+		32184800260B1BFD008D836C /* YSPlayerControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPlayerControl.h; sourceTree = "<group>"; };
+		32184801260B1BFD008D836C /* YSPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPlayerView.h; sourceTree = "<group>"; };
+		32184802260B1BFD008D836C /* XXXAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = XXXAssets.xcassets; sourceTree = "<group>"; };
+		3221B414260AE5C700BE7394 /* PLPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLPlayer.h; sourceTree = "<group>"; };
+		3221B415260AE5C700BE7394 /* PLPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLPlayer.m; sourceTree = "<group>"; };
 		32340FCD250F1D7F00F47F76 /* GlodBuleHTChatContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTChatContentCell.h; sourceTree = "<group>"; };
 		32340FCE250F1D7F00F47F76 /* GlodBuleHTChatContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTChatContentCell.m; sourceTree = "<group>"; };
 		32340FCF250F1D7F00F47F76 /* GlodBuleHTChatContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GlodBuleHTChatContentCell.xib; sourceTree = "<group>"; };
@@ -1234,6 +1270,68 @@
 			path = protobuf;
 			sourceTree = "<group>";
 		};
+		321847E9260B1BA2008D836C /* SecondPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				321847F8260B1BFD008D836C /* Player */,
+				321847ED260B1BFC008D836C /* Tool */,
+				321847EA260B1BFC008D836C /* Video */,
+				32184802260B1BFD008D836C /* XXXAssets.xcassets */,
+			);
+			path = SecondPlayer;
+			sourceTree = "<group>";
+		};
+		321847EA260B1BFC008D836C /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				321847EB260B1BFC008D836C /* YSAVViewController.h */,
+				321847EC260B1BFC008D836C /* YSAVViewController.m */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		321847ED260B1BFC008D836C /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				321847EE260B1BFC008D836C /* YSVolumeTool.h */,
+				321847EF260B1BFC008D836C /* YSScreenBrightnessTool.h */,
+				321847F0260B1BFC008D836C /* YSBatteryTool.m */,
+				321847F1260B1BFC008D836C /* YSNetworkInfoTool.h */,
+				321847F2260B1BFC008D836C /* YSCarrierTool.m */,
+				321847F3260B1BFC008D836C /* YSVolumeTool.m */,
+				321847F4260B1BFC008D836C /* YSNetworkInfoTool.m */,
+				321847F5260B1BFC008D836C /* YSBatteryTool.h */,
+				321847F6260B1BFC008D836C /* YSScreenBrightnessTool.m */,
+				321847F7260B1BFC008D836C /* YSCarrierTool.h */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		321847F8260B1BFD008D836C /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				32184800260B1BFD008D836C /* YSPlayerControl.h */,
+				321847FC260B1BFD008D836C /* YSPlayerControl.m */,
+				321847F9260B1BFD008D836C /* YSPlayerControl.xib */,
+				321847FE260B1BFD008D836C /* YSPlayerControlDelegate.h */,
+				321847FA260B1BFD008D836C /* YSPlayerController.h */,
+				321847FD260B1BFD008D836C /* YSPlayerController.m */,
+				321847FF260B1BFD008D836C /* YSPlayerControlProtocol.h */,
+				32184801260B1BFD008D836C /* YSPlayerView.h */,
+				321847FB260B1BFD008D836C /* YSPlayerView.m */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		3221B413260AE59A00BE7394 /* tesaaa */ = {
+			isa = PBXGroup;
+			children = (
+				3221B414260AE5C700BE7394 /* PLPlayer.h */,
+				3221B415260AE5C700BE7394 /* PLPlayer.m */,
+			);
+			path = tesaaa;
+			sourceTree = "<group>";
+		};
 		3256201222E17A9200973889 /* SkySrc */ = {
 			isa = PBXGroup;
 			children = (
@@ -1334,6 +1432,7 @@
 		328893F02603310900759311 /* SevenPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				3221B413260AE59A00BE7394 /* tesaaa */,
 				328894482603310900759311 /* PlayerAssets.xcassets */,
 				328894372603310900759311 /* Category */,
 				328894552603310900759311 /* Common */,
@@ -1519,6 +1618,7 @@
 		32FED80223AB768700D900A7 /* MonLMPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				321847E9260B1BA2008D836C /* SecondPlayer */,
 				32FED83123AB779C00D900A7 /* IJKMediaFramework.framework */,
 				32FED82F23AB775600D900A7 /* UIColor+GlodBuleHex.h */,
 				32FED82E23AB775600D900A7 /* UIColor+GlodBuleHex.m */,
@@ -2680,6 +2780,7 @@
 				FEC117262143DF33002DB617 /* SkyBallHetiRedRankHome.storyboard in Resources */,
 				3287124E23B8962800AB5360 /* video_play_normal.png in Resources */,
 				FEC116092143D4A1002DB617 /* GlodBuleXJToastImageView.xib in Resources */,
+				3218480D260B1BFD008D836C /* XXXAssets.xcassets in Resources */,
 				FEDABE70217385F4008C8AFD /* SkyBallHetiRedMatchSubDsbd.storyboard in Resources */,
 				326434EE22F057E000D2DA1E /* guideImageapp5.jpg in Resources */,
 				FE6BD04B2144FA3C0090118A /* KKRESHUD.xcassets in Resources */,
@@ -2700,6 +2801,7 @@
 				FEC1161C2143D4A1002DB617 /* GlodBuleBJTabBarView.xib in Resources */,
 				FE08C5C422504F0C000175CB /* KKRESMMBBMe.xcassets in Resources */,
 				32E7228123098085003E0A03 /* GoogleService-Info.plist in Resources */,
+				32184809260B1BFD008D836C /* YSPlayerControl.xib in Resources */,
 				3277C5D623A9D4DE00D43D80 /* place2.png in Resources */,
 				FEC116EF2143D8C9002DB617 /* SkyBallHetiRedMatchHome.storyboard in Resources */,
 				32ABE1CE22EDF4D0008505BA /* SkyBallHetiRedNewsHomeOther.storyboard in Resources */,
@@ -2910,6 +3012,7 @@
 				FE08C5C82250506A000175CB /* GlodBuleHTMeHomeViewController.m in Sources */,
 				32CD877F22F4173800063A14 /* NowPlayingInfoCenterProvider.m in Sources */,
 				FEC1164C2143D4A1002DB617 /* GlodBulePPXXBJViewControllerCenter.m in Sources */,
+				32184805260B1BFD008D836C /* YSCarrierTool.m in Sources */,
 				FE6BD07D21457BAF0090118A /* GlodBuleHTNewsDetailViewController.m in Sources */,
 				FEC1164A2143D4A1002DB617 /* GlodBulePPXXBJNavigationController.m in Sources */,
 				32ABE1CC22EDF4C2008505BA /* GlodBuleHTNewsHomeOtherViewController.m in Sources */,
@@ -2921,6 +3024,7 @@
 				FE6BD092214584C30090118A /* GlodBuleHTNewsTopHeaderView.m in Sources */,
 				325A921A24F119F3008F0B2E /* GlodBuleHTIndicatorView.m in Sources */,
 				32FFD29123A2267200E1661A /* UIImageView+GlodBuleHT.m in Sources */,
+				32184807260B1BFD008D836C /* YSNetworkInfoTool.m in Sources */,
 				32AC0CA525FB156D003B21FC /* HTHighLightsViewController.m in Sources */,
 				FEC116B82143D4A1002DB617 /* GlodBulePPXXBJBaseNavigationController.m in Sources */,
 				3288949D2603310900759311 /* NSString+URLCheck.m in Sources */,
@@ -2945,12 +3049,14 @@
 				32F1F2BE2514F7D700EE85B8 /* GlodBuleHTScoreViewCell.m in Sources */,
 				32F1F2C22514FB7C00EE85B8 /* GlodBuleLineChartUtil.m in Sources */,
 				FEC116B62143D4A1002DB617 /* GlodBuleBJBaseHTTPEngine.m in Sources */,
+				32184803260B1BFD008D836C /* YSAVViewController.m in Sources */,
 				328894BC2603310900759311 /* PLBaseViewController.m in Sources */,
 				FEC116782143D4A1002DB617 /* GlodBuleBJURINavHelper.m in Sources */,
 				FEAB2108216DD731002A05AB /* GlodBuleHTMatchDetailsModel.m in Sources */,
 				32AB7E6224F276230049B022 /* GlodBuleHTCompareView.m in Sources */,
 				FE81D15E21496B380047A4A2 /* GlodBuleHTDataHomeInfoModel.m in Sources */,
 				FE81D1622149716D0047A4A2 /* GlodBuleHTDataHomePlayerCell.m in Sources */,
+				3218480B260B1BFD008D836C /* YSPlayerControl.m in Sources */,
 				FE83FE542177838F006C714C /* GlodBuleHTMatchDataRightCell.m in Sources */,
 				FEDABE562173277D008C8AFD /* GlodBuleHTRankEastWestRequest.m in Sources */,
 				FEC116CB2143D4A1002DB617 /* UITextField+GlodBuleMQCustom.m in Sources */,
@@ -3016,11 +3122,13 @@
 				32FED82123AB768700D900A7 /* GlodBuleLMLandScapeControlView.m in Sources */,
 				FE6BD05B2144FDFD0090118A /* GlodBuleHTMatchWordLiveViewController.m in Sources */,
 				32CD877D22F4173800063A14 /* AppFunVideoDelegate.m in Sources */,
+				3218480C260B1BFD008D836C /* YSPlayerController.m in Sources */,
 				325A921D24F1637F008F0B2E /* GlodBuleHTLikeTeamModel.m in Sources */,
 				32C65DF02506771A0068D2C7 /* GlodBuleAccountModel.m in Sources */,
 				FEC116132143D4A1002DB617 /* GlodBuleLJViewPager.m in Sources */,
 				328894B82603310900759311 /* PLLiveViewController.m in Sources */,
 				32FED82923AB768700D900A7 /* GlodBuleLMVideoPlayer.m in Sources */,
+				32184808260B1BFD008D836C /* YSScreenBrightnessTool.m in Sources */,
 				326D67BF23A8DB9A00DDB443 /* GlodBuleWBImageBrowserView.m in Sources */,
 				FEDABE482171BC3A008C8AFD /* GlodBuleHTMatchQuarterCell.m in Sources */,
 				32FED82A23AB768700D900A7 /* GlodBuleLMPlayerManager.m in Sources */,
@@ -3035,12 +3143,14 @@
 				FE82BB4A2179B7E300C52C51 /* GlodBuleHTDataTeamRankModel.m in Sources */,
 				32642A5A22F027EB00D2DA1E /* TZPhotoPickerController+GlodBuleDRExtention.m in Sources */,
 				32C65DED250676AE0068D2C7 /* GlodBuleConfigCoreUtil.m in Sources */,
+				3221B416260AE5C700BE7394 /* PLPlayer.m in Sources */,
 				FEAC9F382199EA3A00159AE9 /* GlodBuleHTAboutUsViewController.m in Sources */,
 				FE6BD067214512EC0090118A /* GlodBuleHTNewsHomeRequest.m in Sources */,
 				FE6BD06A2145136F0090118A /* GlodBuleHTNewsModel.m in Sources */,
 				FE6BD08321457D7E0090118A /* GlodBuleHTNewsHeaderCell.m in Sources */,
 				32A51D6C2508DCC400603A36 /* GlodBuleSearchData.m in Sources */,
 				FEC115BD2143D4A0002DB617 /* GlodBulePPXXBJLaunchViewController.m in Sources */,
+				32184806260B1BFD008D836C /* YSVolumeTool.m in Sources */,
 				32CD877C22F4173800063A14 /* SkyAsynchronousViewController.m in Sources */,
 				328894BE2603310900759311 /* PLRootTabBarViewController.m in Sources */,
 				FEC116772143D4A1002DB617 /* GlodBuleBJWebViewController.m in Sources */,
@@ -3071,6 +3181,7 @@
 				FEDABE6221732A67008C8AFD /* GlodBuleHTRankZoneModel.m in Sources */,
 				FEC1168C2143D4A1002DB617 /* GlodBuleBJServiceConfigurator.m in Sources */,
 				FEC116C92143D4A1002DB617 /* NSObject+GlodBulenextresponder.m in Sources */,
+				32184804260B1BFD008D836C /* YSBatteryTool.m in Sources */,
 				FEC116082143D4A1002DB617 /* GlodBuleXJToastView.m in Sources */,
 				FEDF8FD72144B1CC005C7C4D /* GlodBuleHTMatchHomeRequest.m in Sources */,
 				32CD878022F4173800063A14 /* SkyFullScreenViewController.m in Sources */,
@@ -3092,6 +3203,7 @@
 				328894A12603310900759311 /* PLShortPlayerViewController.m in Sources */,
 				3288949F2603310900759311 /* NSObject+Auth.m in Sources */,
 				32E3E98024FD40E00076AD93 /* GlodBuleSearchViewController.m in Sources */,
+				3218480A260B1BFD008D836C /* YSPlayerView.m in Sources */,
 				FECCA5342258C8D0009EF494 /* GlodBuleHTUserInfoModel.m in Sources */,
 				FE6BD074214526980090118A /* GlodBuleHTNewsHomeCell.m in Sources */,
 				3238C62425F0BA3D0045F1B9 /* HTWordLive2Request.m in Sources */,
@@ -3245,6 +3357,194 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 7.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+					"-ObjC",
+					"-l\"SocialFacebook\"",
+					"-l\"SocialLine\"",
+					"-l\"c++\"",
+					"-l\"icucore\"",
+					"-l\"sqlite3\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"AppAuth\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"BlocksKit\"",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"Charts\"",
+					"-framework",
+					"\"CocoaLumberjack\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"FBLPromises\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"FBSDKShareKit\"",
+					"-framework",
+					"\"FIRAnalyticsConnector\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseAuth\"",
+					"-framework",
+					"\"FirebaseCore\"",
+					"-framework",
+					"\"FirebaseCoreDiagnostics\"",
+					"-framework",
+					"\"FirebaseCrashlytics\"",
+					"-framework",
+					"\"FirebaseInstallations\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GTMAppAuth\"",
+					"-framework",
+					"\"GTMSessionFetcher\"",
+					"-framework",
+					"\"GoogleAppMeasurement\"",
+					"-framework",
+					"\"GoogleDataTransport\"",
+					"-framework",
+					"\"GoogleMobileAds\"",
+					"-framework",
+					"\"GoogleSignIn\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"HMSegmentedControl\"",
+					"-framework",
+					"\"HexColors\"",
+					"-framework",
+					"\"IQKeyboardManager\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"JGProgressHUD\"",
+					"-framework",
+					"\"JXExtension\"",
+					"-framework",
+					"\"JavaScriptCore\"",
+					"-framework",
+					"\"LTNavigationBar\"",
+					"-framework",
+					"\"LineSDK\"",
+					"-framework",
+					"\"LocalAuthentication\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"MMMaterialDesignSpinner\"",
+					"-framework",
+					"\"Masonry\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"NJKWebViewProgress\"",
+					"-framework",
+					"\"Photos\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Reachability\"",
+					"-framework",
+					"\"RegExCategories\"",
+					"-framework",
+					"\"SDVersion\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SVGKit\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SecurityEnvSDK\"",
+					"-framework",
+					"\"SocketRocket\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TZImagePickerController\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UMCommon\"",
+					"-framework",
+					"\"UMCommonLog\"",
+					"-framework",
+					"\"UMDevice\"",
+					"-framework",
+					"\"UMPush\"",
+					"-framework",
+					"\"UMShare\"",
+					"-framework",
+					"\"UShareUI\"",
+					"-framework",
+					"\"UTDID\"",
+					"-framework",
+					"\"UserMessagingPlatform\"",
+					"-framework",
+					"\"UserNotifications\"",
+					"-framework",
+					"\"WebKit\"",
+					"-framework",
+					"\"WebViewJavascriptBridge\"",
+					"-framework",
+					"\"XCDYouTubeKit\"",
+					"-framework",
+					"\"YYModel\"",
+					"-framework",
+					"\"YYText\"",
+					"-framework",
+					"\"nanopb\"",
+					"-weak_framework",
+					"\"AdSupport\"",
+					"-weak_framework",
+					"\"AuthenticationServices\"",
+					"-weak_framework",
+					"\"JavaScriptCore\"",
+					"-weak_framework",
+					"\"SafariServices\"",
+					"-weak_framework",
+					"\"WebKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tbbl.onefit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = com.tbbl.onefit20201029;
@@ -3283,6 +3583,194 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 7.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+					"-ObjC",
+					"-l\"SocialFacebook\"",
+					"-l\"SocialLine\"",
+					"-l\"c++\"",
+					"-l\"icucore\"",
+					"-l\"sqlite3\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"AppAuth\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"BlocksKit\"",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"Charts\"",
+					"-framework",
+					"\"CocoaLumberjack\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"FBLPromises\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"FBSDKShareKit\"",
+					"-framework",
+					"\"FIRAnalyticsConnector\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseAuth\"",
+					"-framework",
+					"\"FirebaseCore\"",
+					"-framework",
+					"\"FirebaseCoreDiagnostics\"",
+					"-framework",
+					"\"FirebaseCrashlytics\"",
+					"-framework",
+					"\"FirebaseInstallations\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GTMAppAuth\"",
+					"-framework",
+					"\"GTMSessionFetcher\"",
+					"-framework",
+					"\"GoogleAppMeasurement\"",
+					"-framework",
+					"\"GoogleDataTransport\"",
+					"-framework",
+					"\"GoogleMobileAds\"",
+					"-framework",
+					"\"GoogleSignIn\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"HMSegmentedControl\"",
+					"-framework",
+					"\"HexColors\"",
+					"-framework",
+					"\"IQKeyboardManager\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"JGProgressHUD\"",
+					"-framework",
+					"\"JXExtension\"",
+					"-framework",
+					"\"JavaScriptCore\"",
+					"-framework",
+					"\"LTNavigationBar\"",
+					"-framework",
+					"\"LineSDK\"",
+					"-framework",
+					"\"LocalAuthentication\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"MMMaterialDesignSpinner\"",
+					"-framework",
+					"\"Masonry\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"NJKWebViewProgress\"",
+					"-framework",
+					"\"Photos\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Reachability\"",
+					"-framework",
+					"\"RegExCategories\"",
+					"-framework",
+					"\"SDVersion\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SVGKit\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SecurityEnvSDK\"",
+					"-framework",
+					"\"SocketRocket\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TZImagePickerController\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UMCommon\"",
+					"-framework",
+					"\"UMCommonLog\"",
+					"-framework",
+					"\"UMDevice\"",
+					"-framework",
+					"\"UMPush\"",
+					"-framework",
+					"\"UMShare\"",
+					"-framework",
+					"\"UShareUI\"",
+					"-framework",
+					"\"UTDID\"",
+					"-framework",
+					"\"UserMessagingPlatform\"",
+					"-framework",
+					"\"UserNotifications\"",
+					"-framework",
+					"\"WebKit\"",
+					"-framework",
+					"\"WebViewJavascriptBridge\"",
+					"-framework",
+					"\"XCDYouTubeKit\"",
+					"-framework",
+					"\"YYModel\"",
+					"-framework",
+					"\"YYText\"",
+					"-framework",
+					"\"nanopb\"",
+					"-weak_framework",
+					"\"AdSupport\"",
+					"-weak_framework",
+					"\"AuthenticationServices\"",
+					"-weak_framework",
+					"\"JavaScriptCore\"",
+					"-weak_framework",
+					"\"SafariServices\"",
+					"-weak_framework",
+					"\"WebKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tbbl.onefit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = com.tbbl.onefitI_dis_20201029;

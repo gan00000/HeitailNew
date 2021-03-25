@@ -5,7 +5,7 @@
 
 @class GlodBuleHTFilmHomeCell;
 
-@protocol PLLongMediaTableViewCellDelegate <NSObject>
+@protocol PlayerTableViewCellDelegate <NSObject>
 
 - (void)tableViewWillPlay:(GlodBuleHTFilmHomeCell *)cell;
 
@@ -17,17 +17,16 @@
 
 
 @interface GlodBuleHTFilmHomeCell : UITableViewCell
+
+@property (strong, nonatomic) id<PlayerTableViewCellDelegate> mPlayerTableViewCellDelegate;
+
 - (void)taosetupWithNewsModel:(GlodBuleHTNewsModel *)newsModel;
-
-@property (nonatomic, weak) id<PLLongMediaTableViewCellDelegate> delegate;
-
-@property (nonatomic, strong) PLMediaInfo *media;
++ (CGFloat)headerViewHeight;
 
 - (void)play;
 
 - (void)stop;
 
-- (void)configureVideo:(BOOL)enableRender;
+- (void)pause;
 
-+ (CGFloat)headerViewHeight;
 @end

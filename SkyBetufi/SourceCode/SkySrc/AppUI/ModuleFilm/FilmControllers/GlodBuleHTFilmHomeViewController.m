@@ -5,7 +5,7 @@
 #import "GlodBuleHTNewsHomeCell.h"
 #import "GlodBuleHTAdViewCell.h"
 
-@interface GlodBuleHTFilmHomeViewController ()<UITableViewDelegate, UITableViewDataSource, PLLongMediaTableViewCellDelegate, PLCodeViewControllerDelegate>
+@interface GlodBuleHTFilmHomeViewController ()<UITableViewDelegate, UITableViewDataSource, PlayerTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) GlodBuleHTFilmHomeRequest *request;
 @property (nonatomic, strong) NSArray *filmList;
@@ -24,8 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
-    [[AVAudioSession sharedInstance] setActive:YES error:nil];
+//    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+//    [[AVAudioSession sharedInstance] setActive:YES error:nil];
     
     [self setupViews];
     [self loadData];
@@ -39,27 +39,20 @@
     return self.isFullScreen;
 }
 
-- (void)onUIApplication:(BOOL)active {
-    if (self.playingCell) {
-        [self.playingCell configureVideo:active];
-    }
-}
-
 - (void)viewDidAppear:(BOOL)animated
 {
     NSLog(@"GlodBuleHTFilmHomeViewController viewDidAppear");
-    [self onUIApplication:YES];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
     NSLog(@"GlodBuleHTFilmHomeViewController viewDidDisappear");
-    [self stop];
-    [self onUIApplication:NO];
+    [self playerPause];
+
 }
 
-- (void)stop {
+- (void)playerPause {
     
     NSArray *array = [self.tableView visibleCells];
 
@@ -67,7 +60,7 @@
         
         if ([tempCell isKindOfClass:[GlodBuleHTFilmHomeCell class]]) {
             GlodBuleHTFilmHomeCell *xxTempCell = (GlodBuleHTFilmHomeCell *)tempCell;
-            [xxTempCell stop];//所有其他不播放的可见cell stop
+            [xxTempCell pause];//所有其他不播放的可见cell stop
         }
 //        [cell stop];
     }
@@ -99,7 +92,7 @@
     [playCell play];
 }
 
-#pragma mark - 播放器代理PLLongMediaTableViewCellDelegate
+#pragma mark - cell代理PlayerTableViewCellDelegate
 - (void)tableViewWillPlay:(GlodBuleHTFilmHomeCell *)cell {
     if (cell == self.playingCell) return;
     
@@ -108,7 +101,7 @@
         
         if (cell != tempCell && [tempCell isKindOfClass:[GlodBuleHTFilmHomeCell class]]) {
             GlodBuleHTFilmHomeCell *xxTempCell = (GlodBuleHTFilmHomeCell *)tempCell;
-            [xxTempCell stop];//所有其他不播放的可见cell stop
+            [xxTempCell pause];//所有其他不播放的可见cell stop
         }
     }
     self.playingCell = cell;
@@ -116,12 +109,12 @@
 
 - (void)tableViewCellEnterFullScreen:(GlodBuleHTFilmHomeCell *)cell {
     self.isFullScreen = YES;
-    [self setNeedsStatusBarAppearanceUpdate];
+//    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (void)tableViewCellExitFullScreen:(GlodBuleHTFilmHomeCell *)cell {
     self.isFullScreen = NO;
-    [self setNeedsStatusBarAppearanceUpdate];
+//    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 
@@ -160,7 +153,7 @@
     GlodBuleHTFilmHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTFilmHomeCell"];
     [cell taosetupWithNewsModel: model];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.delegate = self;
+    cell.mPlayerTableViewCellDelegate = self;
     cell.backgroundColor = [UIColor whiteColor];
 
     return cell;
@@ -240,7 +233,7 @@
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.estimatedRowHeight = 0;
+    self.tableView.estimatedRowHeight = 310;
     self.tableView.estimatedSectionFooterHeight = 0;
     self.tableView.estimatedSectionHeaderHeight = 0;
     [self.tableView registerNib:[UINib nibWithNibName:@"GlodBuleHTFilmHomeCell" bundle:nil]
@@ -316,6 +309,5 @@
     }
     return _request;
 }
-
 
 @end

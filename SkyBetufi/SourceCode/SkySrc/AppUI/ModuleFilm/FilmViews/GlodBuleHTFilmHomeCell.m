@@ -2,9 +2,9 @@
 #import <WebKit/WebKit.h>
 #import "GlodBuleLMVideoPlayer.h"
 #import "GlodBuleLMPlayerModel.h"
+#import "YSPlayerController.h"
 
-
-@interface GlodBuleHTFilmHomeCell () <WKNavigationDelegate, PLPlayerViewDelegate>
+@interface GlodBuleHTFilmHomeCell () <WKNavigationDelegate, YSPlayerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *webContentView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
@@ -17,31 +17,25 @@
 @property (weak, nonatomic) IBOutlet UIView *localPlayerView;
 
 //========
-@property (nonatomic, assign) BOOL isNeedReset;
-@property (nonatomic, strong) PLPlayerView *playerView;
+//@property (nonatomic, assign) BOOL isNeedReset;
+//@property (nonatomic, strong) PLPlayerView *playerView;
+//
+//@property (nonatomic, strong) GlodBuleLMVideoPlayer *ijkPlayer;
+
+@property (strong, nonatomic) YSPlayerController *playerController;
+@property (strong, nonatomic) UIView *playerView;
+@property (nonatomic, assign) BOOL fullScreen;
 
 @end
 @implementation GlodBuleHTFilmHomeCell
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    //[self.webContentView addSubview:self.webView];
-//    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.left.bottom.right.mas_equalTo(0);
-//    }];
+
     if ([GlodBuleHTNewsModel taocanShare]) {
         self.shareButtonContentView.hidden = NO;
     }
     self.viewCountLabel.hidden = YES;
-    
-//    self.contentView.backgroundColor = UIColor.whiteColor;
-    self.isNeedReset = YES;
-    self.playerView = [[PLPlayerView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200)];
-    self.playerView.delegate = self;
-    [_webContentView addSubview:self.playerView];
-    [self.playerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.trailing.top.bottom.mas_equalTo(_webContentView);
-    }];
     
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -58,9 +52,29 @@
     self.titleLabel.text = newsModel.title;
     self.timeLabel.text = newsModel.time;
     self.viewCountLabel.text = newsModel.view_count;
-    [self setMedia:newsModel.plMediaInfo];
+//    [self setMedia:newsModel.plMediaInfo];
+    
+    
+    //=======================
+    
+    [self.playerController shutdown];
+    [self.playerView removeFromSuperview];
+    self.playerController = nil;
+    
+    self.playerController = [[YSPlayerController alloc] initWithContentMediaInfo: newsModel.plMediaInfo];
+    self.playerController.delegate = self;
+    self.playerView = self.playerController.view;
+    [self.webContentView addSubview:self.playerView];
+    [self.playerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.webContentView);
+    }];
+    
+//    [self.playerController setMediaInfo:newsModel.plMediaInfo];
+//    [self play];
     
 }
+
+
 - (IBAction)onShareButtonTapped:(id)sender {
     [self.newsModel taoshare];
 }
@@ -87,40 +101,42 @@
     return (SCREEN_WIDTH - 10) * 310.0 / 375.0; // 375 320
 }
 
-- (void)setMedia:(PLMediaInfo *)media {
-    _media = media;
-    
-//    self.headerImageView.image = [UIImage imageNamed:media.headerImg];
-//    self.detailDescLabel.text = media.detailDesc;
-//    self.nameLabel.text = media.name;
-    self.playerView.media = media;
-}
-
 - (void)prepareForReuse {
-    [self stop];
+//    if (self.playerController) {
+//        [self.playerController shutdown];
+//    }
     [super prepareForReuse];
 }
 
-- (void)play {
-    [self.playerView play];
+- (void)play
+{
+    if (self.playerController) {
+        [self.playerController play];
+    }
 }
 
-- (void)stop {
-    [self.playerView stop];
+- (void)stop
+{
+    if (self.playerController) {
+        [self.playerController stop];
+    }
 }
 
-- (void)configureVideo:(BOOL)enableRender {
-    [self.playerView configureVideo:enableRender];
+- (void)pause
+{
+    if (self.playerController) {
+        [self.playerController pause];
+    }
 }
 
 
 #pragma mark -PLPlayerViewDelegate
-- (void)playerViewEnterFullScreen:(PLPlayerView *)playerView {
+- (void)playerViewEnterFullScreen{
     
     UIView *superView = [UIApplication sharedApplication].delegate.window.rootViewController.view;
     [self.playerView removeFromSuperview];
     
-    if (self.playerView.player.width < self.playerView.player.height) {
+    if (self.playerController.videoWidth < self.playerController.videoHeight) {
         
         [superView addSubview:self.playerView];
 //        superView.backgroundColor = UIColor.blackColor;
@@ -152,10 +168,10 @@
         [superView layoutIfNeeded];
     }];
     
-    [self.delegate tableViewCellEnterFullScreen:self];
+    [self.mPlayerTableViewCellDelegate tableViewCellEnterFullScreen:self];
 }
 
-- (void)playerViewExitFullScreen:(PLPlayerView *)playerView {
+- (void)playerViewExitFullScreen {
     
 //    UIView *superView = [UIApplication sharedApplication].delegate.window.rootViewController.view;
 //    superView.backgroundColor = UIColor.clearColor;
@@ -174,12 +190,50 @@
         [self layoutIfNeeded];
     }];
     
-    [self.delegate tableViewCellExitFullScreen:self];
-}
-
-- (void)playerViewWillPlay:(PLPlayerView *)playerView {
-    [self.delegate tableViewWillPlay:self];
+    [self.mPlayerTableViewCellDelegate tableViewCellExitFullScreen:self];
 }
 
 
+-(void)startPlay:(YSPlayerController *)playerController
+{
+    if (self.mPlayerTableViewCellDelegate) {
+        [self.mPlayerTableViewCellDelegate tableViewWillPlay:self];
+    }
+}
+
+#pragma mark - YSPlayerControllerDelegate
+
+- (void)playerControllerDidClickDone:(YSPlayerController *)playerController {
+    //[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)playerControllerDidClickFullScreen:(YSPlayerController *)playerController {
+    self.fullScreen = self.playerController.isFullScreen;
+    [self playerViewEnterFullScreen];
+}
+
+- (void)playerExitFullScreen:(YSPlayerController *)playerController
+{
+    [self playerViewExitFullScreen];
+}
+
+//- (void)viewWillLayoutSubviews {
+//    [super viewWillLayoutSubviews];
+//    if (self.playerController.isFullScreen) {
+//        self.playerController.view.frame = self.view.bounds;
+//    } else {
+//        self.playerController.view.frame = CGRectMake(0, [UIApplication sharedApplication].statusBarFrame.size.height, self.view.bounds.size.width, self.view.bounds.size.width * 9 / 16.0);
+//    }
+//}
+
+#pragma mark - Private methods
+
+#pragma mark - dealloc
+
+- (void)dealloc {
+    NSLog(@"%s", __func__);
+    if (self.playerController) {
+        [self.playerController shutdown];
+    }
+}
 @end
