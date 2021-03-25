@@ -246,6 +246,7 @@
         self.fullScreen = YES;
     }
     
+    self.playerView.playControl.portraitFullScreen = self.portFullScreening;
     self.playerView.playControl.fullScreen = self.fullScreen;
     
 //    self.fullScreen = !self.isFullScreen;

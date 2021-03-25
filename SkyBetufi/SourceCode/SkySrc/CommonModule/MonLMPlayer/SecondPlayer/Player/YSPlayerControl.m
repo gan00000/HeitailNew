@@ -96,6 +96,7 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 @synthesize fullScreen = _fullScreen;
 @synthesize playing = _playing;
 @synthesize prepareToPlay = _prepareToPlay;
+@synthesize portraitFullScreen = _portraitFullScreen;
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -333,6 +334,7 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     [self resetTimer];
     if ([self.delegate respondsToSelector:@selector(fullScreen)]) {
         [self.delegate fullScreen];
+        [self toggleBarImmediately:YES];
     }
 }
 
@@ -374,15 +376,17 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     
 }
 
-- (void)setFullScreen:(BOOL)fullScreen {
+- (void)setFullScreen:(BOOL)fullScreen{
     _fullScreen = fullScreen;
+//    self.portraitFullScreen = portraitFullScreen;
+    
     NSString *img = fullScreen ? @"player-small-screen" : @"player-full-screen";
     [self.fullScreenBtn setImage:[UIImage imageNamed:img] forState:UIControlStateNormal];
 //    self.statusBar.hidden = fullScreen ? NO : YES;
     if (fullScreen) {
         
         [self addPanGesture];
-        if ([GlodBuleBJUtility isIPhoneXSeries]) {
+        if (!self.portraitFullScreen && [GlodBuleBJUtility isIPhoneXSeries]) {
             self.playBtnLeadingConstraint.constant = 50;
             self.fullScreenTralingConstraint.constant = 50;
         }
@@ -404,6 +408,11 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     } else {
         [self.activityIndicatorView startAnimating];
     }
+}
+
+- (void)setPortraitFullScreen:(BOOL)portraitFullScreen
+{
+    _portraitFullScreen = portraitFullScreen;
 }
 
 #pragma mark - Private methods
@@ -541,16 +550,27 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     self.volumeProgressView.progress = volume;
 }
 
-// 隐藏或显示toolBar和navBar
-- (void)toggleBar {
+//是否立刻隐藏
+- (void)toggleBarImmediately:(BOOL)immediately {
+    
     self.hideBar = !self.isHideBar;
     self.navBarTopConstraint.constant = self.hideBar ? -NAV_BAR_HEIGHT : 0;
-    self.toolBarBottomConstraint.constant = self.hideBar ? -TOOL_BAR_HEIGHT : 0;
-    [UIView animateWithDuration:0.5 animations:^{
+    
+    if (self.portraitFullScreen) {
+        self.toolBarBottomConstraint.constant = self.hideBar ? -TOOL_BAR_HEIGHT : 20;
+    }else{
+        self.toolBarBottomConstraint.constant = self.hideBar ? -TOOL_BAR_HEIGHT : 0;
+    }
+   
+    if (immediately) {
         [self layoutIfNeeded];
-    } completion:^(BOOL finished) {
-        
-    }];
+    }else{
+        [UIView animateWithDuration:0.5 animations:^{
+            [self layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
     
     if (self.hideBar) {
         self.rePlayBtn.hidden = YES;
@@ -570,6 +590,11 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     } else {
         [self resetTimer];
     }
+    
+}
+// 隐藏或显示toolBar和navBar
+- (void)toggleBar {
+    [self toggleBarImmediately:NO];
 }
 
 // 格式化时间

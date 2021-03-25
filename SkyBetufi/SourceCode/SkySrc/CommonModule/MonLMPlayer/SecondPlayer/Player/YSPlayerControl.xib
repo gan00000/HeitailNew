@@ -191,10 +191,10 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9z1-74-LKo" userLabel="playButton">
-                    <rect key="frame" x="423" y="182" width="50" height="50"/>
+                    <rect key="frame" x="413" y="172" width="70" height="70"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="glM-H5-GTf"/>
-                        <constraint firstAttribute="width" constant="50" id="z8f-dU-O0L"/>
+                        <constraint firstAttribute="height" constant="70" id="glM-H5-GTf"/>
+                        <constraint firstAttribute="width" constant="70" id="z8f-dU-O0L"/>
                     </constraints>
                     <state key="normal" image="play_Image"/>
                     <connections>
@@ -202,10 +202,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyl-bU-WaS" userLabel="pauseButton">
-                    <rect key="frame" x="423" y="182" width="50" height="50"/>
+                    <rect key="frame" x="413" y="172" width="70" height="70"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="50" id="TK8-wh-uZf"/>
-                        <constraint firstAttribute="height" constant="50" id="vPF-c3-LWh"/>
+                        <constraint firstAttribute="width" constant="70" id="TK8-wh-uZf"/>
+                        <constraint firstAttribute="height" constant="70" id="vPF-c3-LWh"/>
                     </constraints>
                     <state key="normal" image="player-pause"/>
                     <connections>
