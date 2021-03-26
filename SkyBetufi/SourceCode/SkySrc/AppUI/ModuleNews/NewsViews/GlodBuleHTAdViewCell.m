@@ -13,7 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet GADBannerView *thAdView;
 
-
+@property (assign, nonatomic) BOOL isRequestAd;
 @end
 
 @implementation GlodBuleHTAdViewCell
@@ -21,12 +21,18 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.isRequestAd = NO;
 }
 
 -(void) requestAd:(UIViewController *)viewController{
     
+    if (self.isRequestAd) {
+        return;
+    }
+    self.isRequestAd = YES;
     self.thAdView.adUnitID = @"ca-app-pub-4059643053601138/5503853759";
     self.thAdView.rootViewController = viewController;
+//    [self.thAdView setAutoloadEnabled:YES];
     [self.thAdView loadRequest:[GADRequest request]];
 }
 
