@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSTimer *timer;
 @property (assign, nonatomic, getter=isFullScreen) BOOL fullScreen;
 @property (strong, nonatomic) PLMediaInfo *pLMediaInfo;
+@property (assign, nonatomic) BOOL isShutdown;
 
 @end
 
@@ -63,6 +64,13 @@
     
 //    [self shutdown];
     
+    if (self.player && !self.isShutdown) {
+        [self play];
+        return;
+    }
+    
+    self.isShutdown = NO;
+    
     IJKFFOptions *options = [IJKFFOptions optionsByDefault];
     
     [options setOptionIntValue:IJK_AVDISCARD_DEFAULT forKey:@"skip_frame" ofCategory:kIJKFFOptionCategoryCodec];
@@ -102,15 +110,27 @@
     //获得文件的后缀名 （不带'.'）
 //    NSString *suffix = [filePath pathExtension];
     
+    NSString *fileDir = [cachesDir stringByAppendingPathComponent:@"thMovies"];
+    NSString *fileCacheName = [[fileDir stringByAppendingPathComponent:fileNameNoExtension] stringByAppendingPathExtension:@"temp"];
     
-    NSString *fileCacheName = [[[cachesDir stringByAppendingPathComponent:@"thMovies"] stringByAppendingPathComponent:fileNameNoExtension] stringByAppendingPathExtension:@"temp"];
+    NSString *fileCacheNameMap = [[fileDir stringByAppendingPathComponent:fileNameNoExtension] stringByAppendingPathExtension:@"mapTemp"];
+    NSLog(@"fileCacheName = %@",fileCacheName);
     
-    NSString *fileCacheNameMap = [[[cachesDir stringByAppendingPathComponent:@"thMovies"] stringByAppendingPathComponent:fileNameNoExtension] stringByAppendingPathExtension:@"mapTemp"];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+     BOOL isDir = YES;
+    // fileExistsAtPath 判断一个文件或目录是否有效，isDirectory判断是否一个目录
+    BOOL existed = [fileManager fileExistsAtPath:fileDir isDirectory:&isDir];
+
+    if (!existed) {
+         // 在 Document 目录下创建一个 head 目录
+        NSLog(@"创建缓存中间目录");
+        [fileManager createDirectoryAtPath:fileDir withIntermediateDirectories:YES attributes:nil error:nil];
+    }
     
     [options setOptionValue:fileCacheName forKey:@"cache_file_path" ofCategory:(kIJKFFOptionCategoryFormat)];
     [options setOptionValue:fileCacheNameMap forKey:@"cache_map_path" ofCategory:(kIJKFFOptionCategoryFormat)];
-    [options setOptionValue:@"1" forKey:@"parse_cache_map" ofCategory:(kIJKFFOptionCategoryFormat)];
-    [options setOptionValue:@"1" forKey:@"auto_save_map" ofCategory:(kIJKFFOptionCategoryFormat)];
+    [options setOptionIntValue:1 forKey:@"parse_cache_map" ofCategory:(kIJKFFOptionCategoryFormat)];
+    [options setOptionIntValue:1 forKey:@"auto_save_map" ofCategory:(kIJKFFOptionCategoryFormat)];
     
     NSString *cache_filePath = [NSString stringWithFormat:@"ijkio:cache:ffio:%@",filePath];
     self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString: cache_filePath] withOptions:options];
@@ -180,8 +200,10 @@
     } else {
         [self.player play];
     }
+    [self resetTimer];
     self.playerView.playControl.playing = self.player.isPlaying;
     [self.delegate startPlay:self];
+    
 }
 
 - (void)stop {
@@ -205,7 +227,9 @@
     self.playerView.thumbView.hidden = NO;
     [self.playerView.playControl playbackShutDown];
     [self removeNotifications];
-    
+    self.fullScreen = NO;
+    self.isShutdown = YES;
+    self.player = nil;
 }
 
 - (void)progressChangeStart {
@@ -422,9 +446,9 @@
     [self.playerView.playControl setPlayTime:self.player.currentPlaybackTime
                                    totalTime:self.player.duration];
     
-    NSLog(@"self.player.bufferingProgress = %d", self.player.bufferingProgress);
-    NSLog(@"self.player.numberOfBytesTransferred = %ld", self.player.numberOfBytesTransferred);
-    NSLog(@"self.player.playableDuration = %ld", (NSInteger)self.player.playableDuration);
+//    NSLog(@"self.player.bufferingProgress = %d", self.player.bufferingProgress);
+//    NSLog(@"self.player.numberOfBytesTransferred = %ld", self.player.numberOfBytesTransferred);
+//    NSLog(@"self.player.playableDuration = %ld", (NSInteger)self.player.playableDuration);
     
 }
 

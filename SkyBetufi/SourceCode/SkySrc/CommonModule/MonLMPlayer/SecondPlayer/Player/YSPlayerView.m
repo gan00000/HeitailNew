@@ -117,7 +117,7 @@
 {
 //    [self.thumbView removeFromSuperview];//删除封面图片
     
-    [self.thumbPlayBtn removeFromSuperview];
+//    [self.thumbPlayBtn removeFromSuperview];
     self.thumbView.hidden = YES;
     [self addSubview:(UIView *)self.playControl];
     // 添加约束
