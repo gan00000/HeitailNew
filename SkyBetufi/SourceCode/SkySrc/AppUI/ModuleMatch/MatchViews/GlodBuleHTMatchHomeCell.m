@@ -1,6 +1,8 @@
 #import "GlodBuleHTMatchHomeCell.h"
 #import <WebKit/WebKit.h>
 #import "UIImageView+GlodBuleSVG.h"
+#import "GlodBuleConfigCoreUtil.h"
+
 @interface GlodBuleHTMatchHomeCell () <WKNavigationDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *homeTeamNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *homeTeamLogo;
@@ -73,6 +75,11 @@
 //        UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(startPlay)];
 //        self.backPlayView.userInteractionEnabled = YES;
 //        [self.backPlayView addGestureRecognizer:tapGes];
+        if ([self showPlayback]) {//比赛结束6小时候显示
+            self.backPlayView.hidden = NO;
+        }else{
+            self.backPlayView.hidden = YES;
+        }
         
     } else if ([matchModel.scheduleStatus isEqualToString:@"InProgress"]) {
         if (matchModel.quarter.length > 0) {
@@ -105,5 +112,18 @@
         // Fallback on earlier versions
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:webUrl]];
     }
+}
+
+-(BOOL)showPlayback
+{
+    NSString *timeStr = [NSString stringWithFormat:@"%@ %@",self.matchModel.gamedate, [self.matchModel.time uppercaseString]];
+    NSString *timeStamp = [GlodBuleConfigCoreUtil getTimeStrWithString: timeStr];
+    
+    double now_timestamp = [[GlodBuleConfigCoreUtil getTimeStamp] doubleValue];
+    double game_timestamp = [timeStamp doubleValue];
+    if (now_timestamp - game_timestamp > 6 * 60 * 60 * 1000) { //游戏未开始
+        return YES;
+    }
+    return NO;
 }
 @end
