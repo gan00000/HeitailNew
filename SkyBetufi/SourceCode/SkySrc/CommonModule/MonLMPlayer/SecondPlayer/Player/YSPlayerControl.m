@@ -128,7 +128,7 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     // 获取电池信息
 //    [self loadBatteryInfo];
     // 开启获取系统时间timer
-    [self startTimeTimer];
+//    [self startTimeTimer];
     // 添加MPVolumeView
     [self addMPVolumeView];
 }
@@ -156,6 +156,12 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     self.playTimeLbl.text = @"00:00";
     self.rePlayBtn.hidden = NO;
     self.rePauseBtn.hidden = YES;
+}
+
+- (void)playbackShutDown{
+    [self invalidTimer];
+    [self invalidTimeTimer];
+    [self removeFromSuperview];
 }
 
 #pragma mark - Event response

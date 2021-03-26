@@ -20,8 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @property (strong, nonatomic) UIView *thumbView;
-@property (strong, nonatomic) UIImageView *thumbImageView;
-@property (strong, nonatomic) UIButton *thumbPlayBtn;
 
 @end
 

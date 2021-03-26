@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithContentMediaInfo:(PLMediaInfo *)mPLMediaInfo;
 -(void)setMediaInfo:(PLMediaInfo *)mPLMediaInfo;
-
+//-(void) initPlayAndPrepareToPlay;
 
 - (void)shutdown;
 

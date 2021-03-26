@@ -3,6 +3,7 @@
 #import "GlodBuleLMVideoPlayer.h"
 #import "GlodBuleLMPlayerModel.h"
 #import "YSPlayerController.h"
+#import "UIImageView+GlodBuleHT.h"
 
 @interface GlodBuleHTFilmHomeCell () <WKNavigationDelegate, YSPlayerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *webContentView;
@@ -23,8 +24,12 @@
 //@property (nonatomic, strong) GlodBuleLMVideoPlayer *ijkPlayer;
 
 @property (strong, nonatomic) YSPlayerController *playerController;
-@property (strong, nonatomic) UIView *playerView;
+@property (weak, nonatomic) UIView *playerView;
 @property (nonatomic, assign) BOOL fullScreen;
+
+//@property (strong, nonatomic) UIView *thumbView;
+//@property (strong, nonatomic) UIImageView *thumbImageView;
+//@property (strong, nonatomic) UIButton *thumbPlayBtn;
 
 @end
 @implementation GlodBuleHTFilmHomeCell
@@ -36,12 +41,56 @@
 //        self.shareButtonContentView.hidden = NO;
 //    }
     self.shareButtonContentView.hidden = NO;
-//    self.viewCountLabel.hidden = YES;
+    
+//    self.thumbView = [[UIView alloc] init];
+//    self.thumbView.backgroundColor = UIColor.blackColor;
+//    [self.webContentView addSubview:self.thumbView];
+//    [self.thumbView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.leading.trailing.top.bottom.equalTo(self.webContentView);
+//    }];
+//
+//    self.thumbImageView = [[UIImageView alloc] init];
+//    self.thumbImageView.contentMode =  UIViewContentModeScaleAspectFit;
+//    [self.thumbView addSubview:self.thumbImageView];
+//    [self.thumbImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.leading.trailing.top.bottom.equalTo(self.thumbView);
+//    }];
+//
+//    [self.thumbView addSubview:self.thumbPlayBtn];
+//    [self.thumbPlayBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.width.height.mas_equalTo(50);
+//        make.center.mas_equalTo(self.thumbView);
+//    }];
+    
+    [self addPlayerView];
     
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 }
+
+-(void) addPlayerView
+{
+    self.playerController = [[YSPlayerController alloc] initWithContentMediaInfo: self.newsModel.plMediaInfo];
+    self.playerController.delegate = self;
+    self.playerController.needPortFullScreen = YES;
+    UIView *playerView = self.playerController.view;
+    [self.webContentView addSubview:playerView];
+    [playerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.webContentView);
+    }];
+}
+
+//- (UIButton *)thumbPlayBtn {
+//    if (!_thumbPlayBtn) {
+//        _thumbPlayBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//        //_downloadButton.frame = CGRectMake(SCREEN_WIDTH - 100, 0, HeightForTopView, HeightForTopView);
+//        [_thumbPlayBtn setImage:[UIImage imageNamed:@"play_Image"] forState:UIControlStateNormal];
+//        [_thumbPlayBtn addTarget:self action:@selector(initPlayerAndPrepareToPlay) forControlEvents:UIControlEventTouchUpInside];
+//    }
+//    return _thumbPlayBtn;
+//}
+
 - (void)taosetupWithNewsModel:(GlodBuleHTNewsModel *)newsModel {
     if (!newsModel) {
         return;
@@ -54,26 +103,7 @@
     self.timeLabel.text = [NSString stringWithFormat:@"%d", newsModel.total_comment];
     
     self.viewCountLabel.text = [NSString stringWithFormat:@"%d", newsModel.total_save];
-//    [self setMedia:newsModel.plMediaInfo];
-    
-    
-    //=======================
-    
-    [self.playerController shutdown];
-    [self.playerView removeFromSuperview];
-    self.playerController = nil;
-    
-    self.playerController = [[YSPlayerController alloc] initWithContentMediaInfo: newsModel.plMediaInfo];
-    self.playerController.delegate = self;
-    self.playerController.needPortFullScreen = YES;
-    self.playerView = self.playerController.view;
-    [self.webContentView addSubview:self.playerView];
-    [self.playerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self.webContentView);
-    }];
-    
-//    [self.playerController setMediaInfo:newsModel.plMediaInfo];
-//    [self play];
+    [self.playerController setMediaInfo:newsModel.plMediaInfo];
     
 }
 
@@ -105,11 +135,12 @@
 }
 
 - (void)prepareForReuse {
-//    if (self.playerController) {
-//        [self.playerController shutdown];
-//    }
+    if (self.playerController) {
+        [self.playerController shutdown];
+    }
     [super prepareForReuse];
 }
+
 
 - (void)play
 {
@@ -133,9 +164,8 @@
 }
 
 
-#pragma mark -PLPlayerViewDelegate
-- (void)playerViewEnterFullScreen{
-    
+- (void)playerViewEnterFullScreen:(YSPlayerController *)playerController{
+    self.playerView = playerController.view;
     UIView *superView = [UIApplication sharedApplication].delegate.window.rootViewController.view;
     [self.playerView removeFromSuperview];
     
@@ -174,11 +204,9 @@
     [self.mPlayerTableViewCellDelegate tableViewCellEnterFullScreen:self];
 }
 
-- (void)playerViewExitFullScreen {
+- (void)playerViewExitFullScreen:(YSPlayerController *)playerController {
     
-//    UIView *superView = [UIApplication sharedApplication].delegate.window.rootViewController.view;
-//    superView.backgroundColor = UIColor.clearColor;
-    
+    self.playerView = playerController.view;
     [self.playerView removeFromSuperview];
     [self.webContentView addSubview:self.playerView];
     
@@ -212,12 +240,13 @@
 
 - (void)playerControllerDidClickFullScreen:(YSPlayerController *)playerController {
     self.fullScreen = self.playerController.isFullScreen;
-    [self playerViewEnterFullScreen];
+    [self playerViewEnterFullScreen:playerController];
 }
 
 - (void)playerExitFullScreen:(YSPlayerController *)playerController
 {
-    [self playerViewExitFullScreen];
+    self.fullScreen = self.playerController.isFullScreen;
+    [self playerViewExitFullScreen:playerController];
 }
 
 //- (void)viewWillLayoutSubviews {

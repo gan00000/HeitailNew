@@ -61,7 +61,7 @@
 - (void)initPlayAndPrepareToPlay
 {
     
-    [self shutdown];
+//    [self shutdown];
     
     IJKFFOptions *options = [IJKFFOptions optionsByDefault];
     
@@ -153,6 +153,7 @@
         [self.player play];
         self.playerView.thumbView.hidden = YES;
         [self.delegate startPlay:self];
+        [self resetTimer];
     }
     self.playerView.playControl.playing = self.player.isPlaying;
 }
@@ -195,14 +196,16 @@
 
 - (void)shutdown {
     
-    if (!self.player) {
-        return;
-    }
     [self stop];
     [self.player shutdown];
+    
+    [self invalidTimer];
     self.playerView.playControl.playing = self.player.isPlaying;
     [self.player.view removeFromSuperview];
     self.playerView.thumbView.hidden = NO;
+    [self.playerView.playControl playbackShutDown];
+    [self removeNotifications];
+    
 }
 
 - (void)progressChangeStart {
@@ -211,7 +214,7 @@
         return;
     }
     [self invalidTimer];
-    [self.player pause];
+    [self pause];
 }
 
 - (void)didChangeProgress:(CGFloat)progress {
@@ -231,7 +234,7 @@
     }
     
     [self resetTimer];
-    [self.player play];
+    [self play];
 }
 
 - (void)fullScreen {

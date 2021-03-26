@@ -17,17 +17,18 @@
 @property (strong, nonatomic) id<YSPlayerControlProtocol> playControl; //playControlView;
 //@property (strong, nonatomic) id<YSPlayerControlDelegate> mYSPlayerControlDelegate;
 
-
+@property (strong, nonatomic) UIImageView *thumbImageView;
+@property (strong, nonatomic) UIButton *thumbPlayBtn;
 @end
 
 @implementation YSPlayerView
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
-        [self setupUI];
-    }
-    return self;
-}
+//- (instancetype)initWithFrame:(CGRect)frame {
+//    if (self = [super initWithFrame:frame]) {
+//        [self setupUI];
+//    }
+//    return self;
+//}
 
 - (instancetype)init
 {
@@ -43,7 +44,7 @@
     if (!url || [url isEqualToString:@""]) {
         return;
     }
-    [self.thumbImageView th_setImageWithURL:url placeholderImage:nil];
+    [self.thumbImageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:nil];
 }
 
 #pragma mark - Private methods
