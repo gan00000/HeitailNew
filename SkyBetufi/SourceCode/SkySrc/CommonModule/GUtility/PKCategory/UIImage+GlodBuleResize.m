@@ -159,4 +159,52 @@
     CGImageRelease(newImageRef);
     return newImage;
 }
+
+-(UIImage*)scaleToSize:(CGSize)size
+{
+    // 创建一个bitmap的context
+    // 并把它设置成为当前正在使用的context
+    UIGraphicsBeginImageContext(size);
+    // 绘制改变大小的图片
+    [self drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    // 从当前context中创建一个改变大小后的图片
+    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    // 使当前的context出堆栈
+    UIGraphicsEndImageContext();
+    // 返回新的改变大小后的图片
+    return scaledImage;
+}
+
+/**
+ *从图片中按指定的位置大小截取图片的一部分
+ * UIImage image 原始的图片
+ * CGRect rect 要截取的区域
+ */
+-(UIImage *)clipImageInRect:(CGRect)rect{
+    
+    //将UIImage转换成CGImageRef
+    CGImageRef sourceImageRef = [self CGImage];
+
+    //按照给定的矩形区域进行剪裁
+    CGImageRef newImageRef = CGImageCreateWithImageInRect(sourceImageRef, rect);
+
+    //将CGImageRef转换成UIImage
+    UIImage *newImage = [UIImage imageWithCGImage:newImageRef];
+
+    CGImageRelease(newImageRef);
+
+    //返回剪裁后的图片
+    return newImage;
+    
+//    CGImageRef subImageRef = CGImageCreateWithImageInRect(self.CGImage, rect);
+//        CGRect smallBounds = CGRectMake(0, 0, CGImageGetWidth(subImageRef), CGImageGetHeight(subImageRef));
+//
+//        UIGraphicsBeginImageContext(smallBounds.size);
+//        CGContextRef context = UIGraphicsGetCurrentContext();
+//        CGContextDrawImage(context, smallBounds, subImageRef);
+//        UIImage* smallImage = [UIImage imageWithCGImage:subImageRef];
+//        UIGraphicsEndImageContext();
+//    return smallImage;
+}
+
 @end

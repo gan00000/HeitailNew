@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface YSPlayerView : UIView
 
 -(void) setThumbWithUrl:(NSString *)url;
+
+-(void) setBgImage:(UIImage *)mUIImage videoWidth:(CGFloat) w videoHeight:(CGFloat)h;
+
 @property (strong, nonatomic, readonly) id<YSPlayerControlProtocol> playControl;
 
 @property (strong, nonatomic) id<YSPlayerControlDelegate> mYSPlayerControlDelegate;

@@ -11,12 +11,15 @@
 #import "UIView+GlodBuleBlockGesture.h"
 #import "YSPlayerControlDelegate.h"
 #import "UIImageView+GlodBuleHT.h"
+#import <Accelerate/Accelerate.h>
+#import "UIImage+GlodBuleResize.h"
 
 @interface YSPlayerView ()
 
 @property (strong, nonatomic) id<YSPlayerControlProtocol> playControl; //playControlView;
 //@property (strong, nonatomic) id<YSPlayerControlDelegate> mYSPlayerControlDelegate;
 
+@property (strong, nonatomic) UIImageView *videoBgImageView;
 @property (strong, nonatomic) UIImageView *thumbImageView;
 @property (strong, nonatomic) UIButton *thumbPlayBtn;
 @end
@@ -45,13 +48,47 @@
         return;
     }
     [self.thumbImageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:nil];
+    
+//    [self.videoBgImageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:nil];
+}
+
+-(void) setBgImage:(UIImage *)mUIImage videoWidth:(CGFloat) w videoHeight:(CGFloat)h{
+    if (mUIImage) {
+        
+//       CGFloat centeryY = mUIImage.size.height * mUIImage.scale / 2;
+//        CGFloat centeryX = mUIImage.size.width * mUIImage.scale / 2;
+//
+//        xWidth = mUIImage.size.height;
+//        CGFloat xWidth = w / h * mUIImage.size.height;
+//
+//        UIImage *clipUIImage = [mUIImage clipImageInRect:CGRectMake(centeryX - (xWidth/2), 0, xWidth, mUIImage.size.height)];
+       
+//        UIImage *resizeUIImage = [mUIImage resizedImage:CGSizeMake(500, 500) interpolationQuality:(kCGInterpolationLow)];
+//
+//        UIImage *resizeUIImage = [mUIImage scaleToSize:self.videoBgImageView.layer.frame.size];
+        
+//        UIImage *xUIImage = [self boxblurImage:resizeUIImage withBlurNumber:1];
+//        [self.videoBgImageView setImage:clipUIImage];
+    }
+    
 }
 
 #pragma mark - Private methods
 
 - (void)setupUI {
-    self.backgroundColor = [UIColor blackColor];
-
+ 
+    self.backgroundColor = UIColor.brownColor;
+    
+    self.videoBgImageView = [[UIImageView alloc] init];
+    self.videoBgImageView.contentMode =  UIViewContentModeScaleAspectFill;
+    self.videoBgImageView.backgroundColor = [UIColor redColor];
+    self.videoBgImageView.clipsToBounds = YES;
+    self.videoBgImageView.alpha = 0.7;
+    [self addSubview:self.videoBgImageView];
+    [self.videoBgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.top.bottom.equalTo(self);
+    }];
+   
     self.thumbView = [[UIView alloc] init];
     [self addSubview:self.thumbView];
     [self.thumbView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -136,4 +173,61 @@
     NSLog(@"%s", __func__);
 }
 
++(UIImage *)coreBlurImage:(UIImage *)image withBlurNumber:(CGFloat)blur
+{
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CIImage *inputImage= [CIImage imageWithCGImage:image.CGImage];
+    //设置filter
+    CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur"];
+    [filter setValue:inputImage forKey:kCIInputImageKey]; [filter setValue:@(blur) forKey: @"inputRadius"];
+    //模糊图片
+    CIImage *result=[filter valueForKey:kCIOutputImageKey];
+    CGImageRef outImage=[context createCGImage:result fromRect:[result extent]];
+    UIImage *blurImage=[UIImage imageWithCGImage:outImage];
+    CGImageRelease(outImage);
+    return blurImage;
+}
+
+-(UIImage *)boxblurImage:(UIImage *)image withBlurNumber:(CGFloat)blur
+ {
+     if (blur < 0.f || blur > 1.f) {
+        blur = 0.5f;
+     }
+     int boxSize = (int)(blur * 40);
+     boxSize = boxSize - (boxSize % 2) + 1;
+     CGImageRef img = image.CGImage;
+     vImage_Buffer inBuffer, outBuffer;
+     vImage_Error error;
+     void *pixelBuffer;
+     //从CGImage中获取数据
+     CGDataProviderRef inProvider = CGImageGetDataProvider(img);
+     CFDataRef inBitmapData = CGDataProviderCopyData(inProvider);
+     //设置从CGImage获取对象的属性
+     inBuffer.width = CGImageGetWidth(img);
+     inBuffer.height = CGImageGetHeight(img);
+     inBuffer.rowBytes = CGImageGetBytesPerRow(img);
+     inBuffer.data = (void*)CFDataGetBytePtr(inBitmapData);
+     pixelBuffer = malloc(CGImageGetBytesPerRow(img) * CGImageGetHeight(img));
+     if(pixelBuffer == NULL)
+         NSLog(@"No pixelbuffer");
+     outBuffer.data = pixelBuffer;
+     outBuffer.width = CGImageGetWidth(img);
+     outBuffer.height = CGImageGetHeight(img);
+     outBuffer.rowBytes = CGImageGetBytesPerRow(img);
+     error = vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
+     if (error) {
+           NSLog(@"error from convolution %ld", error);
+     }
+     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+     CGContextRef ctx = CGBitmapContextCreate( outBuffer.data, outBuffer.width, outBuffer.height, 8, outBuffer.rowBytes, colorSpace, kCGImageAlphaNoneSkipLast);
+     CGImageRef imageRef = CGBitmapContextCreateImage (ctx);
+     UIImage *returnImage = [UIImage imageWithCGImage:imageRef];
+     //clean up CGContextRelease(ctx);
+     CGColorSpaceRelease(colorSpace);
+     free(pixelBuffer);
+     CFRelease(inBitmapData);
+     CGColorSpaceRelease(colorSpace);
+     CGImageRelease(imageRef);
+     return returnImage;
+}
 @end

@@ -21,6 +21,7 @@
 @property (strong, nonatomic) PLMediaInfo *pLMediaInfo;
 @property (assign, nonatomic) BOOL isShutdown;
 
+@property (assign, nonatomic) NSUInteger count;
 @end
 
 @implementation YSPlayerController
@@ -134,18 +135,19 @@
     
     NSString *cache_filePath = [NSString stringWithFormat:@"ijkio:cache:ffio:%@",filePath];
     self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString: cache_filePath] withOptions:options];
-    self.player.scalingMode = IJKMPMovieScalingModeAspectFit;
+//    self.player.scalingMode = IJKMPMovieScalingModeAspectFit;
     self.player.playbackRate = 1.0;
     
     self.player.shouldAutoplay = YES;
     [self.player setScalingMode:IJKMPMovieScalingModeAspectFit];
     [self.player prepareToPlay];
     
-    [self.playerView insertSubview:self.player.view atIndex:0];
+    self.player.view.backgroundColor = UIColor.clearColor;
+    [self.playerView insertSubview:self.player.view atIndex:1];
     // 添加约束
     [self addContraints];
     // 重置timer
-    [self resetTimer];
+//    [self resetTimer];
     // 添加通知
     [self addNotifications];
     
@@ -168,14 +170,17 @@
         return;
     }
     if (self.player.isPlaying) {
-        [self.player pause];
+        //[self.player pause];
+        [self pause];
     } else {
-        [self.player play];
-        self.playerView.thumbView.hidden = YES;
-        [self.delegate startPlay:self];
-        [self resetTimer];
+//        [self.player play];
+//        self.playerView.thumbView.hidden = YES;
+//        [self.delegate startPlay:self];
+//        [self resetTimer];
+        [self play];
     }
-    self.playerView.playControl.playing = self.player.isPlaying;
+//    self.playerView.playControl.playing = self.player.isPlaying;
+    
 }
 
 - (void)pause {
@@ -200,7 +205,8 @@
     } else {
         [self.player play];
     }
-    [self resetTimer];
+    self.playerView.thumbView.hidden = YES;
+//    [self resetTimer];
     self.playerView.playControl.playing = self.player.isPlaying;
     [self.delegate startPlay:self];
     
@@ -257,7 +263,7 @@
         return;
     }
     
-    [self resetTimer];
+//    [self resetTimer];
     [self play];
 }
 
@@ -344,12 +350,33 @@
     NSLog(@"self.player 加载状态改变了 handleLoadStateDidChangeNotification");
     IJKMPMovieLoadState loadState = self.player.loadState;
     self.playerView.playControl.prepareToPlay = (loadState & IJKMPMovieLoadStatePlaythroughOK) != 0 || (loadState & IJKMPMovieLoadStatePlayable) != 0;
+    
+    if ((loadState & IJKMPMovieLoadStatePlaythroughOK) != 0) {
+        // 加载完成，即将播放，停止加载的动画，并将其移除
+        NSLog(@"加载完成, 自动播放了 LoadStateDidChange: IJKMovieLoadStatePlayThroughOK: %d\n",(int)loadState);
+      
+    }else if ((loadState & IJKMPMovieLoadStateStalled) != 0) {//停滞不前
+        // 可能由于网速不好等因素导致了暂停，重新添加加载的动画
+        NSLog(@"自动暂停了，loadStateDidChange: IJKMPMovieLoadStateStalled: %d\n", (int)loadState);
+    } else if ((loadState & IJKMPMovieLoadStatePlayable) != 0) {
+        NSLog(@"loadStateDidChange: IJKMPMovieLoadStatePlayable: %d\n", (int)loadState);
+    } else {
+        NSLog(@"loadStateDidChange: %d\n", (int)loadState);
+    }
 }
 //播放状态改变了
 - (void)handlePlaybackStateDidChangeNotification:(NSNotification *)notification {
     NSLog(@"self.player 播放状态改变了 handlePlaybackStateDidChangeNotification");
     IJKMPMoviePlaybackState playbackState = self.player.playbackState;
     self.playerView.playControl.playing = (playbackState == IJKMPMoviePlaybackStatePlaying);
+    
+    if (self.player.playbackState == IJKMPMoviePlaybackStatePlaying) {
+        //视频开始播放的时候开启计时器
+        if (!self.timer) {
+            [self resetTimer];
+        }
+        
+    }
 }
 
 //播放完成或者用户退出
@@ -423,10 +450,17 @@
 
 - (void)resetTimer {
     [self invalidTimer];
+    self.count = 0;
     __weak typeof(self) weakSelf = self;
     if (@available(iOS 10.0, *)) {
         self.timer = [NSTimer timerWithTimeInterval:0.5 repeats:YES block:^(NSTimer * _Nonnull timer) {
             [weakSelf setPlayTimeAndTotalTime];
+            
+            if (self.count == 0 || self.count == 2) {
+                [weakSelf.playerView setBgImage:weakSelf.player.thumbnailImageAtCurrentTime  videoWidth: self.videoWidth videoHeight: self.videoHeight];
+                self.count = 0;
+            }
+            self.count = self.count + 1;
         }];
     } else {
         self.timer = [NSTimer timerWithTimeInterval:0.5 target:self selector:@selector(setPlayTimeAndTotalTime) userInfo:nil repeats:YES];

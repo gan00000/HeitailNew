@@ -8,4 +8,8 @@
                 transform:(CGAffineTransform)transform
            drawTransposed:(BOOL)transpose
      interpolationQuality:(CGInterpolationQuality)quality;
+
+-(UIImage*)scaleToSize:(CGSize)size;
+
+-(UIImage *)clipImageInRect:(CGRect)rect;
 @end
