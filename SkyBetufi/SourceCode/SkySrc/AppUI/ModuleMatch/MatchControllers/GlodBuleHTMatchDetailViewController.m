@@ -209,8 +209,8 @@
     [self segmentedValueChangedHandle:0];
     [self.view showLoadingView];
     
-    [self.awayTeamName setFont:[UIFont boldSystemFontOfSize:24]];
-    [self.homeTeamName setFont:[UIFont boldSystemFontOfSize:24]];
+    [self.awayTeamName setFont:[UIFont boldSystemFontOfSize:18]];
+    [self.homeTeamName setFont:[UIFont boldSystemFontOfSize:18]];
     [self.statusLabel setFont:[UIFont boldSystemFontOfSize:20]];
     [self.homeTeamPtsLabel setFont:[UIFont boldSystemFontOfSize:20]];
     [self.awayTeamPtsLabel setFont:[UIFont boldSystemFontOfSize:20]];
