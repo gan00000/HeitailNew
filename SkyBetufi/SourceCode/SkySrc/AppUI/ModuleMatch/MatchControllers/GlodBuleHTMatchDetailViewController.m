@@ -503,7 +503,7 @@
         self.statusLabel.hidden = YES;
         
         self.gameTimeLabel.hidden = NO;
-        self.gameTimeLabel.text = [NSString stringWithFormat:@"%@ %@",self.matchSummaryModel.date,self.matchSummaryModel.time];
+        self.gameTimeLabel.text = [NSString stringWithFormat:@"%@ %@",self.matchModel.date,self.matchModel.gametime];
         
         if ([self showPlayback]) {//比赛结束6小时候显示
             self.backPlayView.hidden = NO;
