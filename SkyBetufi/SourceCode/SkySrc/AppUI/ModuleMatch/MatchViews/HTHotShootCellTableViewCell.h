@@ -16,9 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HTHotShootCellTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet HTCourtHotShootView *hotShootView;
 
--(void) updateDataModel:(NSArray<HotShootPointModel *> *) model  summaryModel:(GlodBuleHTMatchSummaryModel *)summaryModel matchCompareModel:(GlodBuleHTMatchCompareModel *)matchCompareModel gameId:(NSString*)gameId isLeft:(BOOL) isLeft;
+-(void) updateMatchInfoWiithSummaryModel:(GlodBuleHTMatchSummaryModel *)summaryModel matchCompareModel:(GlodBuleHTMatchCompareModel *)matchCompareModel gameId:(NSString*)gameId;
 
-- (void)setDataModel:(NSArray<HotShootPointModel *> *) model isLeft:(BOOL) isLeft width:(CGFloat)width height:(CGFloat)height;
+- (void)updateHotShootDataModel:(NSArray<HotShootPointModel *> *) model isLeft:(BOOL) isLeft width:(CGFloat)width height:(CGFloat)height;
 
 @end
 

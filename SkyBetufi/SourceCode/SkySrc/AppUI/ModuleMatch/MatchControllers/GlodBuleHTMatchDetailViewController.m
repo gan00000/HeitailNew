@@ -651,6 +651,9 @@
              if (index == 4) {
              
              GlodBuleHTMatchWordLiveViewController *wordVc = [GlodBuleHTMatchWordLiveViewController taoviewController];
+                 
+            [wordVc taorefreshWithLiveFeedList:self.liveFeedList summary:self.matchSummaryModel gameId:self.matchModel.game_id];
+                 
              wordVc.onTableHeaderRefreshBlock = ^{
                  [weakSelf loadData];
              };
@@ -659,7 +662,7 @@
          }else if (index == 2) {
              GlodBuleHTMatchCompareViewController *compareVc = [GlodBuleHTMatchCompareViewController taoviewController];
              
-             [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel matchCompareModel:self.matchModel liveFeedModel:self.liveFeedList  matchModel:self.matchModel];
+             [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel matchCompareModel:self.matchCompareModel liveFeedModel:self.liveFeedList  matchModel:self.matchModel];
             
              compareVc.onTableHeaderRefreshBlock = ^{
                  [weakSelf loadData];
@@ -684,7 +687,6 @@
          [self.loadedControllersArray replaceObjectAtIndex:index withObject:vc];
          [self setChildViewFrame:vc.view byIndex:index];
          
-         [weakSelf loadData];
          return;
      }
     
@@ -694,7 +696,6 @@
             GlodBuleHTMatchWordLiveViewController *wordVc = self.loadedControllersArray[index];
            [wordVc taorefreshWithLiveFeedList:self.liveFeedList summary:self.matchSummaryModel gameId:self.matchModel.game_id];
            
-            
         }else if (index == 1) {//對陣
             GlodBuleHTMatchCompareViewController *compareVc = self.loadedControllersArray[index];
             [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel matchCompareModel:self.matchCompareModel liveFeedModel:self.liveFeedList matchModel:self.matchModel];
@@ -713,6 +714,7 @@
     if (index == 3) {
         
         GlodBuleHTMatchWordLiveViewController *wordVc = [GlodBuleHTMatchWordLiveViewController taoviewController];
+        [wordVc taorefreshWithLiveFeedList:self.liveFeedList summary:self.matchSummaryModel gameId:self.matchModel.game_id];
         wordVc.onTableHeaderRefreshBlock = ^{
             [weakSelf loadData];
         };
@@ -721,7 +723,7 @@
     }else if (index == 1) {
         GlodBuleHTMatchCompareViewController *compareVc = [GlodBuleHTMatchCompareViewController taoviewController];
         
-        [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel matchCompareModel:self.matchModel liveFeedModel:self.liveFeedList  matchModel:self.matchModel];
+        [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel matchCompareModel:self.matchCompareModel liveFeedModel:self.liveFeedList  matchModel:self.matchModel];
        
         compareVc.onTableHeaderRefreshBlock = ^{
             [weakSelf loadData];
@@ -746,7 +748,6 @@
     [self.loadedControllersArray replaceObjectAtIndex:index withObject:vc];
     [self setChildViewFrame:vc.view byIndex:index];
     
-    [self loadData];
 }
 - (void)setChildViewFrame:(UIView *)childView byIndex:(NSInteger)index {
     [childView mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //-(void)refreshDataWithGameId:(NSString *)game_id;
 
--(void)refreshDataWithGameId:(NSString *)game_id mMatchSummaryModel:(GlodBuleHTMatchHomeModel *)matchModel mCompareModel:(GlodBuleHTMatchCompareModel *)matchCompareModel;
+-(void)refreshDataWithGameId:(NSString *)game_id mMatchSummaryModel:(GlodBuleHTMatchSummaryModel *)matchModel mCompareModel:(GlodBuleHTMatchCompareModel *)matchCompareModel;
 
 @end
 

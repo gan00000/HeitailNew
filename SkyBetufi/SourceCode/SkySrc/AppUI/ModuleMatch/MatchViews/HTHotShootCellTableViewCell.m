@@ -81,34 +81,38 @@
     // Configure the view for the selected state
 }
 
-- (void)setDataModel:(NSArray<HotShootPointModel *> *) model isLeft:(BOOL) isLeft width:(CGFloat)width height:(CGFloat)height
+- (void)updateHotShootDataModel:(NSArray<HotShootPointModel *> *) model isLeft:(BOOL) isLeft width:(CGFloat)width height:(CGFloat)height
 {
-    if (isLeft) {
-            
-        if (!_hotShootPointModel_away_temp) {
-            [self.hotShootView setDataModel:model isLeft:isLeft width:width height:height];
-            self.leftPtsLabel.text = [self setHitRate:model];
-        }else{
-            [self.hotShootView setDataModel:_hotShootPointModel_away_temp isLeft:YES width:width height:height];
-            self.leftPtsLabel.text = [self setHitRate:_hotShootPointModel_away_temp];
-        }
-        
-    }else{
-        
-        if (!_hotShootPointModel_home_temp) {
-            [self.hotShootView setDataModel:model isLeft:isLeft width:width height:height];
-            self.rightPtsLabel.text = [self setHitRate:model];
-        }else{
-            [self.hotShootView setDataModel:_hotShootPointModel_home_temp isLeft:NO width:width height:height];
-            self.rightPtsLabel.text = [self setHitRate:_hotShootPointModel_home_temp];
-        }
-        
-    }
+    
+    [self refreshHomeShootPoint];
+    [self refreshAwayShootPoint];
+    
+//    if (isLeft) {
+//
+//        if (!_hotShootPointModel_away_temp) {
+//            [self.hotShootView setDataModel:model isLeft:isLeft width:width height:height];
+//            self.leftPtsLabel.text = [self setHitRate:model];
+//        }else{
+//            [self.hotShootView setDataModel:_hotShootPointModel_away_temp isLeft:YES width:width height:height];
+//            self.leftPtsLabel.text = [self setHitRate:_hotShootPointModel_away_temp];
+//        }
+//
+//    }else{
+//
+//        if (!_hotShootPointModel_home_temp) {
+//            [self.hotShootView setDataModel:model isLeft:isLeft width:width height:height];
+//            self.rightPtsLabel.text = [self setHitRate:model];
+//        }else{
+//            [self.hotShootView setDataModel:_hotShootPointModel_home_temp isLeft:NO width:width height:height];
+//            self.rightPtsLabel.text = [self setHitRate:_hotShootPointModel_home_temp];
+//        }
+//
+//    }
 
 }
 
 
--(void) updateDataModel:(NSArray<HotShootPointModel *> *) model  summaryModel:(GlodBuleHTMatchSummaryModel *)summaryModel matchCompareModel:(GlodBuleHTMatchCompareModel *)matchCompareModel gameId:(NSString*)gameId isLeft:(BOOL) isLeft
+-(void) updateMatchInfoWiithSummaryModel:(GlodBuleHTMatchSummaryModel *)summaryModel matchCompareModel:(GlodBuleHTMatchCompareModel *)matchCompareModel gameId:(NSString*)gameId
 {
     
     [self.leftTeamIcon sd_setImageWithURL:[NSURL URLWithString:summaryModel.awayLogo]];
@@ -129,23 +133,20 @@
     
     self.hotPointDesLabel.text = [NSString stringWithFormat:@"%@ %@-%@ %@ %@ %@",summaryModel.awayName,summaryModel.away_pts,summaryModel.home_pts,summaryModel.homeName,gameStatus,summaryModel.date];
     
-    if (isLeft) {
-        if (_awayPlayerArrayIds.count > 1) {
-            return;
-        }
-        for (GlodBuleHTMatchDetailsModel *m in matchCompareModel.awayTeamDetails) {
-            [_awayPlayerArray addObject:m.name];
-            [_awayPlayerArrayIds addObject:m.playerId];
-        }
-
-    }else{
-        if (_homePlayerArrayIds.count > 1) {
-            return;
-        }
-        for (GlodBuleHTMatchDetailsModel *m in matchCompareModel.homeTeamDetails) {
-            [_homePlayerArray addObject:m.name];
-            [_homePlayerArrayIds addObject:m.playerId];
-        }
+    if (_awayPlayerArrayIds.count > 1) {
+        return;
+    }
+    for (GlodBuleHTMatchDetailsModel *m in matchCompareModel.awayTeamDetails) {
+        [_awayPlayerArray addObject:m.name];
+        [_awayPlayerArrayIds addObject:m.playerId];
+    }
+    
+    if (_homePlayerArrayIds.count > 1) {
+        return;
+    }
+    for (GlodBuleHTMatchDetailsModel *m in matchCompareModel.homeTeamDetails) {
+        [_homePlayerArray addObject:m.name];
+        [_homePlayerArrayIds addObject:m.playerId];
     }
 
 }
@@ -163,8 +164,8 @@
                             if (self.quartId == 0) {
                                 self.quartId = @"";
                             }
-        [self refreshDataWithTeam:@"2" playerId:self.awayPlayerId];
-        [self refreshDataWithTeam:@"1" playerId:self.homePlayerId];
+        [self refreshHomeShootPoint];
+        [self refreshAwayShootPoint];
         
                         }
                      destructiveButtonTitle:nil
@@ -184,7 +185,7 @@
             self.leftTeamPlayerName.text = self.awayPlayerArray[btnIndex - 1];
             self.awayPlayerId = self.awayPlayerArrayIds[btnIndex - 1];
         }
-        [self refreshDataWithTeam:@"2" playerId:self.awayPlayerId];
+        [self refreshAwayShootPoint];
                               }
                      destructiveButtonTitle:nil
                           cancelButtonTitle:@"取消"
@@ -201,13 +202,22 @@
             self.rightTeamPlayerName.text = self.homePlayerArray[btnIndex - 1];
             self.homePlayerId = self.homePlayerArrayIds[btnIndex - 1];
         }
-        [self refreshDataWithTeam:@"1" playerId:self.homePlayerId];
+        [self refreshHomeShootPoint];
                               }
                      destructiveButtonTitle:nil
                           cancelButtonTitle:@"取消"
                           otherButtonTitles:_homePlayerArray];
 }
 
+-(void) refreshHomeShootPoint
+{
+    [self refreshDataWithTeam:@"1" playerId:self.homePlayerId];
+}
+
+-(void) refreshAwayShootPoint
+{
+    [self refreshDataWithTeam:@"2" playerId:self.awayPlayerId];
+}
 
 -(void) refreshDataWithTeam:(NSString *)team playerId:(NSString *)playerId //1-主队 2-客队
 {
