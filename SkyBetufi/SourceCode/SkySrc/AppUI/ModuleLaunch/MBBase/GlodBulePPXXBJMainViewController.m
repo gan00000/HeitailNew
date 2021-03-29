@@ -33,8 +33,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      BJLog(@"GlodBulePPXXBJMainViewController viewDidLoad");
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:RGBA_COLOR_HEX(0x999999)} forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor hx_colorWithHexRGBAString:@"fc562e"]} forState:UIControlStateSelected];
+    
+    if (@available(iOS 10.0, *)) {
+        [self.tabBar setUnselectedItemTintColor:RGBA_COLOR_HEX(0x999999)];
+        [self.tabBar setTintColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
+    } else {
+        
+        [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:RGBA_COLOR_HEX(0x999999)} forState:UIControlStateNormal];
+        [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor hx_colorWithHexRGBAString:@"fc562e"]} forState:UIControlStateSelected];
+        
+    }
+   
     [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -4)];
     [self.tabBar setBackgroundImage:[UIImage new]];
     [self.tabBar setShadowImage:[UIImage imageNamed:@"tab_bar_shadow"]];
