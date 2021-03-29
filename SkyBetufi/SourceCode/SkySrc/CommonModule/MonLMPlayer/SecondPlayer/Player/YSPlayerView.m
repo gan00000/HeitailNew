@@ -95,6 +95,12 @@
         make.leading.trailing.top.bottom.equalTo(self);
     }];
     
+    kWeakSelf
+    [self.thumbView addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+        //开始播放
+        [weakSelf thumbPlayBtnClick];
+    }];
+    
     self.thumbImageView = [[UIImageView alloc] init];
     self.thumbImageView.contentMode =  UIViewContentModeScaleAspectFit;
     [self.thumbView addSubview:self.thumbImageView];
