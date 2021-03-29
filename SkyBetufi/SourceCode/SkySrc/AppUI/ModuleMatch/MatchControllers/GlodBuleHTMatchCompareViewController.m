@@ -39,12 +39,7 @@
     self.liveFeedModel = liveFeedModel;
     self.matchCompareModel = matchCompareModel;
     self.matchModel = matchModel;
-    
-    BOOL isInProgress = NO;
-    if ([summaryModel.scheduleStatus isEqualToString:@"InProgress"]) {
-        isInProgress = YES;
-    }
-    
+        
     /**
     if (!self.hotShootPointModel_away) {//第一次需要加载  home_away主客队 1-主队 2-客队
         [GlodBuleHTMatchSummaryRequest getShootPointWithGameId:matchModel.game_id home_away:@"2" playerId:@"" quarter:@"" successBlock:^(NSArray<HotShootPointModel *> *model) {

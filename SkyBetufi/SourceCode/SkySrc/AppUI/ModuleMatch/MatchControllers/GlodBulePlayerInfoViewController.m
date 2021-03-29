@@ -384,7 +384,7 @@
         for (HotShootPointModel *m in model) { //X = 49 Y = 32
             
             
-            CGFloat x = [m.xAxis floatValue] * (xxWidth / 49);
+            CGFloat x = [m.xAxis floatValue] * (xxWidth / 50);
             CGFloat y = [m.yAxis floatValue] * (xxHeight / 32);
             
             if (x > xxWidth || y > xxHeight) {

@@ -108,7 +108,7 @@
         xxHeight = 200- 4 - 4;
     }
     
-    CGFloat point_cornerRadius = 4;
+    CGFloat point_cornerRadius = 3;
     if (isLeft) {
         
         for(UIView *subView in [_leftPlayGroundView subviews])
@@ -119,7 +119,7 @@
         for (HotShootPointModel *m in model) { //X = 49 Y = 32
             
             
-            CGFloat y = [m.xAxis floatValue] * (xxHeight / 49);
+            CGFloat y = [m.xAxis floatValue] * (xxHeight / 50);
             CGFloat x = [m.yAxis floatValue] * (xxWidth / 32);
             
             if (x > xxWidth || y > xxHeight) {
@@ -150,7 +150,7 @@
         
         for (HotShootPointModel *m in model) {
             
-            CGFloat y = [m.xAxis floatValue] * (xxHeight / 49);
+            CGFloat y = [m.xAxis floatValue] * (xxHeight / 50);
             CGFloat x = [m.yAxis floatValue] * (xxWidth / 32);
             
             if (x > xxWidth || y > xxHeight) {
