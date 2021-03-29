@@ -179,7 +179,7 @@
 -(UIView *)createPoint
 {
     UIView *point = [[UIView alloc] init];
-    point.layer.borderWidth = 1.2;
+    point.layer.borderWidth = 1.0;
     //point.layer.borderColor = UIColor.blueColor.CGColor;
     return point;
 }
