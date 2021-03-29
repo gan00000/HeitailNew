@@ -183,6 +183,7 @@
     NSMutableArray *yVals1 = [[NSMutableArray alloc] init];
     NSMutableArray *yVals2 = [[NSMutableArray alloc] init];
     int yMax = 0;
+    int tempSeconds = 0;
     for (GlodBuleHTMatchLiveFeedModel *feedMode in c_liveFeedModel) {
         
         int seconds = [feedMode.seconds intValue];
@@ -192,7 +193,6 @@
         int awayPts = [feedMode.awayPts intValue];
         
 //        BJLog(@"quarter = %ld",quarter);
-        int tempSeconds = 0;
         if (quarter > 4) {
             BJLog(@"quarter > 4 计算加时");//此处只做了一节的加时处理
             int playSeconds = 5 * 60 - (seconds + minutes * 60) + (4 * 12 * 60); //x 数据使用秒
@@ -232,6 +232,10 @@
     int m = yMax/30;
     yMax = (m + 1) * 30;
     [_mLineChartUtil setData:yVals1 data2:yVals2 yMax:yMax toCount:toCount lable1:summaryModel.awayName lable2:summaryModel.homeName];
+    
+//    for (ChartDataEntry *c in yVals1) {
+//        NSLog(@"x = %lf, y = %lf", c.x, c.y);
+//    }
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
