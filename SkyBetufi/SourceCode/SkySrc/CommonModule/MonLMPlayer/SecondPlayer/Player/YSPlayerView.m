@@ -61,6 +61,18 @@
     self.thumbView.hidden = NO;
     [self.thumbPlayBtn setImage:[UIImage imageNamed:@"player_restart"] forState:UIControlStateNormal];
     self.thumbPlayBtn.tag = 100;
+    
+    UIView * xplayControlView = (UIView *)self.playControl;
+    xplayControlView.hidden = YES;
+}
+-(void) setFullScreen:(BOOL) isFullScreen portaitFullScreen:(BOOL) portaitFullScreen
+{
+    if (!portaitFullScreen && isFullScreen) {
+        self.videoBgImageView.hidden = YES;
+    }else{
+        
+        self.videoBgImageView.hidden = NO;
+    }
 }
 
 -(void) setBgImage:(UIImage *)mUIImage videoWidth:(CGFloat) w videoHeight:(CGFloat)h{
@@ -88,7 +100,7 @@
 
 - (void)setupUI {
  
-//    self.backgroundColor = UIColor.brownColor;
+    self.backgroundColor = UIColor.blackColor;
     
     self.videoBgImageView = [[UIImageView alloc] init];
     self.videoBgImageView.contentMode =  UIViewContentModeScaleAspectFill;
@@ -183,7 +195,7 @@
         }];
     }
     
-    
+    xplayControlView.hidden = NO;
     self.thumbView.hidden = YES;
     [self.thumbPlayBtn setImage:[UIImage imageNamed:@"play_Image"] forState:UIControlStateNormal];
     self.thumbPlayBtn.tag = 1;

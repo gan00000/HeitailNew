@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void) setThumbWithUrl:(NSString *)url;
 -(void) playbackComplete;
 
+-(void) setFullScreen:(BOOL) isFullScreen portaitFullScreen:(BOOL) portaitFullScreen;
+
 -(void) setBgImage:(UIImage *)mUIImage videoWidth:(CGFloat) w videoHeight:(CGFloat)h;
 
 @property (strong, nonatomic, readonly) id<YSPlayerControlProtocol> playControl;

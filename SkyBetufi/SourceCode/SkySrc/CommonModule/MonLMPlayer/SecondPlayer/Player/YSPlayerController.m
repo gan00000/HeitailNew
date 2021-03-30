@@ -93,7 +93,7 @@
     //那你可以选择保留缓冲区，不设置上面那个就行。
 //    [options setPlayerOptionIntValue:0 forKey:@"packet-buffering"];  //  关闭播放器缓冲
     //开启硬件解码
-    [options setPlayerOptionIntValue:1  forKey:@"videotoolbox"];
+//    [options setPlayerOptionIntValue:1  forKey:@"videotoolbox"];
     
     // 解决音视频不同步的问题
     [options setPlayerOptionIntValue:1 forKey:@"framedrop"];
@@ -209,11 +209,12 @@
         return;
     }
     
-    if (self.player.isPlaying) {
-        return;
-    } else {
-        [self.player play];
-    }
+//    if (self.player.isPlaying) {
+//        return;
+//    } else {
+//
+//    }
+    [self.player play];
     self.playerView.thumbView.hidden = YES;
 //    [self resetTimer];
     self.playerView.playControl.playing = self.player.isPlaying;
@@ -252,7 +253,7 @@
     if (!self.player) {
         return;
     }
-//    [self invalidTimer];
+    [self invalidTimer];
 //    [self pause];
 }
 
@@ -331,6 +332,7 @@
         self.fullScreen = YES;
     }
     
+    [self.playerView setFullScreen:self.fullScreen portaitFullScreen:self.portFullScreening];
     self.playerView.playControl.portraitFullScreen = self.portFullScreening;
     self.playerView.playControl.fullScreen = self.fullScreen;
     
