@@ -132,7 +132,7 @@
     
     [self.thumbView addSubview:self.thumbPlayBtn];
     [self.thumbPlayBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(50);
+        make.width.height.mas_equalTo(100);
         make.center.mas_equalTo(self.thumbView);
     }];
 }

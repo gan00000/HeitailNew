@@ -17,7 +17,7 @@
 #import "GlodBuleBJUtility.h"
 
 #define NAV_BAR_HEIGHT 50
-#define TOOL_BAR_HEIGHT 50
+#define TOOL_BAR_HEIGHT 60
 
 typedef NS_ENUM(NSUInteger, YSPanDirection) {
     YSPanDirectionUnknown, // 未知
@@ -38,6 +38,7 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *playBtnLeadingConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *fullScreenTralingConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *payTimeLeadingConstraint;
 
 /*
  status bar
@@ -109,8 +110,8 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     //播放进度条
     self.progressSlider.continuous = NO;
     [self.progressSlider setThumbImage:[UIImage imageNamed:@"slider_thumb"] forState:(UIControlStateNormal)];
-    self.progressSlider.maximumTrackTintColor = [UIColor grayColor];
-    self.progressSlider.minimumTrackTintColor = [UIColor whiteColor];//[UIColor
+    self.progressSlider.maximumTrackTintColor = [UIColor whiteColor];
+    self.progressSlider.minimumTrackTintColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"];//[UIColor whiteColor];//[UIColor
     
     self.rePlayBtn.hidden = YES;
     self.rePauseBtn.hidden = YES;
@@ -146,9 +147,11 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 #pragma mark - YSPlayerControlProtocol
 
 - (void)setPlayTime:(NSTimeInterval)playTime totalTime:(NSTimeInterval)totalTime {
-    self.playTimeLbl.text = [self formatTime:playTime];
-    self.totalTimeLbl.text = [self formatTime:totalTime];
+//    self.playTimeLbl.text = [self formatTime:playTime];
+//    self.totalTimeLbl.text = [self formatTime:totalTime];
     self.progressSlider.value = playTime / totalTime;
+    
+    self.playTimeLbl.text = [NSString stringWithFormat:@"%@/%@",[self formatTime:playTime],[self formatTime:totalTime]];
 }
 
 - (void)playbackComplete {
@@ -399,16 +402,18 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
         
         [self addPanGesture];
         if (!self.portraitFullScreen && [GlodBuleBJUtility isIPhoneXSeries]) {
-            self.playBtnLeadingConstraint.constant = 50;
-            self.fullScreenTralingConstraint.constant = 50;
+//            self.playBtnLeadingConstraint.constant = 44;
+            self.fullScreenTralingConstraint.constant = 16;
+            self.payTimeLeadingConstraint.constant = 44;
         }
         
     }else
     {
         [self removePanGesture];
         if ([GlodBuleBJUtility isIPhoneXSeries]) {
-            self.playBtnLeadingConstraint.constant = 8;
+//            self.playBtnLeadingConstraint.constant = 8;
             self.fullScreenTralingConstraint.constant = 8;
+            self.payTimeLeadingConstraint.constant = 8;
         }
     }
 }

@@ -304,7 +304,7 @@
         }else{
             
             [UIView animateWithDuration:0.3 animations:^{
-                self.view.transform = UIDeviceOrientationLandscapeLeft == [[UIDevice currentDevice]orientation] ? CGAffineTransformMakeRotation(M_PI/2) : CGAffineTransformMakeRotation(3*M_PI/2);
+                self.view.transform = CGAffineTransformMakeRotation(M_PI/2);//UIDeviceOrientationLandscapeLeft == [[UIDevice currentDevice]orientation] ? CGAffineTransformMakeRotation(M_PI/2) : CGAffineTransformMakeRotation(3*M_PI/2);
             }];
         }
        
