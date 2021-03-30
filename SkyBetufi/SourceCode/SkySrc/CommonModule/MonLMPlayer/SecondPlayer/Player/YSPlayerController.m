@@ -22,6 +22,8 @@
 @property (assign, nonatomic) BOOL isShutdown;
 
 @property (assign, nonatomic) NSUInteger count;
+
+@property (assign, nonatomic) NSTimeInterval seekTime;
 @end
 
 @implementation YSPlayerController
@@ -253,8 +255,8 @@
         return;
     }
     
-    NSTimeInterval time = self.player.duration * progress;
-    [self.player setCurrentPlaybackTime:time];
+    self.seekTime = floorf(self.player.duration * progress);
+//    [self.player setCurrentPlaybackTime:time];
 }
 
 - (void)progressChangeEnd {
@@ -263,8 +265,13 @@
         return;
     }
     
+    if (self.seekTime >= 0) {
+        [self.player setCurrentPlaybackTime:self.seekTime];
+    }
+   
 //    [self resetTimer];
     [self play];
+    self.seekTime = -1;
 }
 
 - (void)fullScreen {

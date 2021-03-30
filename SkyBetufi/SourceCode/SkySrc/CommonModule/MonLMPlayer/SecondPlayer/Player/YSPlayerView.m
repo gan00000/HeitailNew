@@ -49,7 +49,10 @@
     }
     [self.thumbImageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:nil];
     
-//    [self.videoBgImageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:nil];
+    [self.videoBgImageView sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        UIImage *xUIImage = [self boxblurImage:image withBlurNumber:0.7];
+        [self.videoBgImageView setImage:xUIImage];
+    }];
 }
 
 -(void) setBgImage:(UIImage *)mUIImage videoWidth:(CGFloat) w videoHeight:(CGFloat)h{
@@ -77,11 +80,11 @@
 
 - (void)setupUI {
  
-    self.backgroundColor = UIColor.brownColor;
+//    self.backgroundColor = UIColor.brownColor;
     
     self.videoBgImageView = [[UIImageView alloc] init];
     self.videoBgImageView.contentMode =  UIViewContentModeScaleAspectFill;
-    self.videoBgImageView.backgroundColor = [UIColor redColor];
+//    self.videoBgImageView.backgroundColor = [UIColor redColor];
     self.videoBgImageView.clipsToBounds = YES;
     self.videoBgImageView.alpha = 0.7;
     [self addSubview:self.videoBgImageView];
