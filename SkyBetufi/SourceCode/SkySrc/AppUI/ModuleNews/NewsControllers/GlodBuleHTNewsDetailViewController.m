@@ -417,6 +417,7 @@
 #pragma mark - requests
 - (void)loadDetailWithCompleteBlock:(dispatch_block_t)block {
     [GlodBuleHTNewsAdditionRequest taorequestDetailWithPostId:self.post_id successBlock:^(GlodBuleHTNewsModel * _Nonnull newsModel) {
+        [newsModel initPLMediaInfo];
         self.newsModel = newsModel;
         if (block) {
             block();
