@@ -4,6 +4,7 @@
 #import "GlodBuleHTFilmHomeCell.h"
 #import "GlodBuleHTNewsHomeCell.h"
 #import "GlodBuleHTAdViewCell.h"
+#import "GlodBuleHTFilmDetailViewController.h"
 
 @interface GlodBuleHTFilmHomeViewController ()<UITableViewDelegate, UITableViewDataSource, PlayerTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -192,7 +193,7 @@
         return;
     }
     
-    GlodBuleHTNewsDetailViewController *detailVc = [GlodBuleHTNewsDetailViewController taoviewController];
+    GlodBuleHTFilmDetailViewController *detailVc = [GlodBuleHTFilmDetailViewController taoviewController];
     detailVc.post_id = newsModel.news_id;
     detailVc.filmModel = newsModel;
     [self.navigationController pushViewController:detailVc animated:YES];
