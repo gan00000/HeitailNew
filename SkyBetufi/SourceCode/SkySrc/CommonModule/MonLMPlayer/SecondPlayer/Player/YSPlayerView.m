@@ -48,11 +48,19 @@
         return;
     }
     [self.thumbImageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:nil];
-    
+    [self.thumbPlayBtn setImage:[UIImage imageNamed:@"play_Image"] forState:UIControlStateNormal];
+    self.thumbPlayBtn.tag = 1;
     [self.videoBgImageView sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
         UIImage *xUIImage = [self boxblurImage:image withBlurNumber:0.7];
         [self.videoBgImageView setImage:xUIImage];
     }];
+}
+
+-(void) playbackComplete
+{
+    self.thumbView.hidden = NO;
+    [self.thumbPlayBtn setImage:[UIImage imageNamed:@"player_restart"] forState:UIControlStateNormal];
+    self.thumbPlayBtn.tag = 100;
 }
 
 -(void) setBgImage:(UIImage *)mUIImage videoWidth:(CGFloat) w videoHeight:(CGFloat)h{
@@ -144,6 +152,7 @@
     if (!_thumbPlayBtn) {
         _thumbPlayBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         //_downloadButton.frame = CGRectMake(SCREEN_WIDTH - 100, 0, HeightForTopView, HeightForTopView);
+        _thumbPlayBtn.tag = 1;
         [_thumbPlayBtn setImage:[UIImage imageNamed:@"play_Image"] forState:UIControlStateNormal];
         [_thumbPlayBtn addTarget:self action:@selector(thumbPlayBtnClick) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -172,7 +181,7 @@
     }];
     
     if (self.mYSPlayerControlDelegate) {
-        [self.mYSPlayerControlDelegate initPlayAndPrepareToPlay];
+        [self.mYSPlayerControlDelegate initPlayAndPrepareToPlay:self.thumbPlayBtn.tag];
     }
 }
 

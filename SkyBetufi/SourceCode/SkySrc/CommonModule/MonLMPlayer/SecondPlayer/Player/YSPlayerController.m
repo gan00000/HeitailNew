@@ -62,12 +62,19 @@
 
 #pragma mark - YSPlayerControlDelegate
 
-- (void)initPlayAndPrepareToPlay
+- (void)initPlayAndPrepareToPlay:(NSInteger) tag
 {
     
 //    [self shutdown];
     
     if (self.player && !self.isShutdown) {
+        
+        if (tag == 100) {
+            self.player.currentPlaybackTime = 0;
+            [self play];
+            return;
+        }
+        
         [self play];
         return;
     }
@@ -245,8 +252,8 @@
     if (!self.player) {
         return;
     }
-    [self invalidTimer];
-    [self pause];
+//    [self invalidTimer];
+//    [self pause];
 }
 
 - (void)didChangeProgress:(CGFloat)progress {
@@ -266,10 +273,13 @@
     }
     
     if (self.seekTime >= 0) {
+        [self invalidTimer];
+        [self pause];
+        
         [self.player setCurrentPlaybackTime:self.seekTime];
+        [self resetTimer];
     }
-   
-//    [self resetTimer];
+
     [self play];
     self.seekTime = -1;
 }
@@ -390,7 +400,7 @@
 - (void)handlePlaybackDidFinishNotification:(NSNotification *)notification {
     NSLog(@"self.player 播放完成或者用户退出handlePlaybackDidFinishNotification");
     [self invalidTimer];
-    self.playerView.thumbView.hidden = NO;
+    [self.playerView playbackComplete];
     [self.playerView.playControl playbackComplete];
 }
 

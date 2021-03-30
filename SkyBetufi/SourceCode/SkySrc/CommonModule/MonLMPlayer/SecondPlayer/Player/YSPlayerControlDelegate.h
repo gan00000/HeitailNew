@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol YSPlayerControlDelegate <NSObject>
 
 
--(void) initPlayAndPrepareToPlay;
+-(void) initPlayAndPrepareToPlay:(NSInteger) tag;
 
 /**
  done按钮点击
