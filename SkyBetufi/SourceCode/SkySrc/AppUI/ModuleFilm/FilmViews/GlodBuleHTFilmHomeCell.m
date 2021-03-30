@@ -45,9 +45,6 @@
     
     self.addSaveImageView.hidden = YES;
     
-    UIImage *saveIcon = [[GlodBulePPXXBJBaseViewController taofixImageSize:[UIImage imageNamed:@"icon_add_collection"] toSize:CGSizeMake(22, 22)] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    [self.addSaveBtn setImage:saveIcon forState:UIControlStateNormal];
-    
     [self addPlayerView];
     
 }
@@ -59,39 +56,49 @@
     
     if (![GlodBuleHTUserManager tao_isUserLogin]) {
         [GlodBuleHTUserManager tao_doUserLogin];
-        [[self superview] showToast:@"請登錄"];
+        [self.contentView showToast:@"請登錄"];
         return;
     }
     if (sender.selected) {
-        [GlodBuleHTUserRequest taodeleteCollectionWithNewsId:self.newsModel.news_id successBlock:^{
-            [[self superview] showToast:@"已取消收藏"];
-            self.newsModel.my_save = NO;
+        [GlodBuleHTUserRequest taodeleteLikeWithNewsId:self.newsModel.news_id successBlock:^{
+            [self.contentView showToast:@"已取消點讚"];
+            self.newsModel.my_like = NO;
+            self.newsModel.total_like = self.newsModel.total_like - 1;
             [self setupSaveButton];
         } failBlock:^(GlodBuleBJError *error) {
-            [[self superview] showToast:@"取消收藏失敗"];
+            [self.contentView showToast:@"取消點讚失敗"];
         }];
     } else {
-        [GlodBuleHTUserRequest taoaddCollectionWithNewsId:self.newsModel.news_id successBlock:^{
-            [[self superview] showToast:@"已收藏"];
-            self.newsModel.my_save = YES;
+        [GlodBuleHTUserRequest taoaddLikeWithNewsId:self.newsModel.news_id successBlock:^{
+            [self.contentView showToast:@"已點讚"];
+            self.newsModel.my_like = YES;
+            self.newsModel.total_like = self.newsModel.total_like + 1;
             [self setupSaveButton];
         } failBlock:^(GlodBuleBJError *error) {
-            [[self superview] showToast:@"收藏失敗"];
+            [self.contentView showToast:@"點讚失敗"];
         }];
     }
     sender.selected = !sender.selected;
-    self.newsModel.my_save = sender.selected;
+    self.newsModel.my_like = sender.selected;
     
 }
 
 - (void)setupSaveButton {
-    if (self.newsModel.my_save) {
-        [self.addSaveBtn setTintColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
+    if (self.newsModel.my_like) {
+//        [self.addSaveBtn setTintColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
+//        UIImage *saveIcon = [[GlodBulePPXXBJBaseViewController taofixImageSize:[UIImage imageNamed:@"icon_film_like"] toSize:CGSizeMake(22, 22)] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [self.addSaveBtn setImage:[UIImage imageNamed:@"icon_film_like"] forState:UIControlStateNormal];
+        
         self.addSaveBtn.selected = YES;
     } else {
+        
+//        UIImage *saveIcon = [[GlodBulePPXXBJBaseViewController taofixImageSize:[UIImage imageNamed:@"icon_film_unlike"] toSize:CGSizeMake(22, 22)] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [self.addSaveBtn setImage:[UIImage imageNamed:@"icon_film_unlike"] forState:UIControlStateNormal];
+        
         self.addSaveBtn.selected = NO;
-        [self.addSaveBtn setTintColor:[UIColor hx_colorWithHexRGBAString:@"999999"]];
+//        [self.addSaveBtn setTintColor:[UIColor hx_colorWithHexRGBAString:@"999999"]];
     }
+    self.viewCountLabel.text = [NSString stringWithFormat:@"%d", self.newsModel.total_like];
 }
 
 -(void) addPlayerView
@@ -127,7 +134,7 @@
     self.titleLabel.text = newsModel.title;
     self.timeLabel.text = [NSString stringWithFormat:@"%d", newsModel.total_comment];
     
-    self.viewCountLabel.text = [NSString stringWithFormat:@"%d", newsModel.total_save];
+    self.viewCountLabel.text = [NSString stringWithFormat:@"%d", newsModel.total_like];
     
     [self setupSaveButton];
         

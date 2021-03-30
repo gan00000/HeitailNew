@@ -14,7 +14,8 @@
 @property (nonatomic, assign) NSInteger total_comment;
 @property (nonatomic, assign) NSInteger total_like;
 @property (nonatomic, assign) NSInteger total_save;
-@property (nonatomic, assign) BOOL my_save; 
+@property (nonatomic, assign) BOOL my_save;//收藏
+@property (nonatomic, assign) BOOL my_like;//点赞 1已赞，0未赞
 @property (nonatomic, copy) NSString *comment_id;
 @property (nonatomic, copy) NSString *user_img;
 @property (nonatomic, copy) NSString *comment_content;

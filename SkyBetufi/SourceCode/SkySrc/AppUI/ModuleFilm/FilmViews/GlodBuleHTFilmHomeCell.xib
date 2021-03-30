@@ -118,7 +118,7 @@
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kX3-i4-e9s">
                         <rect key="frame" x="285" y="288" width="22" height="22"/>
-                        <state key="normal" image="icon_add_collection"/>
+                        <state key="normal" image="icon_film_unlike"/>
                         <connections>
                             <action selector="addSave:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NQj-Mh-Tjs"/>
                         </connections>
@@ -167,6 +167,7 @@
     <resources>
         <image name="icon_add_collection" width="22" height="22"/>
         <image name="icon_comment_newaa" width="27" height="27"/>
+        <image name="icon_film_unlike" width="40" height="40"/>
         <image name="icon_share_new" width="27" height="27"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -61,5 +61,10 @@ successBlock:(void(^)(NSString *userToken))successBlock
                   reply_comment_id:(NSString *)reply_comment_id
                       successBlock:(dispatch_block_t)successBlock
                          failBlock:(BJServiceErrorBlock)failBlock;
+
++ (void)taoaddLikeWithNewsId:(NSString *)news_id successBlock:(dispatch_block_t)successBlock failBlock:(BJServiceErrorBlock)failBlock;
+
++ (void)taodeleteLikeWithNewsId:(NSString *)news_id successBlock:(dispatch_block_t)successBlock failBlock:(BJServiceErrorBlock)failBlock;
+
 @end
 NS_ASSUME_NONNULL_END

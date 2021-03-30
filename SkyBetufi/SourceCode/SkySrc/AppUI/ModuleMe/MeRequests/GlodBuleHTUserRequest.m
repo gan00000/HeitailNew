@@ -167,4 +167,21 @@
         }
     } errorBlock:failBlock];
 }
+
+
++ (void)taoaddLikeWithNewsId:(NSString *)news_id successBlock:(dispatch_block_t)successBlock failBlock:(BJServiceErrorBlock)failBlock { // 0-取消点赞 1-点赞
+    [GlodBuleBJHTTPServiceEngine tao_getRequestWithFunctionPath:API_USER_POST_LIKE params:@{@"post_id": news_id, @"like":@"1"} successBlock:^(id responseData) {
+        if (successBlock) {
+            successBlock();
+        }
+    } errorBlock:failBlock];
+}
++ (void)taodeleteLikeWithNewsId:(NSString *)news_id successBlock:(dispatch_block_t)successBlock failBlock:(BJServiceErrorBlock)failBlock {
+    [GlodBuleBJHTTPServiceEngine tao_getRequestWithFunctionPath:API_USER_POST_LIKE params:@{@"post_id": news_id,@"like":@"0"} successBlock:^(id responseData) {
+        if (successBlock) {
+            successBlock();
+        }
+    } errorBlock:failBlock];
+}
+
 @end
