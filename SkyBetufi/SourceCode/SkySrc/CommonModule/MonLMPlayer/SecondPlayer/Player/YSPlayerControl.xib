@@ -164,7 +164,7 @@
                     <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </activityIndicatorView>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lb3-zs-BJB">
-                    <rect key="frame" x="339.5" y="52" width="217" height="25"/>
+                    <rect key="frame" x="339.5" y="8" width="217" height="25"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="音量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJb-SW-7qq">
                             <rect key="frame" x="8" y="5.5" width="25" height="14.5"/>
@@ -223,7 +223,7 @@
                 <constraint firstAttribute="trailing" secondItem="06i-0d-UZl" secondAttribute="trailing" id="VVm-s2-92A"/>
                 <constraint firstItem="mz9-zX-8mK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WNJ-JB-qLZ"/>
                 <constraint firstItem="Kyl-bU-WaS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Zs6-rI-l0h"/>
-                <constraint firstItem="lb3-zs-BJB" firstAttribute="top" secondItem="mz9-zX-8mK" secondAttribute="bottom" constant="8" id="jTQ-as-VZ9"/>
+                <constraint firstItem="lb3-zs-BJB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="jTQ-as-VZ9"/>
                 <constraint firstItem="Bbf-f0-IIg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="kQD-7I-0Vl"/>
                 <constraint firstAttribute="trailing" secondItem="mz9-zX-8mK" secondAttribute="trailing" id="lhF-ky-aRY"/>
                 <constraint firstItem="Kyl-bU-WaS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xoi-px-WBo"/>
@@ -255,6 +255,7 @@
                 <outlet property="volumeProgressView" destination="quV-FJ-eXs" id="yMp-cw-3B1"/>
                 <outlet property="volumeTipLbl" destination="uJb-SW-7qq" id="bQq-x4-DoI"/>
                 <outlet property="volumeView" destination="lb3-zs-BJB" id="KQl-GW-6G5"/>
+                <outlet property="volumeViewTopConstraint" destination="jTQ-as-VZ9" id="z2W-fC-DrS"/>
             </connections>
             <point key="canvasLocation" x="138.61607142857142" y="95.652173913043484"/>
         </view>

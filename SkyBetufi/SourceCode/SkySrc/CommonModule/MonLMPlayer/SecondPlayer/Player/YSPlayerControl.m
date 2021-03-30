@@ -39,6 +39,7 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *playBtnLeadingConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *fullScreenTralingConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *payTimeLeadingConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *volumeViewTopConstraint;
 
 /*
  status bar
@@ -398,7 +399,7 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     NSString *img = fullScreen ? @"player-small-screen" : @"player-full-screen";
     [self.fullScreenBtn setImage:[UIImage imageNamed:img] forState:UIControlStateNormal];
 //    self.statusBar.hidden = fullScreen ? NO : YES;
-    if (fullScreen) {
+    if (fullScreen) {//全屏
         
         [self addPanGesture];
         if (!self.portraitFullScreen && [GlodBuleBJUtility isIPhoneXSeries]) {
@@ -406,14 +407,18 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
             self.fullScreenTralingConstraint.constant = 16;
             self.payTimeLeadingConstraint.constant = 44;
         }
+        if (self.portraitFullScreen && [GlodBuleBJUtility isIPhoneXSeries]){
+            self.volumeViewTopConstraint.constant = 50;
+        }
         
     }else
-    {
+    {//非全屏
         [self removePanGesture];
         if ([GlodBuleBJUtility isIPhoneXSeries]) {
 //            self.playBtnLeadingConstraint.constant = 8;
             self.fullScreenTralingConstraint.constant = 8;
             self.payTimeLeadingConstraint.constant = 8;
+            self.volumeViewTopConstraint.constant = 8;
         }
     }
 }
