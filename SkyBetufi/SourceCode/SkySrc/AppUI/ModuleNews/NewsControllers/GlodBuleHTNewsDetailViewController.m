@@ -269,6 +269,7 @@
             weakSelf.commentInputView.placeholder = [NSString stringWithFormat:@"回復 %@", commentModel.comment_author];
             weakSelf.commentInputView.text = nil;
             [weakSelf.commentInputView becomeFirstResponder];
+            [weakSelf.replyTextView becomeFirstResponder];
         };
         cell.onExpendBlock = ^{
             [weakSelf.tableView beginUpdates];
@@ -316,6 +317,7 @@
         weakSelf.commentInputView.placeholder = [NSString stringWithFormat:@"回復 %@", commentModel.comment_author];
         weakSelf.commentInputView.text = nil;
         [weakSelf.commentInputView becomeFirstResponder];
+        [weakSelf.replyTextView becomeFirstResponder];
     };
     cell.onExpendBlock = ^{
         [weakSelf.tableView beginUpdates];
