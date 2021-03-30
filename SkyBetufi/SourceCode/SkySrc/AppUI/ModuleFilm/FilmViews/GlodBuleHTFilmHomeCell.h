@@ -19,6 +19,8 @@
 @interface GlodBuleHTFilmHomeCell : UITableViewCell
 
 @property (strong, nonatomic) id<PlayerTableViewCellDelegate> mPlayerTableViewCellDelegate;
+@property (weak, nonatomic) IBOutlet UIImageView *addSaveImageView;
+@property (weak, nonatomic) IBOutlet UIButton *addSaveBtn;
 
 - (void)taosetupWithNewsModel:(GlodBuleHTNewsModel *)newsModel;
 + (CGFloat)headerViewHeight;

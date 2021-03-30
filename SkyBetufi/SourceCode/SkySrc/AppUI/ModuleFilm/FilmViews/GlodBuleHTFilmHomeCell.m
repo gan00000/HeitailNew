@@ -4,6 +4,9 @@
 #import "GlodBuleLMPlayerModel.h"
 #import "YSPlayerController.h"
 #import "UIImageView+GlodBuleHT.h"
+#import "UIView+GlodBuleBlockGesture.h"
+#import "GlodBuleHTUserRequest.h"
+#import "GlodBulePPXXBJBaseViewController.h"
 
 @interface GlodBuleHTFilmHomeCell () <WKNavigationDelegate, YSPlayerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *webContentView;
@@ -16,6 +19,7 @@
 @property (nonatomic, weak) GlodBuleHTNewsModel *newsModel;
 
 @property (weak, nonatomic) IBOutlet UIView *localPlayerView;
+
 
 //========
 //@property (nonatomic, assign) BOOL isNeedReset;
@@ -37,36 +41,57 @@
     [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 
-//    if ([GlodBuleHTNewsModel taocanShare]) {
-//        self.shareButtonContentView.hidden = NO;
-//    }
     self.shareButtonContentView.hidden = NO;
     
-//    self.thumbView = [[UIView alloc] init];
-//    self.thumbView.backgroundColor = UIColor.blackColor;
-//    [self.webContentView addSubview:self.thumbView];
-//    [self.thumbView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.leading.trailing.top.bottom.equalTo(self.webContentView);
-//    }];
-//
-//    self.thumbImageView = [[UIImageView alloc] init];
-//    self.thumbImageView.contentMode =  UIViewContentModeScaleAspectFit;
-//    [self.thumbView addSubview:self.thumbImageView];
-//    [self.thumbImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.leading.trailing.top.bottom.equalTo(self.thumbView);
-//    }];
-//
-//    [self.thumbView addSubview:self.thumbPlayBtn];
-//    [self.thumbPlayBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.width.height.mas_equalTo(50);
-//        make.center.mas_equalTo(self.thumbView);
-//    }];
+    self.addSaveImageView.hidden = YES;
+    
+    UIImage *saveIcon = [[GlodBulePPXXBJBaseViewController taofixImageSize:[UIImage imageNamed:@"icon_add_collection"] toSize:CGSizeMake(22, 22)] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [self.addSaveBtn setImage:saveIcon forState:UIControlStateNormal];
     
     [self addPlayerView];
     
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+}
+
+- (IBAction)addSave:(UIButton *)sender {
+    
+    if (![GlodBuleHTUserManager tao_isUserLogin]) {
+        [GlodBuleHTUserManager tao_doUserLogin];
+        [[self superview] showToast:@"請登錄"];
+        return;
+    }
+    if (sender.selected) {
+        [GlodBuleHTUserRequest taodeleteCollectionWithNewsId:self.newsModel.news_id successBlock:^{
+            [[self superview] showToast:@"已取消收藏"];
+            self.newsModel.my_save = NO;
+            [self setupSaveButton];
+        } failBlock:^(GlodBuleBJError *error) {
+            [[self superview] showToast:@"取消收藏失敗"];
+        }];
+    } else {
+        [GlodBuleHTUserRequest taoaddCollectionWithNewsId:self.newsModel.news_id successBlock:^{
+            [[self superview] showToast:@"已收藏"];
+            self.newsModel.my_save = YES;
+            [self setupSaveButton];
+        } failBlock:^(GlodBuleBJError *error) {
+            [[self superview] showToast:@"收藏失敗"];
+        }];
+    }
+    sender.selected = !sender.selected;
+    self.newsModel.my_save = sender.selected;
+    
+}
+
+- (void)setupSaveButton {
+    if (self.newsModel.my_save) {
+        [self.addSaveBtn setTintColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
+        self.addSaveBtn.selected = YES;
+    } else {
+        self.addSaveBtn.selected = NO;
+        [self.addSaveBtn setTintColor:[UIColor hx_colorWithHexRGBAString:@"999999"]];
+    }
 }
 
 -(void) addPlayerView
@@ -103,6 +128,9 @@
     self.timeLabel.text = [NSString stringWithFormat:@"%d", newsModel.total_comment];
     
     self.viewCountLabel.text = [NSString stringWithFormat:@"%d", newsModel.total_save];
+    
+    [self setupSaveButton];
+        
     [self.playerController setMediaInfo:newsModel.plMediaInfo];
     
 }
