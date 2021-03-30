@@ -432,7 +432,7 @@
         }
     }];
 }
-- (void)initDataRequests {
+- (void)initDataRequests {//推薦閱讀
     kWeakSelf
     self.topRequestDone = NO;
     self.htmlLoadDone = YES;
