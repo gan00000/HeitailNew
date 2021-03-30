@@ -134,8 +134,11 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kwr-Cs-F4B">
+                            <rect key="frame" x="0.0" y="32" width="896" height="4"/>
+                        </progressView>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WIW-Rv-eE9">
-                            <rect key="frame" x="-2" y="26" width="900" height="31"/>
+                            <rect key="frame" x="-2" y="19" width="900" height="31"/>
                             <connections>
                                 <action selector="progressChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="aaS-gt-j89"/>
                                 <action selector="progressEndChange:" destination="iN0-l3-epB" eventType="touchUpInside" id="0Ff-Uq-5fa"/>
@@ -145,13 +148,16 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="WIW-Rv-eE9" firstAttribute="centerY" secondItem="kwr-Cs-F4B" secondAttribute="centerY" id="28b-AN-fR3"/>
                         <constraint firstItem="WIW-Rv-eE9" firstAttribute="leading" secondItem="06i-0d-UZl" secondAttribute="leading" id="85p-Xe-sx9"/>
                         <constraint firstItem="nMk-Uj-W2u" firstAttribute="leading" secondItem="06i-0d-UZl" secondAttribute="leading" constant="8" id="96B-9z-4Uv"/>
                         <constraint firstAttribute="trailing" secondItem="yL8-CS-Jl6" secondAttribute="trailing" constant="8" id="AUW-fg-2Xb"/>
-                        <constraint firstItem="WIW-Rv-eE9" firstAttribute="top" secondItem="7tx-lZ-WTS" secondAttribute="bottom" constant="2" id="KPG-2z-TQ6"/>
+                        <constraint firstItem="kwr-Cs-F4B" firstAttribute="leading" secondItem="06i-0d-UZl" secondAttribute="leading" id="Hpc-8P-qfF"/>
+                        <constraint firstItem="kwr-Cs-F4B" firstAttribute="top" secondItem="7tx-lZ-WTS" secondAttribute="bottom" constant="8" id="KqS-9f-Mko"/>
                         <constraint firstItem="yL8-CS-Jl6" firstAttribute="centerY" secondItem="7tx-lZ-WTS" secondAttribute="centerY" id="Ruw-wf-bsx"/>
                         <constraint firstItem="7tx-lZ-WTS" firstAttribute="leading" secondItem="06i-0d-UZl" secondAttribute="leading" constant="8" id="VRe-aZ-4PF"/>
                         <constraint firstItem="EJZ-je-P9Y" firstAttribute="centerY" secondItem="7tx-lZ-WTS" secondAttribute="centerY" id="X5y-3A-y3k"/>
+                        <constraint firstAttribute="trailing" secondItem="kwr-Cs-F4B" secondAttribute="trailing" id="axB-sL-w8E"/>
                         <constraint firstAttribute="trailing" secondItem="WIW-Rv-eE9" secondAttribute="trailing" id="bkG-3l-qhh"/>
                         <constraint firstItem="yL8-CS-Jl6" firstAttribute="leading" secondItem="EJZ-je-P9Y" secondAttribute="trailing" constant="60" id="cWb-oS-8Oa"/>
                         <constraint firstItem="nMk-Uj-W2u" firstAttribute="centerY" secondItem="06i-0d-UZl" secondAttribute="centerY" id="gr9-gS-2Hd"/>
@@ -232,6 +238,7 @@
                 <outlet property="activityIndicatorView" destination="Bbf-f0-IIg" id="xeS-YJ-tCR"/>
                 <outlet property="batteryLevelLbl" destination="uwK-Oh-Kpp" id="Lxk-aN-lfp"/>
                 <outlet property="batteryStateLbl" destination="61L-le-g1M" id="fVU-ap-93P"/>
+                <outlet property="bufferProgressView" destination="kwr-Cs-F4B" id="Sjd-BW-UHM"/>
                 <outlet property="carrierLbl" destination="zva-60-lka" id="FUx-Fp-FGs"/>
                 <outlet property="fullScreenBtn" destination="yL8-CS-Jl6" id="xdx-mc-WYz"/>
                 <outlet property="fullScreenTralingConstraint" destination="AUW-fg-2Xb" id="ivd-he-82A"/>

@@ -495,6 +495,7 @@
 // 设置播放时长和总时长
 - (void)setPlayTimeAndTotalTime {
     [self.playerView.playControl setPlayTime:self.player.currentPlaybackTime
+                            playableDuration:self.player.playableDuration
                                    totalTime:self.player.duration];
     
 //    NSLog(@"self.player.bufferingProgress = %d", self.player.bufferingProgress);

@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  设置播放时间和总时间
  */
-- (void)setPlayTime:(NSTimeInterval)playTime totalTime:(NSTimeInterval)totalTime;
+- (void)setPlayTime:(NSTimeInterval)playTime playableDuration:(NSTimeInterval)playableTime totalTime:(NSTimeInterval)totalTime;
 
 /**
  播放完成

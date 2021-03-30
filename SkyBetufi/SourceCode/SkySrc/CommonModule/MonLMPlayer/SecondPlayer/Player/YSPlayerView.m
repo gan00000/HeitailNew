@@ -171,14 +171,22 @@
 -(void)thumbPlayBtnClick
 {
 //    [self.thumbView removeFromSuperview];//删除封面图片
-    
 //    [self.thumbPlayBtn removeFromSuperview];
+    
+    UIView * xplayControlView = (UIView *)self.playControl;
+    
+    if (![xplayControlView isDescendantOfView:self]) {
+        [self addSubview:(UIView *)self.playControl];
+        // 添加约束
+        [(UIView *)self.playControl mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.leading.trailing.top.bottom.equalTo(self);
+        }];
+    }
+    
+    
     self.thumbView.hidden = YES;
-    [self addSubview:(UIView *)self.playControl];
-    // 添加约束
-    [(UIView *)self.playControl mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.trailing.top.bottom.equalTo(self);
-    }];
+    [self.thumbPlayBtn setImage:[UIImage imageNamed:@"play_Image"] forState:UIControlStateNormal];
+    self.thumbPlayBtn.tag = 1;
     
     if (self.mYSPlayerControlDelegate) {
         [self.mYSPlayerControlDelegate initPlayAndPrepareToPlay:self.thumbPlayBtn.tag];
