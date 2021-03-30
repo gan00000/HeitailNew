@@ -287,6 +287,25 @@
 }
 #pragma mark - requests
 
+
+- (void)loadDetailWithCompleteBlock:(dispatch_block_t)block {
+    [GlodBuleHTNewsAdditionRequest taorequestDetailWithPostId:self.post_id successBlock:^(GlodBuleHTNewsModel * _Nonnull newsModel) {
+        self.newsModel = newsModel;
+        if (block) {
+            block();
+        }
+    } errorBlock:^(GlodBuleBJError *error) {
+        [self.view showToast:@"數據拉取失敗"];
+        if (!self.newsModel) {
+            [self.view showEmptyViewWithTitle:@"數據拉取失敗，點擊重試" tapBlock:^{
+                [self.view hideEmptyView];
+//                [self.view showLoadingView];
+                [self loadDetailWithCompleteBlock:block];
+            }];
+        }
+    }];
+}
+
 - (void)loadComments {
     
     [self refreshUI];
@@ -299,9 +318,7 @@
     }
     self.tableView.tableFooterView = nil;
     self.tableView.mj_footer.hidden = NO;
-    if (self.isFirstShow) {
-        [self.view showLoadingView];
-    }
+   
     kWeakSelf
     [self.commentGetter taodoRequestWithCompleteBlock:^{
         if (weakSelf.commentGetter.hasMore) {
@@ -309,6 +326,7 @@
         } else {
             [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
         }
+        
         [weakSelf.tableView reloadData];
         [self refreshUI];
 //        [weakSelf onShowCommentListAction:nil];
@@ -316,9 +334,11 @@
 }
 - (void)updateAfterComment {
     
-    [self refreshUI];
-    [self.commentGetter taoreset];
-    [self loadComments];
+    [self loadDetailWithCompleteBlock:^{
+        [self refreshUI];
+        [self.commentGetter taoreset];
+        [self loadComments];
+    }];
 }
 - (void)addHistoryRecord {
     [GlodBuleHTUserRequest taoaddHistoryWithNewsId:self.post_id successBlock:^{
