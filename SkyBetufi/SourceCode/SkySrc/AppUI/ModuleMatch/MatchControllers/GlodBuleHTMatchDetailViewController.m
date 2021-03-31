@@ -19,6 +19,7 @@
 #import <IQKeyboardManager/IQKeyboardManager.h>
 
 @import SafariServices;
+@import Firebase;
 
 @interface GlodBuleHTMatchDetailViewController () <UIScrollViewDelegate, LMVideoPlayerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *homeTeamLogo;
@@ -86,6 +87,13 @@
     [self initData];
     [self setupUI];
     [self loadData];
+    
+    [FIRAnalytics logEventWithName:@"IOS_Match_Detail"
+                        parameters:@{
+                                     kFIRParameterItemID:[NSString stringWithFormat:@"id:%@-%@-%@", self.matchModel.awayName,self.matchModel.homeName,self.matchModel.gamedate],
+                                     kFIRParameterItemName:@"比赛详情",
+                                     kFIRParameterContentType:@"match-detail"
+                                     }];
 }
 
 - (void)viewWillAppear:(BOOL)animated{

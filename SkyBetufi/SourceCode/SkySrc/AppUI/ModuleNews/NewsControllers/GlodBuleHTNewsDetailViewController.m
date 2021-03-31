@@ -19,6 +19,7 @@
 
 #import "PLPlayerView.h"
 #import "YSPlayerController.h"
+@import Firebase;
 
 @interface GlodBuleHTNewsDetailViewController () <UITableViewDelegate, UITableViewDataSource, YSPlayerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -109,6 +110,14 @@
         [self.commentInputView becomeFirstResponder];
         [self.replyTextView becomeFirstResponder];
     }];
+    
+    
+    [FIRAnalytics logEventWithName:@"IOS_NEWS_Detail"
+                        parameters:@{
+                                     kFIRParameterItemID:[NSString stringWithFormat:@"id:%@", self.newsModel.title],
+                                     kFIRParameterItemName:@"新闻详情",
+                                     kFIRParameterContentType:@"news-detail"
+                                     }];
 }
 
 - (UIView *)replyInputAccessoryView

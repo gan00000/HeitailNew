@@ -20,6 +20,8 @@
 #import "PLPlayerView.h"
 #import "YSPlayerController.h"
 
+@import Firebase;
+
 @interface GlodBuleHTFilmDetailViewController () <UITableViewDelegate, UITableViewDataSource, YSPlayerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
@@ -97,6 +99,14 @@
         [self.commentInputView becomeFirstResponder];
         [self.replyTextView becomeFirstResponder];
     }];
+    
+    
+    [FIRAnalytics logEventWithName:@"IOS_FILM_Detail"
+                        parameters:@{
+                                     kFIRParameterItemID:[NSString stringWithFormat:@"id:%@", self.newsModel.title],
+                                     kFIRParameterItemName:@"影片详情",
+                                     kFIRParameterContentType:@"film-detail"
+                                     }];
 }
 
 - (UIView *)replyInputAccessoryView
