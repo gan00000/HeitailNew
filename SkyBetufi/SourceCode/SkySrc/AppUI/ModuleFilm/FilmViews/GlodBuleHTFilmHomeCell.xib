@@ -123,6 +123,21 @@
                             <action selector="addSave:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NQj-Mh-Tjs"/>
                         </connections>
                     </button>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBx-S6-5Uq" userLabel="fileTimeLabel">
+                        <rect key="frame" x="311" y="248" width="54" height="20.5"/>
+                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="54" id="AEu-go-B2F"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
@@ -141,6 +156,7 @@
                     <constraint firstItem="lTr-0I-WbP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="bVO-Cp-Sj3"/>
                     <constraint firstItem="Qsg-TS-wTa" firstAttribute="top" secondItem="rwP-Wg-1xf" secondAttribute="bottom" constant="12" id="csH-x9-Srx"/>
                     <constraint firstItem="Qsg-TS-wTa" firstAttribute="leading" secondItem="Xas-Z2-i4n" secondAttribute="trailing" constant="80" id="gL0-30-pkh"/>
+                    <constraint firstItem="rwP-Wg-1xf" firstAttribute="trailing" secondItem="TBx-S6-5Uq" secondAttribute="trailing" constant="10" id="hUk-hb-UBt"/>
                     <constraint firstItem="Qsg-TS-wTa" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="he1-ny-BOp"/>
                     <constraint firstItem="aVb-xg-1HH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="qLU-Ry-7C2"/>
                     <constraint firstItem="rwP-Wg-1xf" firstAttribute="top" secondItem="lTr-0I-WbP" secondAttribute="bottom" constant="15" id="tAC-4D-1FC"/>
@@ -149,12 +165,14 @@
                     <constraint firstItem="aVb-xg-1HH" firstAttribute="bottom" secondItem="Qsg-TS-wTa" secondAttribute="bottom" constant="8" id="y3V-f4-2HN"/>
                     <constraint firstItem="Xas-Z2-i4n" firstAttribute="centerY" secondItem="Qsg-TS-wTa" secondAttribute="centerY" id="yM1-Ai-96w"/>
                     <constraint firstItem="ZgI-Yn-5bj" firstAttribute="bottom" secondItem="kX3-i4-e9s" secondAttribute="bottom" id="yyp-B6-ueK"/>
+                    <constraint firstItem="rwP-Wg-1xf" firstAttribute="bottom" secondItem="TBx-S6-5Uq" secondAttribute="bottom" constant="6" id="yz0-PO-Luh"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="addSaveBtn" destination="kX3-i4-e9s" id="MyC-pl-aMx"/>
                 <outlet property="addSaveImageView" destination="ZgI-Yn-5bj" id="88K-Q6-LA5"/>
+                <outlet property="filmTimeLabel" destination="TBx-S6-5Uq" id="jIM-Sz-TgP"/>
                 <outlet property="shareButtonContentView" destination="Xas-Z2-i4n" id="72e-AK-8zG"/>
                 <outlet property="timeLabel" destination="L4k-8c-Iq3" id="QuZ-Gp-LU9"/>
                 <outlet property="titleLabel" destination="lTr-0I-WbP" id="grq-A3-Fwa"/>
@@ -171,6 +189,9 @@
         <image name="icon_share_new" width="27" height="27"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -20,6 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *localPlayerView;
 
+@property (weak, nonatomic) IBOutlet UILabel *filmTimeLabel;
 
 //========
 //@property (nonatomic, assign) BOOL isNeedReset;
@@ -44,6 +45,8 @@
     self.shareButtonContentView.hidden = NO;
     
     self.addSaveImageView.hidden = YES;
+    
+    //self.filmTimeLabel.layer.cornerRadius = 8;
     
     [self addPlayerView];
     
@@ -136,6 +139,9 @@
     
     self.viewCountLabel.text = [NSString stringWithFormat:@"%d", newsModel.total_like];
     
+    self.filmTimeLabel.hidden = NO;
+    self.filmTimeLabel.text = newsModel.play_time;
+    
     [self setupSaveButton];
         
     [self.playerController setMediaInfo:newsModel.plMediaInfo];
@@ -179,6 +185,7 @@
 
 - (void)play
 {
+    self.filmTimeLabel.hidden = YES;
     if (self.playerController) {
         [self.playerController play];
     }
@@ -262,6 +269,7 @@
 
 -(void)startPlay:(YSPlayerController *)playerController
 {
+    self.filmTimeLabel.hidden = YES;
     if (self.mPlayerTableViewCellDelegate) {
         [self.mPlayerTableViewCellDelegate tableViewWillPlay:self];
     }
