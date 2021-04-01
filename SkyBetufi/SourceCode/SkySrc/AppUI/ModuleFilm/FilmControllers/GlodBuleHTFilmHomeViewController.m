@@ -43,6 +43,9 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     NSLog(@"GlodBuleHTFilmHomeViewController viewDidAppear");
+    if (self.filmList) {
+        [self.tableView reloadData];
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {

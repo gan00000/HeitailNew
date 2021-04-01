@@ -88,18 +88,13 @@
 
 - (void)setupSaveButton {
     if (self.newsModel.my_like) {
-//        [self.addSaveBtn setTintColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
-//        UIImage *saveIcon = [[GlodBulePPXXBJBaseViewController taofixImageSize:[UIImage imageNamed:@"icon_film_like"] toSize:CGSizeMake(22, 22)] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         [self.addSaveBtn setImage:[UIImage imageNamed:@"icon_film_like"] forState:UIControlStateNormal];
         
         self.addSaveBtn.selected = YES;
     } else {
-        
-//        UIImage *saveIcon = [[GlodBulePPXXBJBaseViewController taofixImageSize:[UIImage imageNamed:@"icon_film_unlike"] toSize:CGSizeMake(22, 22)] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         [self.addSaveBtn setImage:[UIImage imageNamed:@"icon_film_unlike"] forState:UIControlStateNormal];
         
         self.addSaveBtn.selected = NO;
-//        [self.addSaveBtn setTintColor:[UIColor hx_colorWithHexRGBAString:@"999999"]];
     }
     self.viewCountLabel.text = [NSString stringWithFormat:@"%d", self.newsModel.total_like];
 }

@@ -396,8 +396,8 @@
     UIImage *commentIcon = [[UIImage imageNamed:@"icon_add_comment"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.commentButton setImage:commentIcon forState:UIControlStateNormal];
     [self.commentButton setTintColor:[UIColor hx_colorWithHexRGBAString:@"999999"]];
-    UIImage *saveIcon = [[GlodBulePPXXBJBaseViewController taofixImageSize:[UIImage imageNamed:@"icon_add_collection"] toSize:CGSizeMake(20, 20)] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    [self.saveButton setImage:saveIcon forState:UIControlStateNormal];
+//    UIImage *saveIcon = [[GlodBulePPXXBJBaseViewController taofixImageSize:[UIImage imageNamed:@"icon_add_collection"] toSize:CGSizeMake(20, 20)] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+//    [self.saveButton setImage:saveIcon forState:UIControlStateNormal];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onInputBegin) name:UITextViewTextDidBeginEditingNotification object:self.commentInputView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onInputEnd) name:UITextViewTextDidEndEditingNotification object:self.commentInputView];
     [self.commentInputView bk_addObserverForKeyPath:@"contentSize" task:^(id target) {
@@ -433,20 +433,32 @@
         self.commentCountContent.hidden = YES;
     }
 }
+//- (void)setupSaveButton {
+//    if (self.newsModel.my_save) {
+//        [self.saveButton setTintColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
+//        self.saveButton.selected = YES;
+//    } else {
+//        self.saveButton.selected = NO;
+//        [self.saveButton setTintColor:[UIColor hx_colorWithHexRGBAString:@"999999"]];
+//    }
+//}
+
 - (void)setupSaveButton {
-    if (self.newsModel.my_save) {
-        [self.saveButton setTintColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
+    if (self.newsModel.my_like) {
+        [self.saveButton setImage:[UIImage imageNamed:@"icon_like_film2"] forState:UIControlStateNormal];
         self.saveButton.selected = YES;
     } else {
+        [self.saveButton setImage:[UIImage imageNamed:@"icon_unlike_film2"] forState:UIControlStateNormal];
         self.saveButton.selected = NO;
-        [self.saveButton setTintColor:[UIColor hx_colorWithHexRGBAString:@"999999"]];
     }
 }
+
 #pragma mark - actions
 - (void)onShareButtonTapped:(id)sender {
     [self.newsModel taoshare];
 }
 - (IBAction)onSaveAction:(UIButton *)sender {
+    /**
     if (![GlodBuleHTUserManager tao_isUserLogin]) {
         [GlodBuleHTUserManager tao_doUserLogin];
         [self.view showToast:@"請登錄"];
@@ -471,6 +483,34 @@
     }
     sender.selected = !sender.selected;
     self.newsModel.my_save = sender.selected;
+     */
+    
+    if (![GlodBuleHTUserManager tao_isUserLogin]) {
+        [GlodBuleHTUserManager tao_doUserLogin];
+        [self.view showToast:@"請登錄"];
+        return;
+    }
+    if (sender.selected) {
+        [GlodBuleHTUserRequest taodeleteLikeWithNewsId:self.newsModel.news_id successBlock:^{
+            [self.view showToast:@"已取消點讚"];
+            self.newsModel.my_like = NO;
+            self.newsModel.total_like = self.newsModel.total_like - 1;
+            [self setupSaveButton];
+        } failBlock:^(GlodBuleBJError *error) {
+            [self.view showToast:@"取消點讚失敗"];
+        }];
+    } else {
+        [GlodBuleHTUserRequest taoaddLikeWithNewsId:self.newsModel.news_id successBlock:^{
+            [self.view showToast:@"已點讚"];
+            self.newsModel.my_like = YES;
+            self.newsModel.total_like = self.newsModel.total_like + 1;
+            [self setupSaveButton];
+        } failBlock:^(GlodBuleBJError *error) {
+            [self.view showToast:@"點讚失敗"];
+        }];
+    }
+    sender.selected = !sender.selected;
+    self.newsModel.my_like = sender.selected;
 }
 - (IBAction)onShowCommentListAction:(id)sender {
     CGFloat contentHeight = self.newsContentHeight + self.newsModel.detailHeaderHeight + 90*self.topNewsList.count + 40;
