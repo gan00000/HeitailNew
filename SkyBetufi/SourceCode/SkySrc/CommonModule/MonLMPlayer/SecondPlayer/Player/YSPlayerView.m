@@ -50,10 +50,11 @@
     [self.thumbImageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:nil];
     [self.thumbPlayBtn setImage:[UIImage imageNamed:@"play_Image"] forState:UIControlStateNormal];
     self.thumbPlayBtn.tag = 1;
-    [self.videoBgImageView sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-        UIImage *xUIImage = [self boxblurImage:image withBlurNumber:0.7];
-        [self.videoBgImageView setImage:xUIImage];
-    }];
+    
+//    [self.videoBgImageView sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+//        UIImage *xUIImage = [self boxblurImage:image withBlurNumber:0.7];
+//        [self.videoBgImageView setImage:xUIImage];
+//    }];
 }
 
 -(void) playbackComplete
@@ -71,7 +72,7 @@
         self.videoBgImageView.hidden = YES;
     }else{
         
-        self.videoBgImageView.hidden = NO;
+        self.videoBgImageView.hidden = YES;
     }
 }
 
@@ -107,6 +108,7 @@
 //    self.videoBgImageView.backgroundColor = [UIColor redColor];
     self.videoBgImageView.clipsToBounds = YES;
     self.videoBgImageView.alpha = 0.7;
+    self.videoBgImageView.hidden = YES;
     [self addSubview:self.videoBgImageView];
     [self.videoBgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.trailing.top.bottom.equalTo(self);
