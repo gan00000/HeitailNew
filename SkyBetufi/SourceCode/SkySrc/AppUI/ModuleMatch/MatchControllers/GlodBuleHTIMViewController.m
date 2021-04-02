@@ -26,9 +26,9 @@
 
 @property (strong, nonatomic) SRWebSocket *socket;
 @property (strong,nonatomic) NSTimer *heatBeatTimer;
-@property (nonatomic) BOOL loginSuccess;
+@property (nonatomic, assign) BOOL loginSuccess;
 @property (nonatomic, strong) NSMutableArray<MsgChatContent*> *chatContentList;
-@property (nonatomic) BOOL dataIsSet;
+@property (nonatomic, assign) BOOL dataIsSet;
 
 @property (nonatomic) GlodBuleHTMatchHomeModel *matchModel;
 
@@ -52,8 +52,8 @@
     
     [self setupViews];
     
-    self.showImView.hidden = YES;
-    self.notShowImView.hidden = NO;
+    self.showImView.hidden = NO;
+    self.notShowImView.hidden = YES;
     
 //    UIView *myInputAccessoryView = [[UIView alloc] init];
 //    UITextView *mUITextView = [[UITextView alloc] init];
@@ -166,15 +166,15 @@
     //        //self.statusLabel.text = @"未開始";
     //
     //    }
-    if (self.dataIsSet) {
+    if (self.dataIsSet && self.socket) {
         return;
     }
     self.matchModel = model;
-    NSString *timeStr = [NSString stringWithFormat:@"%@ %@",model.gamedate, [model.time uppercaseString]];
-    NSString *timeStamp = [GlodBuleConfigCoreUtil getTimeStrWithString: timeStr];
+//    NSString *timeStr = [NSString stringWithFormat:@"%@ %@",model.gamedate, [model.time uppercaseString]];
+//    NSString *timeStamp = [GlodBuleConfigCoreUtil getTimeStrWithString: timeStr];
     
-    double now_timestamp = [[GlodBuleConfigCoreUtil getTimeStamp] doubleValue];
-    double game_timestamp = [timeStamp doubleValue];
+//    double now_timestamp = [[GlodBuleConfigCoreUtil getTimeStamp] doubleValue];
+//    double game_timestamp = [timeStamp doubleValue];
     /*if (now_timestamp < (game_timestamp - 1 * 60 * 60 * 1000)) { //游戏未开始
         self.showImView.hidden = YES;
         self.notShowImView.hidden = NO;
@@ -192,6 +192,7 @@
     //新需求需要一直打開聊天窗口
     self.showImView.hidden = NO;
 //    self.notShowImView.hidden = YES;
+    
     [self initWebSocket];
     
     self.dataIsSet = YES;

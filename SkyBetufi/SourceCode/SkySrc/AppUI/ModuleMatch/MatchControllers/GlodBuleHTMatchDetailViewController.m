@@ -636,9 +636,9 @@
              }else if (index == 2) {//對陣
                  GlodBuleHTMatchCompareViewController *compareVc = self.loadedControllersArray[index];
                  [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel matchCompareModel:self.matchCompareModel liveFeedModel:self.liveFeedList matchModel:self.matchModel];
-             }else if (index == 1) {//聊起
+             }else if (index == 1) {//聊天
                  GlodBuleHTIMViewController *imVc = self.loadedControllersArray[index];
-                 //[vc taorefreshWithMatchSummaryModel:self.matchSummaryModel];
+                 [imVc setData:self.matchModel summary:self.matchSummaryModel];
              } else {
                  GlodBuleHTMatchDashboardViewController *dashbdVc = self.loadedControllersArray[index];
                  [dashbdVc taorefreshWithMatchCompareModel:self.matchCompareModel];
@@ -679,10 +679,7 @@
              
          }else if (index == 1) {
              self.imVc = [GlodBuleHTIMViewController taoviewController];
-//             [imVc taorefreshWithMatchSummaryModel:self.matchSummaryModel];
-//             imVc.onTableHeaderRefreshBlock = ^{
-//                 [weakSelf loadData];
-//             };
+             [self.imVc setData:self.matchModel summary:self.matchSummaryModel];
              vc = self.imVc;
          } else {
              GlodBuleHTMatchDashboardViewController *dashboardVc = [GlodBuleHTMatchDashboardViewController taoviewController];
@@ -709,7 +706,7 @@
             [compareVc taorefreshWithMatchSummaryModel:self.matchSummaryModel matchCompareModel:self.matchCompareModel liveFeedModel:self.liveFeedList matchModel:self.matchModel];
         }else if (index == 0) {//聊起
             GlodBuleHTIMViewController *imVc = self.loadedControllersArray[index];
-            //[vc taorefreshWithMatchSummaryModel:self.matchSummaryModel];
+            [imVc setData:self.matchModel summary:self.matchSummaryModel];
         } else {
             GlodBuleHTMatchDashboardViewController *dashbdVc = self.loadedControllersArray[index];
             [dashbdVc taorefreshWithMatchCompareModel:self.matchCompareModel];
@@ -740,10 +737,7 @@
         
     }else if (index == 0) {
         self.imVc = [GlodBuleHTIMViewController taoviewController];
-//             [imVc taorefreshWithMatchSummaryModel:self.matchSummaryModel];
-//             imVc.onTableHeaderRefreshBlock = ^{
-//                 [weakSelf loadData];
-//             };
+        [self.imVc setData:self.matchModel summary:self.matchSummaryModel];
         vc = self.imVc;
     } else {
         GlodBuleHTMatchDashboardViewController *dashboardVc = [GlodBuleHTMatchDashboardViewController taoviewController];
