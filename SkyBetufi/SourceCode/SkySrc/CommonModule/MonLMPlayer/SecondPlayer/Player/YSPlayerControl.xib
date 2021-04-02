@@ -216,6 +216,49 @@
                         <action selector="pauseBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="yGd-FG-vKd"/>
                     </connections>
                 </button>
+                <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFj-De-VuS" userLabel="progreeTipView">
+                    <rect key="frame" x="368" y="157" width="160" height="100"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video_forward_icon" translatesAutoresizingMaskIntoConstraints="NO" id="jrm-0u-fwN">
+                            <rect key="frame" x="20" y="12" width="120" height="26"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="26" id="HVe-9g-q1c"/>
+                                <constraint firstAttribute="width" constant="120" id="K3P-qO-mYr"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZq-9Y-aob" userLabel="slideTime">
+                            <rect key="frame" x="34" y="50" width="46" height="20.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xr5-xI-YOy" userLabel="totalTime">
+                            <rect key="frame" x="80" y="50" width="50.5" height="20.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LKp-ur-Q2w">
+                            <rect key="frame" x="30" y="82.5" width="100" height="4"/>
+                        </progressView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="1h8-cr-vFo"/>
+                        <constraint firstItem="tZq-9Y-aob" firstAttribute="trailing" secondItem="vFj-De-VuS" secondAttribute="centerX" id="4wX-Xb-Aii"/>
+                        <constraint firstAttribute="trailing" secondItem="LKp-ur-Q2w" secondAttribute="trailing" constant="30" id="BPP-R8-GC2"/>
+                        <constraint firstItem="jrm-0u-fwN" firstAttribute="top" secondItem="vFj-De-VuS" secondAttribute="top" constant="12" id="BWS-vK-5Vb"/>
+                        <constraint firstItem="Xr5-xI-YOy" firstAttribute="centerY" secondItem="tZq-9Y-aob" secondAttribute="centerY" id="KJU-9I-WKA"/>
+                        <constraint firstItem="Xr5-xI-YOy" firstAttribute="leading" secondItem="tZq-9Y-aob" secondAttribute="trailing" id="LB6-MV-Ll3"/>
+                        <constraint firstItem="tZq-9Y-aob" firstAttribute="top" secondItem="jrm-0u-fwN" secondAttribute="bottom" constant="12" id="OGK-cR-0nP"/>
+                        <constraint firstItem="jrm-0u-fwN" firstAttribute="centerX" secondItem="vFj-De-VuS" secondAttribute="centerX" id="OxG-JE-INe"/>
+                        <constraint firstItem="LKp-ur-Q2w" firstAttribute="leading" secondItem="vFj-De-VuS" secondAttribute="leading" constant="30" id="eie-9S-q61"/>
+                        <constraint firstItem="LKp-ur-Q2w" firstAttribute="top" secondItem="tZq-9Y-aob" secondAttribute="bottom" constant="12" id="hHy-WQ-tDn"/>
+                        <constraint firstAttribute="height" constant="100" id="tOK-GV-kFg"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
@@ -224,6 +267,7 @@
                 <constraint firstItem="9z1-74-LKo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="GwM-6a-tqb"/>
                 <constraint firstItem="9z1-74-LKo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="KBa-uJ-kl9"/>
                 <constraint firstItem="mz9-zX-8mK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ner-zi-NAD"/>
+                <constraint firstItem="vFj-De-VuS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ohz-7m-bMM"/>
                 <constraint firstAttribute="bottom" secondItem="06i-0d-UZl" secondAttribute="bottom" id="QdB-zA-Koc"/>
                 <constraint firstItem="Bbf-f0-IIg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TNj-SC-ERF"/>
                 <constraint firstAttribute="trailing" secondItem="06i-0d-UZl" secondAttribute="trailing" id="VVm-s2-92A"/>
@@ -232,6 +276,7 @@
                 <constraint firstItem="lb3-zs-BJB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="jTQ-as-VZ9"/>
                 <constraint firstItem="Bbf-f0-IIg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="kQD-7I-0Vl"/>
                 <constraint firstAttribute="trailing" secondItem="mz9-zX-8mK" secondAttribute="trailing" id="lhF-ky-aRY"/>
+                <constraint firstItem="vFj-De-VuS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="woq-RA-lE9"/>
                 <constraint firstItem="Kyl-bU-WaS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xoi-px-WBo"/>
             </constraints>
             <connections>
@@ -252,12 +297,17 @@
                 <outlet property="progressSlider" destination="WIW-Rv-eE9" id="4By-vV-asi"/>
                 <outlet property="rePauseBtn" destination="Kyl-bU-WaS" id="Laq-KN-P45"/>
                 <outlet property="rePlayBtn" destination="9z1-74-LKo" id="rHZ-Nb-cwX"/>
+                <outlet property="slideContentView" destination="vFj-De-VuS" id="bLu-1Q-2MG"/>
+                <outlet property="slideDirectionImageView" destination="jrm-0u-fwN" id="LrX-V5-sF7"/>
+                <outlet property="slideProgressView" destination="LKp-ur-Q2w" id="Wwu-83-aRL"/>
+                <outlet property="slideTimeLabel" destination="tZq-9Y-aob" id="guU-l7-Dd5"/>
                 <outlet property="statusBar" destination="i51-sr-QqL" id="RqN-gc-3YZ"/>
                 <outlet property="timeLbl" destination="3v4-Lw-Czr" id="H1F-pC-n1o"/>
                 <outlet property="toolBar" destination="06i-0d-UZl" id="DuY-T2-UqW"/>
                 <outlet property="toolBarBottomConstraint" destination="QdB-zA-Koc" id="OL6-l8-pQj"/>
                 <outlet property="toolBarLeadingConstraint" destination="G7P-wl-RRw" id="niS-9L-U1S"/>
                 <outlet property="toolBarTrailingConstraint" destination="VVm-s2-92A" id="sjW-ie-RCD"/>
+                <outlet property="totalTimeLabel" destination="Xr5-xI-YOy" id="6wN-P6-gM3"/>
                 <outlet property="totalTimeLbl" destination="EJZ-je-P9Y" id="BGg-Aa-ghg"/>
                 <outlet property="volumeProgressView" destination="quV-FJ-eXs" id="yMp-cw-3B1"/>
                 <outlet property="volumeTipLbl" destination="uJb-SW-7qq" id="bQq-x4-DoI"/>
@@ -272,6 +322,7 @@
         <image name="player-full-screen" width="21" height="21"/>
         <image name="player-pause" width="60" height="60"/>
         <image name="player-start" width="21" height="21"/>
+        <image name="video_forward_icon" width="64" height="55"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

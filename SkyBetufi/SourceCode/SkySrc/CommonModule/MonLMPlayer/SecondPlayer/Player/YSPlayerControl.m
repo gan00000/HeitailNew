@@ -88,6 +88,15 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 @property (weak, nonatomic) IBOutlet UIButton *rePlayBtn;
 @property (weak, nonatomic) IBOutlet UIButton *rePauseBtn;
 
+@property (weak, nonatomic) IBOutlet UIView *slideContentView;
+@property (weak, nonatomic) IBOutlet UIImageView *slideDirectionImageView;
+@property (weak, nonatomic) IBOutlet UILabel *slideTimeLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *totalTimeLabel;
+@property (weak, nonatomic) IBOutlet UIProgressView *slideProgressView;
+
+@property (assign, nonatomic) NSTimeInterval totalTime;
+@property (assign, nonatomic) NSTimeInterval currentSlideTime;
 
 //=========
 /** 单击 */
@@ -145,8 +154,19 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 //    [self startTimeTimer];
     // 添加MPVolumeView
     [self addMPVolumeView];
+    [self initSlideView];
+    
 }
 
+-(void) initSlideView
+{
+    self.slideContentView.hidden = YES;
+    self.slideContentView.layer.cornerRadius = 10;
+    self.slideTimeLabel.textColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"];
+    self.slideProgressView.progressTintColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"];
+    self.slideProgressView.trackTintColor = [UIColor whiteColor];
+    self.slideProgressView.progress = 0;
+}
 
 #pragma mark - UIGestureRecognizerDelegate
 
@@ -163,6 +183,8 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 - (void)setPlayTime:(NSTimeInterval)playTime playableDuration:(NSTimeInterval)playableTime totalTime:(NSTimeInterval)totalTime {
 //    self.playTimeLbl.text = [self formatTime:playTime];
 //    self.totalTimeLbl.text = [self formatTime:totalTime];
+    
+    self.totalTime = totalTime;
     self.progressSlider.value = playTime / totalTime;
     
     self.playTimeLbl.text = [NSString stringWithFormat:@"%@/%@",[self formatTime:playTime],[self formatTime:totalTime]];
@@ -222,6 +244,9 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
                 if ([self.delegate respondsToSelector:@selector(progressChangeStart)]) {
                     [self.delegate progressChangeStart];
                 }
+                self.slideContentView.hidden = NO;
+                self.slideProgressView.progress = self.progressSlider.value;
+                
             } else if (x < y) { // 垂直移动
                 // 获取当前页面手指触摸的点
                 CGPoint locationPoint = [pan locationInView:pan.view];
@@ -269,6 +294,8 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
                     if ([self.delegate respondsToSelector:@selector(didChangeProgress:)]) {
                         [self.delegate didChangeProgress:self.progressSlider.value];
                     }
+                    [self changeSlideProgressView:scale progress:self.progressSlider.value];
+                    
                     break;
                 }
                 default:
@@ -304,6 +331,7 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
                     if ([self.delegate respondsToSelector:@selector(progressChangeEnd)]) {
                         [self.delegate progressChangeEnd];
                     }
+                    self.slideContentView.hidden = YES;
                     break;
                 }
                 default:
@@ -591,6 +619,33 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     self.volumeProgressView.progress = volume;
 }
 
+- (void)changeSlideProgressView:(CGFloat)deltaX progress:(CGFloat)progress
+{
+//    if (deltaX > 0) {
+//        [self.slideDirectionImageView setImage:[UIImage imageNamed:@"video_forward_icon"]];
+//    }else{
+//        [self.slideDirectionImageView setImage:[UIImage imageNamed:@"video_backward_icon"]];
+//    }
+    self.slideProgressView.progress = progress;
+    if (self.slideProgressView.progress > 1.0) {
+        self.slideProgressView.progress = 1.0;
+    }
+    if (self.slideProgressView.progress < 0.0) {
+        self.slideProgressView.progress = 0.0;
+    }
+    self.totalTimeLabel.text = [NSString stringWithFormat:@"/%@", [self formatTime:self.totalTime]];
+    
+    NSTimeInterval thisSlideTime = self.totalTime * self.slideProgressView.progress;
+    self.slideTimeLabel.text = [self formatTime: thisSlideTime];
+    
+    if (thisSlideTime > self.currentSlideTime) {
+        [self.slideDirectionImageView setImage:[UIImage imageNamed:@"video_forward_icon"]];
+    }else if (thisSlideTime < self.currentSlideTime){
+        [self.slideDirectionImageView setImage:[UIImage imageNamed:@"video_backward_icon"]];
+    }
+    
+    self.currentSlideTime = thisSlideTime;
+}
 //是否立刻隐藏
 - (void)toggleBarImmediately:(BOOL)immediately {
     
