@@ -440,6 +440,7 @@
 {
     LoginReq_1001 *req = [[LoginReq_1001 alloc] init];
     req.token = GlodBuleHTUserManager.tao_userToken;
+    req.gameId = [self.matchModel.game_id intValue];
     [self sendData:1001 data:[req data]];
 }
 
