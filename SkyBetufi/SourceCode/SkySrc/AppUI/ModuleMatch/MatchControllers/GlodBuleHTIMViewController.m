@@ -540,6 +540,10 @@
                             [self.chatContentList removeObjectAtIndex:0];
                         }
                         [self.chatContentList addObject: msgContent];
+                        
+                        [self.chatContentList sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+                            return ((MsgChatContent *)obj1).fromTime - ((MsgChatContent *)obj2).fromTime;
+                        }];
                     }
                 }
                 
