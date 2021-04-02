@@ -547,7 +547,7 @@
                     }
                 }
                 
-                 [self.imContentTableView reloadData];
+                [self.imContentTableView reloadData];
                 [self scrollToBottom];
             }
             
