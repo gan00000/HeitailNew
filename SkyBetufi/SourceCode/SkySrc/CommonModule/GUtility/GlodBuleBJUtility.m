@@ -8,6 +8,39 @@
 @end
 @implementation GlodBuleBJUtility (App)
 
++ (CGFloat)calculateRowHeight:(NSString *)string fontSize:(NSInteger)fontSize width:(CGFloat)width
+{
+    
+//    NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:fontSize]};
+
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        paragraphStyle.lineSpacing = 14;  //设置行间距
+        paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+//        paragraphStyle.alignment = NSTextAlignmentLeft;
+    
+    NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:fontSize], NSParagraphStyleAttributeName:paragraphStyle};
+    
+    CGRect rect = [string boundingRectWithSize:CGSizeMake(width, 0)/*计算高度要先指定宽度*/ options:NSStringDrawingUsesLineFragmentOrigin |  NSStringDrawingUsesFontLeading attributes:dic context:nil];
+    
+    return ceilf(rect.size.height);;
+    
+}
+
++(NSMutableAttributedString *)getNewsTextAttribute:(NSString *)newsText
+{
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        paragraphStyle.lineSpacing = 14;  //设置行间距
+        paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+//        paragraphStyle.alignment = NSTextAlignmentLeft;
+    
+    NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:20.0], NSParagraphStyleAttributeName:paragraphStyle};
+    
+     NSMutableAttributedString *str=  [[NSMutableAttributedString alloc] initWithData:[newsText dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:nil];
+   
+    [str addAttributes:dic range:NSMakeRange(0, str.length)];
+    return str;
+}
+
 +(BOOL)isIPhoneXSeries
 {
     BOOL iPhoneXSeries = NO;

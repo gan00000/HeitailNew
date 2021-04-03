@@ -17,6 +17,11 @@
 #import "UIColor+GlodBuleHex.h"
 #import "UIView+GlodBuleBlockGesture.h"
 
+#import "HTNewsImageTypeCell.h"
+#import "HTNewsTextCell.h"
+#import "HTNewsDetailModel.h"
+#import "GlodBuleBJUtility.h"
+
 #import "PLPlayerView.h"
 #import "YSPlayerController.h"
 @import Firebase;
@@ -34,7 +39,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentRight;
 @property (nonatomic, strong) GlodBuleHTNewsModel *newsModel;
 @property (nonatomic, strong) NSArray *topNewsList;
-@property (nonatomic, copy) NSString *htmlContent;
+//@property (nonatomic, copy) NSString *htmlContent;
 @property (nonatomic, assign) CGFloat newsContentHeight;
 @property (nonatomic, assign) BOOL topRequestDone;
 @property (nonatomic, assign) BOOL htmlLoadDone;
@@ -51,7 +56,6 @@
 @property (strong, nonatomic) YSPlayerController *playerController;
 @property (strong, nonatomic) UIView *playerView;
 @property (nonatomic, assign) BOOL fullScreen;
-@property (nonatomic, assign) BOOL isPlayFilm;
 
 @property (nonatomic, strong)UIView * replyInputAccessoryView;
 @property (nonatomic, strong)UIButton * cancelButton;
@@ -67,41 +71,34 @@
     [super viewDidLoad];
     [self setupViews];
     self.isFirstShow = YES;
+
     
-//    if ([self.commentInputView.text isEqualToString:@" "]) {
-//        self.commentInputView.text = nil;
+//    if (self.filmModel && self.filmModel
+//        .plMediaInfo && self.filmModel
+//        .plMediaInfo.videoURL && ![self.filmModel
+//                                  .plMediaInfo.videoURL isEqualToString:@""]) {
+//
+////        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+////        [[AVAudioSession sharedInstance] setActive:YES error:nil];
+//
+//        [self.playerController shutdown];
+//        [self.playerView removeFromSuperview];
+//        self.playerController = nil;
+//
+//        self.playerController = [[YSPlayerController alloc] initWithContentMediaInfo: self.filmModel.plMediaInfo];
+//        self.playerController.delegate = self;
+//        self.playerController.needPortFullScreen = YES;
+//        self.playerView = self.playerController.view;
+//        [self.playerContentView addSubview:self.playerView];
+//        [self.playerView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.edges.mas_equalTo(self.playerContentView);
+//        }];
+//
+//        self.isPlayFilm = YES;
+//    }else{
+//        self.isPlayFilm = NO;
+//
 //    }
-//    [self loadDetailWithCompleteBlock:^{
-//        [self initDataRequests];
-//    }];
-//    [self addHistoryRecord];
-    
-    if (self.filmModel && self.filmModel
-        .plMediaInfo && self.filmModel
-        .plMediaInfo.videoURL && ![self.filmModel
-                                  .plMediaInfo.videoURL isEqualToString:@""]) {
-        
-//        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
-//        [[AVAudioSession sharedInstance] setActive:YES error:nil];
-        
-        [self.playerController shutdown];
-        [self.playerView removeFromSuperview];
-        self.playerController = nil;
-        
-        self.playerController = [[YSPlayerController alloc] initWithContentMediaInfo: self.filmModel.plMediaInfo];
-        self.playerController.delegate = self;
-        self.playerController.needPortFullScreen = YES;
-        self.playerView = self.playerController.view;
-        [self.playerContentView addSubview:self.playerView];
-        [self.playerView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(self.playerContentView);
-        }];
-        
-        self.isPlayFilm = YES;
-    }else{
-        self.isPlayFilm = NO;
-        
-    }
 
     self.commentInputView.inputAccessoryView = self.replyInputAccessoryView;
     
@@ -188,13 +185,7 @@
         }];
         [self addHistoryRecord];
     }
-    if (!self.isPlayFilm) {
 
-        self.playContentViewTralling.constant = SCREEN_WIDTH - 0.1;
-        [self.playerContentView setNeedsUpdateConstraints];
-        [self.playerContentView updateConstraintsIfNeeded];
-        [self.playerContentView layoutIfNeeded];
-    }
 //    [self.playerController play];
 }
 
@@ -223,9 +214,7 @@
         return 0;
     }
     NSInteger num = 4;
-    if (self.isPlayFilm) {
-        num = 1;
-    }
+
     if (self.commentGetter.hotComments.count > 0) {
         num ++;
     }
@@ -236,20 +225,13 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    if (self.isPlayFilm) { //兼容影片 新调整
-        if (section == 0) {
-            return 1;
-        }
-        if (section == 1 && self.commentGetter.hotComments.count > 0) {
-            return self.commentGetter.hotComments.count;
-        } else {
-            return self.commentGetter.normalComments.count;
-        }
-    }
-    
-    if (section == 0 || section == 1) {
+    if (section == 0) {
         return 1;
     }
+    if (section == 1) {
+        return self.newsModel.mHTNewsDetailModels.count;
+    }
+    
     if (section == 2) {
         return 1;
     }
@@ -263,53 +245,39 @@
     }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (self.isPlayFilm) {
-        
-        kWeakSelf
-        if (indexPath.section == 0) {
-            GlodBuleHTNewsHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsHeaderCell"];
-            [cell taosetupWithNewsModel:self.newsModel];
-            return cell;
-        }
-        GlodBuleHTNewsCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([GlodBuleHTNewsCommentCell class])];
-        cell.onReplyBlock = ^(GlodBuleHTCommentModel * _Nonnull commentModel) {
-            weakSelf.currentCommentModel = commentModel;
-            weakSelf.commentInputView.placeholder = [NSString stringWithFormat:@"回復 %@", commentModel.comment_author];
-            weakSelf.commentInputView.text = nil;
-            [weakSelf.commentInputView becomeFirstResponder];
-            [weakSelf.replyTextView becomeFirstResponder];
-        };
-        cell.onExpendBlock = ^{
-            [weakSelf.tableView beginUpdates];
-            [weakSelf.tableView endUpdates];
-        };
-        if (indexPath.section == 1 && self.commentGetter.hotComments.count > 0) {
-            [cell taorefreshWithCommentModel:self.commentGetter.hotComments[indexPath.row]];
-        } else {
-            [cell taorefreshWithCommentModel:self.commentGetter.normalComments[indexPath.row]];
-        }
-        return cell;
-        
-    }
-    
+
     kWeakSelf
     if (indexPath.section == 0) {
         GlodBuleHTNewsHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsHeaderCell"];
         [cell taosetupWithNewsModel:self.newsModel];
         return cell;
     } else if (indexPath.section == 1) {
-        GlodBuleHTNewsWebCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsWebCell"];
-        if (self.newsContentHeight == 0) {
-            [cell taosetupWithClearHtmlContent:self.htmlContent];
-            cell.onContentHeightUpdateBlock = ^(CGFloat height) {
-                if (fabs(height - weakSelf.newsContentHeight) < 1) {
-                    return;
-                }
-                weakSelf.newsContentHeight = height;
-                [weakSelf.tableView reloadData];
-            };
+        
+        HTNewsDetailModel *newsDetailModel = self.newsModel.mHTNewsDetailModels[indexPath.row];
+        if ([@"img" isEqualToString:newsDetailModel.type]) {
+            HTNewsImageTypeCell *image_cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsImageTypeCell"];
+            [image_cell.newsImageView sd_setImageWithURL:[NSURL URLWithString:newsDetailModel.data]];
+            return image_cell;
+        }else if ([@"text" isEqualToString:newsDetailModel.type]){
+            HTNewsTextCell *text_cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsTextCell"];
+            [text_cell setNewsText:newsDetailModel.data];
+            return text_cell;
+            
+//            GlodBuleHTNewsWebCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsWebCell"];
+//            if (self.newsContentHeight == 0) {
+//                [cell taosetupWithClearHtmlContent:self.htmlContent];
+//                cell.onContentHeightUpdateBlock = ^(CGFloat height) {
+//                    if (fabs(height - weakSelf.newsContentHeight) < 1) {
+//                        return;
+//                    }
+//                    weakSelf.newsContentHeight = height;
+//                    [weakSelf.tableView reloadData];
+//                };
+//            [cell taosetupWithClearHtmlContent:newsDetailModel.data];
+//            return cell;
+                
         }
+        HTNewsTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsTextCell"];
         return cell;
     } else if (indexPath.section == 2) {
         GlodBuleHTAdViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTAdViewCell"];
@@ -341,9 +309,7 @@
 }
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.isPlayFilm) {
-        return;
-    }
+    
     if (indexPath.section == 3) {
         GlodBuleHTNewsModel *newsModel = self.topNewsList[indexPath.row];
         GlodBuleHTNewsDetailViewController *detailVc = [GlodBuleHTNewsDetailViewController taoviewController];
@@ -352,24 +318,33 @@
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (self.isPlayFilm) {
-        if (indexPath.section == 0) {
-            return self.newsModel.detailHeaderHeight;
-        }
-        GlodBuleHTCommentModel *commentModel;
-        if (indexPath.section == 1 && self.commentGetter.hotComments.count > 0) {
-            commentModel = self.commentGetter.hotComments[indexPath.row];
-        } else {
-            commentModel = self.commentGetter.normalComments[indexPath.row];
-        }
-        return commentModel.cellHeight;
-    }
+
     
     if (indexPath.section == 0) {
         return self.newsModel.detailHeaderHeight;
     } else if (indexPath.section == 1) {
-        return self.newsContentHeight;
+        
+        HTNewsDetailModel *newsDetailModel = self.newsModel.mHTNewsDetailModels[indexPath.row];
+        NSLog(@"indexPath.section == 1 row = %d", indexPath.row);
+        if ([@"img" isEqualToString:newsDetailModel.type]) {
+            if (newsDetailModel.width == 0 || newsDetailModel.height == 0) {
+                return  180;//默认值
+            }
+            CGFloat cellHeight = self.view.frame.size.width / newsDetailModel.width * newsDetailModel.height;
+            if (!cellHeight || cellHeight < 0) {
+                return  180;//默认值
+            }
+            return cellHeight;
+        }else if ([@"text" isEqualToString:newsDetailModel.type]){
+           
+            CGFloat textHeight = [GlodBuleBJUtility calculateRowHeight:newsDetailModel.data fontSize:20 width:self.view.frame.size.width - 30];
+            if (textHeight < 1) {
+                textHeight = 1;
+            }
+            return textHeight;
+        }
+        
+        return 300;
     } else if (indexPath.section == 2) {
         return 250;
     } else if (indexPath.section == 3) {
@@ -382,35 +357,16 @@
         commentModel = self.commentGetter.normalComments[indexPath.row];
     }
     return commentModel.cellHeight;
+    
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    
-    if (self.isPlayFilm) {
-        if (section == 0) {
-            return 0.1;
-        }
-        return 40;
-    }
-    
+        
     if (section == 0 || section == 1) {
         return 0.1;
     }
     return 40;
 }
 - (UITableViewHeaderFooterView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    
-    if (self.isPlayFilm) {
-        if (section == 0) {
-            return nil;
-        }
-        GlodBuleHTNewsTopHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"GlodBuleHTNewsTopHeaderView"];
-        if (section == 1 && self.commentGetter.hotComments.count > 0) {
-            [headerView taorefreshWithTitle:@"熱門回覆"];
-        } else {
-            [headerView taorefreshWithTitle:@"全部回覆"];
-        }
-        return headerView;
-    }
     
     if (section == 0 || section == 1 || section == 2) {
         return nil;
@@ -457,14 +413,14 @@
         weakSelf.topRequestDone = YES;
         [weakSelf refreshUI];
     }];
-    if (!weakSelf.htmlContent) {
-        self.htmlLoadDone = NO;
-        [self.newsModel taogetClearContentWithBlock:^(BOOL success, NSString *content) {
-            weakSelf.htmlContent = content;
-            weakSelf.htmlLoadDone = YES;
-            [weakSelf refreshUI];
-        }];
-    }
+//    if (!weakSelf.htmlContent) {
+//        self.htmlLoadDone = NO;
+//        [self.newsModel taogetClearContentWithBlock:^(BOOL success, NSString *content) {
+//            weakSelf.htmlContent = content;
+//            weakSelf.htmlLoadDone = YES;
+//            [weakSelf refreshUI];
+//        }];
+//    }
     [self loadComments];
 }
 - (void)loadComments {
@@ -510,7 +466,8 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.estimatedRowHeight = 0;
+    self.tableView.estimatedRowHeight = 40;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedSectionFooterHeight = 0;
     self.tableView.estimatedSectionHeaderHeight = 0;
     [self.tableView registerNib:[UINib nibWithNibName:@"GlodBuleHTNewsHeaderCell" bundle:nil]
@@ -524,6 +481,11 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"GlodBuleHTAdViewCell" bundle:nil]
     forCellReuseIdentifier:@"GlodBuleHTAdViewCell"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"HTNewsTextCell" bundle:nil]
+    forCellReuseIdentifier:@"HTNewsTextCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"HTNewsImageTypeCell" bundle:nil]
+    forCellReuseIdentifier:@"HTNewsImageTypeCell"];
     
     if (@available(iOS 11.0, *)) {
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;

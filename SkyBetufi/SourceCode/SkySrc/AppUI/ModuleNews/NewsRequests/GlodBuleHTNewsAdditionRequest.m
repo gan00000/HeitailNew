@@ -36,7 +36,22 @@
                      errorBlock:(BJServiceErrorBlock)errorBlock {
     [GlodBuleBJHTTPServiceEngine tao_postRequestWithFunctionPath:API_NEWS_DETAIL params:@{@"post_id": post_id} successBlock:^(id responseData) {
         if (successBlock) {
-            successBlock([GlodBuleHTNewsModel yy_modelWithJSON:responseData[@"post"]]);
+            
+            NSArray *xxHTNewsDetailModels = [NSArray yy_modelArrayWithClass:[HTNewsDetailModel class] json:responseData[@"post"][@"new_content"]];
+            NSMutableArray *maData = [NSMutableArray array];
+            
+            for (HTNewsDetailModel * d in xxHTNewsDetailModels) {
+                if ([d.type isEqualToString:@"text"] && [d.data hasPrefix:@"<a"] && [d.data hasSuffix:@"></a>"]) {
+                    
+                }else{
+                    [maData addObject:d];
+                }
+            }
+            
+            GlodBuleHTNewsModel *mGlodBuleHTNewsModel = [GlodBuleHTNewsModel yy_modelWithJSON:responseData[@"post"]];
+
+            mGlodBuleHTNewsModel.mHTNewsDetailModels = maData;
+            successBlock(mGlodBuleHTNewsModel);
         }
     } errorBlock:errorBlock];
 }
