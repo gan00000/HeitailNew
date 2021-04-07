@@ -121,7 +121,7 @@
         
         if (cell != tempCell && [tempCell isKindOfClass:[GlodBuleHTFilmHomeCell class]]) {
             GlodBuleHTFilmHomeCell *xxTempCell = (GlodBuleHTFilmHomeCell *)tempCell;
-            [xxTempCell pause];//所有其他不播放的可见cell stop
+            [xxTempCell stop];//所有其他不播放的可见cell stop
         }
     }
     self.playingCell = cell;
