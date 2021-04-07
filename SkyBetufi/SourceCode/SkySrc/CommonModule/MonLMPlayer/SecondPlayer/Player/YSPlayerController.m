@@ -92,7 +92,7 @@
     //那你可以选择保留缓冲区，不设置上面那个就行。
 //    [options setPlayerOptionIntValue:0 forKey:@"packet-buffering"];  //  关闭播放器缓冲
     //开启硬件解码
-//    [options setPlayerOptionIntValue:1  forKey:@"videotoolbox"];
+    [options setPlayerOptionIntValue:1  forKey:@"videotoolbox"];
     
     // 解决音视频不同步的问题
     [options setPlayerOptionIntValue:1 forKey:@"framedrop"];
