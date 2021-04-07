@@ -7,6 +7,7 @@
 #import "UIView+GlodBuleBlockGesture.h"
 #import "GlodBuleHTUserRequest.h"
 #import "GlodBulePPXXBJBaseViewController.h"
+#import "GTMNSString+HTML.h"
 
 @interface GlodBuleHTFilmHomeCell () <WKNavigationDelegate, YSPlayerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *webContentView;
@@ -129,7 +130,9 @@
 //    self.webContentViewHeight.constant = newsModel.iframe_height;
 //    [self.webView loadHTMLString:newsModel.iframe baseURL:nil];
 //    [self.webView showLoadingView];
-    self.titleLabel.text = newsModel.title;
+    
+    NSString *mtitle = [newsModel.title gtm_stringByUnescapingFromHTML];//[[newsModel.title stringByReplacingOccurrencesOfString:@"&#8217;" withString:@"'"] stringByReplacingOccurrencesOfString:@"&#8230;" withString:@"..."];
+    self.titleLabel.text = mtitle;
     self.timeLabel.text = [NSString stringWithFormat:@"%d", newsModel.total_comment];
     
     self.viewCountLabel.text = [NSString stringWithFormat:@"%d", newsModel.total_like];
@@ -262,7 +265,7 @@
 }
 
 
--(void)startPlay:(YSPlayerController *)playerController
+-(void)willStartPlay:(YSPlayerController *)playerController
 {
     self.filmTimeLabel.hidden = YES;
     if (self.mPlayerTableViewCellDelegate) {

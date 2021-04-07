@@ -160,7 +160,7 @@
     // 添加通知
     [self addNotifications];
     
-    [self.delegate startPlay:self];
+    [self.delegate willStartPlay:self];
 }
 
 - (void)done {
@@ -214,12 +214,13 @@
 //    } else {
 //
 //    }
+    [self.delegate willStartPlay:self];
+    
     [self.player play];
     self.playerView.thumbView.hidden = YES;
 //    [self resetTimer];
     self.playerView.playControl.playing = self.player.isPlaying;
-    [self.delegate startPlay:self];
-    
+   
 }
 
 - (void)stop {

@@ -683,6 +683,7 @@
              vc = self.imVc;
          } else {
              GlodBuleHTMatchDashboardViewController *dashboardVc = [GlodBuleHTMatchDashboardViewController taoviewController];
+             dashboardVc.matchModel = self.matchModel;
              [dashboardVc taorefreshWithMatchCompareModel:self.matchCompareModel];
              vc = dashboardVc;
          }

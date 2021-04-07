@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)playerControllerDidClickDone:(YSPlayerController *)playerController;
 - (void)playerControllerDidClickFullScreen:(YSPlayerController *)playerController;
 - (void)playerExitFullScreen:(YSPlayerController *)playerController;
-- (void)startPlay:(YSPlayerController *)playerController;
+- (void)willStartPlay:(YSPlayerController *)playerController;
 @end
 
 @interface YSPlayerController : NSObject

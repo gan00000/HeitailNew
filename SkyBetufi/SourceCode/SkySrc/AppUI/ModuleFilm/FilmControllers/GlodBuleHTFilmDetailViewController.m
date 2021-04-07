@@ -239,7 +239,7 @@
     GlodBuleHTNewsCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([GlodBuleHTNewsCommentCell class])];
     cell.onReplyBlock = ^(GlodBuleHTCommentModel * _Nonnull commentModel) {
         weakSelf.currentCommentModel = commentModel;
-        weakSelf.commentInputView.placeholder = [NSString stringWithFormat:@"回復 %@", commentModel.comment_author];
+//        weakSelf.commentInputView.placeholder = [NSString stringWithFormat:@"回復 %@", commentModel.comment_author];
         weakSelf.commentInputView.text = nil;
         [weakSelf.commentInputView becomeFirstResponder];
         [weakSelf.replyTextView becomeFirstResponder];
@@ -649,7 +649,7 @@
 }
 
 
--(void)startPlay:(YSPlayerController *)playerController
+-(void)willStartPlay:(YSPlayerController *)playerController
 {
 //    if (self.mPlayerTableViewCellDelegate) {
 //        [self.mPlayerTableViewCellDelegate tableViewWillPlay:self];

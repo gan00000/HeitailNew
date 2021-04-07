@@ -316,10 +316,11 @@
     GlodBuleHTNewsCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([GlodBuleHTNewsCommentCell class])];
     cell.onReplyBlock = ^(GlodBuleHTCommentModel * _Nonnull commentModel) {
         weakSelf.currentCommentModel = commentModel;
-        weakSelf.commentInputView.placeholder = [NSString stringWithFormat:@"回復 %@", commentModel.comment_author];
+        //weakSelf.commentInputView.placeholder = [NSString stringWithFormat:@"回復 %@", commentModel.comment_author];
         weakSelf.commentInputView.text = nil;
         [weakSelf.commentInputView becomeFirstResponder];
         [weakSelf.replyTextView becomeFirstResponder];
+//        weakSelf.replyTextView.placeholder = [NSString stringWithFormat:@"回復 %@", commentModel.comment_author];
     };
     cell.onExpendBlock = ^{
         [weakSelf.tableView beginUpdates];
