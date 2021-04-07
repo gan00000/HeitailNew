@@ -21,12 +21,13 @@
 #import "HTNewsTextCell.h"
 #import "HTNewsDetailModel.h"
 #import "GlodBuleBJUtility.h"
-
+#import "GlodBuleHTFilmHomeCell.h"
+#import "HTYoutubePlayerCell.h"
 #import "PLPlayerView.h"
 #import "YSPlayerController.h"
 @import Firebase;
 
-@interface GlodBuleHTNewsDetailViewController () <UITableViewDelegate, UITableViewDataSource, YSPlayerControllerDelegate>
+@interface GlodBuleHTNewsDetailViewController () <UITableViewDelegate, UITableViewDataSource, PlayerTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
@@ -61,6 +62,9 @@
 @property (nonatomic, strong)UIButton * cancelButton;
 @property (nonatomic, strong)UIButton * submitButton;
 @property (nonatomic, strong)UITextView *replyTextView;
+
+@property (nonatomic, assign) BOOL isFullScreen;
+@property (nonatomic, weak) GlodBuleHTFilmHomeCell *playingCell;
 
 @end
 @implementation GlodBuleHTNewsDetailViewController
@@ -200,7 +204,7 @@
     NSLog(@"GlodBuleHTNewsDetailViewController viewDidDisappear");
     [IQKeyboardManager sharedManager].enable = YES;
     
-    [self.playerController pause];
+    [self playerPause];
 }
 
 - (void)dealloc
@@ -276,6 +280,27 @@
 //            [cell taosetupWithClearHtmlContent:newsDetailModel.data];
 //            return cell;
                 
+        }else if ([@"video" isEqualToString:newsDetailModel.type])
+        {
+            GlodBuleHTFilmHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTFilmHomeCell"];
+            [cell taosetupWithNewsModel: self.newsModel];
+            
+            cell.mPlayerTableViewCellDelegate = self;
+            return cell;
+            
+        }else if ([@"video-youtube" isEqualToString:newsDetailModel.type])
+        {
+//            HTYoutubePlayerCell *mHTYoutubePlayerCell = [tableView dequeueReusableCellWithIdentifier:@"HTYoutubePlayerCell"];
+//            [mHTYoutubePlayerCell setNewsModel:self.newsModel newsDetailModel:newsDetailModel];
+//            return mHTYoutubePlayerCell;
+            
+            NSString *XXXXX = @"<iframe width=\"644\" height=\"362\" src=\"https://www.youtube.com/embed/k49NQpZNiIc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>";
+                
+            XXXXX = [self adapterHtmlData:XXXXX];
+                GlodBuleHTNewsWebCell *mGlodBuleHTNewsWebCell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsWebCell"];
+                [mGlodBuleHTNewsWebCell taosetupWithClearHtmlContent:XXXXX];
+                return mGlodBuleHTNewsWebCell;
+    
         }
         HTNewsTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsTextCell"];
         return cell;
@@ -322,7 +347,7 @@
     
     if (indexPath.section == 0) {
         return self.newsModel.detailHeaderHeight;
-    } else if (indexPath.section == 1) {
+    } else if (indexPath.section == 1) {//新闻内容
         
         HTNewsDetailModel *newsDetailModel = self.newsModel.mHTNewsDetailModels[indexPath.row];
         NSLog(@"indexPath.section == 1 row = %d", indexPath.row);
@@ -337,11 +362,21 @@
             return cellHeight;
         }else if ([@"text" isEqualToString:newsDetailModel.type]){
            
+            if (!newsDetailModel.data || [@"" isEqualToString:newsDetailModel.data]) {
+                return 20;
+            }
             CGFloat textHeight = [GlodBuleBJUtility calculateRowHeight:newsDetailModel.data fontSize:20 width:self.view.frame.size.width - 30];
-            if (textHeight < 1) {
-                textHeight = 1;
+            if (textHeight < 22) {
+                textHeight = 22;
             }
             return textHeight;
+        }else if ([@"video" isEqualToString:newsDetailModel.type])
+        {
+            return [GlodBuleHTFilmHomeCell headerViewHeight];
+        }else if ([@"video-youtube" isEqualToString:newsDetailModel.type])
+        {
+            return self.view.width / 644 * 362;
+//            return 200;
         }
         
         return 300;
@@ -486,6 +521,13 @@
     forCellReuseIdentifier:@"HTNewsTextCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"HTNewsImageTypeCell" bundle:nil]
     forCellReuseIdentifier:@"HTNewsImageTypeCell"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"GlodBuleHTFilmHomeCell" bundle:nil]
+         forCellReuseIdentifier:@"GlodBuleHTFilmHomeCell"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"HTYoutubePlayerCell" bundle:nil]
+         forCellReuseIdentifier:@"HTYoutubePlayerCell"];
+    
     
     if (@available(iOS 11.0, *)) {
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -642,88 +684,6 @@
     return _noCommentsFooterView;
 }
 
-#pragma mark - YSPlayerControllerDelegate
-
-- (void)playerControllerDidClickFullScreen:(YSPlayerController *)playerController {
-    self.fullScreen = self.playerController.isFullScreen;
-    [self playerViewEnterFullScreen];
-}
-
-- (void)playerExitFullScreen:(YSPlayerController *)playerController
-{
-    [self playerViewExitFullScreen];
-}
-
-- (void)playerViewEnterFullScreen{
-    
-    UIView *superView = [UIApplication sharedApplication].delegate.window.rootViewController.view;
-    [self.playerView removeFromSuperview];
-    
-    if (self.playerController.videoWidth < self.playerController.videoHeight) {
-        
-        [superView addSubview:self.playerView];
-//        superView.backgroundColor = UIColor.blackColor;
-        [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.leading.equalTo(superView);
-//            make.trailing.equalTo(superView);
-//            make.top.equalTo(superView);//.mas_offset(44);
-//            make.bottom.equalTo(superView).mas_offset(-20);
-            
-            
-            make.width.equalTo(superView.mas_width);
-            make.height.equalTo(superView.mas_height);
-            make.center.equalTo(superView);
-        }];
-        
-    }else{
-        [superView addSubview:self.playerView];
-        [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.width.equalTo(superView.mas_height);
-            make.height.equalTo(superView.mas_width);
-            make.center.equalTo(superView);
-        }];
-    }
-    
-    [superView setNeedsUpdateConstraints];
-    [superView updateConstraintsIfNeeded];
-    
-    [UIView animateWithDuration:.3 animations:^{
-        [superView layoutIfNeeded];
-    }];
-    
-    //[self.mPlayerTableViewCellDelegate tableViewCellEnterFullScreen:self];
-}
-
-- (void)playerViewExitFullScreen {
-    
-//    UIView *superView = [UIApplication sharedApplication].delegate.window.rootViewController.view;
-//    superView.backgroundColor = UIColor.clearColor;
-    
-    [self.playerView removeFromSuperview];
-    [self.playerContentView addSubview:self.playerView];
-    
-    [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.playerContentView);
-    }];
-    
-    [self.view setNeedsUpdateConstraints];
-    [self.view updateConstraintsIfNeeded];
-    
-    [UIView animateWithDuration:.3 animations:^{
-        [self.view layoutIfNeeded];
-    }];
-    
-    //[self.mPlayerTableViewCellDelegate tableViewCellExitFullScreen:self];
-}
-
-
--(void)startPlay:(YSPlayerController *)playerController
-{
-//    if (self.mPlayerTableViewCellDelegate) {
-//        [self.mPlayerTableViewCellDelegate tableViewWillPlay:self];
-//    }
-}
-
 #pragma mark - UIButton Target Aciton
 - (void)cancelButtonClicked
 {
@@ -742,4 +702,105 @@
     [self sendCommentAction:self.sendButton];
 }
 
+#pragma mark - cell代理PlayerTableViewCellDelegate
+- (void)tableViewWillPlay:(GlodBuleHTFilmHomeCell *)cell {
+    if (cell == self.playingCell) return;
+    
+    NSArray *array = [self.tableView visibleCells];
+    for (UITableViewCell *tempCell in array) {
+        
+        if (cell != tempCell && [tempCell isKindOfClass:[GlodBuleHTFilmHomeCell class]]) {
+            GlodBuleHTFilmHomeCell *xxTempCell = (GlodBuleHTFilmHomeCell *)tempCell;
+            [xxTempCell pause];//所有其他不播放的可见cell stop
+        }
+    }
+    self.playingCell = cell;
+}
+
+- (void)tableViewCellEnterFullScreen:(GlodBuleHTFilmHomeCell *)cell {
+    self.isFullScreen = YES;
+//    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+- (void)tableViewCellExitFullScreen:(GlodBuleHTFilmHomeCell *)cell {
+    self.isFullScreen = NO;
+//    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+
+- (void)playerPause {
+    
+    NSArray *array = [self.tableView visibleCells];
+
+    for (UITableViewCell *tempCell in array) {
+        
+        if ([tempCell isKindOfClass:[GlodBuleHTFilmHomeCell class]]) {
+            GlodBuleHTFilmHomeCell *xxTempCell = (GlodBuleHTFilmHomeCell *)tempCell;
+            [xxTempCell pause];//所有其他不播放的可见cell stop
+        }
+//        [cell stop];
+    }
+}
+
+
+-(NSString *) adapterHtmlData:(NSString *)data {
+    
+    NSString *html = data;//[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"class=\"onelist\""
+                                           withString:@" style=\" display: none\""];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"class=\"next-prev-posts clearfix\""
+                                           withString:@" style=\" display: none\""];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"id=\"footer\""
+                                           withString:@" style=\" display: none\""];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"id=\"header\""
+                                           withString:@" style=\" display: none\""];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"class=\"sidebar sidebar-right\""
+                                           withString:@" style=\" display: none\""];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+                                           withString:@"#"];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"class=\"heateorSssSharingRound\""
+                                           withString:@" style=\" display: none\""];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"class=\"adsbygoogle\""
+                                           withString:@" style=\" display: none\""];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"class=\"to-top\""
+                                           withString:@" style=\" display: none\""];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"class=\"post_icon\""
+                                           withString:@" style=\" display: none\""];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"class=\"post-content\""
+                                           withString:@"class=\"post-content app-hidden-ads\""];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"class=\"post-entry-categories\""
+                                           withString:@" style=\" display: none\""];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"class=\"post-title\""
+                                           withString:@" style=\" display: none\""];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"id=\"recommendedrPosts\""
+                                           withString:@"id=\"recommendedrPostsApps\""];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"plugins/wp-polls"
+                                           withString:@"#"];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"plugins/popups"
+                                           withString:@"#"];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"plugins/adrotate"
+                                           withString:@"#"];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"content-cjtz-mini"
+                                           withString:@"app_ad_hidden"];
+    
+    return html;
+}
 @end

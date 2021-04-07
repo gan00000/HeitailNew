@@ -121,6 +121,8 @@
 		32AC0CA525FB156D003B21FC /* HTHighLightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AC0CA325FB156D003B21FC /* HTHighLightsViewController.m */; };
 		32AC0CA825FB15AD003B21FC /* HTHighLightsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32AC0CA725FB15AD003B21FC /* HTHighLightsViewController.storyboard */; };
 		32B0F58B2545B6A3005642DC /* GlodBuleHTMatchWebPlayControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B0F58A2545B6A3005642DC /* GlodBuleHTMatchWebPlayControllerViewController.m */; };
+		32B4A0022618CD2F00E81C6B /* HTYoutubePlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B4A0002618CD2F00E81C6B /* HTYoutubePlayerCell.m */; };
+		32B4A0032618CD2F00E81C6B /* HTYoutubePlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B4A0012618CD2F00E81C6B /* HTYoutubePlayerCell.xib */; };
 		32B5323F26175D8C009ED9D8 /* HTNewsDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B5323E26175D8C009ED9D8 /* HTNewsDetailModel.m */; };
 		32B5324326176084009ED9D8 /* HTNewsTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B5324126176084009ED9D8 /* HTNewsTextCell.m */; };
 		32B5324426176084009ED9D8 /* HTNewsTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B5324226176084009ED9D8 /* HTNewsTextCell.xib */; };
@@ -658,6 +660,9 @@
 		32AC0CA725FB15AD003B21FC /* HTHighLightsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HTHighLightsViewController.storyboard; sourceTree = "<group>"; };
 		32B0F5892545B6A3005642DC /* GlodBuleHTMatchWebPlayControllerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTMatchWebPlayControllerViewController.h; sourceTree = "<group>"; };
 		32B0F58A2545B6A3005642DC /* GlodBuleHTMatchWebPlayControllerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTMatchWebPlayControllerViewController.m; sourceTree = "<group>"; };
+		32B49FFF2618CD2F00E81C6B /* HTYoutubePlayerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTYoutubePlayerCell.h; sourceTree = "<group>"; };
+		32B4A0002618CD2F00E81C6B /* HTYoutubePlayerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTYoutubePlayerCell.m; sourceTree = "<group>"; };
+		32B4A0012618CD2F00E81C6B /* HTYoutubePlayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTYoutubePlayerCell.xib; sourceTree = "<group>"; };
 		32B5323D26175D8C009ED9D8 /* HTNewsDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTNewsDetailModel.h; sourceTree = "<group>"; };
 		32B5323E26175D8C009ED9D8 /* HTNewsDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTNewsDetailModel.m; sourceTree = "<group>"; };
 		32B5324026176084009ED9D8 /* HTNewsTextCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTNewsTextCell.h; sourceTree = "<group>"; };
@@ -2299,6 +2304,9 @@
 				32B53245261761BC009ED9D8 /* HTNewsImageTypeCell.h */,
 				32B53246261761BC009ED9D8 /* HTNewsImageTypeCell.m */,
 				32B53247261761BC009ED9D8 /* HTNewsImageTypeCell.xib */,
+				32B49FFF2618CD2F00E81C6B /* HTYoutubePlayerCell.h */,
+				32B4A0002618CD2F00E81C6B /* HTYoutubePlayerCell.m */,
+				32B4A0012618CD2F00E81C6B /* HTYoutubePlayerCell.xib */,
 			);
 			path = NewsViews;
 			sourceTree = "<group>";
@@ -2854,6 +2862,7 @@
 				FECCA5212258C8D0009EF494 /* GlodBuleHTMeCenterNormalCell.xib in Resources */,
 				FE6BD04D2144FAF60090118A /* KKRESViewStatus.xcassets in Resources */,
 				FE83FE552177838F006C714C /* GlodBuleHTMatchDataRightCell.xib in Resources */,
+				32B4A0032618CD2F00E81C6B /* HTYoutubePlayerCell.xib in Resources */,
 				32E3E97D24FD40630076AD93 /* THSearch.storyboard in Resources */,
 				32340FD1250F1D7F00F47F76 /* GlodBuleHTChatContentCell.xib in Resources */,
 				FECCA52F2258C8D0009EF494 /* GlodBuleHTCollectionViewController.xib in Resources */,
@@ -3139,6 +3148,7 @@
 				FE9B32BC217896350055B611 /* GlodBuleHTRankRightCell.m in Sources */,
 				FE8EB0D3215603C500CA20F0 /* GlodBuleHTMatchLiveFeedRequest.m in Sources */,
 				32FED83023AB775600D900A7 /* UIColor+GlodBuleHex.m in Sources */,
+				32B4A0022618CD2F00E81C6B /* HTYoutubePlayerCell.m in Sources */,
 				FEC116112143D4A1002DB617 /* UIScrollView+GlodBuleAllowScreenEdgePanGestureRecognizer.m in Sources */,
 				FE7E6C9A2263CADB00B2973D /* GlodBuleHTMyMessaageCell.m in Sources */,
 				FEC117102143DE50002DB617 /* GlodBuleHTFilmHomeViewController.m in Sources */,

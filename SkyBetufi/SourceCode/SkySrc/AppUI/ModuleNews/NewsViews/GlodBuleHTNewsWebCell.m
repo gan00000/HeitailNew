@@ -13,7 +13,11 @@
 @implementation GlodBuleHTNewsWebCell
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self addSubview:self.webContentView];
+    [self.contentView addSubview:self.webView];
+    
+    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.contentView);
+    }];
 }
 - (void)dealloc {
     [self.webView.scrollView removeObserver:self forKeyPath:@"contentSize"];
@@ -23,12 +27,13 @@
     if (!htmlContent) {
         return;
     }
-    if (self.hasLoad) {
-        return;
-    }
+//    if (self.hasLoad) {
+//        return;
+//    }
     self.hasLoad = YES;
     [self.webView loadHTMLString:htmlContent baseURL:nil];
 }
+
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     __weak typeof(self) weakSelf = self;
@@ -40,8 +45,8 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 CGFloat height = [result doubleValue];
                 weakSelf.webView.frame = CGRectMake(0, 0, SCREEN_WIDTH, height);
-                weakSelf.webContentView.frame = CGRectMake(0, 0, SCREEN_WIDTH, height);
-                weakSelf.webContentView.contentSize =CGSizeMake(SCREEN_WIDTH, height);
+//                weakSelf.webContentView.frame = CGRectMake(0, 0, SCREEN_WIDTH, height);
+//                weakSelf.webContentView.contentSize =CGSizeMake(SCREEN_WIDTH, height);
                 if (weakSelf.onContentHeightUpdateBlock) {
                     weakSelf.onContentHeightUpdateBlock(height);
                 }
@@ -111,6 +116,7 @@
 //    }
     
 }
+
 #pragma mark - getters
 - (UIScrollView *)webContentView {
     if (!_webContentView) {
