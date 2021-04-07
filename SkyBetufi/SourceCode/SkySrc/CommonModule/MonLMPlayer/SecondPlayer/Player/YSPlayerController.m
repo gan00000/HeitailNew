@@ -19,7 +19,6 @@
 @property (strong, nonatomic) NSTimer *timer;
 @property (assign, nonatomic, getter=isFullScreen) BOOL fullScreen;
 @property (strong, nonatomic) PLMediaInfo *pLMediaInfo;
-@property (assign, nonatomic) BOOL isShutdown;
 
 @property (assign, nonatomic) NSUInteger count;
 
@@ -249,6 +248,15 @@
     self.player = nil;
 }
 
+- (void)playNowWithTime:(NSTimeInterval) time
+{
+    self.seekTime = time;
+    [self.playerView playBtnClickNow];
+//    [self pause];
+//    self.player.currentPlaybackTime = self.seekTime;
+//    [self play];
+}
+
 - (void)progressChangeStart {
     
     if (!self.player) {
@@ -414,6 +422,11 @@
 // 准备开始播放了
 - (void)mediaIsPreparedToPlayDidChange:(NSNotification*)notification {
     NSLog(@"self.player 准备开始播放了 mediaIsPrepareToPlayDidChange\n");
+    
+    if (self.seekTime > 0) {
+        self.player.currentPlaybackTime = self.seekTime;
+        self.seekTime = -1;
+    }
 }
 
 

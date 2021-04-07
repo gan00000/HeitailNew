@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YSPlayerView : UIView
 
+-(void) playBtnClickNow;
+
 -(void) setThumbWithUrl:(NSString *)url;
 -(void) playbackComplete;
 

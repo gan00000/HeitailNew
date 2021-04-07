@@ -207,6 +207,11 @@
     }
 }
 
+- (void)playBtnClickNow
+{
+    [self thumbPlayBtnClick];
+}
+
 #pragma mark - dealloc
 
 - (void)dealloc {

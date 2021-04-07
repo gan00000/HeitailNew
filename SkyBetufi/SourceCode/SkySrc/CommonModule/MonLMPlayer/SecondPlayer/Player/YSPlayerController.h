@@ -39,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)pause;
 
+- (void)playNowWithTime:(NSTimeInterval) time;
+
 @property (weak, nonatomic) id<YSPlayerControllerDelegate> delegate;
 @property (strong, nonatomic, readonly) UIView *view;
 @property (strong, nonatomic, readonly) id<IJKMediaPlayback> player;
@@ -52,6 +54,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) BOOL needPortFullScreen;
 //是否竖屏全屏中
 @property (assign, nonatomic) BOOL portFullScreening;
+
+@property (assign, nonatomic) BOOL isShutdown;
+
 @end
 
 NS_ASSUME_NONNULL_END
