@@ -15,6 +15,8 @@
 //@property (nonatomic, strong) NSArray *mediaArray;
 @property (nonatomic, assign) BOOL isFullScreen;
 
+@property (nonatomic, assign) BOOL playerToDetail;
+
 @property (nonatomic, weak) GlodBuleHTFilmHomeCell *playingCell;
 
 @end
@@ -43,8 +45,16 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     NSLog(@"GlodBuleHTFilmHomeViewController viewDidAppear");
-    if (self.filmList) {
-        [self.tableView reloadData];
+//    if (self.filmList) {
+//        [self.tableView reloadData];
+//    }
+    
+    if (self.playingCell && self.playerToDetail) {//播放器传递到详情返回的时候，播放view重新添加到cell中，此时不刷新列表（牺牲）
+        [self.playingCell reAddCellPlayerView];
+    }else{
+        if (self.filmList) {
+            [self.tableView reloadData];
+        }
     }
 }
 
@@ -64,37 +74,43 @@
         
         if ([tempCell isKindOfClass:[GlodBuleHTFilmHomeCell class]]) {
             GlodBuleHTFilmHomeCell *xxTempCell = (GlodBuleHTFilmHomeCell *)tempCell;
-            [xxTempCell pause];//所有其他不播放的可见cell stop
+            
+            if (self.playerToDetail && xxTempCell == self.playingCell) {
+                
+            }else{
+                [xxTempCell pause];//所有其他不播放的可见cell stop    ..假如播放中的视频需要传递到详情继续播放，则不暂停
+            }
+            
         }
 //        [cell stop];
     }
 }
 
 // 根据cell的位置，决定播放哪个cell
-- (void)playTopCell {
-    
-    if (self.playingCell) return;
-    
-    NSArray *array = [self.tableView visibleCells];
-    
-    GlodBuleHTFilmHomeCell *playCell = nil;
-    CGFloat minOriginY = self.view.bounds.size.height;
-    CGFloat navigationBarHeight = 20 + self.navigationController.navigationBar.bounds.size.height;
-    for (GlodBuleHTFilmHomeCell *cell in array) {
-        CGRect rc = [self.tableView convertRect:cell.frame toView:self.view];
-        rc.size.height -= [GlodBuleHTFilmHomeCell headerViewHeight];
-        if (rc.origin.y > navigationBarHeight && rc.origin.y + rc.size.height < self.view.bounds.size.height) {
-            if (rc.origin.y < minOriginY) {
-                minOriginY = rc.origin.y;
-                playCell = cell;
-            }
-            break;
-        }
-    }
-    
-    self.playingCell = playCell;
-    [playCell play];
-}
+//- (void)playTopCell {
+//
+//    if (self.playingCell) return;
+//
+//    NSArray *array = [self.tableView visibleCells];
+//
+//    GlodBuleHTFilmHomeCell *playCell = nil;
+//    CGFloat minOriginY = self.view.bounds.size.height;
+//    CGFloat navigationBarHeight = 20 + self.navigationController.navigationBar.bounds.size.height;
+//    for (GlodBuleHTFilmHomeCell *cell in array) {
+//        CGRect rc = [self.tableView convertRect:cell.frame toView:self.view];
+//        rc.size.height -= [GlodBuleHTFilmHomeCell headerViewHeight];
+//        if (rc.origin.y > navigationBarHeight && rc.origin.y + rc.size.height < self.view.bounds.size.height) {
+//            if (rc.origin.y < minOriginY) {
+//                minOriginY = rc.origin.y;
+//                playCell = cell;
+//            }
+//            break;
+//        }
+//    }
+//
+//    self.playingCell = playCell;
+//    [playCell play];
+//}
 
 #pragma mark - cell代理PlayerTableViewCellDelegate
 - (void)tableViewWillPlay:(GlodBuleHTFilmHomeCell *)cell {
@@ -175,6 +191,8 @@
 
 - (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    NSLog(@"didEndDisplayingCell");
+    
     if ([cell isKindOfClass:[GlodBuleHTFilmHomeCell class]] && cell == self.playingCell) {
         [self.playingCell stop];
         self.playingCell = nil;
@@ -199,6 +217,18 @@
     GlodBuleHTFilmDetailViewController *detailVc = [GlodBuleHTFilmDetailViewController taoviewController];
     detailVc.post_id = newsModel.news_id;
     detailVc.filmModel = newsModel;
+    
+//    GlodBuleHTFilmHomeCell *selectCell = (GlodBuleHTFilmHomeCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
+    
+//    if ([selectCell.news_id isEqualToString:self.playingCell.news_id]) {
+//        NSLog(@"selectCell.news_id isEqualToString:self.playingCell.news_id");
+//    }
+    if (self.playingCell && [self.playingCell.news_id isEqualToString:newsModel.news_id] && !self.playingCell.playerController.isShutdown && self.playingCell.playerController.player.currentPlaybackTime > 0) {
+        detailVc.currentPlaybackTime = self.playingCell.playerController.player.currentPlaybackTime;
+        detailVc.cellPlayerController = self.playingCell.playerController;
+        [self.playingCell removeCellPlayerView];
+        self.playerToDetail = YES;
+    }
     [self.navigationController pushViewController:detailVc animated:YES];
 }
 

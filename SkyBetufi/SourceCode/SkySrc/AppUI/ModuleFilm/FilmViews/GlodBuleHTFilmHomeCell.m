@@ -2,7 +2,6 @@
 #import <WebKit/WebKit.h>
 #import "GlodBuleLMVideoPlayer.h"
 #import "GlodBuleLMPlayerModel.h"
-#import "YSPlayerController.h"
 #import "UIImageView+GlodBuleHT.h"
 #import "UIView+GlodBuleBlockGesture.h"
 #import "GlodBuleHTUserRequest.h"
@@ -29,9 +28,9 @@
 //
 //@property (nonatomic, strong) GlodBuleLMVideoPlayer *ijkPlayer;
 
-@property (strong, nonatomic) YSPlayerController *playerController;
 @property (weak, nonatomic) UIView *playerView;
 @property (nonatomic, assign) BOOL fullScreen;
+@property (nonatomic, assign) BOOL isPlayerRemove;
 
 //@property (strong, nonatomic) UIView *thumbView;
 //@property (strong, nonatomic) UIImageView *thumbImageView;
@@ -112,6 +111,34 @@
     }];
 }
 
+-(void)removeCellPlayerView
+{
+//    [self.playerController.view removeFromSuperview];
+    self.isPlayerRemove = YES;
+}
+
+-(void)reAddCellPlayerView
+{
+    if (self.isPlayerRemove) {
+        UIView *playerView = self.playerController.view;
+        self.playerController.delegate = self;
+        self.playerController.needPortFullScreen = YES;
+        [self.webContentView addSubview:playerView];
+        [playerView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(self.webContentView);
+        }];
+        self.isPlayerRemove = NO;
+      
+        [self.contentView setNeedsUpdateConstraints];
+        [self.contentView updateConstraintsIfNeeded];
+        
+        [UIView animateWithDuration:.3 animations:^{
+            [self.contentView layoutIfNeeded];
+        }];
+    }
+    
+}
+
 //- (UIButton *)thumbPlayBtn {
 //    if (!_thumbPlayBtn) {
 //        _thumbPlayBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -143,6 +170,7 @@
     [self setupSaveButton];
         
     [self.playerController setMediaInfo:newsModel.plMediaInfo];
+    self.news_id = self.newsModel.news_id;
     
 }
 

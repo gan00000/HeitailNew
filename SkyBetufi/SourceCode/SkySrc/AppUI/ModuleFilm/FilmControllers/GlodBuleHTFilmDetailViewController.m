@@ -78,12 +78,19 @@
     
     
     [self setupViews];
-
-    [self.playerController shutdown];
-    [self.playerView removeFromSuperview];
-    self.playerController = nil;
     
-    self.playerController = [[YSPlayerController alloc] initWithContentMediaInfo: self.filmModel.plMediaInfo];
+    if (self.cellPlayerController) {
+        
+        self.playerController = self.cellPlayerController;
+        
+    }else{
+//        [self.playerController shutdown];
+//        [self.playerView removeFromSuperview];
+//        self.playerController = nil;
+        
+        self.playerController = [[YSPlayerController alloc] initWithContentMediaInfo: self.filmModel.plMediaInfo];
+    }
+    
     self.playerController.delegate = self;
     self.playerController.needPortFullScreen = YES;
     self.playerView = self.playerController.view;
@@ -99,7 +106,6 @@
         [self.commentInputView becomeFirstResponder];
         [self.replyTextView becomeFirstResponder];
     }];
-    
     
     [FIRAnalytics logEventWithName:@"IOS_FILM_Detail"
                         parameters:@{
@@ -175,6 +181,10 @@
         
         [self loadComments];//影片只需要获取评论
         [self addHistoryRecord];
+        
+//        if (self.currentPlaybackTime > 0) {
+//            [self.playerController playNowWithTime:self.currentPlaybackTime];
+//        }
     }
 //    if (!self.isPlayFilm) {
 //
@@ -197,12 +207,20 @@
     NSLog(@"GlodBuleHTNewsDetailViewController viewDidDisappear");
     [IQKeyboardManager sharedManager].enable = YES;
     
-    [self.playerController pause];
+    if (!self.cellPlayerController) {
+        [self.playerController pause];
+    }
+    
 }
 
 - (void)dealloc
 {
-    [self.playerController shutdown];
+    if (self.cellPlayerController) {
+        [self.cellPlayerController.view removeFromSuperview];
+    }else{
+        [self.playerController shutdown];
+    }
+   
 }
 
 #pragma mark - UITableViewDataSource
