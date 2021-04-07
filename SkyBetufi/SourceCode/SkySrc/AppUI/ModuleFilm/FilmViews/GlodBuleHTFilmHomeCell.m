@@ -231,6 +231,13 @@
     }
 }
 
+- (void)shutdown
+{
+    if (self.playerController) {
+        [self.playerController shutdown];
+    }
+}
+
 
 - (void)playerViewEnterFullScreen:(YSPlayerController *)playerController{
     self.playerView = playerController.view;

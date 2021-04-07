@@ -223,6 +223,15 @@
    
 }
 
+- (void)tao_handleNavBack{
+    
+    if (self.cellPlayerController) {
+        [self.cellPlayerController.view removeFromSuperview];
+    }else{
+        [self.playerController shutdown];
+    }
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 

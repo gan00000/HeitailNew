@@ -44,6 +44,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
     NSLog(@"GlodBuleHTFilmHomeViewController viewDidAppear");
 //    if (self.filmList) {
 //        [self.tableView reloadData];
@@ -78,7 +79,7 @@
             if (self.playerToDetail && xxTempCell == self.playingCell) {
                 
             }else{
-                [xxTempCell pause];//所有其他不播放的可见cell stop    ..假如播放中的视频需要传递到详情继续播放，则不暂停
+                [xxTempCell shutdown];//所有其他不播放的可见cell stop    ..假如播放中的视频需要传递到详情继续播放，则不暂停
             }
             
         }
@@ -121,7 +122,7 @@
         
         if (cell != tempCell && [tempCell isKindOfClass:[GlodBuleHTFilmHomeCell class]]) {
             GlodBuleHTFilmHomeCell *xxTempCell = (GlodBuleHTFilmHomeCell *)tempCell;
-            [xxTempCell stop];//所有其他不播放的可见cell stop
+            [xxTempCell shutdown];//所有其他不播放的可见cell stop
         }
     }
     self.playingCell = cell;
@@ -228,6 +229,8 @@
         detailVc.cellPlayerController = self.playingCell.playerController;
         [self.playingCell removeCellPlayerView];
         self.playerToDetail = YES;
+    }else{
+        self.playerToDetail = NO;
     }
     [self.navigationController pushViewController:detailVc animated:YES];
 }

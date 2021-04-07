@@ -206,7 +206,9 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 - (void)playbackShutDown{
     [self invalidTimer];
     [self invalidTimeTimer];
+    [self playbackComplete];
     [self removeFromSuperview];
+    
 }
 
 #pragma mark - Event response

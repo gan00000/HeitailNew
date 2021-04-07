@@ -36,6 +36,8 @@
 
 - (void)pause;
 
+- (void)shutdown;
+
 -(void)removeCellPlayerView;
 -(void)reAddCellPlayerView;
 

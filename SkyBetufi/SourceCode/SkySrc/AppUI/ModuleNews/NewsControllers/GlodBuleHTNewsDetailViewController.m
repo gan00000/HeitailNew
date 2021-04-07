@@ -212,6 +212,11 @@
     [self.playerController shutdown];
 }
 
+- (void)tao_handleNavBack{
+    
+    [self.playerController shutdown];
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if (!self.topRequestDone || !self.htmlLoadDone) {
