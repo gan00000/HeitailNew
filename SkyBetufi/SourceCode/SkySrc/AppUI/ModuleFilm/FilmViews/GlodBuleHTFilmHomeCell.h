@@ -28,6 +28,9 @@
 @property (strong, nonatomic) YSPlayerController *playerController;
 
 - (void)taosetupWithNewsModel:(GlodBuleHTNewsModel *)newsModel;
+
+- (void)taosetupWithPLMediaInfo:(PLMediaInfo *)mPLMediaInfo;
+
 + (CGFloat)headerViewHeight;
 
 - (void)play;

@@ -172,6 +172,7 @@
             <connections>
                 <outlet property="addSaveBtn" destination="kX3-i4-e9s" id="MyC-pl-aMx"/>
                 <outlet property="addSaveImageView" destination="ZgI-Yn-5bj" id="88K-Q6-LA5"/>
+                <outlet property="commentContentView" destination="Qsg-TS-wTa" id="LfU-ei-8gV"/>
                 <outlet property="filmTimeLabel" destination="TBx-S6-5Uq" id="jIM-Sz-TgP"/>
                 <outlet property="shareButtonContentView" destination="Xas-Z2-i4n" id="72e-AK-8zG"/>
                 <outlet property="timeLabel" destination="L4k-8c-Iq3" id="QuZ-Gp-LU9"/>

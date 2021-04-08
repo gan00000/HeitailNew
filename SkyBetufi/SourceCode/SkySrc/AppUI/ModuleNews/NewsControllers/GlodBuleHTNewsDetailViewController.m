@@ -25,6 +25,9 @@
 #import "HTYoutubePlayerCell.h"
 #import "PLPlayerView.h"
 #import "YSPlayerController.h"
+
+#import "GlodBuleHTImageBrowserViewController.h"
+
 @import Firebase;
 
 @interface GlodBuleHTNewsDetailViewController () <UITableViewDelegate, UITableViewDataSource, PlayerTableViewCellDelegate>
@@ -54,7 +57,7 @@
 
 
 //========
-@property (strong, nonatomic) YSPlayerController *playerController;
+//@property (strong, nonatomic) YSPlayerController *playerController;
 @property (strong, nonatomic) UIView *playerView;
 @property (nonatomic, assign) BOOL fullScreen;
 
@@ -204,17 +207,17 @@
     NSLog(@"GlodBuleHTNewsDetailViewController viewDidDisappear");
     [IQKeyboardManager sharedManager].enable = YES;
     
-    [self playerPause];
+    [self playerAllShutdown];
 }
 
 - (void)dealloc
 {
-    [self.playerController shutdown];
+    [self playerAllShutdown];
 }
 
 - (void)tao_handleNavBack{
     
-    [self.playerController shutdown];
+    [self playerAllShutdown];
 }
 
 #pragma mark - UITableViewDataSource
@@ -288,23 +291,28 @@
         }else if ([@"video" isEqualToString:newsDetailModel.type])
         {
             GlodBuleHTFilmHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTFilmHomeCell"];
-            [cell taosetupWithNewsModel: self.newsModel];
+            
+            PLMediaInfo *info = [[PLMediaInfo alloc] init];
+            info.videoURL = newsDetailModel.data;
+            info.thumbURL = newsDetailModel.poster;
+            info.totalTime = newsDetailModel.length_formatted;
+            [cell taosetupWithPLMediaInfo:info];
             
             cell.mPlayerTableViewCellDelegate = self;
             return cell;
             
         }else if ([@"video-youtube" isEqualToString:newsDetailModel.type])
         {
-//            HTYoutubePlayerCell *mHTYoutubePlayerCell = [tableView dequeueReusableCellWithIdentifier:@"HTYoutubePlayerCell"];
-//            [mHTYoutubePlayerCell setNewsModel:self.newsModel newsDetailModel:newsDetailModel];
-//            return mHTYoutubePlayerCell;
+            HTYoutubePlayerCell *mHTYoutubePlayerCell = [tableView dequeueReusableCellWithIdentifier:@"HTYoutubePlayerCell"];
+            [mHTYoutubePlayerCell setNewsModel:self.newsModel newsDetailModel:newsDetailModel];
+            return mHTYoutubePlayerCell;
             
-            NSString *XXXXX = @"<iframe width=\"644\" height=\"362\" src=\"https://www.youtube.com/embed/k49NQpZNiIc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>";
-                
-            XXXXX = [self adapterHtmlData:XXXXX];
-                GlodBuleHTNewsWebCell *mGlodBuleHTNewsWebCell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsWebCell"];
-                [mGlodBuleHTNewsWebCell taosetupWithClearHtmlContent:XXXXX];
-                return mGlodBuleHTNewsWebCell;
+//            NSString *XXXXX = @"<iframe width=\"644\" height=\"362\" src=\"https://www.youtube.com/embed/k49NQpZNiIc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>";
+//
+//            XXXXX = [self adapterHtmlData:XXXXX];
+//                GlodBuleHTNewsWebCell *mGlodBuleHTNewsWebCell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsWebCell"];
+//                [mGlodBuleHTNewsWebCell taosetupWithClearHtmlContent:XXXXX];
+//                return mGlodBuleHTNewsWebCell;
     
         }
         HTNewsTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsTextCell"];
@@ -339,6 +347,15 @@
     return cell;
 }
 #pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"didEndDisplayingCell");
+    if ([cell isKindOfClass:[GlodBuleHTFilmHomeCell class]] && cell == self.playingCell) {
+        [self.playingCell stop];
+        self.playingCell = nil;
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 3) {
@@ -346,6 +363,17 @@
         GlodBuleHTNewsDetailViewController *detailVc = [GlodBuleHTNewsDetailViewController taoviewController];
         detailVc.post_id = newsModel.news_id;
         [self.navigationController pushViewController:detailVc animated:YES];
+    }else if (indexPath.section == 1)
+    {
+       
+        HTNewsDetailModel *newsDetailModel = self.newsModel.mHTNewsDetailModels[indexPath.row];
+        if ([@"img" isEqualToString:newsDetailModel.type]) {
+            NSMutableArray *mmArr = [NSMutableArray array];
+            [mmArr addObject:@{@"url":newsDetailModel.data,@"title":[NSString stringWithFormat:@"图片"]}];
+            GlodBuleHTImageBrowserViewController *imageBrController = [[GlodBuleHTImageBrowserViewController alloc] initWithImages:mmArr];
+            [[self navigationController] pushViewController:imageBrController animated:NO];
+        }
+       
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -359,34 +387,46 @@
         NSLog(@"indexPath.section == 1 row = %d", indexPath.row);
         if ([@"img" isEqualToString:newsDetailModel.type]) {
             if (newsDetailModel.width == 0 || newsDetailModel.height == 0) {
+                
+                self.newsContentHeight += 180;
                 return  180;//默认值
             }
             CGFloat cellHeight = self.view.frame.size.width / newsDetailModel.width * newsDetailModel.height;
             if (!cellHeight || cellHeight < 0) {
+                self.newsContentHeight += 180;
                 return  180;//默认值
             }
+            self.newsContentHeight += cellHeight;
             return cellHeight;
         }else if ([@"text" isEqualToString:newsDetailModel.type]){
            
             if (!newsDetailModel.data || [@"" isEqualToString:newsDetailModel.data]) {
+                self.newsContentHeight += 20;
                 return 20;
             }
             CGFloat textHeight = [GlodBuleBJUtility calculateRowHeight:newsDetailModel.data fontSize:20 width:self.view.frame.size.width - 30];
-            if (textHeight < 22) {
-                textHeight = 22;
+            if (textHeight < 50) {
+                textHeight = 50;
             }
+            self.newsContentHeight += textHeight;
             return textHeight;
         }else if ([@"video" isEqualToString:newsDetailModel.type])
         {
-            return [GlodBuleHTFilmHomeCell headerViewHeight];
+            CGFloat mheadHeight = [GlodBuleHTFilmHomeCell headerViewHeight];
+            self.newsContentHeight += mheadHeight;
+            return mheadHeight;
         }else if ([@"video-youtube" isEqualToString:newsDetailModel.type])
         {
-            return self.view.width / 644 * 362;
+            CGFloat mheadHeight = self.view.width / 644 * 362;
+            self.newsContentHeight += mheadHeight;
+            return mheadHeight;
 //            return 200;
         }
-        
+        self.newsContentHeight += 300;
         return 300;
+        
     } else if (indexPath.section == 2) {
+        self.newsContentHeight += 250;
         return 250;
     } else if (indexPath.section == 3) {
            return 90;
@@ -425,7 +465,7 @@
 #pragma mark - requests
 - (void)loadDetailWithCompleteBlock:(dispatch_block_t)block {
     [GlodBuleHTNewsAdditionRequest taorequestDetailWithPostId:self.post_id successBlock:^(GlodBuleHTNewsModel * _Nonnull newsModel) {
-        [newsModel initPLMediaInfo];
+       
         self.newsModel = newsModel;
         if (block) {
             block();
@@ -717,7 +757,7 @@
         
         if (cell != tempCell && [tempCell isKindOfClass:[GlodBuleHTFilmHomeCell class]]) {
             GlodBuleHTFilmHomeCell *xxTempCell = (GlodBuleHTFilmHomeCell *)tempCell;
-            [xxTempCell pause];//所有其他不播放的可见cell stop
+            [xxTempCell shutdown];//所有其他不播放的可见cell stop
         }
     }
     self.playingCell = cell;
@@ -734,7 +774,7 @@
 }
 
 
-- (void)playerPause {
+- (void)playerAllShutdown {
     
     NSArray *array = [self.tableView visibleCells];
 
@@ -742,71 +782,9 @@
         
         if ([tempCell isKindOfClass:[GlodBuleHTFilmHomeCell class]]) {
             GlodBuleHTFilmHomeCell *xxTempCell = (GlodBuleHTFilmHomeCell *)tempCell;
-            [xxTempCell pause];//所有其他不播放的可见cell stop
+            [xxTempCell shutdown];//所有其他不播放的可见cell stop
         }
-//        [cell stop];
     }
 }
 
-
--(NSString *) adapterHtmlData:(NSString *)data {
-    
-    NSString *html = data;//[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
-    html = [html stringByReplacingOccurrencesOfString:@"class=\"onelist\""
-                                           withString:@" style=\" display: none\""];
-    
-    html = [html stringByReplacingOccurrencesOfString:@"class=\"next-prev-posts clearfix\""
-                                           withString:@" style=\" display: none\""];
-    
-    html = [html stringByReplacingOccurrencesOfString:@"id=\"footer\""
-                                           withString:@" style=\" display: none\""];
-    
-    html = [html stringByReplacingOccurrencesOfString:@"id=\"header\""
-                                           withString:@" style=\" display: none\""];
-    
-    html = [html stringByReplacingOccurrencesOfString:@"class=\"sidebar sidebar-right\""
-                                           withString:@" style=\" display: none\""];
-    
-    html = [html stringByReplacingOccurrencesOfString:@"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-                                           withString:@"#"];
-    
-    html = [html stringByReplacingOccurrencesOfString:@"class=\"heateorSssSharingRound\""
-                                           withString:@" style=\" display: none\""];
-    
-    html = [html stringByReplacingOccurrencesOfString:@"class=\"adsbygoogle\""
-                                           withString:@" style=\" display: none\""];
-    
-    html = [html stringByReplacingOccurrencesOfString:@"class=\"to-top\""
-                                           withString:@" style=\" display: none\""];
-    
-    html = [html stringByReplacingOccurrencesOfString:@"class=\"post_icon\""
-                                           withString:@" style=\" display: none\""];
-    
-    html = [html stringByReplacingOccurrencesOfString:@"class=\"post-content\""
-                                           withString:@"class=\"post-content app-hidden-ads\""];
-    
-    html = [html stringByReplacingOccurrencesOfString:@"class=\"post-entry-categories\""
-                                           withString:@" style=\" display: none\""];
-    
-    html = [html stringByReplacingOccurrencesOfString:@"class=\"post-title\""
-                                           withString:@" style=\" display: none\""];
-    
-    html = [html stringByReplacingOccurrencesOfString:@"id=\"recommendedrPosts\""
-                                           withString:@"id=\"recommendedrPostsApps\""];
-    
-    html = [html stringByReplacingOccurrencesOfString:@"plugins/wp-polls"
-                                           withString:@"#"];
-    
-    html = [html stringByReplacingOccurrencesOfString:@"plugins/popups"
-                                           withString:@"#"];
-    
-    html = [html stringByReplacingOccurrencesOfString:@"plugins/adrotate"
-                                           withString:@"#"];
-    
-    html = [html stringByReplacingOccurrencesOfString:@"content-cjtz-mini"
-                                           withString:@"app_ad_hidden"];
-    
-    return html;
-}
 @end

@@ -31,5 +31,6 @@
 @property (nonatomic, strong) NSString *detailDesc;
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *totalTime;
 
 @end

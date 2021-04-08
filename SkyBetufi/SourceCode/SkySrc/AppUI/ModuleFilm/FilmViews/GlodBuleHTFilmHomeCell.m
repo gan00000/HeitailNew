@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIView *localPlayerView;
 
 @property (weak, nonatomic) IBOutlet UILabel *filmTimeLabel;
+@property (weak, nonatomic) IBOutlet UIView *commentContentView;
 
 //========
 //@property (nonatomic, assign) BOOL isNeedReset;
@@ -174,6 +175,21 @@
     
 }
 
+- (void)taosetupWithPLMediaInfo:(PLMediaInfo *)mPLMediaInfo
+{
+    self.shareButtonContentView.hidden = YES;
+    self.titleLabel.hidden = YES;
+    self.timeLabel.hidden = YES;
+    self.viewCountLabel.hidden = YES;
+    self.filmTimeLabel.hidden = NO;
+    self.addSaveBtn.hidden = YES;
+    self.commentContentView.hidden = YES;
+    self.filmTimeLabel.text = mPLMediaInfo.totalTime;
+    if (!mPLMediaInfo.totalTime || [mPLMediaInfo.totalTime isEqualToString:@""]) {
+        self.filmTimeLabel.hidden = YES;
+    }
+    [self.playerController setMediaInfo:mPLMediaInfo];
+}
 
 - (IBAction)onShareButtonTapped:(id)sender {
     [self.newsModel taoshare];
