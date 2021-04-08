@@ -21,7 +21,7 @@
     NSString * filePath = [[NSBundle mainBundle] pathForResource:@"user_agreement" ofType:@"html"];
     NSURL * url = [NSURL fileURLWithPath:filePath];
     NSURLRequest * urlRequest = [NSURLRequest requestWithURL:url];
-    [self.userDelegateDataWeb loadRequest:urlRequest];
+//    [self.userDelegateDataWeb loadRequest:urlRequest];
 }
 - (IBAction)finshAction:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^{

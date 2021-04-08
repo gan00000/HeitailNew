@@ -10,6 +10,5 @@
 
 @interface PLAgreementViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *finshButton;
-@property (weak, nonatomic) IBOutlet UIWebView *userDelegateDataWeb;
 
 @end

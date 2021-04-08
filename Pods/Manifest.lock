@@ -192,6 +192,7 @@ PODS:
     - UMShare/Core
   - WebViewJavascriptBridge (6.0.3)
   - XCDYouTubeKit (2.15.2)
+  - youtube-ios-player-helper (0.1.6)
   - YYModel (1.0.4)
   - YYText (1.0.7)
   - ZFLineSDK (4.1.1)
@@ -233,6 +234,7 @@ DEPENDENCIES:
   - UMShare/UI
   - WebViewJavascriptBridge
   - XCDYouTubeKit (~> 2.7)
+  - youtube-ios-player-helper
   - YYModel
   - YYText
   - ZFLineSDK
@@ -285,6 +287,7 @@ SPEC REPOS:
     - UMShare
     - WebViewJavascriptBridge
     - XCDYouTubeKit
+    - youtube-ios-player-helper
     - YYModel
     - YYText
     - ZFLineSDK
@@ -353,10 +356,11 @@ SPEC CHECKSUMS:
   UMShare: ec11ef18fe90e7430466aced74fc305fe5e51618
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   XCDYouTubeKit: b120aced3d8638ffb570c5450cddb5a1dac448c7
+  youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZFLineSDK: fc1485f687bd9d6af5cb7e39ab2a8266680797dd
 
-PODFILE CHECKSUM: 50df4f8b6be90d276cd11b867ef6ad965011c537
+PODFILE CHECKSUM: 48ab4a2b1ce7c93ca215f301502baf4b3c6171d7
 
 COCOAPODS: 1.9.2
