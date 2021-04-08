@@ -31,7 +31,13 @@
 //        return;
 //    }
     self.hasLoad = YES;
-    [self.webView loadHTMLString:htmlContent baseURL:nil];
+    if ([htmlContent hasPrefix:@"https://"] || [htmlContent hasPrefix:@"https://"]) {
+        NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:htmlContent]];
+        [self.webView loadRequest:urlRequest];
+    }else{
+        [self.webView loadHTMLString:htmlContent baseURL:nil];
+    }
+    
 }
 
 #pragma mark - KVO

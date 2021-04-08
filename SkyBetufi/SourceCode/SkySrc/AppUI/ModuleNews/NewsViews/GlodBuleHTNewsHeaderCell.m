@@ -1,4 +1,6 @@
 #import "GlodBuleHTNewsHeaderCell.h"
+#import "GTMNSString+HTML.h"
+
 @interface GlodBuleHTNewsHeaderCell ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
@@ -13,7 +15,7 @@
     [super setSelected:selected animated:animated];
 }
 - (void)taosetupWithNewsModel:(GlodBuleHTNewsModel *)newsModel {
-    self.titleLabel.text = newsModel.title;
+    self.titleLabel.text = [newsModel.title gtm_stringByUnescapingFromHTML];
     self.timeLabel.text = newsModel.time;
     self.viewCountLabel.text = newsModel.view_count;
 }

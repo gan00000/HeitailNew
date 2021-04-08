@@ -257,7 +257,7 @@
     }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    NSLog(@"cellForRowAtIndexPath indexPath.section == %d row = %d", indexPath.section,indexPath.row);
     kWeakSelf
     if (indexPath.section == 0) {
         GlodBuleHTNewsHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsHeaderCell"];
@@ -314,6 +314,12 @@
 //                [mGlodBuleHTNewsWebCell taosetupWithClearHtmlContent:XXXXX];
 //                return mGlodBuleHTNewsWebCell;
     
+        }else if ([@"video-twitter" isEqualToString:newsDetailModel.type])
+        {
+                GlodBuleHTNewsWebCell *mGlodBuleHTNewsWebCell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsWebCell"];
+                [mGlodBuleHTNewsWebCell taosetupWithClearHtmlContent:newsDetailModel.data];
+                return mGlodBuleHTNewsWebCell;
+
         }
         HTNewsTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsTextCell"];
         return cell;
@@ -349,7 +355,7 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"didEndDisplayingCell");
+//    NSLog(@"didEndDisplayingCell");
     if ([cell isKindOfClass:[GlodBuleHTFilmHomeCell class]] && cell == self.playingCell) {
         [self.playingCell stop];
         self.playingCell = nil;
@@ -421,6 +427,10 @@
             self.newsContentHeight += mheadHeight;
             return mheadHeight;
 //            return 200;
+        }if ([@"video-twitter" isEqualToString:newsDetailModel.type]){
+            CGFloat mheadHeight = self.view.width / 644 * 362;
+            self.newsContentHeight += mheadHeight;
+            return mheadHeight;
         }
         self.newsContentHeight += 300;
         return 300;

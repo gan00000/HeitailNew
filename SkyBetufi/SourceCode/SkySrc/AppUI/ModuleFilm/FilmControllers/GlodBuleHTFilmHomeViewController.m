@@ -192,7 +192,7 @@
 
 - (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSLog(@"didEndDisplayingCell");
+//    NSLog(@"didEndDisplayingCell");
     
     if ([cell isKindOfClass:[GlodBuleHTFilmHomeCell class]] && cell == self.playingCell) {
         [self.playingCell stop];
