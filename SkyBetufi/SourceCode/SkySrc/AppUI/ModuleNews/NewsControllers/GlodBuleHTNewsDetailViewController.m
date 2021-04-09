@@ -25,7 +25,7 @@
 #import "HTYoutubePlayerCell.h"
 #import "PLPlayerView.h"
 #import "YSPlayerController.h"
-
+#import "HTNoUseHeaderTableViewCell.h"
 #import "GlodBuleHTImageBrowserViewController.h"
 
 @import Firebase;
@@ -269,23 +269,24 @@
         if ([@"img" isEqualToString:newsDetailModel.type]) {
             HTNewsImageTypeCell *image_cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsImageTypeCell"];
             [image_cell.newsImageView sd_setImageWithURL:[NSURL URLWithString:newsDetailModel.data]];
+            image_cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return image_cell;
         }else if ([@"text" isEqualToString:newsDetailModel.type]){
             HTNewsTextCell *text_cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsTextCell"];
             [text_cell setNewsText:newsDetailModel.data];
+            text_cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return text_cell;
             
 //            GlodBuleHTNewsWebCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsWebCell"];
-//            if (self.newsContentHeight == 0) {
-//                [cell taosetupWithClearHtmlContent:self.htmlContent];
-//                cell.onContentHeightUpdateBlock = ^(CGFloat height) {
+//            [cell taosetupWithClearHtmlContent: newsDetailModel.data];
+//            cell.onContentHeightUpdateBlock = ^(CGFloat height) {
 //                    if (fabs(height - weakSelf.newsContentHeight) < 1) {
 //                        return;
 //                    }
 //                    weakSelf.newsContentHeight = height;
 //                    [weakSelf.tableView reloadData];
-//                };
-//            [cell taosetupWithClearHtmlContent:newsDetailModel.data];
+//                NSLog(@"onContentHeightUpdateBlock height = %d", height);
+//            };
 //            return cell;
                 
         }else if ([@"video" isEqualToString:newsDetailModel.type])
@@ -299,12 +300,14 @@
             [cell taosetupWithPLMediaInfo:info];
             
             cell.mPlayerTableViewCellDelegate = self;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return cell;
             
         }else if ([@"video-youtube" isEqualToString:newsDetailModel.type])
         {
             HTYoutubePlayerCell *mHTYoutubePlayerCell = [tableView dequeueReusableCellWithIdentifier:@"HTYoutubePlayerCell"];
             [mHTYoutubePlayerCell setNewsModel:self.newsModel newsDetailModel:newsDetailModel];
+            mHTYoutubePlayerCell.selectionStyle = UITableViewCellSelectionStyleNone;
             return mHTYoutubePlayerCell;
             
 //            NSString *XXXXX = @"<iframe width=\"644\" height=\"362\" src=\"https://www.youtube.com/embed/k49NQpZNiIc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>";
@@ -316,12 +319,16 @@
     
         }else if ([@"video-twitter" isEqualToString:newsDetailModel.type])
         {
+            
+            NSString *MMM = @"<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">Kyrie added to his dunk collection tonight! <a href=\"https://t.co/Or0CRi5iYf\">pic.twitter.com/Or0CRi5iYf</a></p>&mdash; NBA (@NBA) <a href=\"https://twitter.com/NBA/status/1380038950220296192?ref_src=twsrc%5Etfw\">April 8, 2021</a></blockquote> <script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>";
                 GlodBuleHTNewsWebCell *mGlodBuleHTNewsWebCell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsWebCell"];
-                [mGlodBuleHTNewsWebCell taosetupWithClearHtmlContent:newsDetailModel.data];
+                [mGlodBuleHTNewsWebCell taosetupWithClearHtmlContent:MMM];
+            mGlodBuleHTNewsWebCell.selectionStyle = UITableViewCellSelectionStyleNone;
                 return mGlodBuleHTNewsWebCell;
 
         }
         HTNewsTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsTextCell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     } else if (indexPath.section == 2) {
         GlodBuleHTAdViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTAdViewCell"];
@@ -398,10 +405,11 @@
                 return  180;//默认值
             }
             CGFloat cellHeight = self.view.frame.size.width / newsDetailModel.width * newsDetailModel.height;
-            if (!cellHeight || cellHeight < 0) {
+            if (cellHeight < 0) {
                 self.newsContentHeight += 180;
                 return  180;//默认值
             }
+            cellHeight = cellHeight + 16;
             self.newsContentHeight += cellHeight;
             return cellHeight;
         }else if ([@"text" isEqualToString:newsDetailModel.type]){
@@ -410,7 +418,8 @@
                 self.newsContentHeight += 20;
                 return 20;
             }
-            CGFloat textHeight = [GlodBuleBJUtility calculateRowHeight:newsDetailModel.data fontSize:20 width:self.view.frame.size.width - 30];
+            CGFloat textHeight = [GlodBuleBJUtility calculateRowHeight:newsDetailModel.data fontSize:18 width:self.view.frame.size.width - 30];
+//            textHeight = textHeight + 30;
             if (textHeight < 50) {
                 textHeight = 50;
             }
@@ -452,15 +461,34 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
         
-    if (section == 0 || section == 1) {
+    if (section == 0) {
         return 0.1;
+    }
+    if (section == 1) {
+        return 16;
+    }
+    if (section == 2) {
+        return 20;
     }
     return 40;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 6;
+    }
+    return 0.1;
+}
+
 - (UITableViewHeaderFooterView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    if (section == 0 || section == 1 || section == 2) {
+    if (section == 0 || section == 2) {
         return nil;
+    }
+    if (section == 1) {
+        HTNoUseHeaderTableViewCell *nouseHeaderView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"HTNoUseHeaderTableViewCell"];
+        return nouseHeaderView;
     }
     GlodBuleHTNewsTopHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"GlodBuleHTNewsTopHeaderView"];
     if (section == 3) {
@@ -557,7 +585,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.estimatedRowHeight = 40;
+    self.tableView.estimatedRowHeight = 20;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedSectionFooterHeight = 0;
     self.tableView.estimatedSectionHeaderHeight = 0;
@@ -583,7 +611,8 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"HTYoutubePlayerCell" bundle:nil]
          forCellReuseIdentifier:@"HTYoutubePlayerCell"];
-    
+        
+    [self.tableView registerNib:[UINib nibWithNibName:@"HTNoUseHeaderTableViewCell" bundle:nil] forHeaderFooterViewReuseIdentifier:@"HTNoUseHeaderTableViewCell"];
     
     if (@available(iOS 11.0, *)) {
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;

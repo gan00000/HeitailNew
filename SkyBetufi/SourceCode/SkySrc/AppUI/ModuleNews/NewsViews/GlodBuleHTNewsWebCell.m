@@ -30,12 +30,17 @@
 //    if (self.hasLoad) {
 //        return;
 //    }
+    
+//    NSString *headerString = @"";//@"<header><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, font-size=16 user-scalable=no'><style>img{max-width:100%}</style></header>";
+
     self.hasLoad = YES;
     if ([htmlContent hasPrefix:@"https://"] || [htmlContent hasPrefix:@"https://"]) {
         NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:htmlContent]];
         [self.webView loadRequest:urlRequest];
     }else{
         [self.webView loadHTMLString:htmlContent baseURL:nil];
+        
+//        [self.webView loadHTMLString:[headerString stringByAppendingString: htmlContent] baseURL:nil];
     }
     
 }
@@ -51,7 +56,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 CGFloat height = [result doubleValue];
                 weakSelf.webView.frame = CGRectMake(0, 0, SCREEN_WIDTH, height);
-//                weakSelf.webContentView.frame = CGRectMake(0, 0, SCREEN_WIDTH, height);
+                weakSelf.contentView.frame = CGRectMake(0, 0, SCREEN_WIDTH, height);
 //                weakSelf.webContentView.contentSize =CGSizeMake(SCREEN_WIDTH, height);
                 if (weakSelf.onContentHeightUpdateBlock) {
                     weakSelf.onContentHeightUpdateBlock(height);
@@ -65,6 +70,13 @@
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
      BJLog(@"webView didFinishNavigation");
     [self addImgClickJS];
+    
+    //修改字体大小 300%
+//    [ webView evaluateJavaScript:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '300%'" completionHandler:nil];
+//
+//    //修改字体颜色  #9098b8
+//    [ webView evaluateJavaScript:@"document.getElementsByTagName('body')[0].style.webkitTextFillColor= '#fd4f52'" completionHandler:nil];
+ 
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
@@ -137,7 +149,7 @@
         _webView.scrollView.scrollEnabled = NO;
         _webView.navigationDelegate = self;
         _webView.UIDelegate = self;
-        [_webView.scrollView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
+//        [_webView.scrollView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
     }
     return _webView;
 }
