@@ -7,7 +7,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *leftTableView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollContentView;
 @property (nonatomic, strong) UITableView *rightTableView;
-@property (nonatomic) NSArray<GlodBuleHTMatchDetailsModel *> *dataList;
+@property (nonatomic) NSMutableArray<GlodBuleHTMatchDetailsModel *> *dataList;
 @property (nonatomic, strong) NSMutableArray *counts;//总计
 //@property (nonatomic) NSInteger rightViewItemCount;
 
@@ -20,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"dddddd"];
+    
+    self.dataList = [NSMutableArray array];
+    
     [self setupLeftTableView];
 }
 - (void)viewDidAppear:(BOOL)animated {
@@ -59,8 +62,36 @@
     [self.scrollContentView addSubview:self.rightTableView];
 }
 - (void)taorefreshWithDetailList:(NSArray<GlodBuleHTMatchDetailsModel *> *)detailList {
-    self.dataList = detailList;
-    [self countWithDataList:detailList];
+    
+    //分别对首发和替补按时间排序start
+    NSMutableArray *firstPlayerArr = [NSMutableArray array];
+    NSMutableArray *subPlayerArr = [NSMutableArray array];
+    for (int i = 0; i < detailList.count; i++) {
+        
+        if (i < 5) {
+            [firstPlayerArr addObject:detailList[i]];
+        }else{
+            [subPlayerArr addObject:detailList[i]];
+        }
+    }
+    [firstPlayerArr sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        GlodBuleHTMatchDetailsModel *model1 = (GlodBuleHTMatchDetailsModel *)obj1;
+        GlodBuleHTMatchDetailsModel *model2 = (GlodBuleHTMatchDetailsModel *)obj2;
+        return model1.minseconds < model2.minseconds;
+    }];
+    
+    [subPlayerArr sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        GlodBuleHTMatchDetailsModel *model1 = (GlodBuleHTMatchDetailsModel *)obj1;
+        GlodBuleHTMatchDetailsModel *model2 = (GlodBuleHTMatchDetailsModel *)obj2;
+        return model1.minseconds < model2.minseconds;
+    }];
+    
+    //分别对首发和替补按时间排序end
+    [self.dataList removeAllObjects];
+    [self.dataList addObjectsFromArray:firstPlayerArr];
+    [self.dataList addObjectsFromArray:subPlayerArr];
+    
+    [self countWithDataList:self.dataList];
     [self.leftTableView reloadData];
     [self.rightTableView reloadData];
 }
@@ -157,7 +188,7 @@
     xxModel.blk = @"-";
     xxModel.plusminus = @"-";
     [ppDataList addObject:xxModel];
-    self.dataList = [NSArray arrayWithArray:ppDataList];
+    self.dataList = [NSMutableArray arrayWithArray:ppDataList];
     NSLog(@"dataList");
 }
 #pragma mark - UITableViewDataSource
