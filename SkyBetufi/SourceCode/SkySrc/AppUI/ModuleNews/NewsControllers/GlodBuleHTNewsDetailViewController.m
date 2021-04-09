@@ -188,6 +188,7 @@
             self.commentInputView.text = nil;
         }
         [self loadDetailWithCompleteBlock:^{
+            [self refreshUI];
             [self initDataRequests];
         }];
         [self addHistoryRecord];
@@ -222,7 +223,7 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    if (!self.topRequestDone || !self.htmlLoadDone) {
+    if (!self.htmlLoadDone) {
         return 0;
     }
     NSInteger num = 4;
@@ -523,6 +524,7 @@
     [GlodBuleHTNewsAdditionRequest taorequestDetailWithPostId:self.post_id successBlock:^(GlodBuleHTNewsModel * _Nonnull newsModel) {
        
         self.newsModel = newsModel;
+        self.htmlLoadDone = YES;
         if (block) {
             block();
         }
@@ -540,7 +542,7 @@
 - (void)initDataRequests {//推薦閱讀
     kWeakSelf
     self.topRequestDone = NO;
-    self.htmlLoadDone = YES;
+   
     [GlodBuleHTNewsTopRequest taorequestWithSuccessBlock:^(NSArray<GlodBuleHTNewsModel *> *newsList) {
         weakSelf.topNewsList = newsList;
         weakSelf.topRequestDone = YES;
@@ -673,9 +675,9 @@
     self.commentInputView.attributedText = attr;
 }
 - (void)refreshUI {
-    if (!self.topRequestDone || !self.htmlLoadDone) {
-        return;
-    }
+//    if (!self.topRequestDone || !self.htmlLoadDone) {
+//        return;
+//    }
     [self.view hideLoadingView];
     [self.tableView reloadData];
     [self setupSaveButton];
