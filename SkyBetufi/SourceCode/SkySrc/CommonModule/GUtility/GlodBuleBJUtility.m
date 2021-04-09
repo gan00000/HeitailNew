@@ -97,6 +97,24 @@
     return window;
 }
 
++ (UIViewController *)getCurrentViewController
+{
+    
+    UIWindow *keyWindow = [self getCurrentWindow];
+    // SDK expects a key window at this point, if it is not, make it one
+    if (keyWindow !=  nil && !keyWindow.isKeyWindow) {
+        NSLog(@"Unable to obtain a key window, marking as keyWindow");
+        [keyWindow makeKeyWindow];
+    }
+    
+    UIViewController *topController = keyWindow.rootViewController;
+    while (topController.presentedViewController) {
+        topController = topController.presentedViewController;
+    }
+    return topController;
+}
+
+
 + (id)valueInPlistForKey:(NSString *)key {
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     return [infoDictionary objectForKey:key];

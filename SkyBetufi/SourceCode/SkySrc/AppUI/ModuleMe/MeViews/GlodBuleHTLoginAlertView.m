@@ -65,7 +65,7 @@
                make.top.bottom.mas_equalTo(self.lineLoginImageView);
             }];
 
-            
+//            [GIDSignIn sharedInstance].presentingViewController = [GlodBuleBJUtility getCurrentViewController];
             GIDSignInButton *gidSignInBtn = [[GIDSignInButton alloc] init];
             [self addSubview:gidSignInBtn];
             [gidSignInBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -73,9 +73,17 @@
                 make.width.mas_equalTo(60);
                make.top.bottom.mas_equalTo(self.lineLoginImageView);
             }];
-            [gidSignInBtn addTarget:self action:@selector(gidLoginBtn:) forControlEvents:UIControlEventTouchUpInside];
-        }else{
+//            [gidSignInBtn addTarget:self action:@selector(gidLoginBtn:) forControlEvents:UIControlEventTouchUpInside];
             
+            UIButton *gidSignReplaceBtn = [[UIButton alloc] init];
+            [self addSubview:gidSignReplaceBtn];
+            [gidSignReplaceBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.edges.mas_equalTo(gidSignInBtn);
+            }];
+            [gidSignReplaceBtn addTarget:self action:@selector(gidLoginBtn:) forControlEvents:UIControlEventTouchUpInside];
+            
+        }else{
+//            [GIDSignIn sharedInstance].presentingViewController = [GlodBuleBJUtility getCurrentViewController];
             GIDSignInButton *gidSignInBtn = [[GIDSignInButton alloc] init];
             [self addSubview:gidSignInBtn];
             [gidSignInBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -83,7 +91,14 @@
                 make.width.mas_equalTo(100);
                make.top.bottom.mas_equalTo(self.lineLoginImageView);
             }];
-            [gidSignInBtn addTarget:self action:@selector(gidLoginBtn:) forControlEvents:UIControlEventTouchUpInside];
+//            [gidSignInBtn addTarget:self action:@selector(gidLoginBtn:) forControlEvents:UIControlEventTouchUpInside];
+            
+            UIButton *gidSignReplaceBtn = [[UIButton alloc] init];
+            [self addSubview:gidSignReplaceBtn];
+            [gidSignReplaceBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.edges.mas_equalTo(gidSignInBtn);
+            }];
+            [gidSignReplaceBtn addTarget:self action:@selector(gidLoginBtn:) forControlEvents:UIControlEventTouchUpInside];
         }
     }
     
@@ -132,11 +147,11 @@
 }
 
 - (void)gidLoginBtn:(UIButton *)sender {
-    
+    [self dismiss];
     if (self.onPlatformButtonTapped) {
         self.onPlatformButtonTapped(HTLoginPlatformGid);
     }
-    [self dismiss];
+    
 }
 
 @end

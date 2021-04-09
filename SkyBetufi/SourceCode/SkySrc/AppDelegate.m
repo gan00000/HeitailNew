@@ -106,14 +106,16 @@
                                                         sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
                                                                annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
     if (!result) {
+        result = [[GIDSignIn sharedInstance] handleURL:url];
+    }
+    
+    if (!result) {
         result = [[LineSDKLogin sharedInstance] handleOpenURL:url];
     }
     if (!result) {
         result = [[UMSocialManager defaultManager] handleOpenURL:url options:options];
     }
-    if (!result) {
-        result = [[GIDSignIn sharedInstance] handleURL:url];
-    }
+    
     return result;
 }
 #pragma mark - push

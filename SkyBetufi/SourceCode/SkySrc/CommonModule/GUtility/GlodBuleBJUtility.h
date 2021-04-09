@@ -18,6 +18,7 @@ static inline BOOL p_addMethod(Class theClass, SEL selector, Method method) {
 + (NSString *)buildType;
 
 + (BOOL)isIPhoneXSeries;
++ (UIViewController *)getCurrentViewController;
 
 + (NSMutableAttributedString *)getNewsTextAttribute:(NSString *)newsText;
 + (CGFloat)calculateRowHeight:(NSString *)string fontSize:(NSInteger)fontSize width:(CGFloat)width;

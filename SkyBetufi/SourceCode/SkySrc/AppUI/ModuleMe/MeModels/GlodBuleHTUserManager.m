@@ -5,6 +5,7 @@
 #import "GlodBuleHTUserRequest.h"
 #import "GlodBuleDRSandBoxManager.h"
 #import <AuthenticationServices/AuthenticationServices.h>
+#import "GlodBuleBJUtility.h"
 
 const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 #define kUserTokenKey @"userToken"
@@ -193,7 +194,9 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 }
 
 - (void)handleGidSign{
-//    [GIDSignIn sharedInstance].presentingViewController = self;
+    
+    UIViewController *xxxxpresentingViewController = [GlodBuleBJUtility getCurrentViewController];
+    [GIDSignIn sharedInstance].presentingViewController = xxxxpresentingViewController;
     [[GIDSignIn sharedInstance] signIn];
 }
 
