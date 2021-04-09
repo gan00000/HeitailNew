@@ -203,7 +203,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     GlodBuleHTNewsModel *model = self.filmList[indexPath.row];
     if ([model.news_type isEqualToString:@"新聞"]) {
-        return 90;
+        return GlodBuleHTNewsHomeCell.xHTNewsHomeCellHeight;
     }else if ([model.news_id isEqualToString:@"-100"]) {
         return 250;
     }

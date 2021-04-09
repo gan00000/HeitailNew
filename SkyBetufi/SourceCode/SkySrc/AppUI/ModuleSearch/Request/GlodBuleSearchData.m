@@ -43,7 +43,7 @@
     if ([mmModel.news_id isEqualToString:@"-100"]) {
         return 250;
     }
-    return 90;
+    return GlodBuleHTNewsHomeCell.xHTNewsHomeCellHeight;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
    

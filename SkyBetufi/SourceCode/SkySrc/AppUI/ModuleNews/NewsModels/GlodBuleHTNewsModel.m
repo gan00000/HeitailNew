@@ -6,6 +6,8 @@
 #import <SDWebImage/SDWebImageManager.h>
 #import "GlodBulePPXXBJViewControllerCenter.h"
 #import "GlodBuleHTLoginAlertView.h"
+#import "GTMNSString+HTML.h"
+
 @interface GlodBuleHTNewsModel () <NSURLConnectionDelegate>
 @property (nonatomic, copy) NSString *clearContent;
 @end
@@ -105,7 +107,7 @@
     _view_count = [NSString stringWithFormat:@"%ld", sum];
 }
 - (void)setTitle:(NSString *)title {
-    _title = title;
+    _title = [title gtm_stringByUnescapingFromHTML];
     CGFloat titleHeight = [title jx_sizeWithFont:[UIFont systemFontOfSize:19 weight:UIFontWeightMedium] constrainedToWidth:SCREEN_WIDTH-30].height;
     _detailHeaderHeight = titleHeight + 65;
 }
@@ -253,4 +255,5 @@
     CGFloat commetheight = [self.comment_content jx_sizeWithFont:[UIFont systemFontOfSize:15] constrainedToWidth:SCREEN_WIDTH-71].height;
     self.my_comment_cell_height = commetheight + 118;
 }
+
 @end

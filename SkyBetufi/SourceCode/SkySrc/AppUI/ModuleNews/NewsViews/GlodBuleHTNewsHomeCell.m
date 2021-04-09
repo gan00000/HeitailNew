@@ -43,4 +43,10 @@
 - (IBAction)onShareButtonTapped:(id)sender {
     [self.newsModel taoshare];
 }
+
+
++(CGFloat)xHTNewsHomeCellHeight
+{
+    return 122;
+}
 @end

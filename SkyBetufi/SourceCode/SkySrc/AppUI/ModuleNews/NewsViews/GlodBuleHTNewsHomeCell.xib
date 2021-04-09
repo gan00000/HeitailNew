@@ -11,60 +11,60 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="GlodBuleHTNewsHomeCell">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B6J-dW-lBk">
-                        <rect key="frame" x="10" y="10" width="90" height="70"/>
+                        <rect key="frame" x="10" y="10" width="100" height="100"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="70" id="6xh-mx-1A0"/>
-                            <constraint firstAttribute="width" constant="90" id="PYR-Tl-Szg"/>
+                            <constraint firstAttribute="height" constant="100" id="6xh-mx-1A0"/>
+                            <constraint firstAttribute="width" constant="100" id="PYR-Tl-Szg"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="【影片】球哥的投籃姿勢終於改了！苦練一夏全面升級，球迷：姿勢像KD！" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yl0-EM-imW">
-                        <rect key="frame" x="108" y="13" width="257" height="33.5"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="【影片】球哥的投籃姿勢終於改了！苦練一夏全面升級，球迷：姿勢像KD！啊啊啊啊啊" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yl0-EM-imW">
+                        <rect key="frame" x="118" y="13" width="247" height="57.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                         <color key="textColor" red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_news_time" translatesAutoresizingMaskIntoConstraints="NO" id="hQp-E4-x0f">
-                        <rect key="frame" x="108" y="63" width="14" height="14"/>
+                        <rect key="frame" x="118" y="93" width="14" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="mOR-fC-iau"/>
                             <constraint firstAttribute="width" constant="14" id="mju-Dj-X3V"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1小時前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37n-Op-fX5">
-                        <rect key="frame" x="127" y="63" width="42.5" height="14.5"/>
+                        <rect key="frame" x="137" y="93" width="42.5" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_news_view" translatesAutoresizingMaskIntoConstraints="NO" id="RAU-rn-1rC">
-                        <rect key="frame" x="189.5" y="63" width="14" height="14"/>
+                        <rect key="frame" x="199.5" y="93" width="14" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="9ew-ff-60y"/>
                             <constraint firstAttribute="width" constant="14" id="Izo-aT-Z57"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1061" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS7-JS-6Qq">
-                        <rect key="frame" x="208.5" y="62.5" width="26.5" height="15"/>
+                        <rect key="frame" x="218.5" y="92.5" width="26.5" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rux-4n-Xfp">
-                        <rect key="frame" x="0.0" y="89.5" width="375" height="0.5"/>
+                        <rect key="frame" x="0.0" y="121.5" width="375" height="0.5"/>
                         <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="0.5" id="cCw-gj-7w8"/>
                         </constraints>
                     </view>
                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ml-J5-ee8">
-                        <rect key="frame" x="245" y="55" width="64" height="30"/>
+                        <rect key="frame" x="255" y="85" width="64" height="30"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEa-fX-HrN">
                                 <rect key="frame" x="0.0" y="0.0" width="64" height="30"/>
@@ -101,7 +101,7 @@
                         </constraints>
                     </view>
                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="熱門" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIE-zk-eQ0">
-                        <rect key="frame" x="339" y="71.5" width="36" height="18"/>
+                        <rect key="frame" x="339" y="103.5" width="36" height="18"/>
                         <color key="backgroundColor" red="1" green="0.45496236750000002" blue="0.28701091169999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
@@ -115,7 +115,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0則留言" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVD-Nd-BAr" userLabel="comentLabel">
-                        <rect key="frame" x="268" y="63" width="45" height="14.5"/>
+                        <rect key="frame" x="278" y="93" width="45" height="14.5"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="FAP-Sw-O1p"/>
                         </constraints>
@@ -124,7 +124,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzU-BH-lAu" userLabel="timeLongLabel">
-                        <rect key="frame" x="54" y="58" width="40" height="18"/>
+                        <rect key="frame" x="64" y="88" width="40" height="18"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>

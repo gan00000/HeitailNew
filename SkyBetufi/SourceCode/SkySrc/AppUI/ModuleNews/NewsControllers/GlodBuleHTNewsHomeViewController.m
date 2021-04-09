@@ -43,16 +43,8 @@
     
     NSLog(@"indexPath.section:%ld  indexPath.row:%ld", indexPath.section, indexPath.row);
     
-    if (indexPath.section == 0) {
-//        kWeakSelf
-//        GlodBuleHTNewsHomeBannerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsHomeBannerCell"];
-//        [cell taosetupWithNewsModels:self.bannerList];
-//        cell.onBannerTappedBlock = ^(GlodBuleHTNewsModel *newsModel) {
-//            GlodBuleHTNewsDetailViewController *detailVc = [GlodBuleHTNewsDetailViewController taoviewController];
-//            detailVc.post_id = newsModel.news_id;
-//            [weakSelf.navigationController pushViewController:detailVc animated:YES];
-//        };
-        //==============
+    if (indexPath.section == 0) {//有热门
+
         GlodBuleHTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsHomeCell"];
         [cell taosetupWithNewsModel:self.bannerList[indexPath.row]];
         cell.topLabel.hidden = NO;
@@ -66,11 +58,6 @@
         return cell;
     }
     
-//    else if (indexPath.section == 2){
-//        GlodBuleHTAdViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTAdViewCell"];
-//        [cell requestAd:self];
-//        return cell;
-//    }
     GlodBuleHTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlodBuleHTNewsHomeCell"];
     [cell taosetupWithNewsModel:self.newsList[indexPath.row]];
     cell.topLabel.hidden = YES;
@@ -80,14 +67,14 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         //return SCREEN_WIDTH * 2 / 3;
-        return 90;
+        return GlodBuleHTNewsHomeCell.xHTNewsHomeCellHeight;
     }
     
     GlodBuleHTNewsModel *mmModel = self.newsList[indexPath.row];
     if ([mmModel.news_id isEqualToString:@"-100"]) {
         return 250;
     }
-    return 90;
+    return GlodBuleHTNewsHomeCell.xHTNewsHomeCellHeight;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {

@@ -15,7 +15,7 @@
     [super setSelected:selected animated:animated];
 }
 - (void)taosetupWithNewsModel:(GlodBuleHTNewsModel *)newsModel {
-    self.titleLabel.text = [newsModel.title gtm_stringByUnescapingFromHTML];
+    self.titleLabel.text = newsModel.title;
     self.timeLabel.text = newsModel.time;
     self.viewCountLabel.text = newsModel.view_count;
 }

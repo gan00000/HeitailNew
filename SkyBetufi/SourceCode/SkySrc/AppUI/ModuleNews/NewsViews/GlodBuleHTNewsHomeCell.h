@@ -17,4 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLongLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *news_time_icon;
 
++(CGFloat)xHTNewsHomeCellHeight;
+
 @end

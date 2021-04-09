@@ -79,34 +79,6 @@
     [self setupViews];
     self.isFirstShow = YES;
 
-    
-//    if (self.filmModel && self.filmModel
-//        .plMediaInfo && self.filmModel
-//        .plMediaInfo.videoURL && ![self.filmModel
-//                                  .plMediaInfo.videoURL isEqualToString:@""]) {
-//
-////        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
-////        [[AVAudioSession sharedInstance] setActive:YES error:nil];
-//
-//        [self.playerController shutdown];
-//        [self.playerView removeFromSuperview];
-//        self.playerController = nil;
-//
-//        self.playerController = [[YSPlayerController alloc] initWithContentMediaInfo: self.filmModel.plMediaInfo];
-//        self.playerController.delegate = self;
-//        self.playerController.needPortFullScreen = YES;
-//        self.playerView = self.playerController.view;
-//        [self.playerContentView addSubview:self.playerView];
-//        [self.playerView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.edges.mas_equalTo(self.playerContentView);
-//        }];
-//
-//        self.isPlayFilm = YES;
-//    }else{
-//        self.isPlayFilm = NO;
-//
-//    }
-
     self.commentInputView.inputAccessoryView = self.replyInputAccessoryView;
     
     [self.commentInputView addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
@@ -467,7 +439,7 @@
         self.newsContentHeight += 250;
         return 250;
     } else if (indexPath.section == 3) {
-           return 90;
+        return GlodBuleHTNewsHomeCell.xHTNewsHomeCellHeight;
        }
     GlodBuleHTCommentModel *commentModel;
     if (indexPath.section == 4 && self.commentGetter.hotComments.count > 0) {
@@ -728,7 +700,7 @@
     self.newsModel.my_save = sender.selected;
 }
 - (IBAction)onShowCommentListAction:(id)sender {
-    CGFloat contentHeight = self.newsContentHeight + self.newsModel.detailHeaderHeight + 90*self.topNewsList.count + 40;
+    CGFloat contentHeight = self.newsContentHeight + self.newsModel.detailHeaderHeight +  GlodBuleHTNewsHomeCell.xHTNewsHomeCellHeight * self.topNewsList.count + 40;
     CGFloat commnetHeight = self.tableView.contentSize.height - contentHeight;
     if (commnetHeight > self.tableView.height) {
         [self.tableView setContentOffset:CGPointMake(0, contentHeight) animated:YES];

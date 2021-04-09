@@ -159,7 +159,7 @@
 //    [self.webView loadHTMLString:newsModel.iframe baseURL:nil];
 //    [self.webView showLoadingView];
     
-    NSString *mtitle = [newsModel.title gtm_stringByUnescapingFromHTML];//[[newsModel.title stringByReplacingOccurrencesOfString:@"&#8217;" withString:@"'"] stringByReplacingOccurrencesOfString:@"&#8230;" withString:@"..."];
+    NSString *mtitle = newsModel.title;//[[newsModel.title stringByReplacingOccurrencesOfString:@"&#8217;" withString:@"'"] stringByReplacingOccurrencesOfString:@"&#8230;" withString:@"..."];
     self.titleLabel.text = mtitle;
     self.timeLabel.text = [NSString stringWithFormat:@"%d", newsModel.total_comment];
     
