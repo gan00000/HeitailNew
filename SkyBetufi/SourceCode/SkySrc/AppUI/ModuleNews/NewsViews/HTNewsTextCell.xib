@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5H-xc-xVt">
-                        <rect key="frame" x="10" y="0.0" width="300" height="44"/>
+                        <rect key="frame" x="10" y="0.0" width="300" height="32"/>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="textColor" white="0.30877150288999899" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="highlightedColor" white="0.19004066780821915" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -27,7 +27,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="h5H-xc-xVt" secondAttribute="trailing" constant="10" id="N5s-uO-eKh"/>
                     <constraint firstItem="h5H-xc-xVt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ugL-oy-LIW"/>
-                    <constraint firstAttribute="bottom" secondItem="h5H-xc-xVt" secondAttribute="bottom" id="w3w-8J-AvL"/>
+                    <constraint firstAttribute="bottom" secondItem="h5H-xc-xVt" secondAttribute="bottom" constant="12" id="w3w-8J-AvL"/>
                     <constraint firstItem="h5H-xc-xVt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="w9f-q8-H4r"/>
                 </constraints>
             </tableViewCellContentView>

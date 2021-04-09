@@ -268,7 +268,25 @@
         HTNewsDetailModel *newsDetailModel = self.newsModel.mHTNewsDetailModels[indexPath.row];
         if ([@"img" isEqualToString:newsDetailModel.type]) {
             HTNewsImageTypeCell *image_cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsImageTypeCell"];
-            [image_cell.newsImageView sd_setImageWithURL:[NSURL URLWithString:newsDetailModel.data]];
+//            [image_cell.newsImageView sd_setImageWithURL:[NSURL URLWithString:newsDetailModel.data]];
+            [image_cell.newsImageView sd_setImageWithURL:[NSURL URLWithString:newsDetailModel.data] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+                
+                if (newsDetailModel.height > 0 && newsDetailModel.width > 0) {
+                    NSLog(@"newsImageView not need resize");
+                }else{
+                    
+                    CGFloat height = image.size.height;
+                    CGFloat width = image.size.width;
+                    
+                    if (height > 0 && width > 0) {
+                        newsDetailModel.height = height;
+                        newsDetailModel.width = width;
+                        [self.tableView reloadData];
+                    }
+                   
+                }
+               
+            }];
             image_cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return image_cell;
         }else if ([@"text" isEqualToString:newsDetailModel.type]){
@@ -419,7 +437,7 @@
                 return 20;
             }
             CGFloat textHeight = [GlodBuleBJUtility calculateRowHeight:newsDetailModel.data fontSize:18 width:self.view.frame.size.width - 30];
-//            textHeight = textHeight + 30;
+            textHeight = textHeight + 12;
             if (textHeight < 50) {
                 textHeight = 50;
             }
@@ -432,7 +450,7 @@
             return mheadHeight;
         }else if ([@"video-youtube" isEqualToString:newsDetailModel.type])
         {
-            CGFloat mheadHeight = self.view.width / 644 * 362;
+            CGFloat mheadHeight = 220;//self.view.width / 644 * 362;
             self.newsContentHeight += mheadHeight;
             return mheadHeight;
 //            return 200;

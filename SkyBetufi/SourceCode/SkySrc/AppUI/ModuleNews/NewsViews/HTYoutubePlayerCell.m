@@ -10,6 +10,8 @@
 
 @interface HTYoutubePlayerCell() <YTPlayerViewDelegate>
 
+@property (nonatomic, assign) BOOL hasLoad;
+
 @end
 
 @implementation HTYoutubePlayerCell
@@ -18,6 +20,7 @@
     [super awakeFromNib];
     // Initialization code
     self.youtubePlayerView.delegate = self;
+    self.hasLoad = NO;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -31,6 +34,11 @@
 //https://www.youtube.com/embed/FqzH-8kOz5s
 //    [self.youtubePlayerView stopVideo];
     if (newsDetailModel.data) {
+        
+        if (self.hasLoad) {
+            return;
+        }
+        self.hasLoad = YES;
         
         if ([newsDetailModel.data hasPrefix:@"https://www.youtube.com/embed"]) {
             NSString *videoId = [newsDetailModel.data stringByReplacingOccurrencesOfString:@"https://www.youtube.com/embed/"  withString:@""];

@@ -12,27 +12,34 @@
 {
     
 //    NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:fontSize]};
-    NSLog(@"calculateRowHeight前= %@",string);
+//    NSLog(@"calculateRowHeight前= %@",string);
     NSString *newHeightStr = [RX(@"<a href=.+</a>") stringByReplacingMatchesInString:string options:kNilOptions range:NSMakeRange(0, string.length) withTemplate:@""];
-    NSLog(@"calculateRowHeight后= %@",newHeightStr);
-    
+//    NSLog(@"calculateRowHeight后= %@",newHeightStr);
+    BOOL hasUrl = NO;
+    if ([string isEqualToString:newHeightStr]) {
+        hasUrl = NO;
+    }else{
+        hasUrl = YES;
+    }
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-        paragraphStyle.lineSpacing = 14;  //设置行间距
+        paragraphStyle.lineSpacing = 10;  //设置行间距
         paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
 //        paragraphStyle.alignment = NSTextAlignmentLeft;
     
     NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:fontSize], NSParagraphStyleAttributeName:paragraphStyle, NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType};
     
     CGRect rect = [newHeightStr boundingRectWithSize:CGSizeMake(width, 0)/*计算高度要先指定宽度*/ options:NSStringDrawingUsesLineFragmentOrigin |  NSStringDrawingUsesFontLeading attributes:dic context:nil];
-    
-    return ceilf(rect.size.height);;
+    if (hasUrl) {
+        return ceilf(rect.size.height) + 30;
+    }
+    return ceilf(rect.size.height);
     
 }
 
 +(NSMutableAttributedString *)getNewsTextAttribute:(NSString *)newsText
 {
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-        paragraphStyle.lineSpacing = 14;  //设置行间距
+        paragraphStyle.lineSpacing = 10;  //设置行间距
         paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
 //        paragraphStyle.alignment = NSTextAlignmentLeft;
     

@@ -107,7 +107,7 @@
 - (void)setTitle:(NSString *)title {
     _title = title;
     CGFloat titleHeight = [title jx_sizeWithFont:[UIFont systemFontOfSize:19 weight:UIFontWeightMedium] constrainedToWidth:SCREEN_WIDTH-30].height;
-    _detailHeaderHeight = titleHeight + 70;
+    _detailHeaderHeight = titleHeight + 65;
 }
 - (void)taogetClearContentWithBlock:(void(^)(BOOL success, NSString *content))block {
     if (!block) {

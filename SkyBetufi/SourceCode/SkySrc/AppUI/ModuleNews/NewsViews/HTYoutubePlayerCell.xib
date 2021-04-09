@@ -19,15 +19,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m34-ax-c51" customClass="YTPlayerView">
-                        <rect key="frame" x="10" y="0.0" width="300" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="m34-ax-c51" secondAttribute="bottom" id="Coq-Jy-gJe"/>
-                    <constraint firstAttribute="trailing" secondItem="m34-ax-c51" secondAttribute="trailing" constant="10" id="FP1-b3-UBg"/>
+                    <constraint firstAttribute="trailing" secondItem="m34-ax-c51" secondAttribute="trailing" id="FP1-b3-UBg"/>
                     <constraint firstItem="m34-ax-c51" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bkC-03-WQb"/>
-                    <constraint firstItem="m34-ax-c51" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="jHp-Qr-kzC"/>
+                    <constraint firstItem="m34-ax-c51" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jHp-Qr-kzC"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>

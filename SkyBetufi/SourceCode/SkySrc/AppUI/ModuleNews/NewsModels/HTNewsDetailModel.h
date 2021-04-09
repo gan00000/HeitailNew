@@ -14,8 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic, copy) NSString *data;
-@property (nonatomic, assign) NSInteger height;
-@property (nonatomic, assign) NSInteger width;
+@property (nonatomic, assign) CGFloat height;
+@property (nonatomic, assign) CGFloat width;
 
 @property (nonatomic, copy) NSString *poster;
 @property (nonatomic, copy) NSString *length_formatted;
