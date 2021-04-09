@@ -106,6 +106,9 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 /** 滑动 */
 @property (nonatomic, strong) UIPanGestureRecognizer *panRecognizer;
 
+@property (weak, nonatomic) IBOutlet UIButton *playerBackBtn;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *playerBackBtnConstraint;
+
 @end
 
 @implementation YSPlayerControl
@@ -137,7 +140,7 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     
     self.rePlayBtn.hidden = YES;
     self.rePauseBtn.hidden = YES;
-    
+    self.playerBackBtn.hidden = YES;
     // 添加触摸手势
     [self addTapGesture];
     // 添加滑动手势
@@ -354,10 +357,13 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 }
 
 - (IBAction)doneBtnClick:(UIButton *)sender {
+
     [self resetTimer];
-    if ([self.delegate respondsToSelector:@selector(done)]) {
-        [self.delegate done];
+    if ([self.delegate respondsToSelector:@selector(fullScreen)]) {
+        [self.delegate fullScreen];
+        [self toggleBarImmediately:YES];
     }
+    
 }
 
 - (IBAction)playSpeedChanged:(UIButton *)sender {
@@ -455,13 +461,18 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 //            self.playBtnLeadingConstraint.constant = 44;
             self.fullScreenTralingConstraint.constant = 16;
             self.payTimeLeadingConstraint.constant = 44;
+            self.playerBackBtnConstraint.constant = 40;
         }
         if (self.portraitFullScreen && [GlodBuleBJUtility isIPhoneXSeries]){
             self.volumeViewTopConstraint.constant = 50;
+            self.playerBackBtnConstraint.constant = 12;
         }
+        
+        self.playerBackBtn.hidden = NO;
         
     }else
     {//非全屏
+        self.playerBackBtn.hidden = YES;
         [self removePanGesture];
         if ([GlodBuleBJUtility isIPhoneXSeries]) {
 //            self.playBtnLeadingConstraint.constant = 8;
@@ -652,12 +663,18 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 - (void)toggleBarImmediately:(BOOL)immediately {
     
     self.hideBar = !self.isHideBar;
-    self.navBarTopConstraint.constant = self.hideBar ? -NAV_BAR_HEIGHT : 0;
+//    self.navBarTopConstraint.constant = self.hideBar ? -NAV_BAR_HEIGHT : 0;
     
     if (self.portraitFullScreen) {
         self.toolBarBottomConstraint.constant = self.hideBar ? -TOOL_BAR_HEIGHT : 20;
+        if ([GlodBuleBJUtility isIPhoneXSeries]) {
+            self.navBarTopConstraint.constant = self.hideBar ? -NAV_BAR_HEIGHT : 44;
+        }else{
+            self.navBarTopConstraint.constant = self.hideBar ? -NAV_BAR_HEIGHT : 0;
+        }
     }else{
         self.toolBarBottomConstraint.constant = self.hideBar ? -TOOL_BAR_HEIGHT : 0;
+        self.navBarTopConstraint.constant = self.hideBar ? -NAV_BAR_HEIGHT : 0;
     }
    
     if (immediately) {

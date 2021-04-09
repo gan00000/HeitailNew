@@ -17,9 +17,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mz9-zX-8mK">
                     <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
                     <subviews>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pya-02-iEJ">
-                            <rect key="frame" x="16" y="8" width="43" height="34"/>
-                            <state key="normal" title="Done"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pya-02-iEJ">
+                            <rect key="frame" x="16" y="10" width="45" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="MvT-YD-Jr1"/>
+                                <constraint firstAttribute="width" constant="45" id="OV0-hA-oaZ"/>
+                            </constraints>
+                            <state key="normal" image="nav_icon_back"/>
                             <connections>
                                 <action selector="doneBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="eNs-xc-dnp"/>
                             </connections>
@@ -294,6 +298,8 @@
                 <outlet property="playBtn" destination="nMk-Uj-W2u" id="OXn-wR-wb1"/>
                 <outlet property="playBtnLeadingConstraint" destination="96B-9z-4Uv" id="vjI-Sg-oAs"/>
                 <outlet property="playTimeLbl" destination="7tx-lZ-WTS" id="lFz-Ht-CGz"/>
+                <outlet property="playerBackBtn" destination="Pya-02-iEJ" id="HUk-gf-Sxc"/>
+                <outlet property="playerBackBtnConstraint" destination="yvR-an-Vbb" id="iLx-eS-vHV"/>
                 <outlet property="progressSlider" destination="WIW-Rv-eE9" id="4By-vV-asi"/>
                 <outlet property="rePauseBtn" destination="Kyl-bU-WaS" id="Laq-KN-P45"/>
                 <outlet property="rePlayBtn" destination="9z1-74-LKo" id="rHZ-Nb-cwX"/>
@@ -318,6 +324,7 @@
         </view>
     </objects>
     <resources>
+        <image name="nav_icon_back" width="9" height="15.5"/>
         <image name="play_Image" width="60" height="60"/>
         <image name="player-full-screen" width="21" height="21"/>
         <image name="player-pause" width="60" height="60"/>
