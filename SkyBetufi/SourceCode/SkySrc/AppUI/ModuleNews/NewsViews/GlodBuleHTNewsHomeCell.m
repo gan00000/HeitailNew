@@ -47,6 +47,6 @@
 
 +(CGFloat)xHTNewsHomeCellHeight
 {
-    return 122;
+    return 108;
 }
 @end
