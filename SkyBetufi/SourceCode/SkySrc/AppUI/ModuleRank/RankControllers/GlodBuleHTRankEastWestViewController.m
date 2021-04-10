@@ -40,9 +40,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
         case 0:
-            return (self.eastWestModel.Eastern.count + 1) * 30 + 45;
+            return (self.eastWestModel.Eastern.count + 1) * 40 + 45;
         case 1:
-            return (self.eastWestModel.Western.count + 1) * 30 + 45;
+            return (self.eastWestModel.Western.count + 1) * 40 + 45;
         default:
             return 0;
     }
