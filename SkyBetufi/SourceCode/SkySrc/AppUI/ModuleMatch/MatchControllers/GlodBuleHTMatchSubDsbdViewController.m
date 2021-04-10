@@ -8,6 +8,9 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollContentView;
 @property (nonatomic, strong) UITableView *rightTableView;
 @property (nonatomic) NSMutableArray<GlodBuleHTMatchDetailsModel *> *dataList;
+
+@property (nonatomic) NSArray<GlodBuleHTMatchDetailsModel *> *tempDetailList;
+
 @property (nonatomic, strong) NSMutableArray *counts;//总计
 //@property (nonatomic) NSInteger rightViewItemCount;
 
@@ -24,10 +27,13 @@
     self.dataList = [NSMutableArray array];
     
     [self setupLeftTableView];
+    [self setupRightTableView];
+    
+    [self taorefreshWithDetailList:self.tempDetailList];
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self setupRightTableView];
+   
 }
 - (void)setupLeftTableView {
     
@@ -63,6 +69,7 @@
 }
 - (void)taorefreshWithDetailList:(NSArray<GlodBuleHTMatchDetailsModel *> *)detailList {
     
+    self.tempDetailList = detailList;
     //分别对首发和替补按时间排序start
     NSMutableArray *firstPlayerArr = [NSMutableArray array];
     NSMutableArray *subPlayerArr = [NSMutableArray array];

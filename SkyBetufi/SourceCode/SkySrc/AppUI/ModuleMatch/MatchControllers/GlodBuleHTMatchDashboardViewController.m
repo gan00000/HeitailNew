@@ -16,6 +16,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initData];
+    if (!self.matchModel) {
+        return;
+    }
     [self setupUI];
 }
 #pragma mark - private
@@ -100,7 +103,7 @@
 - (HMSegmentedControl *)segmentControl {
     if (!_segmentControl) {
 //        _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"客隊", @"主隊"]];
-        
+      
         _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[self.matchModel.awayName, self.matchModel.homeName]];
         _segmentControl.selectionIndicatorColor = [UIColor hx_colorWithHexRGBAString:@"4E8BFF"];
         _segmentControl.selectionIndicatorHeight = 3.0f;

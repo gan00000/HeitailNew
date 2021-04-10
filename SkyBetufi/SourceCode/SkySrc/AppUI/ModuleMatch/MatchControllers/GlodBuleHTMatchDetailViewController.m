@@ -696,7 +696,7 @@
          return;
      }
     
-    //=====
+    //=====   未结束或者未开始--没有嗨赖
     if ([self.loadedFlagArray[index] boolValue]) {
         if (index == 3) {//文字直播
             GlodBuleHTMatchWordLiveViewController *wordVc = self.loadedControllersArray[index];
@@ -742,6 +742,7 @@
         vc = self.imVc;
     } else {
         GlodBuleHTMatchDashboardViewController *dashboardVc = [GlodBuleHTMatchDashboardViewController taoviewController];
+        dashboardVc.matchModel = self.matchModel;
         [dashboardVc taorefreshWithMatchCompareModel:self.matchCompareModel];
         vc = dashboardVc;
     }
