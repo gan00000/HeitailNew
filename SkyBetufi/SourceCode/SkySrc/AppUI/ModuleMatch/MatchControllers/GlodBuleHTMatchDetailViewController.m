@@ -76,6 +76,7 @@
 @property (nonatomic, strong) NSArray *titlesArray;
 
 @property (nonatomic, assign) BOOL isFinal;
+@property (nonatomic, assign) BOOL isSetupUI;
 
 @end
 @implementation GlodBuleHTMatchDetailViewController
@@ -84,8 +85,13 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initData];
-    [self setupUI];
+//    [self initData];
+//    [self setupUI];
+    
+    self.feedLoaded = YES;
+    self.summaryLoaded = YES;
+    self.isSetupUI = NO;
+    [self.view showLoadingView];
     [self loadData];
     
     [FIRAnalytics logEventWithName:@"IOS_Match_Detail"
@@ -215,7 +221,7 @@
     self.homeTeamLogo.contentMode = UIViewContentModeScaleAspectFit;
     self.awayTeamLogo.contentMode = UIViewContentModeScaleAspectFit;
     [self segmentedValueChangedHandle:0];
-    [self.view showLoadingView];
+//    [self.view showLoadingView];
     
     [self.awayTeamName setFont:[UIFont boldSystemFontOfSize:18]];
     [self.homeTeamName setFont:[UIFont boldSystemFontOfSize:18]];
@@ -418,9 +424,7 @@
 //    ,@"http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"];
 //   [self setUpPlayerView:model];
 //    =======tests========
-    
-    self.feedLoaded = YES;
-    self.summaryLoaded = YES;
+   
 }
 - (void)loadData {
     if (!self.feedLoaded || !self.summaryLoaded) {
@@ -456,6 +460,14 @@
     }];
 }
 - (void)refreshUI {
+    
+    if (!self.isSetupUI && self.matchSummaryModel) {
+        self.matchModel.scheduleStatus = self.matchSummaryModel.scheduleStatus;
+        [self initData];
+        [self setupUI];
+        self.isSetupUI = YES;
+    }
+    
     if (!self.feedLoaded || !self.summaryLoaded) {
         return;
     }
