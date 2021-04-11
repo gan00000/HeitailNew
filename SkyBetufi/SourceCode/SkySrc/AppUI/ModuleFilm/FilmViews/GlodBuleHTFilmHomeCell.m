@@ -56,6 +56,11 @@
     [super setSelected:selected animated:animated];
 }
 
+- (IBAction)addSaveReplace:(id)sender {
+    [self addSave:self.addSaveBtn];
+}
+
+
 - (IBAction)addSave:(UIButton *)sender {
     
     if (![GlodBuleHTUserManager tao_isUserLogin]) {

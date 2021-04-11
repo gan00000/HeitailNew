@@ -138,6 +138,12 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVm-ig-GH0">
+                        <rect key="frame" x="273" y="284" width="77.5" height="30"/>
+                        <connections>
+                            <action selector="addSaveReplace:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9Ds-7q-emx"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                 <constraints>
@@ -158,11 +164,15 @@
                     <constraint firstItem="Qsg-TS-wTa" firstAttribute="leading" secondItem="Xas-Z2-i4n" secondAttribute="trailing" constant="80" id="gL0-30-pkh"/>
                     <constraint firstItem="rwP-Wg-1xf" firstAttribute="trailing" secondItem="TBx-S6-5Uq" secondAttribute="trailing" constant="10" id="hUk-hb-UBt"/>
                     <constraint firstItem="Qsg-TS-wTa" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="he1-ny-BOp"/>
+                    <constraint firstItem="IVm-ig-GH0" firstAttribute="top" secondItem="kX3-i4-e9s" secondAttribute="top" constant="-4" id="ip9-XI-thm"/>
+                    <constraint firstItem="itZ-4i-GUV" firstAttribute="trailing" secondItem="IVm-ig-GH0" secondAttribute="trailing" constant="-12" id="jhU-85-ghU"/>
                     <constraint firstItem="aVb-xg-1HH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="qLU-Ry-7C2"/>
+                    <constraint firstItem="kX3-i4-e9s" firstAttribute="bottom" secondItem="IVm-ig-GH0" secondAttribute="bottom" constant="-4" id="t2s-OS-Y3c"/>
                     <constraint firstItem="rwP-Wg-1xf" firstAttribute="top" secondItem="lTr-0I-WbP" secondAttribute="bottom" constant="15" id="tAC-4D-1FC"/>
                     <constraint firstItem="itZ-4i-GUV" firstAttribute="leading" secondItem="ZgI-Yn-5bj" secondAttribute="trailing" constant="5" id="vH8-us-uRg"/>
                     <constraint firstItem="lTr-0I-WbP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="wUn-od-7V1"/>
                     <constraint firstItem="aVb-xg-1HH" firstAttribute="bottom" secondItem="Qsg-TS-wTa" secondAttribute="bottom" constant="8" id="y3V-f4-2HN"/>
+                    <constraint firstItem="IVm-ig-GH0" firstAttribute="leading" secondItem="kX3-i4-e9s" secondAttribute="leading" constant="-12" id="yFc-do-EGo"/>
                     <constraint firstItem="Xas-Z2-i4n" firstAttribute="centerY" secondItem="Qsg-TS-wTa" secondAttribute="centerY" id="yM1-Ai-96w"/>
                     <constraint firstItem="ZgI-Yn-5bj" firstAttribute="bottom" secondItem="kX3-i4-e9s" secondAttribute="bottom" id="yyp-B6-ueK"/>
                     <constraint firstItem="rwP-Wg-1xf" firstAttribute="bottom" secondItem="TBx-S6-5Uq" secondAttribute="bottom" constant="6" id="yz0-PO-Luh"/>
@@ -171,6 +181,7 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="addSaveBtn" destination="kX3-i4-e9s" id="MyC-pl-aMx"/>
+                <outlet property="addSaveBtnReplace" destination="IVm-ig-GH0" id="szH-8L-ULe"/>
                 <outlet property="addSaveImageView" destination="ZgI-Yn-5bj" id="88K-Q6-LA5"/>
                 <outlet property="commentContentView" destination="Qsg-TS-wTa" id="LfU-ei-8gV"/>
                 <outlet property="filmTimeLabel" destination="TBx-S6-5Uq" id="jIM-Sz-TgP"/>

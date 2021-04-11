@@ -25,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *addSaveImageView;
 @property (weak, nonatomic) IBOutlet UIButton *addSaveBtn;
 
+@property (weak, nonatomic) IBOutlet UIButton *addSaveBtnReplace;//为了点击区域更大而设置
+
 @property (strong, nonatomic) YSPlayerController *playerController;
 
 - (void)taosetupWithNewsModel:(GlodBuleHTNewsModel *)newsModel;
