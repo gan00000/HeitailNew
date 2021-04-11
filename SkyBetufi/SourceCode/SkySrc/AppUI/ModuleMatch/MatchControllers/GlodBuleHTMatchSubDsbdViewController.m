@@ -27,13 +27,13 @@
     self.dataList = [NSMutableArray array];
     
     [self setupLeftTableView];
-    [self setupRightTableView];
-    
-    [self taorefreshWithDetailList:self.tempDetailList];
+//    [self setupRightTableView];
+
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-   
+    [self setupRightTableView];
+    [self taorefreshWithDetailList:self.tempDetailList];
 }
 - (void)setupLeftTableView {
     
@@ -196,7 +196,7 @@
     xxModel.plusminus = @"-";
     [ppDataList addObject:xxModel];
     self.dataList = [NSMutableArray arrayWithArray:ppDataList];
-    NSLog(@"dataList");
+//    NSLog(@"dataList");
 }
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
