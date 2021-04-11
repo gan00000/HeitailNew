@@ -29,6 +29,7 @@
 @property (nonatomic, assign) BOOL loginSuccess;
 @property (nonatomic, strong) NSMutableArray<MsgChatContent*> *chatContentList;
 @property (nonatomic, assign) BOOL dataIsSet;
+@property (nonatomic, assign) BOOL firstConnectReviceMsg;
 
 @property (nonatomic) GlodBuleHTMatchHomeModel *matchModel;
 
@@ -48,7 +49,7 @@
     [super viewDidLoad];
     self.loginSuccess = NO;
     self.dataIsSet = NO;
-    self.chatContentList = [[NSMutableArray alloc] init];
+    self.chatContentList = [NSMutableArray array];
     
     [self setupViews];
     
@@ -336,6 +337,8 @@
     // 实现这个 SRWebSocketDelegate 协议啊`
     //直接连接`
     [_socket open];    // open 就是直接连接了
+    
+    self.firstConnectReviceMsg = YES;
 }
 
 #pragma mark -- SRWebSocketDelegate
@@ -349,7 +352,7 @@
 
 //连接成功
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket{
-    NSLog(@"连接成功");
+    NSLog(@"连接成功 webSocketDidOpen");
     [self initHeart];   //开启心跳
     
     if (self.socket != nil) {
@@ -520,10 +523,15 @@
             
             LoginResp_1001 *loginResp = [LoginResp_1001 parseFromData:contentData error:&err];
             if (!err) {
-                NSLog(@"登录完成 name:%@,token:%@",loginResp.msgUser.name,loginResp.msgUser.token);
+                NSLog(@"登录完成 name:%@,token:%@", loginResp.msgUser.name,loginResp.msgUser.token);
                 self.loginSuccess = YES;
             }
         }else if(msgId == 1002){
+            
+            if (self.firstConnectReviceMsg) {
+                [self.chatContentList removeAllObjects];
+                self.firstConnectReviceMsg = NO;
+            }
             
             SendChatResp_1002 *chatResp = [SendChatResp_1002 parseFromData:contentData error:&err];
             if (!err && chatResp) {
