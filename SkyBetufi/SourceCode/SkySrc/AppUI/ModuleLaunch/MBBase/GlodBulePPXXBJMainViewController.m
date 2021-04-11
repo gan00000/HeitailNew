@@ -50,7 +50,7 @@
     self.tabBar.translucent = NO;
     self.delegate = self;
     
-    [GIDSignIn sharedInstance].presentingViewController = self;
+//    [GIDSignIn sharedInstance].presentingViewController = self;
     
     AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     if (app.pushInfo) {
@@ -150,7 +150,7 @@
     self.currentSelectedIndex = self.selectedIndex;
 //    FIRAnalytics logEventWithName
    
-    [viewController viewDidAppear:YES];
+//    [viewController viewDidAppear:YES];
     NSLog(@"tabBarController %ld",self.currentSelectedIndex);
 }
 

@@ -43,7 +43,7 @@
 #define OFFICIAL_RELEASE 0
 
 // 未发布到App Store的版本
-#define BJ_DEBUG  YES//(!OFFICIAL_RELEASE)
+#define BJ_DEBUG  NO//(!OFFICIAL_RELEASE)
 
 // 当前引导页版本
 #define BJ_GUIDE_PAGE_VERSION 1
