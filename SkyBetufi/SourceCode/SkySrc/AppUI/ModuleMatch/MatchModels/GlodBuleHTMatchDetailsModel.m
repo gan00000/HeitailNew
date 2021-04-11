@@ -24,7 +24,7 @@
     return _ftmade_show;
 }
 - (NSString *)name {
-    if (!_name) {
+    if (!_name && self.firstname && ![self.firstname isEqualToString:@""]) {
         _name = [NSString stringWithFormat:@"%@.%@", [self.firstname substringToIndex:1], self.lastname];
     }
     return _name;
