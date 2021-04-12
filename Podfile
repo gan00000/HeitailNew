@@ -71,4 +71,6 @@ pod 'GoogleSignIn'
 
 pod 'MMMaterialDesignSpinner'
 pod 'JGProgressHUD'
+
+pod "youtube-ios-player-helper" #, "~> 1.0.3"
 end
