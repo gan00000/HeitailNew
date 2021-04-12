@@ -46,4 +46,6 @@
 @property (nonatomic, copy) NSString *plName;
 @property (nonatomic, copy) NSString *quarter;
 //@property (nonatomic, copy) NSString *shoot;
+
+@property (nonatomic, copy) NSString *ch_name;
 @end

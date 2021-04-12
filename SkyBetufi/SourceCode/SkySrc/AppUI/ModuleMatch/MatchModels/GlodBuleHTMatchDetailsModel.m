@@ -1,4 +1,5 @@
 #import "GlodBuleHTMatchDetailsModel.h"
+#import "GlodBuleConfigCoreUtil.h"
 @implementation GlodBuleHTMatchDetailsModel
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{
@@ -24,6 +25,13 @@
     return _ftmade_show;
 }
 - (NSString *)name {
+    
+    if ([[GlodBuleConfigCoreUtil share].matchType isEqualToString:@"3"]) { //CBA的话先获取中文，中文没有用英文
+        if (self.ch_name && ![self.ch_name isEqualToString:@""]) {
+            return self.ch_name;
+        }
+    }
+
     if (!_name && self.firstname && ![self.firstname isEqualToString:@""]) {
         _name = [NSString stringWithFormat:@"%@.%@", [self.firstname substringToIndex:1], self.lastname];
     }

@@ -8,6 +8,8 @@
 #import "UIView+GlodBuleLoading.h"
 #import "UIView+GlodBuleEmptyView.h"
 #import "AppDelegate.h"
+#import "GlodBuleConfigCoreUtil.h"
+
 @interface GlodBuleHTMatchHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *timeTitleLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -85,6 +87,8 @@
     GlodBuleHTMatchDetailViewController *detailVc = [GlodBuleHTMatchDetailViewController taoviewController];
     detailVc.matchModel = groupModel.matchList[indexPath.row];
     [self.navigationController pushViewController:detailVc animated:YES];
+    
+    [GlodBuleConfigCoreUtil share].matchType = self.matchType;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (self.matchList.count == 0) {

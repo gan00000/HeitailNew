@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (GlodBuleConfigCoreUtil *)share;
 
 @property (nonatomic) BOOL isSaveAccountInfo;
+@property (copy,nonatomic) NSString *matchType;
 
 -(void)saveAccount:(NSString *) mAccount password:(NSString *) password updateTime:(BOOL) updateTime;
 -(void)removeAccount:(NSString *) mAccount;

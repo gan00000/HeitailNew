@@ -121,10 +121,11 @@
         if (index == 0) {
 
             GlodBuleHTMatchHomeViewController *vc = self.loadedControllersArray[index];
-            
+            vc.matchType = self.titlesArrayValue[index];
         } else if (index == 1) {
       
             GlodBuleHTMatchHomeViewController *vc = self.loadedControllersArray[index];
+            vc.matchType = self.titlesArrayValue[index];
         }
         return;
     }
