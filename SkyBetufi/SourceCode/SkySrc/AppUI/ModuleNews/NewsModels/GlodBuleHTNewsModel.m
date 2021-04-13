@@ -7,6 +7,7 @@
 #import "GlodBulePPXXBJViewControllerCenter.h"
 #import "GlodBuleHTLoginAlertView.h"
 #import "GTMNSString+HTML.h"
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
 @interface GlodBuleHTNewsModel () <NSURLConnectionDelegate>
 @property (nonatomic, copy) NSString *clearContent;
@@ -202,10 +203,18 @@
     [GlodBuleHTLoginAlertView taoshowShareAlertViewWithSelectBlock:^(HTLoginPlatform platform) {
         UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
         if (platform == HTLoginPlatformFB) {
-            UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:weakSelf.title descr:nil thumImage:weakSelf.share_thub];
-            shareObject.webpageUrl = weakSelf.url;
-            messageObject.shareObject = shareObject;
-            [self doShareToPlatform:UMSocialPlatformType_Facebook withMessage:messageObject];
+//            UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:weakSelf.title descr:nil thumImage:weakSelf.share_thub];
+//            shareObject.webpageUrl = weakSelf.url;
+//            messageObject.shareObject = shareObject;
+//            [self doShareToPlatform:UMSocialPlatformType_Facebook withMessage:messageObject];
+            
+            FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
+            content.contentURL = [NSURL URLWithString:weakSelf.url];
+            
+            [FBSDKShareDialog showFromViewController:[GlodBulePPXXBJViewControllerCenter currentViewController]
+                                          withContent:content
+                                             delegate:nil];
+            
         } else if (platform == HTLoginPlatformLine) {
             if (![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Line]) {
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://line.me/R/"]];

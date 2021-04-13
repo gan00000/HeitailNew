@@ -5,6 +5,7 @@
 #import <Masonry.h>
 #import "GlodBuleHTLoginAlertView.h"
 #import <UMShare/UMShare.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
 #define HeightForTopView 45
 static  NSString *cellID = @"cellID";
@@ -345,10 +346,18 @@ static  NSString *cellID = @"cellID";
     [GlodBuleHTLoginAlertView taoshowShareAlertViewWithSelectBlock:^(HTLoginPlatform platform) {
         UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
         if (platform == HTLoginPlatformFB) {
-            UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"黑特體育" descr:nil thumImage:nil];
-            shareObject.webpageUrl = self.browserArray[0][@"url"];
-            messageObject.shareObject = shareObject;
-            [self doShareToPlatform:UMSocialPlatformType_Facebook withMessage:messageObject];
+//            UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"黑特體育" descr:nil thumImage:nil];
+//            shareObject.webpageUrl = self.browserArray[0][@"url"];
+//            messageObject.shareObject = shareObject;
+//            [self doShareToPlatform:UMSocialPlatformType_Facebook withMessage:messageObject];
+            
+            FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
+            content.contentURL = [NSURL URLWithString: self.browserArray[0][@"url"]];
+            
+            [FBSDKShareDialog showFromViewController:[GlodBulePPXXBJViewControllerCenter currentViewController]
+                                          withContent:content
+                                             delegate:nil];
+            
         } else if (platform == HTLoginPlatformLine) {
             if (![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Line]) {
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://line.me/R/"]];
