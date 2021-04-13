@@ -393,26 +393,6 @@ NSString static *const kYTPlayerSyndicationRegexPattern = @"^https://tpc.googles
   return levels;
 }
 
-//- (BOOL)webView:(xxxx *)webView
-//    shouldStartLoadWithRequest:(NSURLRequest *)request
-//                navigationType:(UIWebViewNavigationType)navigationType {
-//  if ([request.URL.host isEqual: self.originURL.host]) {
-//    return YES;
-//  } else if ([request.URL.scheme isEqual:@"ytplayer"]) {
-//    [self notifyDelegateOfYouTubeCallbackUrl:request.URL];
-//    return NO;
-//  } else if ([request.URL.scheme isEqual: @"http"] || [request.URL.scheme isEqual:@"https"]) {
-//    return [self handleHttpNavigationToUrl:request.URL];
-//  }
-//  return YES;
-//}
-//
-//- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-//  if (self.initialLoadingView) {
-//    [self.initialLoadingView removeFromSuperview];
-//  }
-//}
-
 
 #pragma mark - WKNavigationDelegate
 
@@ -560,7 +540,7 @@ NSString static *const kYTPlayerSyndicationRegexPattern = @"^https://tpc.googles
 /**
  * Private method to handle "navigation" to a callback URL of the format
  * ytplayer://action?data=someData
- * This is how the UIWebView communicates with the containing Objective-C code.
+ * This is how the xxxx communicates with the containing Objective-C code.
  * Side effects of this method are that it calls methods on this class's delegate.
  *
  * @param url A URL of the format ytplayer://action?data=value.
@@ -641,7 +621,7 @@ NSString static *const kYTPlayerSyndicationRegexPattern = @"^https://tpc.googles
 - (BOOL)handleHttpNavigationToUrl:(NSURL *) url {
   // Usually this means the user has clicked on the YouTube logo or an error message in the
   // player. Most URLs should open in the browser. The only http(s) URL that should open in this
-  // UIWebView is the URL for the embed, which is of the format:
+  // xxx is the URL for the embed, which is of the format:
   //     http(s)://www.youtube.com/embed/[VIDEO ID]?[PARAMETERS]
   NSError *error = NULL;
   NSRegularExpression *ytRegex =
