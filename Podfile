@@ -39,7 +39,7 @@ pod 'UMCCommonLog'
 pod 'UMPush' #原为'UMCPush'
 pod 'UMCSecurityPlugins'
 pod 'UMShare/UI'
-pod 'UMShare/Social/Facebook'
+#pod 'UMShare/Social/Facebook' # , "6.9.10"
 pod 'UMShare/Social/Line'
 
 
@@ -48,10 +48,12 @@ pod 'YYText'
 pod "XCDYouTubeKit", "~> 2.7"
 #pod 'SVGKit'
 pod 'SVGKit', :git => 'https://github.com/SVGKit/SVGKit.git', :branch => '3.x'
-#pod 'FBSDKLoginKit'
+pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'
+
 #pod 'XCDLumberjackNSLogger', '~> 1.0'
 
-pod 'Google-Mobile-Ads-SDK'
+pod 'Google-Mobile-Ads-SDK', '7.65.0'
 pod 'Charts'
 #pod 'Protobuf'
 pod 'SocketRocket'
@@ -73,4 +75,5 @@ pod 'MMMaterialDesignSpinner'
 pod 'JGProgressHUD'
 
 pod "youtube-ios-player-helper" #, "~> 1.0.3"
+
 end

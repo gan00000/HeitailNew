@@ -93,26 +93,28 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 }
 #pragma mark - Facebook Authory
 - (void)getAuthWithUserInfoFromFacebook {
-    kWeakSelf
-    [self.tao_fbLoginManager logInWithReadPermissions:@[@"public_profile",@"email"] fromViewController:[GlodBulePPXXBJViewControllerCenter currentViewController] handler:^(FBSDKLoginManagerLoginResult * _Nullable result, NSError * _Nullable error) {
-            if (error) {
-                [kWindow showToast:@"登錄失敗"];
-            } else if (result.isCancelled) {
-                [kWindow showToast:@"取消登錄"];
-            } else {
-                [weakSelf doLoginRequesWithAccessToken:result.token.tokenString sns:1];
-            }
-    }];
     
-//    [self.tao_fbLoginManager logInWithReadPermissions: @[@"public_profile",@"email"] fromViewController:[GlodBulePPXXBJViewControllerCenter currentViewController] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-//         if (error) {
-//             [kWindow showToast:@"登錄失敗"];
-//         } else if (result.isCancelled) {
-//             [kWindow showToast:@"取消登錄"];
-//         } else {
-//             [weakSelf doLoginRequesWithAccessToken:result.token.tokenString sns:1];
-//         }
+    kWeakSelf
+    [self.tao_fbLoginManager logInWithPermissions:@[@"public_profile",@"email"] fromViewController:[GlodBulePPXXBJViewControllerCenter currentViewController] handler:^(FBSDKLoginManagerLoginResult * _Nullable result, NSError * _Nullable error) {
+        if (error) {
+            [kWindow showToast:@"登錄失敗"];
+        } else if (result.isCancelled) {
+            [kWindow showToast:@"取消登錄"];
+        } else {
+            [weakSelf doLoginRequesWithAccessToken:result.token.tokenString sns:1];
+        }
+    }];
+
+//    [self.tao_fbLoginManager logInWithReadPermissions:@[@"public_profile",@"email"] fromViewController:[GlodBulePPXXBJViewControllerCenter currentViewController] handler:^(FBSDKLoginManagerLoginResult * _Nullable result, NSError * _Nullable error) {
+//            if (error) {
+//                [kWindow showToast:@"登錄失敗"];
+//            } else if (result.isCancelled) {
+//                [kWindow showToast:@"取消登錄"];
+//            } else {
+//                [weakSelf doLoginRequesWithAccessToken:result.token.tokenString sns:1];
+//            }
 //    }];
+    
 }
 #pragma mark - Line Authory
 - (void)getAuthWithUserInfoFromLine {

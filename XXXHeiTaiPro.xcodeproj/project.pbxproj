@@ -3409,7 +3409,7 @@
 				CODE_SIGN_ENTITLEMENTS = SkyBetufi/SkyBallPlay.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: yupeng su (6HM9UCSUQM)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 98DGMGPLHN;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3424,12 +3424,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.0;
+				MARKETING_VERSION = 8.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-all_load",
 					"-ObjC",
-					"-l\"SocialFacebook\"",
 					"-l\"SocialLine\"",
 					"-l\"c++\"",
 					"-l\"icucore\"",
@@ -3448,8 +3447,6 @@
 					"\"AudioToolbox\"",
 					"-framework",
 					"\"BlocksKit\"",
-					"-framework",
-					"\"Bolts\"",
 					"-framework",
 					"\"CFNetwork\"",
 					"-framework",
@@ -3635,7 +3632,7 @@
 				CODE_SIGN_ENTITLEMENTS = SkyBetufi/SkyBallPlay.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: yupeng su (98DGMGPLHN)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 98DGMGPLHN;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3650,12 +3647,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.0;
+				MARKETING_VERSION = 8.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-all_load",
 					"-ObjC",
-					"-l\"SocialFacebook\"",
 					"-l\"SocialLine\"",
 					"-l\"c++\"",
 					"-l\"icucore\"",
@@ -3674,8 +3670,6 @@
 					"\"AudioToolbox\"",
 					"-framework",
 					"\"BlocksKit\"",
-					"-framework",
-					"\"Bolts\"",
 					"-framework",
 					"\"CFNetwork\"",
 					"-framework",

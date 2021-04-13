@@ -40,6 +40,20 @@ PODS:
   - CocoaLumberjack (3.7.0):
     - CocoaLumberjack/Core (= 3.7.0)
   - CocoaLumberjack/Core (3.7.0)
+  - FBSDKCoreKit (9.2.0):
+    - FBSDKCoreKit/Basics (= 9.2.0)
+    - FBSDKCoreKit/Core (= 9.2.0)
+  - FBSDKCoreKit/Basics (9.2.0)
+  - FBSDKCoreKit/Core (9.2.0):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (9.2.0):
+    - FBSDKLoginKit/Login (= 9.2.0)
+  - FBSDKLoginKit/Login (9.2.0):
+    - FBSDKCoreKit (~> 9.2.0)
+  - FBSDKShareKit (9.2.0):
+    - FBSDKShareKit/Share (= 9.2.0)
+  - FBSDKShareKit/Share (9.2.0):
+    - FBSDKCoreKit (~> 9.2.0)
   - Firebase/Analytics (6.34.0):
     - Firebase/Core
   - Firebase/Auth (6.34.0):
@@ -87,7 +101,7 @@ PODS:
     - GoogleUtilities/Environment (~> 6.7)
     - GoogleUtilities/UserDefaults (~> 6.7)
     - PromisesObjC (~> 1.2)
-  - Google-Mobile-Ads-SDK (7.67.0):
+  - Google-Mobile-Ads-SDK (7.65.0):
     - GoogleAppMeasurement (~> 6.0)
     - GoogleUserMessagingPlatform (~> 1.1)
   - GoogleAppMeasurement (6.9.0):
@@ -181,9 +195,6 @@ PODS:
     - UMCommon
   - UMShare/Core (6.10.2):
     - UMCommon
-  - UMShare/Social/Facebook (6.10.2):
-    - UMCommon
-    - UMShare/Core
   - UMShare/Social/Line (6.10.2):
     - UMCommon
     - UMShare/Core
@@ -201,11 +212,13 @@ DEPENDENCIES:
   - AFNetworking (~> 4.0)
   - BlocksKit
   - Charts
+  - FBSDKLoginKit
+  - FBSDKShareKit
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Crashlytics
-  - Google-Mobile-Ads-SDK
+  - Google-Mobile-Ads-SDK (= 7.65.0)
   - GoogleSignIn
   - HexColors (= 4.0.0)
   - HMSegmentedControl
@@ -229,7 +242,6 @@ DEPENDENCIES:
   - UMCSecurityPlugins
   - UMDevice
   - UMPush
-  - UMShare/Social/Facebook
   - UMShare/Social/Line
   - UMShare/UI
   - WebViewJavascriptBridge
@@ -246,6 +258,9 @@ SPEC REPOS:
     - BlocksKit
     - Charts
     - CocoaLumberjack
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - FBSDKShareKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -313,6 +328,9 @@ SPEC CHECKSUMS:
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
+  FBSDKCoreKit: dace5abafc2fd9272733e6d027bcf18102712117
+  FBSDKLoginKit: 43f377b451d391f5bc9dd774f51a391db1072029
+  FBSDKShareKit: 1210ece9e8f516ef0bb40ac329929a2874aef274
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
   FirebaseAnalytics: 3bb096873ee0d7fa4b6c70f5e9166b6da413cc7f
   FirebaseAuth: c92d49ada7948d1a23466e3db17bc4c2039dddc3
@@ -320,7 +338,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: 770ac5958e1372ce67959ae4b4f31d8e127c3ac1
   FirebaseCrashlytics: 1a747c9cc084a24dc6d9511c991db1cd078154eb
   FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
-  Google-Mobile-Ads-SDK: 8b58584890539de4527c47ef01e4da941a10bc8a
+  Google-Mobile-Ads-SDK: af735e001ee534d9dd2ce0a87cd8c355b19844b5
   GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
   GoogleDataTransport: f56af7caa4ed338dc8e138a5d7c5973e66440833
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
@@ -361,6 +379,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZFLineSDK: fc1485f687bd9d6af5cb7e39ab2a8266680797dd
 
-PODFILE CHECKSUM: 48ab4a2b1ce7c93ca215f301502baf4b3c6171d7
+PODFILE CHECKSUM: b01bc9c1c712d75fa3a70b47777b4702c542a619
 
 COCOAPODS: 1.9.2
