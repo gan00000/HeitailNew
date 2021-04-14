@@ -77,6 +77,7 @@
 
 @property (nonatomic, assign) BOOL isFinal;
 @property (nonatomic, assign) BOOL isSetupUI;
+@property (nonatomic, assign) BOOL firstGameIsFinal;
 
 @end
 @implementation GlodBuleHTMatchDetailViewController
@@ -91,6 +92,8 @@
     self.feedLoaded = YES;
     self.summaryLoaded = YES;
     self.isSetupUI = NO;
+    self.firstGameIsFinal = NO;
+    
     [self.view showLoadingView];
     [self loadData];
     
@@ -385,9 +388,11 @@
     if ([self.matchModel.scheduleStatus isEqualToString:@"Final"]) {
         self.titlesArray = @[@" 嗨賴 ",@" 聊球 ", @" 對陣 ", @"數據統計", @"文字直播"];
         self.isFinal = YES;
+        self.firstGameIsFinal = YES;
     }else{
         self.titlesArray = @[@" 聊球 ", @" 對陣 ", @"數據統計", @"文字直播"];
         self.isFinal = NO;
+        self.firstGameIsFinal = NO;
     }
     
     for (NSInteger i = 0; i < self.titlesArray.count; i++) {
@@ -426,6 +431,17 @@
 //    =======tests========
    
 }
+
+- (void)loadDataForTimer
+{
+    if (self.isFinal) {
+        [self stopTimer];
+        return;
+    }
+    [self loadData];
+}
+
+
 - (void)loadData {
     if (!self.feedLoaded || !self.summaryLoaded) {
         return;
@@ -571,7 +587,7 @@
     }
     self.timer = [NSTimer scheduledTimerWithTimeInterval:10.0
                                                   target:self
-                                                selector:@selector(loadData)
+                                                selector:@selector(loadDataForTimer)
                                                 userInfo:nil
                                                  repeats:YES];
 }
@@ -629,8 +645,8 @@
 }
 - (void)loadChildViewControllerByIndex:(NSInteger)index {
     
-    //显示文字直播
-     if (self.isFinal) {
+    //是否显示嗨赖
+     if (self.firstGameIsFinal) {
          
          if ([self.loadedFlagArray[index] boolValue]) {
              if (index == 0) {
