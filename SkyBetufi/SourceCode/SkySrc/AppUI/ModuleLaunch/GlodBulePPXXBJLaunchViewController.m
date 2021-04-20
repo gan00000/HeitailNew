@@ -35,7 +35,8 @@
             NSString *examine = configDictionary[@"examine"];
             NSString *showTextLive = configDictionary[@"showTextLive"];
             
-            if ([examine isEqualToString:@"1"]) {
+            NSString *appVersion = [GlodBuleBJUtility appVersion];
+            if ([appVersion isEqualToString:version] && [examine isEqualToString:@"1"]) {
                 [GlodBuleHTUserManager manager].appInView = YES;
                 BJLog(@"getRequestCommon in view");
             }else{
