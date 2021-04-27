@@ -5,6 +5,7 @@
 
 #import "GlodBuleDHGuidePageHUD.h"
 #import "NSDate+GlodBuleCore.h"
+#import "AFHTTPSessionManager.h"
 
 @interface GlodBulePPXXBJLaunchViewController () <CAAnimationDelegate>
 @property (nonatomic, strong) GlodBulePPXXBJMainViewController *tabBarController;
@@ -26,7 +27,53 @@
 }
 
 - (void)taoRequestConfig {
-    NSString *url = [NSString stringWithFormat:@"ios_config.json?t=%@",[[NSDate dateNow] getTimeStamp]];
+    NSString *url = [NSString stringWithFormat:@"http://nba-007.com/ios_config.json?t=%@",[[NSDate dateNow] getTimeStamp]];
+    
+    AFHTTPSessionManager *manager =[AFHTTPSessionManager manager];
+    // parameters 参数字典
+    [manager GET:url parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSDictionary *configDictionary = responseObject;
+        if (configDictionary) {
+            NSString *version = configDictionary[@"version"];
+            NSString *status = configDictionary[@"status"];
+            NSString *examine = configDictionary[@"examine"];
+            NSString *showTextLive = configDictionary[@"showTextLive"];
+            
+            NSString *appVersion = [GlodBuleBJUtility appVersion];
+            if ([appVersion isEqualToString:version] && [examine isEqualToString:@"1"]) {
+                [GlodBuleHTUserManager manager].appInView = YES;
+                BJLog(@"getRequestCommon in view");
+            }else{
+                BJLog(@"getRequestCommon not in view");
+                [GlodBuleHTUserManager manager].appInView = NO;
+            }
+
+            [GlodBuleHTUserManager manager].showTextLive = YES;
+        }
+        
+        if (!self.needGuidePage) {
+            [self taoGoIntoMainController];
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        BJLog(@"ERROR:%@",error);
+        if (self.tryTimes == 0) {
+            self.tryTimes++;
+            [self taoRequestConfig];
+            return;
+        }
+        [GlodBuleHTUserManager manager].appInView = NO;
+        
+        if (!self.needGuidePage) {
+            [self taoGoIntoMainController];
+        }
+        
+        
+    }];
+   
+    /**
+
     [GlodBuleBJHTTPServiceEngine tao_getRequestCommon:url params:nil successBlock:^(id responseData) {
         NSDictionary *configDictionary = responseData; 
         if (configDictionary) {
@@ -72,6 +119,8 @@
         }
         
     }];
+     
+     */
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
