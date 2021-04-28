@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "YSPlayerControlDelegate.h"
+#import "PLMediaInfo.h"
 
 @import IJKMediaFramework;
 

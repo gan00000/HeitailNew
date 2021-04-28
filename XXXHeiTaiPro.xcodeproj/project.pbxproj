@@ -22,7 +22,6 @@
 		3218480B260B1BFD008D836C /* YSPlayerControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 321847FC260B1BFD008D836C /* YSPlayerControl.m */; };
 		3218480C260B1BFD008D836C /* YSPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 321847FD260B1BFD008D836C /* YSPlayerController.m */; };
 		3218480D260B1BFD008D836C /* XXXAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32184802260B1BFD008D836C /* XXXAssets.xcassets */; };
-		3221B416260AE5C700BE7394 /* PLPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3221B415260AE5C700BE7394 /* PLPlayer.m */; };
 		32340FD0250F1D7F00F47F76 /* GlodBuleHTChatContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32340FCE250F1D7F00F47F76 /* GlodBuleHTChatContentCell.m */; };
 		32340FD1250F1D7F00F47F76 /* GlodBuleHTChatContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32340FCF250F1D7F00F47F76 /* GlodBuleHTChatContentCell.xib */; };
 		3238C62425F0BA3D0045F1B9 /* HTWordLive2Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 3238C62325F0BA3D0045F1B9 /* HTWordLive2Request.m */; };
@@ -77,40 +76,14 @@
 		3287125023B8962800AB5360 /* video_volume_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3287123F23B8962800AB5360 /* video_volume_icon.png */; };
 		3288949C2603310900759311 /* NSDate+Covert.m in Sources */ = {isa = PBXBuildFile; fileRef = 328894382603310900759311 /* NSDate+Covert.m */; };
 		3288949D2603310900759311 /* NSString+URLCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 328894392603310900759311 /* NSString+URLCheck.m */; };
-		3288949E2603310900759311 /* UIButton+Animate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3288943A2603310900759311 /* UIButton+Animate.m */; };
-		3288949F2603310900759311 /* NSObject+Auth.m in Sources */ = {isa = PBXBuildFile; fileRef = 3288943B2603310900759311 /* NSObject+Auth.m */; };
-		328894A02603310900759311 /* UIView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 328894402603310900759311 /* UIView+Alert.m */; };
-		328894A12603310900759311 /* PLShortPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328894442603310900759311 /* PLShortPlayerViewController.m */; };
-		328894A22603310900759311 /* PLShortVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328894462603310900759311 /* PLShortVideoViewController.m */; };
 		328894A32603310900759311 /* PlayerAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 328894482603310900759311 /* PlayerAssets.xcassets */; };
-		328894A52603310900759311 /* PLLongMediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3288944D2603310900759311 /* PLLongMediaTableViewCell.m */; };
-		328894A62603310900759311 /* PLLongVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3288944E2603310900759311 /* PLLongVideoViewController.m */; };
-		328894A72603310900759311 /* PLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328894502603310900759311 /* PLNavigationViewController.m */; };
-		328894A92603310900759311 /* PLAgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328894542603310900759311 /* PLAgreementViewController.m */; };
 		328894AA2603310900759311 /* PLMediaInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3288945A2603310900759311 /* PLMediaInfo.m */; };
-		328894AB2603310900759311 /* PLQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3288945B2603310900759311 /* PLQRCodeViewController.m */; };
-		328894AC2603310900759311 /* PLAlertUserAgreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3288945C2603310900759311 /* PLAlertUserAgreeView.m */; };
-		328894AD2603310900759311 /* PLHttpSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 3288945D2603310900759311 /* PLHttpSession.m */; };
-		328894AE2603310900759311 /* PLPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3288945E2603310900759311 /* PLPlayViewController.m */; };
-		328894AF2603310900759311 /* PLPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3288945F2603310900759311 /* PLPlayerView.m */; };
-		328894B12603310900759311 /* 5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 328894652603310900759311 /* 5.jpeg */; };
-		328894B22603310900759311 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 328894662603310900759311 /* 4.jpg */; };
-		328894B32603310900759311 /* 2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 328894672603310900759311 /* 2.jpeg */; };
-		328894B42603310900759311 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 328894682603310900759311 /* 3.jpg */; };
-		328894B52603310900759311 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 328894692603310900759311 /* 1.jpg */; };
-		328894B62603310900759311 /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3288946A2603310900759311 /* 0.jpg */; };
-		328894B72603310900759311 /* PLLiveTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3288946C2603310900759311 /* PLLiveTableViewCell.m */; };
-		328894B82603310900759311 /* PLLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3288946D2603310900759311 /* PLLiveViewController.m */; };
-		328894BB2603310900759311 /* PLAgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 328894722603310900759311 /* PLAgreementViewController.xib */; };
-		328894BC2603310900759311 /* PLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328894732603310900759311 /* PLBaseViewController.m */; };
-		328894BE2603310900759311 /* PLRootTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328894752603310900759311 /* PLRootTabBarViewController.m */; };
 		328894C82603320B00759311 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328894C72603320B00759311 /* AVFoundation.framework */; };
 		328894CA2603321400759311 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328894C92603321300759311 /* MediaPlayer.framework */; };
 		328894CD2603324200759311 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328894CB2603324200759311 /* VideoToolbox.framework */; };
 		328894CE2603324200759311 /* MediaToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328894CC2603324200759311 /* MediaToolbox.framework */; };
 		328894D02603325E00759311 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328894CF2603325D00759311 /* AudioToolbox.framework */; };
 		328894D22603326A00759311 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328894D12603326A00759311 /* CoreMedia.framework */; };
-		328894D5260332BC00759311 /* XXXPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 328894D4260332BC00759311 /* XXXPlayer.m */; };
 		32A51D692508D87D00603A36 /* GlodBuleSearchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A51D682508D87D00603A36 /* GlodBuleSearchRequest.m */; };
 		32A51D6C2508DCC400603A36 /* GlodBuleSearchData.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A51D6B2508DCC400603A36 /* GlodBuleSearchData.m */; };
 		32A96AE92612C800005D9834 /* SkyBallHetiRedFilmDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32A96AE82612C800005D9834 /* SkyBallHetiRedFilmDetail.storyboard */; };
@@ -512,8 +485,6 @@
 		32184800260B1BFD008D836C /* YSPlayerControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPlayerControl.h; sourceTree = "<group>"; };
 		32184801260B1BFD008D836C /* YSPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPlayerView.h; sourceTree = "<group>"; };
 		32184802260B1BFD008D836C /* XXXAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = XXXAssets.xcassets; sourceTree = "<group>"; };
-		3221B414260AE5C700BE7394 /* PLPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLPlayer.h; sourceTree = "<group>"; };
-		3221B415260AE5C700BE7394 /* PLPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLPlayer.m; sourceTree = "<group>"; };
 		32340FCD250F1D7F00F47F76 /* GlodBuleHTChatContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTChatContentCell.h; sourceTree = "<group>"; };
 		32340FCE250F1D7F00F47F76 /* GlodBuleHTChatContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTChatContentCell.m; sourceTree = "<group>"; };
 		32340FCF250F1D7F00F47F76 /* GlodBuleHTChatContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GlodBuleHTChatContentCell.xib; sourceTree = "<group>"; };
@@ -587,66 +558,19 @@
 		3287123D23B8962800AB5360 /* video_play_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_play_normal.png; sourceTree = "<group>"; };
 		3287123E23B8962800AB5360 /* video_error_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_error_normal.png; sourceTree = "<group>"; };
 		3287123F23B8962800AB5360 /* video_volume_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_volume_icon.png; sourceTree = "<group>"; };
-		328894352603310900759311 /* PLAgreementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAgreementViewController.h; sourceTree = "<group>"; };
 		328894382603310900759311 /* NSDate+Covert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Covert.m"; sourceTree = "<group>"; };
 		328894392603310900759311 /* NSString+URLCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLCheck.m"; sourceTree = "<group>"; };
-		3288943A2603310900759311 /* UIButton+Animate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Animate.m"; sourceTree = "<group>"; };
-		3288943B2603310900759311 /* NSObject+Auth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Auth.m"; sourceTree = "<group>"; };
-		3288943C2603310900759311 /* UIView+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Alert.h"; sourceTree = "<group>"; };
 		3288943D2603310900759311 /* NSDate+Covert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Covert.h"; sourceTree = "<group>"; };
 		3288943E2603310900759311 /* NSString+URLCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLCheck.h"; sourceTree = "<group>"; };
-		3288943F2603310900759311 /* UIButton+Animate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Animate.h"; sourceTree = "<group>"; };
-		328894402603310900759311 /* UIView+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Alert.m"; sourceTree = "<group>"; };
-		328894412603310900759311 /* NSObject+Auth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Auth.h"; sourceTree = "<group>"; };
-		328894422603310900759311 /* PLBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLBaseViewController.h; sourceTree = "<group>"; };
-		328894442603310900759311 /* PLShortPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLShortPlayerViewController.m; sourceTree = "<group>"; };
-		328894452603310900759311 /* PLShortVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLShortVideoViewController.h; sourceTree = "<group>"; };
-		328894462603310900759311 /* PLShortVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLShortVideoViewController.m; sourceTree = "<group>"; };
-		328894472603310900759311 /* PLShortPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLShortPlayerViewController.h; sourceTree = "<group>"; };
 		328894482603310900759311 /* PlayerAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PlayerAssets.xcassets; sourceTree = "<group>"; };
-		328894492603310900759311 /* NiuPlayer.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NiuPlayer.pch; sourceTree = "<group>"; };
-		3288944C2603310900759311 /* PLLongVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLLongVideoViewController.h; sourceTree = "<group>"; };
-		3288944D2603310900759311 /* PLLongMediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLLongMediaTableViewCell.m; sourceTree = "<group>"; };
-		3288944E2603310900759311 /* PLLongVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLLongVideoViewController.m; sourceTree = "<group>"; };
-		3288944F2603310900759311 /* PLLongMediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLLongMediaTableViewCell.h; sourceTree = "<group>"; };
-		328894502603310900759311 /* PLNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLNavigationViewController.m; sourceTree = "<group>"; };
-		328894532603310900759311 /* PLRootTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLRootTabBarViewController.h; sourceTree = "<group>"; };
-		328894542603310900759311 /* PLAgreementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAgreementViewController.m; sourceTree = "<group>"; };
-		328894562603310900759311 /* PLHttpSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLHttpSession.h; sourceTree = "<group>"; };
-		328894572603310900759311 /* PLAlertUserAgreeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAlertUserAgreeView.h; sourceTree = "<group>"; };
-		328894582603310900759311 /* PLPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlayViewController.h; sourceTree = "<group>"; };
-		328894592603310900759311 /* PLPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlayerView.h; sourceTree = "<group>"; };
 		3288945A2603310900759311 /* PLMediaInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLMediaInfo.m; sourceTree = "<group>"; };
-		3288945B2603310900759311 /* PLQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLQRCodeViewController.m; sourceTree = "<group>"; };
-		3288945C2603310900759311 /* PLAlertUserAgreeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAlertUserAgreeView.m; sourceTree = "<group>"; };
-		3288945D2603310900759311 /* PLHttpSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLHttpSession.m; sourceTree = "<group>"; };
-		3288945E2603310900759311 /* PLPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPlayViewController.m; sourceTree = "<group>"; };
-		3288945F2603310900759311 /* PLPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPlayerView.m; sourceTree = "<group>"; };
-		328894602603310900759311 /* MacroDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDefine.h; sourceTree = "<group>"; };
-		328894612603310900759311 /* PLQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLQRCodeViewController.h; sourceTree = "<group>"; };
 		328894622603310900759311 /* PLMediaInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLMediaInfo.h; sourceTree = "<group>"; };
-		328894652603310900759311 /* 5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpeg; sourceTree = "<group>"; };
-		328894662603310900759311 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
-		328894672603310900759311 /* 2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpeg; sourceTree = "<group>"; };
-		328894682603310900759311 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
-		328894692603310900759311 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
-		3288946A2603310900759311 /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
-		3288946C2603310900759311 /* PLLiveTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLLiveTableViewCell.m; sourceTree = "<group>"; };
-		3288946D2603310900759311 /* PLLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLLiveViewController.m; sourceTree = "<group>"; };
-		3288946E2603310900759311 /* PLLiveTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLLiveTableViewCell.h; sourceTree = "<group>"; };
-		3288946F2603310900759311 /* PLLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLLiveViewController.h; sourceTree = "<group>"; };
-		328894722603310900759311 /* PLAgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLAgreementViewController.xib; sourceTree = "<group>"; };
-		328894732603310900759311 /* PLBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBaseViewController.m; sourceTree = "<group>"; };
-		328894752603310900759311 /* PLRootTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLRootTabBarViewController.m; sourceTree = "<group>"; };
-		328894762603310900759311 /* PLNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLNavigationViewController.h; sourceTree = "<group>"; };
 		328894C72603320B00759311 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		328894C92603321300759311 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		328894CB2603324200759311 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		328894CC2603324200759311 /* MediaToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaToolbox.framework; path = System/Library/Frameworks/MediaToolbox.framework; sourceTree = SDKROOT; };
 		328894CF2603325D00759311 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		328894D12603326A00759311 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		328894D3260332BC00759311 /* XXXPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XXXPlayer.h; sourceTree = "<group>"; };
-		328894D4260332BC00759311 /* XXXPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XXXPlayer.m; sourceTree = "<group>"; };
 		32A51D672508D87D00603A36 /* GlodBuleSearchRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleSearchRequest.h; sourceTree = "<group>"; };
 		32A51D682508D87D00603A36 /* GlodBuleSearchRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleSearchRequest.m; sourceTree = "<group>"; };
 		32A51D6A2508DCC400603A36 /* GlodBuleSearchData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleSearchData.h; sourceTree = "<group>"; };
@@ -1357,15 +1281,6 @@
 			path = Player;
 			sourceTree = "<group>";
 		};
-		3221B413260AE59A00BE7394 /* tesaaa */ = {
-			isa = PBXGroup;
-			children = (
-				3221B414260AE5C700BE7394 /* PLPlayer.h */,
-				3221B415260AE5C700BE7394 /* PLPlayer.m */,
-			);
-			path = tesaaa;
-			sourceTree = "<group>";
-		};
 		3256201222E17A9200973889 /* SkySrc */ = {
 			isa = PBXGroup;
 			children = (
@@ -1466,26 +1381,9 @@
 		328893F02603310900759311 /* SevenPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				3221B413260AE59A00BE7394 /* tesaaa */,
 				328894482603310900759311 /* PlayerAssets.xcassets */,
 				328894372603310900759311 /* Category */,
 				328894552603310900759311 /* Common */,
-				328894642603310900759311 /* defaultHeader */,
-				3288946B2603310900759311 /* LiveVideo */,
-				3288944B2603310900759311 /* LongVideo */,
-				328894492603310900759311 /* NiuPlayer.pch */,
-				328894352603310900759311 /* PLAgreementViewController.h */,
-				328894542603310900759311 /* PLAgreementViewController.m */,
-				328894722603310900759311 /* PLAgreementViewController.xib */,
-				328894422603310900759311 /* PLBaseViewController.h */,
-				328894732603310900759311 /* PLBaseViewController.m */,
-				328894762603310900759311 /* PLNavigationViewController.h */,
-				328894502603310900759311 /* PLNavigationViewController.m */,
-				328894532603310900759311 /* PLRootTabBarViewController.h */,
-				328894752603310900759311 /* PLRootTabBarViewController.m */,
-				328894432603310900759311 /* ShortVideo */,
-				328894D3260332BC00759311 /* XXXPlayer.h */,
-				328894D4260332BC00759311 /* XXXPlayer.m */,
 			);
 			path = SevenPlayer;
 			sourceTree = "<group>";
@@ -1495,82 +1393,19 @@
 			children = (
 				3288943D2603310900759311 /* NSDate+Covert.h */,
 				328894382603310900759311 /* NSDate+Covert.m */,
-				328894412603310900759311 /* NSObject+Auth.h */,
-				3288943B2603310900759311 /* NSObject+Auth.m */,
 				3288943E2603310900759311 /* NSString+URLCheck.h */,
 				328894392603310900759311 /* NSString+URLCheck.m */,
-				3288943F2603310900759311 /* UIButton+Animate.h */,
-				3288943A2603310900759311 /* UIButton+Animate.m */,
-				3288943C2603310900759311 /* UIView+Alert.h */,
-				328894402603310900759311 /* UIView+Alert.m */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		328894432603310900759311 /* ShortVideo */ = {
-			isa = PBXGroup;
-			children = (
-				328894442603310900759311 /* PLShortPlayerViewController.m */,
-				328894452603310900759311 /* PLShortVideoViewController.h */,
-				328894462603310900759311 /* PLShortVideoViewController.m */,
-				328894472603310900759311 /* PLShortPlayerViewController.h */,
-			);
-			path = ShortVideo;
-			sourceTree = "<group>";
-		};
-		3288944B2603310900759311 /* LongVideo */ = {
-			isa = PBXGroup;
-			children = (
-				3288944F2603310900759311 /* PLLongMediaTableViewCell.h */,
-				3288944D2603310900759311 /* PLLongMediaTableViewCell.m */,
-				3288944C2603310900759311 /* PLLongVideoViewController.h */,
-				3288944E2603310900759311 /* PLLongVideoViewController.m */,
-			);
-			path = LongVideo;
 			sourceTree = "<group>";
 		};
 		328894552603310900759311 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				328894602603310900759311 /* MacroDefine.h */,
-				328894572603310900759311 /* PLAlertUserAgreeView.h */,
-				3288945C2603310900759311 /* PLAlertUserAgreeView.m */,
-				328894562603310900759311 /* PLHttpSession.h */,
-				3288945D2603310900759311 /* PLHttpSession.m */,
 				328894622603310900759311 /* PLMediaInfo.h */,
 				3288945A2603310900759311 /* PLMediaInfo.m */,
-				328894592603310900759311 /* PLPlayerView.h */,
-				3288945F2603310900759311 /* PLPlayerView.m */,
-				328894582603310900759311 /* PLPlayViewController.h */,
-				3288945E2603310900759311 /* PLPlayViewController.m */,
-				328894612603310900759311 /* PLQRCodeViewController.h */,
-				3288945B2603310900759311 /* PLQRCodeViewController.m */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		328894642603310900759311 /* defaultHeader */ = {
-			isa = PBXGroup;
-			children = (
-				328894652603310900759311 /* 5.jpeg */,
-				328894662603310900759311 /* 4.jpg */,
-				328894672603310900759311 /* 2.jpeg */,
-				328894682603310900759311 /* 3.jpg */,
-				328894692603310900759311 /* 1.jpg */,
-				3288946A2603310900759311 /* 0.jpg */,
-			);
-			path = defaultHeader;
-			sourceTree = "<group>";
-		};
-		3288946B2603310900759311 /* LiveVideo */ = {
-			isa = PBXGroup;
-			children = (
-				3288946C2603310900759311 /* PLLiveTableViewCell.m */,
-				3288946D2603310900759311 /* PLLiveViewController.m */,
-				3288946E2603310900759311 /* PLLiveTableViewCell.h */,
-				3288946F2603310900759311 /* PLLiveViewController.h */,
-			);
-			path = LiveVideo;
 			sourceTree = "<group>";
 		};
 		32A51D662508D85100603A36 /* Request */ = {
@@ -2798,7 +2633,6 @@
 				FECCA5352258C8D0009EF494 /* GlodBuleHTHistoryViewController.xib in Resources */,
 				FE6BD07A21452B570090118A /* GlodBuleHTNewsHomeBannerCell.xib in Resources */,
 				3277C5D423A9CA2800D43D80 /* photo_down_btn@3x.png in Resources */,
-				328894B62603310900759311 /* 0.jpg in Resources */,
 				FE6BD075214526980090118A /* GlodBuleHTNewsHomeCell.xib in Resources */,
 				FE800F6B22636AFC00E575D5 /* GlodBuleHTNewsCommentCell.xib in Resources */,
 				FE7E6C9B2263CADB00B2973D /* GlodBuleHTMyMessaageCell.xib in Resources */,
@@ -2817,11 +2651,9 @@
 				FE6BD0522144FC270090118A /* SkyBallHetiRedMatchDetail.storyboard in Resources */,
 				32B53249261761BC009ED9D8 /* HTNewsImageTypeCell.xib in Resources */,
 				32B5324426176084009ED9D8 /* HTNewsTextCell.xib in Resources */,
-				328894B52603310900759311 /* 1.jpg in Resources */,
 				3287124623B8962800AB5360 /* video_backward_icon.png in Resources */,
 				3287124F23B8962800AB5360 /* video_error_normal.png in Resources */,
 				3287124A23B8962800AB5360 /* video_forward_icon.png in Resources */,
-				328894B32603310900759311 /* 2.jpeg in Resources */,
 				FEC1162A2143D4A1002DB617 /* GlodBuleBJHUDView.xib in Resources */,
 				FEDAC975214B9117005E8B63 /* GlodBuleHTDataHomeTeamCell.xib in Resources */,
 				3287124523B8962800AB5360 /* video_enlarge.png in Resources */,
@@ -2846,10 +2678,8 @@
 				3277C5D223A9CA2800D43D80 /* photo_down_btn@2x.png in Resources */,
 				FEDABE4E2171BCEE008C8AFD /* GlodBuleHTMatchPtsCompareCell.xib in Resources */,
 				326434D922F04F5E00D2DA1E /* GuideImage.bundle in Resources */,
-				328894B12603310900759311 /* 5.jpeg in Resources */,
 				FEC116072143D4A1002DB617 /* GlodBuleXJToastView.xib in Resources */,
 				3265F1E02305A211006E3FE1 /* SkyBallHetiRedHTMatchVideoLive.storyboard in Resources */,
-				328894BB2603310900759311 /* PLAgreementViewController.xib in Resources */,
 				3287124323B8962800AB5360 /* video_brightness_6_white_36dp.png in Resources */,
 				FE6BD07F21457BBC0090118A /* SkyBallHetiRedNewsDetail.storyboard in Resources */,
 				32E722882309A3A6003E0A03 /* guideImageapp13.jpg in Resources */,
@@ -2894,8 +2724,6 @@
 				326434F022F057E000D2DA1E /* guideImageapp1.jpg in Resources */,
 				FE706F09215006430078DF30 /* GlodBuleHTDataHomeHeaderCell.xib in Resources */,
 				3287124723B8962800AB5360 /* video_small_close.png in Resources */,
-				328894B42603310900759311 /* 3.jpg in Resources */,
-				328894B22603310900759311 /* 4.jpg in Resources */,
 				324C9AF425EFB01200235E92 /* GlodBuleHTChatSelfContentCell.xib in Resources */,
 				FE800F662263693A00E575D5 /* GlodBuleHTNoCommentFooterView.xib in Resources */,
 				32C65DF725067D290068D2C7 /* GlodBuleHTSearchHistoryTableViewCell.xib in Resources */,
@@ -3028,17 +2856,13 @@
 			files = (
 				FE8EB0D6215606B400CA20F0 /* GlodBuleHTMatchSummaryRequest.m in Sources */,
 				FEDAC97D214BBD28005E8B63 /* GlodBuleHTDatePickerView.m in Sources */,
-				328894AD2603310900759311 /* PLHttpSession.m in Sources */,
 				326434DB22F04F5E00D2DA1E /* GlodBuleDHGuidePageHUD.m in Sources */,
-				328894A52603310900759311 /* PLLongMediaTableViewCell.m in Sources */,
-				328894A22603310900759311 /* PLShortVideoViewController.m in Sources */,
 				FEC116B72143D4A1002DB617 /* GlodBulePPXXBJBaseTabBarController.m in Sources */,
 				32FED82223AB768700D900A7 /* GlodBuleLMPortraitControlView.m in Sources */,
 				FEC112682143D058002DB617 /* main.m in Sources */,
 				FECCA5322258C8D0009EF494 /* GlodBuleHTUserInfoEditViewController.m in Sources */,
 				FEDABE7321738618008C8AFD /* GlodBuleHTMatchSubDsbdViewController.m in Sources */,
 				FEC116762143D4A1002DB617 /* GlodBuleBJURINavigator.m in Sources */,
-				328894A72603310900759311 /* PLNavigationViewController.m in Sources */,
 				FEC116492143D4A1002DB617 /* GlodBulePPXXBJMainViewController.m in Sources */,
 				FEDABE6521733693008C8AFD /* GlodBuleHTRankEastWestViewController.m in Sources */,
 				FECCA51E2258C8D0009EF494 /* GlodBuleHTMessageViewController.m in Sources */,
@@ -3069,7 +2893,6 @@
 				32FCDD1A250C721F0037334D /* GlodBuleHTIMViewController.m in Sources */,
 				32B0F58B2545B6A3005642DC /* GlodBuleHTMatchWebPlayControllerViewController.m in Sources */,
 				FEC116C42143D4A1002DB617 /* UITableView+GlodBuleEstimatedHeight.m in Sources */,
-				328894B72603310900759311 /* PLLiveTableViewCell.m in Sources */,
 				FE08C5C82250506A000175CB /* GlodBuleHTMeHomeViewController.m in Sources */,
 				32CD877F22F4173800063A14 /* NowPlayingInfoCenterProvider.m in Sources */,
 				FEC1164C2143D4A1002DB617 /* GlodBulePPXXBJViewControllerCenter.m in Sources */,
@@ -3100,8 +2923,6 @@
 				FE82BB462179B78700C52C51 /* GlodBuleHTDataTeamRightCell.m in Sources */,
 				FEDF8FC4214441C6005C7C4D /* GlodBuleHTMatchHomeCell.m in Sources */,
 				FEC116BF2143D4A1002DB617 /* GlodBuleBJDateFormatUtility.m in Sources */,
-				328894AF2603310900759311 /* PLPlayerView.m in Sources */,
-				328894A02603310900759311 /* UIView+Alert.m in Sources */,
 				FECCA5232258C8D0009EF494 /* GlodBuleHTMeCenterNormalCell.m in Sources */,
 				326D67C023A8DB9A00DDB443 /* GlodBuleWBImageBrowserCell.m in Sources */,
 				FE81D159214819FA0047A4A2 /* GlodBuleHTDataHomeSubViewController.m in Sources */,
@@ -3111,7 +2932,6 @@
 				32F1F2C22514FB7C00EE85B8 /* GlodBuleLineChartUtil.m in Sources */,
 				FEC116B62143D4A1002DB617 /* GlodBuleBJBaseHTTPEngine.m in Sources */,
 				32184803260B1BFD008D836C /* YSAVViewController.m in Sources */,
-				328894BC2603310900759311 /* PLBaseViewController.m in Sources */,
 				FEC116782143D4A1002DB617 /* GlodBuleBJURINavHelper.m in Sources */,
 				FEAB2108216DD731002A05AB /* GlodBuleHTMatchDetailsModel.m in Sources */,
 				32AB7E6224F276230049B022 /* GlodBuleHTCompareView.m in Sources */,
@@ -3156,7 +2976,6 @@
 				FE81D156214816710047A4A2 /* GlodBuleHTDataHomeModel.m in Sources */,
 				FEC116CA2143D4A1002DB617 /* NSString+GlodBuleMessageDigest.m in Sources */,
 				32A96AEC2612C810005D9834 /* GlodBuleHTFilmDetailViewController.m in Sources */,
-				328894A92603310900759311 /* PLAgreementViewController.m in Sources */,
 				32D6C8C825F33574003B35AA /* HotShootPointModel.m in Sources */,
 				32B53248261761BC009ED9D8 /* HTNewsImageTypeCell.m in Sources */,
 				32FED82523AB768700D900A7 /* GlodBuleLMCoverControlView.m in Sources */,
@@ -3194,24 +3013,20 @@
 				325A921D24F1637F008F0B2E /* GlodBuleHTLikeTeamModel.m in Sources */,
 				32C65DF02506771A0068D2C7 /* GlodBuleAccountModel.m in Sources */,
 				FEC116132143D4A1002DB617 /* GlodBuleLJViewPager.m in Sources */,
-				328894B82603310900759311 /* PLLiveViewController.m in Sources */,
 				32FED82923AB768700D900A7 /* GlodBuleLMVideoPlayer.m in Sources */,
 				32184808260B1BFD008D836C /* YSScreenBrightnessTool.m in Sources */,
 				326D67BF23A8DB9A00DDB443 /* GlodBuleWBImageBrowserView.m in Sources */,
 				FEDABE482171BC3A008C8AFD /* GlodBuleHTMatchQuarterCell.m in Sources */,
 				32FED82A23AB768700D900A7 /* GlodBuleLMPlayerManager.m in Sources */,
-				328894D5260332BC00759311 /* XXXPlayer.m in Sources */,
 				FE706F02214FF3430078DF30 /* GlodBuleHTDataMoreViewController.m in Sources */,
 				32E10F2925F1EC7E00639323 /* HTCourtHotShootView.m in Sources */,
 				FEA5D3FE225CD506001AF0C9 /* GlodBuleHTCommentModel.m in Sources */,
 				FE82BB412179B77200C52C51 /* GlodBuleHTDataTeamLeftCell.m in Sources */,
-				328894AB2603310900759311 /* PLQRCodeViewController.m in Sources */,
 				FEDABE592173279F008C8AFD /* GlodBuleHTRankZoneRequest.m in Sources */,
 				FEC116C22143D4A1002DB617 /* UIView+GlodBuleViewController.m in Sources */,
 				FE82BB4A2179B7E300C52C51 /* GlodBuleHTDataTeamRankModel.m in Sources */,
 				32642A5A22F027EB00D2DA1E /* TZPhotoPickerController+GlodBuleDRExtention.m in Sources */,
 				32C65DED250676AE0068D2C7 /* GlodBuleConfigCoreUtil.m in Sources */,
-				3221B416260AE5C700BE7394 /* PLPlayer.m in Sources */,
 				FEAC9F382199EA3A00159AE9 /* GlodBuleHTAboutUsViewController.m in Sources */,
 				FE6BD067214512EC0090118A /* GlodBuleHTNewsHomeRequest.m in Sources */,
 				FE6BD06A2145136F0090118A /* GlodBuleHTNewsModel.m in Sources */,
@@ -3220,13 +3035,10 @@
 				FEC115BD2143D4A0002DB617 /* GlodBulePPXXBJLaunchViewController.m in Sources */,
 				32184806260B1BFD008D836C /* YSVolumeTool.m in Sources */,
 				32CD877C22F4173800063A14 /* SkyAsynchronousViewController.m in Sources */,
-				328894BE2603310900759311 /* PLRootTabBarViewController.m in Sources */,
 				FEC116772143D4A1002DB617 /* GlodBuleBJWebViewController.m in Sources */,
 				327191D5251B461200CD9D85 /* GlodBulePlayerInfoViewController.m in Sources */,
-				3288949E2603310900759311 /* UIButton+Animate.m in Sources */,
 				FEAC9F352199EA2300159AE9 /* GlodBuleHTContactUsViewController.m in Sources */,
 				FE800F642263692E00E575D5 /* GlodBuleHTNoCommentFooterView.m in Sources */,
-				328894A62603310900759311 /* PLLongVideoViewController.m in Sources */,
 				FE6BD08821457D920090118A /* GlodBuleHTNewsWebCell.m in Sources */,
 				FEDF8FDA2144B2BF005C7C4D /* GlodBuleHTMatchHomeGroupModel.m in Sources */,
 				324C9AF525EFB01200235E92 /* GlodBuleHTChatSelfContentCell.m in Sources */,
@@ -3268,16 +3080,12 @@
 				32FFD29923A397A700E1661A /* GlodBuleHTAdViewCell.m in Sources */,
 				FEC1167C2143D4A1002DB617 /* GlodBuleBJWebViewJSBridge.m in Sources */,
 				FEDABE522171BD0C008C8AFD /* GlodBuleHTMatchBestPlayerCell.m in Sources */,
-				328894A12603310900759311 /* PLShortPlayerViewController.m in Sources */,
-				3288949F2603310900759311 /* NSObject+Auth.m in Sources */,
 				32E3E98024FD40E00076AD93 /* GlodBuleSearchViewController.m in Sources */,
 				3218480A260B1BFD008D836C /* YSPlayerView.m in Sources */,
 				FECCA5342258C8D0009EF494 /* GlodBuleHTUserInfoModel.m in Sources */,
 				FE6BD074214526980090118A /* GlodBuleHTNewsHomeCell.m in Sources */,
 				3238C62425F0BA3D0045F1B9 /* HTWordLive2Request.m in Sources */,
-				328894AE2603310900759311 /* PLPlayViewController.m in Sources */,
 				FEC116C82143D4A1002DB617 /* NSDate+GlodBuleCore.m in Sources */,
-				328894AC2603310900759311 /* PLAlertUserAgreeView.m in Sources */,
 				FE588BFC22620DFA00A44884 /* GlodBuleHTCommentGetter.m in Sources */,
 				326D67C423A8DD0600DDB443 /* GlodBuleHTImageBrowserViewController.m in Sources */,
 				FEA104F9216CB10C000DBE63 /* GlodBuleHTMatchCompareModel.m in Sources */,

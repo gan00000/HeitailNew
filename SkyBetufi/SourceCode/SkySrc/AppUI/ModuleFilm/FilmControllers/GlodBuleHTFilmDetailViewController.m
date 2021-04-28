@@ -17,7 +17,6 @@
 #import "UIColor+GlodBuleHex.h"
 #import "UIView+GlodBuleBlockGesture.h"
 
-#import "PLPlayerView.h"
 #import "YSPlayerController.h"
 
 @import Firebase;

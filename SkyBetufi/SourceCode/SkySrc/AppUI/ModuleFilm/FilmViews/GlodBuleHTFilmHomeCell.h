@@ -1,6 +1,5 @@
 #import <UIKit/UIKit.h>
 #import "GlodBuleHTNewsModel.h"
-#import "PLPlayerView.h"
 #import "PLMediaInfo.h"
 #import "YSPlayerController.h"
 

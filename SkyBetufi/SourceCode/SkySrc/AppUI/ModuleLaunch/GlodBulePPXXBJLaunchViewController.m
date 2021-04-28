@@ -6,6 +6,7 @@
 #import "GlodBuleDHGuidePageHUD.h"
 #import "NSDate+GlodBuleCore.h"
 #import "AFHTTPSessionManager.h"
+#import "GlodBuleBJUtility.h"
 
 @interface GlodBulePPXXBJLaunchViewController () <CAAnimationDelegate>
 @property (nonatomic, strong) GlodBulePPXXBJMainViewController *tabBarController;

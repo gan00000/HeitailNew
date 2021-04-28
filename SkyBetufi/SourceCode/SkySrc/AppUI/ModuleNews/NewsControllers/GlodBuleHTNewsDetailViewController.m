@@ -23,7 +23,6 @@
 #import "GlodBuleBJUtility.h"
 #import "GlodBuleHTFilmHomeCell.h"
 #import "HTYoutubePlayerCell.h"
-#import "PLPlayerView.h"
 #import "YSPlayerController.h"
 #import "HTNoUseHeaderTableViewCell.h"
 #import "GlodBuleHTImageBrowserViewController.h"

@@ -180,13 +180,6 @@
     return cell;
 }
 
-- (void)codeViewController:(PLQRCodeViewController *)codeController scanResult:(NSString *)result {
-    if (!result) return;
-    PLPlayViewController *playController = [[PLPlayViewController alloc] init];
-    playController.url = [NSURL URLWithString:result];
-    [self presentViewController:playController animated:YES completion:nil];
-
-}
 
 #pragma mark - UITableViewDelegate
 
