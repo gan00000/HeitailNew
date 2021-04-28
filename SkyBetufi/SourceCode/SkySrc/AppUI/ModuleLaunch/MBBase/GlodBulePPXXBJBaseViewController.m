@@ -45,6 +45,8 @@
                                                      name:kUserLogStatusChagneNotice
                                                    object:nil];
     }
+    
+    [FIRAnalytics logEventWithName:[NSString stringWithFormat:@"EventName_%@",NSStringFromClass([self class])] parameters:nil];
 }
 
 
