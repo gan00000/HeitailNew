@@ -26,12 +26,7 @@
 - (void)setupBackground {
     CALayer *layer = [CALayer layer];
     layer.frame = self.bounds;
-    if ([GlodBuleHTUserManager manager].appInView) {
-//        layer.backgroundColor = [UIColor blueColor].CGColor;
-        layer.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"].CGColor;
-    }else{
-        layer.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"].CGColor;
-    }
+    layer.backgroundColor = appBaseColor.CGColor;
     
     UIGraphicsBeginImageContextWithOptions(layer.bounds.size, NO, 0);
     [layer renderInContext:UIGraphicsGetCurrentContext()];

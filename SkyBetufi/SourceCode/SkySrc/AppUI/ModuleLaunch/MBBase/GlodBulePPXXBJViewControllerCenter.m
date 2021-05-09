@@ -1,6 +1,12 @@
 #import "GlodBulePPXXBJViewControllerCenter.h"
+#import "GlodBuleHTUserManager.h"
+
 @implementation GlodBulePPXXBJViewControllerCenter
 + (GlodBulePPXXBJMainViewController *)mainViewController {
+    
+    if ([GlodBuleHTUserManager manager].mainTabBarController) {
+        return [GlodBuleHTUserManager manager].mainTabBarController;
+    }
     UIWindow *topWindow = [[UIApplication sharedApplication] keyWindow];
     if (topWindow.windowLevel != UIWindowLevelNormal) {
         NSArray *windows = [[UIApplication sharedApplication] windows];

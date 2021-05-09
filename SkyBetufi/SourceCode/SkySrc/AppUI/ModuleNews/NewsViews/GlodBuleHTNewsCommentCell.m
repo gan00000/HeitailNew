@@ -39,7 +39,7 @@
     [self.replyTableView registerNib:[UINib nibWithNibName:NSStringFromClass([GlodBuleHTCommentExpendCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([GlodBuleHTCommentExpendCell class])];
     UIImage *image = [[UIImage imageNamed:@"icon_add_like"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.likeButton setImage:image forState:UIControlStateNormal];
-    [self.likeButton setTitleColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"] forState:UIControlStateSelected];
+    [self.likeButton setTitleColor:appBaseColor forState:UIControlStateSelected];
     [self.likeButton setTitleColor:[UIColor hx_colorWithHexRGBAString:@"999999"] forState:UIControlStateNormal];
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -56,7 +56,7 @@
     self.replyCountLabel.text = [NSString stringWithFormat:@"%ld回覆", commentModel.total_reply];
     if (commentModel.my_like) {
         self.likeButton.selected = YES;
-        [self.likeButton setTintColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
+        [self.likeButton setTintColor:appBaseColor];
     } else {
         self.likeButton.selected = NO;
         [self.likeButton setTintColor:[UIColor hx_colorWithHexRGBAString:@"999999"]];

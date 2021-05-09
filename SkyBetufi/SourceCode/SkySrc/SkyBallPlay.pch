@@ -32,6 +32,7 @@
 #import "UITabBar+GlodBuleDRExtension.h"
 #import "UIView+GlodBuleQuickFrame.h"
 #import "GlodBulePPXXBJViewControllerCenter.h"
+#import "GlodBuleHTUserManager.h"
 
 #endif
 
@@ -89,7 +90,10 @@
 #define kDefaultImage(imageName) [UIImage imageNamed:(imageName)]
 
 #define kDRWindow [UIApplication sharedApplication].keyWindow
+#define isAppInView [GlodBuleHTUserManager manager].appInView
+#define appBaseColor [GlodBuleHTUserManager getAppBaseColor]
 
+#define left_controller_click_name @"left_controller_click_name"
 
 //#define PLPLAYER_URL_DOMAIN @"https://api-demo.qnsdk.com"
 //#define PLPLAYER_ENTERPRISE_BUNDLEID @"com.qbox.niuplayer"

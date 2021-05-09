@@ -10,6 +10,8 @@
 #import "GlodBuleHTTabBarHomeViewController.h"
 #import "GlodBuleSearchViewController.h"
 #import <UIButton+WebCache.h>
+#import "GlodBuleHTHomeLeftViewController.h"
+
 @import Firebase;
 
 @interface GlodBulePPXXBJBaseViewController ()
@@ -22,16 +24,11 @@
     [super viewDidLoad];
     NSLog(@"BJBaseViewController viewDidLoad %@",NSStringFromClass([self class]));
     self.view.backgroundColor = RGBA_COLOR_HEX(0xf4f4f4);
-//    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
     
-    if ([GlodBuleHTUserManager manager].appInView) {
-        [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
-    }else{
-        [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
-        
-    }
+    [self.navigationController.navigationBar lt_setBackgroundColor: appBaseColor];
+    
     NSLog(@"viewControllers.count = %d", self.navigationController.viewControllers.count);
-    if (self.navigationController.viewControllers.count == 1 && ![self isKindOfClass:[GlodBuleHTMeHomeViewController class]]) {
+    if (self.navigationController.viewControllers.count == 1 && ![self isKindOfClass:[GlodBuleHTMeHomeViewController class]] && ![self isKindOfClass:[GlodBuleHTHomeLeftViewController class]]) {
         UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_icon_title"]];
         self.navigationItem.titleView = titleView;
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.taomeCenterButton];
@@ -145,9 +142,15 @@
     [super didReceiveMemoryWarning];
 }
 - (void)showMeCenter {
+    
+    if (isAppInView) {
+        [[GlodBulePPXXBJViewControllerCenter mainViewController].drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+        return;
+    }
+    
     GlodBuleHTMeHomeViewController *meVc = [GlodBuleHTMeHomeViewController taoviewController];
     GlodBulePPXXBJNavigationController *nav = [[GlodBulePPXXBJNavigationController alloc] initWithRootViewController:meVc];
-    [nav.navigationBar lt_setBackgroundColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
+    [nav.navigationBar lt_setBackgroundColor:appBaseColor];
     [self presentViewController:nav animated:YES completion:nil];
 }
 

@@ -12,6 +12,8 @@
 #import "GlodBuleHTNewMatchHomeViewController.h"
 #import "AppDelegate.h"
 
+#import "GlodBuleHTCollectionViewController.h"
+
 @import Firebase;
 @import GoogleSignIn;
 
@@ -28,26 +30,50 @@
 @property (nonatomic, strong) GlodBuleHTRankHomeViewController *vc5;
 @property (nonatomic, strong) GlodBulePPXXBJNavigationController *nav6;
 @property (nonatomic, strong) GlodBuleHTTabBarHomeViewController *vc6;
+
+@property (nonatomic, strong)   UIViewController *currentBarViewController;
+    
 @end
 @implementation GlodBulePPXXBJMainViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
      BJLog(@"GlodBulePPXXBJMainViewController viewDidLoad");
     
+    UIColor *tintColor = appBaseColor;
+    UIColor *unselectedItemTintColor = RGBA_COLOR_HEX(0x999999);
+    
+    if (isAppInView) {
+        tintColor = UIColor.whiteColor;
+        unselectedItemTintColor = UIColor.blackColor;
+    }
+    
     if (@available(iOS 10.0, *)) {
-        [self.tabBar setUnselectedItemTintColor:RGBA_COLOR_HEX(0x999999)];
-        [self.tabBar setTintColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
+        [self.tabBar setUnselectedItemTintColor:unselectedItemTintColor];
+        [self.tabBar setTintColor:tintColor];
     } else {
         
-        [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:RGBA_COLOR_HEX(0x999999)} forState:UIControlStateNormal];
-        [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor hx_colorWithHexRGBAString:@"fc562e"]} forState:UIControlStateSelected];
+        [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:unselectedItemTintColor} forState:UIControlStateNormal];
+        [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:tintColor} forState:UIControlStateSelected];
         
     }
    
     [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -4)];
-    [self.tabBar setBackgroundImage:[UIImage new]];
-    [self.tabBar setShadowImage:[UIImage imageNamed:@"tab_bar_shadow"]];
     self.tabBar.translucent = NO;
+    
+    if (isAppInView) {
+        
+        [self.tabBar setBackgroundImage:[UIImage jx_imageWithColor:appBaseColor]];
+        [self.tabBar setShadowImage:[UIImage imageNamed:@"tab_bar_shadow"]];
+       
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleNotification:)
+                                                     name:left_controller_click_name
+                                                   object:nil];
+    }else{
+        [self.tabBar setBackgroundImage:[UIImage new]];
+        [self.tabBar setShadowImage:[UIImage imageNamed:@"tab_bar_shadow"]];
+    }
+   
     self.delegate = self;
     
 //    [GIDSignIn sharedInstance].presentingViewController = self;
@@ -61,25 +87,30 @@
     }
     
 }
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 #pragma mark - 
 - (NSArray<NSString *> *)taotabBarTitles {
     BJLog(@"GlodBulePPXXBJMainViewController taotabBarTitles");
-    if ([GlodBuleHTUserManager manager].appInView) {
-        return @[@"直播", @"新聞", @"數據",@"我的"];
+    if (isAppInView) {
+        return @[@"新聞", @"影片", @"賽事",  @"數據"];
     }
 //    return @[@"比賽", @"新聞", @"影片", @"數據", @"排行"];
      return @[@"直播", @"新聞", @"影片", @"數據"];
 }
 - (NSArray<UIImage *> *)taotabBarIcons {
-     if ([GlodBuleHTUserManager manager].appInView) {
-         return @[[[UIImage imageNamed:@"tab_icon_normal1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                  [[UIImage imageNamed:@"tab_icon_normal2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+     if (isAppInView) {
+         return @[[[UIImage imageNamed:@"tab_xxx_news"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                  [[UIImage imageNamed:@"tab_xxx_film"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
 //                  [[UIImage imageNamed:@"tab_icon_normal3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                  [[UIImage imageNamed:@"tab_icon_normal4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                  [[UIImage imageNamed:@"tab_icon_me"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                  [[UIImage imageNamed:@"tab_xxx_match"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                  [[UIImage imageNamed:@"tab_xxx_data"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
      }
     return @[[[UIImage imageNamed:@"tab_icon_normal1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_normal2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
@@ -87,12 +118,12 @@
              [[UIImage imageNamed:@"tab_icon_normal4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 }
 - (NSArray<UIImage *> *)taotabBarSelectedIcons {
-    if ([GlodBuleHTUserManager manager].appInView) {
-        return  @[[[UIImage imageNamed:@"tab_icon_selected1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                  [[UIImage imageNamed:@"tab_icon_selected2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+    if (isAppInView) {
+        return  @[[[UIImage imageNamed:@"tab_xxx_news_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                  [[UIImage imageNamed:@"tab_xxx_film_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
 //                  [[UIImage imageNamed:@"tab_icon_selected3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                  [[UIImage imageNamed:@"tab_icon_selected4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                 [[UIImage imageNamed:@"tab_icon_me_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                  [[UIImage imageNamed:@"tab_xxx_match_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                 [[UIImage imageNamed:@"tab_xxx_data_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     }
     return @[[[UIImage imageNamed:@"tab_icon_selected1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_selected2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
@@ -139,8 +170,9 @@
 //    self.nav5.modalPresentationStyle = UIModalPresentationFullScreen;
 //    self.nav6.modalPresentationStyle = UIModalPresentationFullScreen;
       
-    if ([GlodBuleHTUserManager manager].appInView) {
-         return @[self.nav1, self.nav2, self.nav4, self.nav6];
+    if (isAppInView) {
+        self.currentBarViewController = self.nav2;
+         return @[self.nav2, self.nav3, self.nav1, self.nav4];
     }
   
     return @[self.nav1, self.nav2, self.nav3, self.nav4];
@@ -152,6 +184,7 @@
    
 //    [viewController viewDidAppear:YES];
     NSLog(@"tabBarController %ld",self.currentSelectedIndex);
+    self.currentBarViewController = viewController;
 }
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
@@ -161,4 +194,47 @@
     
     return YES;
 }
+
+
+- (void)handleNotification:(NSNotification *)notification
+{
+    NSLog(@"notification = %@", notification.name);
+    NSDictionary *info = notification.userInfo;
+    if (info) {
+        NSString *index = info[@"index"];
+        if (index) {
+            int xxIndex = index.intValue;
+            [self.drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+            
+            UIViewController *viewController;
+            switch (xxIndex) {
+                case 0:
+                    
+                    break;
+                case 1:
+                    viewController = [GlodBuleHTCollectionViewController taoviewController];
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                    break;
+                case 4:
+                    
+                    break;
+                    
+                default:
+                    break;
+            }
+            
+            GlodBulePPXXBJNavigationController *xxcurrentBarViewController = (GlodBulePPXXBJNavigationController *)self.currentBarViewController;
+            if (xxcurrentBarViewController && viewController) {
+                [xxcurrentBarViewController pushViewController:viewController animated:YES];
+            }
+            
+        }
+    }
+}
+
 @end

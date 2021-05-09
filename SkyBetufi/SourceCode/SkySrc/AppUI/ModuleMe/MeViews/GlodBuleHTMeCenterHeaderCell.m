@@ -24,6 +24,7 @@
         self.userNameLabel.text = [GlodBuleHTUserManager tao_userInfo].display_name;
     } else {
         self.userInfoContentView.hidden = YES;
+        self.loginButton.backgroundColor = appBaseColor;
         self.loginButton.hidden = NO;
     }
 }

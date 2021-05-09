@@ -1,4 +1,6 @@
 #import "GlodBulePPXXBJBaseTabBarController.h"
+#import "MMDrawerController.h"
+
 typedef NS_ENUM(NSInteger, BJMainTabIndex) {
     BJMainTabIndexMatch= 0,
     BJMainTabIndexNews,
@@ -8,4 +10,7 @@ typedef NS_ENUM(NSInteger, BJMainTabIndex) {
 };
 @interface GlodBulePPXXBJMainViewController : GlodBulePPXXBJBaseTabBarController
 @property (nonatomic, assign) NSInteger currentSelectedIndex;
+
+@property (nonatomic,strong) MMDrawerController * drawerController;
+
 @end

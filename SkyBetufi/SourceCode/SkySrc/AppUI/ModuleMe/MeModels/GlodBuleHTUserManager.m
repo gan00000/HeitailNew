@@ -6,6 +6,7 @@
 #import "GlodBuleDRSandBoxManager.h"
 #import <AuthenticationServices/AuthenticationServices.h>
 #import "GlodBuleBJUtility.h"
+#import "UIColor+GlodBuleHex.h"
 
 const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 #define kUserTokenKey @"userToken"
@@ -312,5 +313,14 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
         _tao_fbLoginManager = [[FBSDKLoginManager alloc] init];
     }
     return _tao_fbLoginManager;
+}
+
+
++ (UIColor *)getAppBaseColor {
+    if (isAppInView) {
+        return [UIColor hx_colorWithHexRGBAString:@"51c788"];
+    }else{
+        return [UIColor hx_colorWithHexRGBAString:@"fc562e"];
+    }
 }
 @end

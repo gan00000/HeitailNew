@@ -661,7 +661,7 @@
 }
 - (void)setupSaveButton {
     if (self.newsModel.my_save) {
-        [self.saveButton setTintColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
+        [self.saveButton setTintColor:appBaseColor];
         self.saveButton.selected = YES;
     } else {
         self.saveButton.selected = NO;

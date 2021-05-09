@@ -76,4 +76,6 @@ pod 'JGProgressHUD'
 
 pod "youtube-ios-player-helper" #, "~> 1.0.3"
 
+pod 'MMDrawerController', '~> 0.5.7'
+
 end

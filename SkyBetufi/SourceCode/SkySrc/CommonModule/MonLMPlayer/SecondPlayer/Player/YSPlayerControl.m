@@ -136,7 +136,7 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     self.bufferProgressView.progress = 0;
     
     self.progressSlider.maximumTrackTintColor = [UIColor clearColor];//[UIColor whiteColor];
-    self.progressSlider.minimumTrackTintColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"];//[UIColor whiteColor];//[UIColor
+    self.progressSlider.minimumTrackTintColor = appBaseColor;//[UIColor whiteColor];//[UIColor
     
     self.rePlayBtn.hidden = YES;
     self.rePauseBtn.hidden = YES;
@@ -165,8 +165,8 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 {
     self.slideContentView.hidden = YES;
     self.slideContentView.layer.cornerRadius = 10;
-    self.slideTimeLabel.textColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"];
-    self.slideProgressView.progressTintColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"];
+    self.slideTimeLabel.textColor = appBaseColor;
+    self.slideProgressView.progressTintColor = appBaseColor;
     self.slideProgressView.trackTintColor = [UIColor whiteColor];
     self.slideProgressView.progress = 0;
 }

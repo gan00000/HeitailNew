@@ -7,9 +7,14 @@
 #import "NSDate+GlodBuleCore.h"
 #import "AFHTTPSessionManager.h"
 #import "GlodBuleBJUtility.h"
+#import "GlodBuleHTMeHomeViewController.h"
+#import <MMDrawerController.h>
+#import "GlodBuleHTHomeLeftViewController.h"
 
 @interface GlodBulePPXXBJLaunchViewController () <CAAnimationDelegate>
 @property (nonatomic, strong) GlodBulePPXXBJMainViewController *tabBarController;
+@property (nonatomic,strong) MMDrawerController * drawerController;
+
 @property (nonatomic, assign) NSInteger tryTimes;
 @property (nonatomic, assign) BOOL needGuidePage;
 @end
@@ -24,7 +29,7 @@
 //    [[UIApplication sharedApplication].delegate.window exchangeSubviewAtIndex:1 withSubviewAtIndex:0];
 //    [[UIApplication sharedApplication].delegate.window.layer addAnimation:animation forKey:@"animation"];
     
-    [UIApplication sharedApplication].delegate.window.rootViewController = self.tabBarController;
+    [UIApplication sharedApplication].delegate.window.rootViewController = [self mmRootViewController];
 }
 
 - (void)taoRequestConfig {
@@ -155,14 +160,63 @@
 }
 #pragma mark - CAAnimationDelegate
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-    [UIApplication sharedApplication].delegate.window.rootViewController = self.tabBarController;
+    [UIApplication sharedApplication].delegate.window.rootViewController = [self mmRootViewController];
 }
 #pragma mark - getters
 - (GlodBulePPXXBJMainViewController *)tabBarController {
     if (!_tabBarController) {
         _tabBarController = [[GlodBulePPXXBJMainViewController alloc] init];
     }
+    [GlodBuleHTUserManager manager].mainTabBarController = _tabBarController;
     return _tabBarController;
+}
+
+-(UIViewController *)mmRootViewController
+{
+    if (!isAppInView) {
+        return self.tabBarController;
+    }
+    if (self.drawerController) {
+        return self.drawerController;
+    }
+//    UIViewController * leftSideDrawerViewController = [[MMExampleLeftSideDrawerViewController alloc] init];
+
+//    UIViewController * centerViewController = [[MMExampleCenterTableViewController alloc] init];
+    
+//    UIViewController * rightSideDrawerViewController = [[MMExampleRightSideDrawerViewController alloc] init];
+    
+//    UINavigationController * navigationController = [[MMNavigationController alloc] initWithRootViewController:centerViewController];
+//    [navigationController setRestorationIdentifier:@"MMExampleCenterNavigationControllerRestorationKey"];
+//    UINavigationController * rightSideNavController = [[MMNavigationController alloc] initWithRootViewController:rightSideDrawerViewController];
+//    [rightSideNavController setRestorationIdentifier:@"MMExampleRightNavigationControllerRestorationKey"];
+//    UINavigationController * leftSideNavController = [[MMNavigationController alloc] initWithRootViewController:leftSideDrawerViewController];
+//    [leftSideNavController setRestorationIdentifier:@"MMExampleLeftNavigationControllerRestorationKey"];
+    
+    GlodBuleHTHomeLeftViewController *meHomeViewController = [GlodBuleHTHomeLeftViewController taoviewController];
+    GlodBulePPXXBJNavigationController *leftNavController = [[GlodBulePPXXBJNavigationController alloc] initWithRootViewController:meHomeViewController];
+    
+//    GlodBulePPXXBJNavigationController *centerNavController = [[GlodBulePPXXBJNavigationController alloc] initWithRootViewController:self.tabBarController];
+    
+    self.drawerController = [[MMDrawerController alloc]
+                        initWithCenterViewController:self.tabBarController
+                        leftDrawerViewController:leftNavController];
+    [self.drawerController setShowsShadow:NO];
+    [self.drawerController setRestorationIdentifier:@"MMDrawer"];
+    [self.drawerController setMaximumRightDrawerWidth:200.0];
+    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    
+    [self.drawerController
+     setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
+//         MMDrawerControllerDrawerVisualStateBlock block;
+//         block = [[MMExampleDrawerVisualStateManager sharedManager] drawerVisualStateBlockForDrawerSide:drawerSide];
+//         if(block){
+//             block(drawerController, drawerSide, percentVisible);
+//         }
+     }];
+    self.tabBarController.drawerController = self.drawerController;
+    meHomeViewController.drawerController = self.drawerController;
+    return self.drawerController;
 }
 
 #pragma mark - 设置APP静态图片引导页

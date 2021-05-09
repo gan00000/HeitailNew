@@ -1,10 +1,12 @@
 #import <Foundation/Foundation.h>
 #import "GlodBuleHTUserInfoModel.h"
 #import "GlodBuleHTMatchSummaryModel.h"
+#import "GlodBulePPXXBJMainViewController.h"
 
 extern const NSString * kUserLogStatusChagneNotice;
 @interface GlodBuleHTUserManager : NSObject
 @property (nonatomic, assign)BOOL appInView;
+@property (nonatomic, strong) GlodBulePPXXBJMainViewController *mainTabBarController;
 
 @property (nonatomic, assign)BOOL showTextLive;
 
@@ -28,6 +30,8 @@ extern const NSString * kUserLogStatusChagneNotice;
               cancelButton:(NSString *)cancelButton
              confirmButton:(NSString *)confirmButton
               confirmBlock:(dispatch_block_t)confirmBlock;
+
++ (UIColor *)getAppBaseColor;
 
 - (void)handleGidSign;
 
