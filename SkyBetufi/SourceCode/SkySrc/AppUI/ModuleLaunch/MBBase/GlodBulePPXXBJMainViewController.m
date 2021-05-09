@@ -13,6 +13,12 @@
 #import "AppDelegate.h"
 
 #import "GlodBuleHTCollectionViewController.h"
+#import "GlodBuleHTMessageViewController.h"
+#import "GlodBuleHTUserInfoEditViewController.h"
+#import "GlodBuleHTCommentViewController.h"
+#import "GlodBuleHTLikeViewController.h"
+#import "GlodBuleHTHistoryViewController.h"
+#import "GlodBuleHTSettingViewController.h"
 
 @import Firebase;
 @import GoogleSignIn;
@@ -99,7 +105,7 @@
 - (NSArray<NSString *> *)taotabBarTitles {
     BJLog(@"GlodBulePPXXBJMainViewController taotabBarTitles");
     if (isAppInView) {
-        return @[@"新聞", @"影片", @"賽事",  @"數據"];
+        return @[@"資訊", @"短片", @"賽事",  @"統計"];
     }
 //    return @[@"比賽", @"新聞", @"影片", @"數據", @"排行"];
      return @[@"直播", @"新聞", @"影片", @"數據"];
@@ -209,19 +215,25 @@
             UIViewController *viewController;
             switch (xxIndex) {
                 case 0:
-                    
+                    viewController = [GlodBuleHTUserInfoEditViewController taoviewController];
                     break;
                 case 1:
                     viewController = [GlodBuleHTCollectionViewController taoviewController];
                     break;
                 case 2:
-                    
+                    viewController = [GlodBuleHTCommentViewController taoviewController];
                     break;
                 case 3:
-                    
+                    viewController = [GlodBuleHTLikeViewController taoviewController];
                     break;
                 case 4:
-                    
+                    viewController = [GlodBuleHTHistoryViewController taoviewController];
+                    break;
+                case 5:
+                    viewController = [GlodBuleHTMessageViewController taoviewController];
+                    break;
+                case 6:
+                    viewController = [GlodBuleHTSettingViewController taoviewController];
                     break;
                     
                 default:
