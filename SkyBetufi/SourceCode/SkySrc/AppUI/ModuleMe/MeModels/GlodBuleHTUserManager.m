@@ -323,4 +323,13 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
         return [UIColor hx_colorWithHexRGBAString:@"fc562e"];
     }
 }
+
++(NSString *)getDefaultAvater
+{
+    NSString *default_avatar = @"default_avatar";
+    if (isAppInView) {
+        default_avatar = @"default_avater_view";
+    }
+    return default_avatar;
+}
 @end

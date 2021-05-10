@@ -12,7 +12,7 @@
         if (image) {
             _avatar = image;
         } else {
-            _avatar = [UIImage imageNamed:@"default_avatar"];
+            _avatar = HT_DEFAULT_AVATAR_LOGO;
         }
     }
     return _avatar;

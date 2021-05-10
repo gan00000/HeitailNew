@@ -33,6 +33,8 @@ extern const NSString * kUserLogStatusChagneNotice;
 
 + (UIColor *)getAppBaseColor;
 
++(NSString *)getDefaultAvater;
+
 - (void)handleGidSign;
 
 - (void)doThirdLoginRequesWithAccessToken:(NSString *)accessToken sns:(NSInteger)sns userId:(NSString *)userId nickName:(NSString *)nickName email:(NSString *)email;

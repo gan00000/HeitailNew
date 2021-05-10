@@ -163,14 +163,21 @@
      [self.navigationController pushViewController:meVc animated:YES];
 }
 
-- (void)taosetupMeCenterButton {
+- (void)taosetupMeCenterButton {//default_avater_view
+    
     if ([GlodBuleHTUserManager tao_isUserLogin]) {
 //        UIImage *userImage = [GlodBuleHTUserManager tao_userInfo].avatar;
 //        [self.taomeCenterButton setImage:[GlodBulePPXXBJBaseViewController taofixImageSize:userImage toSize:CGSizeMake(36, 36)] forState:UIControlStateNormal];
         
-        [self.taomeCenterButton sd_setImageWithURL:[NSURL URLWithString:[GlodBuleHTUserManager tao_userInfo].user_img] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"default_avatar"]];
+        [self.taomeCenterButton sd_setImageWithURL:[NSURL URLWithString:[GlodBuleHTUserManager tao_userInfo].user_img] forState:UIControlStateNormal placeholderImage:HT_DEFAULT_AVATAR_LOGO];
     } else {
-        [self.taomeCenterButton setImage:[UIImage imageNamed:@"default_avatar"] forState:UIControlStateNormal];
+        
+        if (isAppInView) {//top_menu_more
+            [self.taomeCenterButton setImage:[UIImage imageNamed:@"top_menu_more"] forState:UIControlStateNormal];
+        }else{
+            [self.taomeCenterButton setImage:HT_DEFAULT_AVATAR_LOGO forState:UIControlStateNormal];
+        }
+        
     }
 }
 - (UIButton *)taomeCenterButton {
