@@ -27,6 +27,15 @@
 		3238C62425F0BA3D0045F1B9 /* HTWordLive2Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 3238C62325F0BA3D0045F1B9 /* HTWordLive2Request.m */; };
 		3243D670261FFA5600D3D4DB /* HTNoUseHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243D66E261FFA5600D3D4DB /* HTNoUseHeaderTableViewCell.m */; };
 		3243D671261FFA5600D3D4DB /* HTNoUseHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3243D66F261FFA5600D3D4DB /* HTNoUseHeaderTableViewCell.xib */; };
+		32463B1626494D150014696C /* PageCellBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32463B0D26494D150014696C /* PageCellBased.swift */; };
+		32463B1726494D150014696C /* HotTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32463B0E26494D150014696C /* HotTagCell.swift */; };
+		32463B1826494D150014696C /* HotTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32463B0F26494D150014696C /* HotTagCell.xib */; };
+		32463B1C26494D150014696C /* HotTagScrollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32463B1426494D150014696C /* HotTagScrollCell.xib */; };
+		32463B1D26494D150014696C /* HotTagScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32463B1526494D150014696C /* HotTagScrollCell.swift */; };
+		32463B1F26494DE90014696C /* TableCellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32463B1E26494DE90014696C /* TableCellable.swift */; };
+		32463B3F26494FDE0014696C /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32463B2326494FDE0014696C /* CollectionExtension.swift */; };
+		32463B4726494FDE0014696C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32463B2B26494FDE0014696C /* UIViewExtension.swift */; };
+		32463B5A264950D90014696C /* CellOfIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32463B59264950D90014696C /* CellOfIdentifier.swift */; };
 		324C9AF425EFB01200235E92 /* GlodBuleHTChatSelfContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 324C9AF225EFB01200235E92 /* GlodBuleHTChatSelfContentCell.xib */; };
 		324C9AF525EFB01200235E92 /* GlodBuleHTChatSelfContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 324C9AF325EFB01200235E92 /* GlodBuleHTChatSelfContentCell.m */; };
 		3253E78D25FF579300326CDE /* GlodBuleHTNewMatchHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3253E78C25FF579300326CDE /* GlodBuleHTNewMatchHomeViewController.m */; };
@@ -84,6 +93,8 @@
 		328894CE2603324200759311 /* MediaToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328894CC2603324200759311 /* MediaToolbox.framework */; };
 		328894D02603325E00759311 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328894CF2603325D00759311 /* AudioToolbox.framework */; };
 		328894D22603326A00759311 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328894D12603326A00759311 /* CoreMedia.framework */; };
+		329468D9264A34EE003DEFA2 /* SkyBallHetiRedMainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329468D6264A34EE003DEFA2 /* SkyBallHetiRedMainPage.storyboard */; };
+		329468DA264A34EE003DEFA2 /* GlodBuleHTMainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 329468D8264A34EE003DEFA2 /* GlodBuleHTMainPageViewController.m */; };
 		32A51D692508D87D00603A36 /* GlodBuleSearchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A51D682508D87D00603A36 /* GlodBuleSearchRequest.m */; };
 		32A51D6C2508DCC400603A36 /* GlodBuleSearchData.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A51D6B2508DCC400603A36 /* GlodBuleSearchData.m */; };
 		32A6F77F2647B4DF0039B850 /* GlodBuleHTHomeLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A6F77E2647B4DF0039B850 /* GlodBuleHTHomeLeftViewController.m */; };
@@ -497,6 +508,15 @@
 		3243D66D261FFA5600D3D4DB /* HTNoUseHeaderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTNoUseHeaderTableViewCell.h; sourceTree = "<group>"; };
 		3243D66E261FFA5600D3D4DB /* HTNoUseHeaderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTNoUseHeaderTableViewCell.m; sourceTree = "<group>"; };
 		3243D66F261FFA5600D3D4DB /* HTNoUseHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTNoUseHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		32463B0D26494D150014696C /* PageCellBased.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCellBased.swift; sourceTree = "<group>"; };
+		32463B0E26494D150014696C /* HotTagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotTagCell.swift; sourceTree = "<group>"; };
+		32463B0F26494D150014696C /* HotTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotTagCell.xib; sourceTree = "<group>"; };
+		32463B1426494D150014696C /* HotTagScrollCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotTagScrollCell.xib; sourceTree = "<group>"; };
+		32463B1526494D150014696C /* HotTagScrollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotTagScrollCell.swift; sourceTree = "<group>"; };
+		32463B1E26494DE90014696C /* TableCellable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellable.swift; sourceTree = "<group>"; };
+		32463B2326494FDE0014696C /* CollectionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
+		32463B2B26494FDE0014696C /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		32463B59264950D90014696C /* CellOfIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellOfIdentifier.swift; sourceTree = "<group>"; };
 		324C9AF125EFB01200235E92 /* GlodBuleHTChatSelfContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTChatSelfContentCell.h; sourceTree = "<group>"; };
 		324C9AF225EFB01200235E92 /* GlodBuleHTChatSelfContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GlodBuleHTChatSelfContentCell.xib; sourceTree = "<group>"; };
 		324C9AF325EFB01200235E92 /* GlodBuleHTChatSelfContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTChatSelfContentCell.m; sourceTree = "<group>"; };
@@ -575,6 +595,9 @@
 		328894CC2603324200759311 /* MediaToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaToolbox.framework; path = System/Library/Frameworks/MediaToolbox.framework; sourceTree = SDKROOT; };
 		328894CF2603325D00759311 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		328894D12603326A00759311 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		329468D6264A34EE003DEFA2 /* SkyBallHetiRedMainPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SkyBallHetiRedMainPage.storyboard; sourceTree = "<group>"; };
+		329468D7264A34EE003DEFA2 /* GlodBuleHTMainPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlodBuleHTMainPageViewController.h; sourceTree = "<group>"; };
+		329468D8264A34EE003DEFA2 /* GlodBuleHTMainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlodBuleHTMainPageViewController.m; sourceTree = "<group>"; };
 		32A51D672508D87D00603A36 /* GlodBuleSearchRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleSearchRequest.h; sourceTree = "<group>"; };
 		32A51D682508D87D00603A36 /* GlodBuleSearchRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleSearchRequest.m; sourceTree = "<group>"; };
 		32A51D6A2508DCC400603A36 /* GlodBuleSearchData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleSearchData.h; sourceTree = "<group>"; };
@@ -1291,6 +1314,29 @@
 			path = Player;
 			sourceTree = "<group>";
 		};
+		32463B0C26494D150014696C /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				32463B1E26494DE90014696C /* TableCellable.swift */,
+				32463B0D26494D150014696C /* PageCellBased.swift */,
+				32463B0E26494D150014696C /* HotTagCell.swift */,
+				32463B0F26494D150014696C /* HotTagCell.xib */,
+				32463B1426494D150014696C /* HotTagScrollCell.xib */,
+				32463B1526494D150014696C /* HotTagScrollCell.swift */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
+		32463B2026494FDE0014696C /* SwiftExtension */ = {
+			isa = PBXGroup;
+			children = (
+				32463B59264950D90014696C /* CellOfIdentifier.swift */,
+				32463B2326494FDE0014696C /* CollectionExtension.swift */,
+				32463B2B26494FDE0014696C /* UIViewExtension.swift */,
+			);
+			path = SwiftExtension;
+			sourceTree = "<group>";
+		};
 		3256201222E17A9200973889 /* SkySrc */ = {
 			isa = PBXGroup;
 			children = (
@@ -1416,6 +1462,16 @@
 				3288945A2603310900759311 /* PLMediaInfo.m */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		329468D5264A3473003DEFA2 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				329468D7264A34EE003DEFA2 /* GlodBuleHTMainPageViewController.h */,
+				329468D8264A34EE003DEFA2 /* GlodBuleHTMainPageViewController.m */,
+				329468D6264A34EE003DEFA2 /* SkyBallHetiRedMainPage.storyboard */,
+			);
+			path = MainPage;
 			sourceTree = "<group>";
 		};
 		32A51D662508D85100603A36 /* Request */ = {
@@ -1701,6 +1757,7 @@
 		FEC1126F2143D4A0002DB617 /* AppUI */ = {
 			isa = PBXGroup;
 			children = (
+				329468D5264A3473003DEFA2 /* MainPage */,
 				32E3E97B24FD3FE40076AD93 /* ModuleSearch */,
 				FEC113102143D4A0002DB617 /* ModuleLaunch */,
 				FE2DDB0421F41AEA006D824A /* ModuleMe */,
@@ -1727,6 +1784,7 @@
 		FEC1139B2143D4A0002DB617 /* GViews */ = {
 			isa = PBXGroup;
 			children = (
+				32463B0C26494D150014696C /* TableCell */,
 				FEC113BF2143D4A0002DB617 /* CCPPMJRefreshGenerator */,
 				FEC1139C2143D4A0002DB617 /* GlodBuleBJEmptyTableViewCell.h */,
 				FEC113CB2143D4A0002DB617 /* GlodBuleBJEmptyTableViewCell.m */,
@@ -1861,6 +1919,7 @@
 		FEC114342143D4A0002DB617 /* CommonModule */ = {
 			isa = PBXGroup;
 			children = (
+				32463B2026494FDE0014696C /* SwiftExtension */,
 				32CC78E024F3EA7900377576 /* MonChartUtil */,
 				32FED80223AB768700D900A7 /* MonLMPlayer */,
 				326D67B823A8DB9A00DDB443 /* WBImageBrowser */,
@@ -2662,6 +2721,7 @@
 				FEC116042143D4A1002DB617 /* GlodBuleXJLoadingView.xib in Resources */,
 				32ABE1D322EDF733008505BA /* GlodBuleHTTabBarHomeViewController.xib in Resources */,
 				FE82BB382179B6C500C52C51 /* GlodBuleHTDataPlayerLeftCell.xib in Resources */,
+				32463B1C26494D150014696C /* HotTagScrollCell.xib in Resources */,
 				32FCDD1C250C72AB0037334D /* THIM.storyboard in Resources */,
 				FE82A484216E42680070FFC0 /* GlodBuleHTMatchLiveFeedCell.xib in Resources */,
 				FE800F752263BA1600E575D5 /* GlodBuleHTMyCommentCell.xib in Resources */,
@@ -2682,6 +2742,7 @@
 				FE6BD0642144FF1F0090118A /* SkyBallHetiRedMatchDashboard.storyboard in Resources */,
 				3287124823B8962800AB5360 /* video_error_pressed.png in Resources */,
 				32E7228A2309A3A6003E0A03 /* guideImageapp4.jpg in Resources */,
+				329468D9264A34EE003DEFA2 /* SkyBallHetiRedMainPage.storyboard in Resources */,
 				FEC116F82143DC57002DB617 /* SkyBallHetiRedNewsHome.storyboard in Resources */,
 				FEC117262143DF33002DB617 /* SkyBallHetiRedRankHome.storyboard in Resources */,
 				3287124E23B8962800AB5360 /* video_play_normal.png in Resources */,
@@ -2701,6 +2762,7 @@
 				FE6BD07F21457BBC0090118A /* SkyBallHetiRedNewsDetail.storyboard in Resources */,
 				32E722882309A3A6003E0A03 /* guideImageapp13.jpg in Resources */,
 				FEC1172B2143E43A002DB617 /* KKRESMMBBLaunch.xcassets in Resources */,
+				32463B1826494D150014696C /* HotTagCell.xib in Resources */,
 				3287124123B8962800AB5360 /* video_shrink.png in Resources */,
 				FEC1161C2143D4A1002DB617 /* GlodBuleBJTabBarView.xib in Resources */,
 				FE08C5C422504F0C000175CB /* KKRESMMBBMe.xcassets in Resources */,
@@ -2892,6 +2954,7 @@
 				FE800F6A22636AFC00E575D5 /* GlodBuleHTNewsCommentCell.m in Sources */,
 				FEC1164B2143D4A1002DB617 /* GlodBulePPXXBJBaseViewController.m in Sources */,
 				FECCA5332258C8D0009EF494 /* GlodBuleHTUserManager.m in Sources */,
+				329468DA264A34EE003DEFA2 /* GlodBuleHTMainPageViewController.m in Sources */,
 				3213529F250A149F00702F72 /* UserMessage.pbobjc.m in Sources */,
 				FEC116052143D4A1002DB617 /* GlodBuleXJLoadingView.m in Sources */,
 				FEC1160E2143D4A1002DB617 /* UIView+GlodBuleToast.m in Sources */,
@@ -2970,6 +3033,7 @@
 				FEAC9F2E2199E25F00159AE9 /* GlodBuleHTSettingViewController.m in Sources */,
 				FEC116152143D4A1002DB617 /* GlodBuleMJRefreshGenerator.m in Sources */,
 				32FED82823AB768700D900A7 /* GlodBuleLMPlayerControlView.m in Sources */,
+				32463B1F26494DE90014696C /* TableCellable.swift in Sources */,
 				FEC1160C2143D4A1002DB617 /* GlodBuleXJEmptyView.m in Sources */,
 				32CD877E22F4173800063A14 /* SkyThumbnailViewController.m in Sources */,
 				FE82BB4D2179B7F100C52C51 /* GlodBuleHTDataPlayerRankModel.m in Sources */,
@@ -3001,6 +3065,7 @@
 				326D67B523A8D83300DDB443 /* GlodBuleHTPhotoViewController.m in Sources */,
 				FECCA5302258C8D0009EF494 /* GlodBuleHTUserRequest.m in Sources */,
 				3243D670261FFA5600D3D4DB /* HTNoUseHeaderTableViewCell.m in Sources */,
+				32463B4726494FDE0014696C /* UIViewExtension.swift in Sources */,
 				FEC117092143DDEE002DB617 /* GlodBuleHTNewsHomeViewController.m in Sources */,
 				32A6F77F2647B4DF0039B850 /* GlodBuleHTHomeLeftViewController.m in Sources */,
 				FEC1161B2143D4A1002DB617 /* GlodBuleBJEmptyTableViewCell.m in Sources */,
@@ -3013,6 +3078,7 @@
 				FE7E6C9A2263CADB00B2973D /* GlodBuleHTMyMessaageCell.m in Sources */,
 				FEC117102143DE50002DB617 /* GlodBuleHTFilmHomeViewController.m in Sources */,
 				32E10F2F25F2143D00639323 /* HTHotShootCellTableViewCell.m in Sources */,
+				32463B1D26494D150014696C /* HotTagScrollCell.swift in Sources */,
 				FE706F08215006430078DF30 /* GlodBuleHTDataHomeHeaderCell.m in Sources */,
 				3253E78D25FF579300326CDE /* GlodBuleHTNewMatchHomeViewController.m in Sources */,
 				32340FD0250F1D7F00F47F76 /* GlodBuleHTChatContentCell.m in Sources */,
@@ -3034,6 +3100,7 @@
 				FEC116132143D4A1002DB617 /* GlodBuleLJViewPager.m in Sources */,
 				32FED82923AB768700D900A7 /* GlodBuleLMVideoPlayer.m in Sources */,
 				32184808260B1BFD008D836C /* YSScreenBrightnessTool.m in Sources */,
+				32463B1726494D150014696C /* HotTagCell.swift in Sources */,
 				326D67BF23A8DB9A00DDB443 /* GlodBuleWBImageBrowserView.m in Sources */,
 				FEDABE482171BC3A008C8AFD /* GlodBuleHTMatchQuarterCell.m in Sources */,
 				32FED82A23AB768700D900A7 /* GlodBuleLMPlayerManager.m in Sources */,
@@ -3082,15 +3149,18 @@
 				FEC1168C2143D4A1002DB617 /* GlodBuleBJServiceConfigurator.m in Sources */,
 				FEC116C92143D4A1002DB617 /* NSObject+GlodBulenextresponder.m in Sources */,
 				32184804260B1BFD008D836C /* YSBatteryTool.m in Sources */,
+				32463B5A264950D90014696C /* CellOfIdentifier.swift in Sources */,
 				FEC116082143D4A1002DB617 /* GlodBuleXJToastView.m in Sources */,
 				FEDF8FD72144B1CC005C7C4D /* GlodBuleHTMatchHomeRequest.m in Sources */,
 				32CD878022F4173800063A14 /* SkyFullScreenViewController.m in Sources */,
 				3288949C2603310900759311 /* NSDate+Covert.m in Sources */,
 				328894AA2603310900759311 /* PLMediaInfo.m in Sources */,
 				FEC116C62143D4A1002DB617 /* UIView+GlodBuleQuickFrame.m in Sources */,
+				32463B1626494D150014696C /* PageCellBased.swift in Sources */,
 				FE81D16D21497DDE0047A4A2 /* GlodBuleHTRankHomeCell.m in Sources */,
 				FEC116C02143D4A1002DB617 /* UIImage+GlodBuleGenerator.m in Sources */,
 				FEDAC978214B9129005E8B63 /* GlodBuleHTDataCellTeamView.m in Sources */,
+				32463B3F26494FDE0014696C /* CollectionExtension.swift in Sources */,
 				32C65DF625067D290068D2C7 /* GlodBuleHTSearchHistoryTableViewCell.m in Sources */,
 				327A19F023ADD17600F13A36 /* GlodBuleHTMacthLivePostModel.m in Sources */,
 				32FAACE324F6A032001574C9 /* GlodBuleBarChartUtilValueFormat.m in Sources */,
