@@ -15,7 +15,7 @@
 @end
 @implementation YYPackageHTDataMoreViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"SkyBallHetiRedDataMore");
+    return kLoadStoryboardWithName(@"UKRosRedDataMore");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -11,7 +11,7 @@
 @end
 @implementation KMonkeyHTMatchDashboardViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"SkyBallHetiRedMatchDashboard");
+    return kLoadStoryboardWithName(@"UKRosRedMatchDashboard");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -12,7 +12,7 @@
 @end
 @implementation MMTodayHTDataHomeViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"SkyBallHetiRedDataHome");
+    return kLoadStoryboardWithName(@"UKRosRedDataHome");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

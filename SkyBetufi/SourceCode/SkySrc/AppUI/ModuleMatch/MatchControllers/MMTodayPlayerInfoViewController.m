@@ -55,7 +55,7 @@
 @implementation MMTodayPlayerInfoViewController
 
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"PlayerInfo");
+    return kLoadStoryboardWithName(@"UKRosRedPlayerInfo");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

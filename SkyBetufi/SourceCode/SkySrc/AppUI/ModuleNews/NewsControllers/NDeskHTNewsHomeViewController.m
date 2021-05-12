@@ -16,7 +16,7 @@
 @end
 @implementation NDeskHTNewsHomeViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"SkyBallHetiRedNewsHome");
+    return kLoadStoryboardWithName(@"UKRosRedNewsHome");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -82,7 +82,7 @@
 @end
 @implementation SundayHTMatchDetailViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"SkyBallHetiRedMatchDetail");
+    return kLoadStoryboardWithName(@"UKRosRedMatchDetail");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

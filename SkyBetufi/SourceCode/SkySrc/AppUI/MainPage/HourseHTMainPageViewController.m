@@ -23,7 +23,7 @@
 @end
 @implementation HourseHTMainPageViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"SkyBallHetiRedMainPage");
+    return kLoadStoryboardWithName(@"UKRosRedMainPage");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

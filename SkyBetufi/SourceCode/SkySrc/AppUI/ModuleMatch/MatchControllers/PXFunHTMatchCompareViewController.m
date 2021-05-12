@@ -21,7 +21,7 @@
 @end
 @implementation PXFunHTMatchCompareViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"SkyBallHetiRedMatchCompare");
+    return kLoadStoryboardWithName(@"UKRosRedMatchCompare");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

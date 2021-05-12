@@ -11,7 +11,7 @@
 @end
 @implementation HourseHTNewsHomeOtherViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"SkyBallHetiRedNewsHomeOther");
+    return kLoadStoryboardWithName(@"UKRosRedNewsHomeOther");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

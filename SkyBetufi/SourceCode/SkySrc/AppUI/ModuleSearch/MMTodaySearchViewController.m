@@ -54,7 +54,7 @@
 */
 
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"THSearch");
+    return kLoadStoryboardWithName(@"UKRosRedTHSearch");
 }
 
 #pragma mark - UI refresh

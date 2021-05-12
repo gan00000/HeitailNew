@@ -11,7 +11,7 @@
 @end
 @implementation HourseHTDataHomeSubViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"SkyBallHetiRedDataHomeSub");
+    return kLoadStoryboardWithName(@"UKRosRedDataHomeSub");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

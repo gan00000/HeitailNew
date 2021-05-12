@@ -8,7 +8,7 @@
 @end
 @implementation GGCatHTRankEastWestViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"SkyBallHetiRedRankEastWest");
+    return kLoadStoryboardWithName(@"UKRosRedRankEastWest");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

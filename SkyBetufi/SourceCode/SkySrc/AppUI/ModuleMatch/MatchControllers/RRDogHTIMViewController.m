@@ -43,7 +43,7 @@
 @implementation RRDogHTIMViewController
 
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"THIM");
+    return kLoadStoryboardWithName(@"UKRosRedTHIM");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

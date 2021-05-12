@@ -26,7 +26,7 @@
 @implementation YYPackageHTHighLightsViewController
 
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"YYPackageHTHighLightsViewController");
+    return kLoadStoryboardWithName(@"UKRosRedYYPackageHTHighLightsViewController");
 }
 
 - (void)viewDidLoad {

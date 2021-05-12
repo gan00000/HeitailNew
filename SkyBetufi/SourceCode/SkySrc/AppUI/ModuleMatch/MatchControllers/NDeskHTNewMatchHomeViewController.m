@@ -27,7 +27,7 @@
 
 
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"GlodBuleHTNewMatchHome");
+    return kLoadStoryboardWithName(@"UKRosRedGlodBuleHTNewMatchHome");
 }
 
 - (void)viewDidLoad

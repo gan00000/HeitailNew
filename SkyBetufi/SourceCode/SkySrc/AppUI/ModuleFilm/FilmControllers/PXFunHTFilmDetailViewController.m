@@ -60,7 +60,7 @@
 @end
 @implementation PXFunHTFilmDetailViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"SkyBallHetiRedFilmDetail");
+    return kLoadStoryboardWithName(@"UKRosRedFilmDetail");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

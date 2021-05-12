@@ -8,7 +8,7 @@
 @end
 @implementation HourseHTRankZoneViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"SkyBallHetiRedRankZone");
+    return kLoadStoryboardWithName(@"UKRosRedRankZone");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

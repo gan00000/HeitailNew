@@ -8,7 +8,7 @@
 @end
 @implementation NDeskHTSettingViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"SkyBallHetiRedSetting");
+    return kLoadStoryboardWithName(@"UKRosRedSetting");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

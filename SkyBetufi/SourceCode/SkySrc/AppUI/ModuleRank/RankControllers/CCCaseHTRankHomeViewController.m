@@ -11,7 +11,7 @@
 @end
 @implementation CCCaseHTRankHomeViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"SkyBallHetiRedRankHome");
+    return kLoadStoryboardWithName(@"UKRosRedRankHome");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
