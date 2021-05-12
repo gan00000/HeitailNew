@@ -13,7 +13,7 @@
         <!--Match Compare View Controller-->
         <scene sceneID="RIz-gf-GhT">
             <objects>
-                <viewController id="Pwi-yn-obc" customClass="GlodBuleHTMatchCompareViewController" sceneMemberID="viewController">
+                <viewController id="Pwi-yn-obc" customClass="PXFunHTMatchCompareViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D7f-dm-Ggl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

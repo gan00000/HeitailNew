@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public let ScreenWidth = UIScreen.main.bounds.size.width;
 public let ScreenHeight = UIScreen.main.bounds.size.height;

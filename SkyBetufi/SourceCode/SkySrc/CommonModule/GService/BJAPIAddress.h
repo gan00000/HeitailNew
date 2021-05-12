@@ -1,6 +1,6 @@
 #ifndef BJAPIAddress_h
 #define BJAPIAddress_h
-#import "GlodBuleBJServiceConfigurator.h"
+#import "NDeskBJServiceConfigurator.h"
 #pragma mark - 比賽
 #define API_MATCH_HOME                  @"api/get_game_schedule"
 #define API_MATCH_PROGRESS              @"api/get_match_progress"

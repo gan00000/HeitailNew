@@ -13,7 +13,7 @@
         <!--Match Home View Controller-->
         <scene sceneID="gbU-TA-ght">
             <objects>
-                <viewController id="Gex-t3-Zoy" customClass="GlodBuleHTMatchHomeViewController" sceneMemberID="viewController">
+                <viewController id="Gex-t3-Zoy" customClass="YYPackageHTMatchHomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WK1-KC-8wB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -6,15 +6,15 @@
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "AFNetworkReachabilityManager.h"
-#import "GlodBulePPXXBJLaunchViewController.h"
-#import "UIView+GlodBuleToast.h"
-#import "GlodBuleHTNewsDetailViewController.h"
-#import "GlodBulePPXXBJNavigationController.h"
-#import "GlodBuleHTNewsHomeViewController.h"
-#import "GlodBulePPXXBJMainViewController.h"
+#import "RRDogPPXXBJLaunchViewController.h"
+#import "UIView+RRDogGlodBuleToast.h"
+#import "HourseHTNewsDetailViewController.h"
+#import "HoursePPXXBJNavigationController.h"
+#import "NDeskHTNewsHomeViewController.h"
+#import "PXFunPPXXBJMainViewController.h"
 @import Firebase;
 @import GoogleMobileAds;
-#import "GlodBuleHTUserManager.h"
+#import "MMTodayHTUserManager.h"
 
 #define UM_APP_KEY @"5bd67116f1f556f834000081"
 #define FB_APP_ID  @"3840659425954285"
@@ -22,13 +22,13 @@
 - (void)openViewController:(UIApplication * _Nonnull)application launchOptions:(NSDictionary * _Nullable)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
-    GlodBulePPXXBJLaunchViewController *rootVc = [[GlodBulePPXXBJLaunchViewController alloc] init];
+    RRDogPPXXBJLaunchViewController *rootVc = [[RRDogPPXXBJLaunchViewController alloc] init];
 //    self.window.rootViewController = rootVc;
 
     
-    self.window.rootViewController = [[GlodBulePPXXBJNavigationController alloc] initWithRootViewController:rootVc];
+    self.window.rootViewController = [[HoursePPXXBJNavigationController alloc] initWithRootViewController:rootVc];
     
-//     self.window.rootViewController = [[GlodBulePPXXBJMainViewController alloc] init];
+//     self.window.rootViewController = [[PXFunPPXXBJMainViewController alloc] init];
     
     [self setupPushWithLaunchOptions:launchOptions];
     [IQKeyboardManager sharedManager].toolbarBarTintColor = [UIColor whiteColor];
@@ -165,7 +165,7 @@
                                  stringByReplacingOccurrencesOfString:@" " withString:@""];
     if (pushDeviceToken.length) {
         BJLog(@"deviceToken: %@", pushDeviceToken);
-        [GlodBuleHTUserManager tao_saveDeviceToken:pushDeviceToken];
+        [MMTodayHTUserManager tao_saveDeviceToken:pushDeviceToken];
     }
 }
 - (void)responsePushInfo:(NSDictionary *)pushInfo fromViewController:(UIViewController *)vc {
@@ -173,9 +173,9 @@
         return;
     }
     if (!vc) {
-        vc = [GlodBulePPXXBJViewControllerCenter currentViewController];
+        vc = [PXFunPPXXBJViewControllerCenter currentViewController];
     }
-    GlodBuleHTNewsDetailViewController *detailVc = [GlodBuleHTNewsDetailViewController taoviewController];
+    HourseHTNewsDetailViewController *detailVc = [HourseHTNewsDetailViewController taoviewController];
     detailVc.post_id = pushInfo[@"postId"];
     if (vc.navigationController) {
         [vc.navigationController pushViewController:detailVc animated:YES];
@@ -236,7 +236,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
       NSString *name = user.profile.name;
       NSString *email = user.profile.email;
       
-      [[GlodBuleHTUserManager manager] doThirdLoginRequesWithAccessToken:idToken sns:4 userId:userId nickName:name email:email];
+      [[MMTodayHTUserManager manager] doThirdLoginRequesWithAccessToken:idToken sns:4 userId:userId nickName:name email:email];
     // ...
   } else {
     // ...

@@ -1,5 +1,0 @@
-#import "GlodBulePPXXBJBaseViewController.h"
-NS_ASSUME_NONNULL_BEGIN
-@interface GlodBuleHTSettingViewController : GlodBulePPXXBJBaseViewController
-@end
-NS_ASSUME_NONNULL_END

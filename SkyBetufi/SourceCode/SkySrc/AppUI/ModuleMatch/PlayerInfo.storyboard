@@ -12,7 +12,7 @@
         <!--Glod Bule Player Info View Controller-->
         <scene sceneID="2lg-sy-sxV">
             <objects>
-                <viewController id="HnD-Y8-EqQ" customClass="GlodBulePlayerInfoViewController" sceneMemberID="viewController">
+                <viewController id="HnD-Y8-EqQ" customClass="MMTodayPlayerInfoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nnz-r3-jvH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

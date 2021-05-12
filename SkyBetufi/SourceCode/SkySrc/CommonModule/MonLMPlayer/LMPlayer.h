@@ -18,7 +18,7 @@
 #define IS_IPHONE_4  (IS_IPHONE && SCREEN_MAX_LENGTH == 480.0)
 
 
-#import "GlodBuleLMVideoPlayer.h"
-#import "GlodBuleLMPlayerModel.h"
-#import "GlodBuleLMPlayerStatusModel.h"
-#import "GlodBuleLMBrightnessView.h"
+#import "GGCatLMVideoPlayer.h"
+#import "MMTodayLMPlayerModel.h"
+#import "CCCaseLMPlayerStatusModel.h"
+#import "NDeskLMBrightnessView.h"

@@ -13,7 +13,7 @@
         <!--Rank Zone View Controller-->
         <scene sceneID="s6i-PR-Fal">
             <objects>
-                <viewController id="RbQ-jr-71t" customClass="GlodBuleHTRankZoneViewController" sceneMemberID="viewController">
+                <viewController id="RbQ-jr-71t" customClass="HourseHTRankZoneViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P6d-x8-WaC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -20,19 +20,19 @@
 #import <JXExtension/JXExtension.h>
 #import <LTNavigationBar/UINavigationBar+Awesome.h>
 
-#import "GlodBuleMJRefreshGenerator.h"
-#import "UIView+GlodBuleToast.h"
-#import "UIView+GlodBuleLoading.h"
-#import "UIView+GlodBuleEmptyView.h"
-#import "GlodBuleBJLoadingHud.h"
-#import "NSDate+GlodBuleCore.h"
-#import "NSDateFormatter+GlodBuleDRExtension.h"
+#import "HourseMJRefreshGenerator.h"
+#import "UIView+RRDogGlodBuleToast.h"
+#import "UIView+HourseGlodBuleLoading.h"
+#import "UIView+PXFunGlodBuleEmptyView.h"
+#import "GGCatBJLoadingHud.h"
+#import "NSDate+KMonkeyGlodBuleCore.h"
+#import "NSDateFormatter+CCCaseGlodBuleDRExtension.h"
 
-#import "GlodBuleHTUserManager.h"
-#import "UITabBar+GlodBuleDRExtension.h"
-#import "UIView+GlodBuleQuickFrame.h"
-#import "GlodBulePPXXBJViewControllerCenter.h"
-#import "GlodBuleHTUserManager.h"
+#import "MMTodayHTUserManager.h"
+#import "UITabBar+RRDogGlodBuleDRExtension.h"
+#import "UIView+PXFunGlodBuleQuickFrame.h"
+#import "PXFunPPXXBJViewControllerCenter.h"
+#import "MMTodayHTUserManager.h"
 
 #endif
 
@@ -59,7 +59,7 @@
 //默认图片
 #define HT_DEFAULT_IMAGE [UIImage imageNamed:@"image_default"]
 #define HT_DEFAULT_TEAM_LOGO [UIImage imageNamed:@"img_default_team"]
-#define HT_DEFAULT_AVATAR_LOGO [UIImage imageNamed: [GlodBuleHTUserManager getDefaultAvater]]//[UIImage imageNamed:@"default_avatar"]
+#define HT_DEFAULT_AVATAR_LOGO [UIImage imageNamed: [MMTodayHTUserManager getDefaultAvater]]//[UIImage imageNamed:@"default_avatar"]
 
 #define kWeakSelf __weak typeof(self) weakSelf = self;
 
@@ -90,8 +90,8 @@
 #define kDefaultImage(imageName) [UIImage imageNamed:(imageName)]
 
 #define kDRWindow [UIApplication sharedApplication].keyWindow
-#define isAppInView [GlodBuleHTUserManager manager].appInView
-#define appBaseColor [GlodBuleHTUserManager getAppBaseColor]
+#define isAppInView [MMTodayHTUserManager manager].appInView
+#define appBaseColor [MMTodayHTUserManager getAppBaseColor]
 
 #define left_controller_click_name @"left_controller_click_name"
 

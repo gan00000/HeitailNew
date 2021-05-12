@@ -13,7 +13,7 @@
         <!--Data Home View Controller-->
         <scene sceneID="zRx-Sh-Dhw">
             <objects>
-                <viewController id="Y41-d6-PbA" customClass="GlodBuleHTDataHomeViewController" sceneMemberID="viewController">
+                <viewController id="Y41-d6-PbA" customClass="MMTodayHTDataHomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ykU-Px-54g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
