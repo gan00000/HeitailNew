@@ -150,7 +150,7 @@
 		32E10F2F25F2143D00639323 /* HTHotShootCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E10F2D25F2143D00639323 /* HTHotShootCellTableViewCell.m */; };
 		32E10F3025F2143D00639323 /* HTHotShootCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32E10F2E25F2143D00639323 /* HTHotShootCellTableViewCell.xib */; };
 		32E1AF42261D6B0700ACB3B2 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E1AF3F261D6B0700ACB3B2 /* NSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		32E1AF43261D6B0700ACB3B2 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E1AF41261D6B0700ACB3B2 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		32E1AF43261D6B0700ACB3B2 /* NSString+GTMHTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E1AF41261D6B0700ACB3B2 /* NSString+GTMHTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		32E3E97D24FD40630076AD93 /* THSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E3E97C24FD40630076AD93 /* THSearch.storyboard */; };
 		32E3E98024FD40E00076AD93 /* GlodBuleSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3E97F24FD40E00076AD93 /* GlodBuleSearchViewController.m */; };
 		32E7228123098085003E0A03 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32E7228023098085003E0A03 /* GoogleService-Info.plist */; };
@@ -688,8 +688,8 @@
 		32E10F2E25F2143D00639323 /* HTHotShootCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTHotShootCellTableViewCell.xib; sourceTree = "<group>"; };
 		32E1AF3E261D6B0700ACB3B2 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
 		32E1AF3F261D6B0700ACB3B2 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
-		32E1AF40261D6B0700ACB3B2 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
-		32E1AF41261D6B0700ACB3B2 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		32E1AF40261D6B0700ACB3B2 /* NSString+GTMHTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GTMHTML.h"; sourceTree = "<group>"; };
+		32E1AF41261D6B0700ACB3B2 /* NSString+GTMHTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GTMHTML.m"; sourceTree = "<group>"; };
 		32E3E97C24FD40630076AD93 /* THSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = THSearch.storyboard; sourceTree = "<group>"; };
 		32E3E97E24FD40E00076AD93 /* GlodBuleSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlodBuleSearchViewController.h; sourceTree = "<group>"; };
 		32E3E97F24FD40E00076AD93 /* GlodBuleSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlodBuleSearchViewController.m; sourceTree = "<group>"; };
@@ -1992,8 +1992,8 @@
 		FEC115352143D4A0002DB617 /* PKCategory */ = {
 			isa = PBXGroup;
 			children = (
-				32E1AF40261D6B0700ACB3B2 /* GTMNSString+HTML.h */,
-				32E1AF41261D6B0700ACB3B2 /* GTMNSString+HTML.m */,
+				32E1AF40261D6B0700ACB3B2 /* NSString+GTMHTML.h */,
+				32E1AF41261D6B0700ACB3B2 /* NSString+GTMHTML.m */,
 				32E1AF3E261D6B0700ACB3B2 /* NSString+HTML.h */,
 				32E1AF3F261D6B0700ACB3B2 /* NSString+HTML.m */,
 				32642A5822F027EA00D2DA1E /* TZPhotoPickerController+GlodBuleDRExtention.h */,
@@ -3019,7 +3019,7 @@
 				FE81D15E21496B380047A4A2 /* GlodBuleHTDataHomeInfoModel.m in Sources */,
 				FE81D1622149716D0047A4A2 /* GlodBuleHTDataHomePlayerCell.m in Sources */,
 				3218480B260B1BFD008D836C /* YSPlayerControl.m in Sources */,
-				32E1AF43261D6B0700ACB3B2 /* GTMNSString+HTML.m in Sources */,
+				32E1AF43261D6B0700ACB3B2 /* NSString+GTMHTML.m in Sources */,
 				FE83FE542177838F006C714C /* GlodBuleHTMatchDataRightCell.m in Sources */,
 				FEDABE562173277D008C8AFD /* GlodBuleHTRankEastWestRequest.m in Sources */,
 				FEC116CB2143D4A1002DB617 /* UITextField+GlodBuleMQCustom.m in Sources */,

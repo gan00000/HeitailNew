@@ -1,5 +1,5 @@
 #import "GlodBuleHTNewsHeaderCell.h"
-#import "GTMNSString+HTML.h"
+#import "NSString+GTMHTML.h"
 
 @interface GlodBuleHTNewsHeaderCell ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;

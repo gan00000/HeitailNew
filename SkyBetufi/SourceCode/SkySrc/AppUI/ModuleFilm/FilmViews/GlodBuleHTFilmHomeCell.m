@@ -6,7 +6,7 @@
 #import "UIView+GlodBuleBlockGesture.h"
 #import "GlodBuleHTUserRequest.h"
 #import "GlodBulePPXXBJBaseViewController.h"
-#import "GTMNSString+HTML.h"
+#import "NSString+GTMHTML.h"
 
 @interface GlodBuleHTFilmHomeCell () <WKNavigationDelegate, YSPlayerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *webContentView;

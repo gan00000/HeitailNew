@@ -6,7 +6,7 @@
 #import <SDWebImage/SDWebImageManager.h>
 #import "GlodBulePPXXBJViewControllerCenter.h"
 #import "GlodBuleHTLoginAlertView.h"
-#import "GTMNSString+HTML.h"
+#import "NSString+GTMHTML.h"
 #import <FBSDKShareKit/FBSDKShareKit.h>
 
 @interface GlodBuleHTNewsModel () <NSURLConnectionDelegate>

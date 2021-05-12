@@ -28,7 +28,7 @@
 //
 
 #import "NSString+HTML.h"
-#import "GTMNSString+HTML.h"
+#import "NSString+GTMHTML.h"
 
 @implementation NSString (HTML)
 
