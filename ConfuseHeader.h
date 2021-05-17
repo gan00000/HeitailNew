@@ -790,8 +790,8 @@
 #define textFieldTextChange axxptextFieldTextChange
 #define th_setImageWithURL axxpth_setImageWithURL
 #define thumbPlayBtnClick axxpthumbPlayBtnClick
-#define touchesEnded axxptouchesEnded
-#define touchesShouldCancelInContentView axxptouchesShouldCancelInContentView
+//#define touchesEnded axxptouchesEnded
+//#define touchesShouldCancelInContentView axxptouchesShouldCancelInContentView
 #define trafficStatistic axxptrafficStatistic
 #define transformForOrientation axxptransformForOrientation
 #define updateAfterComment axxpupdateAfterComment
