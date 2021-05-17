@@ -1,6 +1,6 @@
 //
 //  YYPackageHTHighLightsViewController.m
-//  XXXHeiTai
+//  
 //
 //  Created by ganyuanrong on 2021/3/12.
 //  Copyright © 2021 Dean_F. All rights reserved.

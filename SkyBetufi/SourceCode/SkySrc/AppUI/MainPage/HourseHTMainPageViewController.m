@@ -5,7 +5,7 @@
 #import "YYPackageHTNewsHomeCell.h"
 #import "MMTodayHTAdViewCell.h"
 #import "PXFunHTFilmDetailViewController.h"
-#import "XXXHeiTai-Swift.h"
+#import "SunFunly-Swift.h"
 
 @interface HourseHTMainPageViewController ()<UITableViewDelegate, UITableViewDataSource, PlayerTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
