@@ -903,7 +903,7 @@
 		FEAB2106216DD731002A05AB /* SundayHTMatchDetailsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SundayHTMatchDetailsModel.h; sourceTree = "<group>"; };
 		FEAB2107216DD731002A05AB /* SundayHTMatchDetailsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SundayHTMatchDetailsModel.m; sourceTree = "<group>"; };
 		FEAC9F262199D92900159AE9 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		FEAC9F282199D94500159AE9 /* SkyBallPlay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkyBallPlay.entitlements; sourceTree = "<group>"; };
+		FEAC9F282199D94500159AE9 /* SunFunly.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SunFunly.entitlements; sourceTree = "<group>"; };
 		FEAC9F2C2199E25F00159AE9 /* NDeskHTSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NDeskHTSettingViewController.h; sourceTree = "<group>"; };
 		FEAC9F2D2199E25F00159AE9 /* NDeskHTSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NDeskHTSettingViewController.m; sourceTree = "<group>"; };
 		FEAC9F2F2199E28800159AE9 /* UKRosRedSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UKRosRedSetting.storyboard; sourceTree = "<group>"; };
@@ -1711,11 +1711,11 @@
 			isa = PBXGroup;
 			children = (
 				32DBC4B526524DF900D760C3 /* ConfuseHeader.h */,
+				325BD8C822E07D6F00A07EC9 /* confuse.sh */,
+				325BD8C922E07D6F00A07EC9 /* func.list */,
 				328893F02603310900759311 /* SevenPlayer */,
 				321352A0250A2F1300702F72 /* objectivec */,
 				32135299250A149F00702F72 /* proto_out */,
-				325BD8C822E07D6F00A07EC9 /* confuse.sh */,
-				325BD8C922E07D6F00A07EC9 /* func.list */,
 				FEC112572143D057002DB617 /* SkyBetufi */,
 				FEC112562143D057002DB617 /* Products */,
 				ECB62376D5C12D4C8313883B /* Pods */,
@@ -1735,7 +1735,7 @@
 			isa = PBXGroup;
 			children = (
 				32E7228023098085003E0A03 /* GoogleService-Info.plist */,
-				FEAC9F282199D94500159AE9 /* SkyBallPlay.entitlements */,
+				FEAC9F282199D94500159AE9 /* SunFunly.entitlements */,
 				FEC1126E2143D4A0002DB617 /* SourceCode */,
 				FEC112662143D058002DB617 /* Info.plist */,
 				FEC112672143D058002DB617 /* main.m */,
@@ -3306,7 +3306,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = SkyBetufi/SkyBallPlay.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SkyBetufi/SunFunly.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: yupeng su (6HM9UCSUQM)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 15;
@@ -3529,7 +3529,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = SkyBetufi/SkyBallPlay.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SkyBetufi/SunFunly.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: yupeng su (98DGMGPLHN)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 15;
