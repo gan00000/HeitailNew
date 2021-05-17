@@ -29,7 +29,12 @@
     
     NSLog(@"viewControllers.count = %d", self.navigationController.viewControllers.count);
     if (self.navigationController.viewControllers.count == 1 && ![self isKindOfClass:[MMTodayHTMeHomeViewController class]] && ![self isKindOfClass:[CCCaseHTHomeLeftViewController class]]) {
-        UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_icon_title"]];
+        
+        NSString *nav_icon_title_image = @"nav_icon_title";
+        if (isAppInView) {
+            nav_icon_title_image = @"nav_icon_title_aa";
+        }
+        UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:nav_icon_title_image]];
         self.navigationItem.titleView = titleView;
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.taomeCenterButton];
         [self taosetupMeCenterButton];
