@@ -146,4 +146,12 @@
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:left_controller_click_name object:nil userInfo:@{@"index":[NSString stringWithFormat:@"%d", index]}];
 }
+
+- (BOOL)tao_shouldHandlePopActionMySelf{
+    return YES;
+}
+- (void)tao_handlePopActionMySelf
+{
+    [[PXFunPPXXBJViewControllerCenter mainViewController].drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+}
 @end
