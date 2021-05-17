@@ -2,69 +2,69 @@
   "images" : [
     {
       "extent" : "full-screen",
+      "filename" : "1242x2688.jpg",
       "idiom" : "iphone",
-      "subtype" : "2688h",
-      "filename" : "pplay1242x2688.jpg",
       "minimum-system-version" : "12.0",
       "orientation" : "portrait",
-      "scale" : "3x"
+      "scale" : "3x",
+      "subtype" : "2688h"
     },
     {
       "extent" : "full-screen",
+      "filename" : "828x1792.jpg",
       "idiom" : "iphone",
-      "subtype" : "1792h",
-      "filename" : "pplay828x1792.jpg",
       "minimum-system-version" : "12.0",
       "orientation" : "portrait",
-      "scale" : "2x"
+      "scale" : "2x",
+      "subtype" : "1792h"
     },
     {
       "extent" : "full-screen",
+      "filename" : "1125x2436.jpg",
       "idiom" : "iphone",
-      "subtype" : "2436h",
-      "filename" : "pplay1125x2436.jpg",
       "minimum-system-version" : "11.0",
       "orientation" : "portrait",
-      "scale" : "3x"
+      "scale" : "3x",
+      "subtype" : "2436h"
     },
     {
       "extent" : "full-screen",
+      "filename" : "1242x2208.jpg",
       "idiom" : "iphone",
-      "subtype" : "736h",
-      "filename" : "pplay1242x2208.jpg",
       "minimum-system-version" : "8.0",
       "orientation" : "portrait",
-      "scale" : "3x"
+      "scale" : "3x",
+      "subtype" : "736h"
     },
     {
       "extent" : "full-screen",
+      "filename" : "750x1334.jpg",
       "idiom" : "iphone",
-      "subtype" : "667h",
-      "filename" : "pplay750x1334.jpg",
       "minimum-system-version" : "8.0",
       "orientation" : "portrait",
-      "scale" : "2x"
-    },
-    {
-      "orientation" : "portrait",
-      "idiom" : "iphone",
-      "filename" : "pplay640x960.jpg",
-      "extent" : "full-screen",
-      "minimum-system-version" : "7.0",
-      "scale" : "2x"
+      "scale" : "2x",
+      "subtype" : "667h"
     },
     {
       "extent" : "full-screen",
+      "filename" : "640x960.jpg",
       "idiom" : "iphone",
-      "subtype" : "retina4",
-      "filename" : "pplay640x1136.jpg",
       "minimum-system-version" : "7.0",
       "orientation" : "portrait",
       "scale" : "2x"
+    },
+    {
+      "extent" : "full-screen",
+      "filename" : "640x1136.jpg",
+      "idiom" : "iphone",
+      "minimum-system-version" : "7.0",
+      "orientation" : "portrait",
+      "scale" : "2x",
+      "subtype" : "retina4"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
