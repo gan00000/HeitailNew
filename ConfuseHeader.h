@@ -817,5 +817,9 @@
 #define willStartPlay axxpwillStartPlay
 #define xHTNewsHomeCellHeight axxpxHTNewsHomeCellHeight
 
+#define taotabBarIcons  looktabBarIcons
+#define taotabBarSelectedIcons looktabBarSelectedIcons
+#define taotabBarTitles looktabBarTitles
+#define taotabBarControllers looktabBarControllers
 
 #endif /* ConfuseHeader_h */
