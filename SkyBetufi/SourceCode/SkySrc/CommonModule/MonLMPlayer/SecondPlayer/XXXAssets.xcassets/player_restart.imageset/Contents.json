@@ -5,12 +5,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "player_restart-1.png",
+      "filename" : "deswwplayer_restart-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "player_restart.png",
+      "filename" : "deswwplayer_restart.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
