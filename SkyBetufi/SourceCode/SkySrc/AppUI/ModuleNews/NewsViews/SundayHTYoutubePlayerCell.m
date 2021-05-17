@@ -47,7 +47,10 @@
             
             NSString *srcStr = [[RX(@"https://www.youtube.com/embed/\\w+") matches:newsDetailModel.data] firstObject];
             NSString *videoId = [srcStr stringByReplacingOccurrencesOfString:@"https://www.youtube.com/embed/"  withString:@""];
-            [self.youtubePlayerView loadWithVideoId:videoId];
+            if (videoId && ![videoId isEqualToString:@""]) {
+                [self.youtubePlayerView loadWithVideoId:videoId];
+            }
+            
         }
     }
     
