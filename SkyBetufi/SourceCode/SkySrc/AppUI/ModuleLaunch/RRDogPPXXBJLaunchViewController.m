@@ -249,9 +249,9 @@
 
 #pragma mark - 设置APP视频引导页
 - (void)taosetVideoGuidePage {
-    NSURL *videoURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"guideMovie1" ofType:@"mov"]];
-    HourseDHGuidePageHUD *guidePage = [[HourseDHGuidePageHUD alloc] dh_initWithFrame:self.view.bounds videoURL:videoURL];
-    [self.navigationController.view addSubview:guidePage];
+//    NSURL *videoURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"guideMovie1" ofType:@"mov"]];
+//    HourseDHGuidePageHUD *guidePage = [[HourseDHGuidePageHUD alloc] dh_initWithFrame:self.view.bounds videoURL:videoURL];
+//    [self.navigationController.view addSubview:guidePage];
 }
 
 -(BOOL)taoisIPhoneXSeries

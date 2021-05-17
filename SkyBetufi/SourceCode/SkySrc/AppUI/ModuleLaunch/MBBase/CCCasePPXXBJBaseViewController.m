@@ -11,6 +11,7 @@
 #import "MMTodaySearchViewController.h"
 #import <UIButton+WebCache.h>
 #import "CCCaseHTHomeLeftViewController.h"
+#import "RRDogPPXXBJLaunchViewController.h"
 
 @import Firebase;
 
@@ -25,7 +26,12 @@
     NSLog(@"BJBaseViewController viewDidLoad %@",NSStringFromClass([self class]));
     self.view.backgroundColor = RGBA_COLOR_HEX(0xf4f4f4);
     
-    [self.navigationController.navigationBar lt_setBackgroundColor: appBaseColor];
+    if ([self isKindOfClass:[RRDogPPXXBJLaunchViewController class]]) {
+        [self.navigationController.navigationBar lt_setBackgroundColor: [UIColor hx_colorWithHexRGBAString:@"51c788"]];
+    }else{
+        [self.navigationController.navigationBar lt_setBackgroundColor: appBaseColor];
+    }
+   
     
     NSLog(@"viewControllers.count = %d", self.navigationController.viewControllers.count);
     if (self.navigationController.viewControllers.count == 1 && ![self isKindOfClass:[MMTodayHTMeHomeViewController class]] && ![self isKindOfClass:[CCCaseHTHomeLeftViewController class]]) {
