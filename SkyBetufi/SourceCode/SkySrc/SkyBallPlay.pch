@@ -20,6 +20,8 @@
 #import <JXExtension/JXExtension.h>
 #import <LTNavigationBar/UINavigationBar+Awesome.h>
 
+#import "ConfuseHeader.h"
+
 #import "HourseMJRefreshGenerator.h"
 #import "UIView+RRDogGlodBuleToast.h"
 #import "UIView+HourseGlodBuleLoading.h"

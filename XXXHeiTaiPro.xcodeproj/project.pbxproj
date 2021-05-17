@@ -681,6 +681,7 @@
 		32CD877922F4173800063A14 /* PlayerEventLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerEventLogger.m; sourceTree = "<group>"; };
 		32D6C8C625F33574003B35AA /* HourseHotShootPointModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HourseHotShootPointModel.h; sourceTree = "<group>"; };
 		32D6C8C725F33574003B35AA /* HourseHotShootPointModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HourseHotShootPointModel.m; sourceTree = "<group>"; };
+		32DBC4B526524DF900D760C3 /* ConfuseHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfuseHeader.h; sourceTree = "<group>"; };
 		32E10F2725F1EC7E00639323 /* MMTodayHTCourtHotShootView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMTodayHTCourtHotShootView.h; sourceTree = "<group>"; };
 		32E10F2825F1EC7E00639323 /* MMTodayHTCourtHotShootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMTodayHTCourtHotShootView.m; sourceTree = "<group>"; };
 		32E10F2C25F2143C00639323 /* HourseHTHotShootCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HourseHTHotShootCellTableViewCell.h; sourceTree = "<group>"; };
@@ -1709,6 +1710,7 @@
 		FEC1124C2143D057002DB617 = {
 			isa = PBXGroup;
 			children = (
+				32DBC4B526524DF900D760C3 /* ConfuseHeader.h */,
 				328893F02603310900759311 /* SevenPlayer */,
 				321352A0250A2F1300702F72 /* objectivec */,
 				32135299250A149F00702F72 /* proto_out */,
