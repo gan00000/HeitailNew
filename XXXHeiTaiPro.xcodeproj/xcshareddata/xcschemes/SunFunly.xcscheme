@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FEC112542143D057002DB617"
-               BuildableName = "XXXHeiTai.app"
-               BlueprintName = "XXXHeiTai"
+               BuildableName = "SunFunly.app"
+               BlueprintName = "SunFunly"
                ReferencedContainer = "container:XXXHeiTaiPro.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FEC112542143D057002DB617"
-            BuildableName = "XXXHeiTai.app"
-            BlueprintName = "XXXHeiTai"
+            BuildableName = "SunFunly.app"
+            BlueprintName = "SunFunly"
             ReferencedContainer = "container:XXXHeiTaiPro.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FEC112542143D057002DB617"
-            BuildableName = "XXXHeiTai.app"
-            BlueprintName = "XXXHeiTai"
+            BuildableName = "SunFunly.app"
+            BlueprintName = "SunFunly"
             ReferencedContainer = "container:XXXHeiTaiPro.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

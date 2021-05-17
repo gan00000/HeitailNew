@@ -126,7 +126,7 @@
 		32B62D7D2603824100EE8E92 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B62D7C2603824100EE8E92 /* libresolv.tbd */; };
 		32B62D802603824E00EE8E92 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B62D7F2603824E00EE8E92 /* libiconv.tbd */; };
 		32B62D832603827000EE8E92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B62D822603827000EE8E92 /* Foundation.framework */; };
-		32BDB9DD251A42DF0066200F /* XXXHeiTai-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BDB9DC251A42DF0066200F /* XXXHeiTai-Swift.swift */; };
+		32BDB9DD251A42DF0066200F /* SunFunly-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BDB9DC251A42DF0066200F /* SunFunly-Swift.swift */; };
 		32BFD1DF239F9B1A0037985B /* PXFunHTViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BFD1DE239F9B1A0037985B /* PXFunHTViewController2.m */; };
 		32C65DED250676AE0068D2C7 /* PXFunConfigCoreUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C65DEC250676AD0068D2C7 /* PXFunConfigCoreUtil.m */; };
 		32C65DF02506771A0068D2C7 /* RRDogAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C65DEF2506771A0068D2C7 /* RRDogAccountModel.m */; };
@@ -643,8 +643,8 @@
 		32B62D7C2603824100EE8E92 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		32B62D7F2603824E00EE8E92 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		32B62D822603827000EE8E92 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		32BDB9DB251A42DF0066200F /* XXXHeiTai-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XXXHeiTai-Bridging-Header.h"; sourceTree = "<group>"; };
-		32BDB9DC251A42DF0066200F /* XXXHeiTai-Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XXXHeiTai-Swift.swift"; sourceTree = "<group>"; };
+		32BDB9DB251A42DF0066200F /* SunFunly-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SunFunly-Bridging-Header.h"; sourceTree = "<group>"; };
+		32BDB9DC251A42DF0066200F /* SunFunly-Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SunFunly-Swift.swift"; sourceTree = "<group>"; };
 		32BFD1DD239F9B1A0037985B /* PXFunHTViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PXFunHTViewController2.h; sourceTree = "<group>"; };
 		32BFD1DE239F9B1A0037985B /* PXFunHTViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PXFunHTViewController2.m; sourceTree = "<group>"; };
 		32C65DEB250676AD0068D2C7 /* PXFunConfigCoreUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXFunConfigCoreUtil.h; sourceTree = "<group>"; };
@@ -913,7 +913,7 @@
 		FEAC9F372199EA3A00159AE9 /* MMTodayHTAboutUsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMTodayHTAboutUsViewController.m; sourceTree = "<group>"; };
 		FEB46C802157903B00E482CE /* SundayHTMatchLiveFeedModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SundayHTMatchLiveFeedModel.h; sourceTree = "<group>"; };
 		FEB46C812157903B00E482CE /* SundayHTMatchLiveFeedModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SundayHTMatchLiveFeedModel.m; sourceTree = "<group>"; };
-		FEC112552143D057002DB617 /* XXXHeiTai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XXXHeiTai.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEC112552143D057002DB617 /* SunFunly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunFunly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC112612143D058002DB617 /* KKRESAPPAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = KKRESAPPAssets.xcassets; sourceTree = "<group>"; };
 		FEC112662143D058002DB617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEC112672143D058002DB617 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1726,7 +1726,7 @@
 		FEC112562143D057002DB617 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FEC112552143D057002DB617 /* XXXHeiTai.app */,
+				FEC112552143D057002DB617 /* SunFunly.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1741,8 +1741,8 @@
 				FEC112672143D058002DB617 /* main.m */,
 				FE81D14C2146CA1E0047A4A2 /* logo_load.html */,
 				FEEABBE62149F90700A585DA /* iframe_load.html */,
-				32BDB9DC251A42DF0066200F /* XXXHeiTai-Swift.swift */,
-				32BDB9DB251A42DF0066200F /* XXXHeiTai-Bridging-Header.h */,
+				32BDB9DC251A42DF0066200F /* SunFunly-Swift.swift */,
+				32BDB9DB251A42DF0066200F /* SunFunly-Bridging-Header.h */,
 			);
 			path = SkyBetufi;
 			sourceTree = "<group>";
@@ -2625,9 +2625,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FEC112542143D057002DB617 /* XXXHeiTai */ = {
+		FEC112542143D057002DB617 /* SunFunly */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEC1126B2143D058002DB617 /* Build configuration list for PBXNativeTarget "XXXHeiTai" */;
+			buildConfigurationList = FEC1126B2143D058002DB617 /* Build configuration list for PBXNativeTarget "SunFunly" */;
 			buildPhases = (
 				BF9D3AFDF9A356103E352831 /* [CP] Check Pods Manifest.lock */,
 				CE13F4385FCCC9AC6CBAEFC8 /* [CP] Prepare Artifacts */,
@@ -2642,9 +2642,9 @@
 			);
 			dependencies = (
 			);
-			name = XXXHeiTai;
+			name = SunFunly;
 			productName = HeiteBasketball;
-			productReference = FEC112552143D057002DB617 /* XXXHeiTai.app */;
+			productReference = FEC112552143D057002DB617 /* SunFunly.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -2688,7 +2688,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FEC112542143D057002DB617 /* XXXHeiTai */,
+				FEC112542143D057002DB617 /* SunFunly */,
 			);
 		};
 /* End PBXProject section */
@@ -3140,7 +3140,7 @@
 				32CC78E324F3EAAD00377576 /* KMonkeyBarChartUtil.m in Sources */,
 				FE82A483216E42680070FFC0 /* RRDogHTMatchLiveFeedCell.m in Sources */,
 				32A6F7872647B6BD0039B850 /* KMonkeyHTLeftMeCenterItemsCell.m in Sources */,
-				32BDB9DD251A42DF0066200F /* XXXHeiTai-Swift.swift in Sources */,
+				32BDB9DD251A42DF0066200F /* SunFunly-Swift.swift in Sources */,
 				32FED82023AB768700D900A7 /* MMTodayLMPlayerModel.m in Sources */,
 				FEC116F22143D91D002DB617 /* YYPackageHTMatchHomeViewController.m in Sources */,
 				3213529E250A149F00702F72 /* InfoMessage.pbobjc.m in Sources */,
@@ -3513,7 +3513,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tbbl.onefit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = com.tbbl.onefit20201029;
-				SWIFT_OBJC_BRIDGING_HEADER = "SkyBetufi/XXXHeiTai-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SkyBetufi/SunFunly-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3736,7 +3736,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tbbl.onefit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = com.tbbl.onefitI_dis_20201029;
-				SWIFT_OBJC_BRIDGING_HEADER = "SkyBetufi/XXXHeiTai-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SkyBetufi/SunFunly-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 arm64e armv7s x86_64";
@@ -3755,7 +3755,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		FEC1126B2143D058002DB617 /* Build configuration list for PBXNativeTarget "XXXHeiTai" */ = {
+		FEC1126B2143D058002DB617 /* Build configuration list for PBXNativeTarget "SunFunly" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEC1126C2143D058002DB617 /* Debug */,
