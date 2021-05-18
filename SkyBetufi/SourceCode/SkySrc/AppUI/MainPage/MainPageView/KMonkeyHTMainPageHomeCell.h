@@ -32,7 +32,7 @@
 
 - (void)taosetupWithPLMediaInfo:(PLMediaInfo *)mPLMediaInfo;
 
-+ (CGFloat)headerViewHeight;
++ (CGFloat)headerViewHeight:(CGFloat) offset;
 
 - (void)play;
 

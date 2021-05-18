@@ -19,9 +19,15 @@
              };
 }
 
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{
+             @"hottest_comment": [HourseHTCommentModel class]
+             };
+}
+
 -(void)initPLMediaInfo
 {
-    if (!self.play_url || [self.play_url isEqualToString:@""]) {
+    if ((!self.video_url && !self.play_url) || ([self.play_url isEqualToString:@""] && [self.video_url isEqualToString:@""])) {
         self.plMediaInfo = nil;
         return;
     }
@@ -35,6 +41,10 @@
 //    media.mediaHash = [dic objectForKey:@"hash"];
 //    self.play_url = @"https://output.newbanker.cn/mp4MultibitrateIn30/ed77288065a511eaa2e7d9eff256d7b2.mp4";
     media.videoURL = self.play_url;
+    
+    if (!self.play_url || [self.play_url isEqualToString:@""]) {
+        media.videoURL = self.video_url;
+    }
     
     media.thumbURL = self.play_poster;
     if ((!self.play_poster || [@"" isEqualToString:self.play_poster]) && self.poster && self.poster.count > 0) {

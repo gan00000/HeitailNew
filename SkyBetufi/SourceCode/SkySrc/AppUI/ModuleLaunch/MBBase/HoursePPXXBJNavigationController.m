@@ -7,6 +7,8 @@
 #import "GGCatHTTabBarHomeViewController.h"
 #import "HourseHTNewsHomeOtherViewController.h"
 #import "RRDogPPXXBJLaunchViewController.h"
+#import "HourseHTMainPageViewController.h"
+
 @interface HoursePPXXBJNavigationController ()
 @end
 @implementation HoursePPXXBJNavigationController
@@ -45,6 +47,8 @@
              [CCCaseHTRankHomeViewController class],
              [HourseHTNewsHomeOtherViewController class],
              [RRDogPPXXBJLaunchViewController class],
+             [HourseHTMainPageViewController class],
+             
              [GGCatHTTabBarHomeViewController class]];
 }
 

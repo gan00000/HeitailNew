@@ -185,7 +185,10 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     PXFunHTNewsModel *model = self.filmList[indexPath.row];
     
-    return [KMonkeyHTMainPageHomeCell headerViewHeight];
+    if (!model.hottest_comment || model.hottest_comment.count == 0) {
+        return [KMonkeyHTMainPageHomeCell headerViewHeight:70];
+    }
+    return [KMonkeyHTMainPageHomeCell headerViewHeight:0];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PXFunHTNewsModel *newsModel = self.filmList[indexPath.row];

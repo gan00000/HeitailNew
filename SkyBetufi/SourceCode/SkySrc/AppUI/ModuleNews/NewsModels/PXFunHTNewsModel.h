@@ -2,6 +2,7 @@
 #import "PLMediaInfo.h"
 #import "YYPackageHTNewsDetailModel.h"
 #import "HTNewsAuthor.h"
+#import "HourseHTCommentModel.h"
 
 @interface PXFunHTNewsModel : NSObject
 @property (nonatomic, copy) NSString *news_id;
@@ -45,10 +46,12 @@
 
 @property (nonatomic, copy) NSString *posted_on;
 @property (nonatomic, copy) NSArray<NSString *> *poster;
+@property (nonatomic, copy) NSString *video_url;
 //@property (nonatomic, copy) NSString *posted_on;
 //@property (nonatomic, copy) NSString *time;
 
 @property (nonatomic, strong)HTNewsAuthor *author;
+@property (nonatomic, strong)NSArray<HourseHTCommentModel *> *hottest_comment;
 
 @property (nonatomic, strong) PLMediaInfo *plMediaInfo;
 

@@ -1,4 +1,6 @@
 #import "MMTodayHTMainPageHomeRequest.h"
+#import "KMonkeyBJUtility.h"
+
 @interface MMTodayHTMainPageHomeRequest ()
 @property (nonatomic, strong) NSMutableArray *newsList;
 @property (nonatomic, assign) NSInteger page;
@@ -11,14 +13,14 @@
     }
     self.page = 1;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"sid"] = @"1vvvvv";//设备唯一id(广告id)
+    params[@"sid"] = KMonkeyBJUtility.idfa;//设备唯一id(广告id)
     params[@"type"] = @2;
 //    params[@"vids"] = @2;
     [PXFunBJHTTPServiceEngine tao_getRequestWithFunctionPath:API_POST_RECOMMEND params:params successBlock:^(id responseData) {
         [self.newsList removeAllObjects];
 //        if (self.page < [responseData[@"pages"] integerValue]) {
 //            self.page ++;
-//            self.hasMore = YES;
+            self.hasMore = YES;
 //        } else {
 //            self.hasMore = NO;
 //        }
@@ -34,7 +36,7 @@
 - (void)loadNextPageWithSuccessBlock:(void(^)(NSArray<PXFunHTNewsModel *> *newsList))successBlock
                           errorBlock:(BJServiceErrorBlock)errorBlock {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"sid"] = @"1vvvvv";//设备唯一id(广告id)
+    params[@"sid"] = KMonkeyBJUtility.idfa;//设备唯一id(广告id)
     params[@"type"] = @2;
     [PXFunBJHTTPServiceEngine tao_getRequestWithFunctionPath:API_POST_RECOMMEND params:params successBlock:^(id responseData) {
 //        if (self.page < [responseData[@"pages"] integerValue]) {

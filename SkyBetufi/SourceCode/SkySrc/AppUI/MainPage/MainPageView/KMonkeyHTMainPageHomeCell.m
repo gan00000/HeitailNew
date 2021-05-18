@@ -28,8 +28,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *nickNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fromTypeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *hotCommentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hotCommentTitleLabel;
+
+
 @property (weak, nonatomic) IBOutlet UIView *hotCommentView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *hotCommentViewHeight;
+
+//@property (strong, nonatomic) NSLayoutConstraint *old_hotCommentViewHeight;
 
 //========
 //@property (nonatomic, assign) BOOL isNeedReset;
@@ -57,7 +62,15 @@
     
     //self.filmTimeLabel.layer.cornerRadius = 8;
     self.hotCommentView.layer.cornerRadius = 6;
-    [self addPlayerView];
+    
+    self.hotCommentTitleLabel.layer.cornerRadius = 4;
+    self.hotCommentTitleLabel.layer.borderWidth = 1;
+    self.hotCommentTitleLabel.layer.borderColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"].CGColor;
+//    self.hotCommentTitleLabel.layer.w
+    self.hotCommentTitleLabel.textColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"];
+    
+//    self.old_hotCommentViewHeight = self.hotCommentViewHeight;
+//    [self addPlayerView];
     
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -115,6 +128,9 @@
 
 -(void) addPlayerView
 {
+    [self shutdown];
+    [self.webContentView removeAllSubView];
+    
     self.playerController = [[CCCaseYSPlayerController alloc] initWithContentMediaInfo: self.newsModel.plMediaInfo];
     self.playerController.delegate = self;
     self.playerController.needPortFullScreen = YES;
@@ -212,8 +228,17 @@
         
     self.news_id = self.newsModel.news_id;
     
-    [self.nickHeaderImageView sd_setImageWithURL:[NSURL URLWithString:newsModel.author.url] placeholderImage:HT_DEFAULT_AVATAR_LOGO];
+    [self.nickHeaderImageView sd_setImageWithURL:[NSURL URLWithString:newsModel.author.avatar] placeholderImage:HT_DEFAULT_AVATAR_LOGO];
     self.nickNameLabel.text = newsModel.author.name;
+    
+    if (newsModel.hottest_comment && newsModel.hottest_comment.count > 0) { //热门留言
+        self.hotCommentView.hidden = NO;
+        self.hotCommentLabel.text = [NSString stringWithFormat:@"%@:%@",newsModel.hottest_comment[0].comment_author,newsModel.hottest_comment[0].comment_content];
+        self.hotCommentViewHeight.constant = 70;
+    }else{
+        self.hotCommentView.hidden = YES;
+        self.hotCommentViewHeight.constant = 0.1;
+    }
     
     if ([newsModel.posted_on isEqualToString:@"videos"]) {
         
@@ -222,6 +247,8 @@
         [self.playerController setMediaInfo:newsModel.plMediaInfo];
         
         self.fromTypeLabel.text = @"發佈於 影片";
+        
+        [self addPlayerView];
 
     }else if ([newsModel.posted_on isEqualToString:@"topics"]) {
         self.filmTimeLabel.hidden = YES;
@@ -274,9 +301,9 @@
 }
 
 
-+ (CGFloat)headerViewHeight
++ (CGFloat)headerViewHeight:(CGFloat) offset
 {
-    return (SCREEN_WIDTH) * 480.0 / 375.0 + 4; // 375 320
+    return (SCREEN_WIDTH) * (480.0 - offset) / 375.0 + 4; // 375 320
 }
 
 - (void)prepareForReuse {

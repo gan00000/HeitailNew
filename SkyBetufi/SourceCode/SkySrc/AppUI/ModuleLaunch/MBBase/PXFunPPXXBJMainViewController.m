@@ -118,7 +118,7 @@
 - (NSArray<UIImage *> *)taotabBarIcons {
      if (isAppInView) {
          return @[
-             [[UIImage imageNamed:@"tab_xxx_news"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+             [[UIImage imageNamed:@"tab_xxx_mainpage"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_xxx_news"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                   [[UIImage imageNamed:@"tab_xxx_film"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
 //                  [[UIImage imageNamed:@"tab_icon_normal3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
@@ -133,7 +133,7 @@
 }
 - (NSArray<UIImage *> *)taotabBarSelectedIcons {
     if (isAppInView) {
-        return  @[[[UIImage imageNamed:@"tab_xxx_news_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+        return  @[[[UIImage imageNamed:@"tab_xxx_mainpage_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                   [[UIImage imageNamed:@"tab_xxx_news_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                   [[UIImage imageNamed:@"tab_xxx_film_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
 //                  [[UIImage imageNamed:@"tab_icon_selected3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
