@@ -24,7 +24,10 @@
 #define API_NEWS_DETAIL                 @"api/get_post"
 #define API_NEWS_COMMENTS               @"api/get_post_comments" 
 #define API_NEWS_HOT_COMMENT            @"api/get_post_hot_comments" 
-#define API_NEWS_ALL_COMMENT            @"api/get_post_all_comments" 
+#define API_NEWS_ALL_COMMENT            @"api/get_post_all_comments"
+
+#define API_POST_RECOMMEND              @"api/get_posts_recommend"
+
 #pragma mark - 影片
 #define API_FILM_HOME                   @"video-library"
 #pragma mark - 数据

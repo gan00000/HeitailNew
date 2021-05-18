@@ -19,6 +19,7 @@
 #import "CCCaseHTLikeViewController.h"
 #import "CCCaseHTHistoryViewController.h"
 #import "NDeskHTSettingViewController.h"
+#import "HourseHTMainPageViewController.h"
 
 @import Firebase;
 @import GoogleSignIn;
@@ -36,6 +37,10 @@
 @property (nonatomic, strong) CCCaseHTRankHomeViewController *vc5;
 @property (nonatomic, strong) HoursePPXXBJNavigationController *nav6;
 @property (nonatomic, strong) GGCatHTTabBarHomeViewController *vc6;
+
+
+@property (nonatomic, strong) HoursePPXXBJNavigationController *nav0;
+@property (nonatomic, strong) HourseHTMainPageViewController *vc0;
 
 @property (nonatomic, strong)   UIViewController *currentBarViewController;
     
@@ -105,20 +110,23 @@
 - (NSArray<NSString *> *)taotabBarTitles {
     BJLog(@"PXFunPPXXBJMainViewController taotabBarTitles");
     if (isAppInView) {
-        return @[@"資訊", @"短片", @"賽事",  @"統計"];
+        return @[@"首頁",@"資訊", @"短片", @"賽事",  @"統計"];
     }
 //    return @[@"比賽", @"新聞", @"影片", @"數據", @"排行"];
-     return @[@"直播", @"新聞", @"影片", @"數據"];
+     return @[@"首頁",@"直播", @"新聞", @"影片", @"數據"];
 }
 - (NSArray<UIImage *> *)taotabBarIcons {
      if (isAppInView) {
-         return @[[[UIImage imageNamed:@"tab_xxx_news"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+         return @[
+             [[UIImage imageNamed:@"tab_xxx_news"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+             [[UIImage imageNamed:@"tab_xxx_news"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                   [[UIImage imageNamed:@"tab_xxx_film"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
 //                  [[UIImage imageNamed:@"tab_icon_normal3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                   [[UIImage imageNamed:@"tab_xxx_match"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                   [[UIImage imageNamed:@"tab_xxx_data"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
      }
     return @[[[UIImage imageNamed:@"tab_icon_normal1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+             [[UIImage imageNamed:@"tab_icon_normal1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_normal2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_normal3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_normal4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
@@ -126,17 +134,26 @@
 - (NSArray<UIImage *> *)taotabBarSelectedIcons {
     if (isAppInView) {
         return  @[[[UIImage imageNamed:@"tab_xxx_news_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                  [[UIImage imageNamed:@"tab_xxx_news_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                   [[UIImage imageNamed:@"tab_xxx_film_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
 //                  [[UIImage imageNamed:@"tab_icon_selected3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                   [[UIImage imageNamed:@"tab_xxx_match_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                  [[UIImage imageNamed:@"tab_xxx_data_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     }
-    return @[[[UIImage imageNamed:@"tab_icon_selected1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+    return @[
+        [[UIImage imageNamed:@"tab_icon_selected1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+             [[UIImage imageNamed:@"tab_icon_selected1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_selected2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_selected3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_selected4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 }
 - (NSArray<UIViewController *> *)taotabBarControllers {
+    
+    if (!self.vc0) {
+        self.vc0 = [HourseHTMainPageViewController taoviewController];
+        self.nav0 = [[HoursePPXXBJNavigationController alloc] initWithRootViewController:self.vc0];
+    }
+    
     if (!self.vc1) {
 //        self.vc1 = [YYPackageHTMatchHomeViewController taoviewController];
         self.vc1 = [NDeskHTNewMatchHomeViewController taoviewController];
@@ -175,13 +192,14 @@
 //    self.nav4.modalPresentationStyle = UIModalPresentationFullScreen;
 //    self.nav5.modalPresentationStyle = UIModalPresentationFullScreen;
 //    self.nav6.modalPresentationStyle = UIModalPresentationFullScreen;
-      
+    
+    self.currentBarViewController = self.nav0;
+    
     if (isAppInView) {
-        self.currentBarViewController = self.nav2;
-         return @[self.nav2, self.nav3, self.nav1, self.nav4];
+         return @[self.nav0, self.nav2, self.nav3, self.nav1, self.nav4];
     }
   
-    return @[self.nav1, self.nav2, self.nav3, self.nav4];
+    return @[self.nav0, self.nav1, self.nav2, self.nav3, self.nav4];
 }
 #pragma MARK -- UITabBarControllerDelegate
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {

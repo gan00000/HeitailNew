@@ -1,5 +1,5 @@
 #import "UIView+RRDogGlodBuleViewController.h"
-@implementation UIView (SkyBallHetiRedViewController)
+@implementation UIView (RRDogGlodBuleViewController)
 - (UIViewController *)viewController
 {
     UIResponder *responder = self.nextResponder;
@@ -19,4 +19,12 @@
     [self addGestureRecognizer:tapGes];
 
 }
+
+-(void)removeAllSubView
+{
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
+    }
+}
+
 @end

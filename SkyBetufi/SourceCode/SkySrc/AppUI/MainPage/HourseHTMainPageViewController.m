@@ -1,15 +1,15 @@
 #import "HourseHTMainPageViewController.h"
 #import "HourseHTNewsDetailViewController.h"
-#import "MMTodayHTFilmHomeRequest.h"
-#import "KMonkeyHTFilmHomeCell.h"
+#import "MMTodayHTMainPageHomeRequest.h"
+#import "KMonkeyHTMainPageHomeCell.h"
 #import "YYPackageHTNewsHomeCell.h"
 #import "MMTodayHTAdViewCell.h"
 #import "PXFunHTFilmDetailViewController.h"
 #import "SunFunly-Swift.h"
 
-@interface HourseHTMainPageViewController ()<UITableViewDelegate, UITableViewDataSource, PlayerTableViewCellDelegate>
+@interface HourseHTMainPageViewController ()<UITableViewDelegate, UITableViewDataSource, MainPagePlayerTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) MMTodayHTFilmHomeRequest *request;
+@property (nonatomic, strong) MMTodayHTMainPageHomeRequest *request;
 @property (nonatomic, strong) NSArray *filmList;
 @property (nonatomic, strong) SundayBJError *error;
 
@@ -18,7 +18,7 @@
 
 @property (nonatomic, assign) BOOL playerToDetail;
 
-@property (nonatomic, weak) KMonkeyHTFilmHomeCell *playingCell;
+@property (nonatomic, weak) KMonkeyHTMainPageHomeCell *playingCell;
 
 @end
 @implementation HourseHTMainPageViewController
@@ -71,8 +71,8 @@
 
     for (UITableViewCell *tempCell in array) {
         
-        if ([tempCell isKindOfClass:[KMonkeyHTFilmHomeCell class]]) {
-            KMonkeyHTFilmHomeCell *xxTempCell = (KMonkeyHTFilmHomeCell *)tempCell;
+        if ([tempCell isKindOfClass:[KMonkeyHTMainPageHomeCell class]]) {
+            KMonkeyHTMainPageHomeCell *xxTempCell = (KMonkeyHTMainPageHomeCell *)tempCell;
             
             if (self.playerToDetail && xxTempCell == self.playingCell) {
                 
@@ -86,26 +86,26 @@
 }
 
 #pragma mark - cell代理PlayerTableViewCellDelegate
-- (void)tableViewWillPlay:(KMonkeyHTFilmHomeCell *)cell {
+- (void)tableViewWillPlay:(KMonkeyHTMainPageHomeCell *)cell {
     if (cell == self.playingCell) return;
     
     NSArray *array = [self.tableView visibleCells];
     for (UITableViewCell *tempCell in array) {
         
-        if (cell != tempCell && [tempCell isKindOfClass:[KMonkeyHTFilmHomeCell class]]) {
-            KMonkeyHTFilmHomeCell *xxTempCell = (KMonkeyHTFilmHomeCell *)tempCell;
+        if (cell != tempCell && [tempCell isKindOfClass:[KMonkeyHTMainPageHomeCell class]]) {
+            KMonkeyHTMainPageHomeCell *xxTempCell = (KMonkeyHTMainPageHomeCell *)tempCell;
             [xxTempCell shutdown];//所有其他不播放的可见cell stop
         }
     }
     self.playingCell = cell;
 }
 
-- (void)tableViewCellEnterFullScreen:(KMonkeyHTFilmHomeCell *)cell {
+- (void)tableViewCellEnterFullScreen:(KMonkeyHTMainPageHomeCell *)cell {
     self.isFullScreen = YES;
 //    [self setNeedsStatusBarAppearanceUpdate];
 }
 
-- (void)tableViewCellExitFullScreen:(KMonkeyHTFilmHomeCell *)cell {
+- (void)tableViewCellExitFullScreen:(KMonkeyHTMainPageHomeCell *)cell {
     self.isFullScreen = NO;
 //    [self setNeedsStatusBarAppearanceUpdate];
 }
@@ -134,22 +134,39 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PXFunHTNewsModel *model = self.filmList[indexPath.row];
     
-    if ([model.news_type isEqualToString:@"新聞"]) {
-        YYPackageHTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YYPackageHTNewsHomeCell"];
-        [cell taosetupWithNewsModel:model];
-        return cell;
-    }else if ([model.news_id isEqualToString:@"-100"]) {
-        MMTodayHTAdViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MMTodayHTAdViewCell"];
-        [cell requestAd:self];
-        return cell;
-    }
-    KMonkeyHTFilmHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"KMonkeyHTFilmHomeCell"];
-    [cell taosetupWithNewsModel: model];
+    KMonkeyHTMainPageHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"KMonkeyHTMainPageHomeCell"];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.mPlayerTableViewCellDelegate = self;
     cell.backgroundColor = [UIColor whiteColor];
+    [cell taosetupWithNewsModel: model];
 
     return cell;
+    
+    
+//    if ([model.posted_on isEqualToString:@"videos"]) {
+//
+//        KMonkeyHTMainPageHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"KMonkeyHTMainPageHomeCell"];
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        cell.mPlayerTableViewCellDelegate = self;
+//        cell.backgroundColor = [UIColor whiteColor];
+//        [cell taosetupWithNewsModel: model];
+//
+//        return cell;
+//    }else if ([model.posted_on isEqualToString:@"topics"]) {
+//        KMonkeyHTMainPageHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"KMonkeyHTMainPageHomeCell"];
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        cell.mPlayerTableViewCellDelegate = self;
+//        cell.backgroundColor = [UIColor whiteColor];
+//        [cell taosetupWithNewsModel:model];
+//        return cell;
+//    }
+//    //news
+//    KMonkeyHTMainPageHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"KMonkeyHTMainPageHomeCell"];
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    cell.mPlayerTableViewCellDelegate = self;
+//    cell.backgroundColor = [UIColor whiteColor];
+//    [cell taosetupWithNewsModel:model];
+//    return cell;
 }
 
 
@@ -159,7 +176,7 @@
     
 //    NSLog(@"didEndDisplayingCell");
     
-    if ([cell isKindOfClass:[KMonkeyHTFilmHomeCell class]] && cell == self.playingCell) {
+    if ([cell isKindOfClass:[KMonkeyHTMainPageHomeCell class]] && cell == self.playingCell) {
         [self.playingCell stop];
         self.playingCell = nil;
     }
@@ -167,66 +184,62 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     PXFunHTNewsModel *model = self.filmList[indexPath.row];
-    if ([model.news_type isEqualToString:@"新聞"]) {
-        return YYPackageHTNewsHomeCell.xHTNewsHomeCellHeight;
-    }else if ([model.news_id isEqualToString:@"-100"]) {
-        return 250;
-    }
-    return [KMonkeyHTFilmHomeCell headerViewHeight];
+    
+    return [KMonkeyHTMainPageHomeCell headerViewHeight];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PXFunHTNewsModel *newsModel = self.filmList[indexPath.row];
-    if ([newsModel.news_id isEqualToString:@"-100"]) {
-        return;
-    }
-    
-    PXFunHTFilmDetailViewController *detailVc = [PXFunHTFilmDetailViewController taoviewController];
-    detailVc.post_id = newsModel.news_id;
-    detailVc.filmModel = newsModel;
-    
-//    KMonkeyHTFilmHomeCell *selectCell = (KMonkeyHTFilmHomeCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
-    
-//    if ([selectCell.news_id isEqualToString:self.playingCell.news_id]) {
-//        NSLog(@"selectCell.news_id isEqualToString:self.playingCell.news_id");
-//    }
-    if (self.playingCell && [self.playingCell.news_id isEqualToString:newsModel.news_id] && !self.playingCell.playerController.isShutdown && self.playingCell.playerController.player.currentPlaybackTime > 0) {
-        detailVc.currentPlaybackTime = self.playingCell.playerController.player.currentPlaybackTime;
-        detailVc.cellPlayerController = self.playingCell.playerController;
-        [self.playingCell removeCellPlayerView];
-        self.playerToDetail = YES;
+   
+    if ([newsModel.posted_on isEqualToString:@"videos"]) {
+        
+        PXFunHTFilmDetailViewController *detailVc = [PXFunHTFilmDetailViewController taoviewController];
+        detailVc.post_id = newsModel.news_id;
+        detailVc.filmModel = newsModel;
+        
+        if (self.playingCell && [self.playingCell.news_id isEqualToString:newsModel.news_id] && !self.playingCell.playerController.isShutdown && self.playingCell.playerController.player.currentPlaybackTime > 0) {
+            detailVc.currentPlaybackTime = self.playingCell.playerController.player.currentPlaybackTime;
+            detailVc.cellPlayerController = self.playingCell.playerController;
+            [self.playingCell removeCellPlayerView];
+            self.playerToDetail = YES;
+        }else{
+            self.playerToDetail = NO;
+        }
+        [self.navigationController pushViewController:detailVc animated:YES];
     }else{
-        self.playerToDetail = NO;
+        HourseHTNewsDetailViewController *detailVc = [HourseHTNewsDetailViewController taoviewController];
+        detailVc.post_id = newsModel.news_id;
+        [self.navigationController pushViewController:detailVc animated:YES];
     }
-    [self.navigationController pushViewController:detailVc animated:YES];
+    
 }
 
--(NSArray *) dataWithAd:(NSArray *)dataList{
-    NSMutableArray *tmpArray = [NSMutableArray array];
-    
-    for (int i = 0; i < dataList.count; i++ ) {
-        if (i==2) {
-            PXFunHTNewsModel *adModel = [[PXFunHTNewsModel alloc] init];
-            adModel.news_id = @"-100";
-            [tmpArray addObject:adModel];
-        }else if ((i - 2) % 6 == 0){
-            PXFunHTNewsModel *adModel = [[PXFunHTNewsModel alloc] init];
-            adModel.news_id = @"-100";
-            [tmpArray addObject:adModel];
-        }
-        
-        PXFunHTNewsModel *m = dataList[i];
-        if (m.play_url && ![m.play_url isEqualToString:@""]) {
-            m.news_type = @"影片";
-        }
-        if (!m.plMediaInfo) {
-            [m initPLMediaInfo];
-        }
-        [tmpArray addObject:m];
-    }
-    
-    return tmpArray;
-    
-}
+//-(NSArray *) dataWithAd:(NSArray *)dataList{
+//    NSMutableArray *tmpArray = [NSMutableArray array];
+//
+//    for (int i = 0; i < dataList.count; i++ ) {
+//        if (i==2) {
+//            PXFunHTNewsModel *adModel = [[PXFunHTNewsModel alloc] init];
+//            adModel.news_id = @"-100";
+//            [tmpArray addObject:adModel];
+//        }else if ((i - 2) % 6 == 0){
+//            PXFunHTNewsModel *adModel = [[PXFunHTNewsModel alloc] init];
+//            adModel.news_id = @"-100";
+//            [tmpArray addObject:adModel];
+//        }
+//
+//        PXFunHTNewsModel *m = dataList[i];
+//        if (m.play_url && ![m.play_url isEqualToString:@""]) {
+//            m.news_type = @"影片";
+//        }
+//        if (!m.plMediaInfo) {
+//            [m initPLMediaInfo];
+//        }
+//        [tmpArray addObject:m];
+//    }
+//
+//    return tmpArray;
+//
+//}
 
 #pragma mark - private
 - (void)setupViews {
@@ -239,8 +252,9 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedSectionFooterHeight = 0;
     self.tableView.estimatedSectionHeaderHeight = 0;
-    [self.tableView registerNib:[UINib nibWithNibName:@"KMonkeyHTFilmHomeCell" bundle:nil]
-         forCellReuseIdentifier:@"KMonkeyHTFilmHomeCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"KMonkeyHTMainPageHomeCell" bundle:nil]
+         forCellReuseIdentifier:@"KMonkeyHTMainPageHomeCell"];
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"YYPackageHTNewsHomeCell" bundle:nil]
          forCellReuseIdentifier:@"YYPackageHTNewsHomeCell"];
     
@@ -292,7 +306,7 @@
 - (void)loadData {
     kWeakSelf
     [self.request taorequestWithSuccessBlock:^(NSArray<PXFunHTNewsModel *> *newsList) {
-        weakSelf.filmList = [self dataWithAd:newsList];
+        weakSelf.filmList = newsList;// [self dataWithAd:newsList];
         [weakSelf refreshUI];
     } errorBlock:^(SundayBJError *error) {
         weakSelf.error = error;
@@ -302,16 +316,16 @@
 - (void)loadNextPage {
     kWeakSelf
     [self.request loadNextPageWithSuccessBlock:^(NSArray<PXFunHTNewsModel *> *newsList) {
-        weakSelf.filmList = [self dataWithAd:newsList];
+        weakSelf.filmList = newsList;//[self dataWithAd:newsList];
         [weakSelf refreshUI];
     } errorBlock:^(SundayBJError *error) {
         [weakSelf refreshUI];
     }];
 }
 #pragma mark - lazy load
-- (MMTodayHTFilmHomeRequest *)request {
+- (MMTodayHTMainPageHomeRequest *)request {
     if (!_request) {
-        _request = [[MMTodayHTFilmHomeRequest alloc] init];
+        _request = [[MMTodayHTMainPageHomeRequest alloc] init];
     }
     return _request;
 }

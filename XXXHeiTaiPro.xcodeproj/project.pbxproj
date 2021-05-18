@@ -66,6 +66,10 @@
 		3277C5D623A9D4DE00D43D80 /* place2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3277C5D523A9D4DE00D43D80 /* place2.png */; };
 		3277C5D823A9D71000D43D80 /* icon_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3277C5D723A9D71000D43D80 /* icon_back@2x.png */; };
 		327A19F023ADD17600F13A36 /* HourseHTMacthLivePostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 327A19EF23ADD17600F13A36 /* HourseHTMacthLivePostModel.m */; };
+		327B73342653994A000E4219 /* KMonkeyHTMainPageHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 327B73312653994A000E4219 /* KMonkeyHTMainPageHomeCell.m */; };
+		327B73352653994A000E4219 /* KMonkeyHTMainPageHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327B73322653994A000E4219 /* KMonkeyHTMainPageHomeCell.xib */; };
+		327B73392653A758000E4219 /* MMTodayHTMainPageHomeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 327B73372653A758000E4219 /* MMTodayHTMainPageHomeRequest.m */; };
+		327B733C2653B2DA000E4219 /* HTNewsAuthor.m in Sources */ = {isa = PBXBuildFile; fileRef = 327B733B2653B2DA000E4219 /* HTNewsAuthor.m */; };
 		3287124023B8962800AB5360 /* video_pause_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3287122F23B8962800AB5360 /* video_pause_normal.png */; };
 		3287124123B8962800AB5360 /* video_shrink.png in Resources */ = {isa = PBXBuildFile; fileRef = 3287123023B8962800AB5360 /* video_shrink.png */; };
 		3287124223B8962800AB5360 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 3287123123B8962800AB5360 /* lock.png */; };
@@ -565,6 +569,13 @@
 		3277C5D723A9D71000D43D80 /* icon_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_back@2x.png"; sourceTree = "<group>"; };
 		327A19EE23ADD17600F13A36 /* HourseHTMacthLivePostModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HourseHTMacthLivePostModel.h; sourceTree = "<group>"; };
 		327A19EF23ADD17600F13A36 /* HourseHTMacthLivePostModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HourseHTMacthLivePostModel.m; sourceTree = "<group>"; };
+		327B73312653994A000E4219 /* KMonkeyHTMainPageHomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMonkeyHTMainPageHomeCell.m; sourceTree = "<group>"; };
+		327B73322653994A000E4219 /* KMonkeyHTMainPageHomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KMonkeyHTMainPageHomeCell.xib; sourceTree = "<group>"; };
+		327B73332653994A000E4219 /* KMonkeyHTMainPageHomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMonkeyHTMainPageHomeCell.h; sourceTree = "<group>"; };
+		327B73372653A758000E4219 /* MMTodayHTMainPageHomeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTodayHTMainPageHomeRequest.m; sourceTree = "<group>"; };
+		327B73382653A758000E4219 /* MMTodayHTMainPageHomeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTodayHTMainPageHomeRequest.h; sourceTree = "<group>"; };
+		327B733A2653B2DA000E4219 /* HTNewsAuthor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTNewsAuthor.h; sourceTree = "<group>"; };
+		327B733B2653B2DA000E4219 /* HTNewsAuthor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTNewsAuthor.m; sourceTree = "<group>"; };
 		3287122F23B8962800AB5360 /* video_pause_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_pause_normal.png; sourceTree = "<group>"; };
 		3287123023B8962800AB5360 /* video_shrink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_shrink.png; sourceTree = "<group>"; };
 		3287123123B8962800AB5360 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
@@ -1411,6 +1422,25 @@
 			path = WBImageBrowser;
 			sourceTree = "<group>";
 		};
+		327B7330265394D1000E4219 /* MainPageView */ = {
+			isa = PBXGroup;
+			children = (
+				327B73332653994A000E4219 /* KMonkeyHTMainPageHomeCell.h */,
+				327B73312653994A000E4219 /* KMonkeyHTMainPageHomeCell.m */,
+				327B73322653994A000E4219 /* KMonkeyHTMainPageHomeCell.xib */,
+			);
+			path = MainPageView;
+			sourceTree = "<group>";
+		};
+		327B73362653A714000E4219 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				327B73382653A758000E4219 /* MMTodayHTMainPageHomeRequest.h */,
+				327B73372653A758000E4219 /* MMTodayHTMainPageHomeRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		3287122E23B8962800AB5360 /* videoPlayerImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1468,6 +1498,8 @@
 		329468D5264A3473003DEFA2 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
+				327B73362653A714000E4219 /* Request */,
+				327B7330265394D1000E4219 /* MainPageView */,
 				329468D7264A34EE003DEFA2 /* HourseHTMainPageViewController.h */,
 				329468D8264A34EE003DEFA2 /* HourseHTMainPageViewController.m */,
 				329468D6264A34EE003DEFA2 /* UKRosRedMainPage.storyboard */,
@@ -2247,6 +2279,8 @@
 				FEA5D3FD225CD506001AF0C9 /* HourseHTCommentModel.m */,
 				32B5323D26175D8C009ED9D8 /* YYPackageHTNewsDetailModel.h */,
 				32B5323E26175D8C009ED9D8 /* YYPackageHTNewsDetailModel.m */,
+				327B733A2653B2DA000E4219 /* HTNewsAuthor.h */,
+				327B733B2653B2DA000E4219 /* HTNewsAuthor.m */,
 			);
 			path = NewsModels;
 			sourceTree = "<group>";
@@ -2821,6 +2855,7 @@
 				32FED83823ACBD1100D900A7 /* icon_play.png in Resources */,
 				FE6BD08921457D920090118A /* NDeskHTNewsWebCell.xib in Resources */,
 				3287124D23B8962800AB5360 /* video_pause_pressed.png in Resources */,
+				327B73352653994A000E4219 /* KMonkeyHTMainPageHomeCell.xib in Resources */,
 				FECCA5292258C8D0009EF494 /* KMonkeyHTCommentViewController.xib in Resources */,
 				FE81D15B2149613B0047A4A2 /* UKRosRedDataHomeSub.storyboard in Resources */,
 				FEC116DD2143D877002DB617 /* KKRESMMBBMatch.xcassets in Resources */,
@@ -2964,6 +2999,7 @@
 				FE82BB502179B99800C52C51 /* GGCatHTDataAllRankRequest.m in Sources */,
 				32FED81F23AB768700D900A7 /* CCCaseLMPlayerStatusModel.m in Sources */,
 				FECCA5282258C8D0009EF494 /* KMonkeyHTCommentViewController.m in Sources */,
+				327B73392653A758000E4219 /* MMTodayHTMainPageHomeRequest.m in Sources */,
 				FE6BD0582144FDE10090118A /* PXFunHTMatchCompareViewController.m in Sources */,
 				32CD878422F4173800063A14 /* VideoPickerController.m in Sources */,
 				FEC116CD2143D4A1002DB617 /* UIImage+CCCaseGlodBuleResize.m in Sources */,
@@ -3107,6 +3143,7 @@
 				FEDABE482171BC3A008C8AFD /* KMonkeyHTMatchQuarterCell.m in Sources */,
 				32FED82A23AB768700D900A7 /* YYPackageLMPlayerManager.m in Sources */,
 				FE706F02214FF3430078DF30 /* YYPackageHTDataMoreViewController.m in Sources */,
+				327B73342653994A000E4219 /* KMonkeyHTMainPageHomeCell.m in Sources */,
 				32E10F2925F1EC7E00639323 /* MMTodayHTCourtHotShootView.m in Sources */,
 				FEA5D3FE225CD506001AF0C9 /* HourseHTCommentModel.m in Sources */,
 				FE82BB412179B77200C52C51 /* RRDogHTDataTeamLeftCell.m in Sources */,
@@ -3158,6 +3195,7 @@
 				3288949C2603310900759311 /* NSDate+Covert.m in Sources */,
 				328894AA2603310900759311 /* PLMediaInfo.m in Sources */,
 				FEC116C62143D4A1002DB617 /* UIView+PXFunGlodBuleQuickFrame.m in Sources */,
+				327B733C2653B2DA000E4219 /* HTNewsAuthor.m in Sources */,
 				32463B1626494D150014696C /* PageCellBased.swift in Sources */,
 				FE81D16D21497DDE0047A4A2 /* PXFunHTRankHomeCell.m in Sources */,
 				FEC116C02143D4A1002DB617 /* UIImage+GGCatGlodBuleGenerator.m in Sources */,
