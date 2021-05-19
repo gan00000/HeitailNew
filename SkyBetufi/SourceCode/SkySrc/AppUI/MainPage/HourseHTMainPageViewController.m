@@ -7,6 +7,8 @@
 #import "PXFunHTFilmDetailViewController.h"
 #import "SunFunly-Swift.h"
 
+#import "NDeskHTImageBrowserViewController.h"
+
 @interface HourseHTMainPageViewController ()<UITableViewDelegate, UITableViewDataSource, MainPagePlayerTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) MMTodayHTMainPageHomeRequest *request;
@@ -138,6 +140,15 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.mPlayerTableViewCellDelegate = self;
     cell.backgroundColor = [UIColor whiteColor];
+    cell.mClickHander = ^(NSInteger index) {
+        
+        NSString *imageUrl = model.poster[index];
+        NSMutableArray *mmArr = [NSMutableArray array];
+        [mmArr addObject:@{@"url":imageUrl,@"title":[NSString stringWithFormat:@"图片"]}];
+        NDeskHTImageBrowserViewController *imageBrController = [[NDeskHTImageBrowserViewController alloc] initWithImages:mmArr];
+        [[self navigationController] pushViewController:imageBrController animated:NO];
+        
+    };
     [cell taosetupWithNewsModel: model];
 
     return cell;

@@ -28,6 +28,8 @@
 
 @property (strong, nonatomic) CCCaseYSPlayerController *playerController;
 
+@property(nonatomic,strong) ClickHander mClickHander;
+
 - (void)taosetupWithNewsModel:(PXFunHTNewsModel *)newsModel;
 
 - (void)taosetupWithPLMediaInfo:(PLMediaInfo *)mPLMediaInfo;

@@ -8,6 +8,7 @@
 #import "CCCasePPXXBJBaseViewController.h"
 #import "NSString+YYPackageGTMHTML.h"
 #import "UIView+RRDogGlodBuleViewController.h"
+#import "UIView+PXFunGlodBuleBlockGesture.h"
 
 @interface KMonkeyHTMainPageHomeCell () <WKNavigationDelegate, YSPlayerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *webContentView;
@@ -68,6 +69,8 @@
     self.hotCommentTitleLabel.layer.borderColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"].CGColor;
 //    self.hotCommentTitleLabel.layer.w
     self.hotCommentTitleLabel.textColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"];
+    
+    self.nickHeaderImageView.layer.cornerRadius = 25;
     
 //    self.old_hotCommentViewHeight = self.hotCommentViewHeight;
 //    [self addPlayerView];
@@ -155,8 +158,19 @@
     for (int i = 0; i < imageCount; i++) {
         
         UIImageView *thumbShowImageView = [[UIImageView alloc] init];
-        [thumbShowImageView sd_setImageWithURL:[NSURL URLWithString:self.newsModel.poster[i]]];
+        thumbShowImageView.userInteractionEnabled = YES;
+        NSString *imageUrl = self.newsModel.poster[i];
+        [thumbShowImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:HT_DEFAULT_IMAGE];
+        thumbShowImageView.contentMode = UIViewContentModeScaleAspectFit;
+        
+        [thumbShowImageView addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+            if (self.mClickHander) {
+                self.mClickHander(i);
+            }
+        }];
+        
         [self.webContentView addSubview:thumbShowImageView];
+        
         [thumbShowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.mas_equalTo(imageWidth);
             make.leading.mas_equalTo(self.webContentView).mas_offset(imageWidth * i);
