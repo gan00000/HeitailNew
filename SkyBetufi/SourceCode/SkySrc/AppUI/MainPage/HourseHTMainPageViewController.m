@@ -8,6 +8,7 @@
 #import "SunFunly-Swift.h"
 
 #import "NDeskHTImageBrowserViewController.h"
+#import "UIView+PXFunBlockGesture.h"
 
 @interface HourseHTMainPageViewController ()<UITableViewDelegate, UITableViewDataSource, MainPagePlayerTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -137,47 +138,63 @@
     PXFunHTNewsModel *model = self.filmList[indexPath.row];
     
     KMonkeyHTMainPageHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"KMonkeyHTMainPageHomeCell"];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+   
     cell.mPlayerTableViewCellDelegate = self;
-    cell.backgroundColor = [UIColor whiteColor];
-    cell.mClickHander = ^(NSInteger index) {
-        
-        NSString *imageUrl = model.poster[index];
-        NSMutableArray *mmArr = [NSMutableArray array];
-        [mmArr addObject:@{@"url":imageUrl,@"title":[NSString stringWithFormat:@"图片"]}];
-        NDeskHTImageBrowserViewController *imageBrController = [[NDeskHTImageBrowserViewController alloc] initWithImages:mmArr];
-        [[self navigationController] pushViewController:imageBrController animated:NO];
-        
-    };
+  
     [cell taosetupWithNewsModel: model];
+    
+      if ([model.posted_on isEqualToString:@"videos"]) {
+          
+          
+      }else{
+          
+          if (cell.thumbShowImageViews && cell.thumbShowImageViews.count > 0) {
+              
+              for (int i = 0; i < cell.thumbShowImageViews.count; i++) {
+                  
+                  if (i < model.poster.count) {
+                      
+                      UIImageView *thumbShowImageView = cell.thumbShowImageViews[i];
+                      NSString *imageUrl = model.poster[i];
+//                      [thumbShowImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:HT_DEFAULT_IMAGE];
+                      thumbShowImageView.contentMode = UIViewContentModeScaleAspectFit;
+                      
+                      [thumbShowImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:HT_DEFAULT_IMAGE completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+              
+                          if (model.cell_height > 0 && model.cell_width > 0) {
+                              NSLog(@"newsImageView not need resize");
+                          }else{
+              
+                              CGFloat height = image.size.height;
+                              CGFloat width = image.size.width;
+              
+                              if (height > 0 && width > 0) {
+                                  model.cell_height = height / width * model.cell_width;
+                                  [self.tableView reloadData];
+                              }
+                          }
+                      }];
+              
+                      [thumbShowImageView addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+            
+                          NSMutableArray *mmArr = [NSMutableArray array];
+                          [mmArr addObject:@{@"url":imageUrl,@"title":[NSString stringWithFormat:@"图片"]}];
+                          NDeskHTImageBrowserViewController *imageBrController = [[NDeskHTImageBrowserViewController alloc] initWithImages:mmArr];
+                          [[self navigationController] pushViewController:imageBrController animated:NO];
+                      }];
+
+                  }
+              }
+          }
+            
+//          cell.mClickHander = ^(NSInteger index) {
+//          };
+          
+      }
 
     return cell;
     
-    
-//    if ([model.posted_on isEqualToString:@"videos"]) {
-//
-//        KMonkeyHTMainPageHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"KMonkeyHTMainPageHomeCell"];
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//        cell.mPlayerTableViewCellDelegate = self;
-//        cell.backgroundColor = [UIColor whiteColor];
-//        [cell taosetupWithNewsModel: model];
-//
-//        return cell;
-//    }else if ([model.posted_on isEqualToString:@"topics"]) {
-//        KMonkeyHTMainPageHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"KMonkeyHTMainPageHomeCell"];
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//        cell.mPlayerTableViewCellDelegate = self;
-//        cell.backgroundColor = [UIColor whiteColor];
-//        [cell taosetupWithNewsModel:model];
-//        return cell;
-//    }
-//    //news
-//    KMonkeyHTMainPageHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"KMonkeyHTMainPageHomeCell"];
-//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    cell.mPlayerTableViewCellDelegate = self;
-//    cell.backgroundColor = [UIColor whiteColor];
-//    [cell taosetupWithNewsModel:model];
-//    return cell;
+
 }
 
 
@@ -195,11 +212,21 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     PXFunHTNewsModel *model = self.filmList[indexPath.row];
-    
-    if (!model.hottest_comment || model.hottest_comment.count == 0) {
-        return [KMonkeyHTMainPageHomeCell headerViewHeight:70];
+    CGFloat cellHeitht = 0;
+    if (!model.hottest_comment || model.hottest_comment.count == 0) {//无热门留言
+        cellHeitht = [KMonkeyHTMainPageHomeCell headerViewHeight:70];
+    }else{
+        cellHeitht = [KMonkeyHTMainPageHomeCell headerViewHeight:0];
     }
-    return [KMonkeyHTMainPageHomeCell headerViewHeight:0];
+    
+    if ([model.posted_on isEqualToString:@"videos"]) {//视频
+        return cellHeitht;
+    }
+    if (model.cell_height > 0) {
+        cellHeitht = cellHeitht - KMonkeyHTMainPageHomeCell_ContentView_Height + model.cell_height;
+    }
+    
+    return cellHeitht;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PXFunHTNewsModel *newsModel = self.filmList[indexPath.row];

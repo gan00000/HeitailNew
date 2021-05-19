@@ -57,6 +57,9 @@
 
 @property (nonatomic, strong) NSArray<YYPackageHTNewsDetailModel *> *mHTNewsDetailModels;
 
+@property (nonatomic, assign) CGFloat cell_height;
+@property (nonatomic, assign) CGFloat cell_width;
+
 - (void)taogetClearContentWithBlock:(void(^)(BOOL success, NSString *content))block;
 + (BOOL)taocanShare;
 - (void)taoshare;

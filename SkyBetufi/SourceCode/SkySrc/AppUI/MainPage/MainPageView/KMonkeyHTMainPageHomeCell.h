@@ -3,6 +3,11 @@
 #import "PLMediaInfo.h"
 #import "CCCaseYSPlayerController.h"
 
+#define KMonkeyHTMainPageHomeCell_Height 480.0
+#define KMonkeyHTMainPageHomeCell_Width 375.0
+
+#define KMonkeyHTMainPageHomeCell_ContentView_Height 194.0
+
 @class KMonkeyHTMainPageHomeCell;
 
 @protocol MainPagePlayerTableViewCellDelegate <NSObject>
@@ -28,7 +33,9 @@
 
 @property (strong, nonatomic) CCCaseYSPlayerController *playerController;
 
-@property(nonatomic,strong) ClickHander mClickHander;
+//@property(nonatomic,strong) ClickHander mClickHander;
+
+@property(nonatomic,strong) NSMutableArray<UIImageView *> *thumbShowImageViews;
 
 - (void)taosetupWithNewsModel:(PXFunHTNewsModel *)newsModel;
 

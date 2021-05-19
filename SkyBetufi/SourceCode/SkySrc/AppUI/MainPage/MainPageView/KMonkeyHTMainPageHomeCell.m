@@ -34,7 +34,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *hotCommentView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *hotCommentViewHeight;
-
+//@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewWHAspect;
 //@property (strong, nonatomic) NSLayoutConstraint *old_hotCommentViewHeight;
 
 //========
@@ -74,6 +74,10 @@
     
 //    self.old_hotCommentViewHeight = self.hotCommentViewHeight;
 //    [self addPlayerView];
+    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.backgroundColor = [UIColor whiteColor];
+ 
     
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -146,6 +150,11 @@
 
 -(void) addNewsImageView
 {
+    if (!self.thumbShowImageViews) {
+        self.thumbShowImageViews = [NSMutableArray array];
+    }
+    [self.thumbShowImageViews removeAllObjects];
+    
     [self.webContentView removeAllSubView];
     if (!self.newsModel.poster) {
         return;
@@ -154,28 +163,25 @@
     if (imageCount > 3) {
         imageCount = 3;
     }
-    int imageWidth = (SCREEN_WIDTH - 30) / imageCount;
+    
+    CGFloat imageWidth = (SCREEN_WIDTH - 30) / 3 * 2;
+    if (imageCount > 1) {
+        imageWidth = (SCREEN_WIDTH - 30) / 3;
+    }
+    self.newsModel.cell_width = imageWidth;
+    
     for (int i = 0; i < imageCount; i++) {
         
         UIImageView *thumbShowImageView = [[UIImageView alloc] init];
         thumbShowImageView.userInteractionEnabled = YES;
-        NSString *imageUrl = self.newsModel.poster[i];
-        [thumbShowImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:HT_DEFAULT_IMAGE];
-        thumbShowImageView.contentMode = UIViewContentModeScaleAspectFit;
-        
-        [thumbShowImageView addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
-            if (self.mClickHander) {
-                self.mClickHander(i);
-            }
-        }];
-        
         [self.webContentView addSubview:thumbShowImageView];
+        [self.thumbShowImageViews addObject:thumbShowImageView];
         
         [thumbShowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.mas_equalTo(imageWidth);
             make.leading.mas_equalTo(self.webContentView).mas_offset(imageWidth * i);
-            make.height.mas_equalTo(self.webContentView);
-            make.centerY.mas_equalTo(self.webContentView);
+            make.top.mas_equalTo(self.webContentView);
+            make.bottom.mas_equalTo(self.webContentView);
         }];
     }
     
@@ -254,8 +260,9 @@
         self.hotCommentViewHeight.constant = 0.1;
     }
     
+    
     if ([newsModel.posted_on isEqualToString:@"videos"]) {
-        
+        self.webContentViewHeight.constant = KMonkeyHTMainPageHomeCell_ContentView_Height;
         self.filmTimeLabel.hidden = NO;
         self.filmTimeLabel.text = newsModel.time;
         [self.playerController setMediaInfo:newsModel.plMediaInfo];
@@ -267,15 +274,24 @@
     }else if ([newsModel.posted_on isEqualToString:@"topics"]) {
         self.filmTimeLabel.hidden = YES;
         self.fromTypeLabel.text = @"發佈於 話題";
+        if (newsModel.cell_height > 0) {
+            self.webContentViewHeight.constant = newsModel.cell_height;
+        }
+       
         [self addNewsImageView];
     }else{
         
         self.filmTimeLabel.hidden = YES;
         self.fromTypeLabel.text = @"發佈於 新聞";
-        
+        if (newsModel.cell_height > 0) {
+            self.webContentViewHeight.constant = newsModel.cell_height;
+        }
         [self addNewsImageView];
     }
     
+//    [self setNeedsUpdateConstraints];
+//    [self updateConstraintsIfNeeded];
+//    [self layoutIfNeeded];
 }
 
 - (void)taosetupWithPLMediaInfo:(PLMediaInfo *)mPLMediaInfo
@@ -317,7 +333,7 @@
 
 + (CGFloat)headerViewHeight:(CGFloat) offset
 {
-    return (SCREEN_WIDTH) * (480.0 - offset) / 375.0 + 4; // 375 320
+    return (SCREEN_WIDTH) * (KMonkeyHTMainPageHomeCell_Height - offset) / KMonkeyHTMainPageHomeCell_Width; // 375 320
 }
 
 - (void)prepareForReuse {
