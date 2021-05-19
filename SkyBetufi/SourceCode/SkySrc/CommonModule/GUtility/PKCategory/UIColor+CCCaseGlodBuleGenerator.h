@@ -1,4 +1,4 @@
 #import <UIKit/UIKit.h>
-@interface UIColor (SkyBallHetiRedGenerator)
+@interface UIColor (CCCaseGlodBuleGenerator)
 + (UIColor *)colorWithHexString:(NSString *)stringToConvert;
 @end

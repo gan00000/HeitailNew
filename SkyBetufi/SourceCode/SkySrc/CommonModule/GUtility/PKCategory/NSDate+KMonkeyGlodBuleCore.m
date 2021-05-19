@@ -5,7 +5,7 @@
 #define D_WEEK      604800
 #define D_YEAR      31556926
 static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekOfMonth | NSCalendarUnitWeekOfYear |  NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitWeekday | NSCalendarUnitWeekdayOrdinal);
-@implementation NSDate (SkyBallHetiRedCore)
+@implementation NSDate (KMonkeyGlodBuleCore)
 + (NSCalendar *) currentCalendar {
     static NSCalendar *sharedCalendar = nil;
     if (!sharedCalendar) {

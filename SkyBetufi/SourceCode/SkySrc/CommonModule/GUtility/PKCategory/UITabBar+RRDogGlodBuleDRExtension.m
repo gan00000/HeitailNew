@@ -1,5 +1,5 @@
 #import "UITabBar+RRDogGlodBuleDRExtension.h"
-@implementation UITabBar (SkyBallHetiRedDRExtension)
+@implementation UITabBar (RRDogGlodBuleDRExtension)
 + (CGFloat)tabBarHeight {
     if ([UINavigationBar isIphoneXSeries]) {
         return 49.0 + [self iPhoneXTabarSafeHeight];

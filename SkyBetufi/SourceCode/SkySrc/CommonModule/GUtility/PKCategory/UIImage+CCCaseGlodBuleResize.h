@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-@interface UIImage (SkyBallHetiRedResize)
+@interface UIImage (CCCaseGlodBuleResize)
 - (UIImage *)resizedImageWithRestrictSize:(CGSize)size;
 - (UIImage *)resizedImageWithTargetRestrictSize:(CGSize)dstSize;
 - (UIImage *)resizedImage:(CGSize)newSize

@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-@interface UIView (SkyBallHetiRedEmptyView)
+@interface UIView (PXFunGlodBuleEmptyView)
 - (void)showEmptyView;
 - (void)showEmptyViewWithEdge:(UIEdgeInsets)edge;
 - (void)showEmptyViewWithTitle:(NSString *)title;

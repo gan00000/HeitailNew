@@ -1,3 +1,3 @@
 #import <UIKit/UIKit.h>
-@interface UIScrollView (SkyBallHetiRedAllowScreenEdgePanGestureRecognizer)
+@interface UIScrollView (KMonkeyGlodBuleAllowScreenEdgePanGestureRecognizer)
 @end

@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-@interface NSNumber (SkyBallHetiRedZGFormatter)
+@interface NSNumber (MMTodayGlodBuleZGFormatter)
 - (NSString *)roundDownFormat2Digit; 
 - (NSString *)roundDownFormatMax2Digit; 
 - (NSDecimalNumber *)decimalNumberWithMax2Digit;

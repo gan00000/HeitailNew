@@ -2,7 +2,7 @@
 #import "YYPackageXJToastView.h"
 #import "KMonkeyXJToastImageView.h"
 #import "Masonry.h"
-@implementation UIView (SkyBallHetiRedToast)
+@implementation UIView (RRDogGlodBuleToast)
 - (void)showToast:(NSString *)toast duration:(CGFloat)duration {
     __block YYPackageXJToastView *toastView = [[NSBundle mainBundle] loadNibNamed:@"YYPackageXJToastView" owner:nil options:nil].firstObject;
     toastView.toastLabel.text = toast;

@@ -1,5 +1,5 @@
 #import "UIImage+GGCatGlodBuleGenerator.h"
-@implementation UIImage (SkyBallHetiRedGenerator)
+@implementation UIImage (GGCatGlodBuleGenerator)
 + (UIImage *)imageWithColor:(UIColor *)color {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);

@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-@interface UIImage (SkyBallHetiRedGenerator)
+@interface UIImage (GGCatGlodBuleGenerator)
 + (UIImage *)imageWithColor:(UIColor *)color;
 + (UIImage *)imageFromLayer:(CALayer *)layer;
 @end

@@ -1,5 +1,5 @@
 #import "UIScrollView+KMonkeyGlodBuleAllowScreenEdgePanGestureRecognizer.h"
-@implementation UIScrollView (SkyBallHetiRedAllowScreenEdgePanGestureRecognizer)
+@implementation UIScrollView (KMonkeyGlodBuleAllowScreenEdgePanGestureRecognizer)
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
     shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]

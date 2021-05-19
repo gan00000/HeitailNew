@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
 
-@interface UINavigationBar (DDYExtension)
+@interface UINavigationBar (GGCatGlodBuleDDYExtension)
 
 @end

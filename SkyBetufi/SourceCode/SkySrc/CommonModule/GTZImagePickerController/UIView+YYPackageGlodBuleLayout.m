@@ -1,5 +1,5 @@
 #import "UIView+YYPackageGlodBuleLayout.h"
-@implementation UIView (SkyBallHetiRedLayout)
+@implementation UIView (YYPackageGlodBuleLayout)
 - (CGFloat)tz_left {
     return self.frame.origin.x;
 }

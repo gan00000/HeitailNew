@@ -370,7 +370,7 @@ static int EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
 	return val;
 }
 
-@implementation NSString (GTMNSStringHTMLAdditions)
+@implementation NSString (YYPackageGTMHTML)
 
 - (NSString *)gtm_stringByEscapingHTMLUsingTable:(HTMLEscapeMap*)table 
                                           ofSize:(NSUInteger)size 

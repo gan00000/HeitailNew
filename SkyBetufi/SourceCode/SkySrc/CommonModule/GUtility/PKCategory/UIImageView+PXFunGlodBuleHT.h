@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIImageView (HT)
+@interface UIImageView (PXFunGlodBuleHT)
 
 - (void)th_setImageWithURL:(nullable NSString *)url placeholderImage:(nullable UIImage *)placeholder;
 

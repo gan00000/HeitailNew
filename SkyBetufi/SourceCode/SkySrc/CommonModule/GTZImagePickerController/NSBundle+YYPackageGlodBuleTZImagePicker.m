@@ -1,6 +1,6 @@
 #import "NSBundle+YYPackageGlodBuleTZImagePicker.h"
 #import "GGCatTZImagePickerController.h"
-@implementation NSBundle (SkyBallHetiRedTZImagePicker)
+@implementation NSBundle (YYPackageGlodBuleTZImagePicker)
 + (NSBundle *)tz_imagePickerBundle {
     NSBundle *bundle = [NSBundle bundleForClass:[GGCatTZImagePickerController class]];
     NSURL *url = [bundle URLForResource:@"GGCatTZImagePickerController" withExtension:@"bundle"];

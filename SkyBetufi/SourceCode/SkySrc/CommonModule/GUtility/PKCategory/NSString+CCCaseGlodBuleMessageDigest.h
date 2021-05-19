@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-@interface NSString (SkyBallHetiRedMessageDigest)
+@interface NSString (CCCaseGlodBuleMessageDigest)
 - (NSString *)MD2;
 - (NSString *)MD4;
 - (NSString *)MD5;

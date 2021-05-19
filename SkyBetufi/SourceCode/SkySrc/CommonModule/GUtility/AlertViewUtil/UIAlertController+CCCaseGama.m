@@ -5,13 +5,13 @@
 #import <objc/runtime.h>
 //#import "gamaCenter.h"
 
-@interface UIAlertController (Gama)
+@interface UIAlertController (CCCaseGama)
 
 @property (nonatomic, strong) UIWindow *alertWindow;
 
 @end
 
-@implementation UIAlertController (Gama)
+@implementation UIAlertController (CCCaseGama)
 
 @dynamic alertWindow;
 

@@ -13,7 +13,7 @@ static NSString *_getMessageDigest(NSString *string, MessageDigestFuncPtr fp, NS
     free(digest);
     return [hash lowercaseString];
 }
-@implementation NSString (SkyBallHetiRedMessageDigest)
+@implementation NSString (CCCaseGlodBuleMessageDigest)
 - (NSString *)MD2
 {
     return _getMessageDigest(self, CC_MD2, CC_MD2_DIGEST_LENGTH);

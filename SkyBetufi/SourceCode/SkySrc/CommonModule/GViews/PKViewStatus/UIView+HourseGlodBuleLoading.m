@@ -3,7 +3,7 @@
 #import "objc/runtime.h"
 #import "Masonry.h"
 static void * kLoadingViewKey;
-@implementation UIView (SkyBallHetiRedLoading)
+@implementation UIView (HourseGlodBuleLoading)
 - (void)setLoadingView:(UIView *)loadingView {
     objc_setAssociatedObject(self, &kLoadingViewKey, loadingView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

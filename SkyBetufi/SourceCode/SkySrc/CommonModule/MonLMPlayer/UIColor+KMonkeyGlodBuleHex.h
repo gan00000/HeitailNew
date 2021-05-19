@@ -10,7 +10,7 @@
 
 #define LMColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
 
-@interface UIColor (Hex)
+@interface UIColor (KMonkeyGlodBuleHex)
 // 默认alpha位1
 + (UIColor *)colorWithHexString:(NSString *)color;
 

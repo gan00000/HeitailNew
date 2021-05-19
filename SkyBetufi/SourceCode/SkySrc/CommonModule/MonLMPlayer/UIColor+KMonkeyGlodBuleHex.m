@@ -8,7 +8,7 @@
 
 #import "UIColor+KMonkeyGlodBuleHex.h"
 
-@implementation UIColor (Hex)
+@implementation UIColor (KMonkeyGlodBuleHex)
 
 + (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha
 {

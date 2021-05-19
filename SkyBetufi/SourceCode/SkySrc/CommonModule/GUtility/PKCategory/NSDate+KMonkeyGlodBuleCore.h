@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-@interface NSDate (SkyBallHetiRedCore)
+@interface NSDate (KMonkeyGlodBuleCore)
 + (NSCalendar *) currentCalendar;
 + (NSDate *)convertDateToLocalTime: (NSDate *)forDate;
 #pragma mark - 相对日期

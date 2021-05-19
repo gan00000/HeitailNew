@@ -4,7 +4,7 @@
 #import "Masonry.h"
 #import "AFNetworkReachabilityManager.h"
 static void * kEmptyViewKey;
-@implementation UIView (SkyBallHetiRedEmptyView)
+@implementation UIView (PXFunGlodBuleEmptyView)
 - (void)setEmptyView:(RRDogXJEmptyView *)emptyView {
     objc_setAssociatedObject(self, &kEmptyViewKey, emptyView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

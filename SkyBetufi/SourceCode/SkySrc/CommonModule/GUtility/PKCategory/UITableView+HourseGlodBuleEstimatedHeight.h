@@ -1,4 +1,4 @@
 #import <UIKit/UIKit.h>
-@interface UITableView (SkyBallHetiRedEstimatedHeight)
+@interface UITableView (HourseGlodBuleEstimatedHeight)
 - (void)disableEstimatedHeight;
 @end

@@ -9,7 +9,7 @@
 #import "UIImageView+PXFunGlodBuleHT.h"
 #import "UIImageView+NDeskGlodBuleSVG.h"
 
-@implementation UIImageView (HT)
+@implementation UIImageView (PXFunGlodBuleHT)
 
 - (void)th_setImageWithURL:(nullable NSString *)url placeholderImage:(nullable UIImage *)placeholder{
     

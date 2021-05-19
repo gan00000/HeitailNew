@@ -1,5 +1,5 @@
 #import "NSNumber+MMTodayGlodBuleZGFormatter.h"
-@implementation NSNumber (SkyBallHetiRedZGFormatter)
+@implementation NSNumber (MMTodayGlodBuleZGFormatter)
 - (NSString *)roundDownFormat2Digit {
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setRoundingMode:NSNumberFormatterRoundDown];

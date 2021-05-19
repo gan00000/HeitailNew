@@ -1,5 +1,5 @@
 #import "UIView+PXFunGlodBuleQuickFrame.h"
-@implementation UIView (SkyBallHetiRedQuickFrame)
+@implementation UIView (PXFunGlodBuleQuickFrame)
 @dynamic x;
 @dynamic y;
 @dynamic width;

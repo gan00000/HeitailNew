@@ -30,7 +30,7 @@
 #import "NSString+RRDogHTML.h"
 #import "NSString+YYPackageGTMHTML.h"
 
-@implementation NSString (HTML)
+@implementation NSString (RRDogHTML)
 
 #pragma mark - Instance Methods
 

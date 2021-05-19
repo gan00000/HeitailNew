@@ -3,7 +3,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIAlertController (Gama)
+@interface UIAlertController (CCCaseGama)
 
 - (void)show;
 - (void)show:(BOOL)animated;

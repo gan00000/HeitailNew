@@ -1,5 +1,5 @@
 #import "UIColor+CCCaseGlodBuleGenerator.h"
-@implementation UIColor (SkyBallHetiRedGenerator)
+@implementation UIColor (CCCaseGlodBuleGenerator)
 + (UIColor *)colorWithHexString:(NSString *)stringToConvert {
     if ([stringToConvert hasPrefix:@"#"]) {
         stringToConvert = [stringToConvert substringFromIndex:1];

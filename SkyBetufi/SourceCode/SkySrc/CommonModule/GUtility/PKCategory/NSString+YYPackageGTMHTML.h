@@ -20,7 +20,7 @@
 #import <Foundation/Foundation.h>
 
 /// Utilities for NSStrings containing HTML
-@interface NSString (GTMNSStringHTMLAdditions)
+@interface NSString (YYPackageGTMHTML)
 
 /// Get a string where internal characters that need escaping for HTML are escaped 
 //

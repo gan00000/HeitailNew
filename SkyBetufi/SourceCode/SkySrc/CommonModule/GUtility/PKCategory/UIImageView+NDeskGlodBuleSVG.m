@@ -1,5 +1,5 @@
 #import "UIImageView+NDeskGlodBuleSVG.h"
-@implementation UIImageView (SkyBallHetiRedSVG)
+@implementation UIImageView (NDeskGlodBuleSVG)
 - (void)svg_setImageWithURL:(nullable NSURL *)url placeholderImage:(nullable UIImage *)placeholder {
    
     NSString *urlKey = [url absoluteString];

@@ -7,7 +7,7 @@ static const char kDisableEmoji = '\0';
 @interface UITextField ()
 @property (assign,nonatomic,getter=isObsevered) BOOL obsever;
 @end
-@implementation UITextField (SkyBallHetiRedMQCustom)
+@implementation UITextField (GGCatGlodBuleMQCustom)
 -(void)setDisableEmoji:(BOOL)disableEmoji{
     objc_setAssociatedObject(self, &kDisableEmoji, [NSNumber numberWithBool:disableEmoji], OBJC_ASSOCIATION_RETAIN);
 }

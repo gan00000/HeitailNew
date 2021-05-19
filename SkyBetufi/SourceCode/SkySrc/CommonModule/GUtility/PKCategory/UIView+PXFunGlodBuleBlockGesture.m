@@ -4,7 +4,7 @@ static char kActionHandlerTapBlockKey;
 static char kActionHandlerTapGestureKey;
 static char kActionHandlerLongPressBlockKey;
 static char kActionHandlerLongPressGestureKey;
-@implementation UIView (SkyBallHetiRedBlockGesture)
+@implementation UIView (PXFunGlodBuleBlockGesture)
 - (void)addTapActionWithBlock:(GestureActionBlock)block {
     UITapGestureRecognizer *gesture = objc_getAssociatedObject(self, &kActionHandlerTapGestureKey);
     if (!gesture)

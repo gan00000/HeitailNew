@@ -1,5 +1,5 @@
 #import "UITableView+HourseGlodBuleEstimatedHeight.h"
-@implementation UITableView (SkyBallHetiRedEstimatedHeight)
+@implementation UITableView (HourseGlodBuleEstimatedHeight)
 - (void)disableEstimatedHeight {
     self.estimatedSectionFooterHeight = 0;
     self.estimatedSectionHeaderHeight = 0;

@@ -1,5 +1,5 @@
 #import "NSObject+CCCaseGlodBulenextresponder.h"
-@implementation NSObject (SkyBallHetiRednextresponder)
+@implementation NSObject (CCCaseGlodBulenextresponder)
 - (UIViewController *)responder:(NSObject *)_s className:(NSString *)_c
 {
     NSArray *a = [_c componentsSeparatedByString:@"|"];

@@ -3,7 +3,7 @@ typedef enum : NSUInteger {
     TZOscillatoryAnimationToBigger,
     TZOscillatoryAnimationToSmaller,
 } TZOscillatoryAnimationType;
-@interface UIView (SkyBallHetiRedLayout)
+@interface UIView (YYPackageGlodBuleLayout)
 @property (nonatomic) CGFloat tz_left;        
 @property (nonatomic) CGFloat tz_top;         
 @property (nonatomic) CGFloat tz_right;       

@@ -1,7 +1,7 @@
 #import "UINavigationBar+GGCatGlodBuleDDYExtension.h"
 #import <objc/runtime.h>
 
-@implementation UINavigationBar (DDYExtension)
+@implementation UINavigationBar (GGCatGlodBuleDDYExtension)
 
 + (void)load {
     static dispatch_once_t onceToken;

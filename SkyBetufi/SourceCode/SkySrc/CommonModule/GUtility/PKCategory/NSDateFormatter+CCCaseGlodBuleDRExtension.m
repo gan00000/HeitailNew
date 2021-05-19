@@ -1,5 +1,5 @@
 #import "NSDateFormatter+CCCaseGlodBuleDRExtension.h"
-@implementation NSDateFormatter (SkyBallHetiRedDRExtension)
+@implementation NSDateFormatter (CCCaseGlodBuleDRExtension)
 + (instancetype)dr_dateFormatter {
     static NSDateFormatter* dateFormatter;
     static dispatch_once_t onceToken;

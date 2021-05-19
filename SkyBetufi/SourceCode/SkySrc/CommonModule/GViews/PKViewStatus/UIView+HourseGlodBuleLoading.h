@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-@interface UIView (SkyBallHetiRedLoading)
+@interface UIView (HourseGlodBuleLoading)
 - (void)showLoadingView;
 - (void)showLoadingViewWithEdge:(UIEdgeInsets)edge;
 - (void)hideLoadingView;

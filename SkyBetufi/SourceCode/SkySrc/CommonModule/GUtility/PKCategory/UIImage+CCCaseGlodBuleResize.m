@@ -1,5 +1,5 @@
 #import "UIImage+CCCaseGlodBuleResize.h"
-@implementation UIImage (SkyBallHetiRedResize)
+@implementation UIImage (CCCaseGlodBuleResize)
 - (UIImage *)resizedImageWithRestrictSize:(CGSize)restrictSize
 {
     CGFloat originalWidth = self.size.width;

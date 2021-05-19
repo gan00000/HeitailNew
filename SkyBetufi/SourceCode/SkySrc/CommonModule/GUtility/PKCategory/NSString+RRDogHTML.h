@@ -31,7 +31,7 @@
 
 // Dependant upon GTMNSString+RRDogHTML
 
-@interface NSString (HTML)
+@interface NSString (RRDogHTML)
 
 // Strips HTML tags & comments, removes extra whitespace and decodes HTML character entities.
 - (NSString *)stringByConvertingHTMLToPlainText;

@@ -1,7 +1,7 @@
 #import "UINavigationBar+GGCatGlodBuleDRExtension.h"
 
 #import "MMTodayHTUserManager.h"
-@implementation UINavigationBar (SkyBallHetiRedDRExtension)
+@implementation UINavigationBar (GGCatGlodBuleDRExtension)
 + (CGFloat)navigationBarHeight {
     CGFloat statusBarHeight = CGRectGetHeight([[UIApplication sharedApplication] statusBarFrame]);
     return statusBarHeight + 44.0;

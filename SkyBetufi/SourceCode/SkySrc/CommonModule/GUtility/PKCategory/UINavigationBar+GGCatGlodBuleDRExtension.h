@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
-@interface UINavigationBar (SkyBallHetiRedDRExtension)
+@interface UINavigationBar (GGCatGlodBuleDRExtension)
 + (CGFloat)navigationBarHeight;
 - (CGFloat)navigationBarHeight;
 + (BOOL )isIphoneXSeries;
