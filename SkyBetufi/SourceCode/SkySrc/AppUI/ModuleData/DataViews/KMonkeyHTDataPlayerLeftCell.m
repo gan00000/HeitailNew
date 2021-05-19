@@ -1,5 +1,5 @@
 #import "KMonkeyHTDataPlayerLeftCell.h"
-#import "UIImageView+PXFunGlodBuleHT.h"
+#import "UIImageView+PXFunHT.h"
 @interface KMonkeyHTDataPlayerLeftCell ()
 @property (weak, nonatomic) IBOutlet UILabel *oderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;

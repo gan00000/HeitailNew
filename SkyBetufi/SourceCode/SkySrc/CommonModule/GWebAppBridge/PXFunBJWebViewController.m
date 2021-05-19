@@ -7,7 +7,7 @@
 #import "KMonkeyBJUtility.h"
 #import "BJAPIAddress.h"
 #import "GGCatBJWebViewCacheHelper.h"
-#import "UIView+PXFunGlodBuleEmptyView.h"
+#import "UIView+PXFunEmptyView.h"
 typedef NS_ENUM(NSInteger, BJWebViewInitType) {
     BJWebViewInitTypeNormal,
     BJWebViewInitTypePost,

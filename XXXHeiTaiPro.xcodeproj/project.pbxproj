@@ -41,8 +41,8 @@
 		3253E78D25FF579300326CDE /* NDeskHTNewMatchHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3253E78C25FF579300326CDE /* NDeskHTNewMatchHomeViewController.m */; };
 		325A921A24F119F3008F0B2E /* CCCaseHTIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 325A921924F119F3008F0B2E /* CCCaseHTIndicatorView.m */; };
 		325A921D24F1637F008F0B2E /* NDeskHTLikeTeamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 325A921C24F1637F008F0B2E /* NDeskHTLikeTeamModel.m */; };
-		32642A5722EFE8FD00D2DA1E /* UIImageView+NDeskGlodBuleSVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 32642A5622EFE8FD00D2DA1E /* UIImageView+NDeskGlodBuleSVG.m */; };
-		32642A5A22F027EB00D2DA1E /* TZPhotoPickerController+YYPackageGlodBuleDRExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 32642A5922F027EA00D2DA1E /* TZPhotoPickerController+YYPackageGlodBuleDRExtention.m */; };
+		32642A5722EFE8FD00D2DA1E /* UIImageView+NDeskSVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 32642A5622EFE8FD00D2DA1E /* UIImageView+NDeskSVG.m */; };
+		32642A5A22F027EB00D2DA1E /* TZPhotoPickerController+YYPackageDRExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 32642A5922F027EA00D2DA1E /* TZPhotoPickerController+YYPackageDRExtention.m */; };
 		326434D922F04F5E00D2DA1E /* GuideImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 326434D422F04F5E00D2DA1E /* GuideImage.bundle */; };
 		326434DA22F04F5E00D2DA1E /* KMonkeyDHGifImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 326434D522F04F5E00D2DA1E /* KMonkeyDHGifImageOperation.m */; };
 		326434DB22F04F5E00D2DA1E /* HourseDHGuidePageHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 326434D822F04F5E00D2DA1E /* HourseDHGuidePageHUD.m */; };
@@ -169,7 +169,7 @@
 		32F1F2C22514FB7C00EE85B8 /* HourseLineChartUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F1F2C12514FB7C00EE85B8 /* HourseLineChartUtil.m */; };
 		32F4776F2601A3FB00377292 /* UKRosRedaaadb.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F4776E2601A3FB00377292 /* UKRosRedaaadb.storyboard */; };
 		32FAACE324F6A032001574C9 /* MMTodayBarChartUtilValueFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FAACE224F6A032001574C9 /* MMTodayBarChartUtilValueFormat.m */; };
-		32FC51CB25FFA3E40025B269 /* UKRosRedGlodBuleHTNewMatchHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32FC51CA25FFA3E40025B269 /* UKRosRedGlodBuleHTNewMatchHome.storyboard */; };
+		32FC51CB25FFA3E40025B269 /* UKRosRedHTNewMatchHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32FC51CA25FFA3E40025B269 /* UKRosRedHTNewMatchHome.storyboard */; };
 		32FCDD1A250C721F0037334D /* RRDogHTIMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FCDD19250C721F0037334D /* RRDogHTIMViewController.m */; };
 		32FCDD1C250C72AB0037334D /* UKRosRedTHIM.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32FCDD1B250C72AB0037334D /* UKRosRedTHIM.storyboard */; };
 		32FED81F23AB768700D900A7 /* CCCaseLMPlayerStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED80623AB768700D900A7 /* CCCaseLMPlayerStatusModel.m */; };
@@ -184,13 +184,13 @@
 		32FED82823AB768700D900A7 /* MMTodayLMPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED81A23AB768700D900A7 /* MMTodayLMPlayerControlView.m */; };
 		32FED82923AB768700D900A7 /* GGCatLMVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED81B23AB768700D900A7 /* GGCatLMVideoPlayer.m */; };
 		32FED82A23AB768700D900A7 /* YYPackageLMPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED81E23AB768700D900A7 /* YYPackageLMPlayerManager.m */; };
-		32FED83023AB775600D900A7 /* UIColor+KMonkeyGlodBuleHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED82E23AB775600D900A7 /* UIColor+KMonkeyGlodBuleHex.m */; };
+		32FED83023AB775600D900A7 /* UIColor+KMonkeyHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FED82E23AB775600D900A7 /* UIColor+KMonkeyHex.m */; };
 		32FED83223AB779C00D900A7 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32FED83123AB779C00D900A7 /* IJKMediaFramework.framework */; };
 		32FED83423AB7BB100D900A7 /* KKRESLMPlayer.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32FED83323AB7BB100D900A7 /* KKRESLMPlayer.xcassets */; };
 		32FED83623AC812200D900A7 /* live_player_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FED83523AC812200D900A7 /* live_player_bg.png */; };
 		32FED83823ACBD1100D900A7 /* icon_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FED83723ACBD1000D900A7 /* icon_play.png */; };
 		32FF953C25FDAD8D001BC4A3 /* RRDogGamaAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FF953925FDAD8D001BC4A3 /* RRDogGamaAlertView.m */; };
-		32FFD29123A2267200E1661A /* UIImageView+PXFunGlodBuleHT.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFD29023A2267200E1661A /* UIImageView+PXFunGlodBuleHT.m */; };
+		32FFD29123A2267200E1661A /* UIImageView+PXFunHT.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFD29023A2267200E1661A /* UIImageView+PXFunHT.m */; };
 		32FFD29923A397A700E1661A /* MMTodayHTAdViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFD29723A397A700E1661A /* MMTodayHTAdViewCell.m */; };
 		32FFD29A23A397A700E1661A /* MMTodayHTAdViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32FFD29823A397A700E1661A /* MMTodayHTAdViewCell.xib */; };
 		4DD0983875DAF6547E89491E /* Pods_XXXHeiTai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8608351CF0427548F1242C /* Pods_XXXHeiTai.framework */; };
@@ -301,13 +301,13 @@
 		FEC116072143D4A1002DB617 /* YYPackageXJToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEC113A62143D4A0002DB617 /* YYPackageXJToastView.xib */; };
 		FEC116082143D4A1002DB617 /* YYPackageXJToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113A72143D4A0002DB617 /* YYPackageXJToastView.m */; };
 		FEC116092143D4A1002DB617 /* KMonkeyXJToastImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEC113A92143D4A0002DB617 /* KMonkeyXJToastImageView.xib */; };
-		FEC1160A2143D4A1002DB617 /* UIView+PXFunGlodBuleEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113AA2143D4A0002DB617 /* UIView+PXFunGlodBuleEmptyView.m */; };
-		FEC1160B2143D4A1002DB617 /* UIView+HourseGlodBuleLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113AC2143D4A0002DB617 /* UIView+HourseGlodBuleLoading.m */; };
+		FEC1160A2143D4A1002DB617 /* UIView+PXFunEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113AA2143D4A0002DB617 /* UIView+PXFunEmptyView.m */; };
+		FEC1160B2143D4A1002DB617 /* UIView+HourseLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113AC2143D4A0002DB617 /* UIView+HourseLoading.m */; };
 		FEC1160C2143D4A1002DB617 /* RRDogXJEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113AF2143D4A0002DB617 /* RRDogXJEmptyView.m */; };
 		FEC1160D2143D4A1002DB617 /* RRDogXJEmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEC113B02143D4A0002DB617 /* RRDogXJEmptyView.xib */; };
-		FEC1160E2143D4A1002DB617 /* UIView+RRDogGlodBuleToast.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113B22143D4A0002DB617 /* UIView+RRDogGlodBuleToast.m */; };
+		FEC1160E2143D4A1002DB617 /* UIView+RRDogToast.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113B22143D4A0002DB617 /* UIView+RRDogToast.m */; };
 		FEC116102143D4A1002DB617 /* KMonkeyBJTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113B62143D4A0002DB617 /* KMonkeyBJTabBarView.m */; };
-		FEC116112143D4A1002DB617 /* UIScrollView+KMonkeyGlodBuleAllowScreenEdgePanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113B92143D4A0002DB617 /* UIScrollView+KMonkeyGlodBuleAllowScreenEdgePanGestureRecognizer.m */; };
+		FEC116112143D4A1002DB617 /* UIScrollView+KMonkeyAllowScreenEdgePanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113B92143D4A0002DB617 /* UIScrollView+KMonkeyAllowScreenEdgePanGestureRecognizer.m */; };
 		FEC116122143D4A1002DB617 /* NDeskLJTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113BA2143D4A0002DB617 /* NDeskLJTabBar.m */; };
 		FEC116132143D4A1002DB617 /* YYPackageLJViewPager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113BC2143D4A0002DB617 /* YYPackageLJViewPager.m */; };
 		FEC116142143D4A1002DB617 /* GGCatBJUnPasteTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113BE2143D4A0002DB617 /* GGCatBJUnPasteTextField.m */; };
@@ -335,18 +335,18 @@
 		FEC116B72143D4A1002DB617 /* HoursePPXXBJBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115222143D4A0002DB617 /* HoursePPXXBJBaseTabBarController.m */; };
 		FEC116B82143D4A1002DB617 /* CCCasePPXXBJBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115242143D4A0002DB617 /* CCCasePPXXBJBaseNavigationController.m */; };
 		FEC116BF2143D4A1002DB617 /* GGCatBJDateFormatUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115342143D4A0002DB617 /* GGCatBJDateFormatUtility.m */; };
-		FEC116C02143D4A1002DB617 /* UIImage+GGCatGlodBuleGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115372143D4A0002DB617 /* UIImage+GGCatGlodBuleGenerator.m */; };
-		FEC116C22143D4A1002DB617 /* UIView+RRDogGlodBuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1153D2143D4A0002DB617 /* UIView+RRDogGlodBuleViewController.m */; };
-		FEC116C42143D4A1002DB617 /* UITableView+HourseGlodBuleEstimatedHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115402143D4A0002DB617 /* UITableView+HourseGlodBuleEstimatedHeight.m */; };
-		FEC116C52143D4A1002DB617 /* UIView+PXFunGlodBuleBlockGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115422143D4A0002DB617 /* UIView+PXFunGlodBuleBlockGesture.m */; };
-		FEC116C62143D4A1002DB617 /* UIView+PXFunGlodBuleQuickFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115472143D4A0002DB617 /* UIView+PXFunGlodBuleQuickFrame.m */; };
-		FEC116C72143D4A1002DB617 /* NSNumber+MMTodayGlodBuleZGFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115482143D4A0002DB617 /* NSNumber+MMTodayGlodBuleZGFormatter.m */; };
-		FEC116C82143D4A1002DB617 /* NSDate+KMonkeyGlodBuleCore.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115492143D4A0002DB617 /* NSDate+KMonkeyGlodBuleCore.m */; };
-		FEC116C92143D4A1002DB617 /* NSObject+CCCaseGlodBulenextresponder.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1154E2143D4A0002DB617 /* NSObject+CCCaseGlodBulenextresponder.m */; };
-		FEC116CA2143D4A1002DB617 /* NSString+CCCaseGlodBuleMessageDigest.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1154F2143D4A0002DB617 /* NSString+CCCaseGlodBuleMessageDigest.m */; };
-		FEC116CB2143D4A1002DB617 /* UITextField+GGCatGlodBuleMQCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115532143D4A0002DB617 /* UITextField+GGCatGlodBuleMQCustom.m */; };
-		FEC116CC2143D4A1002DB617 /* UIColor+CCCaseGlodBuleGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115542143D4A0002DB617 /* UIColor+CCCaseGlodBuleGenerator.m */; };
-		FEC116CD2143D4A1002DB617 /* UIImage+CCCaseGlodBuleResize.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115552143D4A0002DB617 /* UIImage+CCCaseGlodBuleResize.m */; };
+		FEC116C02143D4A1002DB617 /* UIImage+GGCatGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115372143D4A0002DB617 /* UIImage+GGCatGenerator.m */; };
+		FEC116C22143D4A1002DB617 /* UIView+RRDogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1153D2143D4A0002DB617 /* UIView+RRDogViewController.m */; };
+		FEC116C42143D4A1002DB617 /* UITableView+HourseEstimatedHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115402143D4A0002DB617 /* UITableView+HourseEstimatedHeight.m */; };
+		FEC116C52143D4A1002DB617 /* UIView+PXFunBlockGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115422143D4A0002DB617 /* UIView+PXFunBlockGesture.m */; };
+		FEC116C62143D4A1002DB617 /* UIView+PXFunQuickFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115472143D4A0002DB617 /* UIView+PXFunQuickFrame.m */; };
+		FEC116C72143D4A1002DB617 /* NSNumber+MMTodayZGFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115482143D4A0002DB617 /* NSNumber+MMTodayZGFormatter.m */; };
+		FEC116C82143D4A1002DB617 /* NSDate+KMonkeyCore.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115492143D4A0002DB617 /* NSDate+KMonkeyCore.m */; };
+		FEC116C92143D4A1002DB617 /* NSObject+CCCasenextresponder.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1154E2143D4A0002DB617 /* NSObject+CCCasenextresponder.m */; };
+		FEC116CA2143D4A1002DB617 /* NSString+CCCaseMessageDigest.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1154F2143D4A0002DB617 /* NSString+CCCaseMessageDigest.m */; };
+		FEC116CB2143D4A1002DB617 /* UITextField+GGCatMQCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115532143D4A0002DB617 /* UITextField+GGCatMQCustom.m */; };
+		FEC116CC2143D4A1002DB617 /* UIColor+CCCaseGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115542143D4A0002DB617 /* UIColor+CCCaseGenerator.m */; };
+		FEC116CD2143D4A1002DB617 /* UIImage+CCCaseResize.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115552143D4A0002DB617 /* UIImage+CCCaseResize.m */; };
 		FEC116D22143D4A1002DB617 /* KMonkeyBJUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115632143D4A0002DB617 /* KMonkeyBJUtility.m */; };
 		FEC116DD2143D877002DB617 /* KKRESMMBBMatch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC116DC2143D877002DB617 /* KKRESMMBBMatch.xcassets */; };
 		FEC116EF2143D8C9002DB617 /* UKRosRedMatchHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC116EE2143D8C9002DB617 /* UKRosRedMatchHome.storyboard */; };
@@ -387,8 +387,8 @@
 		FECCA5362258C8D0009EF494 /* CCCaseHTHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA5182258C8D0009EF494 /* CCCaseHTHistoryViewController.m */; };
 		FECCA5372258C8D0009EF494 /* CCCaseHTLikeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FECCA51A2258C8D0009EF494 /* CCCaseHTLikeViewController.xib */; };
 		FECCA5382258C8D0009EF494 /* CCCaseHTLikeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA51B2258C8D0009EF494 /* CCCaseHTLikeViewController.m */; };
-		FECCA53D2258C972009EF494 /* UITabBar+RRDogGlodBuleDRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA5392258C971009EF494 /* UITabBar+RRDogGlodBuleDRExtension.m */; };
-		FECCA53E2258C972009EF494 /* UINavigationBar+GGCatGlodBuleDRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA53C2258C972009EF494 /* UINavigationBar+GGCatGlodBuleDRExtension.m */; };
+		FECCA53D2258C972009EF494 /* UITabBar+RRDogDRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA5392258C971009EF494 /* UITabBar+RRDogDRExtension.m */; };
+		FECCA53E2258C972009EF494 /* UINavigationBar+GGCatDRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA53C2258C972009EF494 /* UINavigationBar+GGCatDRExtension.m */; };
 		FECCA5412258CC3E009EF494 /* MMTodayDRSandBoxManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA53F2258CC3D009EF494 /* MMTodayDRSandBoxManager.m */; };
 		FEDABE482171BC3A008C8AFD /* KMonkeyHTMatchQuarterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDABE462171BC3A008C8AFD /* KMonkeyHTMatchQuarterCell.m */; };
 		FEDABE492171BC3A008C8AFD /* KMonkeyHTMatchQuarterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDABE472171BC3A008C8AFD /* KMonkeyHTMatchQuarterCell.xib */; };
@@ -417,7 +417,7 @@
 		FEDF8FC4214441C6005C7C4D /* YYPackageHTMatchHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDF8FC2214441C6005C7C4D /* YYPackageHTMatchHomeCell.m */; };
 		FEDF8FC5214441C6005C7C4D /* YYPackageHTMatchHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDF8FC3214441C6005C7C4D /* YYPackageHTMatchHomeCell.xib */; };
 		FEDF8FC821444610005C7C4D /* SundayHTMatchHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDF8FC721444610005C7C4D /* SundayHTMatchHomeModel.m */; };
-		FEDF8FCE21444A3E005C7C4D /* NSDateFormatter+CCCaseGlodBuleDRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDF8FCC21444A3E005C7C4D /* NSDateFormatter+CCCaseGlodBuleDRExtension.m */; };
+		FEDF8FCE21444A3E005C7C4D /* NSDateFormatter+CCCaseDRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDF8FCC21444A3E005C7C4D /* NSDateFormatter+CCCaseDRExtension.m */; };
 		FEDF8FD72144B1CC005C7C4D /* GGCatHTMatchHomeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDF8FD62144B1CC005C7C4D /* GGCatHTMatchHomeRequest.m */; };
 		FEDF8FDA2144B2BF005C7C4D /* MMTodayHTMatchHomeGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDF8FD92144B2BF005C7C4D /* MMTodayHTMatchHomeGroupModel.m */; };
 		FEDF8FDE2144D04B005C7C4D /* KMonkeyHTMatchHomeGroupHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDF8FDD2144D04B005C7C4D /* KMonkeyHTMatchHomeGroupHeaderView.m */; };
@@ -533,10 +533,10 @@
 		325BD8C522E0705D00A07EC9 /* RRDogPPXXBJLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDogPPXXBJLaunchViewController.h; sourceTree = "<group>"; };
 		325BD8C822E07D6F00A07EC9 /* confuse.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = confuse.sh; sourceTree = "<group>"; };
 		325BD8C922E07D6F00A07EC9 /* func.list */ = {isa = PBXFileReference; lastKnownFileType = text; path = func.list; sourceTree = "<group>"; };
-		32642A5522EFE8FD00D2DA1E /* UIImageView+NDeskGlodBuleSVG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+NDeskGlodBuleSVG.h"; sourceTree = "<group>"; };
-		32642A5622EFE8FD00D2DA1E /* UIImageView+NDeskGlodBuleSVG.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+NDeskGlodBuleSVG.m"; sourceTree = "<group>"; };
-		32642A5822F027EA00D2DA1E /* TZPhotoPickerController+YYPackageGlodBuleDRExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TZPhotoPickerController+YYPackageGlodBuleDRExtention.h"; sourceTree = "<group>"; };
-		32642A5922F027EA00D2DA1E /* TZPhotoPickerController+YYPackageGlodBuleDRExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TZPhotoPickerController+YYPackageGlodBuleDRExtention.m"; sourceTree = "<group>"; };
+		32642A5522EFE8FD00D2DA1E /* UIImageView+NDeskSVG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+NDeskSVG.h"; sourceTree = "<group>"; };
+		32642A5622EFE8FD00D2DA1E /* UIImageView+NDeskSVG.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+NDeskSVG.m"; sourceTree = "<group>"; };
+		32642A5822F027EA00D2DA1E /* TZPhotoPickerController+YYPackageDRExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TZPhotoPickerController+YYPackageDRExtention.h"; sourceTree = "<group>"; };
+		32642A5922F027EA00D2DA1E /* TZPhotoPickerController+YYPackageDRExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TZPhotoPickerController+YYPackageDRExtention.m"; sourceTree = "<group>"; };
 		326434D422F04F5E00D2DA1E /* GuideImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GuideImage.bundle; sourceTree = "<group>"; };
 		326434D522F04F5E00D2DA1E /* KMonkeyDHGifImageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMonkeyDHGifImageOperation.m; sourceTree = "<group>"; };
 		326434D622F04F5E00D2DA1E /* HourseDHGuidePageHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourseDHGuidePageHUD.h; sourceTree = "<group>"; };
@@ -720,7 +720,7 @@
 		32F4776E2601A3FB00377292 /* UKRosRedaaadb.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UKRosRedaaadb.storyboard; sourceTree = "<group>"; };
 		32FAACE124F6A032001574C9 /* MMTodayBarChartUtilValueFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMTodayBarChartUtilValueFormat.h; sourceTree = "<group>"; };
 		32FAACE224F6A032001574C9 /* MMTodayBarChartUtilValueFormat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMTodayBarChartUtilValueFormat.m; sourceTree = "<group>"; };
-		32FC51CA25FFA3E40025B269 /* UKRosRedGlodBuleHTNewMatchHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UKRosRedGlodBuleHTNewMatchHome.storyboard; sourceTree = "<group>"; };
+		32FC51CA25FFA3E40025B269 /* UKRosRedHTNewMatchHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UKRosRedHTNewMatchHome.storyboard; sourceTree = "<group>"; };
 		32FCDD18250C721F0037334D /* RRDogHTIMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRDogHTIMViewController.h; sourceTree = "<group>"; };
 		32FCDD19250C721F0037334D /* RRDogHTIMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRDogHTIMViewController.m; sourceTree = "<group>"; };
 		32FCDD1B250C72AB0037334D /* UKRosRedTHIM.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UKRosRedTHIM.storyboard; sourceTree = "<group>"; };
@@ -749,16 +749,16 @@
 		32FED81B23AB768700D900A7 /* GGCatLMVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGCatLMVideoPlayer.m; sourceTree = "<group>"; };
 		32FED81D23AB768700D900A7 /* YYPackageLMPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYPackageLMPlayerManager.h; sourceTree = "<group>"; };
 		32FED81E23AB768700D900A7 /* YYPackageLMPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYPackageLMPlayerManager.m; sourceTree = "<group>"; };
-		32FED82E23AB775600D900A7 /* UIColor+KMonkeyGlodBuleHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+KMonkeyGlodBuleHex.m"; sourceTree = "<group>"; };
-		32FED82F23AB775600D900A7 /* UIColor+KMonkeyGlodBuleHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+KMonkeyGlodBuleHex.h"; sourceTree = "<group>"; };
+		32FED82E23AB775600D900A7 /* UIColor+KMonkeyHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+KMonkeyHex.m"; sourceTree = "<group>"; };
+		32FED82F23AB775600D900A7 /* UIColor+KMonkeyHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+KMonkeyHex.h"; sourceTree = "<group>"; };
 		32FED83123AB779C00D900A7 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		32FED83323AB7BB100D900A7 /* KKRESLMPlayer.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = KKRESLMPlayer.xcassets; sourceTree = "<group>"; };
 		32FED83523AC812200D900A7 /* live_player_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = live_player_bg.png; sourceTree = "<group>"; };
 		32FED83723ACBD1000D900A7 /* icon_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_play.png; sourceTree = "<group>"; };
 		32FF953525FDAD8D001BC4A3 /* RRDogGamaAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDogGamaAlertView.h; sourceTree = "<group>"; };
 		32FF953925FDAD8D001BC4A3 /* RRDogGamaAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDogGamaAlertView.m; sourceTree = "<group>"; };
-		32FFD28F23A2267200E1661A /* UIImageView+PXFunGlodBuleHT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+PXFunGlodBuleHT.h"; sourceTree = "<group>"; };
-		32FFD29023A2267200E1661A /* UIImageView+PXFunGlodBuleHT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+PXFunGlodBuleHT.m"; sourceTree = "<group>"; };
+		32FFD28F23A2267200E1661A /* UIImageView+PXFunHT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+PXFunHT.h"; sourceTree = "<group>"; };
+		32FFD29023A2267200E1661A /* UIImageView+PXFunHT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+PXFunHT.m"; sourceTree = "<group>"; };
 		32FFD29623A397A700E1661A /* MMTodayHTAdViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMTodayHTAdViewCell.h; sourceTree = "<group>"; };
 		32FFD29723A397A700E1661A /* MMTodayHTAdViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMTodayHTAdViewCell.m; sourceTree = "<group>"; };
 		32FFD29823A397A700E1661A /* MMTodayHTAdViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MMTodayHTAdViewCell.xib; sourceTree = "<group>"; };
@@ -933,26 +933,26 @@
 		FEC1139F2143D4A0002DB617 /* GGCatXJLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GGCatXJLoadingView.xib; sourceTree = "<group>"; };
 		FEC113A02143D4A0002DB617 /* GGCatXJLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGCatXJLoadingView.m; sourceTree = "<group>"; };
 		FEC113A12143D4A0002DB617 /* GGCatXJLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGCatXJLoadingView.h; sourceTree = "<group>"; };
-		FEC113A22143D4A0002DB617 /* UIView+HourseGlodBuleLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HourseGlodBuleLoading.h"; sourceTree = "<group>"; };
+		FEC113A22143D4A0002DB617 /* UIView+HourseLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HourseLoading.h"; sourceTree = "<group>"; };
 		FEC113A42143D4A0002DB617 /* KMonkeyXJToastImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMonkeyXJToastImageView.m; sourceTree = "<group>"; };
 		FEC113A52143D4A0002DB617 /* YYPackageXJToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYPackageXJToastView.h; sourceTree = "<group>"; };
 		FEC113A62143D4A0002DB617 /* YYPackageXJToastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYPackageXJToastView.xib; sourceTree = "<group>"; };
 		FEC113A72143D4A0002DB617 /* YYPackageXJToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYPackageXJToastView.m; sourceTree = "<group>"; };
 		FEC113A82143D4A0002DB617 /* KMonkeyXJToastImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMonkeyXJToastImageView.h; sourceTree = "<group>"; };
 		FEC113A92143D4A0002DB617 /* KMonkeyXJToastImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KMonkeyXJToastImageView.xib; sourceTree = "<group>"; };
-		FEC113AA2143D4A0002DB617 /* UIView+PXFunGlodBuleEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PXFunGlodBuleEmptyView.m"; sourceTree = "<group>"; };
-		FEC113AB2143D4A0002DB617 /* UIView+RRDogGlodBuleToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RRDogGlodBuleToast.h"; sourceTree = "<group>"; };
-		FEC113AC2143D4A0002DB617 /* UIView+HourseGlodBuleLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HourseGlodBuleLoading.m"; sourceTree = "<group>"; };
-		FEC113AD2143D4A0002DB617 /* UIView+PXFunGlodBuleEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PXFunGlodBuleEmptyView.h"; sourceTree = "<group>"; };
+		FEC113AA2143D4A0002DB617 /* UIView+PXFunEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PXFunEmptyView.m"; sourceTree = "<group>"; };
+		FEC113AB2143D4A0002DB617 /* UIView+RRDogToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RRDogToast.h"; sourceTree = "<group>"; };
+		FEC113AC2143D4A0002DB617 /* UIView+HourseLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HourseLoading.m"; sourceTree = "<group>"; };
+		FEC113AD2143D4A0002DB617 /* UIView+PXFunEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PXFunEmptyView.h"; sourceTree = "<group>"; };
 		FEC113AF2143D4A0002DB617 /* RRDogXJEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDogXJEmptyView.m; sourceTree = "<group>"; };
 		FEC113B02143D4A0002DB617 /* RRDogXJEmptyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RRDogXJEmptyView.xib; sourceTree = "<group>"; };
 		FEC113B12143D4A0002DB617 /* RRDogXJEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDogXJEmptyView.h; sourceTree = "<group>"; };
-		FEC113B22143D4A0002DB617 /* UIView+RRDogGlodBuleToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RRDogGlodBuleToast.m"; sourceTree = "<group>"; };
+		FEC113B22143D4A0002DB617 /* UIView+RRDogToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RRDogToast.m"; sourceTree = "<group>"; };
 		FEC113B62143D4A0002DB617 /* KMonkeyBJTabBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMonkeyBJTabBarView.m; sourceTree = "<group>"; };
 		FEC113B82143D4A0002DB617 /* YYPackageLJViewPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYPackageLJViewPager.h; sourceTree = "<group>"; };
-		FEC113B92143D4A0002DB617 /* UIScrollView+KMonkeyGlodBuleAllowScreenEdgePanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+KMonkeyGlodBuleAllowScreenEdgePanGestureRecognizer.m"; sourceTree = "<group>"; };
+		FEC113B92143D4A0002DB617 /* UIScrollView+KMonkeyAllowScreenEdgePanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+KMonkeyAllowScreenEdgePanGestureRecognizer.m"; sourceTree = "<group>"; };
 		FEC113BA2143D4A0002DB617 /* NDeskLJTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDeskLJTabBar.m; sourceTree = "<group>"; };
-		FEC113BB2143D4A0002DB617 /* UIScrollView+KMonkeyGlodBuleAllowScreenEdgePanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+KMonkeyGlodBuleAllowScreenEdgePanGestureRecognizer.h"; sourceTree = "<group>"; };
+		FEC113BB2143D4A0002DB617 /* UIScrollView+KMonkeyAllowScreenEdgePanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+KMonkeyAllowScreenEdgePanGestureRecognizer.h"; sourceTree = "<group>"; };
 		FEC113BC2143D4A0002DB617 /* YYPackageLJViewPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYPackageLJViewPager.m; sourceTree = "<group>"; };
 		FEC113BD2143D4A0002DB617 /* NDeskLJTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDeskLJTabBar.h; sourceTree = "<group>"; };
 		FEC113BE2143D4A0002DB617 /* GGCatBJUnPasteTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGCatBJUnPasteTextField.m; sourceTree = "<group>"; };
@@ -1002,30 +1002,30 @@
 		FEC115232143D4A0002DB617 /* HoursePPXXBJBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoursePPXXBJBaseTabBarController.h; sourceTree = "<group>"; };
 		FEC115242143D4A0002DB617 /* CCCasePPXXBJBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCasePPXXBJBaseNavigationController.m; sourceTree = "<group>"; };
 		FEC115342143D4A0002DB617 /* GGCatBJDateFormatUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGCatBJDateFormatUtility.m; sourceTree = "<group>"; };
-		FEC115362143D4A0002DB617 /* UIView+PXFunGlodBuleQuickFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PXFunGlodBuleQuickFrame.h"; sourceTree = "<group>"; };
-		FEC115372143D4A0002DB617 /* UIImage+GGCatGlodBuleGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GGCatGlodBuleGenerator.m"; sourceTree = "<group>"; };
-		FEC1153B2143D4A0002DB617 /* NSNumber+MMTodayGlodBuleZGFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+MMTodayGlodBuleZGFormatter.h"; sourceTree = "<group>"; };
-		FEC1153D2143D4A0002DB617 /* UIView+RRDogGlodBuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RRDogGlodBuleViewController.m"; sourceTree = "<group>"; };
-		FEC1153E2143D4A0002DB617 /* UIView+RRDogGlodBuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RRDogGlodBuleViewController.h"; sourceTree = "<group>"; };
-		FEC115402143D4A0002DB617 /* UITableView+HourseGlodBuleEstimatedHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+HourseGlodBuleEstimatedHeight.m"; sourceTree = "<group>"; };
-		FEC115412143D4A0002DB617 /* NSString+CCCaseGlodBuleMessageDigest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CCCaseGlodBuleMessageDigest.h"; sourceTree = "<group>"; };
-		FEC115422143D4A0002DB617 /* UIView+PXFunGlodBuleBlockGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PXFunGlodBuleBlockGesture.m"; sourceTree = "<group>"; };
-		FEC115432143D4A0002DB617 /* NSDate+KMonkeyGlodBuleCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+KMonkeyGlodBuleCore.h"; sourceTree = "<group>"; };
-		FEC115442143D4A0002DB617 /* UIColor+CCCaseGlodBuleGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CCCaseGlodBuleGenerator.h"; sourceTree = "<group>"; };
-		FEC115452143D4A0002DB617 /* UIImage+CCCaseGlodBuleResize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CCCaseGlodBuleResize.h"; sourceTree = "<group>"; };
-		FEC115462143D4A0002DB617 /* UIImage+GGCatGlodBuleGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GGCatGlodBuleGenerator.h"; sourceTree = "<group>"; };
-		FEC115472143D4A0002DB617 /* UIView+PXFunGlodBuleQuickFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PXFunGlodBuleQuickFrame.m"; sourceTree = "<group>"; };
-		FEC115482143D4A0002DB617 /* NSNumber+MMTodayGlodBuleZGFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+MMTodayGlodBuleZGFormatter.m"; sourceTree = "<group>"; };
-		FEC115492143D4A0002DB617 /* NSDate+KMonkeyGlodBuleCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+KMonkeyGlodBuleCore.m"; sourceTree = "<group>"; };
-		FEC1154A2143D4A0002DB617 /* UIView+PXFunGlodBuleBlockGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PXFunGlodBuleBlockGesture.h"; sourceTree = "<group>"; };
-		FEC1154B2143D4A0002DB617 /* UITableView+HourseGlodBuleEstimatedHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+HourseGlodBuleEstimatedHeight.h"; sourceTree = "<group>"; };
-		FEC1154D2143D4A0002DB617 /* NSObject+CCCaseGlodBulenextresponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CCCaseGlodBulenextresponder.h"; sourceTree = "<group>"; };
-		FEC1154E2143D4A0002DB617 /* NSObject+CCCaseGlodBulenextresponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CCCaseGlodBulenextresponder.m"; sourceTree = "<group>"; };
-		FEC1154F2143D4A0002DB617 /* NSString+CCCaseGlodBuleMessageDigest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CCCaseGlodBuleMessageDigest.m"; sourceTree = "<group>"; };
-		FEC115522143D4A0002DB617 /* UITextField+GGCatGlodBuleMQCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+GGCatGlodBuleMQCustom.h"; sourceTree = "<group>"; };
-		FEC115532143D4A0002DB617 /* UITextField+GGCatGlodBuleMQCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+GGCatGlodBuleMQCustom.m"; sourceTree = "<group>"; };
-		FEC115542143D4A0002DB617 /* UIColor+CCCaseGlodBuleGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CCCaseGlodBuleGenerator.m"; sourceTree = "<group>"; };
-		FEC115552143D4A0002DB617 /* UIImage+CCCaseGlodBuleResize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CCCaseGlodBuleResize.m"; sourceTree = "<group>"; };
+		FEC115362143D4A0002DB617 /* UIView+PXFunQuickFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PXFunQuickFrame.h"; sourceTree = "<group>"; };
+		FEC115372143D4A0002DB617 /* UIImage+GGCatGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GGCatGenerator.m"; sourceTree = "<group>"; };
+		FEC1153B2143D4A0002DB617 /* NSNumber+MMTodayZGFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+MMTodayZGFormatter.h"; sourceTree = "<group>"; };
+		FEC1153D2143D4A0002DB617 /* UIView+RRDogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RRDogViewController.m"; sourceTree = "<group>"; };
+		FEC1153E2143D4A0002DB617 /* UIView+RRDogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RRDogViewController.h"; sourceTree = "<group>"; };
+		FEC115402143D4A0002DB617 /* UITableView+HourseEstimatedHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+HourseEstimatedHeight.m"; sourceTree = "<group>"; };
+		FEC115412143D4A0002DB617 /* NSString+CCCaseMessageDigest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CCCaseMessageDigest.h"; sourceTree = "<group>"; };
+		FEC115422143D4A0002DB617 /* UIView+PXFunBlockGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PXFunBlockGesture.m"; sourceTree = "<group>"; };
+		FEC115432143D4A0002DB617 /* NSDate+KMonkeyCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+KMonkeyCore.h"; sourceTree = "<group>"; };
+		FEC115442143D4A0002DB617 /* UIColor+CCCaseGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CCCaseGenerator.h"; sourceTree = "<group>"; };
+		FEC115452143D4A0002DB617 /* UIImage+CCCaseResize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CCCaseResize.h"; sourceTree = "<group>"; };
+		FEC115462143D4A0002DB617 /* UIImage+GGCatGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GGCatGenerator.h"; sourceTree = "<group>"; };
+		FEC115472143D4A0002DB617 /* UIView+PXFunQuickFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PXFunQuickFrame.m"; sourceTree = "<group>"; };
+		FEC115482143D4A0002DB617 /* NSNumber+MMTodayZGFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+MMTodayZGFormatter.m"; sourceTree = "<group>"; };
+		FEC115492143D4A0002DB617 /* NSDate+KMonkeyCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+KMonkeyCore.m"; sourceTree = "<group>"; };
+		FEC1154A2143D4A0002DB617 /* UIView+PXFunBlockGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PXFunBlockGesture.h"; sourceTree = "<group>"; };
+		FEC1154B2143D4A0002DB617 /* UITableView+HourseEstimatedHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+HourseEstimatedHeight.h"; sourceTree = "<group>"; };
+		FEC1154D2143D4A0002DB617 /* NSObject+CCCasenextresponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CCCasenextresponder.h"; sourceTree = "<group>"; };
+		FEC1154E2143D4A0002DB617 /* NSObject+CCCasenextresponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CCCasenextresponder.m"; sourceTree = "<group>"; };
+		FEC1154F2143D4A0002DB617 /* NSString+CCCaseMessageDigest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CCCaseMessageDigest.m"; sourceTree = "<group>"; };
+		FEC115522143D4A0002DB617 /* UITextField+GGCatMQCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+GGCatMQCustom.h"; sourceTree = "<group>"; };
+		FEC115532143D4A0002DB617 /* UITextField+GGCatMQCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+GGCatMQCustom.m"; sourceTree = "<group>"; };
+		FEC115542143D4A0002DB617 /* UIColor+CCCaseGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CCCaseGenerator.m"; sourceTree = "<group>"; };
+		FEC115552143D4A0002DB617 /* UIImage+CCCaseResize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CCCaseResize.m"; sourceTree = "<group>"; };
 		FEC1155B2143D4A0002DB617 /* KMonkeyBJUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMonkeyBJUtility.h; sourceTree = "<group>"; };
 		FEC1155C2143D4A0002DB617 /* GGCatBJDateFormatUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGCatBJDateFormatUtility.h; sourceTree = "<group>"; };
 		FEC115632143D4A0002DB617 /* KMonkeyBJUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMonkeyBJUtility.m; sourceTree = "<group>"; };
@@ -1089,10 +1089,10 @@
 		FECCA51A2258C8D0009EF494 /* CCCaseHTLikeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCaseHTLikeViewController.xib; sourceTree = "<group>"; };
 		FECCA51B2258C8D0009EF494 /* CCCaseHTLikeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCaseHTLikeViewController.m; sourceTree = "<group>"; };
 		FECCA51C2258C8D0009EF494 /* CCCaseHTLikeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCaseHTLikeViewController.h; sourceTree = "<group>"; };
-		FECCA5392258C971009EF494 /* UITabBar+RRDogGlodBuleDRExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+RRDogGlodBuleDRExtension.m"; sourceTree = "<group>"; };
-		FECCA53A2258C971009EF494 /* UITabBar+RRDogGlodBuleDRExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+RRDogGlodBuleDRExtension.h"; sourceTree = "<group>"; };
-		FECCA53B2258C971009EF494 /* UINavigationBar+GGCatGlodBuleDRExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+GGCatGlodBuleDRExtension.h"; sourceTree = "<group>"; };
-		FECCA53C2258C972009EF494 /* UINavigationBar+GGCatGlodBuleDRExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+GGCatGlodBuleDRExtension.m"; sourceTree = "<group>"; };
+		FECCA5392258C971009EF494 /* UITabBar+RRDogDRExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+RRDogDRExtension.m"; sourceTree = "<group>"; };
+		FECCA53A2258C971009EF494 /* UITabBar+RRDogDRExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+RRDogDRExtension.h"; sourceTree = "<group>"; };
+		FECCA53B2258C971009EF494 /* UINavigationBar+GGCatDRExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+GGCatDRExtension.h"; sourceTree = "<group>"; };
+		FECCA53C2258C972009EF494 /* UINavigationBar+GGCatDRExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+GGCatDRExtension.m"; sourceTree = "<group>"; };
 		FECCA53F2258CC3D009EF494 /* MMTodayDRSandBoxManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTodayDRSandBoxManager.m; sourceTree = "<group>"; };
 		FECCA5402258CC3D009EF494 /* MMTodayDRSandBoxManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTodayDRSandBoxManager.h; sourceTree = "<group>"; };
 		FEDABE452171BC3A008C8AFD /* KMonkeyHTMatchQuarterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMonkeyHTMatchQuarterCell.h; sourceTree = "<group>"; };
@@ -1138,8 +1138,8 @@
 		FEDF8FC3214441C6005C7C4D /* YYPackageHTMatchHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYPackageHTMatchHomeCell.xib; sourceTree = "<group>"; };
 		FEDF8FC621444610005C7C4D /* SundayHTMatchHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SundayHTMatchHomeModel.h; sourceTree = "<group>"; };
 		FEDF8FC721444610005C7C4D /* SundayHTMatchHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SundayHTMatchHomeModel.m; sourceTree = "<group>"; };
-		FEDF8FCA21444A3E005C7C4D /* NSDateFormatter+CCCaseGlodBuleDRExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+CCCaseGlodBuleDRExtension.h"; sourceTree = "<group>"; };
-		FEDF8FCC21444A3E005C7C4D /* NSDateFormatter+CCCaseGlodBuleDRExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+CCCaseGlodBuleDRExtension.m"; sourceTree = "<group>"; };
+		FEDF8FCA21444A3E005C7C4D /* NSDateFormatter+CCCaseDRExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+CCCaseDRExtension.h"; sourceTree = "<group>"; };
+		FEDF8FCC21444A3E005C7C4D /* NSDateFormatter+CCCaseDRExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+CCCaseDRExtension.m"; sourceTree = "<group>"; };
 		FEDF8FD52144B1CC005C7C4D /* GGCatHTMatchHomeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GGCatHTMatchHomeRequest.h; sourceTree = "<group>"; };
 		FEDF8FD62144B1CC005C7C4D /* GGCatHTMatchHomeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GGCatHTMatchHomeRequest.m; sourceTree = "<group>"; };
 		FEDF8FD82144B2BF005C7C4D /* MMTodayHTMatchHomeGroupModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMTodayHTMatchHomeGroupModel.h; sourceTree = "<group>"; };
@@ -1588,8 +1588,8 @@
 			children = (
 				321847E9260B1BA2008D836C /* SecondPlayer */,
 				32FED83123AB779C00D900A7 /* IJKMediaFramework.framework */,
-				32FED82F23AB775600D900A7 /* UIColor+KMonkeyGlodBuleHex.h */,
-				32FED82E23AB775600D900A7 /* UIColor+KMonkeyGlodBuleHex.m */,
+				32FED82F23AB775600D900A7 /* UIColor+KMonkeyHex.h */,
+				32FED82E23AB775600D900A7 /* UIColor+KMonkeyHex.m */,
 				32FED80323AB768700D900A7 /* GGCatLMVideoPlayer.h */,
 				32FED81B23AB768700D900A7 /* GGCatLMVideoPlayer.m */,
 				32FED80423AB768700D900A7 /* LMPlayer.h */,
@@ -1842,12 +1842,12 @@
 				FEC113AE2143D4A0002DB617 /* EmptyView */,
 				FEC1139E2143D4A0002DB617 /* LoadingView */,
 				FEC113A32143D4A0002DB617 /* ToastView */,
-				FEC113AD2143D4A0002DB617 /* UIView+PXFunGlodBuleEmptyView.h */,
-				FEC113AA2143D4A0002DB617 /* UIView+PXFunGlodBuleEmptyView.m */,
-				FEC113A22143D4A0002DB617 /* UIView+HourseGlodBuleLoading.h */,
-				FEC113AC2143D4A0002DB617 /* UIView+HourseGlodBuleLoading.m */,
-				FEC113AB2143D4A0002DB617 /* UIView+RRDogGlodBuleToast.h */,
-				FEC113B22143D4A0002DB617 /* UIView+RRDogGlodBuleToast.m */,
+				FEC113AD2143D4A0002DB617 /* UIView+PXFunEmptyView.h */,
+				FEC113AA2143D4A0002DB617 /* UIView+PXFunEmptyView.m */,
+				FEC113A22143D4A0002DB617 /* UIView+HourseLoading.h */,
+				FEC113AC2143D4A0002DB617 /* UIView+HourseLoading.m */,
+				FEC113AB2143D4A0002DB617 /* UIView+RRDogToast.h */,
+				FEC113B22143D4A0002DB617 /* UIView+RRDogToast.m */,
 				FE6BD04C2144FAF60090118A /* KKRESViewStatus.xcassets */,
 			);
 			path = PKViewStatus;
@@ -1893,8 +1893,8 @@
 				FEC113BA2143D4A0002DB617 /* NDeskLJTabBar.m */,
 				FEC113B82143D4A0002DB617 /* YYPackageLJViewPager.h */,
 				FEC113BC2143D4A0002DB617 /* YYPackageLJViewPager.m */,
-				FEC113BB2143D4A0002DB617 /* UIScrollView+KMonkeyGlodBuleAllowScreenEdgePanGestureRecognizer.h */,
-				FEC113B92143D4A0002DB617 /* UIScrollView+KMonkeyGlodBuleAllowScreenEdgePanGestureRecognizer.m */,
+				FEC113BB2143D4A0002DB617 /* UIScrollView+KMonkeyAllowScreenEdgePanGestureRecognizer.h */,
+				FEC113B92143D4A0002DB617 /* UIScrollView+KMonkeyAllowScreenEdgePanGestureRecognizer.m */,
 			);
 			path = PKLJViewPager;
 			sourceTree = "<group>";
@@ -2030,39 +2030,39 @@
 				32E1AF41261D6B0700ACB3B2 /* NSString+YYPackageGTMHTML.m */,
 				32E1AF3E261D6B0700ACB3B2 /* NSString+RRDogHTML.h */,
 				32E1AF3F261D6B0700ACB3B2 /* NSString+RRDogHTML.m */,
-				32642A5822F027EA00D2DA1E /* TZPhotoPickerController+YYPackageGlodBuleDRExtention.h */,
-				32642A5922F027EA00D2DA1E /* TZPhotoPickerController+YYPackageGlodBuleDRExtention.m */,
-				FECCA53B2258C971009EF494 /* UINavigationBar+GGCatGlodBuleDRExtension.h */,
-				FECCA53C2258C972009EF494 /* UINavigationBar+GGCatGlodBuleDRExtension.m */,
-				FECCA53A2258C971009EF494 /* UITabBar+RRDogGlodBuleDRExtension.h */,
-				FECCA5392258C971009EF494 /* UITabBar+RRDogGlodBuleDRExtension.m */,
+				32642A5822F027EA00D2DA1E /* TZPhotoPickerController+YYPackageDRExtention.h */,
+				32642A5922F027EA00D2DA1E /* TZPhotoPickerController+YYPackageDRExtention.m */,
+				FECCA53B2258C971009EF494 /* UINavigationBar+GGCatDRExtension.h */,
+				FECCA53C2258C972009EF494 /* UINavigationBar+GGCatDRExtension.m */,
+				FECCA53A2258C971009EF494 /* UITabBar+RRDogDRExtension.h */,
+				FECCA5392258C971009EF494 /* UITabBar+RRDogDRExtension.m */,
 				FEC1154C2143D4A0002DB617 /* NSObject */,
-				FEC115432143D4A0002DB617 /* NSDate+KMonkeyGlodBuleCore.h */,
-				FEC115492143D4A0002DB617 /* NSDate+KMonkeyGlodBuleCore.m */,
-				FEDF8FCA21444A3E005C7C4D /* NSDateFormatter+CCCaseGlodBuleDRExtension.h */,
-				FEDF8FCC21444A3E005C7C4D /* NSDateFormatter+CCCaseGlodBuleDRExtension.m */,
-				FEC1153B2143D4A0002DB617 /* NSNumber+MMTodayGlodBuleZGFormatter.h */,
-				FEC115482143D4A0002DB617 /* NSNumber+MMTodayGlodBuleZGFormatter.m */,
-				FEC115412143D4A0002DB617 /* NSString+CCCaseGlodBuleMessageDigest.h */,
-				FEC1154F2143D4A0002DB617 /* NSString+CCCaseGlodBuleMessageDigest.m */,
-				FEC115442143D4A0002DB617 /* UIColor+CCCaseGlodBuleGenerator.h */,
-				FEC115542143D4A0002DB617 /* UIColor+CCCaseGlodBuleGenerator.m */,
-				FEC115462143D4A0002DB617 /* UIImage+GGCatGlodBuleGenerator.h */,
-				FEC115372143D4A0002DB617 /* UIImage+GGCatGlodBuleGenerator.m */,
-				FEC115452143D4A0002DB617 /* UIImage+CCCaseGlodBuleResize.h */,
-				FEC115552143D4A0002DB617 /* UIImage+CCCaseGlodBuleResize.m */,
-				FEC1154B2143D4A0002DB617 /* UITableView+HourseGlodBuleEstimatedHeight.h */,
-				FEC115402143D4A0002DB617 /* UITableView+HourseGlodBuleEstimatedHeight.m */,
+				FEC115432143D4A0002DB617 /* NSDate+KMonkeyCore.h */,
+				FEC115492143D4A0002DB617 /* NSDate+KMonkeyCore.m */,
+				FEDF8FCA21444A3E005C7C4D /* NSDateFormatter+CCCaseDRExtension.h */,
+				FEDF8FCC21444A3E005C7C4D /* NSDateFormatter+CCCaseDRExtension.m */,
+				FEC1153B2143D4A0002DB617 /* NSNumber+MMTodayZGFormatter.h */,
+				FEC115482143D4A0002DB617 /* NSNumber+MMTodayZGFormatter.m */,
+				FEC115412143D4A0002DB617 /* NSString+CCCaseMessageDigest.h */,
+				FEC1154F2143D4A0002DB617 /* NSString+CCCaseMessageDigest.m */,
+				FEC115442143D4A0002DB617 /* UIColor+CCCaseGenerator.h */,
+				FEC115542143D4A0002DB617 /* UIColor+CCCaseGenerator.m */,
+				FEC115462143D4A0002DB617 /* UIImage+GGCatGenerator.h */,
+				FEC115372143D4A0002DB617 /* UIImage+GGCatGenerator.m */,
+				FEC115452143D4A0002DB617 /* UIImage+CCCaseResize.h */,
+				FEC115552143D4A0002DB617 /* UIImage+CCCaseResize.m */,
+				FEC1154B2143D4A0002DB617 /* UITableView+HourseEstimatedHeight.h */,
+				FEC115402143D4A0002DB617 /* UITableView+HourseEstimatedHeight.m */,
 				FEC115512143D4A0002DB617 /* UITextField */,
 				FEC1153C2143D4A0002DB617 /* UIView */,
-				FEC1154A2143D4A0002DB617 /* UIView+PXFunGlodBuleBlockGesture.h */,
-				FEC115422143D4A0002DB617 /* UIView+PXFunGlodBuleBlockGesture.m */,
-				FEC115362143D4A0002DB617 /* UIView+PXFunGlodBuleQuickFrame.h */,
-				FEC115472143D4A0002DB617 /* UIView+PXFunGlodBuleQuickFrame.m */,
-				32642A5522EFE8FD00D2DA1E /* UIImageView+NDeskGlodBuleSVG.h */,
-				32642A5622EFE8FD00D2DA1E /* UIImageView+NDeskGlodBuleSVG.m */,
-				32FFD28F23A2267200E1661A /* UIImageView+PXFunGlodBuleHT.h */,
-				32FFD29023A2267200E1661A /* UIImageView+PXFunGlodBuleHT.m */,
+				FEC1154A2143D4A0002DB617 /* UIView+PXFunBlockGesture.h */,
+				FEC115422143D4A0002DB617 /* UIView+PXFunBlockGesture.m */,
+				FEC115362143D4A0002DB617 /* UIView+PXFunQuickFrame.h */,
+				FEC115472143D4A0002DB617 /* UIView+PXFunQuickFrame.m */,
+				32642A5522EFE8FD00D2DA1E /* UIImageView+NDeskSVG.h */,
+				32642A5622EFE8FD00D2DA1E /* UIImageView+NDeskSVG.m */,
+				32FFD28F23A2267200E1661A /* UIImageView+PXFunHT.h */,
+				32FFD29023A2267200E1661A /* UIImageView+PXFunHT.m */,
 			);
 			path = PKCategory;
 			sourceTree = "<group>";
@@ -2070,8 +2070,8 @@
 		FEC1153C2143D4A0002DB617 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				FEC1153D2143D4A0002DB617 /* UIView+RRDogGlodBuleViewController.m */,
-				FEC1153E2143D4A0002DB617 /* UIView+RRDogGlodBuleViewController.h */,
+				FEC1153D2143D4A0002DB617 /* UIView+RRDogViewController.m */,
+				FEC1153E2143D4A0002DB617 /* UIView+RRDogViewController.h */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -2079,8 +2079,8 @@
 		FEC1154C2143D4A0002DB617 /* NSObject */ = {
 			isa = PBXGroup;
 			children = (
-				FEC1154D2143D4A0002DB617 /* NSObject+CCCaseGlodBulenextresponder.h */,
-				FEC1154E2143D4A0002DB617 /* NSObject+CCCaseGlodBulenextresponder.m */,
+				FEC1154D2143D4A0002DB617 /* NSObject+CCCasenextresponder.h */,
+				FEC1154E2143D4A0002DB617 /* NSObject+CCCasenextresponder.m */,
 			);
 			path = NSObject;
 			sourceTree = "<group>";
@@ -2088,8 +2088,8 @@
 		FEC115512143D4A0002DB617 /* UITextField */ = {
 			isa = PBXGroup;
 			children = (
-				FEC115522143D4A0002DB617 /* UITextField+GGCatGlodBuleMQCustom.h */,
-				FEC115532143D4A0002DB617 /* UITextField+GGCatGlodBuleMQCustom.m */,
+				FEC115522143D4A0002DB617 /* UITextField+GGCatMQCustom.h */,
+				FEC115532143D4A0002DB617 /* UITextField+GGCatMQCustom.m */,
 			);
 			path = UITextField;
 			sourceTree = "<group>";
@@ -2115,7 +2115,7 @@
 				FEDABE6F217385F4008C8AFD /* UKRosRedMatchSubDsbd.storyboard */,
 				32FCDD1B250C72AB0037334D /* UKRosRedTHIM.storyboard */,
 				327191D1251B3BD600CD9D85 /* UKRosRedPlayerInfo.storyboard */,
-				32FC51CA25FFA3E40025B269 /* UKRosRedGlodBuleHTNewMatchHome.storyboard */,
+				32FC51CA25FFA3E40025B269 /* UKRosRedHTNewMatchHome.storyboard */,
 				32F4776E2601A3FB00377292 /* UKRosRedaaadb.storyboard */,
 			);
 			path = ModuleMatch;
@@ -2773,7 +2773,7 @@
 				32FFD29A23A397A700E1661A /* MMTodayHTAdViewCell.xib in Resources */,
 				32AC0CA825FB15AD003B21FC /* UKRosRedYYPackageHTHighLightsViewController.storyboard in Resources */,
 				32E7228D2309A3A6003E0A03 /* guideImageapp15.jpg in Resources */,
-				32FC51CB25FFA3E40025B269 /* UKRosRedGlodBuleHTNewMatchHome.storyboard in Resources */,
+				32FC51CB25FFA3E40025B269 /* UKRosRedHTNewMatchHome.storyboard in Resources */,
 				FE800F7022639DFD00E575D5 /* RRDogHTCommentExpendCell.xib in Resources */,
 				FE6BD0642144FF1F0090118A /* UKRosRedMatchDashboard.storyboard in Resources */,
 				3287124823B8962800AB5360 /* video_error_pressed.png in Resources */,
@@ -2994,7 +2994,7 @@
 				329468DA264A34EE003DEFA2 /* HourseHTMainPageViewController.m in Sources */,
 				3213529F250A149F00702F72 /* UserMessage.pbobjc.m in Sources */,
 				FEC116052143D4A1002DB617 /* GGCatXJLoadingView.m in Sources */,
-				FEC1160E2143D4A1002DB617 /* UIView+RRDogGlodBuleToast.m in Sources */,
+				FEC1160E2143D4A1002DB617 /* UIView+RRDogToast.m in Sources */,
 				32FF953C25FDAD8D001BC4A3 /* RRDogGamaAlertView.m in Sources */,
 				FE82BB502179B99800C52C51 /* GGCatHTDataAllRankRequest.m in Sources */,
 				32FED81F23AB768700D900A7 /* CCCaseLMPlayerStatusModel.m in Sources */,
@@ -3002,16 +3002,16 @@
 				327B73392653A758000E4219 /* MMTodayHTMainPageHomeRequest.m in Sources */,
 				FE6BD0582144FDE10090118A /* PXFunHTMatchCompareViewController.m in Sources */,
 				32CD878422F4173800063A14 /* VideoPickerController.m in Sources */,
-				FEC116CD2143D4A1002DB617 /* UIImage+CCCaseGlodBuleResize.m in Sources */,
+				FEC116CD2143D4A1002DB617 /* UIImage+CCCaseResize.m in Sources */,
 				FEDF8FDE2144D04B005C7C4D /* KMonkeyHTMatchHomeGroupHeaderView.m in Sources */,
 				FEEABBF6214AA57600A585DA /* PXFunHTDataCellPlayerView.m in Sources */,
 				FEC1162B2143D4A1002DB617 /* GGCatBJLoadingHud.m in Sources */,
-				32642A5722EFE8FD00D2DA1E /* UIImageView+NDeskGlodBuleSVG.m in Sources */,
+				32642A5722EFE8FD00D2DA1E /* UIImageView+NDeskSVG.m in Sources */,
 				32CD878522F4173800063A14 /* PlayerEventLogger.m in Sources */,
 				32B5324326176084009ED9D8 /* CCCaseHTNewsTextCell.m in Sources */,
 				32FCDD1A250C721F0037334D /* RRDogHTIMViewController.m in Sources */,
 				32B0F58B2545B6A3005642DC /* RRDogHTMatchWebPlayControllerViewController.m in Sources */,
-				FEC116C42143D4A1002DB617 /* UITableView+HourseGlodBuleEstimatedHeight.m in Sources */,
+				FEC116C42143D4A1002DB617 /* UITableView+HourseEstimatedHeight.m in Sources */,
 				FE08C5C82250506A000175CB /* MMTodayHTMeHomeViewController.m in Sources */,
 				32CD877F22F4173800063A14 /* NowPlayingInfoCenterProvider.m in Sources */,
 				FEC1164C2143D4A1002DB617 /* PXFunPPXXBJViewControllerCenter.m in Sources */,
@@ -3019,19 +3019,19 @@
 				FE6BD07D21457BAF0090118A /* HourseHTNewsDetailViewController.m in Sources */,
 				FEC1164A2143D4A1002DB617 /* HoursePPXXBJNavigationController.m in Sources */,
 				32ABE1CC22EDF4C2008505BA /* HourseHTNewsHomeOtherViewController.m in Sources */,
-				FECCA53D2258C972009EF494 /* UITabBar+RRDogGlodBuleDRExtension.m in Sources */,
+				FECCA53D2258C972009EF494 /* UITabBar+RRDogDRExtension.m in Sources */,
 				FEC116102143D4A1002DB617 /* KMonkeyBJTabBarView.m in Sources */,
 				FE81D153214815DC0047A4A2 /* RRDogHTDataHomeRequest.m in Sources */,
 				FEC116932143D4A1002DB617 /* PXFunBJHTTPServiceEngine.m in Sources */,
 				FEA104F6216CB0F0000DBE63 /* NDeskHTMatchSummaryModel.m in Sources */,
 				FE6BD092214584C30090118A /* NDeskHTNewsTopHeaderView.m in Sources */,
 				325A921A24F119F3008F0B2E /* CCCaseHTIndicatorView.m in Sources */,
-				32FFD29123A2267200E1661A /* UIImageView+PXFunGlodBuleHT.m in Sources */,
+				32FFD29123A2267200E1661A /* UIImageView+PXFunHT.m in Sources */,
 				32184807260B1BFD008D836C /* PXFunYSNetworkInfoTool.m in Sources */,
 				32AC0CA525FB156D003B21FC /* YYPackageHTHighLightsViewController.m in Sources */,
 				FEC116B82143D4A1002DB617 /* CCCasePPXXBJBaseNavigationController.m in Sources */,
 				3288949D2603310900759311 /* NSString+URLCheck.m in Sources */,
-				FEDF8FCE21444A3E005C7C4D /* NSDateFormatter+CCCaseGlodBuleDRExtension.m in Sources */,
+				FEDF8FCE21444A3E005C7C4D /* NSDateFormatter+CCCaseDRExtension.m in Sources */,
 				32FED82323AB768700D900A7 /* NDeskLMBrightnessView.m in Sources */,
 				FE6BD07921452B570090118A /* KMonkeyHTNewsHomeBannerCell.m in Sources */,
 				32BFD1DF239F9B1A0037985B /* PXFunHTViewController2.m in Sources */,
@@ -3046,7 +3046,7 @@
 				326D67C023A8DB9A00DDB443 /* NDeskWBImageBrowserCell.m in Sources */,
 				FE81D159214819FA0047A4A2 /* HourseHTDataHomeSubViewController.m in Sources */,
 				32FED82723AB768700D900A7 /* NDeskMMMaterialDesignSpinner.m in Sources */,
-				FEC116C72143D4A1002DB617 /* NSNumber+MMTodayGlodBuleZGFormatter.m in Sources */,
+				FEC116C72143D4A1002DB617 /* NSNumber+MMTodayZGFormatter.m in Sources */,
 				32F1F2BE2514F7D700EE85B8 /* HourseHTScoreViewCell.m in Sources */,
 				32F1F2C22514FB7C00EE85B8 /* HourseLineChartUtil.m in Sources */,
 				FEC116B62143D4A1002DB617 /* SundayBJBaseHTTPEngine.m in Sources */,
@@ -3060,14 +3060,14 @@
 				32E1AF43261D6B0700ACB3B2 /* NSString+YYPackageGTMHTML.m in Sources */,
 				FE83FE542177838F006C714C /* GGCatHTMatchDataRightCell.m in Sources */,
 				FEDABE562173277D008C8AFD /* HourseHTRankEastWestRequest.m in Sources */,
-				FEC116CB2143D4A1002DB617 /* UITextField+GGCatGlodBuleMQCustom.m in Sources */,
+				FEC116CB2143D4A1002DB617 /* UITextField+GGCatMQCustom.m in Sources */,
 				32CD877B22F4173800063A14 /* SettingsViewController.m in Sources */,
 				FE6BD08F21457FEC0090118A /* KMonkeyHTNewsTopRequest.m in Sources */,
 				FECCA5382258C8D0009EF494 /* CCCaseHTLikeViewController.m in Sources */,
 				FEA5D3FB225CD31E001AF0C9 /* HourseHTMyMessageModel.m in Sources */,
 				FEDABE5F2173297B008C8AFD /* HourseHTRankEastWestModel.m in Sources */,
-				FEC116CC2143D4A1002DB617 /* UIColor+CCCaseGlodBuleGenerator.m in Sources */,
-				FEC1160B2143D4A1002DB617 /* UIView+HourseGlodBuleLoading.m in Sources */,
+				FEC116CC2143D4A1002DB617 /* UIColor+CCCaseGenerator.m in Sources */,
+				FEC1160B2143D4A1002DB617 /* UIView+HourseLoading.m in Sources */,
 				FEAC9F2E2199E25F00159AE9 /* NDeskHTSettingViewController.m in Sources */,
 				FEC116152143D4A1002DB617 /* HourseMJRefreshGenerator.m in Sources */,
 				32FED82823AB768700D900A7 /* MMTodayLMPlayerControlView.m in Sources */,
@@ -3094,7 +3094,7 @@
 				FEC116D22143D4A1002DB617 /* KMonkeyBJUtility.m in Sources */,
 				FE82BB3C2179B6DF00C52C51 /* GGCatHTDataPlayerRightCell.m in Sources */,
 				FE81D156214816710047A4A2 /* PXFunHTDataHomeModel.m in Sources */,
-				FEC116CA2143D4A1002DB617 /* NSString+CCCaseGlodBuleMessageDigest.m in Sources */,
+				FEC116CA2143D4A1002DB617 /* NSString+CCCaseMessageDigest.m in Sources */,
 				32A96AEC2612C810005D9834 /* PXFunHTFilmDetailViewController.m in Sources */,
 				32D6C8C825F33574003B35AA /* HourseHotShootPointModel.m in Sources */,
 				32B53248261761BC009ED9D8 /* RRDogHTNewsImageTypeCell.m in Sources */,
@@ -3110,9 +3110,9 @@
 				FEDABE5C2173284E008C8AFD /* PXFunHTRankModel.m in Sources */,
 				FE9B32BC217896350055B611 /* CCCaseHTRankRightCell.m in Sources */,
 				FE8EB0D3215603C500CA20F0 /* PXFunHTMatchLiveFeedRequest.m in Sources */,
-				32FED83023AB775600D900A7 /* UIColor+KMonkeyGlodBuleHex.m in Sources */,
+				32FED83023AB775600D900A7 /* UIColor+KMonkeyHex.m in Sources */,
 				32B4A0022618CD2F00E81C6B /* SundayHTYoutubePlayerCell.m in Sources */,
-				FEC116112143D4A1002DB617 /* UIScrollView+KMonkeyGlodBuleAllowScreenEdgePanGestureRecognizer.m in Sources */,
+				FEC116112143D4A1002DB617 /* UIScrollView+KMonkeyAllowScreenEdgePanGestureRecognizer.m in Sources */,
 				FE7E6C9A2263CADB00B2973D /* GGCatHTMyMessaageCell.m in Sources */,
 				FEC117102143DE50002DB617 /* RRDogHTFilmHomeViewController.m in Sources */,
 				32E10F2F25F2143D00639323 /* HourseHTHotShootCellTableViewCell.m in Sources */,
@@ -3124,7 +3124,7 @@
 				FE81D1462146B2680047A4A2 /* MMTodayHTFilmHomeRequest.m in Sources */,
 				32135303250A2F1400702F72 /* GPBProtocolBuffers.m in Sources */,
 				FEDF8FC821444610005C7C4D /* SundayHTMatchHomeModel.m in Sources */,
-				FEC1160A2143D4A1002DB617 /* UIView+PXFunGlodBuleEmptyView.m in Sources */,
+				FEC1160A2143D4A1002DB617 /* UIView+PXFunEmptyView.m in Sources */,
 				FECCA5262258C8D0009EF494 /* YYPackageHTLoginAlertView.m in Sources */,
 				FEC117312143EAC2002DB617 /* GGCatBJBaseResponceModel.m in Sources */,
 				FEC1167B2143D4A1002DB617 /* YYPackageBJWebViewInitializer.m in Sources */,
@@ -3148,9 +3148,9 @@
 				FEA5D3FE225CD506001AF0C9 /* HourseHTCommentModel.m in Sources */,
 				FE82BB412179B77200C52C51 /* RRDogHTDataTeamLeftCell.m in Sources */,
 				FEDABE592173279F008C8AFD /* RRDogHTRankZoneRequest.m in Sources */,
-				FEC116C22143D4A1002DB617 /* UIView+RRDogGlodBuleViewController.m in Sources */,
+				FEC116C22143D4A1002DB617 /* UIView+RRDogViewController.m in Sources */,
 				FE82BB4A2179B7E300C52C51 /* HourseHTDataTeamRankModel.m in Sources */,
-				32642A5A22F027EB00D2DA1E /* TZPhotoPickerController+YYPackageGlodBuleDRExtention.m in Sources */,
+				32642A5A22F027EB00D2DA1E /* TZPhotoPickerController+YYPackageDRExtention.m in Sources */,
 				32C65DED250676AE0068D2C7 /* PXFunConfigCoreUtil.m in Sources */,
 				FEAC9F382199EA3A00159AE9 /* MMTodayHTAboutUsViewController.m in Sources */,
 				FE6BD067214512EC0090118A /* KMonkeyHTNewsHomeRequest.m in Sources */,
@@ -3173,7 +3173,7 @@
 				FECCA5412258CC3E009EF494 /* MMTodayDRSandBoxManager.m in Sources */,
 				FE83FE4C21778341006C714C /* PXFunHTMatchDataLeftCell.m in Sources */,
 				326434DA22F04F5E00D2DA1E /* KMonkeyDHGifImageOperation.m in Sources */,
-				FEC116C52143D4A1002DB617 /* UIView+PXFunGlodBuleBlockGesture.m in Sources */,
+				FEC116C52143D4A1002DB617 /* UIView+PXFunBlockGesture.m in Sources */,
 				32CC78E324F3EAAD00377576 /* KMonkeyBarChartUtil.m in Sources */,
 				FE82A483216E42680070FFC0 /* RRDogHTMatchLiveFeedCell.m in Sources */,
 				32A6F7872647B6BD0039B850 /* KMonkeyHTLeftMeCenterItemsCell.m in Sources */,
@@ -3181,12 +3181,12 @@
 				32FED82023AB768700D900A7 /* MMTodayLMPlayerModel.m in Sources */,
 				FEC116F22143D91D002DB617 /* YYPackageHTMatchHomeViewController.m in Sources */,
 				3213529E250A149F00702F72 /* InfoMessage.pbobjc.m in Sources */,
-				FECCA53E2258C972009EF494 /* UINavigationBar+GGCatGlodBuleDRExtension.m in Sources */,
+				FECCA53E2258C972009EF494 /* UINavigationBar+GGCatDRExtension.m in Sources */,
 				FEF468C1225BA50800E4B5F7 /* GGCatHTNewsAdditionRequest.m in Sources */,
 				FECCA51F2258C8D0009EF494 /* HourseHTMeCenterItemsCell.m in Sources */,
 				FEDABE6221732A67008C8AFD /* NDeskHTRankZoneModel.m in Sources */,
 				FEC1168C2143D4A1002DB617 /* NDeskBJServiceConfigurator.m in Sources */,
-				FEC116C92143D4A1002DB617 /* NSObject+CCCaseGlodBulenextresponder.m in Sources */,
+				FEC116C92143D4A1002DB617 /* NSObject+CCCasenextresponder.m in Sources */,
 				32184804260B1BFD008D836C /* GGCatYSBatteryTool.m in Sources */,
 				32463B5A264950D90014696C /* CellOfIdentifier.swift in Sources */,
 				FEC116082143D4A1002DB617 /* YYPackageXJToastView.m in Sources */,
@@ -3194,11 +3194,11 @@
 				32CD878022F4173800063A14 /* SkyFullScreenViewController.m in Sources */,
 				3288949C2603310900759311 /* NSDate+Covert.m in Sources */,
 				328894AA2603310900759311 /* PLMediaInfo.m in Sources */,
-				FEC116C62143D4A1002DB617 /* UIView+PXFunGlodBuleQuickFrame.m in Sources */,
+				FEC116C62143D4A1002DB617 /* UIView+PXFunQuickFrame.m in Sources */,
 				327B733C2653B2DA000E4219 /* HTNewsAuthor.m in Sources */,
 				32463B1626494D150014696C /* PageCellBased.swift in Sources */,
 				FE81D16D21497DDE0047A4A2 /* PXFunHTRankHomeCell.m in Sources */,
-				FEC116C02143D4A1002DB617 /* UIImage+GGCatGlodBuleGenerator.m in Sources */,
+				FEC116C02143D4A1002DB617 /* UIImage+GGCatGenerator.m in Sources */,
 				FEDAC978214B9129005E8B63 /* CCCaseHTDataCellTeamView.m in Sources */,
 				32463B3F26494FDE0014696C /* CollectionExtension.swift in Sources */,
 				32C65DF625067D290068D2C7 /* KMonkeyHTSearchHistoryTableViewCell.m in Sources */,
@@ -3215,7 +3215,7 @@
 				FECCA5342258C8D0009EF494 /* GGCatHTUserInfoModel.m in Sources */,
 				FE6BD074214526980090118A /* YYPackageHTNewsHomeCell.m in Sources */,
 				3238C62425F0BA3D0045F1B9 /* NDeskHTWordLive2Request.m in Sources */,
-				FEC116C82143D4A1002DB617 /* NSDate+KMonkeyGlodBuleCore.m in Sources */,
+				FEC116C82143D4A1002DB617 /* NSDate+KMonkeyCore.m in Sources */,
 				FE588BFC22620DFA00A44884 /* HourseHTCommentGetter.m in Sources */,
 				326D67C423A8DD0600DDB443 /* NDeskHTImageBrowserViewController.m in Sources */,
 				FEA104F9216CB10C000DBE63 /* PXFunHTMatchCompareModel.m in Sources */,

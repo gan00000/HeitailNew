@@ -14,8 +14,8 @@
 #import "RRDogHTNoCommentFooterView.h"
 #import "MMTodayHTAdViewCell.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
-#import "UIColor+KMonkeyGlodBuleHex.h"
-#import "UIView+PXFunGlodBuleBlockGesture.h"
+#import "UIColor+KMonkeyHex.h"
+#import "UIView+PXFunBlockGesture.h"
 
 #import "CCCaseYSPlayerController.h"
 

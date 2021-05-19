@@ -1,5 +1,5 @@
 #import "RRDogHTMatchLiveFeedCell.h"
-#import "UIImageView+PXFunGlodBuleHT.h"
+#import "UIImageView+PXFunHT.h"
 @interface RRDogHTMatchLiveFeedCell ()
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *teamLabel;

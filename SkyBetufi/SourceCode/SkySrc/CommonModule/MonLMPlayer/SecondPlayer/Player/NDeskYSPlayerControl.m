@@ -15,7 +15,7 @@
 #import "KMonkeyYSVolumeTool.h"
 //#import "SDWeakProxy.h"
 #import "KMonkeyBJUtility.h"
-#import "UIColor+KMonkeyGlodBuleHex.h"
+#import "UIColor+KMonkeyHex.h"
 #import <Masonry/Masonry.h>
 
 #define NAV_BAR_HEIGHT 50

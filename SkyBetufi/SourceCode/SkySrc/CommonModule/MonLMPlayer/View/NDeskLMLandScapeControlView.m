@@ -8,7 +8,7 @@
 
 #import "NDeskLMLandScapeControlView.h"
 #import <Masonry.h>
-#import "UIColor+KMonkeyGlodBuleHex.h"
+#import "UIColor+KMonkeyHex.h"
 
 @interface NDeskLMLandScapeControlView ()
 /** 顶部工具栏 */

@@ -9,7 +9,7 @@
 #import "HourseHTScoreViewCell.h"
 #import "HourseLineChartUtil.h"
 #import <Masonry.h>
-#import "UIColor+KMonkeyGlodBuleHex.h"
+#import "UIColor+KMonkeyHex.h"
 
 @interface HourseHTScoreViewCell()
 @property (weak, nonatomic) IBOutlet UIView *chartContentView;

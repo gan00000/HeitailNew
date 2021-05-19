@@ -1,5 +1,5 @@
 #import "HourseHTMeCenterHeaderCell.h"
-#import "UIImageView+PXFunGlodBuleHT.h"
+#import "UIImageView+PXFunHT.h"
 
 @interface HourseHTMeCenterHeaderCell ()
 @property (weak, nonatomic) IBOutlet UIView *userInfoContentView;

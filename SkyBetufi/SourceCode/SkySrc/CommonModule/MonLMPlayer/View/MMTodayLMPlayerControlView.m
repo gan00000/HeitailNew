@@ -9,7 +9,7 @@
 #import "MMTodayLMPlayerControlView.h"
 #import "NDeskMMMaterialDesignSpinner.h"
 #import <Masonry.h>
-#import "UIColor+KMonkeyGlodBuleHex.h"
+#import "UIColor+KMonkeyHex.h"
 #import "CCCaseLMPlayerStatusModel.h"
 
 static const CGFloat LMPlayerAnimationTimeInterval             = 7.0f;

@@ -6,7 +6,7 @@
 #import "MMTodayDRSandBoxManager.h"
 #import <AuthenticationServices/AuthenticationServices.h>
 #import "KMonkeyBJUtility.h"
-#import "UIColor+KMonkeyGlodBuleHex.h"
+#import "UIColor+KMonkeyHex.h"
 
 const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 #define kUserTokenKey @"userToken"

@@ -3,7 +3,7 @@
 #import <TZImagePickerController.h>
 #import "HourseHTUserRequest.h"
 #import "MMTodayDRSandBoxManager.h"
-#import "UIImageView+PXFunGlodBuleHT.h"
+#import "UIImageView+PXFunHT.h"
 @interface GGCatHTUserInfoEditViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;

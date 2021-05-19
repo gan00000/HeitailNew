@@ -2,8 +2,8 @@
 #import <WebKit/WebKit.h>
 #import "GGCatLMVideoPlayer.h"
 #import "MMTodayLMPlayerModel.h"
-#import "UIImageView+PXFunGlodBuleHT.h"
-#import "UIView+PXFunGlodBuleBlockGesture.h"
+#import "UIImageView+PXFunHT.h"
+#import "UIView+PXFunBlockGesture.h"
 #import "HourseHTUserRequest.h"
 #import "CCCasePPXXBJBaseViewController.h"
 #import "NSString+YYPackageGTMHTML.h"

@@ -48,10 +48,10 @@
                 }
             }
             
-            PXFunHTNewsModel *mGlodBuleHTNewsModel = [PXFunHTNewsModel yy_modelWithJSON:responseData[@"post"]];
+            PXFunHTNewsModel *mHTNewsModel = [PXFunHTNewsModel yy_modelWithJSON:responseData[@"post"]];
 
-            mGlodBuleHTNewsModel.mHTNewsDetailModels = maData;
-            successBlock(mGlodBuleHTNewsModel);
+            mHTNewsModel.mHTNewsDetailModels = maData;
+            successBlock(mHTNewsModel);
         }
     } errorBlock:errorBlock];
 }

@@ -7,7 +7,7 @@
 //
 
 #import "HourseHTChatContentCell.h"
-#import "UIColor+KMonkeyGlodBuleHex.h"
+#import "UIColor+KMonkeyHex.h"
 
 @interface HourseHTChatContentCell()
 

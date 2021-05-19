@@ -3,7 +3,7 @@
 #import "HourseHTUserRequest.h"
 #import "RRDogHTCommentExpendCell.h"
 #import <YYText/YYText.h>
-#import "UIImageView+PXFunGlodBuleHT.h"
+#import "UIImageView+PXFunHT.h"
 
 @interface NDeskHTNewsCommentCell () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet JXImageView *avatarImageView;

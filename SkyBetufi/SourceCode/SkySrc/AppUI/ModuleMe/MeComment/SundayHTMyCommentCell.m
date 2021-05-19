@@ -1,6 +1,6 @@
 #import "SundayHTMyCommentCell.h"
 #import "GGCatBJDateFormatUtility.h"
-#import "UIImageView+PXFunGlodBuleHT.h"
+#import "UIImageView+PXFunHT.h"
 @interface SundayHTMyCommentCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;

@@ -29,7 +29,7 @@
     // Configure the view for the selected state
 }
 
-- (void)setNewsModel:(PXFunHTNewsModel *)mGlodBuleHTNewsModel newsDetailModel:(YYPackageHTNewsDetailModel *)newsDetailModel
+- (void)setNewsModel:(PXFunHTNewsModel *)mHTNewsModel newsDetailModel:(YYPackageHTNewsDetailModel *)newsDetailModel
 {
 //https://www.youtube.com/embed/FqzH-8kOz5s
 //    [self.youtubePlayerView stopVideo];

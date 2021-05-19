@@ -1,6 +1,6 @@
 #import "MMTodayHTRankLeftCell.h"
-#import "UIImageView+PXFunGlodBuleHT.h"
-#import "UIColor+KMonkeyGlodBuleHex.h"
+#import "UIImageView+PXFunHT.h"
+#import "UIColor+KMonkeyHex.h"
 @interface MMTodayHTRankLeftCell ()
 @property (weak, nonatomic) IBOutlet UILabel *rankLabel;
 @property (weak, nonatomic) IBOutlet UILabel *shengfuLabel;

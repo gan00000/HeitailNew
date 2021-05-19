@@ -7,7 +7,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "AFNetworkReachabilityManager.h"
 #import "RRDogPPXXBJLaunchViewController.h"
-#import "UIView+RRDogGlodBuleToast.h"
+#import "UIView+RRDogToast.h"
 #import "HourseHTNewsDetailViewController.h"
 #import "HoursePPXXBJNavigationController.h"
 #import "NDeskHTNewsHomeViewController.h"

@@ -1,6 +1,6 @@
 #import "YYPackageHTMatchHomeCell.h"
 #import <WebKit/WebKit.h>
-#import "UIImageView+NDeskGlodBuleSVG.h"
+#import "UIImageView+NDeskSVG.h"
 #import "PXFunConfigCoreUtil.h"
 
 @interface YYPackageHTMatchHomeCell () <WKNavigationDelegate>

@@ -7,7 +7,7 @@
 //
 
 #import "KMonkeyBarChartUtil.h"
-#import "UIColor+KMonkeyGlodBuleHex.h"
+#import "UIColor+KMonkeyHex.h"
 #import "MMTodayBarChartUtilValueFormat.h"
 
 @implementation KMonkeyBarChartUtil

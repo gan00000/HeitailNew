@@ -1,6 +1,6 @@
 #import "CCCaseHTDataCellTeamView.h"
 #import <WebKit/WebKit.h>
-#import "UIImageView+NDeskGlodBuleSVG.h"
+#import "UIImageView+NDeskSVG.h"
 @interface CCCaseHTDataCellTeamView ()
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;

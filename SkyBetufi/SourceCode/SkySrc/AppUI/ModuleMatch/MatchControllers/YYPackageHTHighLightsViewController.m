@@ -7,7 +7,7 @@
 //
 
 #import "YYPackageHTHighLightsViewController.h"
-#import "UIColor+KMonkeyGlodBuleHex.h"
+#import "UIColor+KMonkeyHex.h"
 #import "PXFunHTNewsModel.h"
 #import "KMonkeyHTNewsHomeRequest.h"
 #import "YYPackageHTNewsHomeCell.h"

@@ -7,7 +7,7 @@
 //
 
 #import "YYPackageHTChatSelfContentCell.h"
-#import "UIColor+KMonkeyGlodBuleHex.h"
+#import "UIColor+KMonkeyHex.h"
 
 @interface YYPackageHTChatSelfContentCell()
 

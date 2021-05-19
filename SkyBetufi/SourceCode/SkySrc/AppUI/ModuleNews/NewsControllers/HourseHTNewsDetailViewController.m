@@ -14,8 +14,8 @@
 #import "RRDogHTNoCommentFooterView.h"
 #import "MMTodayHTAdViewCell.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
-#import "UIColor+KMonkeyGlodBuleHex.h"
-#import "UIView+PXFunGlodBuleBlockGesture.h"
+#import "UIColor+KMonkeyHex.h"
+#import "UIView+PXFunBlockGesture.h"
 
 #import "RRDogHTNewsImageTypeCell.h"
 #import "CCCaseHTNewsTextCell.h"
@@ -303,18 +303,18 @@
 //            NSString *XXXXX = @"<iframe width=\"644\" height=\"362\" src=\"https://www.youtube.com/embed/k49NQpZNiIc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>";
 //
 //            XXXXX = [self adapterHtmlData:XXXXX];
-//                NDeskHTNewsWebCell *mGlodBuleHTNewsWebCell = [tableView dequeueReusableCellWithIdentifier:@"NDeskHTNewsWebCell"];
-//                [mGlodBuleHTNewsWebCell taosetupWithClearHtmlContent:XXXXX];
-//                return mGlodBuleHTNewsWebCell;
+//                NDeskHTNewsWebCell *mHTNewsWebCell = [tableView dequeueReusableCellWithIdentifier:@"NDeskHTNewsWebCell"];
+//                [mHTNewsWebCell taosetupWithClearHtmlContent:XXXXX];
+//                return mHTNewsWebCell;
     
         }else if ([@"video-twitter" isEqualToString:newsDetailModel.type])
         {
             
             NSString *MMM = @"<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">Kyrie added to his dunk collection tonight! <a href=\"https://t.co/Or0CRi5iYf\">pic.twitter.com/Or0CRi5iYf</a></p>&mdash; NBA (@NBA) <a href=\"https://twitter.com/NBA/status/1380038950220296192?ref_src=twsrc%5Etfw\">April 8, 2021</a></blockquote> <script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>";
-                NDeskHTNewsWebCell *mGlodBuleHTNewsWebCell = [tableView dequeueReusableCellWithIdentifier:@"NDeskHTNewsWebCell"];
-                [mGlodBuleHTNewsWebCell taosetupWithClearHtmlContent:MMM];
-            mGlodBuleHTNewsWebCell.selectionStyle = UITableViewCellSelectionStyleNone;
-                return mGlodBuleHTNewsWebCell;
+                NDeskHTNewsWebCell *mHTNewsWebCell = [tableView dequeueReusableCellWithIdentifier:@"NDeskHTNewsWebCell"];
+                [mHTNewsWebCell taosetupWithClearHtmlContent:MMM];
+            mHTNewsWebCell.selectionStyle = UITableViewCellSelectionStyleNone;
+                return mHTNewsWebCell;
 
         }
         CCCaseHTNewsTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CCCaseHTNewsTextCell"];

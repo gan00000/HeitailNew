@@ -8,7 +8,7 @@
 
 #import "RRDogHTCompareView.h"
 #import <Masonry.h>
-#import "UIColor+KMonkeyGlodBuleHex.h"
+#import "UIColor+KMonkeyHex.h"
 
 @implementation RRDogHTCompareView
 {

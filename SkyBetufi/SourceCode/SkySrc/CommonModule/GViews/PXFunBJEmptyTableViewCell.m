@@ -1,5 +1,5 @@
 #import "PXFunBJEmptyTableViewCell.h"
-#import "UIView+PXFunGlodBuleEmptyView.h"
+#import "UIView+PXFunEmptyView.h"
 @implementation PXFunBJEmptyTableViewCell
 - (void)awakeFromNib {
     [super awakeFromNib];

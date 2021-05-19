@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet YTPlayerView *youtubePlayerView;
 
--(void) setNewsModel:(PXFunHTNewsModel *) mGlodBuleHTNewsModel newsDetailModel:(YYPackageHTNewsDetailModel *)newsDetailModel;
+-(void) setNewsModel:(PXFunHTNewsModel *) mHTNewsModel newsDetailModel:(YYPackageHTNewsDetailModel *)newsDetailModel;
 
 @end
 

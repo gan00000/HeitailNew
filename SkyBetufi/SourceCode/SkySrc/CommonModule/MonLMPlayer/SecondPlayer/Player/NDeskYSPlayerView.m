@@ -8,11 +8,11 @@
 
 #import "NDeskYSPlayerView.h"
 #import "Masonry.h"
-#import "UIView+PXFunGlodBuleBlockGesture.h"
+#import "UIView+PXFunBlockGesture.h"
 #import "YSPlayerControlDelegate.h"
-#import "UIImageView+PXFunGlodBuleHT.h"
+#import "UIImageView+PXFunHT.h"
 #import <Accelerate/Accelerate.h>
-#import "UIImage+CCCaseGlodBuleResize.h"
+#import "UIImage+CCCaseResize.h"
 
 @interface NDeskYSPlayerView ()
 

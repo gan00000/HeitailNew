@@ -12,9 +12,9 @@
 #import "InfoMessage.pbobjc.h"
 #import "HourseHTChatContentCell.h"
 #import "PXFunConfigCoreUtil.h"
-#import "UIColor+KMonkeyGlodBuleHex.h"
+#import "UIColor+KMonkeyHex.h"
 #import "YYPackageHTChatSelfContentCell.h"
-#import "UIView+PXFunGlodBuleBlockGesture.h"
+#import "UIView+PXFunBlockGesture.h"
 
 @interface RRDogHTIMViewController () <UITableViewDelegate, UITableViewDataSource, SRWebSocketDelegate>
 @property (weak, nonatomic) IBOutlet UIView *notShowImView;

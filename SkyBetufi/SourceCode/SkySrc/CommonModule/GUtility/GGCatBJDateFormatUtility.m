@@ -1,5 +1,5 @@
 #import "GGCatBJDateFormatUtility.h"
-#import "NSDateFormatter+CCCaseGlodBuleDRExtension.h"
+#import "NSDateFormatter+CCCaseDRExtension.h"
 @implementation GGCatBJDateFormatUtility
 + (NSString *)dateToShowFromDate:(NSDate *)date {
     if (!date || ![date isKindOfClass:[NSDate class]]) {

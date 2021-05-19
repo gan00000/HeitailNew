@@ -12,7 +12,7 @@
 //./AppUI/ModuleMatch/PlayerInfo.storyboard
 //./AppUI/ModuleMatch/SkyBallHetiRedMatchSubDsbd.storyboard
 //./AppUI/ModuleMatch/SkyBallHetiRedMatchCompare.storyboard
-//./AppUI/ModuleMatch/GlodBuleHTNewMatchHome.storyboard
+//./AppUI/ModuleMatch/HTNewMatchHome.storyboard
 //./AppUI/ModuleMatch/MatchControllers/YYPackageHTHighLightsViewController.storyboard
 //./AppUI/ModuleMatch/THIM.storyboard
 //./AppUI/ModuleMatch/aaadb.storyboard

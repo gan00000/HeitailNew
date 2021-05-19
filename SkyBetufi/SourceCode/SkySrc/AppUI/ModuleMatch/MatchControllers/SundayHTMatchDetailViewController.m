@@ -6,7 +6,7 @@
 #import <WebKit/WebKit.h>
 #import "PXFunHTMatchLiveFeedRequest.h"
 #import "PXFunHTMatchSummaryRequest.h"
-#import "UIImageView+NDeskGlodBuleSVG.h"
+#import "UIImageView+NDeskSVG.h"
 #import "YYPackageHTMatchVideoLiveViewController.h"
 #import "PXFunConfigCoreUtil.h"
 #import "LMPlayer.h"

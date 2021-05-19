@@ -8,9 +8,9 @@
 
 #import "HourseHTHotShootCellTableViewCell.h"
 #import "RRDogGamaAlertView.h"
-#import "UIView+RRDogGlodBuleViewController.h"
+#import "UIView+RRDogViewController.h"
 #import "PXFunHTMatchSummaryRequest.h"
-#import "UIImageView+PXFunGlodBuleHT.h"
+#import "UIImageView+PXFunHT.h"
 
 @interface HourseHTHotShootCellTableViewCell ()
 

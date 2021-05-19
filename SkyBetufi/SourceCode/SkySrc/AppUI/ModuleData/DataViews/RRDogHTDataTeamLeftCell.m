@@ -1,5 +1,5 @@
 #import "RRDogHTDataTeamLeftCell.h"
-#import "UIImageView+PXFunGlodBuleHT.h"
+#import "UIImageView+PXFunHT.h"
 @interface RRDogHTDataTeamLeftCell ()
 @property (weak, nonatomic) IBOutlet UILabel *orderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *teamNameLabel;

@@ -1,6 +1,6 @@
 #import "YYPackageHTNewsHomeCell.h"
 
-#import "NSString+CCCaseGlodBuleMessageDigest.h"
+#import "NSString+CCCaseMessageDigest.h"
 @interface YYPackageHTNewsHomeCell ()
 
 

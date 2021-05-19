@@ -7,12 +7,12 @@
 //
 
 #import "MMTodayPlayerInfoViewController.h"
-#import "UIImageView+PXFunGlodBuleHT.h"
+#import "UIImageView+PXFunHT.h"
 #import "PXFunHTMatchSummaryRequest.h"
 #import "YYPackageHTLoginAlertView.h"
 #import <UMShare/UMShare.h>
 #import <FBSDKShareKit/FBSDKShareKit.h>
-#import "UIColor+KMonkeyGlodBuleHex.h"
+#import "UIColor+KMonkeyHex.h"
 
 @interface MMTodayPlayerInfoViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
