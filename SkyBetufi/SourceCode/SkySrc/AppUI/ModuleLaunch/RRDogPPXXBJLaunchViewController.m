@@ -13,7 +13,7 @@
 
 @interface RRDogPPXXBJLaunchViewController () <CAAnimationDelegate>
 @property (nonatomic, strong) PXFunPPXXBJMainViewController *tabBarController;
-@property (nonatomic,strong) MMDrawerController * drawerController;
+//@property (nonatomic,strong) MMDrawerController *drawerController;
 
 @property (nonatomic, assign) NSInteger tryTimes;
 @property (nonatomic, assign) BOOL needGuidePage;
@@ -134,15 +134,15 @@
     self.tryTimes = 0;
 
     // 设置APP引导页
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:BOOLFORKEY]) {
-        self.needGuidePage = YES;
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:BOOLFORKEY];
-        // 静态引导页
-        [self taosetStaticGuidePage];
-        
-    }else{
-        self.needGuidePage = NO;
-    }
+//    if (![[NSUserDefaults standardUserDefaults] boolForKey:BOOLFORKEY]) {
+//        self.needGuidePage = YES;
+//        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:BOOLFORKEY];
+//        // 静态引导页
+//        [self taosetStaticGuidePage];
+//
+//    }else{
+//        self.needGuidePage = NO;
+//    }
     
     [self taoRequestConfig];
     NSString *imageName = [NSString stringWithFormat:@"%ldx%ld", (long)(SCREEN_WIDTH*SCREEN_SCALE), (long)(SCREEN_HEIGHT*SCREEN_SCALE)];
