@@ -12,6 +12,7 @@
 #import <UIButton+WebCache.h>
 #import "CCCaseHTHomeLeftViewController.h"
 #import "RRDogPPXXBJLaunchViewController.h"
+#import "HourseHTMainPageViewController.h"
 
 @import Firebase;
 
@@ -127,6 +128,15 @@
     }else if ([currentClassString isEqualToString:NSStringFromClass([MMTodayHTMeHomeViewController class])]){
         
         [FIRAnalytics logEventWithName:@"IOS_MeHome"
+                            parameters:@{
+                                         kFIRParameterItemID:[NSString stringWithFormat:@"id-%@", self.title],
+                                         kFIRParameterItemName:self.title,
+                                         kFIRParameterContentType:@"button"
+                                         }];
+        
+    }else if ([currentClassString isEqualToString:NSStringFromClass([HourseHTMainPageViewController class])]){
+        
+        [FIRAnalytics logEventWithName:@"IOS_Main_Page"
                             parameters:@{
                                          kFIRParameterItemID:[NSString stringWithFormat:@"id-%@", self.title],
                                          kFIRParameterItemName:self.title,
