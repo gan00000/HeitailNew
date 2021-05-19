@@ -13,9 +13,13 @@
 @interface YYPackageHTMatchHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *timeTitleLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSArray *matchList;
+@property (nonatomic, strong) NSMutableArray *matchList;
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) NSDate *endDate;
+
+@property (nonatomic, strong) NSDate *loadStartDate;
+@property (nonatomic, strong) NSDate *loadEndDate;
+
 //@property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, assign) BOOL requesting;
 @property (nonatomic, strong) NSMutableDictionary *inProgressMatchs;
@@ -130,26 +134,68 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"KMonkeyHTMatchHomeGroupHeaderView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"KMonkeyHTMatchHomeGroupHeaderView"];
     kWeakSelf
     self.tableView.mj_header = [HourseMJRefreshGenerator bj_headerWithRefreshingBlock:^{
-        [weakSelf loadData];
+        [weakSelf loadPreviousDateData];
     }];
-    self.startDate = [NSDate date];
+    
+    self.tableView.mj_footer = [HourseMJRefreshGenerator bj_foorterWithRefreshingBlock:^{
+        [weakSelf loadNextDateData];
+    }];
+    
+//    self.startDate = [NSDate date];
+    self.matchList = [NSMutableArray array];
+    [self loadCurrentDateData:[NSDate date]];
     [self refreshTimeTitle];
     [self.view showLoadingView];
 }
 - (void)refreshUI {
+    
     [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+    
     [self.view hideLoadingView];
+    [self.view hideEmptyView];
+    
     [GGCatBJLoadingHud hideHUDInView:self.view];
     [self refreshTimeTitle];
     [self.tableView reloadData];
     self.requesting = NO;
 }
-- (void)setStartDate:(NSDate *)startDate {
-    _startDate = startDate;
-    _endDate = [self date:_startDate addingDays:7];
+//- (void)setStartDate:(NSDate *)startDate {
+////    _startDate = startDate;
+//    _startDate = [startDate dateBySubtractingDays:2];
+//    _endDate = [self date:startDate addingDays:7];
+//    [self startTimer];
+//    [self loadData];
+//}
+
+- (void)loadCurrentDateData:(NSDate *)startDate {
+    self.loadStartDate = [startDate dateBySubtractingDays:2];
+    self.loadEndDate = [self date:startDate addingDays:7];
+    
+    self.startDate = self.loadStartDate;
+    self.endDate = self.loadEndDate;
+    
     [self startTimer];
-    [self loadData];
+    [self loadDataType:0];
 }
+
+- (void)loadPreviousDateData {
+    self.loadEndDate = [self.startDate dateBySubtractingDays:1];
+    self.loadStartDate = [self.loadEndDate dateBySubtractingDays:7];
+    [self startTimer];
+    [self loadDataType:-1];
+    
+}
+
+- (void)loadNextDateData {
+    
+    self.loadStartDate = [self date:self.endDate addingDays:1];
+    self.loadEndDate = [self date:self.loadStartDate addingDays:7];
+   
+    [self startTimer];
+    [self loadDataType:1];
+}
+
 - (void)startTimer {
 //    if ([self notContainToday]) {
 //        [self stopTimer];
@@ -195,32 +241,72 @@
     NSDate *newDate = [self.calendar dateByAddingComponents:dateComponents toDate:date options:0];
     return newDate;
 }
-- (void)loadData {
+- (void)loadDataType:(NSInteger)type {
     if (self.requesting) {
         return;
     }
     self.requesting = YES;
-    [GGCatHTMatchHomeRequest taorequestWithStartDate:[self ymdWithDate:self.startDate]
-                                     endDate:[self ymdWithDate:self.endDate]
+    [GGCatHTMatchHomeRequest taorequestWithStartDate:[self ymdWithDate:self.loadStartDate]
+                                     endDate:[self ymdWithDate:self.loadEndDate]
                                          competition_id:self.matchType
                                 successBlock:^(NSArray<MMTodayHTMatchHomeGroupModel *> *matchList,NSArray<SundayHTMatchHomeModel *> *matchA) {
-                                    self.matchList = matchList;
+//                                    self.matchList = matchList;
+        
+        if (type == -1) {
+            self.startDate = self.loadStartDate;
+        }else if (type == 1){
+            self.endDate = self.loadEndDate;
+        }else{
+            self.startDate = self.loadStartDate;
+            self.endDate = self.loadEndDate;
+        }
+   
                                     [self.tableView hideEmptyView];
                                     if (matchList.count == 0) {
-                                        [self.tableView showEmptyView];
+//                                        [self.tableView showEmptyView];
                                         [self refreshUI];
+                                        
+                                        if (self.matchList.count == 0) {
+                                            kWeakSelf
+                                            [self.tableView showEmptyViewWithTitle:@"獲取失敗，點擊重試" tapBlock:^{
+                                                [weakSelf loadDataType:type];
+                                                [weakSelf.tableView hideEmptyView];
+                                                [weakSelf.view showLoadingView];
+                                            }];
+                                        }
+                                
+                                        
                                     } else {
+                                        
+                                        NSMutableArray<MMTodayHTMatchHomeGroupModel *> *tempMatchList = [NSMutableArray array];
                                         for (MMTodayHTMatchHomeGroupModel *groupModel in matchList) {
                                             for (SundayHTMatchHomeModel *model in groupModel.matchList) {
                                                 if ([model.scheduleStatus isEqualToString:@"InProgress"]) {
                                                     [self.inProgressMatchs setObject:model forKey:model.game_id];
                                                 }
-                                            }                                            
+                                            }
+                                            [tempMatchList addObject:groupModel];
+                                            
                                         }
+                                        
+                                        if (type == -1) {//向前
+                                            
+                                            [tempMatchList addObjectsFromArray:self.matchList];
+                                            self.matchList = tempMatchList;
+                                            
+                                        }else if (type == 1){//向后
+                                            
+                                            [self.matchList addObjectsFromArray:tempMatchList];
+                                            
+                                        }else{
+                                            [self.matchList removeAllObjects];
+                                            [self.matchList addObjectsFromArray:tempMatchList];
+                                        }
+
                                         if (self.inProgressMatchs.count == 0) {
                                             [self refreshUI];
                                         } else {
-                                            for (SundayHTMatchHomeModel *model in self.inProgressMatchs.allValues) {
+                                            for (SundayHTMatchHomeModel *model in self.inProgressMatchs.allValues) {//加载正在比赛中的数据
                                                 [GGCatHTMatchHomeRequest taorequestMatchProgressWithGameId:model.game_id successBlock:^(NSString *game_id, NSString *quarter, NSString *time) {
                                                     SundayHTMatchHomeModel *matchModel = [self.inProgressMatchs objectForKey:game_id];
                                                     matchModel.quarter = [NSString stringWithFormat:@"第%@節", quarter];
@@ -240,7 +326,7 @@
                                     if (self.matchList.count == 0) {
                                         kWeakSelf
                                         [self.tableView showEmptyViewWithTitle:@"獲取失敗，點擊重試" tapBlock:^{
-                                            [weakSelf loadData];
+                                            [weakSelf loadDataType:type];
                                             [weakSelf.tableView hideEmptyView];
                                             [weakSelf.view showLoadingView];
                                         }];
