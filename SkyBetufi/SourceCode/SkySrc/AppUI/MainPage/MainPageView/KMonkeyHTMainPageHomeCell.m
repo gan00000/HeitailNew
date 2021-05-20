@@ -164,9 +164,16 @@
         imageCount = 3;
     }
     
+    CGFloat xUIImageView_Offset = 10;
+    
     CGFloat imageWidth = (SCREEN_WIDTH - 30) / 3 * 2;
     if (imageCount > 1) {
-        imageWidth = (SCREEN_WIDTH - 30) / 3;
+        if (imageCount == 2) {
+            imageWidth = (SCREEN_WIDTH - 30) / 3;
+        }else{
+            imageWidth = (SCREEN_WIDTH - 30 - (xUIImageView_Offset*2)) / 3;
+        }
+        
     }
     self.newsModel.cell_width = imageWidth;
     
@@ -179,7 +186,7 @@
         
         [thumbShowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.mas_equalTo(imageWidth);
-            make.leading.mas_equalTo(self.webContentView).mas_offset(imageWidth * i);
+            make.leading.mas_equalTo(self.webContentView).mas_offset(imageWidth * i + xUIImageView_Offset * i);
             make.top.mas_equalTo(self.webContentView);
             make.bottom.mas_equalTo(self.webContentView);
         }];
