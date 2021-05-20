@@ -27,6 +27,9 @@
 		3238C62425F0BA3D0045F1B9 /* NDeskHTWordLive2Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 3238C62325F0BA3D0045F1B9 /* NDeskHTWordLive2Request.m */; };
 		3243D670261FFA5600D3D4DB /* YYPackageHTNoUseHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243D66E261FFA5600D3D4DB /* YYPackageHTNoUseHeaderTableViewCell.m */; };
 		3243D671261FFA5600D3D4DB /* YYPackageHTNoUseHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3243D66F261FFA5600D3D4DB /* YYPackageHTNoUseHeaderTableViewCell.xib */; };
+		3245FE1326564F7400EA131D /* HTShowUpdateInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3245FE1226564F7400EA131D /* HTShowUpdateInfoView.m */; };
+		3245FE172656523B00EA131D /* HTShowUpdateInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3245FE162656523B00EA131D /* HTShowUpdateInfoView.xib */; };
+		3245FE1A26565A0400EA131D /* HTUpdateInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3245FE1926565A0400EA131D /* HTUpdateInfoModel.m */; };
 		32463B1626494D150014696C /* PageCellBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32463B0D26494D150014696C /* PageCellBased.swift */; };
 		32463B1726494D150014696C /* HotTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32463B0E26494D150014696C /* HotTagCell.swift */; };
 		32463B1826494D150014696C /* HotTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32463B0F26494D150014696C /* HotTagCell.xib */; };
@@ -512,6 +515,11 @@
 		3243D66D261FFA5600D3D4DB /* YYPackageHTNoUseHeaderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYPackageHTNoUseHeaderTableViewCell.h; sourceTree = "<group>"; };
 		3243D66E261FFA5600D3D4DB /* YYPackageHTNoUseHeaderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYPackageHTNoUseHeaderTableViewCell.m; sourceTree = "<group>"; };
 		3243D66F261FFA5600D3D4DB /* YYPackageHTNoUseHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYPackageHTNoUseHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		3245FE1126564F7400EA131D /* HTShowUpdateInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTShowUpdateInfoView.h; sourceTree = "<group>"; };
+		3245FE1226564F7400EA131D /* HTShowUpdateInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTShowUpdateInfoView.m; sourceTree = "<group>"; };
+		3245FE162656523B00EA131D /* HTShowUpdateInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTShowUpdateInfoView.xib; sourceTree = "<group>"; };
+		3245FE1826565A0400EA131D /* HTUpdateInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTUpdateInfoModel.h; sourceTree = "<group>"; };
+		3245FE1926565A0400EA131D /* HTUpdateInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTUpdateInfoModel.m; sourceTree = "<group>"; };
 		32463B0D26494D150014696C /* PageCellBased.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCellBased.swift; sourceTree = "<group>"; };
 		32463B0E26494D150014696C /* HotTagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotTagCell.swift; sourceTree = "<group>"; };
 		32463B0F26494D150014696C /* HotTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotTagCell.xib; sourceTree = "<group>"; };
@@ -2489,6 +2497,9 @@
 				FECCA4F72258C8CF009EF494 /* SundayHTMeCenterNormalCell.h */,
 				FECCA4F22258C8CE009EF494 /* SundayHTMeCenterNormalCell.m */,
 				FECCA4F02258C8CE009EF494 /* SundayHTMeCenterNormalCell.xib */,
+				3245FE1126564F7400EA131D /* HTShowUpdateInfoView.h */,
+				3245FE1226564F7400EA131D /* HTShowUpdateInfoView.m */,
+				3245FE162656523B00EA131D /* HTShowUpdateInfoView.xib */,
 			);
 			path = MeViews;
 			sourceTree = "<group>";
@@ -2546,6 +2557,8 @@
 				FECCA53F2258CC3D009EF494 /* MMTodayDRSandBoxManager.m */,
 				FEA5D3F9225CD31E001AF0C9 /* HourseHTMyMessageModel.h */,
 				FEA5D3FA225CD31E001AF0C9 /* HourseHTMyMessageModel.m */,
+				3245FE1826565A0400EA131D /* HTUpdateInfoModel.h */,
+				3245FE1926565A0400EA131D /* HTUpdateInfoModel.m */,
 			);
 			path = MeModels;
 			sourceTree = "<group>";
@@ -2836,6 +2849,7 @@
 				326434EF22F057E000D2DA1E /* guideImageapp2.jpg in Resources */,
 				FECCA5312258C8D0009EF494 /* GGCatHTUserInfoEditViewController.xib in Resources */,
 				FEC116FF2143DCAF002DB617 /* UKRosRedFilmHome.storyboard in Resources */,
+				3245FE172656523B00EA131D /* HTShowUpdateInfoView.xib in Resources */,
 				FEDAC970214B86C7005E8B63 /* PXFunHTDataCellPlayerView.xib in Resources */,
 				326434F022F057E000D2DA1E /* guideImageapp1.jpg in Resources */,
 				FE706F09215006430078DF30 /* PXFunHTDataHomeHeaderCell.xib in Resources */,
@@ -3013,6 +3027,7 @@
 				32B0F58B2545B6A3005642DC /* RRDogHTMatchWebPlayControllerViewController.m in Sources */,
 				FEC116C42143D4A1002DB617 /* UITableView+HourseEstimatedHeight.m in Sources */,
 				FE08C5C82250506A000175CB /* MMTodayHTMeHomeViewController.m in Sources */,
+				3245FE1A26565A0400EA131D /* HTUpdateInfoModel.m in Sources */,
 				32CD877F22F4173800063A14 /* NowPlayingInfoCenterProvider.m in Sources */,
 				FEC1164C2143D4A1002DB617 /* PXFunPPXXBJViewControllerCenter.m in Sources */,
 				32184805260B1BFD008D836C /* NDeskYSCarrierTool.m in Sources */,
@@ -3077,6 +3092,7 @@
 				FE82BB4D2179B7F100C52C51 /* NDeskHTDataPlayerRankModel.m in Sources */,
 				FECCA5252258C8D0009EF494 /* HourseHTMeCenterHeaderCell.m in Sources */,
 				32CD878122F4173800063A14 /* ContextLogFormatter.m in Sources */,
+				3245FE1326564F7400EA131D /* HTShowUpdateInfoView.m in Sources */,
 				32FED82423AB768700D900A7 /* YYPackageLMVideoPlayerView.m in Sources */,
 				FEC116832143D4A1002DB617 /* AppDelegate.m in Sources */,
 				32B5323F26175D8C009ED9D8 /* YYPackageHTNewsDetailModel.m in Sources */,
