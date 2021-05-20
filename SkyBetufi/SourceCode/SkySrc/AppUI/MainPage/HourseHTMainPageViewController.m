@@ -91,6 +91,13 @@
     }
 }
 
+- (void)clickTab
+{
+    //点击回到顶部刷新
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:(UITableViewScrollPositionTop) animated:NO];
+    [self.tableView.mj_header beginRefreshing];
+}
+
 #pragma mark - cell代理PlayerTableViewCellDelegate
 - (void)tableViewWillPlay:(KMonkeyHTMainPageHomeCell *)cell {
     if (cell == self.playingCell) return;

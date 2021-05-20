@@ -42,7 +42,7 @@
 @property (nonatomic, strong) HoursePPXXBJNavigationController *nav0;
 @property (nonatomic, strong) HourseHTMainPageViewController *vc0;
 
-@property (nonatomic, strong)   UIViewController *currentBarViewController;
+@property (nonatomic, strong)   UIViewController *currentNavViewController;
     
 @end
 @implementation PXFunPPXXBJMainViewController
@@ -193,7 +193,7 @@
 //    self.nav5.modalPresentationStyle = UIModalPresentationFullScreen;
 //    self.nav6.modalPresentationStyle = UIModalPresentationFullScreen;
     
-    self.currentBarViewController = self.nav0;
+    self.currentNavViewController = self.nav0;
     
     if (isAppInView) {
          return @[self.nav0, self.nav2, self.nav3, self.nav1, self.nav4];
@@ -203,12 +203,25 @@
 }
 #pragma MARK -- UITabBarControllerDelegate
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    
+    if (self.currentSelectedIndex == 0 && self.selectedIndex == 0) {
+        HoursePPXXBJNavigationController *aaNavViewController = (HoursePPXXBJNavigationController *)viewController;
+       NSArray *vcs = aaNavViewController.viewControllers;
+        if (vcs && vcs.count > 0) {
+            UIViewController *viewController = vcs[0];
+            if ([viewController isKindOfClass:[HourseHTMainPageViewController class]]) {
+                HourseHTMainPageViewController *mpVC = (HourseHTMainPageViewController *)viewController;
+                [mpVC clickTab];
+            }
+        }
+        
+    }
     self.currentSelectedIndex = self.selectedIndex;
 //    FIRAnalytics logEventWithName
    
 //    [viewController viewDidAppear:YES];
     NSLog(@"tabBarController %ld",self.currentSelectedIndex);
-    self.currentBarViewController = viewController;
+    self.currentNavViewController = viewController;
 }
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
@@ -258,9 +271,9 @@
                     break;
             }
             
-            HoursePPXXBJNavigationController *xxcurrentBarViewController = (HoursePPXXBJNavigationController *)self.currentBarViewController;
-            if (xxcurrentBarViewController && viewController) {
-                [xxcurrentBarViewController pushViewController:viewController animated:YES];
+            HoursePPXXBJNavigationController *xxcurrentNavViewController = (HoursePPXXBJNavigationController *)self.currentNavViewController;
+            if (xxcurrentNavViewController && viewController) {
+                [xxcurrentNavViewController pushViewController:viewController animated:YES];
             }
             
         }
