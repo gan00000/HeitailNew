@@ -191,11 +191,13 @@
           }
       }
 
-//    if (indexPath.section == ) {
-//        <#statements#>
-//    }
+   
     if (![self.historyListArray containsObject:model]) {
         [self.historyListArray addObject:model];
+    }
+    
+    if (indexPath.row == self.filmList.count - 2) {//放在此作用是 快拉到最后的时候提前预加载
+        [self loadNextPage];
     }
     
     return cell;
