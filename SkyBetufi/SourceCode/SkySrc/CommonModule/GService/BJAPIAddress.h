@@ -56,4 +56,6 @@
 #define API_USER_POST_LIKE            @"api/save_post_like" 
 
 #define API_SEARCH             @"api/get_search_results"
+
+#define API_CHECK_UPDATE             @"api/get_ver_notice"
 #endif

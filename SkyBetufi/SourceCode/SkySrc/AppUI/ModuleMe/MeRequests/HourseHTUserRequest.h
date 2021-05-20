@@ -2,9 +2,15 @@
 #import "PXFunBJHTTPServiceEngine.h"
 #import "PXFunHTNewsModel.h"
 #import "HourseHTMyMessageModel.h"
+#import "HTUpdateInfoModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 typedef void (^HTMyCommentBlock) (NSArray <PXFunHTNewsModel *> *newsList, NSInteger pages);
 @interface HourseHTUserRequest : NSObject
+
++ (void)taodoCheckAppUpdateWithSuccessBlock:(void(^)(HTUpdateInfoModel *kHTUpdateInfoModel))successBlock
+                                  failBlock:(BJServiceErrorBlock)failBlock;
+
 + (void)taodoLoginRequestWithAccessToken:(NSString *)accessToken
                                   sns:(NSInteger)sns
                          successBlock:(void(^)(NSString *userToken))successBlock

@@ -1,5 +1,26 @@
 #import "HourseHTUserRequest.h"
+
+#import "KMonkeyBJUtility.h"
+
 @implementation HourseHTUserRequest
+
+
++ (void)taodoCheckAppUpdateWithSuccessBlock:(void(^)(HTUpdateInfoModel *kHTUpdateInfoModel))successBlock
+                            failBlock:(BJServiceErrorBlock)failBlock {
+    
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"ver"] = KMonkeyBJUtility.appVersion;
+    param[@"pack"] = KMonkeyBJUtility.appBundleId;
+    param[@"type"] = @"2";
+    [PXFunBJHTTPServiceEngine tao_postRequestWithFunctionPath:API_CHECK_UPDATE params:param successBlock:^(id responseData) {
+        if (successBlock) {
+            HTUpdateInfoModel *model = [HTUpdateInfoModel yy_modelWithJSON:responseData[@"result"]];
+            successBlock(model);
+        }
+    } errorBlock:failBlock];
+}
+
+
 + (void)taodoLoginRequestWithAccessToken:(NSString *)accessToken
                                   sns:(NSInteger)sns
                          successBlock:(void(^)(NSString *userToken))successBlock

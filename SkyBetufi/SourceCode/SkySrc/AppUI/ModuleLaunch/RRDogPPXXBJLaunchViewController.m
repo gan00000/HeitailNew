@@ -10,6 +10,8 @@
 #import "MMTodayHTMeHomeViewController.h"
 #import <MMDrawerController.h>
 #import "CCCaseHTHomeLeftViewController.h"
+#import "HourseHTUserRequest.h"
+#import "HTShowUpdateInfoView.h"
 
 @interface RRDogPPXXBJLaunchViewController () <CAAnimationDelegate>
 @property (nonatomic, strong) PXFunPPXXBJMainViewController *tabBarController;
@@ -128,6 +130,27 @@
      
      */
 }
+
+
+-(void) checkUpdate
+{
+    [HourseHTUserRequest taodoCheckAppUpdateWithSuccessBlock:^(HTUpdateInfoModel * _Nonnull kHTUpdateInfoModel) {
+        
+        if (kHTUpdateInfoModel && !kHTUpdateInfoModel.content) {
+            
+//            HTUpdateInfoModel *xxHTUpdateInfoModel = [[HTUpdateInfoModel alloc] init];
+//            xxHTUpdateInfoModel.content = @"因為政策原因，您當前使用的APP版本(3.8.0)將於6月1日停止運營服務，歡飲大家前往蘋果商店下載最新版本\n\n應用名稱：黑特體育\n\n地址：https://bit.ly/3uZ4s5n";
+//
+//            xxHTUpdateInfoModel.confirm_to = @"http://baidu.com";
+            [HTShowUpdateInfoView showWithData:kHTUpdateInfoModel];
+            
+        }
+        
+    } failBlock:^(SundayBJError *error) {
+        
+    }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     BJLog(@"getRequestCommon start");
@@ -145,6 +168,8 @@
 //    }
     
     [self taoRequestConfig];
+    [self checkUpdate];
+    
     NSString *imageName = [NSString stringWithFormat:@"%ldx%ld", (long)(SCREEN_WIDTH*SCREEN_SCALE), (long)(SCREEN_HEIGHT*SCREEN_SCALE)];
     UIImage *image = [UIImage imageNamed:imageName];
     UIImageView *launchImageView = [[UIImageView alloc] init];
