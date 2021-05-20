@@ -15,7 +15,8 @@
 @implementation PXFunHTNewsModel
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{
-             @"news_id": @"id"
+             @"news_id": @"id",
+             @"video_time": @"time"
              };
 }
 

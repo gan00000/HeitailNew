@@ -48,7 +48,7 @@
 @property (nonatomic, copy) NSArray<NSString *> *poster;
 @property (nonatomic, copy) NSString *video_url;
 //@property (nonatomic, copy) NSString *posted_on;
-//@property (nonatomic, copy) NSString *time;
+@property (nonatomic, copy) NSString *video_time;//跟play_time一样
 
 @property (nonatomic, strong)HTNewsAuthor *author;
 @property (nonatomic, strong)NSArray<HourseHTCommentModel *> *hottest_comment;

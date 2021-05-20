@@ -3,8 +3,8 @@
 #import "PXFunHTNewsModel.h"
 @interface MMTodayHTMainPageHomeRequest : NSObject
 @property (nonatomic, assign) BOOL hasMore;
-- (void)taorequestWithSuccessBlock:(void(^)(NSArray<PXFunHTNewsModel *> *newsList))successBlock
+- (void)taorequestWithVids:(NSString *)vids successBlock:(void(^)(NSArray<PXFunHTNewsModel *> *newsList))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock;
-- (void)loadNextPageWithSuccessBlock:(void(^)(NSArray<PXFunHTNewsModel *> *newsList))successBlock
+- (void)loadNextPageWithVids:(NSString *)vids successBlock:(void(^)(NSArray<PXFunHTNewsModel *> *newsList))successBlock
                           errorBlock:(BJServiceErrorBlock)errorBlock;
 @end

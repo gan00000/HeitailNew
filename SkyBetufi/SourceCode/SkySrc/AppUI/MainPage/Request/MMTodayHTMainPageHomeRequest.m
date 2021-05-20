@@ -6,7 +6,9 @@
 @property (nonatomic, assign) NSInteger page;
 @end
 @implementation MMTodayHTMainPageHomeRequest
-- (void)taorequestWithSuccessBlock:(void(^)(NSArray<PXFunHTNewsModel *> *newsList))successBlock
+
+//    vids 上次浏览过的post_id集合，多个用逗号隔开，如：262957,262937,262604
+- (void)taorequestWithVids:(NSString *)vids successBlock:(void(^)(NSArray<PXFunHTNewsModel *> *newsList))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock {
     if (!self.newsList) {
         self.newsList = [NSMutableArray array];
@@ -15,7 +17,7 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"sid"] = KMonkeyBJUtility.idfa;//设备唯一id(广告id)
     params[@"type"] = @2;
-//    params[@"vids"] = @2;
+    params[@"vids"] = vids;
     [PXFunBJHTTPServiceEngine tao_getRequestWithFunctionPath:API_POST_RECOMMEND params:params successBlock:^(id responseData) {
         [self.newsList removeAllObjects];
 //        if (self.page < [responseData[@"pages"] integerValue]) {
@@ -33,11 +35,12 @@
         }
     } errorBlock:errorBlock];
 }
-- (void)loadNextPageWithSuccessBlock:(void(^)(NSArray<PXFunHTNewsModel *> *newsList))successBlock
+- (void)loadNextPageWithVids:(NSString *)vids successBlock:(void(^)(NSArray<PXFunHTNewsModel *> *newsList))successBlock
                           errorBlock:(BJServiceErrorBlock)errorBlock {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"sid"] = KMonkeyBJUtility.idfa;//设备唯一id(广告id)
     params[@"type"] = @2;
+    params[@"vids"] = vids;
     [PXFunBJHTTPServiceEngine tao_getRequestWithFunctionPath:API_POST_RECOMMEND params:params successBlock:^(id responseData) {
 //        if (self.page < [responseData[@"pages"] integerValue]) {
 //            self.page ++;

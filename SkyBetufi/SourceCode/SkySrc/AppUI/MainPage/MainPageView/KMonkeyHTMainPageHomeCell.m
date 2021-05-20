@@ -264,7 +264,7 @@
     if ([newsModel.posted_on isEqualToString:@"videos"]) {
         self.webContentViewHeight.constant = KMonkeyHTMainPageHomeCell_ContentView_Height;
         self.filmTimeLabel.hidden = NO;
-        self.filmTimeLabel.text = newsModel.time;
+        self.filmTimeLabel.text = newsModel.video_time;
         [self.playerController setMediaInfo:newsModel.plMediaInfo];
         
         self.fromTypeLabel.text = @"發佈於 影片";

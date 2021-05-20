@@ -23,6 +23,8 @@
 
 @property (nonatomic, weak) KMonkeyHTMainPageHomeCell *playingCell;
 
+@property (nonatomic, strong) NSMutableArray *historyListArray;
+
 @end
 @implementation HourseHTMainPageViewController
 + (instancetype)taoviewController {
@@ -31,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.historyListArray = [NSMutableArray array];
     [self setupViews];
     [self loadData];
 }
@@ -115,7 +118,7 @@
 
 
 #pragma mark - 1
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {//拖动触摸停止
     NSLog(@"scrollViewDidEndDragging");
     if (decelerate) return;
     if (nil == self.playingCell) {
@@ -123,7 +126,7 @@
     }
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {//页面停止滚动
     NSLog(@"scrollViewDidEndDecelerating");
     if (nil == self.playingCell) {
 //        [self playTopCell];
@@ -186,12 +189,15 @@
                   }
               }
           }
-            
-//          cell.mClickHander = ^(NSInteger index) {
-//          };
-          
       }
 
+//    if (indexPath.section == ) {
+//        <#statements#>
+//    }
+    if (![self.historyListArray containsObject:model]) {
+        [self.historyListArray addObject:model];
+    }
+    
     return cell;
     
 
@@ -345,8 +351,14 @@
     [self.tableView reloadData];
 }
 - (void)loadData {
+    
+    NSString *vids = @"";
+    for (PXFunHTNewsModel *mModel in self.historyListArray) {
+        vids = [NSString stringWithFormat:@"%@%@,", vids, mModel.news_id];
+    }
+    
     kWeakSelf
-    [self.request taorequestWithSuccessBlock:^(NSArray<PXFunHTNewsModel *> *newsList) {
+    [self.request taorequestWithVids:vids successBlock:^(NSArray<PXFunHTNewsModel *> *newsList) {
         weakSelf.filmList = newsList;// [self dataWithAd:newsList];
         [weakSelf refreshUI];
     } errorBlock:^(SundayBJError *error) {
@@ -355,8 +367,14 @@
     }];
 }
 - (void)loadNextPage {
+    
+    NSString *vids = @"";
+    for (PXFunHTNewsModel *mModel in self.historyListArray) {
+        vids = [NSString stringWithFormat:@"%@%@,", vids, mModel.news_id];
+    }
+    
     kWeakSelf
-    [self.request loadNextPageWithSuccessBlock:^(NSArray<PXFunHTNewsModel *> *newsList) {
+    [self.request loadNextPageWithVids:vids successBlock:^(NSArray<PXFunHTNewsModel *> *newsList) {
         weakSelf.filmList = newsList;//[self dataWithAd:newsList];
         [weakSelf refreshUI];
     } errorBlock:^(SundayBJError *error) {
