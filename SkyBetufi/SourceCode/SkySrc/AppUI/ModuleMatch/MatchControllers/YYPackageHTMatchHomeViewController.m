@@ -24,6 +24,9 @@
 @property (nonatomic, assign) BOOL requesting;
 @property (nonatomic, strong) NSMutableDictionary *inProgressMatchs;
 @property (nonatomic, strong) NSCalendar *calendar;
+
+@property (nonatomic, assign) NSInteger requestType;
+
 @end
 @implementation YYPackageHTMatchHomeViewController
 + (instancetype)taoviewController {
@@ -159,6 +162,11 @@
     [self refreshTimeTitle];
     [self.tableView reloadData];
     self.requesting = NO;
+    
+    if (self.requestType == 0 && self.matchList.count > 3) {//滚动到指定位置
+        
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2] atScrollPosition:(UITableViewScrollPositionTop) animated:NO];
+    }
 }
 //- (void)setStartDate:(NSDate *)startDate {
 ////    _startDate = startDate;
@@ -251,7 +259,7 @@
                                          competition_id:self.matchType
                                 successBlock:^(NSArray<MMTodayHTMatchHomeGroupModel *> *matchList,NSArray<SundayHTMatchHomeModel *> *matchA) {
 //                                    self.matchList = matchList;
-        
+        self.requestType = type;
         if (type == -1) {
             self.startDate = self.loadStartDate;
         }else if (type == 1){
