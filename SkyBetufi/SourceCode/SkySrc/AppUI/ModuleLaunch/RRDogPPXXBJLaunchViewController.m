@@ -34,101 +34,72 @@
     [UIApplication sharedApplication].delegate.window.rootViewController = [self mmRootViewController];
 }
 
-- (void)taoRequestConfig {
-    NSString *url = [NSString stringWithFormat:@"http://nba-007.com/ios_config.json?t=%@",[[NSDate dateNow] getTimeStamp]];
+- (void)handleAppInViewResult:(NSDictionary *)configDictionary {
+    if (configDictionary) {
+        NSString *version = configDictionary[@"version"];
+        NSString *status = configDictionary[@"status"];
+        NSString *examine = configDictionary[@"examine"];
+        NSString *showTextLive = configDictionary[@"showTextLive"];
+        
+        NSString *appVersion = [KMonkeyBJUtility appVersion];
+        if ([appVersion isEqualToString:version] && [examine isEqualToString:@"1"]) {
+            [MMTodayHTUserManager manager].appInView = YES;
+            BJLog(@"getRequestCommon in view");
+        }else{
+            BJLog(@"getRequestCommon not in view");
+            [MMTodayHTUserManager manager].appInView = NO;
+        }
+        
+        [MMTodayHTUserManager manager].showTextLive = YES;
+    }
     
-    AFHTTPSessionManager *manager =[AFHTTPSessionManager manager];
-    // parameters 参数字典
-    [manager GET:url parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        NSDictionary *configDictionary = responseObject;
-        if (configDictionary) {
-            NSString *version = configDictionary[@"version"];
-            NSString *status = configDictionary[@"status"];
-            NSString *examine = configDictionary[@"examine"];
-            NSString *showTextLive = configDictionary[@"showTextLive"];
-            
-            NSString *appVersion = [KMonkeyBJUtility appVersion];
-            if ([appVersion isEqualToString:version] && [examine isEqualToString:@"1"]) {
-                [MMTodayHTUserManager manager].appInView = YES;
-                BJLog(@"getRequestCommon in view");
-            }else{
-                BJLog(@"getRequestCommon not in view");
-                [MMTodayHTUserManager manager].appInView = NO;
-            }
+    if (!self.needGuidePage) {
+        [self taoGoIntoMainController];
+    }
+}
 
-            [MMTodayHTUserManager manager].showTextLive = YES;
-        }
-        
-        if (!self.needGuidePage) {
-            [self taoGoIntoMainController];
-        }
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        BJLog(@"ERROR:%@",error);
-        if (self.tryTimes == 0) {
-            self.tryTimes++;
-            [self taoRequestConfig];
-            return;
-        }
-        [MMTodayHTUserManager manager].appInView = NO;
-        
-        if (!self.needGuidePage) {
-            [self taoGoIntoMainController];
-        }
-        
-        
-    }];
+- (void)handleAppInViewError {
+    if (self.tryTimes == 0) {
+        self.tryTimes++;
+        [self taoRequestConfig];
+        return;
+    }
+    [MMTodayHTUserManager manager].appInView = NO;
+    
+    if (!self.needGuidePage) {
+        [self taoGoIntoMainController];
+    }
+}
+
+- (void)taoRequestConfig {
+    
+    NSString *url = [NSString stringWithFormat:@"ios_config.json?t=%@",[[NSDate dateNow] getTimeStamp]];
+
+//    AFHTTPSessionManager *manager =[AFHTTPSessionManager manager];
+//    // parameters 参数字典
+//    [manager GET:url parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//
+//        NSDictionary *configDictionary = responseObject;
+//        [self handleAppInViewResult:configDictionary];
+//
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        BJLog(@"ERROR:%@",error);
+//        [self handleAppInViewError];
+//
+//
+//    }];
    
-    /**
-
+ 
     [PXFunBJHTTPServiceEngine tao_getRequestCommon:url params:nil successBlock:^(id responseData) {
-        NSDictionary *configDictionary = responseData; 
-        if (configDictionary) {
-            NSString *version = configDictionary[@"version"];
-            NSString *status = configDictionary[@"status"];
-            NSString *examine = configDictionary[@"examine"];
-            NSString *showTextLive = configDictionary[@"showTextLive"];
-            
-            NSString *appVersion = [KMonkeyBJUtility appVersion];
-            if ([appVersion isEqualToString:version] && [examine isEqualToString:@"1"]) {
-                [MMTodayHTUserManager manager].appInView = YES;
-                BJLog(@"getRequestCommon in view");
-            }else{
-                BJLog(@"getRequestCommon not in view");
-                [MMTodayHTUserManager manager].appInView = NO;
-            }
-//             [MMTodayHTUserManager manager].appInView = YES;
-//            if ([showTextLive isEqualToString:@"1"]) {//是否显示文字直播
-//                [MMTodayHTUserManager manager].showTextLive = YES;
-//
-//            }else{
-//
-//                [MMTodayHTUserManager manager].showTextLive = NO;//showTextLive 0 是不显示
-//            }
-             [MMTodayHTUserManager manager].showTextLive = YES;
-        }
-        
-        if (!self.needGuidePage) {
-            [self taoGoIntoMainController];
-        }
+        NSDictionary *configDictionary = responseData;
+        [self handleAppInViewResult:configDictionary];
         
     } errorBlock:^(SundayBJError *error) {
         BJLog(@"ERROR:%@",error);
-        if (self.tryTimes == 0) {
-            self.tryTimes++;
-            [self taoRequestConfig];
-            return;
-        }
-        [MMTodayHTUserManager manager].appInView = NO;
-        
-        if (!self.needGuidePage) {
-            [self taoGoIntoMainController];
-        }
+        [self handleAppInViewError];
         
     }];
      
-     */
 }
 
 
