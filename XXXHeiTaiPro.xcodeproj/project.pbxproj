@@ -11,6 +11,8 @@
 		3213529E250A149F00702F72 /* InfoMessage.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3213529A250A149F00702F72 /* InfoMessage.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3213529F250A149F00702F72 /* UserMessage.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3213529D250A149F00702F72 /* UserMessage.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		32135303250A2F1400702F72 /* GPBProtocolBuffers.m in Sources */ = {isa = PBXBuildFile; fileRef = 321352D8250A2F1300702F72 /* GPBProtocolBuffers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		321411CE2680485D001846B7 /* YYPackageHTMatchHomeCell222.m in Sources */ = {isa = PBXBuildFile; fileRef = 321411CB2680485C001846B7 /* YYPackageHTMatchHomeCell222.m */; };
+		321411CF2680485D001846B7 /* YYPackageHTMatchHomeCell222.xib in Resources */ = {isa = PBXBuildFile; fileRef = 321411CC2680485C001846B7 /* YYPackageHTMatchHomeCell222.xib */; };
 		32184803260B1BFD008D836C /* RRDogYSAVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 321847EC260B1BFC008D836C /* RRDogYSAVViewController.m */; };
 		32184804260B1BFD008D836C /* GGCatYSBatteryTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 321847F0260B1BFC008D836C /* GGCatYSBatteryTool.m */; };
 		32184805260B1BFD008D836C /* NDeskYSCarrierTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 321847F2260B1BFC008D836C /* NDeskYSCarrierTool.m */; };
@@ -487,6 +489,9 @@
 		321352EA250A2F1300702F72 /* GPBWellKnownTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBWellKnownTypes.h; sourceTree = "<group>"; };
 		321352EB250A2F1300702F72 /* GPBUnknownField_PackagePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBUnknownField_PackagePrivate.h; sourceTree = "<group>"; };
 		321352EC250A2F1300702F72 /* GPBDictionary_PackagePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBDictionary_PackagePrivate.h; sourceTree = "<group>"; };
+		321411CB2680485C001846B7 /* YYPackageHTMatchHomeCell222.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYPackageHTMatchHomeCell222.m; sourceTree = "<group>"; };
+		321411CC2680485C001846B7 /* YYPackageHTMatchHomeCell222.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYPackageHTMatchHomeCell222.xib; sourceTree = "<group>"; };
+		321411CD2680485D001846B7 /* YYPackageHTMatchHomeCell222.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYPackageHTMatchHomeCell222.h; sourceTree = "<group>"; };
 		321847EB260B1BFC008D836C /* RRDogYSAVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDogYSAVViewController.h; sourceTree = "<group>"; };
 		321847EC260B1BFC008D836C /* RRDogYSAVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDogYSAVViewController.m; sourceTree = "<group>"; };
 		321847EE260B1BFC008D836C /* KMonkeyYSVolumeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMonkeyYSVolumeTool.h; sourceTree = "<group>"; };
@@ -2602,6 +2607,9 @@
 		FEDF8FBB214434F8005C7C4D /* MatchViews */ = {
 			isa = PBXGroup;
 			children = (
+				321411CD2680485D001846B7 /* YYPackageHTMatchHomeCell222.h */,
+				321411CB2680485C001846B7 /* YYPackageHTMatchHomeCell222.m */,
+				321411CC2680485C001846B7 /* YYPackageHTMatchHomeCell222.xib */,
 				324C9AF125EFB01200235E92 /* YYPackageHTChatSelfContentCell.h */,
 				324C9AF325EFB01200235E92 /* YYPackageHTChatSelfContentCell.m */,
 				324C9AF225EFB01200235E92 /* YYPackageHTChatSelfContentCell.xib */,
@@ -2772,6 +2780,7 @@
 				FEC1160D2143D4A1002DB617 /* RRDogXJEmptyView.xib in Resources */,
 				32F4776F2601A3FB00377292 /* UKRosRedaaadb.storyboard in Resources */,
 				FECCA5352258C8D0009EF494 /* CCCaseHTHistoryViewController.xib in Resources */,
+				321411CF2680485D001846B7 /* YYPackageHTMatchHomeCell222.xib in Resources */,
 				FE6BD07A21452B570090118A /* KMonkeyHTNewsHomeBannerCell.xib in Resources */,
 				3277C5D423A9CA2800D43D80 /* photo_down_btn@3x.png in Resources */,
 				FE6BD075214526980090118A /* YYPackageHTNewsHomeCell.xib in Resources */,
@@ -3162,6 +3171,7 @@
 				FECCA5262258C8D0009EF494 /* YYPackageHTLoginAlertView.m in Sources */,
 				FEC117312143EAC2002DB617 /* GGCatBJBaseResponceModel.m in Sources */,
 				FEC1167B2143D4A1002DB617 /* YYPackageBJWebViewInitializer.m in Sources */,
+				321411CE2680485D001846B7 /* YYPackageHTMatchHomeCell222.m in Sources */,
 				FEC116122143D4A1002DB617 /* NDeskLJTabBar.m in Sources */,
 				32FED82123AB768700D900A7 /* NDeskLMLandScapeControlView.m in Sources */,
 				FE6BD05B2144FDFD0090118A /* RRDogHTMatchWordLiveViewController.m in Sources */,
