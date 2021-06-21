@@ -318,7 +318,7 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 
 + (UIColor *)getAppBaseColor {
     if (isAppInView) {
-        return [UIColor hx_colorWithHexRGBAString:@"51c788"];
+        return [UIColor hx_colorWithHexRGBAString:@"54b4ec"];
     }else{
         return [UIColor hx_colorWithHexRGBAString:@"fc562e"];
     }

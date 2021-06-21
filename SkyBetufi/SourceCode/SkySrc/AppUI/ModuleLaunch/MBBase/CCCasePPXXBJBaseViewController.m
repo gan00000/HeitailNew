@@ -235,7 +235,12 @@
     }else if ([currentClassString isEqualToString:NSStringFromClass([RRDogHTFilmHomeViewController class])]){
         
         [self.rightSearchButton setImage:[UIImage imageNamed:@"icon_search"] forState:UIControlStateNormal];
-    }else{
+    }else if (isAppInView && [currentClassString isEqualToString:NSStringFromClass([HourseHTMainPageViewController class])]){
+        
+        [self.rightSearchButton setImage:[UIImage imageNamed:@"icon_search"] forState:UIControlStateNormal];
+    }
+    
+    else{
         self.rightSearchButton.hidden = YES;
     }
     

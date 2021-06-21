@@ -117,6 +117,8 @@
 		32ABE1D322EDF733008505BA /* GGCatHTTabBarHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32ABE1D022EDF732008505BA /* GGCatHTTabBarHomeViewController.xib */; };
 		32AC0CA525FB156D003B21FC /* YYPackageHTHighLightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AC0CA325FB156D003B21FC /* YYPackageHTHighLightsViewController.m */; };
 		32AC0CA825FB15AD003B21FC /* UKRosRedYYPackageHTHighLightsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32AC0CA725FB15AD003B21FC /* UKRosRedYYPackageHTHighLightsViewController.storyboard */; };
+		32AC4727267F2F15008E6339 /* MainLanmu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32AC4725267F2F14008E6339 /* MainLanmu.storyboard */; };
+		32AC4728267F2F15008E6339 /* MainLanmuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AC4726267F2F14008E6339 /* MainLanmuViewController.m */; };
 		32B0F58B2545B6A3005642DC /* RRDogHTMatchWebPlayControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B0F58A2545B6A3005642DC /* RRDogHTMatchWebPlayControllerViewController.m */; };
 		32B4A0022618CD2F00E81C6B /* SundayHTYoutubePlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B4A0002618CD2F00E81C6B /* SundayHTYoutubePlayerCell.m */; };
 		32B4A0032618CD2F00E81C6B /* SundayHTYoutubePlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B4A0012618CD2F00E81C6B /* SundayHTYoutubePlayerCell.xib */; };
@@ -641,6 +643,9 @@
 		32AC0CA225FB156D003B21FC /* YYPackageHTHighLightsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYPackageHTHighLightsViewController.h; sourceTree = "<group>"; };
 		32AC0CA325FB156D003B21FC /* YYPackageHTHighLightsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYPackageHTHighLightsViewController.m; sourceTree = "<group>"; };
 		32AC0CA725FB15AD003B21FC /* UKRosRedYYPackageHTHighLightsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UKRosRedYYPackageHTHighLightsViewController.storyboard; sourceTree = "<group>"; };
+		32AC4724267F2F14008E6339 /* MainLanmuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainLanmuViewController.h; sourceTree = "<group>"; };
+		32AC4725267F2F14008E6339 /* MainLanmu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainLanmu.storyboard; sourceTree = "<group>"; };
+		32AC4726267F2F14008E6339 /* MainLanmuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainLanmuViewController.m; sourceTree = "<group>"; };
 		32B0F5892545B6A3005642DC /* RRDogHTMatchWebPlayControllerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRDogHTMatchWebPlayControllerViewController.h; sourceTree = "<group>"; };
 		32B0F58A2545B6A3005642DC /* RRDogHTMatchWebPlayControllerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRDogHTMatchWebPlayControllerViewController.m; sourceTree = "<group>"; };
 		32B49FFF2618CD2F00E81C6B /* SundayHTYoutubePlayerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SundayHTYoutubePlayerCell.h; sourceTree = "<group>"; };
@@ -1526,6 +1531,16 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		32AC4723267F2EA4008E6339 /* lanmu */ = {
+			isa = PBXGroup;
+			children = (
+				32AC4725267F2F14008E6339 /* MainLanmu.storyboard */,
+				32AC4724267F2F14008E6339 /* MainLanmuViewController.h */,
+				32AC4726267F2F14008E6339 /* MainLanmuViewController.m */,
+			);
+			path = lanmu;
+			sourceTree = "<group>";
+		};
 		32CC78E024F3EA7900377576 /* MonChartUtil */ = {
 			isa = PBXGroup;
 			children = (
@@ -1799,6 +1814,7 @@
 		FEC1126F2143D4A0002DB617 /* AppUI */ = {
 			isa = PBXGroup;
 			children = (
+				32AC4723267F2EA4008E6339 /* lanmu */,
 				329468D5264A3473003DEFA2 /* MainPage */,
 				32E3E97B24FD3FE40076AD93 /* ModuleSearch */,
 				FEC113102143D4A0002DB617 /* ModuleLaunch */,
@@ -2788,6 +2804,7 @@
 				32E7228D2309A3A6003E0A03 /* guideImageapp15.jpg in Resources */,
 				32FC51CB25FFA3E40025B269 /* UKRosRedHTNewMatchHome.storyboard in Resources */,
 				FE800F7022639DFD00E575D5 /* RRDogHTCommentExpendCell.xib in Resources */,
+				32AC4727267F2F15008E6339 /* MainLanmu.storyboard in Resources */,
 				FE6BD0642144FF1F0090118A /* UKRosRedMatchDashboard.storyboard in Resources */,
 				3287124823B8962800AB5360 /* video_error_pressed.png in Resources */,
 				32E7228A2309A3A6003E0A03 /* guideImageapp4.jpg in Resources */,
@@ -3098,6 +3115,7 @@
 				32B5323F26175D8C009ED9D8 /* YYPackageHTNewsDetailModel.m in Sources */,
 				FEC1167A2143D4A1002DB617 /* GGCatBJWebViewCacheHelper.m in Sources */,
 				FE800F6F22639DFD00E575D5 /* RRDogHTCommentExpendCell.m in Sources */,
+				32AC4728267F2F15008E6339 /* MainLanmuViewController.m in Sources */,
 				32FED82623AB768700D900A7 /* PXFunLMLoadingView.m in Sources */,
 				32E1AF42261D6B0700ACB3B2 /* NSString+RRDogHTML.m in Sources */,
 				32CD878322F4173800063A14 /* SkyInlineViewController.m in Sources */,
@@ -3363,7 +3381,7 @@
 				CODE_SIGN_ENTITLEMENTS = SkyBetufi/SunFunly.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: yupeng su (6HM9UCSUQM)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = 98DGMGPLHN;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3586,7 +3604,7 @@
 				CODE_SIGN_ENTITLEMENTS = SkyBetufi/SunFunly.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: yupeng su (98DGMGPLHN)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = 98DGMGPLHN;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

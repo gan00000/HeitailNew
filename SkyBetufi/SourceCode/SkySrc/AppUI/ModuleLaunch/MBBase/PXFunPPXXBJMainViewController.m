@@ -20,6 +20,8 @@
 #import "CCCaseHTHistoryViewController.h"
 #import "NDeskHTSettingViewController.h"
 #import "HourseHTMainPageViewController.h"
+#import "MainLanmuViewController.h"
+
 
 @import Firebase;
 @import GoogleSignIn;
@@ -37,6 +39,10 @@
 @property (nonatomic, strong) CCCaseHTRankHomeViewController *vc5;
 @property (nonatomic, strong) HoursePPXXBJNavigationController *nav6;
 @property (nonatomic, strong) GGCatHTTabBarHomeViewController *vc6;
+
+
+@property (nonatomic, strong) HoursePPXXBJNavigationController *nav7;
+@property (nonatomic, strong) MainLanmuViewController *vc7;
 
 
 @property (nonatomic, strong) HoursePPXXBJNavigationController *nav0;
@@ -110,7 +116,7 @@
 - (NSArray<NSString *> *)taotabBarTitles {
     BJLog(@"PXFunPPXXBJMainViewController taotabBarTitles");
     if (isAppInView) {
-        return @[@"首頁",@"資訊", @"短片", @"賽事",  @"統計"];
+        return @[@"首頁",@"賽事", @"欄目"];
     }
 //    return @[@"比賽", @"新聞", @"影片", @"數據", @"排行"];
      return @[@"首頁",@"直播", @"新聞", @"影片", @"數據"];
@@ -119,11 +125,11 @@
      if (isAppInView) {
          return @[
              [[UIImage imageNamed:@"tab_xxx_mainpage"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-             [[UIImage imageNamed:@"tab_xxx_news"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                  [[UIImage imageNamed:@"tab_xxx_film"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+             [[UIImage imageNamed:@"tab_xxx_match"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+             [[UIImage imageNamed:@"tab_xxx_lanmu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 //                  [[UIImage imageNamed:@"tab_icon_normal3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                  [[UIImage imageNamed:@"tab_xxx_match"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                  [[UIImage imageNamed:@"tab_xxx_data"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//                  [[UIImage imageNamed:@"tab_xxx_match"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+//                  [[UIImage imageNamed:@"tab_xxx_data"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
      }
     return @[[[UIImage imageNamed:@"tab_main_page_unselect"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_normal1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
@@ -134,11 +140,11 @@
 - (NSArray<UIImage *> *)taotabBarSelectedIcons {
     if (isAppInView) {
         return  @[[[UIImage imageNamed:@"tab_xxx_mainpage_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                  [[UIImage imageNamed:@"tab_xxx_news_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                  [[UIImage imageNamed:@"tab_xxx_film_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-//                  [[UIImage imageNamed:@"tab_icon_selected3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                   [[UIImage imageNamed:@"tab_xxx_match_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                 [[UIImage imageNamed:@"tab_xxx_data_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                  [[UIImage imageNamed:@"tab_xxx_lanmu_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//                  [[UIImage imageNamed:@"tab_icon_selected3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+//                  [[UIImage imageNamed:@"tab_xxx_match_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+//                 [[UIImage imageNamed:@"tab_xxx_data_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     }
     return @[
              [[UIImage imageNamed:@"tab_main_page_select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
@@ -155,48 +161,41 @@
     }
     
     if (!self.vc1) {
-//        self.vc1 = [YYPackageHTMatchHomeViewController taoviewController];
         self.vc1 = [NDeskHTNewMatchHomeViewController taoviewController];
-//        self.vc1.modalPresentationStyle = UIModalPresentationFullScreen;
         self.nav1 = [[HoursePPXXBJNavigationController alloc] initWithRootViewController:self.vc1];
     }
     if (!self.vc2) {
         self.vc2 = [NDeskHTNewsHomeViewController taoviewController];
-//        self.vc2.modalPresentationStyle = UIModalPresentationFullScreen;
         self.nav2 = [[HoursePPXXBJNavigationController alloc] initWithRootViewController:self.vc2];
     }
     if (!self.vc3) {
         self.vc3 = [RRDogHTFilmHomeViewController taoviewController];
-//        self.vc3.modalPresentationStyle = UIModalPresentationFullScreen;
         self.nav3 = [[HoursePPXXBJNavigationController alloc] initWithRootViewController:self.vc3];
     }
     if (!self.vc4) {
         self.vc4 = [MMTodayHTDataHomeViewController taoviewController];
-//        self.vc4.modalPresentationStyle = UIModalPresentationFullScreen;
         self.nav4 = [[HoursePPXXBJNavigationController alloc] initWithRootViewController:self.vc4];
     }
     if (!self.vc5) {
         self.vc5 = [CCCaseHTRankHomeViewController taoviewController];
-//        self.vc5.modalPresentationStyle = UIModalPresentationFullScreen;
         self.nav5 = [[HoursePPXXBJNavigationController alloc] initWithRootViewController:self.vc5];
     }
     if (!self.vc6) {
         self.vc6 = [GGCatHTTabBarHomeViewController taoviewController];
-//        self.vc6.modalPresentationStyle = UIModalPresentationFullScreen;
         self.nav6 = [[HoursePPXXBJNavigationController alloc] initWithRootViewController:self.vc6];
     }
     
+    if (!self.vc7) {
+        self.vc7 = [MainLanmuViewController taoviewController];
+        self.nav7 = [[HoursePPXXBJNavigationController alloc] initWithRootViewController:self.vc7];
+    }
+    
 //    self.nav1.modalPresentationStyle = UIModalPresentationFullScreen;
-//    self.nav2.modalPresentationStyle = UIModalPresentationFullScreen;
-//    self.nav3.modalPresentationStyle = UIModalPresentationFullScreen;
-//    self.nav4.modalPresentationStyle = UIModalPresentationFullScreen;
-//    self.nav5.modalPresentationStyle = UIModalPresentationFullScreen;
-//    self.nav6.modalPresentationStyle = UIModalPresentationFullScreen;
     
     self.currentNavViewController = self.nav0;
     
     if (isAppInView) {
-         return @[self.nav0, self.nav2, self.nav3, self.nav1, self.nav4];
+         return @[self.nav0, self.nav1, self.nav7];
     }
   
     return @[self.nav0, self.nav1, self.nav2, self.nav3, self.nav4];

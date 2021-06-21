@@ -5,6 +5,7 @@
 #import "MMTodayHTDataHomeViewController.h"
 #import "CCCaseHTRankHomeViewController.h"
 #import "HourseHTMainPageViewController.h"
+#import "MainLanmuViewController.h"
 
 @interface UINavigationController (UINavigationControllerPopHooker)
 - (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(nonnull UINavigationItem *)item;
@@ -43,6 +44,7 @@
          ![self isKindOfClass:[RRDogHTFilmHomeViewController class]] &&
          ![self isKindOfClass:[MMTodayHTDataHomeViewController class]] &&
          ![self isKindOfClass:[HourseHTMainPageViewController class]] &&
+         ![self isKindOfClass:[MainLanmuViewController class]] &&
          
          ![self isKindOfClass:[CCCaseHTRankHomeViewController class]])) {
         viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_back"]

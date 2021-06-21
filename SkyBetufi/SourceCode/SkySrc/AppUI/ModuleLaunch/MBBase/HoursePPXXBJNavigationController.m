@@ -8,6 +8,7 @@
 #import "HourseHTNewsHomeOtherViewController.h"
 #import "RRDogPPXXBJLaunchViewController.h"
 #import "HourseHTMainPageViewController.h"
+#import "MainLanmuViewController.h"
 
 @interface HoursePPXXBJNavigationController ()
 @end
@@ -48,6 +49,7 @@
              [HourseHTNewsHomeOtherViewController class],
              [RRDogPPXXBJLaunchViewController class],
              [HourseHTMainPageViewController class],
+             [MainLanmuViewController class],
              
              [GGCatHTTabBarHomeViewController class]];
 }
