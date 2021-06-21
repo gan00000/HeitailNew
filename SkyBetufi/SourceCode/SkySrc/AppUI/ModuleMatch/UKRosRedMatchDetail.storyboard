@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Glod BuleHT Match Detail View Controller-->
+        <!--SundayHT Match Detail View Controller-->
         <scene sceneID="QHS-Jt-yGa">
             <objects>
                 <viewController id="Sv3-UW-Fso" customClass="SundayHTMatchDetailViewController" sceneMemberID="viewController">
@@ -307,6 +307,7 @@
                         <outlet property="startTimeLable" destination="AGT-3j-k6E" id="ehh-Ow-0yp"/>
                         <outlet property="statusLabel" destination="dDr-Pe-Uad" id="dvA-2y-nq0"/>
                         <outlet property="topDetailView" destination="WcA-4R-DjX" id="4LL-eE-Z2a"/>
+                        <outlet property="topDetailView_Height_ct" destination="8iP-7d-R9s" id="eEV-h0-nuA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bPH-Lb-lgI" userLabel="First Responder" sceneMemberID="firstResponder"/>

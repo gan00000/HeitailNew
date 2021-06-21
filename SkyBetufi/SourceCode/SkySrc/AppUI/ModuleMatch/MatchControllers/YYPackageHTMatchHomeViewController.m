@@ -9,6 +9,7 @@
 #import "UIView+PXFunEmptyView.h"
 #import "AppDelegate.h"
 #import "PXFunConfigCoreUtil.h"
+#import "YYPackageHTMatchHomeCell222.h"
 
 @interface YYPackageHTMatchHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *timeTitleLabel;
@@ -74,6 +75,14 @@
     return groupModel.matchList.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (isAppInView) {
+        YYPackageHTMatchHomeCell222 *cell = [tableView dequeueReusableCellWithIdentifier:@"YYPackageHTMatchHomeCell222"];
+        MMTodayHTMatchHomeGroupModel *groupModel = self.matchList[indexPath.section];
+        [cell taosetupWithMatchModel:groupModel.matchList[indexPath.row] matchType:self.matchType];
+        return cell;
+    }
+    
     YYPackageHTMatchHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YYPackageHTMatchHomeCell"];
     MMTodayHTMatchHomeGroupModel *groupModel = self.matchList[indexPath.section];
     [cell taosetupWithMatchModel:groupModel.matchList[indexPath.row] matchType:self.matchType];
@@ -135,6 +144,10 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"YYPackageHTMatchHomeCell" bundle:nil]
          forCellReuseIdentifier:@"YYPackageHTMatchHomeCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"KMonkeyHTMatchHomeGroupHeaderView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"KMonkeyHTMatchHomeGroupHeaderView"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"YYPackageHTMatchHomeCell222" bundle:nil]
+         forCellReuseIdentifier:@"YYPackageHTMatchHomeCell222"];
+    
     kWeakSelf
     self.tableView.mj_header = [HourseMJRefreshGenerator bj_headerWithRefreshingBlock:^{
         [weakSelf loadPreviousDateData];

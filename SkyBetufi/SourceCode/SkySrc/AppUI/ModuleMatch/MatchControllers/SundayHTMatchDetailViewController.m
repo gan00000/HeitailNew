@@ -79,6 +79,9 @@
 @property (nonatomic, assign) BOOL isSetupUI;
 @property (nonatomic, assign) BOOL firstGameIsFinal;
 
+//@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topDetailView_top_ct;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topDetailView_Height_ct;
+
 @end
 @implementation SundayHTMatchDetailViewController
 + (instancetype)taoviewController {
@@ -95,6 +98,13 @@
     self.firstGameIsFinal = NO;
     
     [self.view showLoadingView];
+    
+    if (isAppInView) {///为了view
+        self.topDetailView_Height_ct.constant = 0.1;
+        self.topDetailView.hidden = YES;
+        [self.view layoutIfNeeded];
+    }
+    
     [self loadData];
     
     [FIRAnalytics logEventWithName:@"IOS_Match_Detail"
