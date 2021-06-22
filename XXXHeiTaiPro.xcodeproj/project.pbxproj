@@ -1483,14 +1483,14 @@
 			path = videoPlayerImage;
 			sourceTree = "<group>";
 		};
-		328893F02603310900759311 /* SevenPlayer */ = {
+		328893F02603310900759311 /* PlayerInfo */ = {
 			isa = PBXGroup;
 			children = (
 				328894482603310900759311 /* PlayerAssets.xcassets */,
 				328894372603310900759311 /* Category */,
-				328894552603310900759311 /* Common */,
+				328894552603310900759311 /* VideoInfo */,
 			);
-			path = SevenPlayer;
+			path = PlayerInfo;
 			sourceTree = "<group>";
 		};
 		328894372603310900759311 /* Category */ = {
@@ -1504,13 +1504,13 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		328894552603310900759311 /* Common */ = {
+		328894552603310900759311 /* VideoInfo */ = {
 			isa = PBXGroup;
 			children = (
 				328894622603310900759311 /* PLMediaInfo.h */,
 				3288945A2603310900759311 /* PLMediaInfo.m */,
 			);
-			path = Common;
+			path = VideoInfo;
 			sourceTree = "<group>";
 		};
 		329468D5264A3473003DEFA2 /* MainPage */ = {
@@ -1773,7 +1773,7 @@
 				32DBC4B526524DF900D760C3 /* ConfuseHeader.h */,
 				325BD8C822E07D6F00A07EC9 /* confuse.sh */,
 				325BD8C922E07D6F00A07EC9 /* func.list */,
-				328893F02603310900759311 /* SevenPlayer */,
+				328893F02603310900759311 /* PlayerInfo */,
 				321352A0250A2F1300702F72 /* objectivec */,
 				32135299250A149F00702F72 /* proto_out */,
 				FEC112572143D057002DB617 /* SkyBetufi */,
