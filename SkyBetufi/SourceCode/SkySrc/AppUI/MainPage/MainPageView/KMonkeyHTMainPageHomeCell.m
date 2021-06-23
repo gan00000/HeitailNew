@@ -73,7 +73,8 @@
     self.nickHeaderImageView.layer.cornerRadius = 25;
     
 //    self.old_hotCommentViewHeight = self.hotCommentViewHeight;
-//    [self addPlayerView];
+    [self addNewsImageView];
+    [self addPlayerView];
     
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.backgroundColor = [UIColor whiteColor];
@@ -135,8 +136,8 @@
 
 -(void) addPlayerView
 {
-    [self shutdown];
-    [self.webContentView removeAllSubView];
+//    [self shutdown];
+//    [self.webContentView removeAllSubView];
     
     self.playerController = [[CCCaseYSPlayerController alloc] initWithContentMediaInfo: self.newsModel.plMediaInfo];
     self.playerController.delegate = self;
@@ -155,11 +156,12 @@
     }
     [self.thumbShowImageViews removeAllObjects];
     
-    [self.webContentView removeAllSubView];
-    if (!self.newsModel.poster) {
-        return;
-    }
-    int imageCount = self.newsModel.poster.count;
+//    [self.webContentView removeAllSubView];
+//    if (!self.newsModel.poster) {
+//        return;
+//    }
+//    int imageCount = self.newsModel.poster.count;
+    int imageCount = 3;
     if (imageCount > 3) {
         imageCount = 3;
     }
@@ -181,6 +183,7 @@
         
         UIImageView *thumbShowImageView = [[UIImageView alloc] init];
         thumbShowImageView.userInteractionEnabled = YES;
+        thumbShowImageView.contentMode = UIViewContentModeScaleAspectFit;
         [self.webContentView addSubview:thumbShowImageView];
         [self.thumbShowImageViews addObject:thumbShowImageView];
         
@@ -190,6 +193,45 @@
             make.top.mas_equalTo(self.webContentView);
             make.bottom.mas_equalTo(self.webContentView);
         }];
+    }
+    
+   
+}
+
+-(void) updateNewsImageView
+{
+    if (!self.newsModel.poster) {
+        return;
+    }
+    int imageCount = self.newsModel.poster.count;
+   
+    if (imageCount > 3) {
+        imageCount = 3;
+    }
+    
+    CGFloat xUIImageView_Offset = 10;
+    
+    CGFloat imageWidth = (SCREEN_WIDTH - 30) / 3 * 2;
+    if (imageCount > 1) {
+        if (imageCount == 2) {
+            imageWidth = (SCREEN_WIDTH - 30) / 3;
+        }else{
+            imageWidth = (SCREEN_WIDTH - 30 - (xUIImageView_Offset*2)) / 3;
+        }
+        
+    }
+    self.newsModel.cell_width = imageWidth;
+    
+    for (int i = 0; i < self.thumbShowImageViews.count; i++) {
+        
+        UIImageView *aimageView = self.thumbShowImageViews[i];
+        [aimageView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(imageWidth);
+            make.leading.mas_equalTo(self.webContentView).mas_offset(imageWidth * i + xUIImageView_Offset * i);
+            make.top.mas_equalTo(self.webContentView);
+            make.bottom.mas_equalTo(self.webContentView);
+        }];
+
     }
     
    
@@ -275,30 +317,34 @@
         [self.playerController setMediaInfo:newsModel.plMediaInfo];
         
         self.fromTypeLabel.text = @"發佈於 影片";
-        
-        [self addPlayerView];
+        self.playerController.view.hidden = NO;
+//        [self addPlayerView];
 
     }else if ([newsModel.posted_on isEqualToString:@"topics"]) {
         self.filmTimeLabel.hidden = YES;
         self.fromTypeLabel.text = @"發佈於 話題";
+        self.playerController.view.hidden = YES;
         if (newsModel.cell_height > 0) {
             self.webContentViewHeight.constant = newsModel.cell_height;
         }
        
-        [self addNewsImageView];
+//        [self addNewsImageView];
+        [self updateNewsImageView];
     }else{
         
         self.filmTimeLabel.hidden = YES;
         self.fromTypeLabel.text = @"發佈於 新聞";
+        self.playerController.view.hidden = YES;
         if (newsModel.cell_height > 0) {
             self.webContentViewHeight.constant = newsModel.cell_height;
         }
-        [self addNewsImageView];
+//        [self addNewsImageView];
+        [self updateNewsImageView];
     }
     
-//    [self setNeedsUpdateConstraints];
-//    [self updateConstraintsIfNeeded];
-//    [self layoutIfNeeded];
+    [self setNeedsUpdateConstraints];
+    [self updateConstraintsIfNeeded];
+    [self layoutIfNeeded];
 }
 
 - (void)taosetupWithPLMediaInfo:(PLMediaInfo *)mPLMediaInfo

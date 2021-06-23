@@ -165,9 +165,8 @@
                   if (i < model.poster.count) {
                       
                       UIImageView *thumbShowImageView = cell.thumbShowImageViews[i];
+                      thumbShowImageView.hidden = NO;
                       NSString *imageUrl = model.poster[i];
-//                      [thumbShowImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:HT_DEFAULT_IMAGE];
-                      thumbShowImageView.contentMode = UIViewContentModeScaleAspectFit;
                       
                       [thumbShowImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:HT_DEFAULT_IMAGE completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
               
@@ -193,6 +192,9 @@
                           [[self navigationController] pushViewController:imageBrController animated:NO];
                       }];
 
+                  }else{
+                      UIImageView *noUseShowImageView = cell.thumbShowImageViews[i];
+                      noUseShowImageView.hidden = YES;
                   }
               }
           }
