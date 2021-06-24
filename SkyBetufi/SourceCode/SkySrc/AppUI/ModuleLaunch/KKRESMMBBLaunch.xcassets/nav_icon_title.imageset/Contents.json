@@ -5,18 +5,18 @@
       "scale" : "1x"
     },
     {
+      "filename" : "198x60.png",
       "idiom" : "universal",
-      "filename" : "deswwsky_com_image17.png",
       "scale" : "2x"
     },
     {
+      "filename" : "306x90.png",
       "idiom" : "universal",
-      "filename" : "deswwsky_com_image18.png",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
