@@ -346,10 +346,7 @@ static  NSString *cellID = @"cellID";
     [YYPackageHTLoginAlertView taoshowShareAlertViewWithSelectBlock:^(HTLoginPlatform platform) {
         UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
         if (platform == HTLoginPlatformFB) {
-//            UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"黑特體育" descr:nil thumImage:nil];
-//            shareObject.webpageUrl = self.browserArray[0][@"url"];
-//            messageObject.shareObject = shareObject;
-//            [self doShareToPlatform:UMSocialPlatformType_Facebook withMessage:messageObject];
+
             
             FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
             content.contentURL = [NSURL URLWithString: self.browserArray[0][@"url"]];

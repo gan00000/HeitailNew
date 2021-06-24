@@ -28,7 +28,7 @@
     self.view.backgroundColor = RGBA_COLOR_HEX(0xf4f4f4);
     
     if ([self isKindOfClass:[RRDogPPXXBJLaunchViewController class]]) {
-        [self.navigationController.navigationBar lt_setBackgroundColor: [UIColor hx_colorWithHexRGBAString:@"51c788"]];
+        [self.navigationController.navigationBar lt_setBackgroundColor: [UIColor hx_colorWithHexRGBAString:@"54b4ec"]];
     }else{
         [self.navigationController.navigationBar lt_setBackgroundColor: appBaseColor];
     }

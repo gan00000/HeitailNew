@@ -109,10 +109,6 @@
         
         if (kHTUpdateInfoModel && !kHTUpdateInfoModel.content) {
             
-//            HTUpdateInfoModel *xxHTUpdateInfoModel = [[HTUpdateInfoModel alloc] init];
-//            xxHTUpdateInfoModel.content = @"因為政策原因，您當前使用的APP版本(3.8.0)將於6月1日停止運營服務，歡飲大家前往蘋果商店下載最新版本\n\n應用名稱：黑特體育\n\n地址：https://bit.ly/3uZ4s5n";
-//
-//            xxHTUpdateInfoModel.confirm_to = @"http://baidu.com";
             [HTShowUpdateInfoView showWithData:kHTUpdateInfoModel];
             
         }
