@@ -98,6 +98,8 @@
 	<string>“籃球網”想訪問您的相冊，用於保存頭像拍照圖片。</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>“籃球網”想訪問您的相冊，用於上傳頭像。</string>
+    <key>NSUserTrackingUsageDescription</key>
+    <string>您的數據將用於向您投放個性化廣告.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
