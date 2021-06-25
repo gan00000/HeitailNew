@@ -11,7 +11,7 @@
 @end
 @implementation FFlaliHTDataHomeSubViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedDataHomeSub");
+    return kLoadStoryboardWithName(@"FaCaiDataHomeSub");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

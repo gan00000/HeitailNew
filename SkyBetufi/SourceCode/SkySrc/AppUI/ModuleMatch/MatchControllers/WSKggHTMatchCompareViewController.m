@@ -21,7 +21,7 @@
 @end
 @implementation WSKggHTMatchCompareViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedMatchCompare");
+    return kLoadStoryboardWithName(@"FaCaiMatchCompare");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

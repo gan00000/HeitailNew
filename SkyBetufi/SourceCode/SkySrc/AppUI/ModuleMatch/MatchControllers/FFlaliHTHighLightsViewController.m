@@ -26,7 +26,7 @@
 @implementation FFlaliHTHighLightsViewController
 
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedYYPackageHTHighLightsViewController");
+    return kLoadStoryboardWithName(@"FaCaiYYPackageHTHighLightsViewController");
 }
 
 - (void)viewDidLoad {

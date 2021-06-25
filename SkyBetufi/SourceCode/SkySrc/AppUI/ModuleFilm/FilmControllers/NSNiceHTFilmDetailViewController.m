@@ -60,7 +60,7 @@
 @end
 @implementation NSNiceHTFilmDetailViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedFilmDetail");
+    return kLoadStoryboardWithName(@"FaCaiFilmDetail");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

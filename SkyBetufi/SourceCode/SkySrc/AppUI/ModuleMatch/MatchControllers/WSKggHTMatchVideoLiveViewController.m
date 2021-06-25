@@ -53,7 +53,7 @@
 @implementation WSKggHTMatchVideoLiveViewController
 
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedHTMatchVideoLive");
+    return kLoadStoryboardWithName(@"FaCaiHTMatchVideoLive");
 }
 
 - (void)viewDidLoad {

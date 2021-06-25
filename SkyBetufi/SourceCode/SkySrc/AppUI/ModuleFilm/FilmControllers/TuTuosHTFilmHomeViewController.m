@@ -22,7 +22,7 @@
 @end
 @implementation TuTuosHTFilmHomeViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedFilmHome");
+    return kLoadStoryboardWithName(@"FaCaiFilmHome");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

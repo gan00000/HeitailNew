@@ -11,7 +11,7 @@
 @end
 @implementation NSNiceHTNewsHomeOtherViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedNewsHomeOther");
+    return kLoadStoryboardWithName(@"FaCaiNewsHomeOther");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

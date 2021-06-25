@@ -32,7 +32,7 @@
 
 
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"MainLanmu");
+    return kLoadStoryboardWithName(@"FaCaiMainLanmu");
 }
 
 - (void)viewDidLoad

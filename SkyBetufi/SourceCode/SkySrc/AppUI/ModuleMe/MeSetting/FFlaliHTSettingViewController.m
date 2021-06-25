@@ -8,7 +8,7 @@
 @end
 @implementation FFlaliHTSettingViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedSetting");
+    return kLoadStoryboardWithName(@"FaCaiSetting");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

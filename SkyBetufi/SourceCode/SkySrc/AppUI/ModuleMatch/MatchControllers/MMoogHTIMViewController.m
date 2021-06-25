@@ -43,7 +43,7 @@
 @implementation MMoogHTIMViewController
 
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedTHIM");
+    return kLoadStoryboardWithName(@"FaCaiTHIM");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

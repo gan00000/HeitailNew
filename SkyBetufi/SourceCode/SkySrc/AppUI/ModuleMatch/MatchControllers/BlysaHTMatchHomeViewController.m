@@ -31,7 +31,7 @@
 @end
 @implementation BlysaHTMatchHomeViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedMatchHome");
+    return kLoadStoryboardWithName(@"FaCaiMatchHome");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

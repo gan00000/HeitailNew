@@ -11,7 +11,7 @@
 @end
 @implementation YeYeeHTRankHomeViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedRankHome");
+    return kLoadStoryboardWithName(@"FaCaiRankHome");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

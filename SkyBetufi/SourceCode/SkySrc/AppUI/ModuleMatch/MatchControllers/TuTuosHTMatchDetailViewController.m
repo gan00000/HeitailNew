@@ -85,7 +85,7 @@
 @end
 @implementation TuTuosHTMatchDetailViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedMatchDetail");
+    return kLoadStoryboardWithName(@"FaCaiMatchDetail");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

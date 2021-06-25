@@ -28,7 +28,7 @@
 @end
 @implementation FFlaliHTMainPageViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedMainPage");
+    return kLoadStoryboardWithName(@"FaCaiMainPage");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
