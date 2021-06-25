@@ -11,7 +11,7 @@
 @end
 @implementation FFlaliHTMatchDashboardViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedMatchDashboard");
+    return kLoadStoryboardWithName(@"FaCaiMatchDashboard");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

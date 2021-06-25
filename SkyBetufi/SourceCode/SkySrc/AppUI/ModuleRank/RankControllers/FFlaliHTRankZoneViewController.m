@@ -8,7 +8,7 @@
 @end
 @implementation FFlaliHTRankZoneViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedRankZone");
+    return kLoadStoryboardWithName(@"FaCaiRankZone");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

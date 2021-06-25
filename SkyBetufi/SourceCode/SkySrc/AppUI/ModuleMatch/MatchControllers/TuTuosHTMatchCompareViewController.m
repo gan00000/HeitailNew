@@ -21,7 +21,7 @@
 @end
 @implementation TuTuosHTMatchCompareViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedMatchCompare");
+    return kLoadStoryboardWithName(@"FaCaiMatchCompare");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

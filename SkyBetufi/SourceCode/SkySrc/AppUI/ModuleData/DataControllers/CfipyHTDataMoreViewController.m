@@ -15,7 +15,7 @@
 @end
 @implementation CfipyHTDataMoreViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedDataMore");
+    return kLoadStoryboardWithName(@"FaCaiDataMore");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

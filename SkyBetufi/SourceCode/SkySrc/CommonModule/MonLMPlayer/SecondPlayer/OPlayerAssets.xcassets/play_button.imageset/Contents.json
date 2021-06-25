@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "deswwplay_button.png",
+      "filename" : "hyesplay_button.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "deswwplay_button@2x.png",
+      "filename" : "hyesplay_button@2x.png",
       "scale" : "2x"
     },
     {

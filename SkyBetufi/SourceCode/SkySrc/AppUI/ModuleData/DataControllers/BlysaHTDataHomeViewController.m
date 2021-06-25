@@ -12,7 +12,7 @@
 @end
 @implementation BlysaHTDataHomeViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedDataHome");
+    return kLoadStoryboardWithName(@"FaCaiDataHome");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

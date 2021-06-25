@@ -60,7 +60,7 @@
 @end
 @implementation KSasxHTFilmDetailViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedFilmDetail");
+    return kLoadStoryboardWithName(@"FaCaiFilmDetail");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

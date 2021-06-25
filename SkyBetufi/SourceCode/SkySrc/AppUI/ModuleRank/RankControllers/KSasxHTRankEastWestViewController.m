@@ -8,7 +8,7 @@
 @end
 @implementation KSasxHTRankEastWestViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedRankEastWest");
+    return kLoadStoryboardWithName(@"FaCaiRankEastWest");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

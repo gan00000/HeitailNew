@@ -55,7 +55,7 @@
 @implementation MMoogPlayerInfoViewController
 
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedPlayerInfo");
+    return kLoadStoryboardWithName(@"FaCaiPlayerInfo");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

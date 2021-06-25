@@ -28,7 +28,7 @@
 @end
 @implementation NSNiceHTMainPageViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedMainPage");
+    return kLoadStoryboardWithName(@"FaCaiMainPage");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

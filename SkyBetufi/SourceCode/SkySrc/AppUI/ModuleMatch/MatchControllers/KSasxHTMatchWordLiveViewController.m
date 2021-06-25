@@ -24,7 +24,7 @@
 @end
 @implementation KSasxHTMatchWordLiveViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedMatchWordLive");
+    return kLoadStoryboardWithName(@"FaCaiMatchWordLive");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

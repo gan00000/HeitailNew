@@ -71,7 +71,7 @@
 @end
 @implementation KSasxHTNewsDetailViewController
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"UKRosRedNewsDetail");
+    return kLoadStoryboardWithName(@"FaCaiNewsDetail");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
