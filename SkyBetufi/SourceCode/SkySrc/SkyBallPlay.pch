@@ -43,6 +43,10 @@
 
 //**********重要***********//
 
+#if defined(__IPHONE_14_0)
+#import <AppTrackingTransparency/AppTrackingTransparency.h>//适配iOS14
+#endif
+
 #define OFFICIAL_RELEASE 0
 
 // 未发布到App Store的版本
