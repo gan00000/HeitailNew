@@ -94,11 +94,11 @@
 
 - (void)setupSaveButton {
     if (self.newsModel.my_like) {
-        [self.addSaveBtn setImage:[UIImage imageNamed:@"icon_film_like"] forState:UIControlStateNormal];
+        [self.addSaveBtn setImage:[UIImage imageNamed:@"gurk_icon_film_like"] forState:UIControlStateNormal];
         
         self.addSaveBtn.selected = YES;
     } else {
-        [self.addSaveBtn setImage:[UIImage imageNamed:@"icon_film_unlike"] forState:UIControlStateNormal];
+        [self.addSaveBtn setImage:[UIImage imageNamed:@"gurk_icon_film_unlike"] forState:UIControlStateNormal];
         
         self.addSaveBtn.selected = NO;
     }

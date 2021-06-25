@@ -326,9 +326,9 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 
 +(NSString *)getDefaultAvater
 {
-    NSString *default_avatar = @"default_avatar";
+    NSString *default_avatar = @"gurk_default_avatar";
     if (isAppInView) {
-        default_avatar = @"default_avater_view";
+        default_avatar = @"gurk_default_avater_view";
     }
     return default_avatar;
 }

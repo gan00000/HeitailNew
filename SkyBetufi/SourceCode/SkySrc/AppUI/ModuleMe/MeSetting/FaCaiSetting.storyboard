@@ -101,7 +101,7 @@
                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_more" translatesAutoresizingMaskIntoConstraints="NO" id="gnD-Oq-1xR">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_more" translatesAutoresizingMaskIntoConstraints="NO" id="gnD-Oq-1xR">
                                         <rect key="frame" x="353" y="18.5" width="7" height="13"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MfB-m7-amT">
@@ -143,7 +143,7 @@
                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_more" translatesAutoresizingMaskIntoConstraints="NO" id="j9p-NL-8FI">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_more" translatesAutoresizingMaskIntoConstraints="NO" id="j9p-NL-8FI">
                                         <rect key="frame" x="353" y="18.5" width="7" height="13"/>
                                     </imageView>
                                 </subviews>
@@ -218,7 +218,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_app_icon" translatesAutoresizingMaskIntoConstraints="NO" id="XRn-vn-2mL" customClass="JXImageView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_image_app_icon" translatesAutoresizingMaskIntoConstraints="NO" id="XRn-vn-2mL" customClass="JXImageView">
                                 <rect key="frame" x="112.5" y="70" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="0ae-J7-3Ic"/>
@@ -275,7 +275,7 @@
                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_more" translatesAutoresizingMaskIntoConstraints="NO" id="ODD-te-2Zh">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_more" translatesAutoresizingMaskIntoConstraints="NO" id="ODD-te-2Zh">
                                         <rect key="frame" x="353" y="18.5" width="7" height="13"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0S-cG-BiJ">
@@ -328,7 +328,7 @@
                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_more" translatesAutoresizingMaskIntoConstraints="NO" id="zsg-ei-AG6">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_more" translatesAutoresizingMaskIntoConstraints="NO" id="zsg-ei-AG6">
                                         <rect key="frame" x="353" y="18.5" width="7" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="7" id="SRa-LM-wcX"/>
@@ -380,7 +380,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_more" width="7.5" height="13"/>
-        <image name="image_app_icon" width="1024" height="1024"/>
+        <image name="gurk_icon_more" width="7.5" height="13"/>
+        <image name="gurk_image_app_icon" width="1024" height="1024"/>
     </resources>
 </document>

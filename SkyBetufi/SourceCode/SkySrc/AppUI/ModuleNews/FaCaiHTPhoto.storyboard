@@ -68,7 +68,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3y6-P3-mMs">
                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="60"/>
-                                                <state key="normal" image="icon_add_comment"/>
+                                                <state key="normal" image="gurk_icon_add_comment"/>
                                                 <connections>
                                                     <action selector="onShowCommentListAction:" destination="Lac-Tn-T9A" eventType="touchUpInside" id="DqZ-g9-oNf"/>
                                                 </connections>
@@ -78,7 +78,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="45" id="2zw-FP-c0z"/>
                                                 </constraints>
-                                                <state key="normal" image="icon_add_collection"/>
+                                                <state key="normal" image="gurk_icon_add_collection"/>
                                                 <connections>
                                                     <action selector="onSaveAction:" destination="Lac-Tn-T9A" eventType="touchUpInside" id="ATK-7q-Apf"/>
                                                 </connections>
@@ -195,7 +195,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_add_collection" width="22" height="22"/>
-        <image name="icon_add_comment" width="20" height="20"/>
+        <image name="gurk_icon_add_collection" width="22" height="22"/>
+        <image name="gurk_icon_add_comment" width="20" height="20"/>
     </resources>
 </document>

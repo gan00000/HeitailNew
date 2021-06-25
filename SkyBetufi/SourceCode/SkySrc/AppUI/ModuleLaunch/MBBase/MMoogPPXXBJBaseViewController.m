@@ -37,9 +37,9 @@
     NSLog(@"viewControllers.count = %d", self.navigationController.viewControllers.count);
     if (self.navigationController.viewControllers.count == 1 && ![self isKindOfClass:[YeYeeHTMeHomeViewController class]] && ![self isKindOfClass:[BlysaHTHomeLeftViewController class]]) {
         
-        NSString *nav_icon_title_image = @"nav_icon_title";
+        NSString *nav_icon_title_image = @"gurk_nav_icon_title";
         if (isAppInView) {
-            nav_icon_title_image = @"nav_icon_title_aa";
+            nav_icon_title_image = @"gurk_nav_icon_title_aa";
         }
         UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:nav_icon_title_image]];
         self.navigationItem.titleView = titleView;
@@ -194,7 +194,7 @@
     } else {
         
         if (isAppInView) {//top_menu_more
-            [self.taomeCenterButton setImage:[UIImage imageNamed:@"top_menu_more"] forState:UIControlStateNormal];
+            [self.taomeCenterButton setImage:[UIImage imageNamed:@"gurk_top_menu_more"] forState:UIControlStateNormal];
         }else{
             [self.taomeCenterButton setImage:HT_DEFAULT_AVATAR_LOGO forState:UIControlStateNormal];
         }
@@ -230,14 +230,14 @@
     
     NSString *currentClassString = NSStringFromClass([self class]);
     if ([currentClassString isEqualToString:NSStringFromClass([KSasxHTNewsHomeViewController class])]){
-        [self.rightSearchButton setImage:[UIImage imageNamed:@"icon_search"] forState:UIControlStateNormal];
+        [self.rightSearchButton setImage:[UIImage imageNamed:@"gurk_icon_search"] forState:UIControlStateNormal];
 
     }else if ([currentClassString isEqualToString:NSStringFromClass([CfipyHTFilmHomeViewController class])]){
         
-        [self.rightSearchButton setImage:[UIImage imageNamed:@"icon_search"] forState:UIControlStateNormal];
+        [self.rightSearchButton setImage:[UIImage imageNamed:@"gurk_icon_search"] forState:UIControlStateNormal];
     }else if (isAppInView && [currentClassString isEqualToString:NSStringFromClass([NSNiceHTMainPageViewController class])]){
         
-        [self.rightSearchButton setImage:[UIImage imageNamed:@"icon_search"] forState:UIControlStateNormal];
+        [self.rightSearchButton setImage:[UIImage imageNamed:@"gurk_icon_search"] forState:UIControlStateNormal];
     }
     
     else{

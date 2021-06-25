@@ -40,7 +40,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_more" translatesAutoresizingMaskIntoConstraints="NO" id="Zok-CH-HdF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_more" translatesAutoresizingMaskIntoConstraints="NO" id="Zok-CH-HdF">
                                 <rect key="frame" x="352.5" y="43.5" width="7.5" height="13"/>
                             </imageView>
                         </subviews>
@@ -98,6 +98,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icon_more" width="7.5" height="13"/>
+        <image name="gurk_icon_more" width="7.5" height="13"/>
     </resources>
 </document>

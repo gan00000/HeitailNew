@@ -222,7 +222,7 @@
         _xDeleteButton = [[UIButton alloc] initWithFrame:CGRectMake(self.mTitleView.width - 34, (self.mTitleView.height - 20) / 2, 18, 18)];
         _xDeleteButton.clipsToBounds = YES;
         //_xDeleteButton.layer.cornerRadius = 18;
-        [_xDeleteButton setImage:[UIImage imageNamed:@"icon_delete"] forState:(UIControlStateNormal)];
+        [_xDeleteButton setImage:[UIImage imageNamed:@"gurk_icon_delete"] forState:(UIControlStateNormal)];
         [_xDeleteButton addTarget:self action:@selector(deleteAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _xDeleteButton;

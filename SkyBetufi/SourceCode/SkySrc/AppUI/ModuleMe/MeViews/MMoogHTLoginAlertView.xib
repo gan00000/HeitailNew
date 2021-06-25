@@ -36,7 +36,7 @@
                                         <action selector="loginAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="oJS-rm-oBn"/>
                                     </connections>
                                 </button>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_facebook" translatesAutoresizingMaskIntoConstraints="NO" id="Zw2-8r-Cor" customClass="JXImageView">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_facebook" translatesAutoresizingMaskIntoConstraints="NO" id="Zw2-8r-Cor" customClass="JXImageView">
                                     <rect key="frame" x="17" y="5" width="46" height="46"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -79,7 +79,7 @@
                                         <action selector="loginAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="0OT-Sv-QEt"/>
                                     </connections>
                                 </button>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_line" translatesAutoresizingMaskIntoConstraints="NO" id="sly-cX-68S" customClass="JXImageView">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_line" translatesAutoresizingMaskIntoConstraints="NO" id="sly-cX-68S" customClass="JXImageView">
                                     <rect key="frame" x="17" y="5" width="46" height="46"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -121,7 +121,7 @@
                                         <action selector="loginAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="AK7-QA-aQp"/>
                                     </connections>
                                 </button>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_save" translatesAutoresizingMaskIntoConstraints="NO" id="0gv-dO-3VL" customClass="JXImageView">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_save" translatesAutoresizingMaskIntoConstraints="NO" id="0gv-dO-3VL" customClass="JXImageView">
                                     <rect key="frame" x="17" y="5" width="46" height="46"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -199,8 +199,8 @@
         </view>
     </objects>
     <resources>
-        <image name="icon_facebook" width="38" height="38"/>
-        <image name="icon_line" width="38" height="38"/>
-        <image name="icon_save" width="38" height="38"/>
+        <image name="gurk_icon_facebook" width="38" height="38"/>
+        <image name="gurk_icon_line" width="38" height="38"/>
+        <image name="gurk_icon_save" width="38" height="38"/>
     </resources>
 </document>

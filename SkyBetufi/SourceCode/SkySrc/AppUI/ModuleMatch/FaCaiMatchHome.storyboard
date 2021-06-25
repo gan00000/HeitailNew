@@ -19,10 +19,10 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7l1-Fg-EXC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_icon_back" translatesAutoresizingMaskIntoConstraints="NO" id="bbO-Np-gXa">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_nav_icon_back" translatesAutoresizingMaskIntoConstraints="NO" id="bbO-Np-gXa">
                                         <rect key="frame" x="15" y="-7" width="9" height="15"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="yWd-J0-arK">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="yWd-J0-arK">
                                         <rect key="frame" x="352" y="-7" width="8" height="15"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="前7天" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1R0-5g-62M">
@@ -117,8 +117,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_right_arrow" width="8" height="15.5"/>
-        <image name="nav_icon_back" width="9" height="15.5"/>
+        <image name="gurk_icon_right_arrow" width="8" height="15.5"/>
+        <image name="gurk_nav_icon_back" width="9" height="15.5"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

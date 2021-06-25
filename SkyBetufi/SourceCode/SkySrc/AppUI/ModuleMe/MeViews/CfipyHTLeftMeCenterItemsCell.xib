@@ -29,7 +29,7 @@
                                             <action selector="onItemAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mBC-u6-rKi"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_colloction" translatesAutoresizingMaskIntoConstraints="NO" id="8B7-rr-HZ3">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_colloction" translatesAutoresizingMaskIntoConstraints="NO" id="8B7-rr-HZ3">
                                         <rect key="frame" x="32" y="14" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="INJ-UD-NL8"/>
@@ -65,7 +65,7 @@
                                             <action selector="onItemAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dD0-zL-SEc"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_comment" translatesAutoresizingMaskIntoConstraints="NO" id="2ji-IV-93I">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_comment" translatesAutoresizingMaskIntoConstraints="NO" id="2ji-IV-93I">
                                         <rect key="frame" x="32" y="14" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="6DH-fQ-2Sd"/>
@@ -101,7 +101,7 @@
                                             <action selector="onItemAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zu8-N0-BR7"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_like" translatesAutoresizingMaskIntoConstraints="NO" id="UAG-PP-TSB">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_like" translatesAutoresizingMaskIntoConstraints="NO" id="UAG-PP-TSB">
                                         <rect key="frame" x="32" y="14" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="7rA-Hu-PSe"/>
@@ -137,7 +137,7 @@
                                             <action selector="onItemAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="t62-OL-xi0"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_history" translatesAutoresizingMaskIntoConstraints="NO" id="lQc-qJ-Aj8">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_history" translatesAutoresizingMaskIntoConstraints="NO" id="lQc-qJ-Aj8">
                                         <rect key="frame" x="32" y="14" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="TiO-qy-7Lc"/>
@@ -195,9 +195,9 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icon_colloction" width="32" height="32"/>
-        <image name="icon_comment" width="32" height="32"/>
-        <image name="icon_history" width="32" height="32"/>
-        <image name="icon_like" width="32" height="32"/>
+        <image name="gurk_icon_colloction" width="32" height="32"/>
+        <image name="gurk_icon_comment" width="32" height="32"/>
+        <image name="gurk_icon_history" width="32" height="32"/>
+        <image name="gurk_icon_like" width="32" height="32"/>
     </resources>
 </document>

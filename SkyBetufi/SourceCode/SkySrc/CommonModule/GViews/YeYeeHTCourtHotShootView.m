@@ -50,7 +50,7 @@
     }];
     
     UIImageView *bgView = [[UIImageView alloc] init];
-    bgView.image = [UIImage imageNamed:@"img_hotshoot_court_left"];
+    bgView.image = [UIImage imageNamed:@"gurk_img_hotshoot_court_left"];
     [leftView addSubview:bgView];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.top.mas_equalTo(leftView);
@@ -79,7 +79,7 @@
     }];
     
     UIImageView *bgView2 = [[UIImageView alloc] init];
-    bgView2.image = [UIImage imageNamed:@"img_hotshoot_court_right"];
+    bgView2.image = [UIImage imageNamed:@"gurk_img_hotshoot_court_right"];
     [rightView addSubview:bgView2];
     [bgView2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.top.mas_equalTo(rightView);

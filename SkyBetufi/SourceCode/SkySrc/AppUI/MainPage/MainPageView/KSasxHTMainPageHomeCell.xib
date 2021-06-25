@@ -110,7 +110,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qsg-TS-wTa" userLabel="commentContentView">
                         <rect key="frame" x="170" y="413.5" width="35" height="48.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_comment_newaa" translatesAutoresizingMaskIntoConstraints="NO" id="vc1-UD-eXl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_comment_newaa" translatesAutoresizingMaskIntoConstraints="NO" id="vc1-UD-eXl">
                                 <rect key="frame" x="0.0" y="13.5" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="SZI-pI-vYT"/>
@@ -133,7 +133,7 @@
                             <constraint firstItem="vc1-UD-eXl" firstAttribute="leading" secondItem="Qsg-TS-wTa" secondAttribute="leading" id="vNU-Gp-ZLX"/>
                         </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_add_collection" translatesAutoresizingMaskIntoConstraints="NO" id="ZgI-Yn-5bj">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_add_collection" translatesAutoresizingMaskIntoConstraints="NO" id="ZgI-Yn-5bj">
                         <rect key="frame" x="285" y="427" width="22" height="22"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="22" id="63o-U7-ZsC"/>
@@ -155,7 +155,7 @@
                                     <action selector="onShareButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eoR-ya-vn0"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_share_new" translatesAutoresizingMaskIntoConstraints="NO" id="nfM-5L-hh5">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_share_new" translatesAutoresizingMaskIntoConstraints="NO" id="nfM-5L-hh5">
                                 <rect key="frame" x="10" y="4" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="HSB-tC-vV9"/>
@@ -187,7 +187,7 @@
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kX3-i4-e9s">
                         <rect key="frame" x="285" y="427" width="22" height="22"/>
-                        <state key="normal" image="icon_film_unlike"/>
+                        <state key="normal" image="gurk_icon_film_unlike"/>
                         <connections>
                             <action selector="addSave:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NQj-Mh-Tjs"/>
                         </connections>
@@ -278,10 +278,10 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icon_add_collection" width="22" height="22"/>
-        <image name="icon_comment_newaa" width="27" height="27"/>
-        <image name="icon_film_unlike" width="40" height="40"/>
-        <image name="icon_share_new" width="27" height="27"/>
+        <image name="gurk_icon_add_collection" width="22" height="22"/>
+        <image name="gurk_icon_comment_newaa" width="27" height="27"/>
+        <image name="gurk_icon_film_unlike" width="40" height="40"/>
+        <image name="gurk_icon_share_new" width="27" height="27"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

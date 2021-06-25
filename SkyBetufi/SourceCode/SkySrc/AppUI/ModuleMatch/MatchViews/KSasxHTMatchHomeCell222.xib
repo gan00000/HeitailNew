@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_vs" translatesAutoresizingMaskIntoConstraints="NO" id="yof-Jv-vZ9">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_img_vs" translatesAutoresizingMaskIntoConstraints="NO" id="yof-Jv-vZ9">
                         <rect key="frame" x="177.5" y="49" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="6JZ-Tq-NhG"/>
@@ -33,7 +33,7 @@
                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pfb-Ig-5rt" userLabel="backView">
                         <rect key="frame" x="263" y="54" width="86" height="22"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_play_back" translatesAutoresizingMaskIntoConstraints="NO" id="kee-GV-2Fl">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_img_play_back" translatesAutoresizingMaskIntoConstraints="NO" id="kee-GV-2Fl">
                                 <rect key="frame" x="6" y="2" width="18" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="bVD-OK-oGk"/>
@@ -175,8 +175,8 @@
     </objects>
     <resources>
         <image name="icon_play.png" width="200" height="200"/>
-        <image name="img_play_back" width="100" height="100"/>
-        <image name="img_vs" width="20" height="20"/>
+        <image name="gurk_img_play_back" width="100" height="100"/>
+        <image name="gurk_img_vs" width="20" height="20"/>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

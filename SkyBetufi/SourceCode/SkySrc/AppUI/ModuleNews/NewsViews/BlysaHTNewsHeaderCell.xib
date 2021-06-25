@@ -23,7 +23,7 @@
                         <color key="textColor" red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_news_time" translatesAutoresizingMaskIntoConstraints="NO" id="Rvy-rT-Jh1">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_news_time" translatesAutoresizingMaskIntoConstraints="NO" id="Rvy-rT-Jh1">
                         <rect key="frame" x="293.5" y="80" width="14" height="14"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="14" id="q4l-GQ-T1O"/>
@@ -39,7 +39,7 @@
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_news_view" translatesAutoresizingMaskIntoConstraints="NO" id="E8V-vZ-wuV">
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_news_view" translatesAutoresizingMaskIntoConstraints="NO" id="E8V-vZ-wuV">
                         <rect key="frame" x="96.5" y="80.5" width="14" height="14"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="14" id="0Xs-fB-Z8b"/>
@@ -87,7 +87,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icon_news_time" width="14" height="14"/>
-        <image name="icon_news_view" width="14" height="14"/>
+        <image name="gurk_icon_news_time" width="14" height="14"/>
+        <image name="gurk_icon_news_view" width="14" height="14"/>
     </resources>
 </document>

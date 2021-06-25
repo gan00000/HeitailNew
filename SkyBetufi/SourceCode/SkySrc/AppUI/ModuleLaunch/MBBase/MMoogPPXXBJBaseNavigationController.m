@@ -47,7 +47,7 @@
          ![self isKindOfClass:[UUaksMainLanmuViewController class]] &&
          
          ![self isKindOfClass:[WSKggHTRankHomeViewController class]])) {
-        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_back"]
+        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"gurk_nav_icon_back"]
                                                                                            style:UIBarButtonItemStylePlain
                                                                                           target:self
                                                                                           action:@selector(backAction:)];

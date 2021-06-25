@@ -124,34 +124,34 @@
 - (NSArray<UIImage *> *)taotabBarIcons {
      if (isAppInView) {
          return @[
-             [[UIImage imageNamed:@"tab_xxx_mainpage"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-             [[UIImage imageNamed:@"tab_xxx_match"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-             [[UIImage imageNamed:@"tab_xxx_lanmu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-//                  [[UIImage imageNamed:@"tab_icon_normal3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-//                  [[UIImage imageNamed:@"tab_xxx_match"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-//                  [[UIImage imageNamed:@"tab_xxx_data"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+             [[UIImage imageNamed:@"gurk_tab_xxx_mainpage"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+             [[UIImage imageNamed:@"gurk_tab_xxx_match"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+             [[UIImage imageNamed:@"gurk_tab_xxx_lanmu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//                  [[UIImage imageNamed:@"gurk_tab_icon_normal3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+//                  [[UIImage imageNamed:@"gurk_tab_xxx_match"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+//                  [[UIImage imageNamed:@"gurk_tab_xxx_data"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
      }
-    return @[[[UIImage imageNamed:@"tab_main_page_unselect"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-             [[UIImage imageNamed:@"tab_icon_normal1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-             [[UIImage imageNamed:@"tab_icon_normal2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-             [[UIImage imageNamed:@"tab_icon_normal3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-             [[UIImage imageNamed:@"tab_icon_normal4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    return @[[[UIImage imageNamed:@"gurk_tab_main_page_unselect"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+             [[UIImage imageNamed:@"gurk_tab_icon_normal1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+             [[UIImage imageNamed:@"gurk_tab_icon_normal2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+             [[UIImage imageNamed:@"gurk_tab_icon_normal3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+             [[UIImage imageNamed:@"gurk_tab_icon_normal4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 }
 - (NSArray<UIImage *> *)taotabBarSelectedIcons {
     if (isAppInView) {
-        return  @[[[UIImage imageNamed:@"tab_xxx_mainpage_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                  [[UIImage imageNamed:@"tab_xxx_match_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                  [[UIImage imageNamed:@"tab_xxx_lanmu_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-//                  [[UIImage imageNamed:@"tab_icon_selected3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-//                  [[UIImage imageNamed:@"tab_xxx_match_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-//                 [[UIImage imageNamed:@"tab_xxx_data_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        return  @[[[UIImage imageNamed:@"gurk_tab_xxx_mainpage_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                  [[UIImage imageNamed:@"gurk_tab_xxx_match_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                  [[UIImage imageNamed:@"gurk_tab_xxx_lanmu_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//                  [[UIImage imageNamed:@"gurk_tab_icon_selected3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+//                  [[UIImage imageNamed:@"gurk_tab_xxx_match_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+//                 [[UIImage imageNamed:@"gurk_tab_xxx_data_s"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     }
     return @[
-             [[UIImage imageNamed:@"tab_main_page_select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-             [[UIImage imageNamed:@"tab_icon_selected1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-             [[UIImage imageNamed:@"tab_icon_selected2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-             [[UIImage imageNamed:@"tab_icon_selected3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-             [[UIImage imageNamed:@"tab_icon_selected4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+             [[UIImage imageNamed:@"gurk_tab_main_page_select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+             [[UIImage imageNamed:@"gurk_tab_icon_selected1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+             [[UIImage imageNamed:@"gurk_tab_icon_selected2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+             [[UIImage imageNamed:@"gurk_tab_icon_selected3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+             [[UIImage imageNamed:@"gurk_tab_icon_selected4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 }
 - (NSArray<UIViewController *> *)taotabBarControllers {
     

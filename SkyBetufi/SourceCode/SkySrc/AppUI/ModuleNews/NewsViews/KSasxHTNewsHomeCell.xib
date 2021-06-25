@@ -30,7 +30,7 @@
                         <color key="textColor" red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_news_time" translatesAutoresizingMaskIntoConstraints="NO" id="hQp-E4-x0f">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_news_time" translatesAutoresizingMaskIntoConstraints="NO" id="hQp-E4-x0f">
                         <rect key="frame" x="123" y="84" width="14" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="mOR-fC-iau"/>
@@ -43,7 +43,7 @@
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_news_view" translatesAutoresizingMaskIntoConstraints="NO" id="RAU-rn-1rC">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_news_view" translatesAutoresizingMaskIntoConstraints="NO" id="RAU-rn-1rC">
                         <rect key="frame" x="204.5" y="84" width="14" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="9ew-ff-60y"/>
@@ -72,7 +72,7 @@
                                     <action selector="onShareButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ZlR-Sd-VEh"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_news_share" translatesAutoresizingMaskIntoConstraints="NO" id="XbS-wB-cwX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_icon_news_share" translatesAutoresizingMaskIntoConstraints="NO" id="XbS-wB-cwX">
                                 <rect key="frame" x="10" y="8" width="14" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="14" id="Rku-K3-2bh"/>
@@ -188,8 +188,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icon_news_share" width="14" height="14"/>
-        <image name="icon_news_time" width="14" height="14"/>
-        <image name="icon_news_view" width="14" height="14"/>
+        <image name="gurk_icon_news_share" width="14" height="14"/>
+        <image name="gurk_icon_news_time" width="14" height="14"/>
+        <image name="gurk_icon_news_view" width="14" height="14"/>
     </resources>
 </document>

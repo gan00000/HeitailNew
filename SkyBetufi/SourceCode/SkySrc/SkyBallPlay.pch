@@ -63,9 +63,9 @@
 #define RGBA_COLOR_HEX(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 //默认图片
-#define HT_DEFAULT_IMAGE [UIImage imageNamed:@"image_default"]
-#define HT_DEFAULT_TEAM_LOGO [UIImage imageNamed:@"img_default_team"]
-#define HT_DEFAULT_AVATAR_LOGO [UIImage imageNamed: [TuTuosHTUserManager getDefaultAvater]]//[UIImage imageNamed:@"default_avatar"]
+#define HT_DEFAULT_IMAGE [UIImage imageNamed:@"gurk_image_default"]
+#define HT_DEFAULT_TEAM_LOGO [UIImage imageNamed:@"gurk_img_default_team"]
+#define HT_DEFAULT_AVATAR_LOGO [UIImage imageNamed: [TuTuosHTUserManager getDefaultAvater]]//[UIImage imageNamed:@"gurk_default_avatar"]
 
 #define kWeakSelf __weak typeof(self) weakSelf = self;
 

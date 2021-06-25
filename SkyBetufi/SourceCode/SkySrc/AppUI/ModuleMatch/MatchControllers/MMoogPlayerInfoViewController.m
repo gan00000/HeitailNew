@@ -64,9 +64,9 @@
     NSLog(@"MMoogPlayerInfoViewController viewDidLoad");
     
    
-    UIBarButtonItem *shareUIBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav_icon_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonTapped:)];
+    UIBarButtonItem *shareUIBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"gurk_nav_icon_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonTapped:)];
     
-//    UIBarButtonItem *saveUIBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav_icon_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonTapped:)];
+//    UIBarButtonItem *saveUIBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"gurk_nav_icon_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonTapped:)];
     
     self.navigationItem.rightBarButtonItem = shareUIBarButtonItem;
     

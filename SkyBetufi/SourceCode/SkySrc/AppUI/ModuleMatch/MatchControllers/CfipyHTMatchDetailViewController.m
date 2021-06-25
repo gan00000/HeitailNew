@@ -268,9 +268,9 @@
     BOOL homeLike = [[NSUserDefaults standardUserDefaults] boolForKey:[NSString stringWithFormat:@"USER_LIKED_%@_%@", self.matchModel.game_id,@"home"]];
     
     if (awayLike) {
-        [self.leftLikeBtn setImage:[UIImage imageNamed:@"icon_left_like"] forState:(UIControlStateNormal)];
+        [self.leftLikeBtn setImage:[UIImage imageNamed:@"gurk_icon_left_like"] forState:(UIControlStateNormal)];
     }else if (homeLike){
-        [self.rightLikeBtn setImage:[UIImage imageNamed:@"icon_right_like"] forState:(UIControlStateNormal)];
+        [self.rightLikeBtn setImage:[UIImage imageNamed:@"gurk_icon_right_like"] forState:(UIControlStateNormal)];
     }
     self.leftLikeLabel.text = [NSString stringWithFormat:@"客   %@", self.matchModel.awayTeamLike];
     self.rightLikeLabel.text = [NSString stringWithFormat:@"%@   主", self.matchModel.homeTeamLike];
@@ -294,7 +294,7 @@
         }
         self.leftLikeLabel.text = [NSString stringWithFormat:@"客   %@", m.awayTeamLike];
         self.rightLikeLabel.text = [NSString stringWithFormat:@"主   %@", m.homeTeamLike];
-        [self.rightLikeBtn setImage:[UIImage imageNamed:@"icon_right_like"] forState:(UIControlStateNormal)];
+        [self.rightLikeBtn setImage:[UIImage imageNamed:@"gurk_icon_right_like"] forState:(UIControlStateNormal)];
         
     } errorBlock:^(WSKggBJError *error) {
         [kWindow showToast:@"請求出錯"];
@@ -324,7 +324,7 @@
         self.leftLikeLabel.text = [NSString stringWithFormat:@"客   %@", m.awayTeamLike];
         self.rightLikeLabel.text = [NSString stringWithFormat:@"主   %@", m.homeTeamLike];
         
-        [self.leftLikeBtn setImage:[UIImage imageNamed:@"icon_left_like"] forState:(UIControlStateNormal)];
+        [self.leftLikeBtn setImage:[UIImage imageNamed:@"gurk_icon_left_like"] forState:(UIControlStateNormal)];
      
         
     } errorBlock:^(WSKggBJError *error) {

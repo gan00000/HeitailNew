@@ -37,7 +37,7 @@
     self.replyTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.replyTableView registerNib:[UINib nibWithNibName:NSStringFromClass([self class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([self class])];
     [self.replyTableView registerNib:[UINib nibWithNibName:NSStringFromClass([UUaksHTCommentExpendCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([UUaksHTCommentExpendCell class])];
-    UIImage *image = [[UIImage imageNamed:@"icon_add_like"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIImage *image = [[UIImage imageNamed:@"gurk_icon_add_like"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.likeButton setImage:image forState:UIControlStateNormal];
     [self.likeButton setTitleColor:appBaseColor forState:UIControlStateSelected];
     [self.likeButton setTitleColor:[UIColor hx_colorWithHexRGBAString:@"999999"] forState:UIControlStateNormal];

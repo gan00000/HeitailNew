@@ -76,7 +76,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3y6-P3-mMs">
                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="60"/>
-                                                <state key="normal" image="icon_add_comment"/>
+                                                <state key="normal" image="gurk_icon_add_comment"/>
                                                 <connections>
                                                     <action selector="onShowCommentListAction:" destination="Lac-Tn-T9A" eventType="touchUpInside" id="DqZ-g9-oNf"/>
                                                 </connections>
@@ -86,7 +86,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="45" id="2zw-FP-c0z"/>
                                                 </constraints>
-                                                <state key="normal" image="icon_unlike_film2"/>
+                                                <state key="normal" image="gurk_icon_unlike_film2"/>
                                                 <connections>
                                                     <action selector="onSaveAction:" destination="Lac-Tn-T9A" eventType="touchUpInside" id="ATK-7q-Apf"/>
                                                 </connections>
@@ -208,8 +208,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_add_comment" width="20" height="20"/>
-        <image name="icon_unlike_film2" width="22" height="22"/>
+        <image name="gurk_icon_add_comment" width="20" height="20"/>
+        <image name="gurk_icon_unlike_film2" width="22" height="22"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

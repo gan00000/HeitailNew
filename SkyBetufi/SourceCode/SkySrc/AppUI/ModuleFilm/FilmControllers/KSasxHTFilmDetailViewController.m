@@ -417,12 +417,12 @@
         [weakSelf loadComments];
     }];
     if ([CfipyHTNewsModel taocanShare]) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav_icon_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonTapped:)];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"gurk_nav_icon_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonTapped:)];
     }
-    UIImage *commentIcon = [[UIImage imageNamed:@"icon_add_comment"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIImage *commentIcon = [[UIImage imageNamed:@"gurk_icon_add_comment"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.commentButton setImage:commentIcon forState:UIControlStateNormal];
     [self.commentButton setTintColor:[UIColor hx_colorWithHexRGBAString:@"999999"]];
-//    UIImage *saveIcon = [[MMoogPPXXBJBaseViewController taofixImageSize:[UIImage imageNamed:@"icon_add_collection"] toSize:CGSizeMake(20, 20)] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+//    UIImage *saveIcon = [[MMoogPPXXBJBaseViewController taofixImageSize:[UIImage imageNamed:@"gurk_icon_add_collection"] toSize:CGSizeMake(20, 20)] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 //    [self.saveButton setImage:saveIcon forState:UIControlStateNormal];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onInputBegin) name:UITextViewTextDidBeginEditingNotification object:self.commentInputView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onInputEnd) name:UITextViewTextDidEndEditingNotification object:self.commentInputView];
@@ -471,10 +471,10 @@
 
 - (void)setupSaveButton {
     if (self.newsModel.my_like) {
-        [self.saveButton setImage:[UIImage imageNamed:@"icon_like_film2"] forState:UIControlStateNormal];
+        [self.saveButton setImage:[UIImage imageNamed:@"gurk_icon_like_film2"] forState:UIControlStateNormal];
         self.saveButton.selected = YES;
     } else {
-        [self.saveButton setImage:[UIImage imageNamed:@"icon_unlike_film2"] forState:UIControlStateNormal];
+        [self.saveButton setImage:[UIImage imageNamed:@"gurk_icon_unlike_film2"] forState:UIControlStateNormal];
         self.saveButton.selected = NO;
     }
 }
