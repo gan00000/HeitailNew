@@ -12,7 +12,7 @@
         <!--Glod BuleHT News Detail View Controller-->
         <scene sceneID="Lop-AV-UBa">
             <objects>
-                <viewController id="Lac-Tn-T9A" customClass="HourseHTNewsDetailViewController" sceneMemberID="viewController">
+                <viewController id="Lac-Tn-T9A" customClass="NSNiceHTNewsDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l2K-IY-Vxq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

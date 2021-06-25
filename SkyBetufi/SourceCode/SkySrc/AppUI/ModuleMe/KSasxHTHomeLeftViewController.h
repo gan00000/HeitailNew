@@ -1,0 +1,5 @@
+#import "WSKggPPXXBJBaseViewController.h"
+NS_ASSUME_NONNULL_BEGIN
+@interface KSasxHTHomeLeftViewController : WSKggPPXXBJBaseViewController
+@end
+NS_ASSUME_NONNULL_END

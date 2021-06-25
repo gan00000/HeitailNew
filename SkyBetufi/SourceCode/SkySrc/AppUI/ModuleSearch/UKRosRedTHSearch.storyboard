@@ -11,7 +11,7 @@
         <!--Search View Controller-->
         <scene sceneID="fur-Nv-80S">
             <objects>
-                <viewController id="eox-Ym-b5G" customClass="MMTodaySearchViewController" sceneMemberID="viewController">
+                <viewController id="eox-Ym-b5G" customClass="UUaksSearchViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t5Y-ON-ZSn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
