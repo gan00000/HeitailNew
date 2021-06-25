@@ -48,7 +48,7 @@
         return;
     }
     [self.thumbImageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:nil];
-    [self.thumbPlayBtn setImage:[UIImage imageNamed:@"play_Image"] forState:UIControlStateNormal];
+    [self.thumbPlayBtn setImage:[UIImage imageNamed:@"gurk_play_Image"] forState:UIControlStateNormal];
     self.thumbPlayBtn.tag = 1;
     
 //    [self.videoBgImageView sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
@@ -60,7 +60,7 @@
 -(void) playbackComplete
 {
     self.thumbView.hidden = NO;
-    [self.thumbPlayBtn setImage:[UIImage imageNamed:@"player_restart"] forState:UIControlStateNormal];
+    [self.thumbPlayBtn setImage:[UIImage imageNamed:@"gurk_player_restart"] forState:UIControlStateNormal];
     self.thumbPlayBtn.tag = 100;
     
     UIView * xplayControlView = (UIView *)self.playControl;
@@ -137,7 +137,7 @@
     self.thumbPlayImageView = [[UIImageView alloc] init];
     self.thumbPlayImageView.contentMode =  UIViewContentModeScaleAspectFill;
     self.thumbPlayImageView.userInteractionEnabled = YES;
-    [self.thumbPlayImageView setImage:[UIImage imageNamed:@"play_Image"]];
+    [self.thumbPlayImageView setImage:[UIImage imageNamed:@"gurk_play_Image"]];
     kWeakSelf
     [self.thumbPlayImageView addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
         //开始播放
@@ -167,7 +167,7 @@
         _thumbPlayBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         //_downloadButton.frame = CGRectMake(SCREEN_WIDTH - 100, 0, HeightForTopView, HeightForTopView);
         _thumbPlayBtn.tag = 1;
-        [_thumbPlayBtn setImage:[UIImage imageNamed:@"play_Image"] forState:UIControlStateNormal];
+        [_thumbPlayBtn setImage:[UIImage imageNamed:@"gurk_play_Image"] forState:UIControlStateNormal];
         [_thumbPlayBtn addTarget:self action:@selector(thumbPlayBtnClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _thumbPlayBtn;
@@ -199,7 +199,7 @@
     
     xplayControlView.hidden = NO;
     self.thumbView.hidden = YES;
-    [self.thumbPlayBtn setImage:[UIImage imageNamed:@"play_Image"] forState:UIControlStateNormal];
+    [self.thumbPlayBtn setImage:[UIImage imageNamed:@"gurk_play_Image"] forState:UIControlStateNormal];
     self.thumbPlayBtn.tag = 1;
     
     if (self.mYSPlayerControlDelegate) {

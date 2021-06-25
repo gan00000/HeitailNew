@@ -25,7 +25,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="status_icon_error" translatesAutoresizingMaskIntoConstraints="NO" id="8ZD-Kj-Wcg">
+                <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurk_status_icon_error" translatesAutoresizingMaskIntoConstraints="NO" id="8ZD-Kj-Wcg">
                     <rect key="frame" x="90" y="10" width="120" height="120"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="8Hu-ZX-rld"/>
@@ -49,6 +49,6 @@
         </view>
     </objects>
     <resources>
-        <image name="status_icon_error" width="95" height="84"/>
+        <image name="gurk_status_icon_error" width="95" height="84"/>
     </resources>
 </document>

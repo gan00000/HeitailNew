@@ -379,7 +379,7 @@
 - (UIButton *)backBtn {
     if (!_backBtn) {
         _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_backBtn setImage:[UIImage imageNamed:@"btn_播放页_返回"] forState:UIControlStateNormal];
+        [_backBtn setImage:[UIImage imageNamed:@"gurk_btn_播放页_返回"] forState:UIControlStateNormal];
     }
     return _backBtn;
 }
@@ -410,7 +410,7 @@
 - (UIButton *)shareBtn {
     if (!_shareBtn) {
         _shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_shareBtn setImage:[UIImage imageNamed:@"btn_播放页_分享"] forState:UIControlStateNormal];
+        [_shareBtn setImage:[UIImage imageNamed:@"gurk_btn_播放页_分享"] forState:UIControlStateNormal];
     }
     return _shareBtn;
 }
@@ -435,8 +435,8 @@
 - (UIButton *)playOrPauseBtn {
     if (!_playOrPauseBtn) {
         _playOrPauseBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_playOrPauseBtn setImage:[UIImage imageNamed:@"btn_刷新"] forState:UIControlStateNormal];
-     //   [_playOrPauseBtn setImage:[UIImage imageNamed:@"btn_暂停"] forState:UIControlStateSelected];
+        [_playOrPauseBtn setImage:[UIImage imageNamed:@"gurk_btn_刷新"] forState:UIControlStateNormal];
+     //   [_playOrPauseBtn setImage:[UIImage imageNamed:@"gurk_btn_暂停"] forState:UIControlStateSelected];
     }
     return _playOrPauseBtn;
 }
@@ -458,7 +458,7 @@
         _videoSlider.maximumValue = 1;
         _videoSlider.minimumTrackTintColor = [UIColor colorWithHexString:@"#e6420d"];
         _videoSlider.maximumTrackTintColor = [UIColor clearColor];
-        [_videoSlider setThumbImage:[UIImage imageNamed:@"椭圆-1"] forState:UIControlStateNormal];
+        [_videoSlider setThumbImage:[UIImage imageNamed:@"gurk_椭圆-1"] forState:UIControlStateNormal];
     }
     return _videoSlider;
 }
@@ -487,7 +487,7 @@
 - (UIButton *)fullScreenBtn {
     if (!_fullScreenBtn) {
         _fullScreenBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_fullScreenBtn setImage:[UIImage imageNamed:@"btn_全屏"] forState:UIControlStateNormal];
+        [_fullScreenBtn setImage:[UIImage imageNamed:@"gurk_btn_全屏"] forState:UIControlStateNormal];
     }
     return _fullScreenBtn;
 }

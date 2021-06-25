@@ -509,7 +509,7 @@
 - (UIButton *)backBtn {
     if (!_backBtn) {
         _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_backBtn setImage:[UIImage imageNamed:@"btn_播放页_返回"] forState:UIControlStateNormal];
+        [_backBtn setImage:[UIImage imageNamed:@"gurk_btn_播放页_返回"] forState:UIControlStateNormal];
     }
     return _backBtn;
 }
@@ -528,8 +528,8 @@
 //- (UIButton *)playOrPauseBigBtn {
 //    if (!_playOrPauseBigBtn) {
 //        _playOrPauseBigBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//        [_playOrPauseBigBtn setImage:[UIImage imageNamed:@"btn_play"] forState:UIControlStateNormal];
-//        [_playOrPauseBigBtn setImage:[UIImage imageNamed:@"btn_stop"] forState:UIControlStateSelected];
+//        [_playOrPauseBigBtn setImage:[UIImage imageNamed:@"gurk_btn_play"] forState:UIControlStateNormal];
+//        [_playOrPauseBigBtn setImage:[UIImage imageNamed:@"gurk_btn_stop"] forState:UIControlStateSelected];
 //    }
 //    return _playOrPauseBigBtn;
 //}
@@ -546,8 +546,8 @@
 - (UIButton *)refreshPlayBtn {
     if (!_refreshPlayBtn) {
         _refreshPlayBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_refreshPlayBtn setImage:[UIImage imageNamed:@"btn_刷新"] forState:UIControlStateNormal];//改为刷新
-       // [_playOrPauseSmallBtn setImage:[UIImage imageNamed:@"btn_暂停"] forState:UIControlStateSelected];
+        [_refreshPlayBtn setImage:[UIImage imageNamed:@"gurk_btn_刷新"] forState:UIControlStateNormal];//改为刷新
+       // [_playOrPauseSmallBtn setImage:[UIImage imageNamed:@"gurk_btn_暂停"] forState:UIControlStateSelected];
     }
     return _refreshPlayBtn;
 }
@@ -555,7 +555,7 @@
 //- (UIButton *)sendBarrageBtn {
 //    if (!_sendBarrageBtn) {
 //        _sendBarrageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//        [_sendBarrageBtn setImage:[UIImage imageNamed:@"btn_发表弹幕"] forState:UIControlStateNormal];
+//        [_sendBarrageBtn setImage:[UIImage imageNamed:@"gurk_btn_发表弹幕"] forState:UIControlStateNormal];
 //    }
 //    return _sendBarrageBtn;
 //}
@@ -563,8 +563,8 @@
 //- (UIButton *)openOrCloseBarrageBtn {
 //    if (!_openOrCloseBarrageBtn) {
 //        _openOrCloseBarrageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//        [_openOrCloseBarrageBtn setImage:[UIImage imageNamed:@"btn_弹幕"] forState:UIControlStateNormal];
-//        [_openOrCloseBarrageBtn setImage:[UIImage imageNamed:@"btn_关闭弹幕"] forState:UIControlStateSelected];
+//        [_openOrCloseBarrageBtn setImage:[UIImage imageNamed:@"gurk_btn_弹幕"] forState:UIControlStateNormal];
+//        [_openOrCloseBarrageBtn setImage:[UIImage imageNamed:@"gurk_btn_关闭弹幕"] forState:UIControlStateSelected];
 //    }
 //    return _openOrCloseBarrageBtn;
 //}
@@ -587,7 +587,7 @@
         _videoSlider.maximumValue = 1;
         _videoSlider.minimumTrackTintColor = [UIColor colorWithHexString:@"#e6420d"];
         _videoSlider.maximumTrackTintColor = [UIColor clearColor];
-        [_videoSlider setThumbImage:[UIImage imageNamed:@"椭圆-1"] forState:UIControlStateNormal];
+        [_videoSlider setThumbImage:[UIImage imageNamed:@"gurk_椭圆-1"] forState:UIControlStateNormal];
         
     }
     return _videoSlider;
@@ -617,8 +617,8 @@
 - (UIButton *)exitFullScreenBtn {
     if (!_exitFullScreenBtn) {
         _exitFullScreenBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_exitFullScreenBtn setImage:[UIImage imageNamed:@"btn_缩屏"] forState:UIControlStateNormal];
-       // [_exitFullScreenBtn setImage:[UIImage imageNamed:@"btn_退出全屏"] forState:UIControlStateHighlighted];
+        [_exitFullScreenBtn setImage:[UIImage imageNamed:@"gurk_btn_缩屏"] forState:UIControlStateNormal];
+       // [_exitFullScreenBtn setImage:[UIImage imageNamed:@"gurk_btn_退出全屏"] forState:UIControlStateHighlighted];
     }
     return _exitFullScreenBtn;
 }

@@ -18,7 +18,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfj-4Q-d66">
                     <rect key="frame" x="85" y="100" width="130" height="100"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_progress_loading" translatesAutoresizingMaskIntoConstraints="NO" id="a8b-Zp-iwf">
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gurk_icon_progress_loading" translatesAutoresizingMaskIntoConstraints="NO" id="a8b-Zp-iwf">
                             <rect key="frame" x="50" y="22" width="30" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -50,6 +50,6 @@
         </view>
     </objects>
     <resources>
-        <image name="icon_progress_loading" width="31" height="31"/>
+        <image name="gurk_icon_progress_loading" width="31" height="31"/>
     </resources>
 </document>

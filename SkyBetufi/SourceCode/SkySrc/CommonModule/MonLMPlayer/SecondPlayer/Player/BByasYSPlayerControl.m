@@ -434,7 +434,7 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 
 - (void)setPlaying:(BOOL)playing {
     _playing = playing;
-    NSString *img = playing ? @"player-pause" : @"player-start";
+    NSString *img = playing ? @"gurk_player-pause" : @"gurk_player-start";
     [self.playBtn setImage:[UIImage imageNamed:img] forState:UIControlStateNormal];
     
     if (!playing) {
@@ -451,7 +451,7 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     _fullScreen = fullScreen;
 //    self.portraitFullScreen = portraitFullScreen;
     
-    NSString *img = fullScreen ? @"player-small-screen" : @"player-full-screen";
+    NSString *img = fullScreen ? @"gurk_player-small-screen" : @"gurk_player-full-screen";
     [self.fullScreenBtn setImage:[UIImage imageNamed:img] forState:UIControlStateNormal];
 //    self.statusBar.hidden = fullScreen ? NO : YES;
     if (fullScreen) {//全屏
@@ -635,9 +635,9 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 - (void)changeSlideProgressView:(CGFloat)deltaX progress:(CGFloat)progress
 {
 //    if (deltaX > 0) {
-//        [self.slideDirectionImageView setImage:[UIImage imageNamed:@"video_forward_icon"]];
+//        [self.slideDirectionImageView setImage:[UIImage imageNamed:@"gurk_video_forward_icon"]];
 //    }else{
-//        [self.slideDirectionImageView setImage:[UIImage imageNamed:@"video_backward_icon"]];
+//        [self.slideDirectionImageView setImage:[UIImage imageNamed:@"gurk_video_backward_icon"]];
 //    }
     self.slideProgressView.progress = progress;
     if (self.slideProgressView.progress > 1.0) {
@@ -652,9 +652,9 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     self.slideTimeLabel.text = [self formatTime: thisSlideTime];
     
     if (thisSlideTime > self.currentSlideTime) {
-        [self.slideDirectionImageView setImage:[UIImage imageNamed:@"video_forward_icon"]];
+        [self.slideDirectionImageView setImage:[UIImage imageNamed:@"gurk_video_forward_icon"]];
     }else if (thisSlideTime < self.currentSlideTime){
-        [self.slideDirectionImageView setImage:[UIImage imageNamed:@"video_backward_icon"]];
+        [self.slideDirectionImageView setImage:[UIImage imageNamed:@"gurk_video_backward_icon"]];
     }
     
     self.currentSlideTime = thisSlideTime;

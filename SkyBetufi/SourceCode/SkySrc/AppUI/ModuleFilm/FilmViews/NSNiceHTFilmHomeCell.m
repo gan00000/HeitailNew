@@ -149,7 +149,7 @@
 //    if (!_thumbPlayBtn) {
 //        _thumbPlayBtn = [UIButton buttonWithType:UIButtonTypeCustom];
 //        //_downloadButton.frame = CGRectMake(SCREEN_WIDTH - 100, 0, HeightForTopView, HeightForTopView);
-//        [_thumbPlayBtn setImage:[UIImage imageNamed:@"play_Image"] forState:UIControlStateNormal];
+//        [_thumbPlayBtn setImage:[UIImage imageNamed:@"gurk_play_Image"] forState:UIControlStateNormal];
 //        [_thumbPlayBtn addTarget:self action:@selector(initPlayerAndPrepareToPlay) forControlEvents:UIControlEventTouchUpInside];
 //    }
 //    return _thumbPlayBtn;
