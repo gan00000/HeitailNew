@@ -53,7 +53,7 @@ pod 'FBSDKShareKit'
 
 #pod 'XCDLumberjackNSLogger', '~> 1.0'
 
-pod 'Google-Mobile-Ads-SDK', '7.65.0'
+pod 'Google-Mobile-Ads-SDK'
 pod 'Charts'
 #pod 'Protobuf'
 pod 'SocketRocket'
