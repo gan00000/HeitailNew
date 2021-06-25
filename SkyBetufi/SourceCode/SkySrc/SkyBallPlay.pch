@@ -22,19 +22,19 @@
 
 #import "ConfuseHeader.h"
 
-#import "HourseMJRefreshGenerator.h"
-#import "UIView+RRDogToast.h"
-#import "UIView+HourseLoading.h"
-#import "UIView+PXFunEmptyView.h"
-#import "GGCatBJLoadingHud.h"
-#import "NSDate+KMonkeyCore.h"
-#import "NSDateFormatter+CCCaseDRExtension.h"
+#import "YeYeeMJRefreshGenerator.h"
+#import "UIView+YeYeeToast.h"
+#import "UIView+TuTuosLoading.h"
+#import "UIView+CfipyEmptyView.h"
+#import "UUaksBJLoadingHud.h"
+#import "NSDate+KSasxCore.h"
+#import "NSDateFormatter+FFlaliDRExtension.h"
 
-#import "MMTodayHTUserManager.h"
-#import "UITabBar+RRDogDRExtension.h"
-#import "UIView+PXFunQuickFrame.h"
-#import "PXFunPPXXBJViewControllerCenter.h"
-#import "MMTodayHTUserManager.h"
+#import "TuTuosHTUserManager.h"
+#import "UITabBar+YeYeeDRExtension.h"
+#import "UIView+TuTuosQuickFrame.h"
+#import "CfipyPPXXBJViewControllerCenter.h"
+#import "TuTuosHTUserManager.h"
 
 #endif
 
@@ -65,7 +65,7 @@
 //默认图片
 #define HT_DEFAULT_IMAGE [UIImage imageNamed:@"image_default"]
 #define HT_DEFAULT_TEAM_LOGO [UIImage imageNamed:@"img_default_team"]
-#define HT_DEFAULT_AVATAR_LOGO [UIImage imageNamed: [MMTodayHTUserManager getDefaultAvater]]//[UIImage imageNamed:@"default_avatar"]
+#define HT_DEFAULT_AVATAR_LOGO [UIImage imageNamed: [TuTuosHTUserManager getDefaultAvater]]//[UIImage imageNamed:@"default_avatar"]
 
 #define kWeakSelf __weak typeof(self) weakSelf = self;
 
@@ -96,8 +96,8 @@
 #define kDefaultImage(imageName) [UIImage imageNamed:(imageName)]
 
 #define kDRWindow [UIApplication sharedApplication].keyWindow
-#define isAppInView [MMTodayHTUserManager manager].appInView
-#define appBaseColor [MMTodayHTUserManager getAppBaseColor]
+#define isAppInView [TuTuosHTUserManager manager].appInView
+#define appBaseColor [TuTuosHTUserManager getAppBaseColor]
 
 #define left_controller_click_name @"left_controller_click_name"
 

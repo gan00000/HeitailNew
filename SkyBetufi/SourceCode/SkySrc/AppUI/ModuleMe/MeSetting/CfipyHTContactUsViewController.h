@@ -1,0 +1,5 @@
+#import "MMoogPPXXBJBaseViewController.h"
+NS_ASSUME_NONNULL_BEGIN
+@interface CfipyHTContactUsViewController : MMoogPPXXBJBaseViewController
+@end
+NS_ASSUME_NONNULL_END

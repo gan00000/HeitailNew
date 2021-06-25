@@ -11,7 +11,7 @@
         <!--Glod BuleHT Match Word Live View Controller-->
         <scene sceneID="wrs-5F-zh9">
             <objects>
-                <viewController id="kpW-7D-7SA" customClass="RRDogHTMatchWordLiveViewController" sceneMemberID="viewController">
+                <viewController id="kpW-7D-7SA" customClass="KSasxHTMatchWordLiveViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nFi-Ls-fyl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

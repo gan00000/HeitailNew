@@ -6,15 +6,15 @@
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "AFNetworkReachabilityManager.h"
-#import "RRDogPPXXBJLaunchViewController.h"
-#import "UIView+RRDogToast.h"
-#import "HourseHTNewsDetailViewController.h"
-#import "HoursePPXXBJNavigationController.h"
-#import "NDeskHTNewsHomeViewController.h"
-#import "PXFunPPXXBJMainViewController.h"
+#import "BByasPPXXBJLaunchViewController.h"
+#import "UIView+YeYeeToast.h"
+#import "KSasxHTNewsDetailViewController.h"
+#import "UUaksPPXXBJNavigationController.h"
+#import "KSasxHTNewsHomeViewController.h"
+#import "CfipyPPXXBJMainViewController.h"
 @import Firebase;
 @import GoogleMobileAds;
-#import "MMTodayHTUserManager.h"
+#import "TuTuosHTUserManager.h"
 
 #define UM_APP_KEY @"60d3569126a57f101836a71a"
 #define FB_APP_ID  @"393368845385476"
@@ -22,13 +22,13 @@
 - (void)openViewController:(UIApplication * _Nonnull)application launchOptions:(NSDictionary * _Nullable)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
-    RRDogPPXXBJLaunchViewController *rootVc = [[RRDogPPXXBJLaunchViewController alloc] init];
+    BByasPPXXBJLaunchViewController *rootVc = [[BByasPPXXBJLaunchViewController alloc] init];
 //    self.window.rootViewController = rootVc;
 
     
-    self.window.rootViewController = [[HoursePPXXBJNavigationController alloc] initWithRootViewController:rootVc];
+    self.window.rootViewController = [[UUaksPPXXBJNavigationController alloc] initWithRootViewController:rootVc];
     
-//     self.window.rootViewController = [[PXFunPPXXBJMainViewController alloc] init];
+//     self.window.rootViewController = [[CfipyPPXXBJMainViewController alloc] init];
     
     [self setupPushWithLaunchOptions:launchOptions];
     [IQKeyboardManager sharedManager].toolbarBarTintColor = [UIColor whiteColor];
@@ -166,7 +166,7 @@
                                  stringByReplacingOccurrencesOfString:@" " withString:@""];
     if (pushDeviceToken.length) {
         BJLog(@"deviceToken: %@", pushDeviceToken);
-        [MMTodayHTUserManager tao_saveDeviceToken:pushDeviceToken];
+        [TuTuosHTUserManager tao_saveDeviceToken:pushDeviceToken];
     }
 }
 - (void)responsePushInfo:(NSDictionary *)pushInfo fromViewController:(UIViewController *)vc {
@@ -174,9 +174,9 @@
         return;
     }
     if (!vc) {
-        vc = [PXFunPPXXBJViewControllerCenter currentViewController];
+        vc = [CfipyPPXXBJViewControllerCenter currentViewController];
     }
-    HourseHTNewsDetailViewController *detailVc = [HourseHTNewsDetailViewController taoviewController];
+    KSasxHTNewsDetailViewController *detailVc = [KSasxHTNewsDetailViewController taoviewController];
     detailVc.post_id = pushInfo[@"postId"];
     if (vc.navigationController) {
         [vc.navigationController pushViewController:detailVc animated:YES];
@@ -237,7 +237,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
       NSString *name = user.profile.name;
       NSString *email = user.profile.email;
       
-      [[MMTodayHTUserManager manager] doThirdLoginRequesWithAccessToken:idToken sns:4 userId:userId nickName:name email:email];
+      [[TuTuosHTUserManager manager] doThirdLoginRequesWithAccessToken:idToken sns:4 userId:userId nickName:name email:email];
     // ...
   } else {
     // ...

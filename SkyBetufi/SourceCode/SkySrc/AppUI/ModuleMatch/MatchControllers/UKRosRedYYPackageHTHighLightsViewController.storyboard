@@ -12,7 +12,7 @@
         <!--High Lights View Controller-->
         <scene sceneID="OvM-mK-Kz3">
             <objects>
-                <viewController id="inW-8g-bYL" customClass="YYPackageHTHighLightsViewController" sceneMemberID="viewController">
+                <viewController id="inW-8g-bYL" customClass="TuTuosHTHighLightsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xAh-c8-BWe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

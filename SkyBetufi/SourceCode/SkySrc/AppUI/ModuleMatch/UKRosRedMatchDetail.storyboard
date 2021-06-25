@@ -12,7 +12,7 @@
         <!--SundayHT Match Detail View Controller-->
         <scene sceneID="QHS-Jt-yGa">
             <objects>
-                <viewController id="Sv3-UW-Fso" customClass="SundayHTMatchDetailViewController" sceneMemberID="viewController">
+                <viewController id="Sv3-UW-Fso" customClass="CfipyHTMatchDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DBo-1C-urc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

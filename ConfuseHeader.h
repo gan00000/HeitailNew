@@ -9,7 +9,7 @@
 #ifndef ConfuseHeader_h
 #define ConfuseHeader_h
 
-
+/**
 #define addBackgroundNotificationObservers axxpaddBackgroundNotificationObservers
 #define addGestureRecognizers axxpaddGestureRecognizers
 #define addHistoryRecord axxpaddHistoryRecord
@@ -822,4 +822,7 @@
 #define taotabBarTitles looktabBarTitles
 #define taotabBarControllers looktabBarControllers
 
+
+ 
+ */
 #endif /* ConfuseHeader_h */

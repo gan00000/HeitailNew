@@ -12,7 +12,7 @@
         <!--Glod BuleHT Main Page View Controller-->
         <scene sceneID="kFT-RG-HvM">
             <objects>
-                <viewController id="FLw-AM-qZp" customClass="HourseHTMainPageViewController" sceneMemberID="viewController">
+                <viewController id="FLw-AM-qZp" customClass="NSNiceHTMainPageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5ZU-hh-nYl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

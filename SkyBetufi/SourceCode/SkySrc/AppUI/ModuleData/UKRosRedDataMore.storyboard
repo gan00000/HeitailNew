@@ -13,7 +13,7 @@
         <!--Data More View Controller-->
         <scene sceneID="hiJ-y2-Oof">
             <objects>
-                <viewController id="C8k-ZA-iyy" customClass="YYPackageHTDataMoreViewController" sceneMemberID="viewController">
+                <viewController id="C8k-ZA-iyy" customClass="CfipyHTDataMoreViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pvN-fG-5bi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

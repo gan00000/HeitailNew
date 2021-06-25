@@ -12,7 +12,7 @@
         <!--Glod BuleHTIM View Controller-->
         <scene sceneID="dAe-6T-oRp">
             <objects>
-                <viewController id="okT-yd-XAq" customClass="RRDogHTIMViewController" sceneMemberID="viewController">
+                <viewController id="okT-yd-XAq" customClass="WSKggHTIMViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P6t-XF-pSI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
