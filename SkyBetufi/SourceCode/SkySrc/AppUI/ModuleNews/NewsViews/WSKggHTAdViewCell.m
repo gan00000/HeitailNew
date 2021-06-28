@@ -30,7 +30,7 @@
         return;
     }
     self.isRequestAd = YES;
-    self.thAdView.adUnitID = @"ca-app-pub-4059643053601138/5503853759";
+    self.thAdView.adUnitID = @"ca-app-pub-4059643053601138/6750693026";
     self.thAdView.rootViewController = viewController;
 //    [self.thAdView setAutoloadEnabled:YES];
     [self.thAdView loadRequest:[GADRequest request]];
