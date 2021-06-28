@@ -386,7 +386,7 @@
 
 + (CGFloat)headerViewHeight:(CGFloat) offset
 {
-    return (SCREEN_WIDTH) * (KMonkeyHTMainPageHomeCell_Height - offset) / KMonkeyHTMainPageHomeCell_Width; // 375 320
+    return KMonkeyHTMainPageHomeCell_Height - offset;//(SCREEN_WIDTH) * (KMonkeyHTMainPageHomeCell_Height - offset) / KMonkeyHTMainPageHomeCell_Width; // 375 320
 }
 
 - (void)prepareForReuse {
