@@ -2,7 +2,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 platform :ios, '9.0'
 
-target 'SunFunly' do
+target 'FLYGame' do
 
 pod 'AFNetworking', '~> 4.0'
 pod 'SDWebImage' , '= 4.4.2'

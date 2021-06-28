@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>88314986807-du3mjh4a8b8b556od8s681ii4bp1fnbr.apps.googleusercontent.com</string>
+	<string>916062259955-8uutdbe6pugqtb5ugni7msdhbqhvsmhu.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.88314986807-du3mjh4a8b8b556od8s681ii4bp1fnbr</string>
+	<string>com.googleusercontent.apps.916062259955-8uutdbe6pugqtb5ugni7msdhbqhvsmhu</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBHIFV-iZxR4bzt1Q-WU7hGMcNrKN9Ou8M</string>
+	<string>AIzaSyBFFjD_Gh23M9_khg_DzqXuwt54DPy_TKQ</string>
 	<key>GCM_SENDER_ID</key>
-	<string>88314986807</string>
+	<string>916062259955</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.tbbl.onefit</string>
+	<string>com.polygames.redpin</string>
 	<key>PROJECT_ID</key>
-	<string>haters-f9398</string>
+	<string>basketball-944ad</string>
 	<key>STORAGE_BUCKET</key>
-	<string>haters-f9398.appspot.com</string>
+	<string>basketball-944ad.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:88314986807:ios:d01e9f2b83473bbd7f9ab2</string>
-	<key>DATABASE_URL</key>
-	<string>https://haters-f9398.firebaseio.com</string>
+	<string>1:916062259955:ios:8e28dae94c91cf52214586</string>
 </dict>
 </plist>

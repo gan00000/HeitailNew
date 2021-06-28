@@ -52,7 +52,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.88314986807-du3mjh4a8b8b556od8s681ii4bp1fnbr</string>
+				<string>com.googleusercontent.apps.916062259955-8uutdbe6pugqtb5ugni7msdhbqhvsmhu</string>
 			</array>
 		</dict>
 	</array>
@@ -98,8 +98,8 @@
 	<string>“籃球網”想訪問您的相冊，用於保存頭像拍照圖片。</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>“籃球網”想訪問您的相冊，用於上傳頭像。</string>
-    <key>NSUserTrackingUsageDescription</key>
-    <string>“籃球網”需要您允許訪問廣告標識符權限，以便於追蹤廣告和信息推送.</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>“籃球網”需要您允許訪問廣告標識符權限，以便於追蹤廣告和信息推送.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

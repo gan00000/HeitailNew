@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FEC112542143D057002DB617"
-               BuildableName = "SunFunly.app"
-               BlueprintName = "SunFunly"
-               ReferencedContainer = "container:XXXHeiTaiPro.xcodeproj">
+               BuildableName = "FLYGame.app"
+               BlueprintName = "FLYGame"
+               ReferencedContainer = "container:FSAWorkSpace.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FEC112542143D057002DB617"
-            BuildableName = "SunFunly.app"
-            BlueprintName = "SunFunly"
-            ReferencedContainer = "container:XXXHeiTaiPro.xcodeproj">
+            BuildableName = "FLYGame.app"
+            BlueprintName = "FLYGame"
+            ReferencedContainer = "container:FSAWorkSpace.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FEC112542143D057002DB617"
-            BuildableName = "SunFunly.app"
-            BlueprintName = "SunFunly"
-            ReferencedContainer = "container:XXXHeiTaiPro.xcodeproj">
+            BuildableName = "FLYGame.app"
+            BlueprintName = "FLYGame"
+            ReferencedContainer = "container:FSAWorkSpace.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

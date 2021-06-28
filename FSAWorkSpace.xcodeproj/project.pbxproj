@@ -137,7 +137,7 @@
 		32B62D7D2603824100EE8E92 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B62D7C2603824100EE8E92 /* libresolv.tbd */; };
 		32B62D802603824E00EE8E92 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B62D7F2603824E00EE8E92 /* libiconv.tbd */; };
 		32B62D832603827000EE8E92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B62D822603827000EE8E92 /* Foundation.framework */; };
-		32BDB9DD251A42DF0066200F /* SunFunly-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BDB9DC251A42DF0066200F /* SunFunly-Swift.swift */; };
+		32BDB9DD251A42DF0066200F /* FLYGame-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BDB9DC251A42DF0066200F /* FLYGame-Swift.swift */; };
 		32BFD1DF239F9B1A0037985B /* TuTuosHTViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BFD1DE239F9B1A0037985B /* TuTuosHTViewController2.m */; };
 		32C65DED250676AE0068D2C7 /* UUaksConfigCoreUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C65DEC250676AD0068D2C7 /* UUaksConfigCoreUtil.m */; };
 		32C65DF02506771A0068D2C7 /* KSasxAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C65DEF2506771A0068D2C7 /* KSasxAccountModel.m */; };
@@ -200,7 +200,7 @@
 		32FFD29123A2267200E1661A /* UIImageView+FFlaliHT.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFD29023A2267200E1661A /* UIImageView+FFlaliHT.m */; };
 		32FFD29923A397A700E1661A /* WSKggHTAdViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FFD29723A397A700E1661A /* WSKggHTAdViewCell.m */; };
 		32FFD29A23A397A700E1661A /* WSKggHTAdViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32FFD29823A397A700E1661A /* WSKggHTAdViewCell.xib */; };
-		4DAF2F269A4932B99E4B49FE /* Pods_SunFunly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF888A8719BEDBBEA66A3DC3 /* Pods_SunFunly.framework */; };
+		6A127BE16969E327030C392E /* Pods_FLYGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C2801837C1AC0B9CD1E111 /* Pods_FLYGame.framework */; };
 		FE08C5C422504F0C000175CB /* NetWordMe.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE08C5C322504F0C000175CB /* NetWordMe.xcassets */; };
 		FE08C5C82250506A000175CB /* YeYeeHTMeHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08C5C62250506A000175CB /* YeYeeHTMeHomeViewController.m */; };
 		FE08C5C92250506A000175CB /* YeYeeHTMeHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE08C5C72250506A000175CB /* YeYeeHTMeHomeViewController.xib */; };
@@ -435,6 +435,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		084A4085D17F5FB93D6D4197 /* Pods-FLYGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLYGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FLYGame/Pods-FLYGame.debug.xcconfig"; sourceTree = "<group>"; };
+		17B78D2F35704601C98E59D3 /* Pods-FLYGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLYGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-FLYGame/Pods-FLYGame.release.xcconfig"; sourceTree = "<group>"; };
 		32100C3F23C2E1FB00CC1DD2 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		3213529A250A149F00702F72 /* InfoMessage.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoMessage.pbobjc.m; sourceTree = "<group>"; };
 		3213529B250A149F00702F72 /* UserMessage.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMessage.pbobjc.h; sourceTree = "<group>"; };
@@ -672,8 +674,8 @@
 		32B62D7C2603824100EE8E92 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		32B62D7F2603824E00EE8E92 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		32B62D822603827000EE8E92 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		32BDB9DB251A42DF0066200F /* SunFunly-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SunFunly-Bridging-Header.h"; sourceTree = "<group>"; };
-		32BDB9DC251A42DF0066200F /* SunFunly-Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SunFunly-Swift.swift"; sourceTree = "<group>"; };
+		32BDB9DB251A42DF0066200F /* FLYGame-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FLYGame-Bridging-Header.h"; sourceTree = "<group>"; };
+		32BDB9DC251A42DF0066200F /* FLYGame-Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FLYGame-Swift.swift"; sourceTree = "<group>"; };
 		32BFD1DD239F9B1A0037985B /* TuTuosHTViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuTuosHTViewController2.h; sourceTree = "<group>"; };
 		32BFD1DE239F9B1A0037985B /* TuTuosHTViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuTuosHTViewController2.m; sourceTree = "<group>"; };
 		32C65DEB250676AD0068D2C7 /* UUaksConfigCoreUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUaksConfigCoreUtil.h; sourceTree = "<group>"; };
@@ -784,12 +786,12 @@
 		6D400D27C2D86963112B02F4 /* Pods-SunFunly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunFunly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SunFunly/Pods-SunFunly.debug.xcconfig"; sourceTree = "<group>"; };
 		72321527951E473E782564AC /* Pods-HeiteBasketball.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeiteBasketball.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball.release.xcconfig"; sourceTree = "<group>"; };
 		89189E29CC0B9E5A3FEA5137 /* Pods-SkyBallPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyBallPlay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay.debug.xcconfig"; sourceTree = "<group>"; };
+		A6C2801837C1AC0B9CD1E111 /* Pods_FLYGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FLYGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6CC0D64A8A0EDA6FA1EF12F /* Pods-SunFunly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunFunly.release.xcconfig"; path = "Pods/Target Support Files/Pods-SunFunly/Pods-SunFunly.release.xcconfig"; sourceTree = "<group>"; };
 		C0EBF7000495782F4C2F67C5 /* Pods-SkyBallPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyBallPlay.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay.release.xcconfig"; sourceTree = "<group>"; };
 		C96ED51AF657F6A6678FAF42 /* Pods_HeiteBasketball.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeiteBasketball.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D51E62E1A92A1557109DF0C3 /* Pods-XXXHeiTai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XXXHeiTai.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XXXHeiTai/Pods-XXXHeiTai.debug.xcconfig"; sourceTree = "<group>"; };
 		D56ADC0A35608BB62F69A143 /* Pods-XXXHeiTai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XXXHeiTai.release.xcconfig"; path = "Pods/Target Support Files/Pods-XXXHeiTai/Pods-XXXHeiTai.release.xcconfig"; sourceTree = "<group>"; };
-		DF888A8719BEDBBEA66A3DC3 /* Pods_SunFunly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SunFunly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE08C5C322504F0C000175CB /* NetWordMe.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NetWordMe.xcassets; sourceTree = "<group>"; };
 		FE08C5C52250506A000175CB /* YeYeeHTMeHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YeYeeHTMeHomeViewController.h; sourceTree = "<group>"; };
 		FE08C5C62250506A000175CB /* YeYeeHTMeHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YeYeeHTMeHomeViewController.m; sourceTree = "<group>"; };
@@ -934,7 +936,7 @@
 		FEAB2106216DD731002A05AB /* UUaksHTMatchDetailsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UUaksHTMatchDetailsModel.h; sourceTree = "<group>"; };
 		FEAB2107216DD731002A05AB /* UUaksHTMatchDetailsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UUaksHTMatchDetailsModel.m; sourceTree = "<group>"; };
 		FEAC9F262199D92900159AE9 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		FEAC9F282199D94500159AE9 /* SunFunly.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SunFunly.entitlements; sourceTree = "<group>"; };
+		FEAC9F282199D94500159AE9 /* FLYGame.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FLYGame.entitlements; sourceTree = "<group>"; };
 		FEAC9F2C2199E25F00159AE9 /* NSNiceHTSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSNiceHTSettingViewController.h; sourceTree = "<group>"; };
 		FEAC9F2D2199E25F00159AE9 /* NSNiceHTSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSNiceHTSettingViewController.m; sourceTree = "<group>"; };
 		FEAC9F2F2199E28800159AE9 /* FaCaiSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FaCaiSetting.storyboard; sourceTree = "<group>"; };
@@ -944,7 +946,7 @@
 		FEAC9F372199EA3A00159AE9 /* BByasHTAboutUsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BByasHTAboutUsViewController.m; sourceTree = "<group>"; };
 		FEB46C802157903B00E482CE /* FFlaliHTMatchLiveFeedModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFlaliHTMatchLiveFeedModel.h; sourceTree = "<group>"; };
 		FEB46C812157903B00E482CE /* FFlaliHTMatchLiveFeedModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFlaliHTMatchLiveFeedModel.m; sourceTree = "<group>"; };
-		FEC112552143D057002DB617 /* SunFunly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunFunly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEC112552143D057002DB617 /* FLYGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLYGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC112612143D058002DB617 /* NetWordAPPAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NetWordAPPAssets.xcassets; sourceTree = "<group>"; };
 		FEC112662143D058002DB617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEC112672143D058002DB617 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1053,7 +1055,7 @@
 		FEC116EE2143D8C9002DB617 /* FaCaiMatchHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FaCaiMatchHome.storyboard; sourceTree = "<group>"; };
 		FEC116F02143D91D002DB617 /* BByasHTMatchHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BByasHTMatchHomeViewController.h; sourceTree = "<group>"; };
 		FEC116F12143D91D002DB617 /* BByasHTMatchHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BByasHTMatchHomeViewController.m; sourceTree = "<group>"; };
-		FEC116F32143D994002DB617 /* SkyBallPlay.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkyBallPlay.pch; sourceTree = "<group>"; };
+		FEC116F32143D994002DB617 /* App-FLYGame.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "App-FLYGame.pch"; sourceTree = "<group>"; };
 		FEC116F72143DC57002DB617 /* FaCaiNewsHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FaCaiNewsHome.storyboard; sourceTree = "<group>"; };
 		FEC116F92143DC72002DB617 /* NetWordNews.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NetWordNews.xcassets; sourceTree = "<group>"; };
 		FEC116FE2143DCAF002DB617 /* FaCaiFilmHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FaCaiFilmHome.storyboard; sourceTree = "<group>"; };
@@ -1203,7 +1205,7 @@
 				FE0C270E2186BCF6001C9B8C /* libsqlite3.tbd in Frameworks */,
 				FE0C270C2186BCE8001C9B8C /* libz.tbd in Frameworks */,
 				FE6BD0492144EB660090118A /* ImageIO.framework in Frameworks */,
-				4DAF2F269A4932B99E4B49FE /* Pods_SunFunly.framework in Frameworks */,
+				6A127BE16969E327030C392E /* Pods_FLYGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1376,7 +1378,7 @@
 				FEC112612143D058002DB617 /* NetWordAPPAssets.xcassets */,
 				FEC114332143D4A0002DB617 /* AppDelegate.h */,
 				FEC1149C2143D4A0002DB617 /* AppDelegate.m */,
-				FEC116F32143D994002DB617 /* SkyBallPlay.pch */,
+				FEC116F32143D994002DB617 /* App-FLYGame.pch */,
 				FEC1126F2143D4A0002DB617 /* AppUI */,
 				FEC114342143D4A0002DB617 /* CommonModule */,
 			);
@@ -1710,7 +1712,7 @@
 				FE0C270B2186BCE7001C9B8C /* libz.tbd */,
 				FE6BD0482144EB660090118A /* ImageIO.framework */,
 				C96ED51AF657F6A6678FAF42 /* Pods_HeiteBasketball.framework */,
-				DF888A8719BEDBBEA66A3DC3 /* Pods_SunFunly.framework */,
+				A6C2801837C1AC0B9CD1E111 /* Pods_FLYGame.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1726,6 +1728,8 @@
 				D56ADC0A35608BB62F69A143 /* Pods-XXXHeiTai.release.xcconfig */,
 				6D400D27C2D86963112B02F4 /* Pods-SunFunly.debug.xcconfig */,
 				A6CC0D64A8A0EDA6FA1EF12F /* Pods-SunFunly.release.xcconfig */,
+				084A4085D17F5FB93D6D4197 /* Pods-FLYGame.debug.xcconfig */,
+				17B78D2F35704601C98E59D3 /* Pods-FLYGame.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1790,7 +1794,7 @@
 		FEC112562143D057002DB617 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FEC112552143D057002DB617 /* SunFunly.app */,
+				FEC112552143D057002DB617 /* FLYGame.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1799,14 +1803,14 @@
 			isa = PBXGroup;
 			children = (
 				32E7228023098085003E0A03 /* GoogleService-Info.plist */,
-				FEAC9F282199D94500159AE9 /* SunFunly.entitlements */,
+				FEAC9F282199D94500159AE9 /* FLYGame.entitlements */,
 				FEC1126E2143D4A0002DB617 /* SourceCode */,
 				FEC112662143D058002DB617 /* Info.plist */,
 				FEC112672143D058002DB617 /* main.m */,
 				FE81D14C2146CA1E0047A4A2 /* logo_load.html */,
 				FEEABBE62149F90700A585DA /* iframe_load.html */,
-				32BDB9DC251A42DF0066200F /* SunFunly-Swift.swift */,
-				32BDB9DB251A42DF0066200F /* SunFunly-Bridging-Header.h */,
+				32BDB9DC251A42DF0066200F /* FLYGame-Swift.swift */,
+				32BDB9DB251A42DF0066200F /* FLYGame-Bridging-Header.h */,
 			);
 			path = SkyBetufi;
 			sourceTree = "<group>";
@@ -2700,9 +2704,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FEC112542143D057002DB617 /* SunFunly */ = {
+		FEC112542143D057002DB617 /* FLYGame */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEC1126B2143D058002DB617 /* Build configuration list for PBXNativeTarget "SunFunly" */;
+			buildConfigurationList = FEC1126B2143D058002DB617 /* Build configuration list for PBXNativeTarget "FLYGame" */;
 			buildPhases = (
 				BF9D3AFDF9A356103E352831 /* [CP] Check Pods Manifest.lock */,
 				CE13F4385FCCC9AC6CBAEFC8 /* [CP] Prepare Artifacts */,
@@ -2717,9 +2721,9 @@
 			);
 			dependencies = (
 			);
-			name = SunFunly;
+			name = FLYGame;
 			productName = HeiteBasketball;
-			productReference = FEC112552143D057002DB617 /* SunFunly.app */;
+			productReference = FEC112552143D057002DB617 /* FLYGame.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -2749,7 +2753,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FEC112502143D057002DB617 /* Build configuration list for PBXProject "XXXHeiTaiPro" */;
+			buildConfigurationList = FEC112502143D057002DB617 /* Build configuration list for PBXProject "FSAWorkSpace" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -2763,7 +2767,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FEC112542143D057002DB617 /* SunFunly */,
+				FEC112542143D057002DB617 /* FLYGame */,
 			);
 		};
 /* End PBXProject section */
@@ -2945,15 +2949,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SunFunly/Pods-SunFunly-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FLYGame/Pods-FLYGame-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SunFunly/Pods-SunFunly-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FLYGame/Pods-FLYGame-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SunFunly/Pods-SunFunly-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FLYGame/Pods-FLYGame-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF9D3AFDF9A356103E352831 /* [CP] Check Pods Manifest.lock */ = {
@@ -2967,7 +2971,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SunFunly-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FLYGame-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2980,15 +2984,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SunFunly/Pods-SunFunly-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FLYGame/Pods-FLYGame-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SunFunly/Pods-SunFunly-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FLYGame/Pods-FLYGame-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SunFunly/Pods-SunFunly-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FLYGame/Pods-FLYGame-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CE13F4385FCCC9AC6CBAEFC8 /* [CP] Prepare Artifacts */ = {
@@ -2997,15 +3001,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SunFunly/Pods-SunFunly-artifacts-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FLYGame/Pods-FLYGame-artifacts-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Prepare Artifacts";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SunFunly/Pods-SunFunly-artifacts-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FLYGame/Pods-FLYGame-artifacts-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SunFunly/Pods-SunFunly-artifacts.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FLYGame/Pods-FLYGame-artifacts.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -3225,7 +3229,7 @@
 				32CC78E324F3EAAD00377576 /* NSNiceBarChartUtil.m in Sources */,
 				FE82A483216E42680070FFC0 /* MMoogHTMatchLiveFeedCell.m in Sources */,
 				32A6F7872647B6BD0039B850 /* CfipyHTLeftMeCenterItemsCell.m in Sources */,
-				32BDB9DD251A42DF0066200F /* SunFunly-Swift.swift in Sources */,
+				32BDB9DD251A42DF0066200F /* FLYGame-Swift.swift in Sources */,
 				32FED82023AB768700D900A7 /* BlysaLMPlayerModel.m in Sources */,
 				FEC116F22143D91D002DB617 /* BByasHTMatchHomeViewController.m in Sources */,
 				3213529E250A149F00702F72 /* InfoMessage.pbobjc.m in Sources */,
@@ -3386,31 +3390,31 @@
 		};
 		FEC1126C2143D058002DB617 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D400D27C2D86963112B02F4 /* Pods-SunFunly.debug.xcconfig */;
+			baseConfigurationReference = 084A4085D17F5FB93D6D4197 /* Pods-FLYGame.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = SkyBetufi/SunFunly.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: yupeng su (6HM9UCSUQM)";
+				CODE_SIGN_ENTITLEMENTS = SkyBetufi/FLYGame.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 17;
-				DEVELOPMENT_TEAM = 98DGMGPLHN;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3523T7JYFN;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SkyBetufi/SourceCode/SkySrc/SkyModule/LMPlayer",
 					"$(PROJECT_DIR)/SkyBetufi/SourceCode/SkySrc/CommonModule/MonLMPlayer",
 				);
-				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SourceCode/SkySrc/SkyBallPlay.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SourceCode/SkySrc/App-FLYGame.pch";
 				INFOPLIST_FILE = SkyBetufi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.0;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-all_load",
@@ -3596,10 +3600,10 @@
 					"-weak_framework",
 					"\"WebKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tbbl.onefit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.polygames.redpin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = com.tbbl.onefit20201029;
-				SWIFT_OBJC_BRIDGING_HEADER = "SkyBetufi/SunFunly-Bridging-Header.h";
+				PROVISIONING_PROFILE_SPECIFIER = com.polygames.redpin_0628;
+				SWIFT_OBJC_BRIDGING_HEADER = "SkyBetufi/FLYGame-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3609,31 +3613,31 @@
 		};
 		FEC1126D2143D058002DB617 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6CC0D64A8A0EDA6FA1EF12F /* Pods-SunFunly.release.xcconfig */;
+			baseConfigurationReference = 17B78D2F35704601C98E59D3 /* Pods-FLYGame.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = SkyBetufi/SunFunly.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: yupeng su (98DGMGPLHN)";
+				CODE_SIGN_ENTITLEMENTS = SkyBetufi/FLYGame.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 17;
-				DEVELOPMENT_TEAM = 98DGMGPLHN;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3523T7JYFN;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SkyBetufi/SourceCode/SkySrc/SkyModule/LMPlayer",
 					"$(PROJECT_DIR)/SkyBetufi/SourceCode/SkySrc/CommonModule/MonLMPlayer",
 				);
-				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SourceCode/SkySrc/SkyBallPlay.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SourceCode/SkySrc/App-FLYGame.pch";
 				INFOPLIST_FILE = SkyBetufi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.0;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-all_load",
@@ -3819,10 +3823,10 @@
 					"-weak_framework",
 					"\"WebKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tbbl.onefit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.polygames.redpin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = com.tbbl.onefitI_dis_20201029;
-				SWIFT_OBJC_BRIDGING_HEADER = "SkyBetufi/SunFunly-Bridging-Header.h";
+				PROVISIONING_PROFILE_SPECIFIER = com.polygames.redpin_0628_dis;
+				SWIFT_OBJC_BRIDGING_HEADER = "SkyBetufi/FLYGame-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 arm64e armv7s x86_64";
@@ -3832,7 +3836,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FEC112502143D057002DB617 /* Build configuration list for PBXProject "XXXHeiTaiPro" */ = {
+		FEC112502143D057002DB617 /* Build configuration list for PBXProject "FSAWorkSpace" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEC112692143D058002DB617 /* Debug */,
@@ -3841,7 +3845,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		FEC1126B2143D058002DB617 /* Build configuration list for PBXNativeTarget "SunFunly" */ = {
+		FEC1126B2143D058002DB617 /* Build configuration list for PBXNativeTarget "FLYGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEC1126C2143D058002DB617 /* Debug */,

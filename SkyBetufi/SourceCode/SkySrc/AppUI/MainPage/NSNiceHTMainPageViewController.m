@@ -5,7 +5,7 @@
 #import "KSasxHTNewsHomeCell.h"
 #import "WSKggHTAdViewCell.h"
 #import "KSasxHTFilmDetailViewController.h"
-#import "SunFunly-Swift.h"
+#import "FLYGame-Swift.h"
 
 #import "TuTuosHTImageBrowserViewController.h"
 #import "UIView+FFlaliBlockGesture.h"
