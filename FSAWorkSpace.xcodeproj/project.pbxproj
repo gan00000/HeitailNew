@@ -1181,6 +1181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32FED83223AB779C00D900A7 /* IJKMediaFramework.framework in Frameworks */,
 				32B62D77260381F900EE8E92 /* Accelerate.framework in Frameworks */,
 				32B62D832603827000EE8E92 /* Foundation.framework in Frameworks */,
 				32B62D802603824E00EE8E92 /* libiconv.tbd in Frameworks */,
@@ -1199,7 +1200,6 @@
 				32100C4023C2E1FB00CC1DD2 /* AuthenticationServices.framework in Frameworks */,
 				FECCA4E62258C858009EF494 /* Security.framework in Frameworks */,
 				FEAC9F272199D92900159AE9 /* UserNotifications.framework in Frameworks */,
-				32FED83223AB779C00D900A7 /* IJKMediaFramework.framework in Frameworks */,
 				FE0C27122186BD0D001C9B8C /* SystemConfiguration.framework in Frameworks */,
 				FE0C27102186BD05001C9B8C /* CoreTelephony.framework in Frameworks */,
 				FE0C270E2186BCF6001C9B8C /* libsqlite3.tbd in Frameworks */,
@@ -1212,7 +1212,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		32135299250A149F00702F72 /* proto_out */ = {
+		32135299250A149F00702F72 /* gpb-proto_out */ = {
 			isa = PBXGroup;
 			children = (
 				3213529A250A149F00702F72 /* InfoMessage.pbobjc.m */,
@@ -1220,10 +1220,10 @@
 				3213529C250A149F00702F72 /* InfoMessage.pbobjc.h */,
 				3213529D250A149F00702F72 /* UserMessage.pbobjc.m */,
 			);
-			path = proto_out;
+			path = "gpb-proto_out";
 			sourceTree = "<group>";
 		};
-		321352A0250A2F1300702F72 /* objectivec */ = {
+		321352A0250A2F1300702F72 /* gpb-objectivec */ = {
 			isa = PBXGroup;
 			children = (
 				321352B5250A2F1300702F72 /* google */,
@@ -1267,7 +1267,7 @@
 				321352D7250A2F1300702F72 /* GPBWireFormat.h */,
 				321352C4250A2F1300702F72 /* GPBWrappers.pbobjc.h */,
 			);
-			path = objectivec;
+			path = "gpb-objectivec";
 			sourceTree = "<group>";
 		};
 		321352B5250A2F1300702F72 /* google */ = {
@@ -1371,7 +1371,7 @@
 			path = SwiftExtension;
 			sourceTree = "<group>";
 		};
-		3256201222E17A9200973889 /* SkySrc */ = {
+		3256201222E17A9200973889 /* WaterSssrc */ = {
 			isa = PBXGroup;
 			children = (
 				326434DC22F0536E00D2DA1E /* Res */,
@@ -1382,7 +1382,7 @@
 				FEC1126F2143D4A0002DB617 /* AppUI */,
 				FEC114342143D4A0002DB617 /* CommonModule */,
 			);
-			path = SkySrc;
+			path = WaterSssrc;
 			sourceTree = "<group>";
 		};
 		325A921724F11969008F0B2E /* MyViwe */ = {
@@ -1782,9 +1782,9 @@
 				325BD8C822E07D6F00A07EC9 /* confuse.sh */,
 				325BD8C922E07D6F00A07EC9 /* func.list */,
 				328893F02603310900759311 /* PlayerInfo */,
-				321352A0250A2F1300702F72 /* objectivec */,
-				32135299250A149F00702F72 /* proto_out */,
-				FEC112572143D057002DB617 /* SkyBetufi */,
+				321352A0250A2F1300702F72 /* gpb-objectivec */,
+				32135299250A149F00702F72 /* gpb-proto_out */,
+				FEC112572143D057002DB617 /* PPPMain */,
 				FEC112562143D057002DB617 /* Products */,
 				ECB62376D5C12D4C8313883B /* Pods */,
 				CB747A826453EE017B9DDDC1 /* Frameworks */,
@@ -1799,7 +1799,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FEC112572143D057002DB617 /* SkyBetufi */ = {
+		FEC112572143D057002DB617 /* PPPMain */ = {
 			isa = PBXGroup;
 			children = (
 				32E7228023098085003E0A03 /* GoogleService-Info.plist */,
@@ -1812,14 +1812,14 @@
 				32BDB9DC251A42DF0066200F /* FLYGame-Swift.swift */,
 				32BDB9DB251A42DF0066200F /* FLYGame-Bridging-Header.h */,
 			);
-			path = SkyBetufi;
+			path = PPPMain;
 			sourceTree = "<group>";
 		};
 		FEC1126E2143D4A0002DB617 /* SourceCode */ = {
 			isa = PBXGroup;
 			children = (
 				32CD869A22F3FB5400063A14 /* third */,
-				3256201222E17A9200973889 /* SkySrc */,
+				3256201222E17A9200973889 /* WaterSssrc */,
 			);
 			path = SourceCode;
 			sourceTree = "<group>";
@@ -3396,7 +3396,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = SkyBetufi/FLYGame.entitlements;
+				CODE_SIGN_ENTITLEMENTS = PPPMain/FLYGame.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -3406,9 +3406,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SkyBetufi/SourceCode/SkySrc/SkyModule/LMPlayer",
 					"$(PROJECT_DIR)/SkyBetufi/SourceCode/SkySrc/CommonModule/MonLMPlayer",
+					"$(PROJECT_DIR)/PPPMain/SourceCode/WaterSssrc/CommonModule/MonLMPlayer",
 				);
-				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SourceCode/SkySrc/App-FLYGame.pch";
-				INFOPLIST_FILE = SkyBetufi/Info.plist;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PPPMain/SourceCode/WaterSssrc/App-FLYGame.pch";
+				INFOPLIST_FILE = PPPMain/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3603,7 +3604,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.polygames.redpin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = com.polygames.redpin_0628;
-				SWIFT_OBJC_BRIDGING_HEADER = "SkyBetufi/FLYGame-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PPPMain/FLYGame-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3619,7 +3620,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = SkyBetufi/FLYGame.entitlements;
+				CODE_SIGN_ENTITLEMENTS = PPPMain/FLYGame.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -3629,9 +3630,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SkyBetufi/SourceCode/SkySrc/SkyModule/LMPlayer",
 					"$(PROJECT_DIR)/SkyBetufi/SourceCode/SkySrc/CommonModule/MonLMPlayer",
+					"$(PROJECT_DIR)/PPPMain/SourceCode/WaterSssrc/CommonModule/MonLMPlayer",
 				);
-				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SourceCode/SkySrc/App-FLYGame.pch";
-				INFOPLIST_FILE = SkyBetufi/Info.plist;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PPPMain/SourceCode/WaterSssrc/App-FLYGame.pch";
+				INFOPLIST_FILE = PPPMain/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3826,7 +3828,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.polygames.redpin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = com.polygames.redpin_0628_dis;
-				SWIFT_OBJC_BRIDGING_HEADER = "SkyBetufi/FLYGame-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PPPMain/FLYGame-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 arm64e armv7s x86_64";
