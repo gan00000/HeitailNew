@@ -30,6 +30,7 @@
     param[@"access_token"] = accessToken;
     param[@"device_token"] = [TuTuosHTUserManager tao_deviceToken];
     param[@"device_type"] = @(1);
+    param[@"type"] = @(2);//type
     [NSNiceBJHTTPServiceEngine tao_postRequestWithFunctionPath:API_USER_LOGIN params:param successBlock:^(id responseData) {
         if (successBlock) {
             successBlock(responseData[@"result"][@"user_token"]);
@@ -59,7 +60,8 @@
     param[@"email"] = email;
     param[@"access_token"] = accessToken;
     param[@"device_token"] = [TuTuosHTUserManager tao_deviceToken];
-    param[@"device_type"] = @(1);
+    param[@"device_type"] = @(1);//
+    param[@"type"] = @(2);//type
     BJLog(@"login params: %@", param);
     [NSNiceBJHTTPServiceEngine tao_postRequestWithFunctionPath:API_USER_LOGIN params:param successBlock:^(id responseData) {
         if (successBlock) {
