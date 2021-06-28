@@ -9,6 +9,7 @@
 
 #import "TuTuosHTImageBrowserViewController.h"
 #import "UIView+FFlaliBlockGesture.h"
+#import <JXExtension.h>
 
 @interface NSNiceHTMainPageViewController ()<UITableViewDelegate, UITableViewDataSource, MainPagePlayerTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -235,6 +236,12 @@
     }else{
         cellHeitht = [KSasxHTMainPageHomeCell headerViewHeight:0];
     }
+    
+    CGFloat textHeitht = [model.title jx_heightWithFont:[UIFont systemFontOfSize:16] constrainedToWidth:345];
+    if (textHeitht >= KMonkeyHTMainPageHomeCell_TitleLabel_Height) {
+        textHeitht = KMonkeyHTMainPageHomeCell_TitleLabel_Height;
+    }
+    cellHeitht = cellHeitht - KMonkeyHTMainPageHomeCell_TitleLabel_Height + textHeitht;
     
     if ([model.posted_on isEqualToString:@"videos"]) {//视频
         return cellHeitht;

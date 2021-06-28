@@ -8,6 +8,8 @@
 
 #define KMonkeyHTMainPageHomeCell_ContentView_Height 194.0
 
+#define KMonkeyHTMainPageHomeCell_TitleLabel_Height 38.5
+
 @class KSasxHTMainPageHomeCell;
 
 @protocol MainPagePlayerTableViewCellDelegate <NSObject>
