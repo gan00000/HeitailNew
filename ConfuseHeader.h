@@ -9,7 +9,7 @@
 #ifndef ConfuseHeader_h
 #define ConfuseHeader_h
 
-/**
+
 #define addBackgroundNotificationObservers axxpaddBackgroundNotificationObservers
 #define addGestureRecognizers axxpaddGestureRecognizers
 #define addHistoryRecord axxpaddHistoryRecord
@@ -279,6 +279,13 @@
 #define loadNetworkInfo axxploadNetworkInfo
 #define loadNextPage axxploadNextPage
 #define loadNextPageWithSuccessBlock axxploadNextPageWithSuccessBlock
+
+#define loadRecommonedNextPageWithVis  axxploadRecommonedNextPageWithVis
+
+#define requestRecommonedWithSuccessBlock axxprequestRecommonedWithSuccessBlock
+
+#define loadNextPageWithVis axxploadNextPageWithVis
+
 #define loadNormalCommentsWithCompleteBlock axxploadNormalCommentsWithCompleteBlock
 #define loadStateDidChange axxploadStateDidChange
 #define loadingViewBackButtonClick axxploadingViewBackButtonClick
@@ -823,6 +830,4 @@
 #define taotabBarControllers looktabBarControllers
 
 
- 
- */
 #endif /* ConfuseHeader_h */

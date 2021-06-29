@@ -4,7 +4,7 @@
 #import "TuTuosHTUserManager.h"
 #import "FFlaliHTNewMatchHomeViewController.h"
 #import "KSasxHTNewsHomeViewController.h"
-#import "CfipyHTFilmHomeViewController.h"
+#import "CfipyHTFilmHomeNewViewController.h"
 #import "BlysaHTDataHomeViewController.h"
 #import "WSKggHTRankHomeViewController.h"
 #import "NSNiceHTTabBarHomeViewController.h"
@@ -89,7 +89,7 @@
                                          kFIRParameterContentType:@"button"
                                          }];
         
-    }else if ([currentClassString isEqualToString:NSStringFromClass([CfipyHTFilmHomeViewController class])]){
+    }else if ([currentClassString isEqualToString:NSStringFromClass([CfipyHTFilmHomeNewViewController class])]){
         
         [FIRAnalytics logEventWithName:@"IOS_Film"
                             parameters:@{
@@ -232,7 +232,7 @@
     if ([currentClassString isEqualToString:NSStringFromClass([KSasxHTNewsHomeViewController class])]){
         [self.rightSearchButton setImage:[UIImage imageNamed:@"gurk_icon_search"] forState:UIControlStateNormal];
 
-    }else if ([currentClassString isEqualToString:NSStringFromClass([CfipyHTFilmHomeViewController class])]){
+    }else if ([currentClassString isEqualToString:NSStringFromClass([CfipyHTFilmHomeNewViewController class])]){
         
         [self.rightSearchButton setImage:[UIImage imageNamed:@"gurk_icon_search"] forState:UIControlStateNormal];
     }else if (isAppInView && [currentClassString isEqualToString:NSStringFromClass([NSNiceHTMainPageViewController class])]){

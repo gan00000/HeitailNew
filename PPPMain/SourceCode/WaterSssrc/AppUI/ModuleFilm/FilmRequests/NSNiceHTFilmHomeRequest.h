@@ -7,4 +7,12 @@
                      errorBlock:(BJServiceErrorBlock)errorBlock;
 - (void)loadNextPageWithSuccessBlock:(void(^)(NSArray<CfipyHTNewsModel *> *newsList))successBlock
                           errorBlock:(BJServiceErrorBlock)errorBlock;
+
+
+- (void)requestRecommonedWithSuccessBlock:(void(^)(NSArray<CfipyHTNewsModel *> *newsList))successBlock
+                     errorBlock:(BJServiceErrorBlock)errorBlock;
+
+- (void)loadRecommonedNextPageWithVis:(NSString *)vids SuccessBlock:(void(^)(NSArray<CfipyHTNewsModel *> *newsList))successBlock
+                          errorBlock:(BJServiceErrorBlock)errorBlock;
+
 @end

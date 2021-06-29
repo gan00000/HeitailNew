@@ -5,16 +5,13 @@
 //  Copyright © 2021 Dean_F. All rights reserved.
 //
 
-#import "UUaksMainLanmuViewController.h"
+#import "CfipyHTFilmHomeNewViewController.h"
 #import "BByasHTMatchHomeViewController.h"
 #import "UUaksHTMatchHomeRequest.h"
 
-#import "KSasxHTNewsHomeViewController.h"
-#import "CfipyHTFilmHomeNewViewController.h"
-#import "BlysaHTDataHomeViewController.h"
-#import "WSKggHTRankHomeViewController.h"
+#import "CfipyHTFilmHomeViewController.h"
 
-@interface UUaksMainLanmuViewController () <UIScrollViewDelegate>
+@interface CfipyHTFilmHomeNewViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *contenView;
 
 @property (nonatomic, strong) HMSegmentedControl *segmentControl;
@@ -28,20 +25,20 @@
 
 @end
 
-@implementation UUaksMainLanmuViewController
+@implementation CfipyHTFilmHomeNewViewController
 
 
 + (instancetype)taoviewController {
-    return kLoadStoryboardWithName(@"FaCaiMainLanmu");
+    return kLoadStoryboardWithName(@"FaCaiFilmHomeNew");
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"欄目";
+    self.title = @"影片";
     
-    self.titlesArray = [NSMutableArray arrayWithArray:@[@"熱點",@"影片",@"數據"]];
-    self.titlesArrayValue = [NSMutableArray arrayWithArray:@[@"1",@"2",@"3"]];
+    self.titlesArray = [NSMutableArray arrayWithArray:@[@"推薦",@"最新"]];
+    self.titlesArrayValue = [NSMutableArray arrayWithArray:@[@"1",@"2"]];
 //    [self loadData];
     [self setupUI];
 }
@@ -124,36 +121,55 @@
 - (void)loadChildViewControllerByIndex:(NSInteger)index {
     
     if ([self.loadedFlagArray[index] boolValue]) {
-        if (index == 0) {
-
-            KSasxHTNewsHomeViewController *vc = self.loadedControllersArray[index];
-//            vc.matchType = self.titlesArrayValue[index];
-        } else if (index == 1) {
-      
-            CfipyHTFilmHomeNewViewController *vc = self.loadedControllersArray[index];
-//            vc.matchType = self.titlesArrayValue[index];
-        }else if (index == 2) {
-            BlysaHTDataHomeViewController *vc = self.loadedControllersArray[index];
+        
+        CfipyHTFilmHomeViewController *vvc = self.loadedControllersArray[index];
+        if (vvc) {
+            [vvc switchToDisplay];
         }
+        
+        for (NSObject * obj in self.loadedControllersArray) {
+            if ([obj isKindOfClass:[CfipyHTFilmHomeViewController class]]) {
+                CfipyHTFilmHomeViewController *aavc = (CfipyHTFilmHomeViewController *)obj;
+                if (aavc != vvc) {
+                    [aavc switchToUnDisplay];
+                }
+            }
+        }
+        
+//        if (index == 0) {
+//
+//            CfipyHTFilmHomeViewController *vc = self.loadedControllersArray[index];
+////            vc.matchType = self.titlesArrayValue[index];
+//
+//        } else if (index == 1) {
+//
+//            CfipyHTFilmHomeViewController *vc = self.loadedControllersArray[index];
+////            vc.matchType = self.titlesArrayValue[index];
+//        }
+        
         return;
     }
     kWeakSelf
-    UIViewController *vc;
+    CfipyHTFilmHomeViewController *vc;
     if (index == 0) {
         
-        KSasxHTNewsHomeViewController *mhVc = [KSasxHTNewsHomeViewController taoviewController];
-//        mhVc.matchType = self.titlesArrayValue[index];
+        CfipyHTFilmHomeViewController *mhVc = [CfipyHTFilmHomeViewController taoviewController];
+        mhVc.fileType = 1;//推薦
         vc = mhVc;
 
     } else if (index == 1) {
-        CfipyHTFilmHomeNewViewController *mhVc = [CfipyHTFilmHomeNewViewController taoviewController];
-//        mhVc.matchType = self.titlesArrayValue[index];
-        vc = mhVc;
-    }else if (index == 2) {
-        BlysaHTDataHomeViewController *mhVc = [BlysaHTDataHomeViewController taoviewController];
-        
+        CfipyHTFilmHomeViewController *mhVc = [CfipyHTFilmHomeViewController taoviewController];
+        mhVc.fileType = 2;//最新
         vc = mhVc;
     }
+    [vc switchToDisplay];
+    for (NSObject * obj in self.loadedControllersArray) {
+        if ([obj isKindOfClass:[CfipyHTFilmHomeViewController class]]) {
+            CfipyHTFilmHomeViewController *aavc = (CfipyHTFilmHomeViewController *)obj;
+            [aavc switchToUnDisplay];
+        }
+    }
+    
     [self addChildViewController:vc];
     [self.containerView addSubview:vc.view];
     [self.loadedFlagArray replaceObjectAtIndex:index withObject:@(YES)];

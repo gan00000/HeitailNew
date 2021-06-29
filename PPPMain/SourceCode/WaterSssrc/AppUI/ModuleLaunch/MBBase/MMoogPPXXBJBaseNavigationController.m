@@ -1,7 +1,7 @@
 #import "MMoogPPXXBJBaseNavigationController.h"
 #import "FFlaliHTNewMatchHomeViewController.h"
 #import "KSasxHTNewsHomeViewController.h"
-#import "CfipyHTFilmHomeViewController.h"
+#import "CfipyHTFilmHomeNewViewController.h"
 #import "BlysaHTDataHomeViewController.h"
 #import "WSKggHTRankHomeViewController.h"
 #import "NSNiceHTMainPageViewController.h"
@@ -41,7 +41,7 @@
     if (self.viewControllers.count > 1 ||
         (![self isKindOfClass:[FFlaliHTNewMatchHomeViewController class]] &&
          ![self isKindOfClass:[KSasxHTNewsHomeViewController class]] &&
-         ![self isKindOfClass:[CfipyHTFilmHomeViewController class]] &&
+         ![self isKindOfClass:[CfipyHTFilmHomeNewViewController class]] &&
          ![self isKindOfClass:[BlysaHTDataHomeViewController class]] &&
          ![self isKindOfClass:[NSNiceHTMainPageViewController class]] &&
          ![self isKindOfClass:[UUaksMainLanmuViewController class]] &&

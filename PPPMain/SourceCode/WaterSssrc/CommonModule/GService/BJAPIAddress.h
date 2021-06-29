@@ -30,6 +30,7 @@
 
 #pragma mark - 影片
 #define API_FILM_HOME                   @"video-library"
+#define API_FILM_HOME_RECOMMONED                   @"api/get_videos_recommend"
 #pragma mark - 数据
 #define API_PLAYER_RANK                 @"api/get_player_rank"
 #define API_PLAYER_RANK_ALL             @"api/get_player_rank_all"

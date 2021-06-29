@@ -1,4 +1,7 @@
 #import "NSNiceHTFilmHomeRequest.h"
+#import "BlysaBJUtility.h"
+#import "TuTuosHTUserManager.h"
+
 @interface NSNiceHTFilmHomeRequest ()
 @property (nonatomic, strong) NSMutableArray *newsList;
 @property (nonatomic, assign) NSInteger page;
@@ -45,6 +48,56 @@
             self.hasMore = NO;
         }
         NSArray *list = [NSArray yy_modelArrayWithClass:[CfipyHTNewsModel class] json:responseData[@"posts"]];
+        if (list) {
+            [self.newsList addObjectsFromArray:list];
+        }
+        if (successBlock) {
+            successBlock(self.newsList);
+        }
+    } errorBlock:errorBlock];
+}
+
+
+- (void)requestRecommonedWithSuccessBlock:(void(^)(NSArray<CfipyHTNewsModel *> *newsList))successBlock
+                     errorBlock:(BJServiceErrorBlock)errorBlock
+{
+    
+    if (!self.newsList) {
+        self.newsList = [NSMutableArray array];
+    }
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+   
+    params[@"sid"] = BlysaBJUtility.idfa;//设备唯一id(广告id)
+    params[@"type"] = @2;
+    params[@"token"] = [TuTuosHTUserManager axxptao_userToken];
+    params[@"vids"] = @""; //上次浏览过的post_id集合
+    
+    [NSNiceBJHTTPServiceEngine tao_getRequestWithFunctionPath:API_FILM_HOME_RECOMMONED params:params successBlock:^(id responseData) {
+        self.hasMore = YES;
+        [self.newsList removeAllObjects];
+        NSArray *list = [NSArray yy_modelArrayWithClass:[CfipyHTNewsModel class] json:responseData[@"result"]];
+        if (list) {
+            [self.newsList addObjectsFromArray:list];
+        }
+        if (successBlock) {
+            successBlock(self.newsList);
+        }
+    } errorBlock:errorBlock];
+}
+
+- (void)loadRecommonedNextPageWithVis:(NSString *)vids SuccessBlock:(void(^)(NSArray<CfipyHTNewsModel *> *newsList))successBlock
+                          errorBlock:(BJServiceErrorBlock)errorBlock
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    params[@"sid"] = BlysaBJUtility.idfa;//设备唯一id(广告id)
+    params[@"type"] = @2;
+    params[@"token"] = [TuTuosHTUserManager axxptao_userToken];
+    params[@"vids"] = vids; //上次浏览过的post_id集合
+    
+    [NSNiceBJHTTPServiceEngine tao_getRequestWithFunctionPath:API_FILM_HOME_RECOMMONED params:params successBlock:^(id responseData) {
+        NSArray *list = [NSArray yy_modelArrayWithClass:[CfipyHTNewsModel class] json:responseData[@"result"]];
         if (list) {
             [self.newsList addObjectsFromArray:list];
         }

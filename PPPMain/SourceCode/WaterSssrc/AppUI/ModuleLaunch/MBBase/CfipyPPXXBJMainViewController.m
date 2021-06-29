@@ -1,7 +1,7 @@
 #import "CfipyPPXXBJMainViewController.h"
 #import "BByasHTMatchHomeViewController.h"
 #import "KSasxHTNewsHomeViewController.h"
-#import "CfipyHTFilmHomeViewController.h"
+#import "CfipyHTFilmHomeNewViewController.h"
 #import "BlysaHTDataHomeViewController.h"
 #import "WSKggHTRankHomeViewController.h"
 #import "YeYeeHTMeHomeViewController.h"
@@ -32,7 +32,7 @@
 @property (nonatomic, strong) UUaksPPXXBJNavigationController *nav2;
 @property (nonatomic, strong) KSasxHTNewsHomeViewController *vc2;
 @property (nonatomic, strong) UUaksPPXXBJNavigationController *nav3;
-@property (nonatomic, strong) CfipyHTFilmHomeViewController *vc3;
+@property (nonatomic, strong) CfipyHTFilmHomeNewViewController *vc3;
 @property (nonatomic, strong) UUaksPPXXBJNavigationController *nav4;
 @property (nonatomic, strong) BlysaHTDataHomeViewController *vc4;
 @property (nonatomic, strong) UUaksPPXXBJNavigationController *nav5;
@@ -169,7 +169,7 @@
         self.nav2 = [[UUaksPPXXBJNavigationController alloc] initWithRootViewController:self.vc2];
     }
     if (!self.vc3) {
-        self.vc3 = [CfipyHTFilmHomeViewController taoviewController];
+        self.vc3 = [CfipyHTFilmHomeNewViewController taoviewController];
         self.nav3 = [[UUaksPPXXBJNavigationController alloc] initWithRootViewController:self.vc3];
     }
     if (!self.vc4) {

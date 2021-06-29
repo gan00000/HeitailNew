@@ -1,7 +1,7 @@
 #import "UUaksPPXXBJNavigationController.h"
 #import "FFlaliHTNewMatchHomeViewController.h"
 #import "KSasxHTNewsHomeViewController.h"
-#import "CfipyHTFilmHomeViewController.h"
+#import "CfipyHTFilmHomeNewViewController.h"
 #import "BlysaHTDataHomeViewController.h"
 #import "WSKggHTRankHomeViewController.h"
 #import "NSNiceHTTabBarHomeViewController.h"
@@ -43,7 +43,7 @@
 - (NSArray<Class> *)taoviewControllersNotHideTabBar {
     return @[[FFlaliHTNewMatchHomeViewController class],
              [KSasxHTNewsHomeViewController class],
-             [CfipyHTFilmHomeViewController class],
+             [CfipyHTFilmHomeNewViewController class],
              [BlysaHTDataHomeViewController class],
              [WSKggHTRankHomeViewController class],
              [BlysaHTNewsHomeOtherViewController class],

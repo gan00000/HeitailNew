@@ -50,10 +50,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    NSLog(@"CfipyHTFilmHomeViewController viewDidAppear");
-//    if (self.filmList) {
-//        [self.tableView reloadData];
-//    }
+
     
     if (self.playingCell && self.playerToDetail) {//播放器传递到详情返回的时候，播放view重新添加到cell中，此时不刷新列表（牺牲）
         [self.playingCell reAddCellPlayerView];
@@ -67,7 +64,6 @@
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    NSLog(@"CfipyHTFilmHomeViewController viewDidDisappear");
     [self playerPause];
 
 }

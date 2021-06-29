@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		32100C4023C2E1FB00CC1DD2 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32100C3F23C2E1FB00CC1DD2 /* AuthenticationServices.framework */; };
+		32124A68268B00A8003BBE62 /* FaCaiFilmHomeNew.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32124A65268B00A8003BBE62 /* FaCaiFilmHomeNew.storyboard */; };
+		32124A69268B00A8003BBE62 /* CfipyHTFilmHomeNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32124A66268B00A8003BBE62 /* CfipyHTFilmHomeNewViewController.m */; };
 		3213529E250A149F00702F72 /* InfoMessage.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3213529A250A149F00702F72 /* InfoMessage.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3213529F250A149F00702F72 /* UserMessage.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3213529D250A149F00702F72 /* UserMessage.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		32135303250A2F1400702F72 /* GPBProtocolBuffers.m in Sources */ = {isa = PBXBuildFile; fileRef = 321352D8250A2F1300702F72 /* GPBProtocolBuffers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -438,6 +440,9 @@
 		084A4085D17F5FB93D6D4197 /* Pods-FLYGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLYGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FLYGame/Pods-FLYGame.debug.xcconfig"; sourceTree = "<group>"; };
 		17B78D2F35704601C98E59D3 /* Pods-FLYGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLYGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-FLYGame/Pods-FLYGame.release.xcconfig"; sourceTree = "<group>"; };
 		32100C3F23C2E1FB00CC1DD2 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		32124A65268B00A8003BBE62 /* FaCaiFilmHomeNew.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FaCaiFilmHomeNew.storyboard; sourceTree = "<group>"; };
+		32124A66268B00A8003BBE62 /* CfipyHTFilmHomeNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CfipyHTFilmHomeNewViewController.m; sourceTree = "<group>"; };
+		32124A67268B00A8003BBE62 /* CfipyHTFilmHomeNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CfipyHTFilmHomeNewViewController.h; sourceTree = "<group>"; };
 		3213529A250A149F00702F72 /* InfoMessage.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoMessage.pbobjc.m; sourceTree = "<group>"; };
 		3213529B250A149F00702F72 /* UserMessage.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMessage.pbobjc.h; sourceTree = "<group>"; };
 		3213529C250A149F00702F72 /* InfoMessage.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoMessage.pbobjc.h; sourceTree = "<group>"; };
@@ -2189,6 +2194,9 @@
 		FEC116D62143D7FD002DB617 /* ModuleFilm */ = {
 			isa = PBXGroup;
 			children = (
+				32124A67268B00A8003BBE62 /* CfipyHTFilmHomeNewViewController.h */,
+				32124A66268B00A8003BBE62 /* CfipyHTFilmHomeNewViewController.m */,
+				32124A65268B00A8003BBE62 /* FaCaiFilmHomeNew.storyboard */,
 				FEC1170A2143DE0E002DB617 /* FilmControllers */,
 				FEC1170D2143DE32002DB617 /* FilmRequests */,
 				FEC1170B2143DE1A002DB617 /* FilmViews */,
@@ -2810,6 +2818,7 @@
 				FE6BD0522144FC270090118A /* FaCaiMatchDetail.storyboard in Resources */,
 				32B53249261761BC009ED9D8 /* YeYeeHTNewsImageTypeCell.xib in Resources */,
 				32B5324426176084009ED9D8 /* MMoogHTNewsTextCell.xib in Resources */,
+				32124A68268B00A8003BBE62 /* FaCaiFilmHomeNew.storyboard in Resources */,
 				3287124623B8962800AB5360 /* video_backward_icon.png in Resources */,
 				3287124F23B8962800AB5360 /* video_error_normal.png in Resources */,
 				3287124A23B8962800AB5360 /* video_forward_icon.png in Resources */,
@@ -3199,6 +3208,7 @@
 				32E10F2925F1EC7E00639323 /* YeYeeHTCourtHotShootView.m in Sources */,
 				FEA5D3FE225CD506001AF0C9 /* WSKggHTCommentModel.m in Sources */,
 				FE82BB412179B77200C52C51 /* FFlaliHTDataTeamLeftCell.m in Sources */,
+				32124A69268B00A8003BBE62 /* CfipyHTFilmHomeNewViewController.m in Sources */,
 				FEDABE592173279F008C8AFD /* TuTuosHTRankZoneRequest.m in Sources */,
 				FEC116C22143D4A1002DB617 /* UIView+BByasViewController.m in Sources */,
 				FE82BB4A2179B7E300C52C51 /* YeYeeHTDataTeamRankModel.m in Sources */,

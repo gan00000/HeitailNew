@@ -19,6 +19,8 @@
 
 @property (nonatomic, weak) NSNiceHTFilmHomeCell *playingCell;
 
+@property (nonatomic, strong) NSMutableArray *historyListArray;
+
 @end
 @implementation CfipyHTFilmHomeViewController
 + (instancetype)taoviewController {
@@ -29,7 +31,7 @@
     
 //    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
 //    [[AVAudioSession sharedInstance] setActive:YES error:nil];
-    
+    self.historyListArray = [NSMutableArray array];
     [self setupViews];
     [self loadData];
 }
@@ -67,6 +69,17 @@
 
 }
 
+
+- (void)switchToDisplay
+{
+    
+}
+
+- (void)switchToUnDisplay
+{
+    [self shutdownAllPlayer];
+}
+
 - (void)playerPause {
     
     NSArray *array = [self.tableView visibleCells];
@@ -84,6 +97,22 @@
             
         }
 //        [cell stop];
+    }
+}
+
+- (void)shutdownAllPlayer{
+    
+    [self.playingCell shutdown];
+    
+    NSArray *array = [self.tableView visibleCells];
+    for (UITableViewCell *tempCell in array) {
+        
+        if ([tempCell isKindOfClass:[NSNiceHTFilmHomeCell class]]) {
+            NSNiceHTFilmHomeCell *xxTempCell = (NSNiceHTFilmHomeCell *)tempCell;
+            
+            [xxTempCell shutdown];
+            
+        }
     }
 }
 
@@ -177,6 +206,10 @@
     cell.mPlayerTableViewCellDelegate = self;
     cell.backgroundColor = [UIColor whiteColor];
 
+    if (![self.historyListArray containsObject:model]) {
+        [self.historyListArray addObject:model];
+    }
+    
     return cell;
 }
 
@@ -316,22 +349,50 @@
 }
 - (void)loadData {
     kWeakSelf
-    [self.request taorequestWithSuccessBlock:^(NSArray<CfipyHTNewsModel *> *newsList) {
-        weakSelf.filmList = [self dataWithAd:newsList];
-        [weakSelf refreshUI];
-    } errorBlock:^(WSKggBJError *error) {
-        weakSelf.error = error;
-        [weakSelf refreshUI];
-    }];
+    
+    if (self.fileType == 1) {
+        [self.request requestRecommonedWithSuccessBlock:^(NSArray<CfipyHTNewsModel *> *newsList) {
+            weakSelf.filmList = [self dataWithAd:newsList];
+            [weakSelf refreshUI];
+        } errorBlock:^(WSKggBJError *error) {
+            weakSelf.error = error;
+            [weakSelf refreshUI];
+        }];
+    }else{
+        [self.request taorequestWithSuccessBlock:^(NSArray<CfipyHTNewsModel *> *newsList) {
+            weakSelf.filmList = [self dataWithAd:newsList];
+            [weakSelf refreshUI];
+        } errorBlock:^(WSKggBJError *error) {
+            weakSelf.error = error;
+            [weakSelf refreshUI];
+        }];
+        
+    }
+
 }
 - (void)loadNextPage {
     kWeakSelf
-    [self.request loadNextPageWithSuccessBlock:^(NSArray<CfipyHTNewsModel *> *newsList) {
-        weakSelf.filmList = [self dataWithAd:newsList];
-        [weakSelf refreshUI];
-    } errorBlock:^(WSKggBJError *error) {
-        [weakSelf refreshUI];
-    }];
+    if (self.fileType == 1) {
+        NSString *vids = @"";
+        for (CfipyHTNewsModel *mModel in self.historyListArray) {
+            vids = [NSString stringWithFormat:@"%@%@,", vids, mModel.news_id];
+        }
+        [self.request loadRecommonedNextPageWithVis:vids SuccessBlock:^(NSArray<CfipyHTNewsModel *> *newsList) {
+            weakSelf.filmList = [self dataWithAd:newsList];
+            [weakSelf refreshUI];
+        } errorBlock:^(WSKggBJError *error) {
+            [weakSelf refreshUI];
+        }];
+    }else{
+        
+        [self.request loadNextPageWithSuccessBlock:^(NSArray<CfipyHTNewsModel *> *newsList) {
+            weakSelf.filmList = [self dataWithAd:newsList];
+            [weakSelf refreshUI];
+        } errorBlock:^(WSKggBJError *error) {
+            [weakSelf refreshUI];
+        }];
+    }
+    
 }
 #pragma mark - lazy load
 - (NSNiceHTFilmHomeRequest *)request {
