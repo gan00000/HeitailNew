@@ -422,7 +422,7 @@
 // 准备开始播放了
 - (void)mediaIsPreparedToPlayDidChange:(NSNotification*)notification {
     NSLog(@"self.player 准备开始播放了 mediaIsPrepareToPlayDidChange\n");
-    
+    [self.playerView.playControl playerReparedToPlayDidChange];
     if (self.seekTime > 0) {
         self.player.currentPlaybackTime = self.seekTime;
         self.seekTime = -1;

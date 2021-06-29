@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BByasYSPlayerControl : UIView <YSPlayerControlProtocol>
 
 - (void)invalidTimer;
-
+- (void)initViewStatus;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -43,7 +43,7 @@
 }
 
 - (void)playerControllerDidClickFullScreen:(YeYeeYSPlayerController *)playerController {
-    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
 //    app.fullScreen = self.playerController.isFullScreen;
     [self changeOritention];
 }

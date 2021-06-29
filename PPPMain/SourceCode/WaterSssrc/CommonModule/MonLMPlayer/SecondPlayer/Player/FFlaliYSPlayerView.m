@@ -13,6 +13,7 @@
 #import "UIImageView+FFlaliHT.h"
 #import <Accelerate/Accelerate.h>
 #import "UIImage+UUaksResize.h"
+#import "BByasYSPlayerControl.h"
 
 @interface FFlaliYSPlayerView ()
 
@@ -187,7 +188,7 @@
 //    [self.thumbView removeFromSuperview];//删除封面图片
 //    [self.thumbPlayBtn removeFromSuperview];
     
-    UIView * xplayControlView = (UIView *)self.playControl;
+    BByasYSPlayerControl * xplayControlView = (BByasYSPlayerControl *)self.playControl;
     
     if (![xplayControlView isDescendantOfView:self]) {
         [self addSubview:(UIView *)self.playControl];

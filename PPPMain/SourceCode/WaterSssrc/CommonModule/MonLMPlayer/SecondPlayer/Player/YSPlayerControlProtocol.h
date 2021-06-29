@@ -45,6 +45,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)playbackShutDown;
 
+- (void)playerReparedToPlayDidChange;
+
 //是否竖屏全屏
 @property (nonatomic, assign,getter=isPortraitFullScreen) BOOL portraitFullScreen;
 

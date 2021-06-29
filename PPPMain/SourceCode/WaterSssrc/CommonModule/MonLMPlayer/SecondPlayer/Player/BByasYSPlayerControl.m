@@ -121,6 +121,13 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    [self initViewStatus];
+}
+
+
+- (void)initViewStatus
+{
     self.direction = YSPanDirectionUnknown;
     self.hideBar = NO;
     self.clipsToBounds = YES;
@@ -146,7 +153,7 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     // 添加滑动手势
 //    [self addPanGesture];
     // 开启timer
-    [self resetTimer];
+//    [self resetTimer];
     // 获取运营商
 //    [self loadCarrier];
     // 获取网络信息
@@ -158,7 +165,6 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     // 添加MPVolumeView
     [self addMPVolumeView];
     [self initSlideView];
-    
 }
 
 -(void) initSlideView
@@ -204,6 +210,23 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     self.playTimeLbl.text = @"00:00";
     self.rePlayBtn.hidden = NO;
     self.rePauseBtn.hidden = YES;
+    self.hideBar = NO;
+    
+    
+    if (self.portraitFullScreen) {
+        self.toolBarBottomConstraint.constant = self.hideBar ? -TOOL_BAR_HEIGHT : 20;
+        if ([BlysaBJUtility isIPhoneXSeries]) {
+            self.navBarTopConstraint.constant = self.hideBar ? -NAV_BAR_HEIGHT : 44;
+        }else{
+            self.navBarTopConstraint.constant = self.hideBar ? -NAV_BAR_HEIGHT : 0;
+        }
+    }else{
+        self.toolBarBottomConstraint.constant = self.hideBar ? -TOOL_BAR_HEIGHT : 0;
+        self.navBarTopConstraint.constant = self.hideBar ? -NAV_BAR_HEIGHT : 0;
+    }
+   
+    [self layoutIfNeeded];
+    
 }
 
 - (void)playbackShutDown{
@@ -212,6 +235,11 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     [self playbackComplete];
     [self removeFromSuperview];
     
+}
+
+- (void)playerReparedToPlayDidChange
+{
+    [self resetTimer];
 }
 
 #pragma mark - Event response
@@ -356,7 +384,7 @@ typedef NS_ENUM(NSUInteger, YSPanDirection) {
     [pan setTranslation:CGPointZero inView:pan.view];
 }
 
-- (IBAction)doneBtnClick:(UIButton *)sender {
+- (IBAction)doneBtnClick:(UIButton *)sender {//返回
 
     [self resetTimer];
     if ([self.delegate respondsToSelector:@selector(fullScreen)]) {
