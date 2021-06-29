@@ -79,6 +79,16 @@
     [self setUpUM];
     [self sdk_setUpNetworkReachability];
     [self openViewController:application launchOptions:launchOptions];
+    
+    if (@available(iOS 14, *)) {
+        //IDFA 未请求权限：00000000-0000-0000-0000-000000000000 请求权限成功后：5AAEB13C-B619-43CF-9568-007B1B186D1F
+        NSLog(@"IDFA：%@",[[ASIdentifierManager sharedManager] advertisingIdentifier]);
+        //申请权限
+        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+            NSLog(@"%@",[[ASIdentifierManager sharedManager] advertisingIdentifier]);
+        }];
+    }
+    
     return YES;
 }
 - (void)applicationWillResignActive:(UIApplication *)application {

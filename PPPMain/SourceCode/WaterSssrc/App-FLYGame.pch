@@ -45,6 +45,8 @@
 
 #if defined(__IPHONE_14_0)
 #import <AppTrackingTransparency/AppTrackingTransparency.h>//适配iOS14
+#import <AdSupport/ASIdentifierManager.h>
+
 #endif
 
 #define OFFICIAL_RELEASE 0
